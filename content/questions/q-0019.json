@@ -1,0 +1,134 @@
+{
+  "id": "q-0019",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "needs_review",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 3,
+      "section_ids": [
+        "s3-12"
+      ],
+      "topic_ids": [
+        "varicap"
+      ],
+      "learning_objective": "Forstå hvordan kapasitansen i en varicap-diode avhenger av sperrespenningen.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En ",
+          {
+            "term": "varicap",
+            "text": "varicap-diode"
+          },
+          " er ",
+          {
+            "term": "sperreretning",
+            "text": "forspent i sperreretningen"
+          },
+          " og brukes godt under gjennombruddsspenningen."
+        ]
+      ],
+      "stem": [
+        "Hva skjer med diodens kapasitans når sperrespenningen økes?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Den blir mindre."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Den blir større."
+          ],
+          "feedback": [
+            "Større sperrespenning gjør det isolerende sjiktet bredere. Det svarer til større avstand mellom kondensatorplatene, og det gir mindre kapasitans."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Den er uendret."
+          ],
+          "feedback": [
+            "Hele poenget med en varicap-diode er at kapasitansen kan styres med spenningen."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Den forsvinner, fordi dioden begynner å lede."
+          ],
+          "feedback": [
+            "En diode som er forspent i sperreretningen, leder ikke (så lenge den er under gjennombruddsspenningen)."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Sperresjiktet i dioden er tomt for frie ladningsbærere og virker som isolatoren i en kondensator. P- og N-områdene på hver side er «platene».",
+        "Økt sperrespenning gjør sjiktet bredere, akkurat som om platene ble flyttet fra hverandre, og kapasitansen synker. Slik kan en spenning avstemme en svingekrets, for eksempel i en oscillator."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 3,
+        "section_id": "s3-12",
+        "printed_pages": [
+          "3-5"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "4fdf547d8e0ffd1b"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-23T18:00:00+00:00",
+        "note": "Skrevet med egne ord ut fra importerte kildeutdrag; må kontrolleres mot boka."
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T18:04:45+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "e5ee0d3215d490ac90f2180b1b88c782554a8a4a32e263c87f8fd86448da2553",
+          "note": "automated checks passed"
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "c38f5c847240f87bf5158668e9f8e3176deb7a3cec19a453202017949ad8d282",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: equation, numeric_low_conf. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-23T18:11:16+00:00"
+      }
+    }
+  ]
+}

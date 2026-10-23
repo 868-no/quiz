@@ -1,0 +1,668 @@
+{
+ "about": "Shared cases for the visual template validators and physics. Run by tests/py/test_visuals.py and tests/js/visuals.test.mjs. Synthetic, hand-checked values.",
+ "cases": [
+  {
+   "name": "dc series, one resistor, ammeter hidden",
+   "valid": true,
+   "visual": {
+    "template": "dc-circuit",
+    "version": 1,
+    "params": {
+     "topology": "series",
+     "source": {
+      "voltage_v": 12
+     },
+     "resistors": [
+      {
+       "ohms": 470
+      }
+     ],
+     "ammeter": {
+      "branch": "main"
+     }
+    }
+   },
+   "quantities": {
+    "I": 0.02553191489361702,
+    "R_total": 470,
+    "U_R1": 12,
+    "P": 0.30638297872340425
+   },
+   "shown": {
+    "I": false,
+    "U": true,
+    "R1": true
+   }
+  },
+  {
+   "name": "dc series, two resistors, voltmeter shown",
+   "valid": true,
+   "visual": {
+    "template": "dc-circuit",
+    "version": 1,
+    "params": {
+     "topology": "series",
+     "source": {
+      "voltage_v": 9
+     },
+     "resistors": [
+      {
+       "ohms": 1200
+      },
+      {
+       "ohms": 3300
+      }
+     ],
+     "voltmeter": {
+      "across": "R2",
+      "show_reading": true
+     }
+    }
+   },
+   "quantities": {
+    "I": 0.002,
+    "U_R1": 2.4,
+    "U_R2": 6.6,
+    "R_total": 4500
+   },
+   "shown": {
+    "U_R2": true,
+    "U_R1": false,
+    "I": false
+   }
+  },
+  {
+   "name": "dc parallel, two resistors, branch ammeter",
+   "valid": true,
+   "visual": {
+    "template": "dc-circuit",
+    "version": 1,
+    "params": {
+     "topology": "parallel",
+     "source": {
+      "voltage_v": 12
+     },
+     "resistors": [
+      {
+       "ohms": 100
+      },
+      {
+       "ohms": 150
+      }
+     ],
+     "ammeter": {
+      "branch": "R1",
+      "show_reading": true
+     }
+    }
+   },
+   "quantities": {
+    "R_total": 60,
+    "I": 0.2,
+    "I_R1": 0.12,
+    "I_R2": 0.08,
+    "U_R2": 12
+   },
+   "shown": {
+    "I_R1": true,
+    "I": false,
+    "I_R2": false
+   }
+  },
+  {
+   "name": "dc hidden source value",
+   "valid": true,
+   "visual": {
+    "template": "dc-circuit",
+    "version": 1,
+    "params": {
+     "topology": "series",
+     "source": {
+      "voltage_v": 5,
+      "show_value": false
+     },
+     "resistors": [
+      {
+       "ohms": 10,
+       "show_value": false
+      }
+     ]
+    }
+   },
+   "quantities": {
+    "I": 0.5
+   },
+   "shown": {
+    "U": false,
+    "R1": false
+   }
+  },
+  {
+   "name": "dc series ammeter in a branch is invalid",
+   "valid": false,
+   "error": "ammeter.branch",
+   "visual": {
+    "template": "dc-circuit",
+    "version": 1,
+    "params": {
+     "topology": "series",
+     "source": {
+      "voltage_v": 12
+     },
+     "resistors": [
+      {
+       "ohms": 100
+      },
+      {
+       "ohms": 100
+      }
+     ],
+     "ammeter": {
+      "branch": "R1"
+     }
+    }
+   }
+  },
+  {
+   "name": "dc voltmeter across a missing resistor",
+   "valid": false,
+   "error": "voltmeter.across",
+   "visual": {
+    "template": "dc-circuit",
+    "version": 1,
+    "params": {
+     "topology": "series",
+     "source": {
+      "voltage_v": 12
+     },
+     "resistors": [
+      {
+       "ohms": 100
+      }
+     ],
+     "voltmeter": {
+      "across": "R3"
+     }
+    }
+   }
+  },
+  {
+   "name": "dc parallel with one resistor",
+   "valid": false,
+   "error": "parallel",
+   "visual": {
+    "template": "dc-circuit",
+    "version": 1,
+    "params": {
+     "topology": "parallel",
+     "source": {
+      "voltage_v": 12
+     },
+     "resistors": [
+      {
+       "ohms": 100
+      }
+     ]
+    }
+   }
+  },
+  {
+   "name": "dc negative resistance",
+   "valid": false,
+   "error": "minimum",
+   "visual": {
+    "template": "dc-circuit",
+    "version": 1,
+    "params": {
+     "topology": "series",
+     "source": {
+      "voltage_v": 12
+     },
+     "resistors": [
+      {
+       "ohms": -5
+      }
+     ]
+    }
+   }
+  },
+  {
+   "name": "dc unknown parameter",
+   "valid": false,
+   "error": "unknown parameter",
+   "visual": {
+    "template": "dc-circuit",
+    "version": 1,
+    "params": {
+     "topology": "series",
+     "source": {
+      "voltage_v": 12
+     },
+     "resistors": [
+      {
+       "ohms": 5
+      }
+     ],
+     "colour": "red"
+    }
+   }
+  },
+  {
+   "name": "dc missing required source",
+   "valid": false,
+   "error": "required",
+   "visual": {
+    "template": "dc-circuit",
+    "version": 1,
+    "params": {
+     "topology": "series",
+     "resistors": [
+      {
+       "ohms": 5
+      }
+     ]
+    }
+   }
+  },
+  {
+   "name": "ac capacitor reactance",
+   "valid": true,
+   "visual": {
+    "template": "ac-circuit",
+    "version": 1,
+    "params": {
+     "source": {
+      "frequency_hz": 10000
+     },
+     "component": {
+      "kind": "C",
+      "value": 1e-07
+     },
+     "reactance_label": "unknown"
+    }
+   },
+   "quantities": {
+    "X_C": 159.15494309189535,
+    "f": 10000,
+    "C": 1e-07
+   },
+   "shown": {
+    "X_C": false,
+    "f": true
+   }
+  },
+  {
+   "name": "ac inductor with voltage",
+   "valid": true,
+   "visual": {
+    "template": "ac-circuit",
+    "version": 1,
+    "params": {
+     "source": {
+      "frequency_hz": 1000,
+      "voltage_v": 10
+     },
+     "component": {
+      "kind": "L",
+      "value": 0.01
+     },
+     "reactance_label": "value"
+    }
+   },
+   "quantities": {
+    "X_L": 62.83185307179586,
+    "I": 0.15915494309189535
+   },
+   "shown": {
+    "X_L": true,
+    "I": false,
+    "U": true
+   }
+  },
+  {
+   "name": "ac resistor cannot show reactance",
+   "valid": false,
+   "error": "reactance_label",
+   "visual": {
+    "template": "ac-circuit",
+    "version": 1,
+    "params": {
+     "source": {
+      "frequency_hz": 50
+     },
+     "component": {
+      "kind": "R",
+      "value": 100
+     },
+     "reactance_label": "unknown"
+    }
+   }
+  },
+  {
+   "name": "ac implausible capacitor",
+   "valid": false,
+   "error": "implausible",
+   "visual": {
+    "template": "ac-circuit",
+    "version": 1,
+    "params": {
+     "source": {
+      "frequency_hz": 50
+     },
+     "component": {
+      "kind": "C",
+      "value": 5
+     }
+    }
+   }
+  },
+  {
+   "name": "waveform sine with rms",
+   "valid": true,
+   "visual": {
+    "template": "waveform",
+    "version": 1,
+    "params": {
+     "traces": [
+      {
+       "amplitude": 20,
+       "frequency_hz": 50
+      }
+     ],
+     "markers": [
+      "peak",
+      "rms"
+     ]
+    }
+   },
+   "quantities": {
+    "U_p": 20,
+    "U_pp": 40,
+    "U_rms": 14.14213562373095,
+    "T": 0.02,
+    "f": 50
+   },
+   "shown": {
+    "U_p": true,
+    "U_rms": true,
+    "U_pp": false,
+    "T": false
+   }
+  },
+  {
+   "name": "waveform values hidden",
+   "valid": true,
+   "visual": {
+    "template": "waveform",
+    "version": 1,
+    "params": {
+     "traces": [
+      {
+       "amplitude": 5,
+       "unit": "mA",
+       "frequency_hz": 1000
+      }
+     ],
+     "markers": [
+      "period"
+     ],
+     "show_values": false
+    }
+   },
+   "quantities": {
+    "I_p": 0.005,
+    "T": 0.001
+   },
+   "shown": {
+    "I_p": false,
+    "T": false
+   }
+  },
+  {
+   "name": "waveform two traces phase",
+   "valid": true,
+   "visual": {
+    "template": "waveform",
+    "version": 1,
+    "params": {
+     "traces": [
+      {
+       "amplitude": 10,
+       "unit": "V",
+       "frequency_hz": 50
+      },
+      {
+       "amplitude": 2,
+       "unit": "A",
+       "frequency_hz": 50,
+       "phase_deg": -90
+      }
+     ],
+     "show_values": false
+    }
+   },
+   "quantities": {
+    "phase_difference_deg": -90
+   },
+   "shown": {}
+  },
+  {
+   "name": "waveform rms on a square wave",
+   "valid": false,
+   "error": "RMS",
+   "visual": {
+    "template": "waveform",
+    "version": 1,
+    "params": {
+     "traces": [
+      {
+       "amplitude": 1,
+       "frequency_hz": 50,
+       "shape": "square"
+      }
+     ],
+     "markers": [
+      "rms"
+     ]
+    }
+   }
+  },
+  {
+   "name": "waveform mixed units with values",
+   "valid": false,
+   "error": "different units",
+   "visual": {
+    "template": "waveform",
+    "version": 1,
+    "params": {
+     "traces": [
+      {
+       "amplitude": 1,
+       "frequency_hz": 50
+      },
+      {
+       "amplitude": 1,
+       "unit": "A",
+       "frequency_hz": 50
+      }
+     ]
+    }
+   }
+  },
+  {
+   "name": "waveform duplicate markers",
+   "valid": false,
+   "error": "duplicates",
+   "visual": {
+    "template": "waveform",
+    "version": 1,
+    "params": {
+     "traces": [
+      {
+       "amplitude": 1,
+       "frequency_hz": 50
+      }
+     ],
+     "markers": [
+      "peak",
+      "peak"
+     ]
+    }
+   }
+  },
+  {
+   "name": "block diagram with side block",
+   "valid": true,
+   "visual": {
+    "template": "block-diagram",
+    "version": 1,
+    "params": {
+     "chain": [
+      {
+       "kind": "antenna"
+      },
+      {
+       "kind": "mixer",
+       "hidden": true
+      },
+      {
+       "kind": "if_amp"
+      }
+     ],
+     "side": [
+      {
+       "kind": "local_osc",
+       "into": 1
+      }
+     ],
+     "edge_labels": [
+      {
+       "after": 0,
+       "text": "14 MHz"
+      }
+     ]
+    }
+   },
+   "quantities": {},
+   "shown": {}
+  },
+  {
+   "name": "block side block into missing chain block",
+   "valid": false,
+   "error": "into",
+   "visual": {
+    "template": "block-diagram",
+    "version": 1,
+    "params": {
+     "chain": [
+      {
+       "kind": "antenna"
+      },
+      {
+       "kind": "mixer"
+      }
+     ],
+     "side": [
+      {
+       "kind": "local_osc",
+       "into": 5
+      }
+     ]
+    }
+   }
+  },
+  {
+   "name": "block custom kind needs label",
+   "valid": false,
+   "error": "custom",
+   "visual": {
+    "template": "block-diagram",
+    "version": 1,
+    "params": {
+     "chain": [
+      {
+       "kind": "antenna"
+      },
+      {
+       "kind": "custom"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "name": "block unknown kind",
+   "valid": false,
+   "error": "not",
+   "visual": {
+    "template": "block-diagram",
+    "version": 1,
+    "params": {
+     "chain": [
+      {
+       "kind": "antenna"
+      },
+      {
+       "kind": "flux_capacitor"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "name": "block markup in label",
+   "valid": false,
+   "error": "not allowed",
+   "visual": {
+    "template": "block-diagram",
+    "version": 1,
+    "params": {
+     "chain": [
+      {
+       "kind": "antenna"
+      },
+      {
+       "kind": "custom",
+       "label": "<img src=x>"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "name": "edge label after last block",
+   "valid": false,
+   "error": "edge_labels",
+   "visual": {
+    "template": "block-diagram",
+    "version": 1,
+    "params": {
+     "chain": [
+      {
+       "kind": "antenna"
+      },
+      {
+       "kind": "mixer"
+      }
+     ],
+     "edge_labels": [
+      {
+       "after": 1,
+       "text": "x"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "name": "unknown template version",
+   "valid": false,
+   "error": "",
+   "visual": {
+    "template": "dc-circuit",
+    "version": 99,
+    "params": {}
+   }
+  }
+ ]
+}

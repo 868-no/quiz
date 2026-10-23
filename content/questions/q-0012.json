@@ -1,0 +1,164 @@
+{
+  "id": "q-0012",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "needs_review",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 2,
+      "section_ids": [
+        "s2-35",
+        "s2-30"
+      ],
+      "topic_ids": [
+        "fase",
+        "reaktans"
+      ],
+      "learning_objective": "Kjenne igjen hvordan strømmen ligger i fase i forhold til spenningen over en ideell spole.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "Grafen viser spenningen ",
+          {
+            "math": [
+              "u"
+            ]
+          },
+          " over en ideell komponent (heltrukket kurve) og strømmen ",
+          {
+            "math": [
+              "i"
+            ]
+          },
+          " gjennom komponenten (stiplet kurve). Komponenten er koblet til en sinusformet vekselspenningskilde. Kurvene er tegnet med hver sin vertikale skala."
+        ]
+      ],
+      "stem": [
+        "Hvilken komponent er det?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "En spole"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "En kondensator"
+          ],
+          "feedback": [
+            "I en kondensator ligger strømmen 90° foran spenningen. Her er det omvendt: strømmen når toppen en kvart periode etter spenningen."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "En motstand"
+          ],
+          "feedback": [
+            "I en motstand er strøm og spenning i fase. Da ville kurvene hatt toppene sine samtidig."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "En diode"
+          ],
+          "feedback": [
+            "En diode leder bare i én retning, så strømmen ville ikke vært en hel sinuskurve."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Strømmen når toppen en kvart periode, det vil si 90°, senere enn spenningen. Spenningen ligger altså 90° foran strømmen.",
+        "Det er kjennetegnet på en ideell spole. I en ideell kondensator er det motsatt: strømmen ligger 90° foran spenningen."
+      ],
+      "glossary_after_answer": [],
+      "visual": {
+        "template": "waveform",
+        "version": 1,
+        "params": {
+          "traces": [
+            {
+              "label": "u",
+              "amplitude": 10,
+              "unit": "V",
+              "frequency_hz": 50,
+              "phase_deg": 0
+            },
+            {
+              "label": "i",
+              "amplitude": 2,
+              "unit": "A",
+              "frequency_hz": 50,
+              "phase_deg": -90
+            }
+          ],
+          "cycles": 2,
+          "show_values": false
+        }
+      },
+      "study_reference": {
+        "chapter": 2,
+        "section_id": "s2-35",
+        "printed_pages": [
+          "2-13",
+          "2-14"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "9cc9a1c52884914f",
+          "634230010fa4ff38"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-23T18:00:00+00:00",
+        "note": "Skrevet med egne ord ut fra importerte kildeutdrag; må kontrolleres mot boka."
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T18:04:45+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "2e9fcbc12f741349d2f7bffb7b2c94bad424fad193c026fd84e67039fbb490b1",
+          "note": "automated checks passed"
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "ba743c3db24291a866291d6f4ab04030215db3291099fc3b54adee9a042642a9",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: equation, numeric_low_conf. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-23T18:11:16+00:00"
+      }
+    }
+  ]
+}

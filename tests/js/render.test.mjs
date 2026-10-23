@@ -1,0 +1,149 @@
+import { test } from 'node:test';
+import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
+import { join } from 'node:path';
+import { findAll, h, textContent, toString } from '../../web/js/render/vnode.js';
+import { plainText, renderInline, renderMath, renderRich } from '../../web/js/render/richtext.js';
+import { formatNumber, formatQuantity, formatSI } from '../../web/js/render/format.js';
+import { IMPLEMENTATIONS, renderVisual, resolveParams } from '../../web/js/visuals/registry.js';
+import { ROOT, TEMPLATES } from './fixtures.mjs';
+
+const CASES = JSON.parse(readFileSync(join(ROOT, 'tests', 'fixtures', 'visual-cases.json'), 'utf8')).cases;
+
+test('Norwegian number formatting', () => {
+  assert.equal(formatNumber(25.5), '25,5');
+  assert.equal(formatNumber(-3), '−3');
+  assert.equal(formatNumber(21600), '21 600');
+  assert.equal(formatNumber(7.1, 3), '7,100');
+  assert.equal(formatQuantity({ q: 4.7, u: 'kΩ' }), '4,7 kΩ');
+  assert.equal(formatQuantity({ q: 9.4, u: 'V', approx: true }), '≈ 9,4 V');
+  assert.equal(formatSI(0.025532, 'A'), '25,5 mA');
+  assert.equal(formatSI(1e-7, 'F'), '100 nF');
+  assert.equal(formatSI(999.9, 'Ω'), '1 kΩ');
+  assert.equal(formatSI(0.0005, 's'), '500 µs');
+});
+
+test('text content is escaped, never interpreted as markup', () => {
+  const out = toString(h('p', {}, renderRich(['<img src=x onerror=alert(1)>'])));
+  assert.ok(!out.includes('<img'));
+  assert.ok(out.includes('&lt;img'));
+  assert.throws(() => toString(h('script', {})), /not allowed/);
+  assert.throws(() => toString(h('p', { onclick: 'x' })), /not allowed/);
+});
+
+test('glossary terms render as buttons, and can be held back until answered', () => {
+  const glossary = { strom: { nb: ['strøm'], en: ['current'], definition: 'x' } };
+  const btn = renderInline({ term: 'strom', text: 'strømmen' }, { glossary });
+  assert.equal(btn.t, 'button');
+  assert.equal(btn.a.type, 'button');
+  assert.equal(btn.a['data-term'], 'strom');
+  assert.equal(textContent(btn), 'strømmen');
+  assert.equal(renderInline({ term: 'strom', text: 'strømmen' }, { glossary, plainTerms: new Set(['strom']) }), 'strømmen');
+  assert.equal(renderInline({ term: 'ukjent', text: 'x' }, { glossary }), 'x');
+});
+
+test('math renders sub/superscripts, fractions and a spoken alternative', () => {
+  const { nodes, speech } = renderMath(['X_C', '=', { frac: [['1'], ['2', 'π', 'f', 'C']] }]);
+  const html = nodes.map(toString).join('');
+  assert.ok(html.includes('<sub>C</sub>'));
+  assert.ok(html.includes('m-frac-num'));
+  assert.equal(speech, 'X C er lik brøk, 1 delt på 2 pi f C, slutt brøk');
+  assert.ok(renderMath(['15000']).nodes.map(toString).join('').includes('15\u202f000'));
+  const node = renderInline({ math: ['U^2'] });
+  assert.equal(node.a.role, 'img');
+  assert.equal(node.a['aria-label'], 'U i andre');
+  assert.equal(plainText([['I = ', { q: 2, u: 'mA' }]]), 'I = 2 mA');
+});
+
+test('rich text blocks: paragraphs, steps and notes', () => {
+  const out = renderRich(['a', { steps: ['b', 'c'] }, { note: ['d'] }]);
+  assert.deepEqual(out.map((n) => n.t), ['p', 'ol', 'p']);
+  assert.equal(out[1].c.length, 2);
+});
+
+test('shared visual cases: same validity and physics as the Python verifier', () => {
+  for (const c of CASES) {
+    const tpl = TEMPLATES[`${c.visual.template}@${c.visual.version}`];
+    const { errors, params, impl } = resolveParams(c.visual, tpl);
+    if (c.valid) {
+      assert.deepEqual(errors, [], c.name);
+      const q = impl.quantities(params);
+      for (const [k, v] of Object.entries(c.quantities)) {
+        assert.ok(Math.abs(q[k].value - v) <= 1e-9 * Math.max(1, Math.abs(v)), `${c.name}: ${k} ${q[k].value} != ${v}`);
+      }
+      for (const [k, v] of Object.entries(c.shown)) assert.equal(q[k].shown, v, `${c.name}: shown ${k}`);
+    } else {
+      assert.ok(errors.length, c.name);
+      assert.ok(errors.some((e) => e.includes(c.error)), `${c.name}: ${errors}`);
+    }
+  }
+});
+
+test('every valid case renders a labelled SVG without NaN and with a text description', () => {
+  for (const c of CASES.filter((x) => x.valid)) {
+    const res = renderVisual(c.visual, TEMPLATES);
+    assert.ok(res.ok, c.name);
+    const svgStr = toString(res.node);
+    assert.ok(!/NaN|undefined|Infinity/.test(svgStr), `${c.name}: bad number in SVG`);
+    const svg = findAll(res.node, (n) => n.t === 'svg')[0];
+    assert.ok(svg.a['aria-label'], c.name);
+    assert.ok(findAll(svg, (n) => n.t === 'desc').length === 1);
+    assert.ok(res.description.length > 20, c.name);
+  }
+});
+
+test('hidden quantities are shown as "?" and revealed only in the after-answer state', () => {
+  const visual = {
+    template: 'dc-circuit', version: 1,
+    params: { topology: 'series', source: { voltage_v: 12 }, resistors: [{ ohms: 470 }], ammeter: { branch: 'main', show_reading: false } },
+    params_after: { ammeter: { show_reading: true } },
+  };
+  const before = textContent(renderVisual(visual, TEMPLATES).node);
+  const after = textContent(renderVisual(visual, TEMPLATES, { phase: 'after' }).node);
+  assert.ok(before.includes('?'));
+  assert.ok(!before.includes('25,5'), 'answer must not be visible before answering');
+  assert.ok(after.includes('25,5 mA'));
+});
+
+test('dc circuit draws the battery with + on the long plate and conventional current arrows', () => {
+  const res = renderVisual({ template: 'dc-circuit', version: 1, params: { topology: 'series', source: { voltage_v: 9 }, resistors: [{ ohms: 100 }], show_current_direction: true } }, TEMPLATES);
+  const battery = findAll(res.node, (n) => n.a.class === 'battery')[0];
+  const lines = findAll(battery, (n) => n.t === 'line');
+  const [longPlate, shortPlate] = lines;
+  assert.ok(Number(longPlate.a.x2) - Number(longPlate.a.x1) > Number(shortPlate.a.x2) - Number(shortPlate.a.x1));
+  assert.ok(Number(longPlate.a.y1) < Number(shortPlate.a.y1), 'long (+) plate is on top, where current leaves');
+  const plus = findAll(battery, (n) => n.t === 'text' && textContent(n) === '+')[0];
+  assert.ok(Number(plus.a.y) < Number(shortPlate.a.y1));
+  assert.ok(res.description.includes('fra plusspolen'));
+});
+
+test('waveform samples are mathematically correct', async () => {
+  const { sample } = await import('../../web/js/visuals/waveform.js');
+  const tr = { amplitude: 10, frequency_hz: 50, phase_deg: 0, offset: 0, shape: 'sine' };
+  assert.ok(Math.abs(sample(tr, 0.005) - 10) < 1e-9); // quarter period = peak
+  assert.ok(Math.abs(sample(tr, 0.01)) < 1e-9);
+  assert.ok(Math.abs(sample({ ...tr, phase_deg: -90 }, 0.005)) < 1e-9); // lagging by 90°
+  assert.equal(sample({ ...tr, shape: 'square' }, 0.012), -10);
+});
+
+test('waveform description states the phase relation for screen-reader users', () => {
+  const res = renderVisual({ template: 'waveform', version: 1, params: { traces: [{ amplitude: 1, frequency_hz: 50 }, { amplitude: 1, unit: 'A', frequency_hz: 50, phase_deg: -90 }], show_values: false } }, TEMPLATES);
+  assert.ok(res.description.includes('90° etter kurve 1'));
+});
+
+test('invalid visuals render an explicit message instead of a wrong drawing', () => {
+  const res = renderVisual({ template: 'dc-circuit', version: 1, params: { topology: 'parallel', source: { voltage_v: 1 }, resistors: [{ ohms: 1 }] } }, TEMPLATES);
+  assert.equal(res.ok, false);
+  assert.ok(textContent(res.node).includes('kan ikke vises'));
+});
+
+test('every registered template version has an implementation and vice versa', () => {
+  assert.deepEqual([...IMPLEMENTATIONS.keys()].sort(), Object.keys(TEMPLATES).sort());
+});
+
+test('block labels wrap and long words shrink', async () => {
+  const { wrapLabel } = await import('../../web/js/visuals/block-diagram.js');
+  assert.deepEqual(wrapLabel('Balansert modulator').lines, ['Balansert', 'modulator']);
+  assert.deepEqual(wrapLabel('RF-forsterker').lines, ['RF-forsterker']);
+  assert.ok(wrapLabel('Bærebølgeoscillator').fontSize < 12.5);
+});

@@ -1,0 +1,129 @@
+{
+  "topics": [
+    {
+      "id": "ohms-lov",
+      "title": "Ohms lov",
+      "chapter": 2
+    },
+    {
+      "id": "effekt",
+      "title": "Effekt",
+      "chapter": 2
+    },
+    {
+      "id": "ladning",
+      "title": "Ladning og strøm",
+      "chapter": 2
+    },
+    {
+      "id": "motstandskoblinger",
+      "title": "Motstander i serie og parallell",
+      "chapter": 2
+    },
+    {
+      "id": "spenningsdeler",
+      "title": "Spenningsdeler",
+      "chapter": 2
+    },
+    {
+      "id": "kondensatorkoblinger",
+      "title": "Kondensatorer i serie og parallell",
+      "chapter": 2
+    },
+    {
+      "id": "reaktans",
+      "title": "Reaktans",
+      "chapter": 2
+    },
+    {
+      "id": "fase",
+      "title": "Fase mellom spenning og strøm",
+      "chapter": 2
+    },
+    {
+      "id": "vekselstromsverdier",
+      "title": "Topp- og effektivverdi",
+      "chapter": 2
+    },
+    {
+      "id": "resonans",
+      "title": "Resonans",
+      "chapter": 2
+    },
+    {
+      "id": "dioder",
+      "title": "Dioder og PN-overgangen",
+      "chapter": 3
+    },
+    {
+      "id": "likeretting",
+      "title": "Likeretting",
+      "chapter": 3
+    },
+    {
+      "id": "zenerdiode",
+      "title": "Zenerdioden",
+      "chapter": 3
+    },
+    {
+      "id": "varicap",
+      "title": "Varicap-dioden",
+      "chapter": 3
+    },
+    {
+      "id": "transistorkoblinger",
+      "title": "Transistorkoblinger",
+      "chapter": 3
+    },
+    {
+      "id": "am",
+      "title": "Amplitudemodulasjon",
+      "chapter": 4
+    },
+    {
+      "id": "ssb",
+      "title": "Enkelt sidebånd (SSB)",
+      "chapter": 4
+    },
+    {
+      "id": "fm",
+      "title": "Frekvensmodulasjon",
+      "chapter": 4
+    },
+    {
+      "id": "frekvensmultiplikasjon",
+      "title": "Frekvensmultiplikasjon",
+      "chapter": 4
+    },
+    {
+      "id": "harmoniske",
+      "title": "Harmoniske og uønsket utstråling",
+      "chapter": 5
+    },
+    {
+      "id": "senderfeil",
+      "title": "Feil i sendersignalet",
+      "chapter": 5
+    },
+    {
+      "id": "superheterodyn",
+      "title": "Superheterodynmottakeren",
+      "chapter": 6
+    },
+    {
+      "id": "mellomfrekvens",
+      "title": "Mellomfrekvens og speilfrekvens",
+      "chapter": 6
+    },
+    {
+      "id": "mottakeregenskaper",
+      "title": "Mottakeregenskaper",
+      "chapter": 6
+    },
+    {
+      "id": "demodulering",
+      "title": "Demodulering",
+      "chapter": 6
+    }
+  ]
+}

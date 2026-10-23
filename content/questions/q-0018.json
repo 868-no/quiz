@@ -1,0 +1,136 @@
+{
+  "id": "q-0018",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "needs_review",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "recall",
+      "difficulty": "easy",
+      "chapter": 3,
+      "section_ids": [
+        "s3-11"
+      ],
+      "topic_ids": [
+        "zenerdiode"
+      ],
+      "learning_objective": "Kjenne til hva en zenerdiode brukes til.",
+      "priority": "exam_important",
+      "context": [],
+      "stem": [
+        [
+          "Hva er den vanligste bruken av en ",
+          {
+            "term": "zenerdiode",
+            "text": "zenerdiode"
+          },
+          "?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Å holde en spenning tilnærmet konstant"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Å likerette store strømmer i en strømforsyning"
+          ],
+          "feedback": [
+            "Til likeretting brukes vanlige likeretterdioder i lederetningen."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Å virke som en spenningsstyrt kondensator"
+          ],
+          "feedback": [
+            "Det beskriver en varicap-diode."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Å forsterke svake signaler"
+          ],
+          "feedback": [
+            "En zenerdiode brukes ikke til å forsterke signaler. Til det brukes for eksempel transistorer."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "En zenerdiode kobles i sperreretningen. Ved zenerspenningen øker strømmen kraftig, mens spenningen over dioden holder seg nesten konstant. Derfor brukes den som spenningsreferanse og til enkel spenningsstabilisering.",
+        {
+          "note": [
+            "En seriemotstand må begrense strømmen, og varmetapet i dioden (zenerspenning ganger strøm) må holdes innenfor det dioden tåler."
+          ]
+        }
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 3,
+        "section_id": "s3-11",
+        "printed_pages": [
+          "3-4",
+          "3-5"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "22a58c3cfab163a7"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-23T18:00:00+00:00",
+        "note": "Skrevet med egne ord ut fra importerte kildeutdrag; må kontrolleres mot boka."
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T18:04:45+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "38494cab2b9c659c7ad1c21ece5485c490a2a0e6375716a2388a5a914527e480",
+          "note": "automated checks passed"
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "cd7ec4f147e12763f962f70054820ef817fd2ae0a8eed10c4f6b728cafe1718d",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: equation. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "pages",
+            "detail": "cited printed page number is uncertain in the source (printed_page_status=inferred). Confirm the page in the book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-23T18:11:16+00:00"
+      }
+    }
+  ]
+}

@@ -1,0 +1,182 @@
+{
+  "id": "q-0025",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "needs_review",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "calculation",
+      "difficulty": "easy",
+      "chapter": 5,
+      "section_ids": [
+        "s5-09"
+      ],
+      "topic_ids": [
+        "harmoniske"
+      ],
+      "learning_objective": "Finne frekvensen til andre harmoniske av et sendersignal.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En sender på ",
+          {
+            "q": 7.05,
+            "u": "MHz"
+          },
+          " har dårlig filtrering på utgangen. Foruten signalet på 7,05 MHz stråler den også ut et svakt signal på ",
+          {
+            "term": "harmoniske",
+            "text": "andre harmoniske"
+          },
+          "."
+        ]
+      ],
+      "stem": [
+        "På hvilken frekvens ligger dette uønskede signalet?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 14.1,
+              "u": "MHz"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 21.15,
+              "u": "MHz"
+            }
+          ],
+          "feedback": [
+            "Det er tre ganger grunnfrekvensen, altså tredje harmoniske."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 3.525,
+              "u": "MHz"
+            }
+          ],
+          "feedback": [
+            "Harmoniske ligger over grunnfrekvensen, på hele multipler av den."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 28.2,
+              "u": "MHz"
+            }
+          ],
+          "feedback": [
+            "Det er fire ganger grunnfrekvensen."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Grunnfrekvensen regnes som første harmoniske, så andre harmoniske ligger på det dobbelte:",
+        [
+          {
+            "math": [
+              "f_2",
+              "=",
+              "2",
+              "·",
+              {
+                "q": 7.05,
+                "u": "MHz"
+              },
+              "=",
+              {
+                "q": 14.1,
+                "u": "MHz"
+              }
+            ]
+          }
+        ],
+        "Den frekvensen ligger inne i 20-metersbåndet (14,000–14,350 MHz), og kan derfor forstyrre andre radioamatører. Harmoniske dannes når bølgeformen avviker fra en ren sinus, og de dempes med et lavpassfilter på senderutgangen."
+      ],
+      "glossary_after_answer": [
+        "harmoniske"
+      ],
+      "calculation": {
+        "formula": "harmonic_frequency",
+        "inputs": {
+          "f": [
+            7.05,
+            "MHz"
+          ],
+          "n": [
+            2,
+            ""
+          ]
+        },
+        "answer": [
+          14.1,
+          "MHz"
+        ],
+        "answer_symbol": "f_2",
+        "sig_figs": 3
+      },
+      "study_reference": {
+        "chapter": 5,
+        "section_id": "s5-09",
+        "printed_pages": [
+          "5-3"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "22bac5b85015a5a1"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-23T18:00:00+00:00",
+        "note": "Skrevet med egne ord ut fra importerte kildeutdrag; må kontrolleres mot boka."
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T18:04:45+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "d3b2a48be1b94a75e5ddf24f87fbdd1bf5e3bed3b77b3beafdfc5f50a475458d",
+          "note": "automated checks passed"
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "c17c2b65c182caf561f2277e3809175b5c1a5ceb558a4162cc0dd45c184b0151",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-23T18:11:16+00:00"
+      }
+    }
+  ]
+}

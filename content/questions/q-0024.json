@@ -1,0 +1,128 @@
+{
+  "id": "q-0024",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "needs_review",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 4,
+      "section_ids": [
+        "s4-18"
+      ],
+      "topic_ids": [
+        "frekvensmultiplikasjon"
+      ],
+      "learning_objective": "Forstå hvorfor en frekvensmultiplikator arbeider i klasse C.",
+      "priority": "exam_important",
+      "context": [],
+      "stem": [
+        [
+          "Hvorfor forspennes transistoren i en ",
+          {
+            "term": "frekvensmultiplikator",
+            "text": "frekvensmultiplikator"
+          },
+          " ofte i klasse C?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "For å forvrenge signalet kraftig, slik at det får mange harmoniske."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "For å gi minst mulig forvrengning av inngangssignalet."
+          ],
+          "feedback": [
+            "Lav forvrengning er målet i en lineær forsterker. En multiplikator trenger tvert imot forvrengning."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "For å gjøre trinnet lineært, slik at det passer for SSB."
+          ],
+          "feedback": [
+            "Klasse C er sterkt ulineær og egner seg ikke for SSB."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "For å hindre at det oppstår harmoniske frekvenser."
+          ],
+          "feedback": [
+            "Det er det motsatte. Multiplikatoren lever av de harmoniske."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "I klasse C leder transistoren bare i en liten del av hver periode. Utgangen blir da korte strømpulser, som inneholder mange harmoniske av inngangsfrekvensen.",
+        "En avstemt krets i kollektoren plukker ut ønsket multiplum, for eksempel to eller tre ganger inngangsfrekvensen, og demper de andre."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 4,
+        "section_id": "s4-18",
+        "printed_pages": [
+          "4-9",
+          "4-10"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "c953d39298dad443"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-23T18:00:00+00:00",
+        "note": "Skrevet med egne ord ut fra importerte kildeutdrag; må kontrolleres mot boka."
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T18:04:45+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "610e8156bc45ad5d23d0f0949fe54f7373a2c3c5a09968b10edb55c1b9319efb",
+          "note": "automated checks passed"
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "956f1a32f25acd6a8dc85e004f6b23921d4d1f89830bd605d70c58767bcc35cb",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: numeric_low_conf. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-23T18:11:16+00:00"
+      }
+    }
+  ]
+}

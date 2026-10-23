@@ -1,0 +1,261 @@
+{
+  "id": "q-0015",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "needs_review",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "calculation",
+      "difficulty": "hard",
+      "chapter": 2,
+      "section_ids": [
+        "s2-43"
+      ],
+      "topic_ids": [
+        "resonans"
+      ],
+      "learning_objective": "Regne ut resonansfrekvensen for en LC-krets med riktige prefikser.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En avstemt krets består av en spole på ",
+          {
+            "q": 10,
+            "u": "µH"
+          },
+          " og en kondensator på ",
+          {
+            "q": 100,
+            "u": "pF"
+          },
+          ". Se bort fra tap i komponentene."
+        ]
+      ],
+      "stem": [
+        "Hva er resonansfrekvensen?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 5.03,
+              "u": "MHz"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 50.3,
+              "u": "MHz"
+            }
+          ],
+          "feedback": [
+            "Ti ganger for høyt. Sjekk prefiksene: 10 µH · 100 pF = 10⁻¹⁵."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 503,
+              "u": "kHz"
+            }
+          ],
+          "feedback": [
+            "Ti ganger for lavt. Sjekk prefiksene: 10 µH · 100 pF = 10⁻¹⁵."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 31.6,
+              "u": "MHz"
+            }
+          ],
+          "feedback": [
+            "Her mangler divisjonen med 2π. 1/√(LC) alene gir ikke frekvensen i hertz."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        {
+          "steps": [
+            [
+              {
+                "math": [
+                  "f",
+                  "=",
+                  {
+                    "frac": [
+                      [
+                        "1"
+                      ],
+                      [
+                        "2",
+                        "π",
+                        {
+                          "sqrt": [
+                            "L",
+                            "C"
+                          ]
+                        }
+                      ]
+                    ]
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "math": [
+                  "L",
+                  "C",
+                  "=",
+                  "10",
+                  "·",
+                  "10^−6",
+                  "·",
+                  "100",
+                  "·",
+                  "10^−12",
+                  "=",
+                  "10^−15"
+                ]
+              }
+            ],
+            [
+              {
+                "math": [
+                  {
+                    "sqrt": [
+                      "10^−15"
+                    ]
+                  },
+                  "≈",
+                  "3,162",
+                  "·",
+                  "10^−8"
+                ]
+              }
+            ],
+            [
+              {
+                "math": [
+                  "f",
+                  "=",
+                  {
+                    "frac": [
+                      [
+                        "1"
+                      ],
+                      [
+                        "2",
+                        "π",
+                        "·",
+                        "3,162",
+                        "·",
+                        "10^−8"
+                      ]
+                    ]
+                  },
+                  "≈",
+                  "5,03",
+                  "·",
+                  "10^6",
+                  {
+                    "unit": "Hz"
+                  },
+                  "=",
+                  {
+                    "q": 5.03,
+                    "u": "MHz"
+                  }
+                ]
+              }
+            ]
+          ]
+        }
+      ],
+      "glossary_after_answer": [],
+      "calculation": {
+        "formula": "resonance_frequency",
+        "inputs": {
+          "L": [
+            10,
+            "µH"
+          ],
+          "C": [
+            100,
+            "pF"
+          ]
+        },
+        "answer": [
+          5.03,
+          "MHz"
+        ],
+        "answer_symbol": "f",
+        "sig_figs": 3
+      },
+      "study_reference": {
+        "chapter": 2,
+        "section_id": "s2-43",
+        "printed_pages": [
+          "2-16",
+          "2-17"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "e154dadc8f58df55"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-23T18:00:00+00:00",
+        "note": "Skrevet med egne ord ut fra importerte kildeutdrag; må kontrolleres mot boka."
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T18:04:45+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "020df4d95676e04eb4d2ed49a64898e3206e9981cb16c7c070683d2745e689bc",
+          "note": "automated checks passed"
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "97dd68a4de222e388ecd79bf431b15680981815dd83517cd42c19727fed82235",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: equation, numeric_low_conf. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-23T18:11:16+00:00"
+      }
+    }
+  ]
+}

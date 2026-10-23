@@ -1,0 +1,878 @@
+{
+  "about": "Central glossary. Content references terms explicitly with {\"term\": id, \"text\": visible form}; 'nb' lists accepted Norwegian forms (incl. inflections and multiword terms). Definitions are original. Only 'approved' terms can be published.",
+  "terms": [
+    {
+      "id": "ohms-lov",
+      "nb": [
+        "Ohms lov"
+      ],
+      "en": [
+        "Ohm's law"
+      ],
+      "definition": "Sammenhengen mellom spenning, strøm og resistans i en leder: spenningen er lik strømmen multiplisert med resistansen.",
+      "related": [
+        "resistans",
+        "spenning",
+        "strom"
+      ],
+      "status": "needs_review",
+      "review_log": []
+    },
+    {
+      "id": "resistans",
+      "nb": [
+        "resistans",
+        "resistansen"
+      ],
+      "en": [
+        "resistance"
+      ],
+      "definition": "Hvor sterkt en leder eller komponent hindrer elektrisk strøm. Måles i ohm (Ω).",
+      "related": [
+        "motstand",
+        "ohms-lov"
+      ],
+      "status": "needs_review",
+      "review_log": []
+    },
+    {
+      "id": "motstand",
+      "nb": [
+        "motstand",
+        "motstanden",
+        "motstander",
+        "motstandene"
+      ],
+      "en": [
+        "resistor"
+      ],
+      "definition": "Komponent laget for å ha en bestemt resistans. Ordet brukes også om selve egenskapen resistans.",
+      "related": [
+        "resistans"
+      ],
+      "status": "needs_review",
+      "review_log": []
+    },
+    {
+      "id": "spenning",
+      "nb": [
+        "spenning",
+        "spenningen",
+        "potensialdifferanse",
+        "spenningsfall"
+      ],
+      "en": [
+        "voltage",
+        "potential difference"
+      ],
+      "definition": "Forskjellen i elektrisk potensial mellom to punkter. Det er spenning som driver strøm gjennom en krets. Måles i volt (V).",
+      "related": [
+        "strom"
+      ],
+      "status": "needs_review",
+      "review_log": []
+    },
+    {
+      "id": "strom",
+      "nb": [
+        "strøm",
+        "strømmen"
+      ],
+      "en": [
+        "current"
+      ],
+      "definition": "Elektrisk ladning som flyter per tidsenhet. Måles i ampere (A).",
+      "related": [
+        "spenning",
+        "ladning"
+      ],
+      "status": "needs_review",
+      "review_log": []
+    },
+    {
+      "id": "ladning",
+      "nb": [
+        "ladning",
+        "ladningen"
+      ],
+      "en": [
+        "electric charge"
+      ],
+      "definition": "Mengde elektrisitet, målt i coulomb (C). En strøm på 1 A i 1 s flytter 1 C.",
+      "related": [
+        "strom"
+      ],
+      "status": "needs_review",
+      "review_log": []
+    },
+    {
+      "id": "effekt",
+      "nb": [
+        "effekt",
+        "effekten"
+      ],
+      "en": [
+        "power"
+      ],
+      "definition": "Hvor raskt elektrisk energi omsettes, for eksempel til varme eller radiobølger. Måles i watt (W).",
+      "related": [
+        "spenning",
+        "strom"
+      ],
+      "status": "needs_review",
+      "review_log": []
+    },
+    {
+      "id": "seriekobling",
+      "nb": [
+        "i serie",
+        "seriekoblet",
+        "seriekoblede",
+        "seriekobling"
+      ],
+      "en": [
+        "in series",
+        "series connection"
+      ],
+      "definition": "Komponenter koblet etter hverandre i én og samme strømvei.",
+      "related": [
+        "parallellkobling"
+      ],
+      "status": "needs_review",
+      "review_log": []
+    },
+    {
+      "id": "parallellkobling",
+      "nb": [
+        "i parallell",
+        "parallellkoblet",
+        "parallellkoblede",
+        "parallellkobling"
+      ],
+      "en": [
+        "in parallel",
+        "parallel connection"
+      ],
+      "definition": "Komponenter koblet mellom de samme to punktene, slik at strømmen deler seg mellom flere grener.",
+      "related": [
+        "seriekobling"
+      ],
+      "status": "needs_review",
+      "review_log": []
+    },
+    {
+      "id": "spenningsdeler",
+      "nb": [
+        "spenningsdeler",
+        "spenningsdeleren",
+        "potensialdeler"
+      ],
+      "en": [
+        "voltage divider",
+        "potential divider"
+      ],
+      "definition": "To eller flere seriekoblede motstander der man tar ut en del av den totale spenningen.",
+      "related": [
+        "seriekobling"
+      ],
+      "status": "needs_review",
+      "review_log": []
+    },
+    {
+      "id": "kondensator",
+      "nb": [
+        "kondensator",
+        "kondensatoren",
+        "kondensatorer",
+        "kondensatorene"
+      ],
+      "en": [
+        "capacitor"
+      ],
+      "definition": "Komponent med to ledende plater adskilt av en isolator (dielektrikum). Den kan lagre elektrisk ladning.",
+      "related": [
+        "kapasitans"
+      ],
+      "status": "needs_review",
+      "review_log": []
+    },
+    {
+      "id": "kapasitans",
+      "nb": [
+        "kapasitans",
+        "kapasitansen"
+      ],
+      "en": [
+        "capacitance"
+      ],
+      "definition": "En kondensators evne til å lagre ladning per volt. Måles i farad (F); vanlige verdier er µF, nF og pF.",
+      "related": [
+        "kondensator"
+      ],
+      "status": "needs_review",
+      "review_log": []
+    },
+    {
+      "id": "spole",
+      "nb": [
+        "spole",
+        "spolen",
+        "spoler"
+      ],
+      "en": [
+        "inductor",
+        "coil"
+      ],
+      "definition": "Ledning viklet i vindinger, ofte rundt en kjerne. Den motsetter seg endringer i strømmen gjennom seg.",
+      "related": [
+        "induktans"
+      ],
+      "status": "needs_review",
+      "review_log": []
+    },
+    {
+      "id": "induktans",
+      "nb": [
+        "induktans",
+        "induktansen"
+      ],
+      "en": [
+        "inductance"
+      ],
+      "definition": "Egenskapen til en spole som avgjør hvor sterkt den motvirker strømendringer. Måles i henry (H).",
+      "related": [
+        "spole"
+      ],
+      "status": "needs_review",
+      "review_log": []
+    },
+    {
+      "id": "reaktans",
+      "nb": [
+        "reaktans",
+        "reaktansen"
+      ],
+      "en": [
+        "reactance"
+      ],
+      "definition": "Motstanden en kondensator eller spole byr på mot vekselstrøm. Måles i ohm, men gir ikke varmetap slik resistans gjør.",
+      "related": [
+        "kapasitiv-reaktans",
+        "induktiv-reaktans"
+      ],
+      "status": "needs_review",
+      "review_log": []
+    },
+    {
+      "id": "kapasitiv-reaktans",
+      "nb": [
+        "kapasitiv reaktans",
+        "kapasitive reaktansen"
+      ],
+      "en": [
+        "capacitive reactance"
+      ],
+      "definition": "Reaktansen til en kondensator, skrevet X_C og målt i ohm.",
+      "related": [
+        "reaktans",
+        "kondensator"
+      ],
+      "status": "needs_review",
+      "review_log": []
+    },
+    {
+      "id": "induktiv-reaktans",
+      "nb": [
+        "induktiv reaktans",
+        "induktive reaktansen"
+      ],
+      "en": [
+        "inductive reactance"
+      ],
+      "definition": "Reaktansen til en spole, skrevet X_L og målt i ohm.",
+      "related": [
+        "reaktans",
+        "spole"
+      ],
+      "status": "needs_review",
+      "review_log": []
+    },
+    {
+      "id": "resonans",
+      "nb": [
+        "resonans",
+        "resonansfrekvens",
+        "resonansfrekvensen"
+      ],
+      "en": [
+        "resonance",
+        "resonant frequency"
+      ],
+      "definition": "Tilstand i en krets med spole og kondensator der de to reaktansene er like store og virkningene deres opphever hverandre.",
+      "related": [
+        "induktiv-reaktans",
+        "kapasitiv-reaktans"
+      ],
+      "status": "needs_review",
+      "review_log": []
+    },
+    {
+      "id": "toppverdi",
+      "nb": [
+        "toppverdi",
+        "toppverdien",
+        "spissverdi",
+        "spissverdien"
+      ],
+      "en": [
+        "peak value"
+      ],
+      "definition": "Den største verdien en vekselspenning eller vekselstrøm når i løpet av en periode, målt fra null.",
+      "related": [
+        "effektivverdi"
+      ],
+      "status": "needs_review",
+      "review_log": []
+    },
+    {
+      "id": "effektivverdi",
+      "nb": [
+        "effektivverdi",
+        "effektivverdien",
+        "RMS-verdi",
+        "RMS-verdien"
+      ],
+      "en": [
+        "RMS value",
+        "root mean square"
+      ],
+      "definition": "Den likespenningen (eller likestrømmen) som ville gitt samme effekt i en resistans som vekselspenningen gjør.",
+      "related": [
+        "toppverdi"
+      ],
+      "status": "needs_review",
+      "review_log": []
+    },
+    {
+      "id": "frekvens",
+      "nb": [
+        "frekvens",
+        "frekvensen"
+      ],
+      "en": [
+        "frequency"
+      ],
+      "definition": "Antall hele svingninger per sekund. Måles i hertz (Hz).",
+      "related": [
+        "periode"
+      ],
+      "status": "needs_review",
+      "review_log": []
+    },
+    {
+      "id": "periode",
+      "nb": [
+        "periode",
+        "perioden",
+        "periodetid"
+      ],
+      "en": [
+        "period"
+      ],
+      "definition": "Tiden én hel svingning tar.",
+      "related": [
+        "frekvens"
+      ],
+      "status": "needs_review",
+      "review_log": []
+    },
+    {
+      "id": "faseforskyvning",
+      "nb": [
+        "faseforskyvning",
+        "faseforskjell",
+        "faseforskjellen"
+      ],
+      "en": [
+        "phase shift",
+        "phase difference"
+      ],
+      "definition": "Hvor mye to svingninger med samme frekvens er forskjøvet i tid i forhold til hverandre, oppgitt i grader av en hel periode (360°).",
+      "related": [
+        "frekvens"
+      ],
+      "status": "needs_review",
+      "review_log": []
+    },
+    {
+      "id": "diode",
+      "nb": [
+        "diode",
+        "dioden",
+        "silisiumdiode"
+      ],
+      "en": [
+        "diode"
+      ],
+      "definition": "Halvlederkomponent med en PN-overgang. Den har en anode (P-side) og en katode (N-side).",
+      "related": [
+        "lederetning",
+        "sperreretning"
+      ],
+      "status": "needs_review",
+      "review_log": []
+    },
+    {
+      "id": "lederetning",
+      "nb": [
+        "forspent i lederetningen",
+        "lederetningen",
+        "positivt forspent"
+      ],
+      "en": [
+        "forward biased",
+        "forward direction"
+      ],
+      "definition": "En diode er forspent i lederetningen når den ytre spenningen gjør barrieren ved PN-overgangen mindre.",
+      "related": [
+        "diode",
+        "sperreretning"
+      ],
+      "status": "needs_review",
+      "review_log": []
+    },
+    {
+      "id": "sperreretning",
+      "nb": [
+        "forspent i sperreretningen",
+        "sperreretningen",
+        "negativt forspent",
+        "reversforspent"
+      ],
+      "en": [
+        "reverse biased"
+      ],
+      "definition": "En diode er forspent i sperreretningen når den ytre spenningen gjør barrieren ved PN-overgangen større.",
+      "related": [
+        "diode",
+        "lederetning"
+      ],
+      "status": "needs_review",
+      "review_log": []
+    },
+    {
+      "id": "likeretter",
+      "nb": [
+        "likeretter",
+        "likeretteren",
+        "halvbølgelikeretter",
+        "halvbølgelikeretteren"
+      ],
+      "en": [
+        "rectifier",
+        "half-wave rectifier"
+      ],
+      "definition": "Krets som gjør vekselstrøm om til strøm som bare går én vei, ved hjelp av en eller flere dioder.",
+      "related": [
+        "diode"
+      ],
+      "status": "needs_review",
+      "review_log": []
+    },
+    {
+      "id": "zenerdiode",
+      "nb": [
+        "zenerdiode",
+        "zenerdioden"
+      ],
+      "en": [
+        "Zener diode"
+      ],
+      "definition": "Diode laget for å brukes i sperreretningen med et bestemt, kontrollert gjennombruddsnivå.",
+      "related": [
+        "diode",
+        "sperreretning"
+      ],
+      "status": "needs_review",
+      "review_log": []
+    },
+    {
+      "id": "varicap",
+      "nb": [
+        "varicap-diode",
+        "varicap-dioden",
+        "varaktordiode"
+      ],
+      "en": [
+        "varicap diode",
+        "varactor"
+      ],
+      "definition": "Diode som brukes som spenningsstyrt kondensator.",
+      "related": [
+        "diode",
+        "kapasitans"
+      ],
+      "status": "needs_review",
+      "review_log": []
+    },
+    {
+      "id": "transistor",
+      "nb": [
+        "transistor",
+        "transistoren",
+        "NPN-transistor"
+      ],
+      "en": [
+        "transistor",
+        "bipolar junction transistor"
+      ],
+      "definition": "Halvlederkomponent med tre tilkoblinger (emitter, basis og kollektor) der en liten basisstrøm styrer en større kollektorstrøm.",
+      "related": [
+        "felles-emitter"
+      ],
+      "status": "needs_review",
+      "review_log": []
+    },
+    {
+      "id": "felles-emitter",
+      "nb": [
+        "felles emitter",
+        "felles emitter-kobling",
+        "felles emitterkrets"
+      ],
+      "en": [
+        "common emitter"
+      ],
+      "definition": "Forsterkerkobling der emitteren er felles for inngang og utgang. Inngangen er på basis og utgangen på kollektor.",
+      "related": [
+        "transistor"
+      ],
+      "status": "needs_review",
+      "review_log": []
+    },
+    {
+      "id": "baerebolge",
+      "nb": [
+        "bærebølge",
+        "bærebølgen"
+      ],
+      "en": [
+        "carrier"
+      ],
+      "definition": "Det radiofrekvente grunnsignalet som moduleres for å bære informasjon.",
+      "related": [
+        "sidebaand",
+        "amplitudemodulasjon"
+      ],
+      "status": "needs_review",
+      "review_log": []
+    },
+    {
+      "id": "sidebaand",
+      "nb": [
+        "sidebånd",
+        "sidebåndet",
+        "sidebåndene"
+      ],
+      "en": [
+        "sideband"
+      ],
+      "definition": "Frekvenskomponenter over og under bærebølgen som oppstår ved modulasjon og inneholder informasjonen.",
+      "related": [
+        "baerebolge",
+        "ssb"
+      ],
+      "status": "needs_review",
+      "review_log": []
+    },
+    {
+      "id": "amplitudemodulasjon",
+      "nb": [
+        "amplitudemodulasjon",
+        "AM"
+      ],
+      "en": [
+        "amplitude modulation"
+      ],
+      "definition": "Modulasjon der bærebølgens amplitude endres i takt med det modulerende signalet.",
+      "related": [
+        "baerebolge",
+        "sidebaand"
+      ],
+      "status": "needs_review",
+      "review_log": []
+    },
+    {
+      "id": "ssb",
+      "nb": [
+        "SSB",
+        "enkelt sidebånd"
+      ],
+      "en": [
+        "single sideband"
+      ],
+      "definition": "Modulasjonsform avledet av AM der bare ett sidebånd sendes ut.",
+      "related": [
+        "sidebaand",
+        "amplitudemodulasjon"
+      ],
+      "status": "needs_review",
+      "review_log": []
+    },
+    {
+      "id": "frekvensmodulasjon",
+      "nb": [
+        "frekvensmodulasjon",
+        "FM"
+      ],
+      "en": [
+        "frequency modulation"
+      ],
+      "definition": "Modulasjon der bærebølgens frekvens endres i takt med det modulerende signalet.",
+      "related": [
+        "deviasjon",
+        "modulasjonsindeks"
+      ],
+      "status": "needs_review",
+      "review_log": []
+    },
+    {
+      "id": "deviasjon",
+      "nb": [
+        "deviasjon",
+        "spissdeviasjon",
+        "spissdeviasjonen"
+      ],
+      "en": [
+        "deviation",
+        "peak deviation"
+      ],
+      "definition": "Hvor langt frekvensen til et FM-signal svinger bort fra bærebølgefrekvensen. Spissdeviasjon er det største utslaget.",
+      "related": [
+        "frekvensmodulasjon"
+      ],
+      "status": "needs_review",
+      "review_log": []
+    },
+    {
+      "id": "modulasjonsindeks",
+      "nb": [
+        "modulasjonsindeks",
+        "modulasjonsindeksen"
+      ],
+      "en": [
+        "modulation index"
+      ],
+      "definition": "Tall som beskriver hvor kraftig en bærebølge er modulert. For FM regnes den ut fra deviasjonen og den modulerende frekvensen.",
+      "related": [
+        "deviasjon"
+      ],
+      "status": "needs_review",
+      "review_log": []
+    },
+    {
+      "id": "baandbredde",
+      "nb": [
+        "båndbredde",
+        "båndbredden"
+      ],
+      "en": [
+        "bandwidth"
+      ],
+      "definition": "Bredden av frekvensområdet et signal eller et filter opptar.",
+      "related": [],
+      "status": "needs_review",
+      "review_log": []
+    },
+    {
+      "id": "frekvensmultiplikator",
+      "nb": [
+        "frekvensmultiplikator",
+        "frekvensmultiplikatoren"
+      ],
+      "en": [
+        "frequency multiplier"
+      ],
+      "definition": "Trinn som lager et utgangssignal på et helt multiplum av inngangsfrekvensen.",
+      "related": [
+        "harmoniske"
+      ],
+      "status": "needs_review",
+      "review_log": []
+    },
+    {
+      "id": "harmoniske",
+      "nb": [
+        "harmoniske",
+        "harmonisk",
+        "andre harmoniske"
+      ],
+      "en": [
+        "harmonics",
+        "second harmonic"
+      ],
+      "definition": "Signaler på hele multipler av en grunnfrekvens (2, 3, 4 … ganger). Oppstår når en bølgeform ikke er en ren sinus.",
+      "related": [
+        "frekvens"
+      ],
+      "status": "needs_review",
+      "review_log": []
+    },
+    {
+      "id": "kvitter",
+      "nb": [
+        "kvitter",
+        "chirp"
+      ],
+      "en": [
+        "chirp"
+      ],
+      "definition": "Senderfeil i morsetelegrafi der tonen ikke er stabil når senderen nøkles.",
+      "related": [],
+      "status": "needs_review",
+      "review_log": []
+    },
+    {
+      "id": "overmodulering",
+      "nb": [
+        "overmodulering",
+        "overmodulert",
+        "overmodulasjon"
+      ],
+      "en": [
+        "overmodulation"
+      ],
+      "definition": "Feil der det modulerende signalet er for kraftig for senderen.",
+      "related": [
+        "amplitudemodulasjon",
+        "ssb"
+      ],
+      "status": "needs_review",
+      "review_log": []
+    },
+    {
+      "id": "superheterodyn",
+      "nb": [
+        "superheterodynmottaker",
+        "superheterodynmottakeren",
+        "superheterodyn"
+      ],
+      "en": [
+        "superheterodyne receiver"
+      ],
+      "definition": "Mottakerprinsipp der det innkommende signalet blandes ned til en fast mellomfrekvens før videre forsterkning og filtrering.",
+      "related": [
+        "blander",
+        "mellomfrekvens",
+        "lokaloscillator"
+      ],
+      "status": "needs_review",
+      "review_log": []
+    },
+    {
+      "id": "blander",
+      "nb": [
+        "blander",
+        "blanderen",
+        "blandetrinn",
+        "blandetrinnet"
+      ],
+      "en": [
+        "mixer"
+      ],
+      "definition": "Trinn med to innganger som lager nye frekvenser, blant annet summen og differansen av inngangsfrekvensene.",
+      "related": [
+        "lokaloscillator",
+        "mellomfrekvens"
+      ],
+      "status": "needs_review",
+      "review_log": []
+    },
+    {
+      "id": "lokaloscillator",
+      "nb": [
+        "lokaloscillator",
+        "lokaloscillatoren",
+        "LO"
+      ],
+      "en": [
+        "local oscillator"
+      ],
+      "definition": "Oscillator inne i mottakeren som leverer det ene signalet til blanderen.",
+      "related": [
+        "blander"
+      ],
+      "status": "needs_review",
+      "review_log": []
+    },
+    {
+      "id": "mellomfrekvens",
+      "nb": [
+        "mellomfrekvens",
+        "mellomfrekvensen",
+        "MF"
+      ],
+      "en": [
+        "intermediate frequency",
+        "IF"
+      ],
+      "definition": "Den faste frekvensen signalet blandes til i en superheterodynmottaker.",
+      "related": [
+        "blander",
+        "superheterodyn"
+      ],
+      "status": "needs_review",
+      "review_log": []
+    },
+    {
+      "id": "speilfrekvens",
+      "nb": [
+        "speilfrekvens",
+        "speilfrekvensen"
+      ],
+      "en": [
+        "image frequency"
+      ],
+      "definition": "En uønsket mottaksfrekvens som også blandes til mottakerens mellomfrekvens.",
+      "related": [
+        "mellomfrekvens",
+        "lokaloscillator"
+      ],
+      "status": "needs_review",
+      "review_log": []
+    },
+    {
+      "id": "selektivitet",
+      "nb": [
+        "selektivitet",
+        "selektiviteten"
+      ],
+      "en": [
+        "selectivity"
+      ],
+      "definition": "Et mål på mottakerens filteregenskaper overfor signaler på frekvenser nær det ønskede.",
+      "related": [
+        "baandbredde"
+      ],
+      "status": "needs_review",
+      "review_log": []
+    },
+    {
+      "id": "produktdetektor",
+      "nb": [
+        "produktdetektor",
+        "produktdetektoren"
+      ],
+      "en": [
+        "product detector"
+      ],
+      "definition": "Demodulator som blander mellomfrekvenssignalet med et lokalt generert signal for å få fram lyden.",
+      "related": [
+        "ssb",
+        "blander"
+      ],
+      "status": "needs_review",
+      "review_log": []
+    }
+  ]
+}

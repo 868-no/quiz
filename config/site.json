@@ -1,0 +1,4 @@
+{
+  "about": "Public site settings used by `python3 -m tools publish` and `deploy`. cname is written to dist/CNAME for GitHub Pages; set it to null for other hosts.",
+  "cname": "quiz.868.no"
+}

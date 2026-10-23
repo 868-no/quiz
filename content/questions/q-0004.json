@@ -1,0 +1,158 @@
+{
+  "id": "q-0004",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "needs_review",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "easy",
+      "chapter": 2,
+      "section_ids": [
+        "s2-12"
+      ],
+      "topic_ids": [
+        "motstandskoblinger"
+      ],
+      "learning_objective": "Forstå at alle grener i en parallellkobling har samme spenning.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "Figuren viser tre ulike motstander koblet ",
+          {
+            "term": "parallellkobling",
+            "text": "i parallell"
+          },
+          " over et batteri på ",
+          {
+            "q": 12,
+            "u": "V"
+          },
+          "."
+        ]
+      ],
+      "stem": [
+        "Hva er riktig om spenningene over de tre motstandene?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Alle tre har like stor spenning over seg, nemlig 12 V."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Den største motstanden har størst spenning over seg."
+          ],
+          "feedback": [
+            "Det gjelder for motstander i serie. I parallell er hver motstand koblet direkte mellom de samme to punktene."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Spenningene over de tre motstandene blir til sammen 12 V."
+          ],
+          "feedback": [
+            "Det er strømmene som summeres i en parallellkobling, ikke spenningene."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Den minste motstanden har størst spenning over seg."
+          ],
+          "feedback": [
+            "Den minste motstanden får størst strøm, men spenningen over den er den samme som over de andre."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Hver gren er koblet direkte til batteriets to poler, så hver motstand får hele batterispenningen. Det som er forskjellig, er strømmen: etter Ohms lov går det mest strøm gjennom den minste motstanden. Den totale strømmen fra batteriet er summen av grenstrømmene."
+      ],
+      "glossary_after_answer": [],
+      "visual": {
+        "template": "dc-circuit",
+        "version": 1,
+        "params": {
+          "topology": "parallel",
+          "source": {
+            "voltage_v": 12
+          },
+          "resistors": [
+            {
+              "ohms": 1000
+            },
+            {
+              "ohms": 2200
+            },
+            {
+              "ohms": 4700
+            }
+          ]
+        }
+      },
+      "study_reference": {
+        "chapter": 2,
+        "section_id": "s2-12",
+        "printed_pages": [
+          "2-4"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "beb55384805a14c0"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-23T18:00:00+00:00",
+        "note": "Skrevet med egne ord ut fra importerte kildeutdrag; må kontrolleres mot boka."
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T18:04:45+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "456c78824b63c53a0e98484f1d2d234c917d80e93e4106f2e227b2a1919fa297",
+          "note": "automated checks passed"
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "5a59e6ee5f9ab6d16913504db79307b3fe16d27afe807b5a30c9608ae7506921",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: equation, numeric_low_conf, subscript_garbled. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "pages",
+            "detail": "cited printed page number is uncertain in the source (printed_page_status=inferred). Confirm the page in the book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-23T18:11:16+00:00"
+      }
+    }
+  ]
+}

@@ -1,0 +1,130 @@
+{
+  "id": "q-0020",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "needs_review",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 3,
+      "section_ids": [
+        "s3-19"
+      ],
+      "topic_ids": [
+        "transistorkoblinger"
+      ],
+      "learning_objective": "Vite at en felles emitter-forsterker snur fasen på signalet.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En ",
+          {
+            "term": "transistor",
+            "text": "transistor"
+          },
+          " er koblet som forsterker med ",
+          {
+            "term": "felles-emitter",
+            "text": "felles emitter"
+          },
+          ". Signalet går inn på basis og tas ut fra kollektoren, som er koblet til forsyningen gjennom en motstand. Transistoren er riktig forspent, og signalet er et lite signal på lav frekvens."
+        ]
+      ],
+      "stem": [
+        "Hva er faseforholdet mellom inngangssignalet og utgangssignalet?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "De er i motfase (180° forskjøvet)."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "De er i fase."
+          ],
+          "feedback": [
+            "Det gjelder for felles kollektor (emitterfølger) og felles basis, ikke felles emitter."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Utgangen ligger 90° foran inngangen."
+          ],
+          "feedback": [
+            "Med en motstand som last og lav frekvens snur kretsen signalet, og det gir 180°, ikke 90°. Kapasitanser kan gi ekstra faseforskyvning først ved høye frekvenser."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Utgangen ligger 90° etter inngangen."
+          ],
+          "feedback": [
+            "En 90° forskyvning krever at en spole eller kondensator dominerer. Her snur transistoren signalet, og det gir 180°."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Når spenningen på basis øker, øker kollektorstrømmen. Da blir spenningsfallet over kollektormotstanden større, og spenningen på kollektoren synker.",
+        "Inngangen går altså opp når utgangen går ned. Signalet blir snudd, det vil si forskjøvet 180°."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 3,
+        "section_id": "s3-19",
+        "printed_pages": [
+          "3-9"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "7fa3060530175252"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-23T18:00:00+00:00",
+        "note": "Skrevet med egne ord ut fra importerte kildeutdrag; må kontrolleres mot boka."
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T18:04:45+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "9bcf579ee315043c18538b426cf1142bda8cb3a4b0a05a2578623beedb8bc798",
+          "note": "automated checks passed"
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "e052a6ab668ec97781ebe98e314a35c190f31f8ba35516ef6d166a8f26967bfb",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-23T18:11:16+00:00"
+      }
+    }
+  ]
+}

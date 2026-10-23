@@ -1,0 +1,124 @@
+{
+  "id": "q-0027",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "needs_review",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "easy",
+      "chapter": 5,
+      "section_ids": [
+        "s5-19"
+      ],
+      "topic_ids": [
+        "senderfeil"
+      ],
+      "learning_objective": "Forstå hvorfor overmodulering gir forstyrrelser på nabofrekvenser.",
+      "priority": "exam_important",
+      "context": [],
+      "stem": [
+        [
+          "Hva er en typisk følge av ",
+          {
+            "term": "overmodulering",
+            "text": "overmodulering"
+          },
+          " av en AM- eller SSB-sender, der modulasjonsnivået er så høyt at sendertrinnene overstyres?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Signalet blir forvrengt og bredere, og forstyrrer nabofrekvenser."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Utgangseffekten blir lavere, men signalet blir renere."
+          ],
+          "feedback": [
+            "Overmodulering gjør ikke signalet renere. Klippingen skaper nye, uønskede frekvenser."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Senderens frekvens driver sakte i løpet av sendingen."
+          ],
+          "feedback": [
+            "Frekvensdrift skyldes oscillatoren, for eksempel temperaturendringer, ikke modulasjonsnivået."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Signalet blir smalere, fordi de høyeste tonene forsvinner."
+          ],
+          "feedback": [
+            "Det er motsatt. Forvrengningen lager harmoniske av lydsignalet, og da blir signalet bredere."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Når sendertrinnene overstyres, blir signaltoppene klippet og signalformen forvrengt. Forvrengningen lager nye frekvenskomponenter, blant annet harmoniske av lydfrekvensene. En tone på 3 kHz kan for eksempel gi komponenter på 6 kHz og 9 kHz.",
+        "Det utsendte signalet blir derfor mye bredere enn nødvendig og «spruter» ut over nabofrekvensene (splatter). Riktig innstilt mikrofonforsterkning og lineær drift av sendertrinnene hindrer dette; ALC hjelper med å begrense overstyring."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 5,
+        "section_id": "s5-19",
+        "printed_pages": [
+          "5-8"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "c11146f234b29566",
+          "87a4b05e7b657405"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-23T18:00:00+00:00",
+        "note": "Skrevet med egne ord ut fra importerte kildeutdrag; må kontrolleres mot boka."
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T18:04:45+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "21fc080b3c20e292fed33a2601502850128936efe56384a139351f7b44856df6",
+          "note": "automated checks passed"
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "045c406c6b8e8838c6e7b8b73a5abf28ab79e7f7a39f276b371d062ac89c62fe",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-23T18:11:16+00:00"
+      }
+    }
+  ]
+}

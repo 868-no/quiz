@@ -1,0 +1,221 @@
+{
+  "id": "q-0022",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "needs_review",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "calculation",
+      "difficulty": "medium",
+      "chapter": 4,
+      "section_ids": [
+        "s4-07"
+      ],
+      "topic_ids": [
+        "fm"
+      ],
+      "learning_objective": "Regne ut modulasjonsindeksen for et FM-signal.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En FM-sender moduleres med én ren sinustone på ",
+          {
+            "q": 3,
+            "u": "kHz"
+          },
+          ". ",
+          {
+            "term": "deviasjon",
+            "text": "Spissdeviasjonen"
+          },
+          " blir da ",
+          {
+            "q": 2.5,
+            "u": "kHz"
+          },
+          "."
+        ]
+      ],
+      "stem": [
+        [
+          "Hva er ",
+          {
+            "term": "modulasjonsindeks",
+            "text": "modulasjonsindeksen"
+          },
+          "?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 0.83,
+              "u": ""
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 1.2,
+              "u": ""
+            }
+          ],
+          "feedback": [
+            "Her er brøken snudd. Det er deviasjonen som skal deles på lydfrekvensen."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 7.5,
+              "u": ""
+            }
+          ],
+          "feedback": [
+            "Deviasjonen og lydfrekvensen skal ikke ganges, men deles."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 0.5,
+              "u": ""
+            }
+          ],
+          "feedback": [
+            "Differansen mellom de to frekvensene gir ikke modulasjonsindeksen."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          {
+            "math": [
+              "m",
+              "=",
+              {
+                "frac": [
+                  [
+                    {
+                      "text": "spissdeviasjon"
+                    }
+                  ],
+                  [
+                    {
+                      "text": "modulasjonsfrekvens"
+                    }
+                  ]
+                ]
+              },
+              "=",
+              {
+                "frac": [
+                  [
+                    {
+                      "q": 2.5,
+                      "u": "kHz"
+                    }
+                  ],
+                  [
+                    {
+                      "q": 3,
+                      "u": "kHz"
+                    }
+                  ]
+                ]
+              },
+              "≈",
+              {
+                "q": 0.83,
+                "u": ""
+              }
+            ]
+          }
+        ],
+        "Enhetene forkortes bort, så indeksen er et rent tall. Ved samme spissdeviasjon gir en lavere modulasjonsfrekvens en høyere modulasjonsindeks."
+      ],
+      "glossary_after_answer": [],
+      "calculation": {
+        "formula": "modulation_index",
+        "inputs": {
+          "deviation": [
+            2.5,
+            "kHz"
+          ],
+          "f_mod": [
+            3,
+            "kHz"
+          ]
+        },
+        "answer": [
+          0.83,
+          ""
+        ],
+        "answer_symbol": "m",
+        "sig_figs": 2
+      },
+      "study_reference": {
+        "chapter": 4,
+        "section_id": "s4-07",
+        "printed_pages": [
+          "4-4"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "7635bec2e582a9b7",
+          "e811322bd724a668"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-23T18:00:00+00:00",
+        "note": "Skrevet med egne ord ut fra importerte kildeutdrag; må kontrolleres mot boka."
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T18:04:45+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "d7efc780c25208fe4db22d3744b5eedcefdab801f71190e848ac0f23333a0dc9",
+          "note": "automated checks passed"
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "efc42b450346b2909919c32320af1d69143dc7c01d65fc52c789c2c87c50d2bf",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: equation, low_ocr_confidence. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-23T18:11:16+00:00"
+      }
+    }
+  ]
+}

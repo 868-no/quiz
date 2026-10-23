@@ -1,0 +1,23 @@
+{
+  "about": "Stage A candidate generation. provider 'none' (default) disables LLM calls; questions are then authored manually with `python3 -m tools new`. Put machine-specific overrides in config/generation.local.json (git-ignored). Sending textbook text to a remote service requires allow_external_upload: true AND a deliberate decision that this is permitted for the copyrighted source.",
+  "provider": "none",
+  "candidates_per_request": 2,
+  "temperature": 0.4,
+  "timeout_s": 300,
+  "providers": {
+    "ollama": {
+      "url": "http://127.0.0.1:11434",
+      "model": "llama3.1:8b"
+    },
+    "command": {
+      "argv": null,
+      "model": null
+    },
+    "openai_compatible": {
+      "base_url": null,
+      "model": null,
+      "api_key_env": "RADIOQUIZ_LLM_API_KEY",
+      "allow_external_upload": false
+    }
+  }
+}

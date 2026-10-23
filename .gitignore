@@ -1,0 +1,11 @@
+# Private, never deployed, never committed (copyrighted source material, prompts, raw LLM output)
+/private/
+# Build output (regenerate with `python3 -m tools publish`)
+/dist/
+# Local secrets
+*.env
+.env*
+config/*.local.json
+__pycache__/
+*.pyc
+node_modules/

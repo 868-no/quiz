@@ -1,0 +1,231 @@
+{
+  "id": "q-0006",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "needs_review",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "calculation",
+      "difficulty": "medium",
+      "chapter": 2,
+      "section_ids": [
+        "s2-09"
+      ],
+      "topic_ids": [
+        "effekt",
+        "ohms-lov"
+      ],
+      "learning_objective": "Kombinere effektloven og Ohms lov til P = U²/R.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En kunstig antenne (dummy load) er i praksis en motstand på ",
+          {
+            "q": 50,
+            "u": "Ω"
+          },
+          " som tåler høy effekt. Under en test måles ",
+          {
+            "q": 100,
+            "u": "V"
+          },
+          " effektivverdi over den."
+        ]
+      ],
+      "stem": [
+        "Hvor stor effekt blir omsatt til varme i den kunstige antennen?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 200,
+              "u": "W"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 2,
+              "u": "W"
+            }
+          ],
+          "feedback": [
+            "100 V delt på 50 Ω gir strømmen (2 A), ikke effekten. Effekten er spenning ganger strøm: 100 V · 2 A."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 5,
+              "u": "kW"
+            }
+          ],
+          "feedback": [
+            "Spenning ganget med resistans gir ingen effekt. Bruk P = U² / R."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 400,
+              "u": "W"
+            }
+          ],
+          "feedback": [
+            "Effektivverdien skal brukes direkte i formelen. Den skal ikke ganges med √2 først."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Setter man I = U / R inn i P = U · I, får man et uttrykk med bare spenning og resistans:",
+        {
+          "steps": [
+            [
+              {
+                "math": [
+                  "P",
+                  "=",
+                  {
+                    "frac": [
+                      [
+                        "U^2"
+                      ],
+                      [
+                        "R"
+                      ]
+                    ]
+                  },
+                  "=",
+                  {
+                    "frac": [
+                      [
+                        {
+                          "paren": [
+                            {
+                              "q": 100,
+                              "u": "V"
+                            }
+                          ]
+                        },
+                        "²"
+                      ],
+                      [
+                        {
+                          "q": 50,
+                          "u": "Ω"
+                        }
+                      ]
+                    ]
+                  },
+                  "=",
+                  {
+                    "frac": [
+                      [
+                        "10000"
+                      ],
+                      [
+                        "50"
+                      ]
+                    ]
+                  },
+                  "=",
+                  {
+                    "q": 200,
+                    "u": "W"
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        {
+          "note": [
+            "Når spenningen oppgis som effektivverdi, gir formelen direkte middeleffekten."
+          ]
+        }
+      ],
+      "glossary_after_answer": [],
+      "calculation": {
+        "formula": "power_u2r",
+        "inputs": {
+          "U": [
+            100,
+            "V"
+          ],
+          "R": [
+            50,
+            "Ω"
+          ]
+        },
+        "answer": [
+          200,
+          "W"
+        ],
+        "answer_symbol": "P",
+        "sig_figs": 2
+      },
+      "study_reference": {
+        "chapter": 2,
+        "section_id": "s2-09",
+        "printed_pages": [
+          "2-3"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "de95a442eb1e7dc2",
+          "f624dcaabd631f06"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-23T18:00:00+00:00",
+        "note": "Skrevet med egne ord ut fra importerte kildeutdrag; må kontrolleres mot boka."
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T18:04:45+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "f704b3df43db7539d480d75368c9438b4e8db273ec8470bf1e6a19dc6f6643e8",
+          "note": "automated checks passed"
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "59fc765d5796299cf7461b25fab604eca482866013b296616e2dcadabd99f10d",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: equation, low_ocr_confidence, numeric_low_conf, table. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-23T18:11:16+00:00"
+      }
+    }
+  ]
+}

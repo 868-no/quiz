@@ -1,0 +1,229 @@
+{
+  "id": "q-0013",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "needs_review",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "calculation",
+      "difficulty": "easy",
+      "chapter": 2,
+      "section_ids": [
+        "s2-29"
+      ],
+      "topic_ids": [
+        "vekselstromsverdier"
+      ],
+      "learning_objective": "Regne om fra toppverdi til effektivverdi for en sinusformet spenning.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "Grafen viser en sinusformet vekselspenning. ",
+          {
+            "term": "toppverdi",
+            "text": "Toppverdien"
+          },
+          " er markert."
+        ]
+      ],
+      "stem": [
+        [
+          "Hva er ",
+          {
+            "term": "effektivverdi",
+            "text": "effektivverdien"
+          },
+          " til spenningen?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 14.1,
+              "u": "V"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 28.3,
+              "u": "V"
+            }
+          ],
+          "feedback": [
+            "Her er toppverdien ganget med √2. Effektivverdien er mindre enn toppverdien, så man skal dele på √2."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 10,
+              "u": "V"
+            }
+          ],
+          "feedback": [
+            "Halvparten av toppverdien er ikke effektivverdien. For en sinus er faktoren 1/√2 ≈ 0,707."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 40,
+              "u": "V"
+            }
+          ],
+          "feedback": [
+            "40 V er topp-til-topp-verdien, fra bunnen til toppen av kurven."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          {
+            "math": [
+              "U_eff",
+              "=",
+              {
+                "frac": [
+                  [
+                    "Û"
+                  ],
+                  [
+                    {
+                      "sqrt": [
+                        "2"
+                      ]
+                    }
+                  ]
+                ]
+              },
+              "=",
+              {
+                "frac": [
+                  [
+                    {
+                      "q": 20,
+                      "u": "V"
+                    }
+                  ],
+                  [
+                    "1,414"
+                  ]
+                ]
+              },
+              "≈",
+              {
+                "q": 14.1,
+                "u": "V"
+              }
+            ]
+          }
+        ],
+        "Effektivverdien er den likespenningen som ville gitt like mye varme i en motstand. Faktoren 1/√2 ≈ 0,707 gjelder bare for sinusformede kurver."
+      ],
+      "glossary_after_answer": [],
+      "visual": {
+        "template": "waveform",
+        "version": 1,
+        "params": {
+          "traces": [
+            {
+              "amplitude": 20,
+              "unit": "V",
+              "frequency_hz": 50
+            }
+          ],
+          "cycles": 2,
+          "markers": [
+            "peak"
+          ],
+          "show_values": true,
+          "animate": true
+        },
+        "params_after": {
+          "markers": [
+            "peak",
+            "rms"
+          ]
+        }
+      },
+      "calculation": {
+        "formula": "rms_from_peak",
+        "inputs": {
+          "U_p": [
+            20,
+            "V"
+          ]
+        },
+        "answer": [
+          14.1,
+          "V"
+        ],
+        "answer_symbol": "U_rms",
+        "sig_figs": 3
+      },
+      "study_reference": {
+        "chapter": 2,
+        "section_id": "s2-29",
+        "printed_pages": [
+          "2-11",
+          "2-12"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "32965b71d6f17903"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-23T18:00:00+00:00",
+        "note": "Skrevet med egne ord ut fra importerte kildeutdrag; må kontrolleres mot boka."
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T18:04:45+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "3bf03e05ffb0542e10c6ade74fa7d104f8521cf4d9e79b292a6ab26dd1a6c3f1",
+          "note": "automated checks passed"
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "e8e3ded81e1ff5d662208d8c8cee37e5a9b8a2496ebb1bddf545f9d967190884",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: equation, subscript_garbled. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-23T18:11:16+00:00"
+      }
+    }
+  ]
+}

@@ -1,0 +1,257 @@
+{
+  "id": "q-0010",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "needs_review",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "calculation",
+      "difficulty": "medium",
+      "chapter": 2,
+      "section_ids": [
+        "s2-34"
+      ],
+      "topic_ids": [
+        "reaktans"
+      ],
+      "learning_objective": "Regne ut kapasitiv reaktans fra frekvens og kapasitans.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En kondensator på ",
+          {
+            "q": 100,
+            "u": "nF"
+          },
+          " er koblet til en sinusformet vekselspenning med ",
+          {
+            "term": "frekvens",
+            "text": "frekvens"
+          },
+          " ",
+          {
+            "q": 10,
+            "u": "kHz"
+          },
+          "."
+        ]
+      ],
+      "stem": [
+        [
+          "Hva er den ",
+          {
+            "term": "kapasitiv-reaktans",
+            "text": "kapasitive reaktansen"
+          },
+          " til kondensatoren?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 159,
+              "u": "Ω"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 1.59,
+              "u": "kΩ"
+            }
+          ],
+          "feedback": [
+            "Ti ganger for høyt. Sjekk omregningen: 100 nF er 100 · 10⁻⁹ F = 10⁻⁷ F."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 15.9,
+              "u": "Ω"
+            }
+          ],
+          "feedback": [
+            "Ti ganger for lavt. Sjekk prefiksene for kHz og nF."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 6.28,
+              "u": "mΩ"
+            }
+          ],
+          "feedback": [
+            "Tallet 0,00628 får du ved å regne ut 2πfC, men det er ikke reaktansen (og enheten er da siemens, ikke ohm). Reaktansen er den inverse verdien: 1 delt på 2πfC ≈ 159 Ω."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        {
+          "steps": [
+            [
+              {
+                "math": [
+                  "X_C",
+                  "=",
+                  {
+                    "frac": [
+                      [
+                        "1"
+                      ],
+                      [
+                        "2",
+                        "π",
+                        "f",
+                        "C"
+                      ]
+                    ]
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "math": [
+                  "X_C",
+                  "=",
+                  {
+                    "frac": [
+                      [
+                        "1"
+                      ],
+                      [
+                        "2",
+                        "π",
+                        "·",
+                        "10000",
+                        "·",
+                        "10^−7"
+                      ]
+                    ]
+                  },
+                  "=",
+                  {
+                    "frac": [
+                      [
+                        "1"
+                      ],
+                      [
+                        "0,006283"
+                      ]
+                    ]
+                  },
+                  "≈",
+                  {
+                    "q": 159,
+                    "u": "Ω"
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        "Reaktansen til en kondensator synker når frekvensen øker, og når kapasitansen øker."
+      ],
+      "glossary_after_answer": [],
+      "visual": {
+        "template": "ac-circuit",
+        "version": 1,
+        "params": {
+          "source": {
+            "frequency_hz": 10000
+          },
+          "component": {
+            "kind": "C",
+            "value": 1e-07
+          },
+          "reactance_label": "unknown"
+        },
+        "params_after": {
+          "reactance_label": "value"
+        }
+      },
+      "calculation": {
+        "formula": "capacitive_reactance",
+        "inputs": {
+          "f": [
+            10,
+            "kHz"
+          ],
+          "C": [
+            100,
+            "nF"
+          ]
+        },
+        "answer": [
+          159,
+          "Ω"
+        ],
+        "answer_symbol": "X_C",
+        "sig_figs": 3
+      },
+      "study_reference": {
+        "chapter": 2,
+        "section_id": "s2-34",
+        "printed_pages": [
+          "2-13"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "d7ed6bb58f925e09"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-23T18:00:00+00:00",
+        "note": "Skrevet med egne ord ut fra importerte kildeutdrag; må kontrolleres mot boka."
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T18:04:45+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "3bad963402d1feb50a58356b58363a61622ccf9b3a592fa8a288140925cd1977",
+          "note": "automated checks passed"
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "b532e88fdfa8a4fd8bcdb267437e6dfe302a37c7063c3a4cf4c5353bdc6abf33",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: equation, numeric_low_conf. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-23T18:11:16+00:00"
+      }
+    }
+  ]
+}

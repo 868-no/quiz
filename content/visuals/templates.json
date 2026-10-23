@@ -1,0 +1,217 @@
+{
+  "about": "Registry of original, parameterised visual templates. Parameter schemas here are the single source of truth for both the Python verifier (tools/visuals.py) and the browser renderer (web/js/visuals/). A published question references {template, version, params}. A new version must be added (never edit the meaning of a published version). Status must be 'approved' (human review) before a question using the template can be published.",
+  "templates": [
+    {
+      "id": "dc-circuit",
+      "version": 1,
+      "title": "Likestrømskrets",
+      "description": "Ideal DC source with 1–3 resistors in series or 2–3 in parallel, optional ideal ammeter and voltmeter. Meter readings are computed from the circuit (never typed in), so they cannot contradict Ohm's law.",
+      "idealised": "Ideell spenningskilde (ingen indre motstand), ideelle måleinstrumenter og ledninger uten motstand.",
+      "status": "needs_review",
+      "review_log": [],
+      "params": {
+        "type": "object",
+        "required": ["topology", "source", "resistors"],
+        "properties": {
+          "topology": {"type": "string", "enum": ["series", "parallel"]},
+          "source": {
+            "type": "object",
+            "required": ["voltage_v"],
+            "properties": {
+              "voltage_v": {"type": "number", "minimum": 0.1, "maximum": 1000, "unit": "V"},
+              "show_value": {"type": "boolean", "default": true}
+            }
+          },
+          "resistors": {
+            "type": "array", "minItems": 1, "maxItems": 3,
+            "items": {
+              "type": "object",
+              "required": ["ohms"],
+              "properties": {
+                "ohms": {"type": "number", "minimum": 0.1, "maximum": 10000000, "unit": "Ω"},
+                "show_value": {"type": "boolean", "default": true}
+              }
+            }
+          },
+          "ammeter": {
+            "type": "object", "nullable": true,
+            "properties": {
+              "branch": {"type": "string", "enum": ["main", "R1", "R2", "R3"], "default": "main"},
+              "show_reading": {"type": "boolean", "default": false}
+            }
+          },
+          "voltmeter": {
+            "type": "object", "nullable": true,
+            "required": ["across"],
+            "properties": {
+              "across": {"type": "string", "enum": ["source", "R1", "R2", "R3"]},
+              "show_reading": {"type": "boolean", "default": false}
+            }
+          },
+          "show_current_direction": {"type": "boolean", "default": false},
+          "animate_current": {"type": "boolean", "default": false}
+        }
+      }
+    },
+    {
+      "id": "ac-circuit",
+      "version": 1,
+      "title": "Vekselstrømskrets",
+      "description": "Sinusoidal AC source driving a single resistor, capacitor or inductor. Optional labels for frequency, RMS voltage, component value and reactance (value or '?'); reactance and current are computed.",
+      "idealised": "Ideell sinusformet kilde og ideell komponent (ingen tap eller parasittiske egenskaper).",
+      "status": "needs_review",
+      "review_log": [],
+      "params": {
+        "type": "object",
+        "required": ["source", "component"],
+        "properties": {
+          "source": {
+            "type": "object",
+            "required": ["frequency_hz"],
+            "properties": {
+              "frequency_hz": {"type": "number", "minimum": 0.1, "maximum": 3000000000, "unit": "Hz"},
+              "voltage_v": {"type": "number", "minimum": 0.001, "maximum": 10000, "unit": "V", "nullable": true},
+              "show_frequency": {"type": "boolean", "default": true},
+              "show_voltage": {"type": "boolean", "default": true}
+            }
+          },
+          "component": {
+            "type": "object",
+            "required": ["kind", "value"],
+            "properties": {
+              "kind": {"type": "string", "enum": ["R", "C", "L"]},
+              "value": {"type": "number", "minimum": 1e-15, "maximum": 100000000},
+              "show_value": {"type": "boolean", "default": true}
+            }
+          },
+          "reactance_label": {"type": "string", "enum": ["none", "unknown", "value"], "default": "none"}
+        }
+      }
+    },
+    {
+      "id": "waveform",
+      "version": 1,
+      "title": "Kurveform",
+      "description": "One or two periodic waveforms plotted from their mathematical definition against time, with optional markers for peak, peak-to-peak, period and RMS of the first trace.",
+      "idealised": "Matematisk ideelle kurveformer.",
+      "status": "needs_review",
+      "review_log": [],
+      "params": {
+        "type": "object",
+        "required": ["traces"],
+        "properties": {
+          "traces": {
+            "type": "array", "minItems": 1, "maxItems": 2,
+            "items": {
+              "type": "object",
+              "required": ["amplitude", "frequency_hz"],
+              "properties": {
+                "label": {"type": "string", "maxLength": 12, "default": ""},
+                "shape": {"type": "string", "enum": ["sine", "square", "triangle"], "default": "sine"},
+                "amplitude": {"type": "number", "minimum": 0.000001, "maximum": 100000},
+                "unit": {"type": "string", "enum": ["V", "mV", "A", "mA"], "default": "V"},
+                "frequency_hz": {"type": "number", "minimum": 0.1, "maximum": 3000000000, "unit": "Hz"},
+                "phase_deg": {"type": "number", "minimum": -360, "maximum": 360, "default": 0},
+                "offset": {"type": "number", "minimum": -100000, "maximum": 100000, "default": 0}
+              }
+            }
+          },
+          "cycles": {"type": "number", "minimum": 0.5, "maximum": 6, "default": 2},
+          "markers": {
+            "type": "array", "maxItems": 4,
+            "items": {"type": "string", "enum": ["peak", "peak_to_peak", "period", "rms"]},
+            "default": []
+          },
+          "show_values": {"type": "boolean", "default": true},
+          "animate": {"type": "boolean", "default": false}
+        }
+      }
+    },
+    {
+      "id": "block-diagram",
+      "version": 1,
+      "title": "Blokkskjema",
+      "description": "Signal chain of labelled blocks from left to right, with up to three side blocks feeding into a chain block (e.g. a local oscillator into a mixer). Any block can be hidden ('?') or highlighted.",
+      "idealised": "Forenklet funksjonell oversikt, ikke et koblingsskjema.",
+      "status": "needs_review",
+      "review_log": [],
+      "kind_labels": {
+        "antenna": "Antenne",
+        "rf_amp": "RF-forsterker",
+        "preselector": "Inngangsfilter",
+        "mixer": "Blander",
+        "local_osc": "Lokaloscillator",
+        "if_filter": "MF-filter",
+        "if_amp": "MF-forsterker",
+        "demodulator": "Demodulator",
+        "product_detector": "Produktdetektor",
+        "bfo": "BFO",
+        "discriminator": "FM-diskriminator",
+        "limiter": "Begrenser",
+        "af_amp": "LF-forsterker",
+        "speaker": "Høyttaler",
+        "microphone": "Mikrofon",
+        "mic_amp": "Mikrofonforsterker",
+        "balanced_modulator": "Balansert modulator",
+        "sideband_filter": "Sidebåndsfilter",
+        "carrier_osc": "Bærebølgeoscillator",
+        "oscillator": "Oscillator",
+        "vfo": "VFO",
+        "crystal_osc": "Krystalloscillator",
+        "modulator": "Modulator",
+        "multiplier": "Frekvensmultiplikator",
+        "buffer": "Bufferforsterker",
+        "driver": "Driver",
+        "power_amp": "Sluttforsterker",
+        "lowpass_filter": "Lavpassfilter",
+        "bandpass_filter": "Båndpassfilter",
+        "agc": "AGC",
+        "custom": null
+      },
+      "params": {
+        "type": "object",
+        "required": ["chain"],
+        "properties": {
+          "chain": {
+            "type": "array", "minItems": 2, "maxItems": 9,
+            "items": {
+              "type": "object",
+              "required": ["kind"],
+              "properties": {
+                "kind": {"type": "string", "enum_from": "kind_labels"},
+                "label": {"type": "string", "maxLength": 28},
+                "hidden": {"type": "boolean", "default": false},
+                "highlight": {"type": "boolean", "default": false}
+              }
+            }
+          },
+          "side": {
+            "type": "array", "maxItems": 3, "default": [],
+            "items": {
+              "type": "object",
+              "required": ["kind", "into"],
+              "properties": {
+                "kind": {"type": "string", "enum_from": "kind_labels"},
+                "label": {"type": "string", "maxLength": 28},
+                "into": {"type": "integer", "minimum": 0, "maximum": 8},
+                "hidden": {"type": "boolean", "default": false},
+                "highlight": {"type": "boolean", "default": false}
+              }
+            }
+          },
+          "edge_labels": {
+            "type": "array", "maxItems": 8, "default": [],
+            "items": {
+              "type": "object",
+              "required": ["after", "text"],
+              "properties": {
+                "after": {"type": "integer", "minimum": 0, "maximum": 7},
+                "text": {"type": "string", "maxLength": 10}
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

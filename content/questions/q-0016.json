@@ -1,0 +1,137 @@
+{
+  "id": "q-0016",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "needs_review",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "easy",
+      "chapter": 3,
+      "section_ids": [
+        "s3-05"
+      ],
+      "topic_ids": [
+        "dioder"
+      ],
+      "learning_objective": "Vite hvilken polaritet som får en silisiumdiode til å lede.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En ",
+          {
+            "term": "diode",
+            "text": "silisiumdiode"
+          },
+          " har anoden på P-siden og katoden på N-siden."
+        ]
+      ],
+      "stem": [
+        "Hva er typisk riktig når dioden leder strøm i lederetningen?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Anoden er mer positiv enn katoden, og spenningsfallet over dioden er ca. 0,6–0,7 V."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Katoden er mer positiv enn anoden."
+          ],
+          "feedback": [
+            "Da er dioden forspent i sperreretningen. Sperresjiktet blir bredere, og det går nesten ingen strøm."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Polariteten spiller ingen rolle; dioden leder begge veier."
+          ],
+          "feedback": [
+            "En diode leder bare i én retning. Det er nettopp derfor den kan brukes som likeretter."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Anoden er mer positiv enn katoden, og spenningsfallet over dioden er ca. 6–7 V."
+          ],
+          "feedback": [
+            "Spenningsfallet over en ledende silisiumdiode er omtrent en tidel av dette."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Når P-siden (anoden) gjøres positiv i forhold til N-siden (katoden), blir barrieren ved overgangen mindre. Dioden er da ",
+          {
+            "term": "lederetning",
+            "text": "forspent i lederetningen"
+          },
+          "."
+        ],
+        "Strømmen øker kraftig med spenningen, og ved vanlig drift ligger det omtrent 0,6–0,7 V over en silisiumdiode. Det er ingen helt skarp terskel; den nøyaktige verdien avhenger av strøm og temperatur. Med motsatt polaritet blir sperresjiktet bredere, og bare en svært liten lekkasjestrøm går."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 3,
+        "section_id": "s3-05",
+        "printed_pages": [
+          "3-2"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "f4e450814fed8ffc",
+          "e4d97158f629ffd0"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-23T18:00:00+00:00",
+        "note": "Skrevet med egne ord ut fra importerte kildeutdrag; må kontrolleres mot boka."
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T18:04:45+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "785c98e6a01ff393aa54898697b7fc6be187e007480f73061eba13652708fb16",
+          "note": "automated checks passed"
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "1ed5b3479751188a676c164724d09dfdccdc5006c85e08420d26a3ec8515f488",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: equation, low_ocr_confidence, numeric_low_conf. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-23T18:11:16+00:00"
+      }
+    }
+  ]
+}

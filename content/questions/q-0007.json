@@ -1,0 +1,225 @@
+{
+  "id": "q-0007",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "needs_review",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "calculation",
+      "difficulty": "easy",
+      "chapter": 2,
+      "section_ids": [
+        "s2-04"
+      ],
+      "topic_ids": [
+        "ladning"
+      ],
+      "learning_objective": "Regne ut ladning fra strøm og tid, med tiden i sekunder.",
+      "priority": "normal",
+      "context": [
+        [
+          "Et batteri lades med en konstant strøm på ",
+          {
+            "q": 2,
+            "u": "A"
+          },
+          " i ",
+          {
+            "q": 3,
+            "u": "h"
+          },
+          "."
+        ]
+      ],
+      "stem": [
+        [
+          "Hvor stor ",
+          {
+            "term": "ladning",
+            "text": "ladning"
+          },
+          " er tilført batteriet?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 21600,
+              "u": "C"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 6,
+              "u": "C"
+            }
+          ],
+          "feedback": [
+            "Ladning i coulomb krever tiden i sekunder. 3 timer er 10 800 sekunder."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 360,
+              "u": "C"
+            }
+          ],
+          "feedback": [
+            "Her er tiden regnet om til minutter (180 min) i stedet for sekunder."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 1.5,
+              "u": "C"
+            }
+          ],
+          "feedback": [
+            "Her er tiden delt på strømmen. Ladningen er strøm ganget med tid."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Én coulomb er ladningen som flyttes når strømmen er 1 A i 1 s. Derfor må tiden være i sekunder:",
+        {
+          "steps": [
+            [
+              {
+                "math": [
+                  "t",
+                  "=",
+                  "3",
+                  "·",
+                  {
+                    "q": 3600,
+                    "u": "s"
+                  },
+                  "=",
+                  {
+                    "q": 10800,
+                    "u": "s"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "math": [
+                  "Q",
+                  "=",
+                  "I",
+                  "·",
+                  "t",
+                  "=",
+                  {
+                    "q": 2,
+                    "u": "A"
+                  },
+                  "·",
+                  {
+                    "q": 10800,
+                    "u": "s"
+                  },
+                  "=",
+                  {
+                    "q": 21600,
+                    "u": "C"
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        {
+          "note": [
+            "Samme ladning kan også skrives som 6 Ah (amperetimer), som er vanlig på batterier."
+          ]
+        }
+      ],
+      "glossary_after_answer": [],
+      "calculation": {
+        "formula": "charge",
+        "inputs": {
+          "I": [
+            2,
+            "A"
+          ],
+          "t": [
+            3,
+            "h"
+          ]
+        },
+        "answer": [
+          21600,
+          "C"
+        ],
+        "answer_symbol": "Q",
+        "sig_figs": 3
+      },
+      "study_reference": {
+        "chapter": 2,
+        "section_id": "s2-04",
+        "printed_pages": [
+          "2-1"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "144d222bb3d4546b"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-23T18:00:00+00:00",
+        "note": "Skrevet med egne ord ut fra importerte kildeutdrag; må kontrolleres mot boka."
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T18:04:45+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "a6b8d5e7ee5da08a23d3f2f3dfa4b7f81ff1660c44a556e295ad6d7dfb8c6aa7",
+          "note": "automated checks passed"
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "d599c407f427945bda126c5d88cfa895a3879f83f964865598ddd3749323a6b7",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: equation, table. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-23T18:11:16+00:00"
+      }
+    }
+  ]
+}

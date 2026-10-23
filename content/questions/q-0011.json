@@ -1,0 +1,149 @@
+{
+  "id": "q-0011",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "needs_review",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "easy",
+      "chapter": 2,
+      "section_ids": [
+        "s2-35"
+      ],
+      "topic_ids": [
+        "reaktans"
+      ],
+      "learning_objective": "Forstå at induktiv reaktans er proporsjonal med frekvensen.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En ideell ",
+          {
+            "term": "spole",
+            "text": "spole"
+          },
+          " er koblet til en vekselspenningskilde. Induktansen holdes konstant."
+        ]
+      ],
+      "stem": [
+        [
+          "Frekvensen dobles. Hva skjer med den ",
+          {
+            "term": "induktiv-reaktans",
+            "text": "induktive reaktansen"
+          },
+          "?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Den blir dobbelt så stor."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Den blir halvparten så stor."
+          ],
+          "feedback": [
+            "Det er reaktansen til en kondensator som synker når frekvensen øker."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Den er uendret."
+          ],
+          "feedback": [
+            "Resistansen i en ideell motstand er uavhengig av frekvensen, men reaktansen til en spole er det ikke."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Den blir fire ganger så stor."
+          ],
+          "feedback": [
+            "Reaktansen øker i samme forhold som frekvensen, ikke med kvadratet av den."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          {
+            "math": [
+              "X_L",
+              "=",
+              "2",
+              "π",
+              "f",
+              "L"
+            ]
+          },
+          ". Når f dobles og L er uendret, dobles også X_L."
+        ],
+        "Med høyere frekvens må strømmen endre seg raskere, og spolen motvirker raske endringer sterkere."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 2,
+        "section_id": "s2-35",
+        "printed_pages": [
+          "2-13",
+          "2-14"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "9cc9a1c52884914f"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-23T18:00:00+00:00",
+        "note": "Skrevet med egne ord ut fra importerte kildeutdrag; må kontrolleres mot boka."
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T18:04:45+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "5062ae9b04bb16616ce5ca4aaec97bbfad39b75a0c03d1d592b9abd06853bff6",
+          "note": "automated checks passed"
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "306258821d00f649edb1d76da2145e489e611d73da71bcf87d807290e505d5c1",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: equation, numeric_low_conf. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-23T18:11:16+00:00"
+      }
+    }
+  ]
+}

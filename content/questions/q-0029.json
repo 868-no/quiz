@@ -1,0 +1,250 @@
+{
+  "id": "q-0029",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "needs_review",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "calculation",
+      "difficulty": "easy",
+      "chapter": 6,
+      "section_ids": [
+        "s6-09",
+        "s6-10"
+      ],
+      "topic_ids": [
+        "mellomfrekvens"
+      ],
+      "learning_objective": "Finne mellomfrekvensen som differansen mellom lokaloscillator og signal.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En mottaker er innstilt på et signal på ",
+          {
+            "q": 14.2,
+            "u": "MHz"
+          },
+          ". Lokaloscillatoren går på ",
+          {
+            "q": 23.2,
+            "u": "MHz"
+          },
+          ", og mottakeren bruker differansefrekvensen fra blanderen."
+        ]
+      ],
+      "stem": [
+        [
+          "Hva er ",
+          {
+            "term": "mellomfrekvens",
+            "text": "mellomfrekvensen"
+          },
+          "?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 9,
+              "u": "MHz"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 37.4,
+              "u": "MHz"
+            }
+          ],
+          "feedback": [
+            "Det er sumfrekvensen. Her bruker mottakeren differansen."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 14.2,
+              "u": "MHz"
+            }
+          ],
+          "feedback": [
+            "Det er signalfrekvensen som går inn i blanderen. Mellomfrekvensen er en ny frekvens som dannes der."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 23.2,
+              "u": "MHz"
+            }
+          ],
+          "feedback": [
+            "Det er lokaloscillatorens frekvens, som også går inn i blanderen."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          {
+            "math": [
+              "f_MF",
+              "=",
+              "f_LO",
+              "−",
+              "f_RF",
+              "=",
+              {
+                "q": 23.2,
+                "u": "MHz"
+              },
+              "−",
+              {
+                "q": 14.2,
+                "u": "MHz"
+              },
+              "=",
+              {
+                "q": 9,
+                "u": "MHz"
+              }
+            ]
+          }
+        ],
+        "Blanderen lager også sumfrekvensen (37,4 MHz), men den slipper ikke gjennom mellomfrekvensfilteret."
+      ],
+      "glossary_after_answer": [],
+      "visual": {
+        "template": "block-diagram",
+        "version": 1,
+        "params": {
+          "chain": [
+            {
+              "kind": "antenna"
+            },
+            {
+              "kind": "rf_amp"
+            },
+            {
+              "kind": "mixer"
+            },
+            {
+              "kind": "if_filter"
+            },
+            {
+              "kind": "if_amp"
+            },
+            {
+              "kind": "demodulator"
+            }
+          ],
+          "side": [
+            {
+              "kind": "local_osc",
+              "label": "LO 23,2 MHz",
+              "into": 2
+            }
+          ],
+          "edge_labels": [
+            {
+              "after": 1,
+              "text": "14,2 MHz"
+            },
+            {
+              "after": 2,
+              "text": "? MHz"
+            }
+          ]
+        },
+        "params_after": {
+          "edge_labels": [
+            {
+              "after": 1,
+              "text": "14,2 MHz"
+            },
+            {
+              "after": 2,
+              "text": "9 MHz"
+            }
+          ]
+        }
+      },
+      "calculation": {
+        "formula": "if_difference",
+        "inputs": {
+          "f_RF": [
+            14.2,
+            "MHz"
+          ],
+          "f_LO": [
+            23.2,
+            "MHz"
+          ]
+        },
+        "answer": [
+          9,
+          "MHz"
+        ],
+        "answer_symbol": "f_IF",
+        "sig_figs": 2
+      },
+      "study_reference": {
+        "chapter": 6,
+        "section_id": "s6-09",
+        "printed_pages": [
+          "6-4"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "1eeb2a5ab810c263",
+          "f0e5fcf6f528bf33"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-23T18:00:00+00:00",
+        "note": "Skrevet med egne ord ut fra importerte kildeutdrag; må kontrolleres mot boka."
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T18:04:45+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "6ae8ca1841f1bb4181d4809aa23179f0fb9fe1f8c7912b8ae2e81042be46a2f4",
+          "note": "automated checks passed"
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "99fe468f7fd728ea3af423d06f1d330f3aa09e6ab3016d5a4366b90a43ea96be",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-23T18:11:16+00:00"
+      }
+    }
+  ]
+}

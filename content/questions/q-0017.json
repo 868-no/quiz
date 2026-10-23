@@ -1,0 +1,174 @@
+{
+  "id": "q-0017",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "needs_review",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "medium",
+      "chapter": 3,
+      "section_ids": [
+        "s3-06"
+      ],
+      "topic_ids": [
+        "likeretting",
+        "dioder"
+      ],
+      "learning_objective": "Ta hensyn til spenningsfallet over en silisiumdiode i en likeretter.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En ",
+          {
+            "term": "likeretter",
+            "text": "halvbølgelikeretter"
+          },
+          " består av én silisiumdiode og en lastmotstand i serie. Dioden er koblet slik at den leder i den positive halvperioden. Kilden gir en sinusformet spenning med ",
+          {
+            "term": "toppverdi",
+            "text": "toppverdi"
+          },
+          " ",
+          {
+            "q": 10,
+            "u": "V"
+          },
+          ". Det er ingen glattekondensator. Regn med et konstant spenningsfall på 0,6 V over dioden når den leder."
+        ]
+      ],
+      "stem": [
+        "Omtrent hvor høy blir toppspenningen over lastmotstanden?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 9.4,
+              "u": "V"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 10,
+              "u": "V"
+            }
+          ],
+          "feedback": [
+            "Dioden trenger omtrent 0,6 V i lederetningen, så litt av spenningen ligger over dioden."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 7.07,
+              "u": "V"
+            }
+          ],
+          "feedback": [
+            "Det er effektivverdien til en sinus med 10 V toppverdi. Spørsmålet gjelder toppspenningen over lasten."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 14.1,
+              "u": "V"
+            }
+          ],
+          "feedback": [
+            "Spenningen over lasten kan ikke bli høyere enn det kilden gir. 14,1 V er 10 V ganget med √2."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "I den positive halvperioden er dioden forspent i lederetningen og leder. Det ligger da omtrent 0,6 V over dioden, og resten over lastmotstanden:",
+        [
+          {
+            "math": [
+              "U_last",
+              "≈",
+              {
+                "q": 10,
+                "u": "V"
+              },
+              "−",
+              {
+                "q": 0.6,
+                "u": "V"
+              },
+              "=",
+              {
+                "q": 9.4,
+                "u": "V"
+              }
+            ]
+          }
+        ],
+        "I den negative halvperioden sperrer dioden. Da går det ingen strøm, og hele spenningen ligger over dioden."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 3,
+        "section_id": "s3-06",
+        "printed_pages": [
+          "3-3"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "971ad1d5600f99e0"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-23T18:00:00+00:00",
+        "note": "Skrevet med egne ord ut fra importerte kildeutdrag; må kontrolleres mot boka."
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T18:04:45+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "b855d37687e40e20df9556582ad1f410005f14a3f1c77728e42c779e264187ea",
+          "note": "automated checks passed"
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "540f12afdd5fd4bac0e7bbaa9d3202756c9d4dd74cf1081c9cb74a7d1a1b3945",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: equation. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-23T18:11:16+00:00"
+      }
+    }
+  ]
+}

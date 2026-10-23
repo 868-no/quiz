@@ -1,0 +1,12 @@
+{
+  "name": "radioquiz",
+  "private": true,
+  "description": "Optional JS test tooling. The site itself has no npm dependencies and no build step.",
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/js/*.test.mjs"
+  },
+  "devDependencies": {
+    "jsdom": "24.1.3"
+  }
+}

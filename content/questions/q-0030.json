@@ -1,0 +1,233 @@
+{
+  "id": "q-0030",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "needs_review",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "calculation",
+      "difficulty": "medium",
+      "chapter": 6,
+      "section_ids": [
+        "s6-10",
+        "s6-11"
+      ],
+      "topic_ids": [
+        "mellomfrekvens"
+      ],
+      "learning_objective": "Regne ut speilfrekvensen når lokaloscillatoren ligger over signalet.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En VHF-mottaker har ",
+          {
+            "term": "mellomfrekvens",
+            "text": "mellomfrekvens"
+          },
+          " ",
+          {
+            "q": 10.7,
+            "u": "MHz"
+          },
+          " og er innstilt på ",
+          {
+            "q": 144.5,
+            "u": "MHz"
+          },
+          ". ",
+          {
+            "term": "lokaloscillator",
+            "text": "Lokaloscillatoren"
+          },
+          " ligger over signalfrekvensen."
+        ]
+      ],
+      "stem": [
+        [
+          "Hvilken frekvens er ",
+          {
+            "term": "speilfrekvens",
+            "text": "speilfrekvensen"
+          },
+          "?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 165.9,
+              "u": "MHz"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 155.2,
+              "u": "MHz"
+            }
+          ],
+          "feedback": [
+            "155,2 MHz er lokaloscillatorens frekvens (144,5 + 10,7 MHz)."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 123.1,
+              "u": "MHz"
+            }
+          ],
+          "feedback": [
+            "Det ville vært speilfrekvensen hvis lokaloscillatoren lå under signalet."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 133.8,
+              "u": "MHz"
+            }
+          ],
+          "feedback": [
+            "133,8 MHz er signalfrekvensen minus mellomfrekvensen. Det ville vært lokaloscillatorens frekvens hvis den lå under signalet, men det er ikke speilfrekvensen."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        {
+          "steps": [
+            [
+              "Lokaloscillator: ",
+              {
+                "math": [
+                  "f_LO",
+                  "=",
+                  {
+                    "q": 144.5,
+                    "u": "MHz"
+                  },
+                  "+",
+                  {
+                    "q": 10.7,
+                    "u": "MHz"
+                  },
+                  "=",
+                  {
+                    "q": 155.2,
+                    "u": "MHz"
+                  }
+                ]
+              }
+            ],
+            [
+              "Speilfrekvensen ligger like langt på den andre siden av lokaloscillatoren: ",
+              {
+                "math": [
+                  "f_speil",
+                  "=",
+                  {
+                    "q": 155.2,
+                    "u": "MHz"
+                  },
+                  "+",
+                  {
+                    "q": 10.7,
+                    "u": "MHz"
+                  },
+                  "=",
+                  {
+                    "q": 165.9,
+                    "u": "MHz"
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        "Både 144,5 MHz og 165,9 MHz gir 10,7 MHz ut av blanderen. Speilfrekvensen må derfor dempes med filter før blanderen."
+      ],
+      "glossary_after_answer": [],
+      "calculation": {
+        "formula": "image_frequency_high_lo",
+        "inputs": {
+          "f_RF": [
+            144.5,
+            "MHz"
+          ],
+          "f_IF": [
+            10.7,
+            "MHz"
+          ]
+        },
+        "answer": [
+          165.9,
+          "MHz"
+        ],
+        "answer_symbol": "f_image",
+        "sig_figs": 4
+      },
+      "study_reference": {
+        "chapter": 6,
+        "section_id": "s6-10",
+        "printed_pages": [
+          "6-5"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "18c4a40fdc2de427",
+          "92798468b18c6fe5"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-23T18:00:00+00:00",
+        "note": "Skrevet med egne ord ut fra importerte kildeutdrag; må kontrolleres mot boka."
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T18:04:45+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "95b3cb73989aa9b045691f2479df1a5d86e5b871fdc96ff0c75037a8a124d7ea",
+          "note": "automated checks passed"
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "57b1e61cdd481295ea12d096eec685b981c0572ecc2efb9d091148d96961a841",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: equation, numeric_low_conf, sign_ambiguous, table. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-23T18:11:16+00:00"
+      }
+    }
+  ]
+}

@@ -1,0 +1,317 @@
+{
+  "id": "q-0002",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "needs_review",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "calculation",
+      "difficulty": "medium",
+      "chapter": 2,
+      "section_ids": [
+        "s2-14",
+        "s2-11"
+      ],
+      "topic_ids": [
+        "spenningsdeler",
+        "motstandskoblinger"
+      ],
+      "learning_objective": "Finne spenningen over én motstand i en seriekobling (spenningsdeler).",
+      "priority": "exam_important",
+      "context": [
+        [
+          "To motstander er koblet ",
+          {
+            "term": "seriekobling",
+            "text": "i serie"
+          },
+          " til et batteri på ",
+          {
+            "q": 9,
+            "u": "V"
+          },
+          ": ",
+          {
+            "math": [
+              "R_1",
+              "=",
+              {
+                "q": 1.2,
+                "u": "kΩ"
+              }
+            ]
+          },
+          " og ",
+          {
+            "math": [
+              "R_2",
+              "=",
+              {
+                "q": 3.3,
+                "u": "kΩ"
+              }
+            ]
+          },
+          ". Voltmeteret regnes som ideelt, det vil si at det ikke trekker strøm."
+        ]
+      ],
+      "stem": [
+        [
+          "Hva viser voltmeteret som er koblet over ",
+          {
+            "math": [
+              "R_2"
+            ]
+          },
+          "?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 6.6,
+              "u": "V"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 2.4,
+              "u": "V"
+            }
+          ],
+          "feedback": [
+            "Dette er spenningen over R1. Den største av to seriekoblede motstander får den største delen av spenningen."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 4.5,
+              "u": "V"
+            }
+          ],
+          "feedback": [
+            "Spenningen deles bare likt når motstandene er like store. Her er R2 nesten tre ganger så stor som R1."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 9,
+              "u": "V"
+            }
+          ],
+          "feedback": [
+            "Hele batterispenningen ligger over de to motstandene til sammen, ikke over R2 alene."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Den samme strømmen går gjennom begge motstandene, og spenningen fordeler seg i forhold til resistansene.",
+        {
+          "steps": [
+            [
+              "Samlet resistans: ",
+              {
+                "math": [
+                  "R",
+                  "=",
+                  {
+                    "q": 1.2,
+                    "u": "kΩ"
+                  },
+                  "+",
+                  {
+                    "q": 3.3,
+                    "u": "kΩ"
+                  },
+                  "=",
+                  {
+                    "q": 4.5,
+                    "u": "kΩ"
+                  }
+                ]
+              }
+            ],
+            [
+              "Strøm: ",
+              {
+                "math": [
+                  "I",
+                  "=",
+                  {
+                    "frac": [
+                      [
+                        {
+                          "q": 9,
+                          "u": "V"
+                        }
+                      ],
+                      [
+                        {
+                          "q": 4.5,
+                          "u": "kΩ"
+                        }
+                      ]
+                    ]
+                  },
+                  "=",
+                  {
+                    "q": 2,
+                    "u": "mA"
+                  }
+                ]
+              }
+            ],
+            [
+              "Spenning over R2: ",
+              {
+                "math": [
+                  "U_{R2}",
+                  "=",
+                  {
+                    "q": 2,
+                    "u": "mA"
+                  },
+                  "·",
+                  {
+                    "q": 3.3,
+                    "u": "kΩ"
+                  },
+                  "=",
+                  {
+                    "q": 6.6,
+                    "u": "V"
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        {
+          "note": [
+            "Kontroll: spenningen over R1 er 2 mA · 1,2 kΩ = 2,4 V, og 2,4 V + 6,6 V = 9 V."
+          ]
+        }
+      ],
+      "glossary_after_answer": [],
+      "visual": {
+        "template": "dc-circuit",
+        "version": 1,
+        "params": {
+          "topology": "series",
+          "source": {
+            "voltage_v": 9
+          },
+          "resistors": [
+            {
+              "ohms": 1200
+            },
+            {
+              "ohms": 3300
+            }
+          ],
+          "voltmeter": {
+            "across": "R2",
+            "show_reading": false
+          }
+        },
+        "params_after": {
+          "voltmeter": {
+            "show_reading": true
+          }
+        }
+      },
+      "calculation": {
+        "formula": "voltage_divider",
+        "inputs": {
+          "U": [
+            9,
+            "V"
+          ],
+          "R1": [
+            1.2,
+            "kΩ"
+          ],
+          "R2": [
+            3.3,
+            "kΩ"
+          ]
+        },
+        "answer": [
+          6.6,
+          "V"
+        ],
+        "answer_symbol": "U_R2",
+        "sig_figs": 2
+      },
+      "study_reference": {
+        "chapter": 2,
+        "section_id": "s2-14",
+        "printed_pages": [
+          "2-5"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "22399f4a29f37e2e",
+          "8728cc1500cd2c2d"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-23T18:00:00+00:00",
+        "note": "Skrevet med egne ord ut fra importerte kildeutdrag; må kontrolleres mot boka."
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T18:04:45+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "89535bb109cb9371bcf5f76c8d93a346987e4011eb98bc7b999d739538846520",
+          "note": "automated checks passed"
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "2e33cbdec260e1a550f343a70c9de24b06c015e35518e69a3bfcaebd54c11aed",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: equation, low_ocr_confidence, numeric_low_conf, possible_ohm. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "pages",
+            "detail": "cited printed page number is uncertain in the source (page_number_conflict, printed_page_status=inferred). Confirm the page in the book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-23T18:11:16+00:00"
+      }
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "id": "q-0032",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "needs_review",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "recall",
+      "difficulty": "easy",
+      "chapter": 6,
+      "section_ids": [
+        "s6-03"
+      ],
+      "topic_ids": [
+        "mottakeregenskaper"
+      ],
+      "learning_objective": "Skille selektivitet fra andre mottakeregenskaper.",
+      "priority": "exam_important",
+      "context": [],
+      "stem": [
+        "Hva beskriver selektiviteten til en mottaker?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Evnen til å skille ut ønsket signal fra signaler like ved i frekvens"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Hvor svake signaler mottakeren kan ta imot"
+          ],
+          "feedback": [
+            "Det er følsomheten (sensitiviteten)."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Hvor godt mottakeren holder frekvensen over tid"
+          ],
+          "feedback": [
+            "Det er frekvensstabiliteten."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Hvor stor styrkeforskjell den tåler mellom svake og sterke signaler"
+          ],
+          "feedback": [
+            "Det er det dynamiske området."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "En selektiv mottaker slipper gjennom stasjonen du lytter på, mens sterke stasjoner noen kilohertz unna blir kraftig svekket. Selektiviteten oppgis ofte som hvor langt unna et signal må ligge for å bli dempet med et bestemt antall desibel, eller som dempingen av nabokanalen.",
+        "I en superheterodynmottaker bestemmes selektiviteten først og fremst av filtrene i mellomfrekvensdelen."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 6,
+        "section_id": "s6-03",
+        "printed_pages": [
+          "6-1"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "121576d2a500fe1c"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-23T18:00:00+00:00",
+        "note": "Skrevet med egne ord ut fra importerte kildeutdrag; må kontrolleres mot boka."
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T18:04:45+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "40a799bab057b9c8070f5bc4ea191e02a7b17feaa7345fb2d2ddcad0f4c718c0",
+          "note": "automated checks passed"
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "33327be3b6938ac278c859cc4b5339930cde0db4acea67609020b196209f0ccb",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: table. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-23T18:11:16+00:00"
+      }
+    }
+  ]
+}

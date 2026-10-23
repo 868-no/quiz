@@ -1,0 +1,122 @@
+{
+  "id": "q-0031",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "needs_review",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "hard",
+      "chapter": 6,
+      "section_ids": [
+        "s6-11"
+      ],
+      "topic_ids": [
+        "mellomfrekvens",
+        "mottakeregenskaper"
+      ],
+      "learning_objective": "Forstå hvorfor en dobbel superheterodynmottaker bruker en høy og en lav mellomfrekvens.",
+      "priority": "exam_important",
+      "context": [],
+      "stem": [
+        "Bedre mottakere bruker ofte to mellomfrekvenser: en høy første og en lav andre. Hva er hovedgrunnen?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Høy første MF gjør speilfrekvensen lett å dempe, og lav andre MF gir god selektivitet."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Høy første MF gir god selektivitet, og lav andre MF gjør speilfrekvensen lett å dempe."
+          ],
+          "feedback": [
+            "Her er rollene byttet om. Speilfrekvensen ligger to mellomfrekvenser unna, så en høy MF flytter den langt bort."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "To mellomfrekvenser dobler følsomheten uten å endre selektiviteten."
+          ],
+          "feedback": [
+            "Formålet er nettopp å oppnå både god speildemping og god selektivitet."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Med to mellomfrekvenser trengs det ingen lokaloscillator."
+          ],
+          "feedback": [
+            "Hver omforming til en ny mellomfrekvens krever en blander med egen lokaloscillator."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Speilfrekvensen ligger to mellomfrekvenser fra signalet. Med høy første mellomfrekvens havner den langt unna og kan dempes med enkle filtre foran blanderen.",
+        "Smale filtre som skiller signaler som ligger tett, er lettere å lage på lav frekvens. Den lave andre mellomfrekvensen gir derfor god selektivitet."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 6,
+        "section_id": "s6-11",
+        "printed_pages": [
+          "6-6"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "3f23dbc48489366a",
+          "92798468b18c6fe5"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-23T18:00:00+00:00",
+        "note": "Skrevet med egne ord ut fra importerte kildeutdrag; må kontrolleres mot boka."
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T18:04:45+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "d732e548ede771b226baa9e4292296181a4e9036c8eb15eb920232fea17ed403",
+          "note": "automated checks passed"
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "a3e774ed839af484a7020da0f01814ecb3b93b3b0abd76ddb66f5b6ed28e58c3",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: equation, numeric_low_conf, sign_ambiguous, table. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-23T18:11:16+00:00"
+      }
+    }
+  ]
+}

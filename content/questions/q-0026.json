@@ -1,0 +1,125 @@
+{
+  "id": "q-0026",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "needs_review",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "recall",
+      "difficulty": "easy",
+      "chapter": 5,
+      "section_ids": [
+        "s5-08"
+      ],
+      "topic_ids": [
+        "senderfeil"
+      ],
+      "learning_objective": "Kjenne igjen senderfeilen kvitter (chirp).",
+      "priority": "exam_important",
+      "context": [],
+      "stem": [
+        [
+          "Hva er ",
+          {
+            "term": "kvitter",
+            "text": "kvitter"
+          },
+          " på et morsesignal?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "At frekvensen glir litt når senderen nøkles, før den blir stabil"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Korte, brede klikk hver gang senderen slås av og på"
+          ],
+          "feedback": [
+            "Det beskriver nøkleklikk, som skyldes for brå av- og påslag av signalet."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Utstråling på det dobbelte av senderfrekvensen"
+          ],
+          "feedback": [
+            "Det er en harmonisk, ikke kvitter."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "At signalet blir klippet fordi mikrofonen er skrudd for høyt"
+          ],
+          "feedback": [
+            "Det er overmodulering, som gjelder telefoni og ikke morsetelegrafi."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Kvitter er en liten, rask frekvensendring i begynnelsen av hvert morsetegn. I mottakeren høres tonen «gli», og signalet tar mer båndbredde enn nødvendig.",
+        "Typiske årsaker er at forsyningsspenningen til oscillatoren synker når senderen trekker strøm, eller at belastningen på oscillatoren endres når senderen nøkles. Bedre spenningsregulering og et buffertrinn hjelper."
+      ],
+      "glossary_after_answer": [
+        "kvitter"
+      ],
+      "study_reference": {
+        "chapter": 5,
+        "section_id": "s5-08",
+        "printed_pages": [
+          "5-2"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "b1b1bc833142e4d0"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-23T18:00:00+00:00",
+        "note": "Skrevet med egne ord ut fra importerte kildeutdrag; må kontrolleres mot boka."
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T18:04:45+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "15db32661b43f0d734c42ae414160d8409e321928ad7f11270dad075bddae474",
+          "note": "automated checks passed"
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "7d53988ef290abcb383a1524ebbc2e005f874da145302f0b62d3e0a89995041f",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-23T18:11:16+00:00"
+      }
+    }
+  ]
+}
