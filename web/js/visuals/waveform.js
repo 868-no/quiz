@@ -31,7 +31,8 @@ function quantities(p) {
   const a = t.amplitude * siScale(t.unit);
   const show = p.show_values;
   const q = {
-    [`${sym}_p`]: { value: a, unit, shown: show && p.markers.includes('peak') },
+    // the amplitude axis is labelled only together with a peak or peak-to-peak marker
+    [`${sym}_p`]: { value: a, unit, shown: show && (p.markers.includes('peak') || p.markers.includes('peak_to_peak')) },
     [`${sym}_pp`]: { value: 2 * a, unit, shown: show && p.markers.includes('peak_to_peak') },
     T: { value: 1 / t.frequency_hz, unit: 's', shown: show && p.markers.includes('period') },
     f: { value: t.frequency_hz, unit: 'Hz', shown: false },
@@ -102,12 +103,14 @@ function render(p) {
       els.push(line(x, y0 - 4, x, y0 + 4, { 'stroke-width': 1.5 }));
       els.push(label(x, y0 + 16, formatNumber(Number((j * step).toPrecision(6))), { 'font-size': 11 }));
     }
-    const levels = new Set([t0.offset + t0.amplitude, t0.offset - t0.amplitude]);
+    // Amplitude ticks only when a peak marker is drawn; otherwise they would reveal the peak value.
+    const showLevels = p.markers.includes('peak') || p.markers.includes('peak_to_peak');
+    const levels = showLevels ? new Set([t0.offset + t0.amplitude, t0.offset - t0.amplitude]) : new Set();
     for (const v of levels) {
       if (v === 0) continue;
       const y = yOf(v);
       els.push(line(X0 - 4, y, X0 + 4, y, { 'stroke-width': 1.5 }));
-      els.push(label(X0 - 8, y, formatNumber(Number(v.toPrecision(6))), { 'text-anchor': 'end', 'font-size': 11 }));
+      els.push(label(X0 - 8, y, formatNumber(Number(v.toPrecision(4))), { 'text-anchor': 'end', 'font-size': 11 }));
     }
   }
   els.push(label(X0 - 8, y0, '0', { 'text-anchor': 'end', 'font-size': 11 }));
@@ -124,7 +127,7 @@ function render(p) {
       d, fill: 'none', stroke: STROKE, 'stroke-width': i === 0 ? 2.5 : 2,
       'stroke-dasharray': i === 0 ? null : '7 5', class: `trace trace-${i + 1} draw`, pathLength: 1,
     }));
-    if (tr.label || p.traces.length > 1) {
+    if (p.traces.length > 1) { // with one trace the y-axis name identifies it
       const yEnd = yOf(sample(tr, duration) * k(tr));
       const dy = p.traces.length > 1 && i === 1 && Math.abs(yEnd - yOf(sample(p.traces[0], duration) * k(p.traces[0]))) < 14 ? 14 : 0;
       els.push(label(X1 + 6, yEnd + dy - 10, tr.label || `${sym}${i + 1}`, { 'text-anchor': 'start', 'font-size': 12, 'font-style': 'italic' }));
@@ -166,13 +169,15 @@ function render(p) {
   }
 
   const descParts = p.traces.map((tr, i) => {
-    const amp = p.show_values ? `toppverdi ${formatSI(tr.amplitude * siScale(tr.unit), unitSI)}` : 'toppverdi ikke oppgitt';
+    const peakShown = p.show_values && (p.markers.includes('peak') || p.markers.includes('peak_to_peak'));
+    const amp = peakShown ? `toppverdi ${formatSI(tr.amplitude * siScale(tr.unit), unitSI)}` : 'toppverdi ikke oppgitt';
+    const rms = i === 0 && p.show_values && p.markers.includes('rms') ? `, effektivverdi ${formatSI((tr.amplitude * siScale(tr.unit)) / Math.SQRT2, unitSI)}` : '';
     const freq = p.show_values ? `, periode ${formatSI(1 / tr.frequency_hz, 's')}` : '';
     const off = tr.offset && p.show_values ? `, forskjøvet ${formatSI(tr.offset * siScale(tr.unit), unitSI)} fra null` : '';
     const dphi = tr.phase_deg - t0.phase_deg;
     const phase = i === 0 ? '' : dphi === 0 ? ', i fase med kurve 1'
       : `, ligger ${formatNumber(Math.abs(dphi))}° ${dphi < 0 ? 'etter' : 'foran'} kurve 1 (når toppen ${dphi < 0 ? 'senere' : 'tidligere'})`;
-    return `${p.traces.length > 1 ? `Kurve ${i + 1}${i === 0 ? ' (heltrukket)' : ' (stiplet)'}: ` : ''}${SHAPE_NAME[tr.shape]} kurve med ${amp}${freq}${off}${phase}.`;
+    return `${p.traces.length > 1 ? `Kurve ${i + 1}${i === 0 ? ' (heltrukket)' : ' (stiplet)'}: ` : ''}${SHAPE_NAME[tr.shape]} kurve med ${amp}${rms}${freq}${off}${phase}.`;
   });
   const markerNames = { peak: 'toppverdi', peak_to_peak: 'topp-til-topp-verdi', period: 'periodetid', rms: 'effektivverdi' };
   const description = `Graf over tid som viser ${formatNumber(p.cycles)} perioder. ${descParts.join(' ')}` +

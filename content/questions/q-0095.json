@@ -1,0 +1,165 @@
+{
+  "id": "q-0095",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "easy",
+      "chapter": 5,
+      "section_ids": [
+        "s5-02",
+        "s5-03"
+      ],
+      "topic_ids": [
+        "frekvensstabilitet"
+      ],
+      "learning_objective": "Kjenne igjen frekvensdrift etter oppstart og forstå at temperaturendringer i oscillatoren er årsaken.",
+      "priority": "exam_important",
+      "context": [
+        "Du har nettopp slått på en eldre, hjemmebygget SSB-sender med LC-oscillator. Stasjonen du snakker med, forteller at tonehøyden på stemmen din endrer seg langsomt i løpet av de første minuttene."
+      ],
+      "stem": [
+        "Hva er den mest sannsynlige årsaken?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Oscillatoren varmes opp, slik at komponentverdiene i den avstemte kretsen endrer seg."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Sluttrinnet blir overstyrt, slik at det dannes harmoniske av signalet."
+          ],
+          "feedback": [
+            "Harmoniske havner på multipler av sendefrekvensen. De gir ikke en langsom endring av tonehøyden."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Mikrofonforsterkningen er så høy at signalet blir overmodulert."
+          ],
+          "feedback": [
+            "Overmodulering gir forvrengt og bredt signal, men ikke en gradvis endring av frekvensen."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Nøklingen har for bratte flanker, slik at signalet blir for bredt."
+          ],
+          "feedback": [
+            "Det beskriver nøkkelklikk på CW. Her er det en langsom endring over flere minutter."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          {
+            "term": "frekvensdrift",
+            "text": "Frekvensdrift"
+          },
+          " betyr at sendefrekvensen sakte flytter seg. På SSB og CW høres det som at tonehøyden glir over tid."
+        ],
+        "Temperaturen påvirker både induktansen og kapasitansen i oscillatorens avstemte krets, og dermed resonansfrekvensen. Den største endringen kommer like etter påslag, mens senderen varmes opp. Etter en stund stabiliserer frekvensen seg.",
+        "Tiltak er å plassere oscillatoren unna varme komponenter, for eksempel sluttrinnet, og å kombinere komponenter med motsatt temperaturkoeffisient. Hvis noen sier at du driver, kan det lønne seg å spørre en tredje stasjon – det kan også være mottakeren hos motparten som driver."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 5,
+        "section_id": "s5-02",
+        "printed_pages": [
+          "5-1"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "7708a47a52c5b85b",
+          "59d8a7b849bac5ef"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-23T21:00:00+00:00",
+        "note": "Batch 2 (ch5.json)"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T18:29:09+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "5bf46fb6fa769b1f6a8485cbd5db3a4f6b59150543ab19c0c25eb5dfd0fcb80f",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T18:34:38+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "8a9e71063f63163284fba6991cf882a2912be1c47334681ed283ae022d086708",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T19:12:53+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "8a9e71063f63163284fba6991cf882a2912be1c47334681ed283ae022d086708",
+          "note": "Godkjent av redaktør etter tre runder uavhengig AI-gjennomgang (Claude) og tre runder ChatGPT-kontroll; alle beregninger kontrollert, figurer gjengitt og inspisert. Sidehenvisninger er IKKE kontrollert mot trykt bok; OCR-/side-/figurmerknader kvittert på dette grunnlaget.",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "8a9e71063f63163284fba6991cf882a2912be1c47334681ed283ae022d086708",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-23T19:12:53+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-23T19:12:53+00:00",
+        "content_sha256": "8a9e71063f63163284fba6991cf882a2912be1c47334681ed283ae022d086708",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

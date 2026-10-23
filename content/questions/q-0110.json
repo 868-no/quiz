@@ -1,0 +1,144 @@
+{
+  "id": "q-0110",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "recall",
+      "difficulty": "easy",
+      "chapter": 6,
+      "section_ids": [
+        "s6-08"
+      ],
+      "topic_ids": [
+        "superheterodyn",
+        "mottakeregenskaper"
+      ],
+      "learning_objective": "Vite at lav egenstøy er hovedkravet til RF-forsterkeren.",
+      "priority": "exam_important",
+      "context": [],
+      "stem": "Hva er det viktigste kravet til RF-forsterkeren, det første forsterkertrinnet i en mottaker?",
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Lav egenstøy"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Høy utgangseffekt"
+          ],
+          "feedback": [
+            "Høy utgangseffekt trengs i en sluttforsterker i en sender. I mottakeren er signalene svært svake."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Størst mulig forsterkning"
+          ],
+          "feedback": [
+            "For mye forsterkning foran blanderen gjør mottakeren lettere å overstyre. Forsterkningen bør bare være passe stor."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Størst mulig båndbredde"
+          ],
+          "feedback": [
+            "En svært bredbåndet inngang slipper inn sterke signaler fra andre bånd og kan gi overstyring. Litt filtrering er en fordel."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Støy som legges til i det første trinnet, forsterkes av alle trinnene etter. Egenstøyen i RF-forsterkeren bestemmer derfor i stor grad følsomheten til hele mottakeren.",
+        "I tillegg bør RF-forsterkeren tåle sterke signaler uten å bli overstyrt (stort dynamisk område), og avstemte kretser eller båndfiltre foran den gir en viss selektivitet."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 6,
+        "section_id": "s6-08",
+        "printed_pages": [
+          "6-4"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "e7fa6d8e4dfb476d"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-23T21:00:00+00:00",
+        "note": "Batch 2 (ch6.json)"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T18:29:09+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "d40fa67828c70ebc67954f806a14bc913ea6fe2f08ca295a3800e1eb5c6a9a03",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T19:12:54+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "d40fa67828c70ebc67954f806a14bc913ea6fe2f08ca295a3800e1eb5c6a9a03",
+          "note": "Godkjent av redaktør etter tre runder uavhengig AI-gjennomgang (Claude) og tre runder ChatGPT-kontroll; alle beregninger kontrollert, figurer gjengitt og inspisert. Sidehenvisninger er IKKE kontrollert mot trykt bok; OCR-/side-/figurmerknader kvittert på dette grunnlaget.",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "d40fa67828c70ebc67954f806a14bc913ea6fe2f08ca295a3800e1eb5c6a9a03",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-23T19:12:54+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-23T19:12:54+00:00",
+        "content_sha256": "d40fa67828c70ebc67954f806a14bc913ea6fe2f08ca295a3800e1eb5c6a9a03",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

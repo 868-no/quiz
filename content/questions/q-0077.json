@@ -1,0 +1,138 @@
+{
+  "id": "q-0077",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "recall",
+      "difficulty": "easy",
+      "chapter": 3,
+      "section_ids": [
+        "s3-35"
+      ],
+      "topic_ids": [
+        "radiorør"
+      ],
+      "learning_objective": "Kjenne de viktigste fordelene og ulempene ved rørforsterkere sammenlignet med transistorer.",
+      "priority": "exam_important",
+      "context": [
+        "En radioamatør vurderer et rørsluttrinn i stedet for et transistorsluttrinn for høy effekt."
+      ],
+      "stem": [
+        "Hva er en typisk fordel med rørforsterkeren?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Den tåler feiltilpasning mot antennen bedre."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Den trenger bare lav forsyningsspenning."
+          ],
+          "feedback": [
+            "Det er omvendt. Rør trenger høy anodespenning, ofte flere tusen volt i store sluttrinn."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Den blir ikke dårligere med alderen."
+          ],
+          "feedback": [
+            "Rør slites, blant annet fordi katoden etter hvert avgir færre elektroner."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Den er mekanisk robust og tåler støt godt."
+          ],
+          "feedback": [
+            "Rør har glass- eller keramikkhus og tynne elektroder, og er fysisk mer ømtålige enn transistorer."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Rør tåler kortvarig overbelastning og dårlig tilpasning mot antennen bedre enn transistorer, som kan bli ødelagt på et øyeblikk. Kretsene kan også være enkle, og rør håndterer høye spenninger og effekter godt, også på VHF.",
+        "Ulempene er høye og farlige spenninger, at rørene slites og må byttes, at de er ømtålige, og at de ofte trenger støyende viftekjøling."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 3,
+        "section_id": "s3-35",
+        "printed_pages": [
+          "3-17"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "414ad86d0afc8a47"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-23T21:00:00+00:00",
+        "note": "Batch 2 (ch3.json)"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T18:29:09+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "e10ed99a114b52f0ba062670efb0a7f03a63719adc0f00b4bd751228bc97dda2",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T19:12:52+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "e10ed99a114b52f0ba062670efb0a7f03a63719adc0f00b4bd751228bc97dda2",
+          "note": "Godkjent av redaktør etter tre runder uavhengig AI-gjennomgang (Claude) og tre runder ChatGPT-kontroll; alle beregninger kontrollert, figurer gjengitt og inspisert. Sidehenvisninger er IKKE kontrollert mot trykt bok; OCR-/side-/figurmerknader kvittert på dette grunnlaget.",
+          "acknowledged": []
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "e10ed99a114b52f0ba062670efb0a7f03a63719adc0f00b4bd751228bc97dda2",
+        "errors": [],
+        "warnings": [],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-23T19:12:52+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-23T19:12:52+00:00",
+        "content_sha256": "e10ed99a114b52f0ba062670efb0a7f03a63719adc0f00b4bd751228bc97dda2",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

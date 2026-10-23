@@ -1,0 +1,157 @@
+{
+  "id": "q-0116",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 6,
+      "section_ids": [
+        "s6-18"
+      ],
+      "topic_ids": [
+        "demodulering"
+      ],
+      "learning_objective": "Forstå hvordan RC-leddet i en AM-diodedetektor skal dimensjoneres.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "I en enkel ",
+          {
+            "term": "amplitudemodulasjon",
+            "text": "AM"
+          },
+          "-detektor likeretter en ",
+          {
+            "term": "diode",
+            "text": "diode"
+          },
+          " MF-signalet. Etter dioden sitter en kondensator C i parallell med en motstand R."
+        ]
+      ],
+      "stem": "Hvordan bør tidskonstanten RC være?",
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Lang i forhold til en MF-periode, men kort i forhold til perioden til de høyeste lydfrekvensene"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Kort i forhold til en MF-periode, slik at hele MF-signalet slipper gjennom"
+          ],
+          "feedback": [
+            "Da glattes ikke MF-rippelen ut, og utgangen blir full av radiofrekvens."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Lang i forhold til lydperiodene, slik at spenningen blir helt jevn"
+          ],
+          "feedback": [
+            "Da klarer ikke spenningen å følge lydvariasjonene. Bare et gjennomsnitt blir igjen."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Lik én MF-periode, slik at kretsen går i resonans på mellomfrekvensen"
+          ],
+          "feedback": [
+            "En RC-krets har ingen resonans. Resonans krever både spole og kondensator."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Dioden slipper bare gjennom den ene halvdelen av MF-signalet. Kondensatoren lades opp til toppverdien og utlades litt gjennom R mellom toppene, slik at spenningen følger omhyllingskurven, altså lyden.",
+        "Med 455 kHz MF varer én MF-periode ca. 2,2 µs, mens én periode av en 3 kHz tone varer ca. 330 µs. En tidskonstant mellom disse, typisk noen titalls mikrosekunder, fjerner MF-rippelen, men slipper lyden gjennom. RC-leddet virker som et lavpassfilter."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 6,
+        "section_id": "s6-18",
+        "printed_pages": [
+          "6-10"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "cab19c11b655f84a"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-23T21:00:00+00:00",
+        "note": "Batch 2 (ch6.json)"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T18:29:09+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "c7d61fb589ebc7bb2866ca26be7d14d76d1a41c0340172eb0de5f55558797180",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T19:12:54+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "c7d61fb589ebc7bb2866ca26be7d14d76d1a41c0340172eb0de5f55558797180",
+          "note": "Godkjent av redaktør etter tre runder uavhengig AI-gjennomgang (Claude) og tre runder ChatGPT-kontroll; alle beregninger kontrollert, figurer gjengitt og inspisert. Sidehenvisninger er IKKE kontrollert mot trykt bok; OCR-/side-/figurmerknader kvittert på dette grunnlaget.",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "c7d61fb589ebc7bb2866ca26be7d14d76d1a41c0340172eb0de5f55558797180",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-23T19:12:54+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-23T19:12:54+00:00",
+        "content_sha256": "c7d61fb589ebc7bb2866ca26be7d14d76d1a41c0340172eb0de5f55558797180",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

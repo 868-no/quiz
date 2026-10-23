@@ -15,8 +15,15 @@
         "spenning",
         "strom"
       ],
-      "status": "needs_review",
-      "review_log": []
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
     },
     {
       "id": "resistans",
@@ -32,8 +39,15 @@
         "motstand",
         "ohms-lov"
       ],
-      "status": "needs_review",
-      "review_log": []
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
     },
     {
       "id": "motstand",
@@ -50,8 +64,15 @@
       "related": [
         "resistans"
       ],
-      "status": "needs_review",
-      "review_log": []
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
     },
     {
       "id": "spenning",
@@ -69,8 +90,15 @@
       "related": [
         "strom"
       ],
-      "status": "needs_review",
-      "review_log": []
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
     },
     {
       "id": "strom",
@@ -86,8 +114,15 @@
         "spenning",
         "ladning"
       ],
-      "status": "needs_review",
-      "review_log": []
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
     },
     {
       "id": "ladning",
@@ -102,8 +137,15 @@
       "related": [
         "strom"
       ],
-      "status": "needs_review",
-      "review_log": []
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
     },
     {
       "id": "effekt",
@@ -119,8 +161,15 @@
         "spenning",
         "strom"
       ],
-      "status": "needs_review",
-      "review_log": []
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
     },
     {
       "id": "seriekobling",
@@ -138,8 +187,15 @@
       "related": [
         "parallellkobling"
       ],
-      "status": "needs_review",
-      "review_log": []
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
     },
     {
       "id": "parallellkobling",
@@ -157,8 +213,15 @@
       "related": [
         "seriekobling"
       ],
-      "status": "needs_review",
-      "review_log": []
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
     },
     {
       "id": "spenningsdeler",
@@ -175,8 +238,15 @@
       "related": [
         "seriekobling"
       ],
-      "status": "needs_review",
-      "review_log": []
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
     },
     {
       "id": "kondensator",
@@ -193,8 +263,15 @@
       "related": [
         "kapasitans"
       ],
-      "status": "needs_review",
-      "review_log": []
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
     },
     {
       "id": "kapasitans",
@@ -209,8 +286,15 @@
       "related": [
         "kondensator"
       ],
-      "status": "needs_review",
-      "review_log": []
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
     },
     {
       "id": "spole",
@@ -227,8 +311,15 @@
       "related": [
         "induktans"
       ],
-      "status": "needs_review",
-      "review_log": []
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
     },
     {
       "id": "induktans",
@@ -243,8 +334,15 @@
       "related": [
         "spole"
       ],
-      "status": "needs_review",
-      "review_log": []
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
     },
     {
       "id": "reaktans",
@@ -260,8 +358,15 @@
         "kapasitiv-reaktans",
         "induktiv-reaktans"
       ],
-      "status": "needs_review",
-      "review_log": []
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
     },
     {
       "id": "kapasitiv-reaktans",
@@ -277,8 +382,15 @@
         "reaktans",
         "kondensator"
       ],
-      "status": "needs_review",
-      "review_log": []
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
     },
     {
       "id": "induktiv-reaktans",
@@ -294,8 +406,15 @@
         "reaktans",
         "spole"
       ],
-      "status": "needs_review",
-      "review_log": []
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
     },
     {
       "id": "resonans",
@@ -313,8 +432,15 @@
         "induktiv-reaktans",
         "kapasitiv-reaktans"
       ],
-      "status": "needs_review",
-      "review_log": []
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
     },
     {
       "id": "toppverdi",
@@ -331,8 +457,15 @@
       "related": [
         "effektivverdi"
       ],
-      "status": "needs_review",
-      "review_log": []
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
     },
     {
       "id": "effektivverdi",
@@ -350,8 +483,15 @@
       "related": [
         "toppverdi"
       ],
-      "status": "needs_review",
-      "review_log": []
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
     },
     {
       "id": "frekvens",
@@ -366,8 +506,15 @@
       "related": [
         "periode"
       ],
-      "status": "needs_review",
-      "review_log": []
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
     },
     {
       "id": "periode",
@@ -383,8 +530,15 @@
       "related": [
         "frekvens"
       ],
-      "status": "needs_review",
-      "review_log": []
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
     },
     {
       "id": "faseforskyvning",
@@ -401,8 +555,15 @@
       "related": [
         "frekvens"
       ],
-      "status": "needs_review",
-      "review_log": []
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
     },
     {
       "id": "diode",
@@ -419,8 +580,15 @@
         "lederetning",
         "sperreretning"
       ],
-      "status": "needs_review",
-      "review_log": []
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
     },
     {
       "id": "lederetning",
@@ -438,8 +606,15 @@
         "diode",
         "sperreretning"
       ],
-      "status": "needs_review",
-      "review_log": []
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
     },
     {
       "id": "sperreretning",
@@ -457,8 +632,15 @@
         "diode",
         "lederetning"
       ],
-      "status": "needs_review",
-      "review_log": []
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
     },
     {
       "id": "likeretter",
@@ -476,8 +658,15 @@
       "related": [
         "diode"
       ],
-      "status": "needs_review",
-      "review_log": []
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
     },
     {
       "id": "zenerdiode",
@@ -493,8 +682,15 @@
         "diode",
         "sperreretning"
       ],
-      "status": "needs_review",
-      "review_log": []
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
     },
     {
       "id": "varicap",
@@ -512,8 +708,15 @@
         "diode",
         "kapasitans"
       ],
-      "status": "needs_review",
-      "review_log": []
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
     },
     {
       "id": "transistor",
@@ -530,8 +733,15 @@
       "related": [
         "felles-emitter"
       ],
-      "status": "needs_review",
-      "review_log": []
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
     },
     {
       "id": "felles-emitter",
@@ -547,8 +757,15 @@
       "related": [
         "transistor"
       ],
-      "status": "needs_review",
-      "review_log": []
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
     },
     {
       "id": "baerebolge",
@@ -564,8 +781,15 @@
         "sidebaand",
         "amplitudemodulasjon"
       ],
-      "status": "needs_review",
-      "review_log": []
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
     },
     {
       "id": "sidebaand",
@@ -582,8 +806,15 @@
         "baerebolge",
         "ssb"
       ],
-      "status": "needs_review",
-      "review_log": []
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
     },
     {
       "id": "amplitudemodulasjon",
@@ -599,8 +830,15 @@
         "baerebolge",
         "sidebaand"
       ],
-      "status": "needs_review",
-      "review_log": []
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
     },
     {
       "id": "ssb",
@@ -616,8 +854,15 @@
         "sidebaand",
         "amplitudemodulasjon"
       ],
-      "status": "needs_review",
-      "review_log": []
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
     },
     {
       "id": "frekvensmodulasjon",
@@ -633,8 +878,15 @@
         "deviasjon",
         "modulasjonsindeks"
       ],
-      "status": "needs_review",
-      "review_log": []
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
     },
     {
       "id": "deviasjon",
@@ -651,8 +903,15 @@
       "related": [
         "frekvensmodulasjon"
       ],
-      "status": "needs_review",
-      "review_log": []
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
     },
     {
       "id": "modulasjonsindeks",
@@ -667,8 +926,15 @@
       "related": [
         "deviasjon"
       ],
-      "status": "needs_review",
-      "review_log": []
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
     },
     {
       "id": "baandbredde",
@@ -681,8 +947,15 @@
       ],
       "definition": "Bredden av frekvensområdet et signal eller et filter opptar.",
       "related": [],
-      "status": "needs_review",
-      "review_log": []
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
     },
     {
       "id": "frekvensmultiplikator",
@@ -697,8 +970,15 @@
       "related": [
         "harmoniske"
       ],
-      "status": "needs_review",
-      "review_log": []
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
     },
     {
       "id": "harmoniske",
@@ -715,8 +995,15 @@
       "related": [
         "frekvens"
       ],
-      "status": "needs_review",
-      "review_log": []
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
     },
     {
       "id": "kvitter",
@@ -729,8 +1016,15 @@
       ],
       "definition": "Senderfeil i morsetelegrafi der tonen ikke er stabil når senderen nøkles.",
       "related": [],
-      "status": "needs_review",
-      "review_log": []
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
     },
     {
       "id": "overmodulering",
@@ -747,8 +1041,15 @@
         "amplitudemodulasjon",
         "ssb"
       ],
-      "status": "needs_review",
-      "review_log": []
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
     },
     {
       "id": "superheterodyn",
@@ -766,8 +1067,15 @@
         "mellomfrekvens",
         "lokaloscillator"
       ],
-      "status": "needs_review",
-      "review_log": []
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
     },
     {
       "id": "blander",
@@ -785,8 +1093,15 @@
         "lokaloscillator",
         "mellomfrekvens"
       ],
-      "status": "needs_review",
-      "review_log": []
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
     },
     {
       "id": "lokaloscillator",
@@ -798,12 +1113,19 @@
       "en": [
         "local oscillator"
       ],
-      "definition": "Oscillator inne i mottakeren som leverer det ene signalet til blanderen.",
+      "definition": "Oscillator i en mottaker eller konverter som leverer det ene signalet til blanderen.",
       "related": [
         "blander"
       ],
-      "status": "needs_review",
-      "review_log": []
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
     },
     {
       "id": "mellomfrekvens",
@@ -821,8 +1143,15 @@
         "blander",
         "superheterodyn"
       ],
-      "status": "needs_review",
-      "review_log": []
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
     },
     {
       "id": "speilfrekvens",
@@ -838,8 +1167,15 @@
         "mellomfrekvens",
         "lokaloscillator"
       ],
-      "status": "needs_review",
-      "review_log": []
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
     },
     {
       "id": "selektivitet",
@@ -854,8 +1190,15 @@
       "related": [
         "baandbredde"
       ],
-      "status": "needs_review",
-      "review_log": []
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
     },
     {
       "id": "produktdetektor",
@@ -871,8 +1214,1244 @@
         "ssb",
         "blander"
       ],
-      "status": "needs_review",
-      "review_log": []
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
+    },
+    {
+      "id": "arbeidsspenning",
+      "nb": [
+        "arbeidsspenning",
+        "arbeidsspenningen"
+      ],
+      "en": [
+        "working voltage",
+        "rated voltage"
+      ],
+      "definition": "Den høyeste spenningen en komponent, typisk en kondensator, er laget for å tåle varig uten å bli skadet. Oppgis av produsenten.",
+      "related": [
+        "kondensator",
+        "spenning"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
+    },
+    {
+      "id": "tidskonstant",
+      "nb": [
+        "tidskonstant",
+        "tidskonstanten"
+      ],
+      "en": [
+        "time constant"
+      ],
+      "definition": "Mål for hvor raskt en RC- eller RL-krets lades eller lades ut. For en RC-krets er den produktet av resistans og kapasitans, målt i sekunder.",
+      "related": [
+        "kondensator",
+        "motstand",
+        "kapasitans"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
+    },
+    {
+      "id": "utladningsmotstand",
+      "nb": [
+        "utladningsmotstand",
+        "utladningsmotstanden"
+      ],
+      "en": [
+        "bleeder resistor"
+      ],
+      "definition": "Motstand med høy resistans koblet fast over en kondensator i en strømforsyning, slik at kondensatoren lades ut etter at forsyningen er slått av.",
+      "related": [
+        "kondensator",
+        "motstand"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
+    },
+    {
+      "id": "permeabilitet",
+      "nb": [
+        "permeabilitet",
+        "permeabiliteten"
+      ],
+      "en": [
+        "permeability"
+      ],
+      "definition": "Et materiales evne til å lede og konsentrere et magnetfelt. Kjerner med høy permeabilitet, som jern og ferritt, gir en spole større induktans.",
+      "related": [
+        "spole",
+        "induktans"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
+    },
+    {
+      "id": "impedans",
+      "nb": [
+        "impedans",
+        "impedansen"
+      ],
+      "en": [
+        "impedance"
+      ],
+      "definition": "Den samlede motstanden mot vekselstrøm i en krets som har både resistans og reaktans. Måles i ohm, og forholdet mellom spenning og strøm tar hensyn til faseforskjellen.",
+      "related": [
+        "resistans",
+        "reaktans"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
+    },
+    {
+      "id": "q-faktor",
+      "nb": [
+        "Q-faktor",
+        "Q-faktoren",
+        "godhetsfaktor",
+        "godhetsfaktoren"
+      ],
+      "en": [
+        "Q factor",
+        "quality factor"
+      ],
+      "definition": "Tall uten enhet som beskriver hvor tapsfri og skarp en avstemt krets eller komponent er. Høy Q gir smal båndbredde og skarp resonans.",
+      "related": [
+        "resonans",
+        "baandbredde",
+        "reaktans"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
+    },
+    {
+      "id": "dynamisk-resistans",
+      "nb": [
+        "dynamisk resistans",
+        "dynamiske resistansen",
+        "dynamisk impedans"
+      ],
+      "en": [
+        "dynamic resistance",
+        "dynamic impedance"
+      ],
+      "definition": "Den rent resistive impedansen en parallellavstemt krets har ved resonans. Den skyldes tapene i kretsen og er høy når tapene er små.",
+      "related": [
+        "resonans",
+        "impedans",
+        "q-faktor"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
+    },
+    {
+      "id": "formfaktor",
+      "nb": [
+        "formfaktor",
+        "formfaktoren"
+      ],
+      "en": [
+        "shape factor"
+      ],
+      "definition": "Forholdet mellom båndbredden til et filter ved stor demping (ofte −60 dB) og ved liten demping (ofte −6 dB). Beskriver hvor bratte filterflankene er.",
+      "related": [
+        "baandbredde",
+        "selektivitet"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
+    },
+    {
+      "id": "transformator",
+      "nb": [
+        "transformator",
+        "transformatoren",
+        "transformatorer"
+      ],
+      "en": [
+        "transformer"
+      ],
+      "definition": "Komponent med to eller flere magnetisk koblede viklinger som overfører vekselstrømsenergi og endrer spenning, strøm og impedans etter forholdet mellom antall viklinger.",
+      "related": [
+        "spole",
+        "induktans",
+        "impedans"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
+    },
+    {
+      "id": "kvartskrystall",
+      "nb": [
+        "kvartskrystall",
+        "kvartskrystallet",
+        "krystall",
+        "krystallet"
+      ],
+      "en": [
+        "quartz crystal"
+      ],
+      "definition": "Tynn skive eller stav av kvarts med elektroder, som svinger mekanisk ved en bestemt frekvens og elektrisk oppfører seg som en resonanskrets med svært høy Q.",
+      "related": [
+        "resonans",
+        "q-faktor"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
+    },
+    {
+      "id": "piezoelektrisk-effekt",
+      "nb": [
+        "piezoelektrisk effekt",
+        "piezoelektriske effekten",
+        "piezoelektrisk"
+      ],
+      "en": [
+        "piezoelectric effect"
+      ],
+      "definition": "Egenskap ved visse materialer, som kvarts, der mekanisk påkjenning gir en elektrisk spenning, og en påtrykt spenning gir en liten formendring.",
+      "related": [
+        "kvartskrystall"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
+    },
+    {
+      "id": "temperaturkoeffisient",
+      "nb": [
+        "temperaturkoeffisient",
+        "temperaturkoeffisienten",
+        "temperaturkoeffisienter"
+      ],
+      "en": [
+        "temperature coefficient"
+      ],
+      "definition": "Angir hvor mye en egenskap, for eksempel kapasitans eller induktans, endrer seg når temperaturen endres. Kan være positiv eller negativ.",
+      "related": [
+        "kondensator",
+        "spole"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
+    },
+    {
+      "id": "doping",
+      "nb": [
+        "doping",
+        "dopingen",
+        "dopet",
+        "dopes"
+      ],
+      "en": [
+        "doping"
+      ],
+      "definition": "Tilsetting av en liten, kontrollert mengde av et annet grunnstoff i et halvlederkrystall for å gi det frie elektroner (N-type) eller hull (P-type).",
+      "related": [
+        "diode"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
+    },
+    {
+      "id": "sperresjikt",
+      "nb": [
+        "sperresjikt",
+        "sperresjiktet",
+        "tømmingssjikt",
+        "tømmingssjiktet",
+        "deplesjonssjikt",
+        "deplesjonssjiktet"
+      ],
+      "en": [
+        "depletion layer",
+        "depletion region"
+      ],
+      "definition": "Tynt område ved en PN-overgang der elektroner og hull har nøytralisert hverandre. Bredden endres med spenningen over overgangen.",
+      "related": [
+        "diode",
+        "sperreretning",
+        "lederetning"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
+    },
+    {
+      "id": "stromforsterkning",
+      "nb": [
+        "strømforsterkning",
+        "strømforsterkningen"
+      ],
+      "en": [
+        "current gain",
+        "beta",
+        "hFE"
+      ],
+      "definition": "Forholdet mellom kollektorstrøm og basisstrøm i en bipolar transistor, skrevet β eller hFE.",
+      "related": [
+        "transistor"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
+    },
+    {
+      "id": "avkoblingskondensator",
+      "nb": [
+        "avkoblingskondensator",
+        "avkoblingskondensatoren",
+        "Avkoblingskondensatoren"
+      ],
+      "en": [
+        "bypass capacitor",
+        "decoupling capacitor"
+      ],
+      "definition": "Kondensator som leder vekselspenning forbi en komponent eller til jord, mens likespenningen ikke påvirkes.",
+      "related": [
+        "kondensator",
+        "felles-emitter"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
+    },
+    {
+      "id": "felles-basis",
+      "nb": [
+        "felles basis",
+        "felles basis-kobling"
+      ],
+      "en": [
+        "common base"
+      ],
+      "definition": "Transistorkobling der basis er felles for inngang og utgang. Signalet går inn på emitteren og tas ut fra kollektoren.",
+      "related": [
+        "transistor",
+        "felles-emitter"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
+    },
+    {
+      "id": "emitterfolger",
+      "nb": [
+        "emitterfølger",
+        "emitterfølgeren",
+        "felles kollektor",
+        "Felles kollektor"
+      ],
+      "en": [
+        "emitter follower",
+        "common collector"
+      ],
+      "definition": "Transistorkobling der signalet går inn på basis og tas ut fra emitteren, mens kollektoren er felles for signalet.",
+      "related": [
+        "transistor",
+        "felles-emitter"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
+    },
+    {
+      "id": "felteffekttransistor",
+      "nb": [
+        "felteffekttransistor",
+        "felteffekttransistoren",
+        "FET",
+        "FET-en",
+        "JFET",
+        "MOSFET"
+      ],
+      "en": [
+        "field-effect transistor",
+        "FET",
+        "JFET",
+        "MOSFET"
+      ],
+      "definition": "Transistor der spenningen på porten (gate) styrer strømmen gjennom en kanal mellom drain og source.",
+      "related": [
+        "transistor"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
+    },
+    {
+      "id": "spenningsregulator",
+      "nb": [
+        "spenningsregulator",
+        "spenningsregulatoren",
+        "regulator"
+      ],
+      "en": [
+        "voltage regulator"
+      ],
+      "definition": "Krets som holder en likespenning tilnærmet konstant selv om inngangsspenningen eller laststrømmen endrer seg.",
+      "related": [
+        "zenerdiode",
+        "transistor"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
+    },
+    {
+      "id": "triode",
+      "nb": [
+        "triode",
+        "trioden",
+        "trioderør"
+      ],
+      "en": [
+        "triode"
+      ],
+      "definition": "Radiorør med tre elektroder: katode, gitter og anode. Den oppvarmede katoden sender ut elektroner som går til anoden.",
+      "related": [],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
+    },
+    {
+      "id": "faselaast-sloyfe",
+      "nb": [
+        "faselåst sløyfe",
+        "faselåste sløyfen",
+        "PLL"
+      ],
+      "en": [
+        "phase-locked loop",
+        "PLL"
+      ],
+      "definition": "Reguleringskrets der en spenningsstyrt oscillator holdes i fast faseforhold til et referansesignal ved hjelp av en fasekomparator og et filter. Brukes blant annet i frekvenssyntetisatorer.",
+      "related": [
+        "vco",
+        "dds"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
+    },
+    {
+      "id": "vco",
+      "nb": [
+        "VCO",
+        "VCO-en",
+        "spenningsstyrt oscillator"
+      ],
+      "en": [
+        "voltage-controlled oscillator",
+        "VCO"
+      ],
+      "definition": "Oscillator der svingefrekvensen endres med en styrespenning, ofte ved hjelp av en kapasitansdiode i den avstemte kretsen.",
+      "related": [
+        "faselaast-sloyfe",
+        "varicap"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
+    },
+    {
+      "id": "dds",
+      "nb": [
+        "DDS",
+        "direkte digital syntese",
+        "direkte digitalsyntese"
+      ],
+      "en": [
+        "direct digital synthesis",
+        "DDS"
+      ],
+      "definition": "Metode for å lage et signal med valgbar frekvens ved å regne fram eller hente tallverdier for en kurveform i takt med en klokke og gjøre dem om til et analogt signal.",
+      "related": [
+        "faselaast-sloyfe"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
+    },
+    {
+      "id": "balansert-modulator",
+      "nb": [
+        "balansert modulator",
+        "balanserte modulatoren",
+        "balansert modulatoren"
+      ],
+      "en": [
+        "balanced modulator"
+      ],
+      "definition": "Modulator som lager sidebånd av et lydsignal og en bærebølge, men som balanserer ut selve bærebølgen. Brukes som første trinn ved laging av SSB.",
+      "related": [
+        "ssb",
+        "sidebaand",
+        "baerebolge"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
+    },
+    {
+      "id": "sluttforsterker",
+      "nb": [
+        "sluttforsterker",
+        "sluttforsterkeren",
+        "sluttrinn",
+        "sluttrinnet",
+        "PA-trinn"
+      ],
+      "en": [
+        "power amplifier",
+        "PA",
+        "final amplifier"
+      ],
+      "definition": "Det siste forsterkertrinnet i en sender, som gir den effekten som sendes ut til antennen.",
+      "related": [
+        "virkningsgrad",
+        "lineaer-forsterker"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
+    },
+    {
+      "id": "virkningsgrad",
+      "nb": [
+        "virkningsgrad",
+        "virkningsgraden",
+        "effektivitet"
+      ],
+      "en": [
+        "efficiency"
+      ],
+      "definition": "Forholdet mellom nyttig effekt ut og tilført effekt inn, ofte oppgitt i prosent. Resten av den tilførte effekten blir som regel til varme.",
+      "related": [
+        "effekt",
+        "sluttforsterker"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
+    },
+    {
+      "id": "spisseffekt",
+      "nb": [
+        "spisseffekt",
+        "spisseffekten",
+        "PEP"
+      ],
+      "en": [
+        "peak envelope power",
+        "PEP"
+      ],
+      "definition": "Middeleffekten i løpet av én radiofrekvent periode på toppen av modulasjonen, altså den største effekten senderen gir. Grenser for sendereffekt oppgis ofte som spisseffekt.",
+      "related": [
+        "effekt",
+        "ssb"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
+    },
+    {
+      "id": "taleprosessor",
+      "nb": [
+        "taleprosessor",
+        "taleprosessoren"
+      ],
+      "en": [
+        "speech processor"
+      ],
+      "definition": "Krets i en sender som behandler talesignalet, typisk ved å begrense eller komprimere toppene i lyden før modulasjonen.",
+      "related": [
+        "spisseffekt",
+        "ssb"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
+    },
+    {
+      "id": "swr",
+      "nb": [
+        "SWR",
+        "ståendebølgeforhold"
+      ],
+      "en": [
+        "standing wave ratio",
+        "SWR",
+        "VSWR"
+      ],
+      "definition": "Tall som beskriver hvor godt en last er tilpasset en overføringslinje. SWR 1 betyr perfekt tilpasning; høyere verdier betyr at mer av signalet reflekteres.",
+      "related": [
+        "sluttforsterker"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
+    },
+    {
+      "id": "fsk",
+      "nb": [
+        "FSK",
+        "frekvensskiftnøkling"
+      ],
+      "en": [
+        "frequency shift keying",
+        "FSK"
+      ],
+      "definition": "Datamodulasjon der bærebølgens frekvens skiftes mellom faste verdier i takt med datasignalet.",
+      "related": [
+        "frekvensmodulasjon"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
+    },
+    {
+      "id": "lineaer-forsterker",
+      "nb": [
+        "lineær forsterker",
+        "lineære forsterkeren",
+        "lineærforsterker"
+      ],
+      "en": [
+        "linear amplifier"
+      ],
+      "definition": "Forsterker der utgangssignalet er en forstørret kopi av inngangssignalet, slik at amplitudevariasjonene beholdes uten forvrengning.",
+      "related": [
+        "sluttforsterker"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
+    },
+    {
+      "id": "frekvensdrift",
+      "nb": [
+        "frekvensdrift",
+        "frekvensdriften"
+      ],
+      "en": [
+        "frequency drift"
+      ],
+      "definition": "Langsom, gradvis endring av frekvensen til en oscillator eller sender over minutter eller timer, for eksempel på grunn av temperaturendringer.",
+      "related": [
+        "frekvens"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
+    },
+    {
+      "id": "intermodulasjon",
+      "nb": [
+        "intermodulasjon",
+        "intermodulasjonsprodukt",
+        "intermodulasjonsprodukter",
+        "blandingsprodukt",
+        "blandingsprodukter",
+        "blandingsproduktene"
+      ],
+      "en": [
+        "intermodulation",
+        "intermodulation product",
+        "mixing product"
+      ],
+      "definition": "Nye frekvenser som dannes når to eller flere signaler passerer en ikke-lineær krets, av typen m·f1 ± n·f2 der m og n er hele tall. Ordenen er m + n.",
+      "related": [
+        "blander",
+        "harmoniske"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
+    },
+    {
+      "id": "lavpassfilter",
+      "nb": [
+        "lavpassfilter",
+        "lavpassfilteret",
+        "lavpassfiltre"
+      ],
+      "en": [
+        "low-pass filter"
+      ],
+      "definition": "Filter som slipper gjennom frekvenser under en knekkfrekvens og demper frekvenser over den.",
+      "related": [
+        "harmoniske"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
+    },
+    {
+      "id": "parasittsvingning",
+      "nb": [
+        "parasittsvingning",
+        "parasittsvingninger",
+        "parasittsvingningene",
+        "parasittsvinge"
+      ],
+      "en": [
+        "parasitic oscillation"
+      ],
+      "definition": "Uønsket svingning i et forsterkertrinn på en frekvens som ikke har med arbeidsfrekvensen å gjøre, ofte forårsaket av tilfeldige resonanser i ledninger og komponenter.",
+      "related": [
+        "resonans"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
+    },
+    {
+      "id": "nokkelklikk",
+      "nb": [
+        "nøkkelklikk",
+        "nøkkelklikkene",
+        "nøklingsklikk"
+      ],
+      "en": [
+        "key clicks"
+      ],
+      "definition": "Klikkende forstyrrelser på frekvensene ved siden av et morsesignal, som oppstår når senderen slås for brått av og på.",
+      "related": [
+        "sidebaand"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
+    },
+    {
+      "id": "agc",
+      "nb": [
+        "AGC",
+        "automatisk forsterkningskontroll",
+        "automatisk forsterkningskontrollen"
+      ],
+      "en": [
+        "automatic gain control",
+        "AGC"
+      ],
+      "definition": "Krets i en mottaker som automatisk justerer forsterkningen etter styrken på det mottatte signalet.",
+      "related": [
+        "mellomfrekvens"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
+    },
+    {
+      "id": "s-meter",
+      "nb": [
+        "S-meter",
+        "S-meteret",
+        "signalstyrkemåler",
+        "signalstyrkemåleren"
+      ],
+      "en": [
+        "S meter",
+        "signal strength meter"
+      ],
+      "definition": "Instrument på en mottaker som viser den relative styrken på det mottatte signalet, gradert i S-enheter og i dB over S9.",
+      "related": [
+        "agc"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
+    },
+    {
+      "id": "dynamisk-omraade",
+      "nb": [
+        "dynamisk område",
+        "dynamiske området",
+        "det dynamiske området"
+      ],
+      "en": [
+        "dynamic range"
+      ],
+      "definition": "Forskjellen i dB mellom det svakeste signalet en mottaker kan ta imot og det sterkeste den tåler før ulinearitet gir merkbare forstyrrelser.",
+      "related": [
+        "selektivitet"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
+    },
+    {
+      "id": "sinad",
+      "nb": [
+        "SINAD"
+      ],
+      "en": [
+        "SINAD",
+        "signal to noise and distortion"
+      ],
+      "definition": "Forholdet i dB mellom signal med støy og forvrengning og bare støy og forvrengning i lydutgangen. Brukes når følsomhet måles.",
+      "related": [],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
+    },
+    {
+      "id": "frekvensstabilitet",
+      "nb": [
+        "frekvensstabilitet",
+        "frekvensstabiliteten"
+      ],
+      "en": [
+        "frequency stability"
+      ],
+      "definition": "Evnen til å holde en innstilt frekvens uten å drive på grunn av tid, temperatur eller forsyningsspenning.",
+      "related": [
+        "lokaloscillator"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
+    },
+    {
+      "id": "mf-transformator",
+      "nb": [
+        "MF-transformator",
+        "MF-transformatoren",
+        "mellomfrekvenstransformator",
+        "mellomfrekvenstransformatoren"
+      ],
+      "en": [
+        "IF transformer"
+      ],
+      "definition": "Transformator med avstemte kretser på både primær- og sekundærsiden, brukt mellom trinnene i en mellomfrekvensforsterker.",
+      "related": [
+        "mellomfrekvens",
+        "resonans"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
+    },
+    {
+      "id": "forholdsdetektor",
+      "nb": [
+        "forholdsdetektor",
+        "forholdsdetektoren"
+      ],
+      "en": [
+        "ratio detector"
+      ],
+      "definition": "FM-demodulator med to dioder og en faseforskyvende avstemt krets, som gjør frekvensavvik om til lydspenning.",
+      "related": [
+        "frekvensmodulasjon"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
+    },
+    {
+      "id": "bfo",
+      "nb": [
+        "BFO",
+        "BFO-en",
+        "bærebølgeoscillator",
+        "bærebølgeoscillatoren"
+      ],
+      "en": [
+        "beat frequency oscillator",
+        "BFO",
+        "carrier oscillator"
+      ],
+      "definition": "Oscillator i mottakeren som blandes med mellomfrekvenssignalet i produktdetektoren for å gjøre CW og SSB hørbart.",
+      "related": [
+        "produktdetektor"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
+    },
+    {
+      "id": "brussperre",
+      "nb": [
+        "brussperre",
+        "brussperren",
+        "squelch"
+      ],
+      "en": [
+        "squelch"
+      ],
+      "definition": "Krets som demper lydutgangen når mottakeren ikke tar imot noe signal over en innstilt terskel.",
+      "related": [],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
+    },
+    {
+      "id": "forforsterker",
+      "nb": [
+        "forforsterker",
+        "forforsterkeren",
+        "forforsterkere"
+      ],
+      "en": [
+        "preamplifier",
+        "preamp"
+      ],
+      "definition": "Ekstra lavstøyforsterker som kobles foran mottakeren for å forsterke svake signaler.",
+      "related": [
+        "stoytall"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
+    },
+    {
+      "id": "stoytall",
+      "nb": [
+        "støytall",
+        "støytallet"
+      ],
+      "en": [
+        "noise figure"
+      ],
+      "definition": "Mål i dB på hvor mye støy et trinn eller en mottaker legger til signalet. Lavere støytall betyr mindre egenstøy.",
+      "related": [],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
+    },
+    {
+      "id": "nedkonverter",
+      "nb": [
+        "nedkonverter",
+        "nedkonverteren"
+      ],
+      "en": [
+        "downconverter"
+      ],
+      "definition": "Enhet som blander et høyere frekvensbånd ned til et lavere, slik at en eksisterende mottaker kan brukes på det høyere båndet.",
+      "related": [
+        "blander",
+        "lokaloscillator"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
     }
   ]
 }

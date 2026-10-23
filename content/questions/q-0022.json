@@ -3,7 +3,7 @@
   "revisions": [
     {
       "revision": 1,
-      "status": "needs_review",
+      "status": "approved",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "calculation",
@@ -196,6 +196,19 @@
           "to_status": "needs_review",
           "content_sha256": "d7efc780c25208fe4db22d3744b5eedcefdab801f71190e848ac0f23333a0dc9",
           "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T19:12:50+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "efc42b450346b2909919c32320af1d69143dc7c01d65fc52c789c2c87c50d2bf",
+          "note": "Godkjent av redaktør etter tre runder uavhengig AI-gjennomgang (Claude) og tre runder ChatGPT-kontroll; alle beregninger kontrollert, figurer gjengitt og inspisert. Sidehenvisninger er IKKE kontrollert mot trykt bok; OCR-/side-/figurmerknader kvittert på dette grunnlaget.",
+          "acknowledged": [
+            "figures",
+            "ocr"
+          ]
         }
       ],
       "checks": {
@@ -214,7 +227,25 @@
           }
         ],
         "passed": true,
-        "at": "2026-10-23T18:11:16+00:00"
+        "at": "2026-10-23T19:12:50+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-23T19:12:50+00:00",
+        "content_sha256": "efc42b450346b2909919c32320af1d69143dc7c01d65fc52c789c2c87c50d2bf",
+        "acknowledged_hazards": [
+          "figures",
+          "ocr"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
       }
     }
   ]

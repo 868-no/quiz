@@ -1,0 +1,154 @@
+{
+  "id": "q-0060",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "easy",
+      "chapter": 3,
+      "section_ids": [
+        "s3-01"
+      ],
+      "topic_ids": [
+        "halvledermaterialer"
+      ],
+      "learning_objective": "Forstå hvorfor rent krystallinsk silisium leder dårlig, og at doping trengs for å lage en halvleder.",
+      "priority": "exam_important",
+      "context": [
+        "Silisium har fire elektroner i det ytterste skallet. I et rent silisiumkrystall er hvert atom bundet til fire naboatomer."
+      ],
+      "stem": [
+        "Hvorfor leder et helt rent silisiumkrystall svært dårlig ved romtemperatur?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Nesten alle ytterelektronene er låst i bindinger mellom atomene, så det finnes få frie ladningsbærere."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Silisium har for få elektroner i det ytterste skallet til å danne et krystall."
+          ],
+          "feedback": [
+            "Fire ytterelektroner er nettopp det som gjør at silisium danner et regelmessig krystall, der hvert atom binder seg til fire naboer."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Krystallet inneholder så mange frie hull at elektronene fanges opp med en gang."
+          ],
+          "feedback": [
+            "Mange hull får man først når krystallet dopes med et stoff som har tre ytterelektroner. Det rene krystallet har svært få av både frie elektroner og hull."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Silisium er et metall, men overflaten er dekket av et isolerende oksidlag."
+          ],
+          "feedback": [
+            "Silisium er ikke et metall. Den dårlige ledningsevnen skyldes at elektronene er bundet i krystallet, ikke et belegg på overflaten."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "De fire ytterelektronene i hvert silisiumatom deles med naboatomene i krystallet. Når alle disse elektronene er brukt i bindinger, er det nesten ingen frie elektroner igjen som kan føre strøm, og rent silisium oppfører seg nærmest som en isolator.",
+        [
+          "For å få en brukbar halvleder tilsetter man små, nøye kontrollerte mengder av et annet grunnstoff. Dette kalles ",
+          {
+            "term": "doping",
+            "text": "doping"
+          },
+          ", og det gir enten N-type eller P-type materiale."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 3,
+        "section_id": "s3-01",
+        "printed_pages": [
+          "3-1"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "aec5047a5e78450e"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-23T21:00:00+00:00",
+        "note": "Batch 2 (ch3.json)"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T18:29:09+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "de96ba912b67dece61f365a38e5f8a1e44d7aebf069787f7632342f26854a1a5",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T19:12:52+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "de96ba912b67dece61f365a38e5f8a1e44d7aebf069787f7632342f26854a1a5",
+          "note": "Godkjent av redaktør etter tre runder uavhengig AI-gjennomgang (Claude) og tre runder ChatGPT-kontroll; alle beregninger kontrollert, figurer gjengitt og inspisert. Sidehenvisninger er IKKE kontrollert mot trykt bok; OCR-/side-/figurmerknader kvittert på dette grunnlaget.",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "de96ba912b67dece61f365a38e5f8a1e44d7aebf069787f7632342f26854a1a5",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-23T19:12:52+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-23T19:12:52+00:00",
+        "content_sha256": "de96ba912b67dece61f365a38e5f8a1e44d7aebf069787f7632342f26854a1a5",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

@@ -1,0 +1,154 @@
+{
+  "id": "q-0090",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "medium",
+      "chapter": 4,
+      "section_ids": [
+        "s4-31"
+      ],
+      "topic_ids": [
+        "spisseffekt"
+      ],
+      "learning_objective": "Forstå at spisseffekten fra en SSB-sender må måles med et instrument som følger taletoppene.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "Du vil kontrollere at SSB-senderen din ikke overskrider tillatt ",
+          {
+            "term": "spisseffekt",
+            "text": "spisseffekt"
+          },
+          " når du snakker. Du har bare et vanlig wattmeter med viser."
+        ]
+      ],
+      "stem": [
+        "Hvorfor vil wattmeteret vise for lite i denne situasjonen?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Viseren er for treg til å følge de korte taletoppene."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Wattmeteret måler bare effekten i bærebølgen."
+          ],
+          "feedback": [
+            "Et wattmeter registrerer den RF-effekten som går gjennom det, også sidebånd. Problemet er hvor raskt det reagerer."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Taletoppene ligger utenfor wattmeterets frekvensområde."
+          ],
+          "feedback": [
+            "Taletoppene ligger på samme radiofrekvens som resten av signalet. Det er varigheten deres som er kort."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Wattmeteret måler bare den reflekterte effekten."
+          ],
+          "feedback": [
+            "Et vanlig wattmeter kan måle effekten som går mot antennen. Feilen skyldes at viseren ikke rekker å følge toppene."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Effekten i et SSB-signal varierer fra null i pausene til maksimum på taletoppene, og toppene kan være mange ganger høyere enn gjennomsnittet. De varer kort, men likevel over mange RF-perioder.",
+        "Et mekanisk instrument følger bare et kortvarig gjennomsnitt. Grensen i forskriften gjelder spisseffekten, så den må måles med et oscilloskop eller et elektronisk instrument som holder toppverdien."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 4,
+        "section_id": "s4-31",
+        "printed_pages": [
+          "4-16"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "796b29602a90d584"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-23T21:00:00+00:00",
+        "note": "Batch 2 (ch4.json)"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T18:29:09+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "d935054a59164920e0c376a58d8158028891d3361a39e18dd90c5754ba8de9ca",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T19:12:53+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "d935054a59164920e0c376a58d8158028891d3361a39e18dd90c5754ba8de9ca",
+          "note": "Godkjent av redaktør etter tre runder uavhengig AI-gjennomgang (Claude) og tre runder ChatGPT-kontroll; alle beregninger kontrollert, figurer gjengitt og inspisert. Sidehenvisninger er IKKE kontrollert mot trykt bok; OCR-/side-/figurmerknader kvittert på dette grunnlaget.",
+          "acknowledged": [
+            "ocr"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "d935054a59164920e0c376a58d8158028891d3361a39e18dd90c5754ba8de9ca",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: low_ocr_confidence. Check every number, unit and formula against the printed book."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-23T19:12:53+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-23T19:12:53+00:00",
+        "content_sha256": "d935054a59164920e0c376a58d8158028891d3361a39e18dd90c5754ba8de9ca",
+        "acknowledged_hazards": [
+          "ocr"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

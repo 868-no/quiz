@@ -3,7 +3,7 @@
   "revisions": [
     {
       "revision": 1,
-      "status": "needs_review",
+      "status": "approved",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "concept",
@@ -21,19 +21,19 @@
       "priority": "exam_important",
       "context": [
         [
-          "Grafen viser spenningen ",
+          "Grafen viser spenningen over en ideell komponent (heltrukket kurve, ",
           {
             "math": [
               "u"
             ]
           },
-          " over en ideell komponent (heltrukket kurve) og strømmen ",
+          ") og strømmen gjennom komponenten (stiplet kurve, ",
           {
             "math": [
               "i"
             ]
           },
-          " gjennom komponenten (stiplet kurve). Komponenten er koblet til en sinusformet vekselspenningskilde. Kurvene er tegnet med hver sin vertikale skala."
+          "). Komponenten er koblet til en sinusformet vekselspenningskilde. Kurvene er tegnet med hver sin vertikale skala."
         ]
       ],
       "stem": [
@@ -139,11 +139,42 @@
           "to_status": "needs_review",
           "content_sha256": "2e9fcbc12f741349d2f7bffb7b2c94bad424fad193c026fd84e67039fbb490b1",
           "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T18:44:58+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "7f22e2ca00c623377398003e52d5b2e9fc5d9caba99cfbade9e227c9def95ce3",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T18:45:08+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "de1dd5f9ed804c1fa01dac4a5cfc212eabf6c7f26f187a5abb297fa856ffcc4e",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T19:12:49+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "de1dd5f9ed804c1fa01dac4a5cfc212eabf6c7f26f187a5abb297fa856ffcc4e",
+          "note": "Godkjent av redaktør etter tre runder uavhengig AI-gjennomgang (Claude) og tre runder ChatGPT-kontroll; alle beregninger kontrollert, figurer gjengitt og inspisert. Sidehenvisninger er IKKE kontrollert mot trykt bok; OCR-/side-/figurmerknader kvittert på dette grunnlaget.",
+          "acknowledged": [
+            "figures",
+            "ocr"
+          ]
         }
       ],
       "checks": {
         "verifier": "deterministic-v1",
-        "content_sha256": "ba743c3db24291a866291d6f4ab04030215db3291099fc3b54adee9a042642a9",
+        "content_sha256": "de1dd5f9ed804c1fa01dac4a5cfc212eabf6c7f26f187a5abb297fa856ffcc4e",
         "errors": [],
         "warnings": [],
         "hazards": [
@@ -157,7 +188,25 @@
           }
         ],
         "passed": true,
-        "at": "2026-10-23T18:11:16+00:00"
+        "at": "2026-10-23T19:12:49+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-23T19:12:49+00:00",
+        "content_sha256": "de1dd5f9ed804c1fa01dac4a5cfc212eabf6c7f26f187a5abb297fa856ffcc4e",
+        "acknowledged_hazards": [
+          "figures",
+          "ocr"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
       }
     }
   ]

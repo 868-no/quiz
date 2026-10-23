@@ -1,0 +1,229 @@
+{
+  "id": "q-0063",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "hard",
+      "chapter": 3,
+      "section_ids": [
+        "s3-06"
+      ],
+      "topic_ids": [
+        "likeretting"
+      ],
+      "learning_objective": "Vite at sperrespenningen over dioden i en halvbølgelikeretter med glattekondensator blir omtrent dobbelt toppverdi.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En transformator gir ",
+          {
+            "q": 15,
+            "u": "V"
+          },
+          " (effektivverdi) til en ",
+          {
+            "term": "likeretter",
+            "text": "halvbølgelikeretter"
+          },
+          " med én diode og en stor glattekondensator. Det er ingen last. Se bort fra spenningsfallet over dioden."
+        ]
+      ],
+      "stem": [
+        "Omtrent hvor stor er den høyeste spenningen dioden må tåle i sperreretningen?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 42.4,
+              "u": "V"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 21.2,
+              "u": "V"
+            }
+          ],
+          "feedback": [
+            "Det er toppverdien til transformatorspenningen. Kondensatoren holder i tillegg sin ladning mens transformatoren svinger til motsatt topp, så spenningene legges sammen."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 15,
+              "u": "V"
+            }
+          ],
+          "feedback": [
+            "15 V er effektivverdien. Dioden ser toppverdier, og i tillegg kommer spenningen på kondensatoren."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 30,
+              "u": "V"
+            }
+          ],
+          "feedback": [
+            "Her er effektivverdien doblet. Riktig er å doble toppverdien, som er √2 ganger effektivverdien."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Toppverdien fra transformatoren er:"
+        ],
+        {
+          "steps": [
+            [
+              {
+                "math": [
+                  "U_p",
+                  "=",
+                  {
+                    "q": 15,
+                    "u": "V"
+                  },
+                  "·",
+                  {
+                    "sqrt": [
+                      "2"
+                    ]
+                  },
+                  "≈",
+                  {
+                    "q": 21.2,
+                    "u": "V"
+                  }
+                ]
+              }
+            ],
+            [
+              "Kondensatoren lades til omtrent denne verdien. Når transformatoren er på motsatt topp, ligger kondensatorspenningen og transformatorspenningen i serie over dioden:"
+            ],
+            [
+              {
+                "math": [
+                  "U_{sperre}",
+                  "≈",
+                  "2",
+                  "·",
+                  {
+                    "q": 21.2,
+                    "u": "V"
+                  },
+                  "≈",
+                  {
+                    "q": 42.4,
+                    "u": "V"
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        "Dioden bør derfor velges med god margin over dette, for eksempel en diode som tåler minst 100 V i sperreretningen."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 3,
+        "section_id": "s3-06",
+        "printed_pages": [
+          "3-3",
+          "3-4"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "fa34825deefefe45"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-23T21:00:00+00:00",
+        "note": "Batch 2 (ch3.json)"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T18:29:09+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "449251177e81da7edb369cf266563ef30b870020aedd982c7693512baa3b15c8",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T19:12:52+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "449251177e81da7edb369cf266563ef30b870020aedd982c7693512baa3b15c8",
+          "note": "Godkjent av redaktør etter tre runder uavhengig AI-gjennomgang (Claude) og tre runder ChatGPT-kontroll; alle beregninger kontrollert, figurer gjengitt og inspisert. Sidehenvisninger er IKKE kontrollert mot trykt bok; OCR-/side-/figurmerknader kvittert på dette grunnlaget.",
+          "acknowledged": [
+            "figures",
+            "pages"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "449251177e81da7edb369cf266563ef30b870020aedd982c7693512baa3b15c8",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "pages",
+            "detail": "cited printed page number is uncertain in the source (printed_page_status=inferred). Confirm the page in the book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-23T19:12:52+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-23T19:12:52+00:00",
+        "content_sha256": "449251177e81da7edb369cf266563ef30b870020aedd982c7693512baa3b15c8",
+        "acknowledged_hazards": [
+          "figures",
+          "pages"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

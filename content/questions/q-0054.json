@@ -1,0 +1,243 @@
+{
+  "id": "q-0054",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "easy",
+      "chapter": 2,
+      "section_ids": [
+        "s2-50"
+      ],
+      "topic_ids": [
+        "transformatorer"
+      ],
+      "learning_objective": "Bruke forholdet mellom vindingstallene til å finne sekundærspenningen i en transformator.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En ",
+          {
+            "term": "transformator",
+            "text": "transformator"
+          },
+          " har 1150 vindinger på primærsiden og 60 vindinger på sekundærsiden. Primærsiden er koblet til ",
+          {
+            "q": 230,
+            "u": "V"
+          },
+          " vekselspenning. Transformatoren regnes som tapsfri."
+        ]
+      ],
+      "stem": [
+        "Hva blir spenningen på sekundærsiden uten belastning?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 12,
+              "u": "V"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 4408,
+              "u": "V"
+            }
+          ],
+          "feedback": [
+            "Her er forholdet mellom vindingstallene snudd. Sekundærsiden har færre vindinger, så spenningen blir lavere, ikke høyere."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 52.5,
+              "u": "V"
+            }
+          ],
+          "feedback": [
+            "Her er kvadratroten av forholdet mellom vindingstallene brukt. Spenningen følger forholdet mellom vindingstallene direkte; det er impedansen som følger kvadratet."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 230,
+              "u": "V"
+            }
+          ],
+          "feedback": [
+            "En transformator endrer spenningen i forhold til antall vindinger. Bare med like mange vindinger blir spenningen den samme."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Spenningen transformeres i samme forhold som antall vindinger:"
+        ],
+        {
+          "steps": [
+            [
+              {
+                "math": [
+                  "U_s",
+                  "=",
+                  "U_p",
+                  "·",
+                  {
+                    "frac": [
+                      [
+                        "N_s"
+                      ],
+                      [
+                        "N_p"
+                      ]
+                    ]
+                  },
+                  "=",
+                  {
+                    "q": 230,
+                    "u": "V"
+                  },
+                  "·",
+                  {
+                    "frac": [
+                      [
+                        "60"
+                      ],
+                      [
+                        "1150"
+                      ]
+                    ]
+                  },
+                  "=",
+                  {
+                    "q": 12,
+                    "u": "V"
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        "Når en tapsfri transformator belastes, blir strømmen på sekundærsiden større enn på primærsiden, i samme forhold som primærsiden har flere vindinger enn sekundærsiden."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 2,
+        "section_id": "s2-50",
+        "printed_pages": [
+          "2-19",
+          "2-20"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "6255d35e8e3267a0"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-23T21:00:00+00:00",
+        "note": "Batch 2 (ch2.json)"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T18:29:09+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "b0cdd8b573fe450435f684f61bb0de82b7695aa5c9789855ae5a46c939da14f2",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T18:34:38+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "4c9791019b7bb83b9c36bce6d2943aaee4447b63c0d47dd0df74d54531e1b177",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T18:44:58+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "a61530c3e7cdb91dab32fe3b6cacb14b9172c16ddd19c6008ffd94baecc83589",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T19:12:51+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "a61530c3e7cdb91dab32fe3b6cacb14b9172c16ddd19c6008ffd94baecc83589",
+          "note": "Godkjent av redaktør etter tre runder uavhengig AI-gjennomgang (Claude) og tre runder ChatGPT-kontroll; alle beregninger kontrollert, figurer gjengitt og inspisert. Sidehenvisninger er IKKE kontrollert mot trykt bok; OCR-/side-/figurmerknader kvittert på dette grunnlaget.",
+          "acknowledged": [
+            "figures",
+            "ocr"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "a61530c3e7cdb91dab32fe3b6cacb14b9172c16ddd19c6008ffd94baecc83589",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: equation, low_ocr_confidence, numeric_low_conf. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-23T19:12:51+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-23T19:12:51+00:00",
+        "content_sha256": "a61530c3e7cdb91dab32fe3b6cacb14b9172c16ddd19c6008ffd94baecc83589",
+        "acknowledged_hazards": [
+          "figures",
+          "ocr"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

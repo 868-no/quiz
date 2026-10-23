@@ -1,0 +1,164 @@
+{
+  "id": "q-0085",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 4,
+      "section_ids": [
+        "s4-21"
+      ],
+      "topic_ids": [
+        "ssb",
+        "senderoppbygging"
+      ],
+      "learning_objective": "Forstå hvorfor et SSB-signal må blandes, ikke multipliseres, opp til sendefrekvensen.",
+      "priority": "normal",
+      "context": [
+        [
+          "Et ",
+          {
+            "term": "ssb",
+            "text": "SSB"
+          },
+          "-signal lages på en fast frekvens på 9 MHz og skal flyttes opp til 2 m-båndet."
+        ]
+      ],
+      "stem": [
+        "Hvorfor brukes et blandetrinn til dette, og ikke frekvensmultiplikatorer?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Multiplikasjon ville også ganget opp frekvensavstandene i signalet, slik at talen ble ødelagt."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Frekvensmultiplikatorer virker bare på frekvenser over 1 GHz."
+          ],
+          "feedback": [
+            "Multiplikatorer kan brukes på alle frekvenser, også på HF og VHF. De passer bare ikke for SSB."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Multiplikasjon ville fjernet det gjenværende sidebåndet."
+          ],
+          "feedback": [
+            "Sidebåndet blir ikke fjernet. Problemet er at frekvensavstandene i signalet blir ganget opp."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Et blandetrinn gir alltid høyere utgangseffekt enn en multiplikator."
+          ],
+          "feedback": [
+            "Begge er laveffektstrinn. Effekten kommer fra sluttforsterkeren, og det er ikke grunnen til valget."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "En multiplikator ganger den øyeblikkelige frekvensen. Hvis signalet ble ganget med 4, ville en tone 1 kHz over den undertrykte bærebølgen havne 4 kHz over. All tale ville blitt forskjøvet og spredt ut, og signalet ville blitt bredere.",
+        "I tillegg er en multiplikator sterkt ulineær og ødelegger amplitudevariasjonene som SSB består av. Et blandetrinn flytter hele signalet med en fast frekvens, slik at avstandene mellom komponentene beholdes."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 4,
+        "section_id": "s4-21",
+        "printed_pages": [
+          "4-11"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "758f6e00b9c6cc3f"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-23T21:00:00+00:00",
+        "note": "Batch 2 (ch4.json)"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T18:29:09+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "681b5ac728f27e94f9247a762359aa8ac0a14647584f896a31fba0a2e7264c75",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T18:34:38+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "ad149fb6ead617df0fce4720f4fc53b04fa37f17226c4fe1f579947b4102090e",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T19:12:53+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "ad149fb6ead617df0fce4720f4fc53b04fa37f17226c4fe1f579947b4102090e",
+          "note": "Godkjent av redaktør etter tre runder uavhengig AI-gjennomgang (Claude) og tre runder ChatGPT-kontroll; alle beregninger kontrollert, figurer gjengitt og inspisert. Sidehenvisninger er IKKE kontrollert mot trykt bok; OCR-/side-/figurmerknader kvittert på dette grunnlaget.",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "ad149fb6ead617df0fce4720f4fc53b04fa37f17226c4fe1f579947b4102090e",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-23T19:12:53+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-23T19:12:53+00:00",
+        "content_sha256": "ad149fb6ead617df0fce4720f4fc53b04fa37f17226c4fe1f579947b4102090e",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

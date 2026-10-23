@@ -1,0 +1,278 @@
+{
+  "id": "q-0067",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "calculation",
+      "difficulty": "medium",
+      "chapter": 3,
+      "section_ids": [
+        "s3-16"
+      ],
+      "topic_ids": [
+        "transistorforspenning"
+      ],
+      "learning_objective": "Beregne emittermotstanden i en forspenningskrets med spenningsdeler.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En NPN-transistor av silisium er forspent med en ",
+          {
+            "term": "spenningsdeler",
+            "text": "spenningsdeler"
+          },
+          " som holder basis på ",
+          {
+            "q": 2.4,
+            "u": "V"
+          },
+          " i forhold til jord. Mellom emitteren og jord sitter en emittermotstand R_E. Regn med et spenningsfall på ",
+          {
+            "q": 0.6,
+            "u": "V"
+          },
+          " fra basis til emitter, og at emitterstrømmen skal være ",
+          {
+            "q": 1.5,
+            "u": "mA"
+          },
+          "."
+        ]
+      ],
+      "stem": [
+        "Hvor stor må R_E være?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 1.2,
+              "u": "kΩ"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 1.6,
+              "u": "kΩ"
+            }
+          ],
+          "feedback": [
+            "Her er hele basisspenningen brukt. Spenningen over R_E er 0,6 V lavere enn basisspenningen."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 400,
+              "u": "Ω"
+            }
+          ],
+          "feedback": [
+            "Her er spenningen mellom basis og emitter brukt. Det er spenningen fra emitteren til jord som ligger over R_E."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 12,
+              "u": "kΩ"
+            }
+          ],
+          "feedback": [
+            "Kommaet har havnet feil. 1,8 V delt på 1,5 mA er 1200 Ω."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Spenningen på emitteren er basisspenningen minus spenningsfallet mellom basis og emitter. Deretter gir Ohms lov motstanden:",
+        {
+          "steps": [
+            [
+              {
+                "math": [
+                  "U_E",
+                  "=",
+                  {
+                    "q": 2.4,
+                    "u": "V"
+                  },
+                  "−",
+                  {
+                    "q": 0.6,
+                    "u": "V"
+                  },
+                  "=",
+                  {
+                    "q": 1.8,
+                    "u": "V"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "math": [
+                  "R_E",
+                  "=",
+                  {
+                    "frac": [
+                      [
+                        "U_E"
+                      ],
+                      [
+                        "I_E"
+                      ]
+                    ]
+                  },
+                  "=",
+                  {
+                    "frac": [
+                      [
+                        {
+                          "q": 1.8,
+                          "u": "V"
+                        }
+                      ],
+                      [
+                        {
+                          "q": 1.5,
+                          "u": "mA"
+                        }
+                      ]
+                    ]
+                  },
+                  "=",
+                  {
+                    "q": 1200,
+                    "u": "Ω"
+                  },
+                  "=",
+                  {
+                    "q": 1.2,
+                    "u": "kΩ"
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        "Emittermotstanden stabiliserer arbeidspunktet: Hvis strømmen prøver å øke, øker spenningen over R_E. Basisspenningen ligger fast, så spenningen mellom basis og emitter blir mindre, og strømmen trekkes tilbake."
+      ],
+      "glossary_after_answer": [],
+      "calculation": {
+        "formula": "ohms_law_resistance",
+        "inputs": {
+          "U": [
+            1.8,
+            "V"
+          ],
+          "I": [
+            1.5,
+            "mA"
+          ]
+        },
+        "answer": [
+          1.2,
+          "kΩ"
+        ],
+        "answer_symbol": "R_E",
+        "sig_figs": 2
+      },
+      "study_reference": {
+        "chapter": 3,
+        "section_id": "s3-16",
+        "printed_pages": [
+          "3-7",
+          "3-8"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "c7613788ae29b22c"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-23T21:00:00+00:00",
+        "note": "Batch 2 (ch3.json)"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T18:29:09+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "b60cedc2dbc447fc324342e54e113e9142cc72dc91fda07766803bd259ffb7f3",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T19:12:52+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "b60cedc2dbc447fc324342e54e113e9142cc72dc91fda07766803bd259ffb7f3",
+          "note": "Godkjent av redaktør etter tre runder uavhengig AI-gjennomgang (Claude) og tre runder ChatGPT-kontroll; alle beregninger kontrollert, figurer gjengitt og inspisert. Sidehenvisninger er IKKE kontrollert mot trykt bok; OCR-/side-/figurmerknader kvittert på dette grunnlaget.",
+          "acknowledged": [
+            "figures",
+            "ocr"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "b60cedc2dbc447fc324342e54e113e9142cc72dc91fda07766803bd259ffb7f3",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: equation, numeric_low_conf. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-23T19:12:52+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-23T19:12:52+00:00",
+        "content_sha256": "b60cedc2dbc447fc324342e54e113e9142cc72dc91fda07766803bd259ffb7f3",
+        "acknowledged_hazards": [
+          "figures",
+          "ocr"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

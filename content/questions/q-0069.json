@@ -1,0 +1,242 @@
+{
+  "id": "q-0069",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "calculation",
+      "difficulty": "easy",
+      "chapter": 3,
+      "section_ids": [
+        "s3-15"
+      ],
+      "topic_ids": [
+        "transistorforspenning"
+      ],
+      "learning_objective": "Beregne effekten som avgis i en transistor ut fra spenningen over den og strømmen gjennom den.",
+      "priority": "normal",
+      "context": [
+        [
+          "En NPN-transistor er forspent slik at kollektorstrømmen er ",
+          {
+            "q": 15,
+            "u": "mA"
+          },
+          " når det ikke er noe signal. Forsyningsspenningen er ",
+          {
+            "q": 12,
+            "u": "V"
+          },
+          ", emitteren ligger direkte på jord, og kollektoren er koblet til forsyningen gjennom en kollektormotstand og ligger på ",
+          {
+            "q": 6,
+            "u": "V"
+          },
+          " i forhold til jord. Se bort fra effekten som skyldes basisstrømmen."
+        ]
+      ],
+      "stem": [
+        "Hvor stor effekt avgis som varme i transistoren?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 90,
+              "u": "mW"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 180,
+              "u": "mW"
+            }
+          ],
+          "feedback": [
+            "Her er hele forsyningsspenningen brukt. Halvparten av den ligger over kollektormotstanden, og det er bare spenningen fra kollektor til emitter som ligger over transistoren."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 9,
+              "u": "mW"
+            }
+          ],
+          "feedback": [
+            "Sjekk prefiksene: 6 V · 0,015 A = 0,09 W, som er 90 mW."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 0.9,
+              "u": "W"
+            }
+          ],
+          "feedback": [
+            "Sjekk prefiksene: 6 V · 0,015 A = 0,09 W, ikke 0,9 W."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Spenningen over transistoren er spenningen mellom kollektor og emitter, altså 6 V. Effekten er spenning ganger strøm:",
+        {
+          "steps": [
+            [
+              {
+                "math": [
+                  "P",
+                  "=",
+                  "U_{CE}",
+                  "·",
+                  "I_C",
+                  "=",
+                  {
+                    "q": 6,
+                    "u": "V"
+                  },
+                  "·",
+                  {
+                    "q": 15,
+                    "u": "mA"
+                  },
+                  "=",
+                  {
+                    "q": 90,
+                    "u": "mW"
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        "Denne effekten avgis hele tiden, også uten signal. Transistoren må tåle den, og ved større effekter trengs kjøleribbe."
+      ],
+      "glossary_after_answer": [],
+      "calculation": {
+        "formula": "power_ui",
+        "inputs": {
+          "U": [
+            6,
+            "V"
+          ],
+          "I": [
+            15,
+            "mA"
+          ]
+        },
+        "answer": [
+          90,
+          "mW"
+        ],
+        "answer_symbol": "P",
+        "sig_figs": 2
+      },
+      "study_reference": {
+        "chapter": 3,
+        "section_id": "s3-15",
+        "printed_pages": [
+          "3-6",
+          "3-7"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "d7dd0bb3df117f8c",
+          "306700e7fea6ff1d"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-23T21:00:00+00:00",
+        "note": "Batch 2 (ch3.json)"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T18:29:09+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "6a36eaece28ea768ab0229aae4bd8cb1c1b791f62a0a19ba8968550dcd434cc7",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T18:34:38+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "764536e07e7f97e438abdc73990d6a1d2f9c461268ddb4cbe1920d0e73eea5a8",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T19:12:52+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "764536e07e7f97e438abdc73990d6a1d2f9c461268ddb4cbe1920d0e73eea5a8",
+          "note": "Godkjent av redaktør etter tre runder uavhengig AI-gjennomgang (Claude) og tre runder ChatGPT-kontroll; alle beregninger kontrollert, figurer gjengitt og inspisert. Sidehenvisninger er IKKE kontrollert mot trykt bok; OCR-/side-/figurmerknader kvittert på dette grunnlaget.",
+          "acknowledged": [
+            "figures",
+            "ocr"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "764536e07e7f97e438abdc73990d6a1d2f9c461268ddb4cbe1920d0e73eea5a8",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: equation, low_ocr_confidence, numeric_low_conf. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-23T19:12:52+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-23T19:12:52+00:00",
+        "content_sha256": "764536e07e7f97e438abdc73990d6a1d2f9c461268ddb4cbe1920d0e73eea5a8",
+        "acknowledged_hazards": [
+          "figures",
+          "ocr"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

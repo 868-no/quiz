@@ -1,0 +1,165 @@
+{
+  "id": "q-0073",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 3,
+      "section_ids": [
+        "s3-29"
+      ],
+      "topic_ids": [
+        "felteffekttransistorer"
+      ],
+      "learning_objective": "Forstå hvordan portspenningen styrer strømmen i en N-kanal JFET.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En N-kanal ",
+          {
+            "term": "felteffekttransistor",
+            "text": "JFET"
+          },
+          " har positiv spenning på drain i forhold til source. Porten (gate) er negativt forspent i forhold til source."
+        ]
+      ],
+      "stem": [
+        "Hva skjer når porten gjøres enda mer negativ?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Sperresjiktet blir bredere, kanalen smalere og drainstrømmen mindre, til kanalen til slutt knipes av."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Sperresjiktet blir smalere, kanalen bredere og drainstrømmen større."
+          ],
+          "feedback": [
+            "Det skjer når porten gjøres mindre negativ. Større sperrespenning over PN-overgangen gjør sjiktet bredere."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Porten begynner å lede, og portstrømmen styrer drainstrømmen som i en bipolar transistor."
+          ],
+          "feedback": [
+            "Porten er forspent i sperreretningen og trekker nesten ingen strøm. En FET styres av spenning, ikke av strøm."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Drainstrømmen blir uendret, fordi den bare avhenger av spenningen mellom drain og source."
+          ],
+          "feedback": [
+            "Det er nettopp portspenningen som styrer kanalbredden og dermed drainstrømmen."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "PN-overgangen mellom porten og kanalen er forspent i sperreretningen. Sperresjiktet er nesten uten frie ladningsbærere og stjeler plass fra den ledende kanalen.",
+        "Mer negativ portspenning gir bredere sperresjikt, smalere kanal og mindre strøm. Ved en viss spenning er kanalen knepet helt av, og strømmen stopper. Fordi porten sperrer, går det nesten ingen portstrøm, og inngangsimpedansen blir svært høy."
+      ],
+      "glossary_after_answer": [
+        "felteffekttransistor"
+      ],
+      "study_reference": {
+        "chapter": 3,
+        "section_id": "s3-29",
+        "printed_pages": [
+          "3-12"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "1008ca999e8ca159"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-23T21:00:00+00:00",
+        "note": "Batch 2 (ch3.json)"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T18:29:09+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "d792698f2ba675cbcda864e63a7452b9957fb44b0020d2aec6f0d43861001435",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T18:34:38+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "6582bdb941e80af755a3c7595aef0d6aed4cf7d96f7e363e5d631e5fa953d343",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T19:12:52+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "6582bdb941e80af755a3c7595aef0d6aed4cf7d96f7e363e5d631e5fa953d343",
+          "note": "Godkjent av redaktør etter tre runder uavhengig AI-gjennomgang (Claude) og tre runder ChatGPT-kontroll; alle beregninger kontrollert, figurer gjengitt og inspisert. Sidehenvisninger er IKKE kontrollert mot trykt bok; OCR-/side-/figurmerknader kvittert på dette grunnlaget.",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "6582bdb941e80af755a3c7595aef0d6aed4cf7d96f7e363e5d631e5fa953d343",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-23T19:12:52+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-23T19:12:52+00:00",
+        "content_sha256": "6582bdb941e80af755a3c7595aef0d6aed4cf7d96f7e363e5d631e5fa953d343",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

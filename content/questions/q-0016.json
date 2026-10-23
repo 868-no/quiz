@@ -3,7 +3,7 @@
   "revisions": [
     {
       "revision": 1,
-      "status": "needs_review",
+      "status": "approved",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "concept",
@@ -15,7 +15,7 @@
       "topic_ids": [
         "dioder"
       ],
-      "learning_objective": "Vite hvilken polaritet som får en silisiumdiode til å lede.",
+      "learning_objective": "Vite hvilken polaritet en ledende silisiumdiode har, og omtrent hvor stort spenningsfallet over den er.",
       "priority": "exam_important",
       "context": [
         [
@@ -112,11 +112,33 @@
           "to_status": "needs_review",
           "content_sha256": "785c98e6a01ff393aa54898697b7fc6be187e007480f73061eba13652708fb16",
           "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T19:10:04+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "14b7fbb17c2c0de9a684352d2b6ad6f902c570a7b05b6ed92965d0f6ac14e813",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T19:12:49+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "14b7fbb17c2c0de9a684352d2b6ad6f902c570a7b05b6ed92965d0f6ac14e813",
+          "note": "Godkjent av redaktør etter tre runder uavhengig AI-gjennomgang (Claude) og tre runder ChatGPT-kontroll; alle beregninger kontrollert, figurer gjengitt og inspisert. Sidehenvisninger er IKKE kontrollert mot trykt bok; OCR-/side-/figurmerknader kvittert på dette grunnlaget.",
+          "acknowledged": [
+            "figures",
+            "ocr"
+          ]
         }
       ],
       "checks": {
         "verifier": "deterministic-v1",
-        "content_sha256": "1ed5b3479751188a676c164724d09dfdccdc5006c85e08420d26a3ec8515f488",
+        "content_sha256": "14b7fbb17c2c0de9a684352d2b6ad6f902c570a7b05b6ed92965d0f6ac14e813",
         "errors": [],
         "warnings": [],
         "hazards": [
@@ -130,7 +152,25 @@
           }
         ],
         "passed": true,
-        "at": "2026-10-23T18:11:16+00:00"
+        "at": "2026-10-23T19:12:49+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-23T19:12:49+00:00",
+        "content_sha256": "14b7fbb17c2c0de9a684352d2b6ad6f902c570a7b05b6ed92965d0f6ac14e813",
+        "acknowledged_hazards": [
+          "figures",
+          "ocr"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
       }
     }
   ]

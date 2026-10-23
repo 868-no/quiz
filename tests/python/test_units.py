@@ -132,6 +132,8 @@ class RepositoryContentTest(unittest.TestCase):
         self.assertGreater(len(qs), 0)
         for _, q in qs:
             rev = max(q["revisions"], key=lambda r: r["revision"])
+            if rev["status"] in ("rejected", "retired"):
+                continue  # never published or checked
             with self.subTest(q["id"]):
                 res = check_revision(self.ctx, q["id"], rev)
                 self.assertEqual([e for e in res["errors"] if not e.startswith("sources: no source import")], [])

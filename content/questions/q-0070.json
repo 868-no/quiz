@@ -1,0 +1,161 @@
+{
+  "id": "q-0070",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "recall",
+      "difficulty": "medium",
+      "chapter": 3,
+      "section_ids": [
+        "s3-20"
+      ],
+      "topic_ids": [
+        "transistorkoblinger"
+      ],
+      "learning_objective": "Kjenne igjen egenskapene til en forsterker med felles basis.",
+      "priority": "exam_important",
+      "context": [
+        "En transistorforsterker har disse egenskapene: lav inngangsimpedans, høy utgangsimpedans, strømforsterkning litt under 1, og inn- og utsignal har samme fase."
+      ],
+      "stem": [
+        "Hvilken kobling er dette?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "term": "felles-basis",
+              "text": "felles basis"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "felles emitter"
+          ],
+          "feedback": [
+            "Felles emitter gir både strøm- og spenningsforsterkning og snur fasen 180°."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "felles kollektor"
+          ],
+          "feedback": [
+            "Felles kollektor (emitterfølger) har høy inngangsimpedans og lav utgangsimpedans, altså omvendt."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "felles kilde med FET"
+          ],
+          "feedback": [
+            "En FET-forsterker har svært høy inngangsimpedans fordi porten nesten ikke trekker strøm."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Når basis er felles for inngang og utgang (avkoblet til jord for signalet), går signalet inn på emitteren. Inngangen ser da rett inn i en emitter som leder hele emitterstrømmen, og inngangsimpedansen blir lav.",
+        "Kollektorstrømmen er nesten lik emitterstrømmen, så det er ingen strømforsterkning, men en god spenningsforsterkning. Inn- og utsignal har samme fase. Koblingen virker godt ved høye frekvenser."
+      ],
+      "glossary_after_answer": [
+        "felles-basis"
+      ],
+      "study_reference": {
+        "chapter": 3,
+        "section_id": "s3-20",
+        "printed_pages": [
+          "3-9"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "5b964122103e1b01"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-23T21:00:00+00:00",
+        "note": "Batch 2 (ch3.json)"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T18:29:09+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "f36cdf259d78f3d0d7822d0c33b9dd9acc193f2eeb082e0f30ffb1e4430a843f",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T18:34:38+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "fb7b2e1e86af79ad518bfd8129576816028369bbf60da729f39b8d21618a7cef",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T19:12:52+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "fb7b2e1e86af79ad518bfd8129576816028369bbf60da729f39b8d21618a7cef",
+          "note": "Godkjent av redaktør etter tre runder uavhengig AI-gjennomgang (Claude) og tre runder ChatGPT-kontroll; alle beregninger kontrollert, figurer gjengitt og inspisert. Sidehenvisninger er IKKE kontrollert mot trykt bok; OCR-/side-/figurmerknader kvittert på dette grunnlaget.",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "fb7b2e1e86af79ad518bfd8129576816028369bbf60da729f39b8d21618a7cef",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-23T19:12:52+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-23T19:12:52+00:00",
+        "content_sha256": "fb7b2e1e86af79ad518bfd8129576816028369bbf60da729f39b8d21618a7cef",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

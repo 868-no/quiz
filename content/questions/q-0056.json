@@ -1,0 +1,161 @@
+{
+  "id": "q-0056",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "recall",
+      "difficulty": "easy",
+      "chapter": 2,
+      "section_ids": [
+        "s2-51"
+      ],
+      "topic_ids": [
+        "krystaller"
+      ],
+      "learning_objective": "Kjenne den piezoelektriske effekten som grunnlaget for kvartskrystaller.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "Et ",
+          {
+            "term": "kvartskrystall",
+            "text": "kvartskrystall"
+          },
+          " gir en elektrisk spenning mellom sideflatene når det bøyes eller trykkes sammen. Omvendt endrer det form litt når det påtrykkes en spenning."
+        ]
+      ],
+      "stem": [
+        "Hva kalles denne effekten?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Den piezoelektriske effekten"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Den termoelektriske effekten"
+          ],
+          "feedback": [
+            "Termoelektrisk effekt gir spenning ut fra temperaturforskjeller, ikke mekanisk påkjenning."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Den fotoelektriske effekten"
+          ],
+          "feedback": [
+            "Fotoelektrisk effekt handler om lys som frigjør elektroner, ikke om mekanisk deformasjon."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Selvinduksjon"
+          ],
+          "feedback": [
+            "Selvinduksjon er spenning indusert i en spole av dens eget skiftende magnetfelt."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Kvarts er ",
+          {
+            "term": "piezoelektrisk-effekt",
+            "text": "piezoelektrisk"
+          },
+          ": mekanisk påkjenning gir elektrisk spenning, og elektrisk spenning gir mekanisk formendring."
+        ],
+        "Påtrykkes en vekselspenning med frekvens lik krystallets mekaniske egenfrekvens, svinger krystallet kraftig, og det oppfører seg elektrisk som en resonanskrets. Effekten brukes også i for eksempel gasstennere."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 2,
+        "section_id": "s2-51",
+        "printed_pages": [
+          "2-20"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "f42ae5c8d9beb579"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-23T21:00:00+00:00",
+        "note": "Batch 2 (ch2.json)"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T18:29:09+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "2e226ba0171f70dbd1aabc0840098c06d5cee4b1e650f92fbe7c04d0f402d941",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T19:12:51+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "2e226ba0171f70dbd1aabc0840098c06d5cee4b1e650f92fbe7c04d0f402d941",
+          "note": "Godkjent av redaktør etter tre runder uavhengig AI-gjennomgang (Claude) og tre runder ChatGPT-kontroll; alle beregninger kontrollert, figurer gjengitt og inspisert. Sidehenvisninger er IKKE kontrollert mot trykt bok; OCR-/side-/figurmerknader kvittert på dette grunnlaget.",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "2e226ba0171f70dbd1aabc0840098c06d5cee4b1e650f92fbe7c04d0f402d941",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-23T19:12:51+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-23T19:12:51+00:00",
+        "content_sha256": "2e226ba0171f70dbd1aabc0840098c06d5cee4b1e650f92fbe7c04d0f402d941",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

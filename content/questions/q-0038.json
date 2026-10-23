@@ -1,0 +1,175 @@
+{
+  "id": "q-0038",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 2,
+      "section_ids": [
+        "s2-20"
+      ],
+      "topic_ids": [
+        "tidskonstant"
+      ],
+      "learning_objective": "Vite hvor mye av spenningen som er igjen etter én tidskonstant ved utlading av en kondensator.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En oppladet kondensator lades ut gjennom en motstand. Kretsen har ",
+          {
+            "term": "tidskonstant",
+            "text": "tidskonstanten"
+          },
+          " τ = R · C."
+        ]
+      ],
+      "stem": [
+        "Omtrent hvor stor del av startspenningen ligger fortsatt over kondensatoren når det har gått én tidskonstant?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Ca. 37 %"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Ca. 63 %"
+          ],
+          "feedback": [
+            "63 % er den andelen spenningen har falt med etter én tidskonstant (eller nådd ved opplading). Det som er igjen ved utlading, er ca. 37 %."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Ca. 50 %"
+          ],
+          "feedback": [
+            "Utladingen følger en eksponentialkurve, ikke en rett linje. Etter én tidskonstant er spenningen lavere enn halvparten."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Ca. 0 %; kondensatoren er tom"
+          ],
+          "feedback": [
+            "Det tar mye lenger tid. Først etter omtrent fem tidskonstanter er kondensatoren praktisk talt utladet."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Ved utlading avtar både spenning og strøm eksponentielt. Etter én tidskonstant er spenningen redusert til e^−1 av startverdien:",
+        {
+          "steps": [
+            [
+              {
+                "math": [
+                  "e^−1",
+                  "≈",
+                  "0,37"
+                ]
+              }
+            ],
+            [
+              "Altså er rundt en tredjedel igjen. Etter fem tidskonstanter er under 1 % igjen."
+            ]
+          ]
+        }
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 2,
+        "section_id": "s2-20",
+        "printed_pages": [
+          "2-8"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "fe9c6b3763b81a79"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-23T21:00:00+00:00",
+        "note": "Batch 2 (ch2.json)"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T18:29:09+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "58b50d3afe4ae11147d300ed2c76f6d5ff17b28efbd883a27ae4167eb4c8f66e",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T19:12:50+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "58b50d3afe4ae11147d300ed2c76f6d5ff17b28efbd883a27ae4167eb4c8f66e",
+          "note": "Godkjent av redaktør etter tre runder uavhengig AI-gjennomgang (Claude) og tre runder ChatGPT-kontroll; alle beregninger kontrollert, figurer gjengitt og inspisert. Sidehenvisninger er IKKE kontrollert mot trykt bok; OCR-/side-/figurmerknader kvittert på dette grunnlaget.",
+          "acknowledged": [
+            "figures",
+            "ocr"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "58b50d3afe4ae11147d300ed2c76f6d5ff17b28efbd883a27ae4167eb4c8f66e",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: equation. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-23T19:12:50+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-23T19:12:50+00:00",
+        "content_sha256": "58b50d3afe4ae11147d300ed2c76f6d5ff17b28efbd883a27ae4167eb4c8f66e",
+        "acknowledged_hazards": [
+          "figures",
+          "ocr"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

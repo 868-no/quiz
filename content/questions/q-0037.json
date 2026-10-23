@@ -1,0 +1,252 @@
+{
+  "id": "q-0037",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "calculation",
+      "difficulty": "easy",
+      "chapter": 2,
+      "section_ids": [
+        "s2-20"
+      ],
+      "topic_ids": [
+        "tidskonstant"
+      ],
+      "learning_objective": "Beregne tidskonstanten τ = R · C for en RC-krets.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En kondensator på ",
+          {
+            "q": 22,
+            "u": "µF"
+          },
+          " lades opp gjennom en motstand på ",
+          {
+            "q": 47,
+            "u": "kΩ"
+          },
+          " fra en likespenningskilde."
+        ]
+      ],
+      "stem": [
+        [
+          "Hva er ",
+          {
+            "term": "tidskonstant",
+            "text": "tidskonstanten"
+          },
+          " for kretsen?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 1.03,
+              "u": "s"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 0.103,
+              "u": "s"
+            }
+          ],
+          "feedback": [
+            "Svaret er ti ganger for lite. Sjekk prefiksene: 47 000 Ω · 0,000022 F."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 10.3,
+              "u": "s"
+            }
+          ],
+          "feedback": [
+            "Svaret er ti ganger for stort. Sjekk prefiksene: 47 000 Ω · 0,000022 F."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 5.17,
+              "u": "s"
+            }
+          ],
+          "feedback": [
+            "Dette er omtrent fem tidskonstanter, altså tiden før kondensatoren er nesten fullt oppladet, ikke selve tidskonstanten."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Tidskonstanten er produktet av resistans og kapasitans:"
+        ],
+        {
+          "steps": [
+            [
+              {
+                "math": [
+                  "τ",
+                  "=",
+                  "R",
+                  "·",
+                  "C",
+                  "=",
+                  {
+                    "q": 47000,
+                    "u": "Ω"
+                  },
+                  "·",
+                  {
+                    "q": 2.2e-05,
+                    "u": "F"
+                  },
+                  "=",
+                  {
+                    "q": 1.034,
+                    "u": "s"
+                  }
+                ]
+              }
+            ],
+            [
+              "Tidskonstanten er altså omtrent ",
+              {
+                "q": 1.03,
+                "u": "s"
+              },
+              "."
+            ]
+          ]
+        },
+        "Ohm ganget med farad gir sekunder. Etter omtrent fem tidskonstanter regnes kondensatoren som praktisk talt fullt oppladet."
+      ],
+      "glossary_after_answer": [],
+      "calculation": {
+        "formula": "time_constant_rc",
+        "inputs": {
+          "R": [
+            47,
+            "kΩ"
+          ],
+          "C": [
+            22,
+            "µF"
+          ]
+        },
+        "answer": [
+          1.03,
+          "s"
+        ],
+        "answer_symbol": "τ",
+        "sig_figs": 3
+      },
+      "study_reference": {
+        "chapter": 2,
+        "section_id": "s2-20",
+        "printed_pages": [
+          "2-8"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "fe9c6b3763b81a79"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-23T21:00:00+00:00",
+        "note": "Batch 2 (ch2.json)"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T18:29:09+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "59e37a529edce42ff124e3586b83bf7c42ae74ce1e3639d42c77606a97662887",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T18:44:58+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "aacb646c57024097f458d80749018d18092ff49d8335d46634d197aa81249344",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T19:12:50+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "aacb646c57024097f458d80749018d18092ff49d8335d46634d197aa81249344",
+          "note": "Godkjent av redaktør etter tre runder uavhengig AI-gjennomgang (Claude) og tre runder ChatGPT-kontroll; alle beregninger kontrollert, figurer gjengitt og inspisert. Sidehenvisninger er IKKE kontrollert mot trykt bok; OCR-/side-/figurmerknader kvittert på dette grunnlaget.",
+          "acknowledged": [
+            "figures",
+            "ocr"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "aacb646c57024097f458d80749018d18092ff49d8335d46634d197aa81249344",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: equation. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-23T19:12:50+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-23T19:12:50+00:00",
+        "content_sha256": "aacb646c57024097f458d80749018d18092ff49d8335d46634d197aa81249344",
+        "acknowledged_hazards": [
+          "figures",
+          "ocr"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

@@ -1,0 +1,159 @@
+{
+  "id": "q-0120",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "medium",
+      "chapter": 6,
+      "section_ids": [
+        "s6-27",
+        "s6-25"
+      ],
+      "topic_ids": [
+        "forforsterkere"
+      ],
+      "learning_objective": "Forstå når en forforsterker hjelper og hvordan den påvirker det dynamiske området.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En operatør har en moderne mottaker med lavt ",
+          {
+            "term": "stoytall",
+            "text": "støytall"
+          },
+          ". Hun vil koble en ",
+          {
+            "term": "forforsterker",
+            "text": "forforsterker"
+          },
+          " med omtrent samme støytall og 20 dB forsterkning rett foran mottakeren. Kabelen mellom dem er kort."
+        ]
+      ],
+      "stem": "Hva er det mest sannsynlige resultatet?",
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Svake signaler blir ikke tydeligere, og mottakeren blir lettere overstyrt"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Signal/støy-forholdet blir 20 dB bedre"
+          ],
+          "feedback": [
+            "Forforsterkeren forsterker signal og støy like mye og legger til litt egen støy. Signal/støy-forholdet kan ikke bli bedre enn ved inngangen."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Det dynamiske området øker med 20 dB"
+          ],
+          "feedback": [
+            "Det dynamiske området blir mindre, ikke større: sterke signaler kommer 20 dB sterkere inn til blanderen og gir lettere intermodulasjon."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Dempingen av speilfrekvensen blir mye bedre"
+          ],
+          "feedback": [
+            "Speilfrekvensdemping avhenger av filtrene foran blanderen, ikke av ekstra forsterkning."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "En forforsterker hjelper bare hvis den har klart bedre støytall enn mottakeren. Er de like gode, blir den samlede støyen litt større enn uten forforsterker.",
+        "Den ekstra forsterkningen trekkes dessuten fra det sterkeste signalet systemet tåler. Det dynamiske området blir mindre, og sterke signaler gir lettere intermodulasjon. Trengs en forforsterker, er moderat forsterkning, gjerne rundt 10 dB, vanligvis nok."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 6,
+        "section_id": "s6-27",
+        "printed_pages": [
+          "6-16"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "881570e01b06e518",
+          "88a8963f0dc38b67"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-23T21:00:00+00:00",
+        "note": "Batch 2 (ch6.json)"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T18:29:09+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "941c87767deef65dd53dd7c613dbacfa2dfbc85e7b4d2767d226a5fdce36cc6b",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T18:34:38+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "c5ee6f27e9cbe43b7e68a75a1b0ea388b6d40155e07efed44dc03a950ed87d5c",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "c5ee6f27e9cbe43b7e68a75a1b0ea388b6d40155e07efed44dc03a950ed87d5c",
+          "note": "Godkjent av redaktør etter tre runder uavhengig AI-gjennomgang (Claude) og tre runder ChatGPT-kontroll; alle beregninger kontrollert, figurer gjengitt og inspisert. Sidehenvisninger er IKKE kontrollert mot trykt bok; OCR-/side-/figurmerknader kvittert på dette grunnlaget.",
+          "acknowledged": []
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "c5ee6f27e9cbe43b7e68a75a1b0ea388b6d40155e07efed44dc03a950ed87d5c",
+        "errors": [],
+        "warnings": [],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-23T19:12:55+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-23T19:12:55+00:00",
+        "content_sha256": "c5ee6f27e9cbe43b7e68a75a1b0ea388b6d40155e07efed44dc03a950ed87d5c",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

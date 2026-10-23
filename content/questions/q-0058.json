@@ -1,0 +1,147 @@
+{
+  "id": "q-0058",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 2,
+      "section_ids": [
+        "s2-52"
+      ],
+      "topic_ids": [
+        "komponentstabilitet"
+      ],
+      "learning_objective": "Forstå hvordan kondensatorer med ulik temperaturkoeffisient kan kombineres for å stabilisere en avstemt krets.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En oscillator med en LC-krets driver i frekvens når apparatet blir varmt. Spolen har positiv ",
+          {
+            "term": "temperaturkoeffisient",
+            "text": "temperaturkoeffisient"
+          },
+          "."
+        ]
+      ],
+      "stem": [
+        "Hvilket tiltak vil best redusere frekvensdriften?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Kombinere kondensatorer med positiv og negativ temperaturkoeffisient, så kretsen samlet får nær null drift."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Bruke bare kondensatorer med positiv temperaturkoeffisient, slik at de endrer seg i takt med spolen."
+          ],
+          "feedback": [
+            "Da øker både L og C med temperaturen, og frekvensen faller enda mer. Driften blir større, ikke mindre."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Plassere oscillatoren tett inntil sluttforsterkeren, så temperaturen blir jevnere."
+          ],
+          "feedback": [
+            "Sluttforsterkeren er en stor varmekilde. Frekvensbestemmende kretser bør tvert imot plasseres langt unna varme."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Bytte til kondensatorer med høyere spenningsangivelse og større fysisk størrelse."
+          ],
+          "feedback": [
+            "Spenningsangivelsen sier noe om hvor mye spenning kondensatoren tåler, ikke om hvordan kapasitansen endres med temperaturen."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Resonansfrekvensen avhenger av både L og C. Når spolen øker induktansen med temperaturen, kan dette kompenseres med en kondensator som får mindre kapasitans når den blir varm (negativ temperaturkoeffisient)."
+        ],
+        "Ved å kombinere kondensatorer med passende positive og negative koeffisienter kan den samlede temperaturkoeffisienten for kretsen bli nær null. I tillegg bør frekvenskritiske kretser holdes unna varmekilder, og for svært høy stabilitet kan et krystall i en temperaturstyrt ovn brukes."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 2,
+        "section_id": "s2-52",
+        "printed_pages": [
+          "2-21"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "986e8de193ca5a9d"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-23T21:00:00+00:00",
+        "note": "Batch 2 (ch2.json)"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T18:29:09+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "a404e8b7b3dd566c10ea6dd5d9a2f110a62821342fab22fb45d97c1d96687804",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T19:12:51+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "a404e8b7b3dd566c10ea6dd5d9a2f110a62821342fab22fb45d97c1d96687804",
+          "note": "Godkjent av redaktør etter tre runder uavhengig AI-gjennomgang (Claude) og tre runder ChatGPT-kontroll; alle beregninger kontrollert, figurer gjengitt og inspisert. Sidehenvisninger er IKKE kontrollert mot trykt bok; OCR-/side-/figurmerknader kvittert på dette grunnlaget.",
+          "acknowledged": []
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "a404e8b7b3dd566c10ea6dd5d9a2f110a62821342fab22fb45d97c1d96687804",
+        "errors": [],
+        "warnings": [],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-23T19:12:51+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-23T19:12:51+00:00",
+        "content_sha256": "a404e8b7b3dd566c10ea6dd5d9a2f110a62821342fab22fb45d97c1d96687804",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

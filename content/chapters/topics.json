@@ -124,6 +124,146 @@
       "id": "demodulering",
       "title": "Demodulering",
       "chapter": 6
+    },
+    {
+      "id": "kondensatorer",
+      "title": "Kondensatorer og kapasitans",
+      "chapter": 2
+    },
+    {
+      "id": "tidskonstant",
+      "title": "Lading, utlading og tidskonstant",
+      "chapter": 2
+    },
+    {
+      "id": "spoler",
+      "title": "Spoler og induktans",
+      "chapter": 2
+    },
+    {
+      "id": "impedans",
+      "title": "Impedans i RC- og RL-kretser",
+      "chapter": 2
+    },
+    {
+      "id": "kobling-avkobling",
+      "title": "Kobling, avkobling og RF-sperrer",
+      "chapter": 2
+    },
+    {
+      "id": "q-faktor",
+      "title": "Q-faktor og båndbredde",
+      "chapter": 2
+    },
+    {
+      "id": "selektivitet-filter",
+      "title": "Filterflanker og formfaktor",
+      "chapter": 2
+    },
+    {
+      "id": "transformatorer",
+      "title": "Transformatorer",
+      "chapter": 2
+    },
+    {
+      "id": "krystaller",
+      "title": "Kvartskrystaller",
+      "chapter": 2
+    },
+    {
+      "id": "komponentstabilitet",
+      "title": "Temperaturstabilitet og skjerming",
+      "chapter": 2
+    },
+    {
+      "id": "halvledermaterialer",
+      "title": "Halvledermaterialer og doping",
+      "chapter": 3
+    },
+    {
+      "id": "transistorer",
+      "title": "Bipolare transistorer",
+      "chapter": 3
+    },
+    {
+      "id": "transistorforspenning",
+      "title": "Forspenning av transistorer",
+      "chapter": 3
+    },
+    {
+      "id": "forspenningsklasser",
+      "title": "Forspenningsklasser (A, AB, B, C)",
+      "chapter": 3
+    },
+    {
+      "id": "felteffekttransistorer",
+      "title": "Felteffekttransistorer (FET)",
+      "chapter": 3
+    },
+    {
+      "id": "regulert-stromforsyning",
+      "title": "Regulert strømforsyning",
+      "chapter": 3
+    },
+    {
+      "id": "radiorør",
+      "title": "Radiorør",
+      "chapter": 3
+    },
+    {
+      "id": "senderoppbygging",
+      "title": "Senderens oppbygging",
+      "chapter": 4
+    },
+    {
+      "id": "frekvenssyntese",
+      "title": "Frekvenssyntese (PLL og DDS)",
+      "chapter": 4
+    },
+    {
+      "id": "sluttforsterker",
+      "title": "Sluttforsterkere og virkningsgrad",
+      "chapter": 4
+    },
+    {
+      "id": "spisseffekt",
+      "title": "Spisseffekt og taleprosessor",
+      "chapter": 4
+    },
+    {
+      "id": "datamodulasjon",
+      "title": "Modulasjon av datasignaler",
+      "chapter": 4
+    },
+    {
+      "id": "frekvensstabilitet",
+      "title": "Frekvensstabilitet og drift",
+      "chapter": 5
+    },
+    {
+      "id": "blandingsprodukter",
+      "title": "Blandingsprodukter i sendere",
+      "chapter": 5
+    },
+    {
+      "id": "parasittsvingninger",
+      "title": "Selvsving og parasittsvingninger",
+      "chapter": 5
+    },
+    {
+      "id": "agc",
+      "title": "AGC og S-meter",
+      "chapter": 6
+    },
+    {
+      "id": "brussperre",
+      "title": "Brussperre og støybegrensning",
+      "chapter": 6
+    },
+    {
+      "id": "forforsterkere",
+      "title": "Forforsterkere og nedkonvertere",
+      "chapter": 6
     }
   ]
 }

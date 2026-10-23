@@ -1,0 +1,178 @@
+{
+  "id": "q-0086",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 4,
+      "section_ids": [
+        "s4-22"
+      ],
+      "topic_ids": [
+        "am",
+        "ssb"
+      ],
+      "learning_objective": "Forklare hvordan en tradisjonell analog SSB-sender kan lage AM med balansert modulator og sidebåndsfilter, og hvorfor de etterfølgende forsterkertrinnene må være lineære.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En tradisjonell analog ",
+          {
+            "term": "ssb",
+            "text": "SSB"
+          },
+          "-sender bruker filtermetoden med balansert modulator og sidebåndsfilter. Den skal også kunne sende ",
+          {
+            "term": "amplitudemodulasjon",
+            "text": "AM"
+          },
+          "."
+        ]
+      ],
+      "stem": [
+        "Hvordan kan AM-signalet lages med de samme trinnene?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Bærebølge slippes inn etter modulatoren, og sidebåndsfilteret kobles forbi."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Sluttrinnet settes i klasse C og moduleres på forsyningsspenningen."
+          ],
+          "feedback": [
+            "Slik ble AM ofte laget i eldre rørsendere. I en SSB-sender lages signalet på lavt nivå og forsterkes lineært."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Bærebølgeoscillatoren slås av, og begge sidebåndene sendes ut."
+          ],
+          "feedback": [
+            "Uten bærebølge blir det dobbelt sidebånd med undertrykt bærebølge, ikke vanlig AM."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Lydsignalet styrer en varicap-diode i oscillatoren."
+          ],
+          "feedback": [
+            "Det gir frekvensmodulasjon. AM krever at amplituden varierer med lyden."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Den balanserte modulatoren ubalanseres, eller bærebølge legges til i utgangen fra modulatoren. Sidebåndsfilteret kobles ut eller forbi, slik at begge sidebåndene beholdes. Resultatet er et vanlig AM-signal på lav effekt. Moderne digitalt oppbygde sendere lager ofte både AM og SSB direkte med digital signalbehandling, uten slike omkoblinger.",
+        "Signalet blandes så opp til sendefrekvensen og forsterkes i lineære trinn, for eksempel klasse AB, fordi amplituden varierer med lyden, og amplitudevariasjonene ikke skal forvrenges."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 4,
+        "section_id": "s4-22",
+        "printed_pages": [
+          "4-11"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "c378b14f807f70d8"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-23T21:00:00+00:00",
+        "note": "Batch 2 (ch4.json)"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T18:29:09+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "864a61ebb4619c79cc6516b545a0f747d4bc799724a78b86fcd64013cd85cb55",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T18:34:38+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "21564355ca01d247f5e5f6d504b99c221c1847c575362312ebbb65742d38467a",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T18:44:58+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "ae8ee7a8db2b7eba68b33ede679b5e53427817b1b9935b99d15668380590155a",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T19:10:04+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "50a1e6e598af847b302d13513a23c0f37c8231c44684e9e03ab70dbc95c99590",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T19:12:53+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "50a1e6e598af847b302d13513a23c0f37c8231c44684e9e03ab70dbc95c99590",
+          "note": "Godkjent av redaktør etter tre runder uavhengig AI-gjennomgang (Claude) og tre runder ChatGPT-kontroll; alle beregninger kontrollert, figurer gjengitt og inspisert. Sidehenvisninger er IKKE kontrollert mot trykt bok; OCR-/side-/figurmerknader kvittert på dette grunnlaget.",
+          "acknowledged": []
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "50a1e6e598af847b302d13513a23c0f37c8231c44684e9e03ab70dbc95c99590",
+        "errors": [],
+        "warnings": [],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-23T19:12:53+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-23T19:12:53+00:00",
+        "content_sha256": "50a1e6e598af847b302d13513a23c0f37c8231c44684e9e03ab70dbc95c99590",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

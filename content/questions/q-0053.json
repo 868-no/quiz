@@ -1,0 +1,182 @@
+{
+  "id": "q-0053",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 2,
+      "section_ids": [
+        "s2-48"
+      ],
+      "topic_ids": [
+        "selektivitet-filter"
+      ],
+      "learning_objective": "Forstå at lav formfaktor betyr liten båndbredde ved −60 dB, altså brattere filterflanker.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "To MF-filtre i en mottaker har begge en ",
+          {
+            "term": "baandbredde",
+            "text": "båndbredde"
+          },
+          " på ",
+          {
+            "q": 2.4,
+            "u": "kHz"
+          },
+          " ved −6 dB. Filter A har ",
+          {
+            "term": "formfaktor",
+            "text": "formfaktor"
+          },
+          " 1,6, og filter B har formfaktor 3,0 (båndbredden ved −60 dB delt på båndbredden ved −6 dB). Begge filtrene har symmetriske filterkurver om senterfrekvensen."
+        ]
+      ],
+      "stem": [
+        "Hvilket filter oppnår 60 dB demping nærmest passbåndet?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Filter A, fordi flankene er brattere."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Filter B, fordi høyere formfaktor betyr bedre filter."
+          ],
+          "feedback": [
+            "Høy formfaktor betyr at båndbredden ved −60 dB er mye større enn ved −6 dB, altså slake flanker."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "De er like gode, siden −6 dB-båndbredden er den samme."
+          ],
+          "feedback": [
+            "Lik −6 dB-båndbredde sier ingenting om båndbredden ved −60 dB. Det er nettopp det formfaktoren beskriver."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Filter B, fordi det slipper gjennom mer av det ønskede signalet."
+          ],
+          "feedback": [
+            "Begge har samme båndbredde ved −6 dB. Forskjellen gjelder hvor bredt filteret er ved −60 dB."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Filter A er 1,6 · 2,4 kHz ≈ 3,8 kHz bredt ved −60 dB, mens filter B er 3,0 · 2,4 kHz = 7,2 kHz bredt. Filter A når derfor 60 dB demping nærmere senterfrekvensen. Lav formfaktor betyr smale overganger mellom passbånd og stoppbånd."
+        ],
+        [
+          "Et ideelt «murveggsfilter» ville hatt formfaktor 1. En enkelt avstemt krets kommer ikke i nærheten av dette, så god ",
+          {
+            "term": "selektivitet",
+            "text": "selektivitet"
+          },
+          " i en mottaker krever flere avstemte kretser eller et krystall- eller keramisk filter."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 2,
+        "section_id": "s2-48",
+        "printed_pages": [
+          "2-19"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "b1b529d313bc1079"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-23T21:00:00+00:00",
+        "note": "Batch 2 (ch2.json)"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T18:29:09+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "47a037755eef330dccbe084b85951719bfe95c119562034c74bef67fb8ac7e48",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T18:44:58+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "2eb826d81cdaf48797c78ea306ea6a4391363e0cfc9498f875d3deadf8f6affb",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T19:10:04+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "5c29ff6cdc319c68daaf598b41b70469d22fee5a69d98d141180427ac64e9975",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T19:12:51+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "5c29ff6cdc319c68daaf598b41b70469d22fee5a69d98d141180427ac64e9975",
+          "note": "Godkjent av redaktør etter tre runder uavhengig AI-gjennomgang (Claude) og tre runder ChatGPT-kontroll; alle beregninger kontrollert, figurer gjengitt og inspisert. Sidehenvisninger er IKKE kontrollert mot trykt bok; OCR-/side-/figurmerknader kvittert på dette grunnlaget.",
+          "acknowledged": []
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "5c29ff6cdc319c68daaf598b41b70469d22fee5a69d98d141180427ac64e9975",
+        "errors": [],
+        "warnings": [],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-23T19:12:51+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-23T19:12:51+00:00",
+        "content_sha256": "5c29ff6cdc319c68daaf598b41b70469d22fee5a69d98d141180427ac64e9975",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

@@ -1,0 +1,155 @@
+{
+  "id": "q-0101",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "recall",
+      "difficulty": "medium",
+      "chapter": 5,
+      "section_ids": [
+        "s5-13"
+      ],
+      "topic_ids": [
+        "parasittsvingninger"
+      ],
+      "learning_objective": "Vite at parasittsvingninger dempes ved å øke tapene (senke Q), for eksempel med ferrittperler eller små seriemotstander.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "Et transistorisert HF-sluttrinn viser seg å ha ",
+          {
+            "term": "parasittsvingning",
+            "text": "parasittsvingninger"
+          },
+          " på en frekvens i VHF-området."
+        ]
+      ],
+      "stem": [
+        "Hvilket tiltak er vanlig for å dempe slike svingninger?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Sette en ferrittperle eller en liten seriemotstand i basis- eller kollektorledningen"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Øke Q-faktoren i kretsen slik at de uønskede resonansene blir skarpere"
+          ],
+          "feedback": [
+            "Det er motsatt. En skarpere resonans med høy Q gjør det lettere for kretsen å svinge."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Gjøre ledningene i trinnet lengre slik at induktansen i dem øker"
+          ],
+          "feedback": [
+            "Lange ledninger gir mer induktans og mer kapasitiv kobling, og dermed flere tilfeldige resonanser."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Koble inn et lydfilter mellom mikrofonen og mikrofonforsterkeren"
+          ],
+          "feedback": [
+            "Et lydfilter kan hjelpe mot lavfrekvente svingninger i mikrofonforsterkeren, men ikke mot svingninger på VHF i sluttrinnet."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Parasittsvingninger skyldes tilfeldige resonanser i ledninger, spoler og kondensatorer, og i HF-forsterkere ligger de typisk på VHF, der kapasitiv tilbakekobling virker godt.",
+        "Det vanlige botemiddelet er å gjøre den uønskede resonansen mer tapsbeheftet, altså senke Q-faktoren. En ferrittperle eller en liten motstand i serie med basis eller kollektor demper VHF-energien, men påvirker nesten ikke HF-signalet. I tillegg bør ledningene være korte og direkte, og avkoblingskondensatorene bør ha lav egeninduktans, for eksempel keramiske kondensatorer med korte ben."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 5,
+        "section_id": "s5-13",
+        "printed_pages": [
+          "5-6"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "e5ca3b17cbd3c585",
+          "44b1f050e014a3c6"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-23T21:00:00+00:00",
+        "note": "Batch 2 (ch5.json)"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T18:29:09+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "193142c97f7f5e3db90dfbb2d86d6b536fb1eadf1e1f5c984fdfb09c497a1863",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T19:12:54+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "193142c97f7f5e3db90dfbb2d86d6b536fb1eadf1e1f5c984fdfb09c497a1863",
+          "note": "Godkjent av redaktør etter tre runder uavhengig AI-gjennomgang (Claude) og tre runder ChatGPT-kontroll; alle beregninger kontrollert, figurer gjengitt og inspisert. Sidehenvisninger er IKKE kontrollert mot trykt bok; OCR-/side-/figurmerknader kvittert på dette grunnlaget.",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "193142c97f7f5e3db90dfbb2d86d6b536fb1eadf1e1f5c984fdfb09c497a1863",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-23T19:12:54+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-23T19:12:54+00:00",
+        "content_sha256": "193142c97f7f5e3db90dfbb2d86d6b536fb1eadf1e1f5c984fdfb09c497a1863",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

@@ -1,0 +1,152 @@
+{
+  "id": "q-0114",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "hard",
+      "chapter": 6,
+      "section_ids": [
+        "s6-16"
+      ],
+      "topic_ids": [
+        "mellomfrekvens"
+      ],
+      "learning_objective": "Kjenne virkningen av under-, kritisk og overkobling i en MF-transformator.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En ",
+          {
+            "term": "mf-transformator",
+            "text": "MF-transformator"
+          },
+          " har to avstemte kretser som er avstemt til samme frekvens. Koblingen mellom spolene økes gradvis."
+        ]
+      ],
+      "stem": "Hva skjer med frekvensresponsen når koblingen blir større enn kritisk kobling?",
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Kurven får to topper med et søkk i midten, og passbåndet blir bredere"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Kurven blir lik responsen til én enkelt avstemt krets"
+          ],
+          "feedback": [
+            "Det skjer ved løs kobling (underkobling), når spolene står langt fra hverandre."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Kurven blir stadig smalere og spissere jo tettere koblingen blir"
+          ],
+          "feedback": [
+            "Flankene blir brattere bare fram til kritisk kobling. Etter det blir kurven bredere og får et søkk."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Resonansfrekvensen flytter seg til det dobbelte"
+          ],
+          "feedback": [
+            "Koblingen endrer formen på kurven, men flytter ikke resonansen til dobbel frekvens."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Ved løs kobling ligner kurven på den for én avstemt krets. Når koblingen øker, blir kurven høyere og flankene brattere. Ved kritisk kobling er flankene brattest uten at toppen får noe søkk.",
+        "Overkobles kretsene, får kurven to topper med et søkk mellom dem. Litt overkobling kan likevel være nyttig, fordi kurven da får nokså flat topp og bratte flanker."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 6,
+        "section_id": "s6-16",
+        "printed_pages": [
+          "6-9"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "17a42596ad54bc8a"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-23T21:00:00+00:00",
+        "note": "Batch 2 (ch6.json)"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T18:29:09+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "6513ced6c99400025352a979f5e14df1704984abf6bdef1861ea1732ede894b5",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T19:12:54+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "6513ced6c99400025352a979f5e14df1704984abf6bdef1861ea1732ede894b5",
+          "note": "Godkjent av redaktør etter tre runder uavhengig AI-gjennomgang (Claude) og tre runder ChatGPT-kontroll; alle beregninger kontrollert, figurer gjengitt og inspisert. Sidehenvisninger er IKKE kontrollert mot trykt bok; OCR-/side-/figurmerknader kvittert på dette grunnlaget.",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "6513ced6c99400025352a979f5e14df1704984abf6bdef1861ea1732ede894b5",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-23T19:12:54+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-23T19:12:54+00:00",
+        "content_sha256": "6513ced6c99400025352a979f5e14df1704984abf6bdef1861ea1732ede894b5",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

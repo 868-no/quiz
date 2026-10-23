@@ -1,0 +1,221 @@
+{
+  "id": "q-0099",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "easy",
+      "chapter": 5,
+      "section_ids": [
+        "s5-12"
+      ],
+      "topic_ids": [
+        "harmoniske"
+      ],
+      "learning_objective": "Vite at en HF-sender vanligvis har et lavpassfilter på utgangen for å dempe harmoniske.",
+      "priority": "normal",
+      "context": [
+        "Figuren viser de siste trinnene i en HF-sender. Én blokk mellom sluttforsterkeren og antennen er skjult."
+      ],
+      "stem": [
+        [
+          "Hvilken blokk står vanligvis der for å dempe ",
+          {
+            "term": "harmoniske",
+            "text": "harmoniske"
+          },
+          " av sendesignalet?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Et lavpassfilter"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Et høypassfilter"
+          ],
+          "feedback": [
+            "Harmoniske ligger over sendefrekvensen. Et høypassfilter slipper høye frekvenser gjennom og ville ikke dempe dem."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Et båndstoppfilter for sendefrekvensen"
+          ],
+          "feedback": [
+            "Det ville stoppe selve signalet du vil sende, og la de harmoniske passere."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "En bufferforsterker"
+          ],
+          "feedback": [
+            "En buffer skiller oscillatoren fra lastendringer. En forsterker på dette stedet ville forsterke de harmoniske i stedet for å dempe dem."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "De harmoniske ligger alltid høyere enn grunnfrekvensen, på 2, 3, 4 … ganger den. Et ",
+          {
+            "term": "lavpassfilter",
+            "text": "lavpassfilter"
+          },
+          " skal slippe gjennom sendefrekvensen med lite tap, men dempe de harmoniske. Grensefrekvensen må derfor tilpasses båndet det sendes på: på 7 MHz må filteret slippe gjennom 7 MHz, men dempe andre harmoniske på 14 MHz. En flerbåndssender har derfor flere lavpassfiltre som velges etter bånd."
+        ],
+        "Hvis den harmoniske allerede er for eksempel 25 dB svakere enn signalet ut av sluttrinnet, og filteret demper den 45 dB mer, blir den totalt 70 dB under det ønskede signalet.",
+        "På VHF og høyere brukes oftere båndpassfiltre, fordi uønskede blandingsprodukter der også kan ligge under sendefrekvensen."
+      ],
+      "glossary_after_answer": [],
+      "visual": {
+        "template": "block-diagram",
+        "version": 1,
+        "params": {
+          "chain": [
+            {
+              "kind": "vfo"
+            },
+            {
+              "kind": "driver"
+            },
+            {
+              "kind": "power_amp"
+            },
+            {
+              "kind": "lowpass_filter",
+              "hidden": true
+            },
+            {
+              "kind": "antenna"
+            }
+          ]
+        },
+        "params_after": {
+          "chain": [
+            {
+              "kind": "vfo"
+            },
+            {
+              "kind": "driver"
+            },
+            {
+              "kind": "power_amp"
+            },
+            {
+              "kind": "lowpass_filter",
+              "highlight": true
+            },
+            {
+              "kind": "antenna"
+            }
+          ]
+        }
+      },
+      "study_reference": {
+        "chapter": 5,
+        "section_id": "s5-12",
+        "printed_pages": [
+          "5-5"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "1979e24cac0fd041"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-23T21:00:00+00:00",
+        "note": "Batch 2 (ch5.json)"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T18:29:09+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "cb3d73331ef035313e914f67e0e113bbe018610be4eaa2cb88fa48d9851e1333",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T18:44:58+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "0c5da79df28aac0d37d1b53a411ababfa71ecb3870a9291d396cd04058a15632",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T19:12:53+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "0c5da79df28aac0d37d1b53a411ababfa71ecb3870a9291d396cd04058a15632",
+          "note": "Godkjent av redaktør etter tre runder uavhengig AI-gjennomgang (Claude) og tre runder ChatGPT-kontroll; alle beregninger kontrollert, figurer gjengitt og inspisert. Sidehenvisninger er IKKE kontrollert mot trykt bok; OCR-/side-/figurmerknader kvittert på dette grunnlaget.",
+          "acknowledged": [
+            "figures",
+            "pages"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "0c5da79df28aac0d37d1b53a411ababfa71ecb3870a9291d396cd04058a15632",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "pages",
+            "detail": "cited printed page number is uncertain in the source (printed_page_status=inferred). Confirm the page in the book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-23T19:12:53+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-23T19:12:53+00:00",
+        "content_sha256": "0c5da79df28aac0d37d1b53a411ababfa71ecb3870a9291d396cd04058a15632",
+        "acknowledged_hazards": [
+          "figures",
+          "pages"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

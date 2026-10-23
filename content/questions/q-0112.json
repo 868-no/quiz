@@ -1,0 +1,210 @@
+{
+  "id": "q-0112",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "easy",
+      "chapter": 6,
+      "section_ids": [
+        "s6-14",
+        "s6-18"
+      ],
+      "topic_ids": [
+        "agc"
+      ],
+      "learning_objective": "Forstå hensikten med automatisk forsterkningskontroll.",
+      "priority": "exam_important",
+      "context": [
+        "Blokkskjemaet viser en superheterodynmottaker. Blokken med spørsmålstegn får en likespenning fra detektoren som øker med styrken på det mottatte signalet."
+      ],
+      "stem": "Hva er hensikten med denne blokken?",
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Å redusere forsterkningen ved sterke signaler, slik at lydnivået holdes jevnere"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Å stille mottakeren automatisk inn på den sterkeste stasjonen"
+          ],
+          "feedback": [
+            "Blokken endrer forsterkningen, ikke frekvensen mottakeren er innstilt på."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Å kutte lyden helt når det ikke finnes noe signal"
+          ],
+          "feedback": [
+            "Det er oppgaven til brussperren (squelch)."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Å holde frekvensen til lokaloscillatoren stabil"
+          ],
+          "feedback": [
+            "Blokken styrer MF-forsterkeren, ikke lokaloscillatoren."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Blokken er ",
+          {
+            "term": "agc",
+            "text": "AGC"
+          },
+          " (automatisk forsterkningskontroll). Et sterkere signal gir en større styrespenning, som senker forspenningen på MF-transistorene og dermed forsterkningen."
+        ],
+        "Signaler i antennen kan variere fra brøkdeler av en mikrovolt til flere volt, og styrken endrer seg også ved fading. AGC gjør at lydstyrken likevel holder seg nokså jevn."
+      ],
+      "glossary_after_answer": [],
+      "visual": {
+        "template": "block-diagram",
+        "version": 1,
+        "params": {
+          "chain": [
+            {
+              "kind": "antenna"
+            },
+            {
+              "kind": "rf_amp"
+            },
+            {
+              "kind": "mixer"
+            },
+            {
+              "kind": "if_filter"
+            },
+            {
+              "kind": "if_amp"
+            },
+            {
+              "kind": "demodulator"
+            },
+            {
+              "kind": "af_amp"
+            },
+            {
+              "kind": "speaker"
+            }
+          ],
+          "side": [
+            {
+              "kind": "local_osc",
+              "into": 2
+            },
+            {
+              "kind": "agc",
+              "into": 4,
+              "hidden": true
+            }
+          ]
+        },
+        "params_after": {
+          "side": [
+            {
+              "kind": "local_osc",
+              "into": 2
+            },
+            {
+              "kind": "agc",
+              "into": 4,
+              "highlight": true
+            }
+          ]
+        }
+      },
+      "study_reference": {
+        "chapter": 6,
+        "section_id": "s6-14",
+        "printed_pages": [
+          "6-8"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "b88d94e955bc5438",
+          "cab19c11b655f84a"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-23T21:00:00+00:00",
+        "note": "Batch 2 (ch6.json)"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T18:29:09+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "eb98929bbc5da2f8b9b3f0fdb072a15ff0303f2e87b46f748c6d51eaabebda84",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T19:12:54+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "eb98929bbc5da2f8b9b3f0fdb072a15ff0303f2e87b46f748c6d51eaabebda84",
+          "note": "Godkjent av redaktør etter tre runder uavhengig AI-gjennomgang (Claude) og tre runder ChatGPT-kontroll; alle beregninger kontrollert, figurer gjengitt og inspisert. Sidehenvisninger er IKKE kontrollert mot trykt bok; OCR-/side-/figurmerknader kvittert på dette grunnlaget.",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "eb98929bbc5da2f8b9b3f0fdb072a15ff0303f2e87b46f748c6d51eaabebda84",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-23T19:12:54+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-23T19:12:54+00:00",
+        "content_sha256": "eb98929bbc5da2f8b9b3f0fdb072a15ff0303f2e87b46f748c6d51eaabebda84",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

@@ -1,0 +1,170 @@
+{
+  "id": "q-0046",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 2,
+      "section_ids": [
+        "s2-40"
+      ],
+      "topic_ids": [
+        "fase",
+        "impedans"
+      ],
+      "learning_objective": "Vite faseforholdet mellom tilført spenning og strøm i en serie-RL-krets.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En motstand og en ",
+          {
+            "term": "spole",
+            "text": "spole"
+          },
+          " er koblet i serie til en sinusformet vekselspenning. Både resistansen og den induktive reaktansen er av betydning (ingen av dem er neglisjerbar)."
+        ]
+      ],
+      "stem": [
+        "Hva er riktig om fasen til den tilførte spenningen i forhold til strømmen?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Den ligger foran strømmen med en vinkel mellom 0° og 90°."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Den ligger nøyaktig 90° foran strømmen."
+          ],
+          "feedback": [
+            "Det ville gjelde en ren spole uten resistans. Motstanden trekker vinkelen ned mot 0°."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Den ligger etter strømmen med en vinkel mellom 0° og 90°."
+          ],
+          "feedback": [
+            "Det er tilfellet for en RC-krets. I en spole ligger spenningen foran strømmen."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Den er i fase med strømmen."
+          ],
+          "feedback": [
+            "Det gjelder bare en ren resistans. Spolen gir et bidrag som ligger 90° foran strømmen."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Strømmen er felles for begge komponentene og brukes som referanse. Spenningen over motstanden er i fase med strømmen, mens spenningen over spolen ligger 90° foran."
+        ],
+        [
+          "Den tilførte spenningen er vektorsummen av de to, og ligger derfor foran strømmen med en vinkel mellom 0° og 90°. Jo større X_L er i forhold til R, desto nærmere 90° kommer vinkelen. Kretsens ",
+          {
+            "term": "impedans",
+            "text": "impedans"
+          },
+          " blir √(R² + X_L²)."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 2,
+        "section_id": "s2-40",
+        "printed_pages": [
+          "2-16"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "bd3f73fe404c860e"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-23T21:00:00+00:00",
+        "note": "Batch 2 (ch2.json)"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T18:29:09+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "b5ed84f5ac758241146a758af9151df8ea95076aeae725c5f98bf789a15ded1d",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T19:12:51+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "b5ed84f5ac758241146a758af9151df8ea95076aeae725c5f98bf789a15ded1d",
+          "note": "Godkjent av redaktør etter tre runder uavhengig AI-gjennomgang (Claude) og tre runder ChatGPT-kontroll; alle beregninger kontrollert, figurer gjengitt og inspisert. Sidehenvisninger er IKKE kontrollert mot trykt bok; OCR-/side-/figurmerknader kvittert på dette grunnlaget.",
+          "acknowledged": [
+            "figures",
+            "ocr"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "b5ed84f5ac758241146a758af9151df8ea95076aeae725c5f98bf789a15ded1d",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: equation, numeric_low_conf. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-23T19:12:51+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-23T19:12:51+00:00",
+        "content_sha256": "b5ed84f5ac758241146a758af9151df8ea95076aeae725c5f98bf789a15ded1d",
+        "acknowledged_hazards": [
+          "figures",
+          "ocr"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

@@ -199,7 +199,9 @@ def _wave_quantities(p: dict[str, Any]) -> dict[str, dict[str, Any]]:
     a = t["amplitude"] * scale
     show = p["show_values"]
     q = {
-        f"{sym}_p": {"value": a, "unit": unit, "shown": show and "peak" in p["markers"]},
+        # the amplitude axis is labelled only together with a peak or peak-to-peak marker
+        f"{sym}_p": {"value": a, "unit": unit,
+                     "shown": show and ("peak" in p["markers"] or "peak_to_peak" in p["markers"])},
         f"{sym}_pp": {"value": 2 * a, "unit": unit, "shown": show and "peak_to_peak" in p["markers"]},
         "T": {"value": 1 / t["frequency_hz"], "unit": "s", "shown": show and "period" in p["markers"]},
         "f": {"value": t["frequency_hz"], "unit": "Hz", "shown": False},

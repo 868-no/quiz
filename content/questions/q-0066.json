@@ -1,0 +1,138 @@
+{
+  "id": "q-0066",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 3,
+      "section_ids": [
+        "s3-13"
+      ],
+      "topic_ids": [
+        "transistorer"
+      ],
+      "learning_objective": "Vite hvordan en PNP-transistor må forspennes for å lede.",
+      "priority": "exam_important",
+      "context": [
+        "En PNP-transistor av silisium skal brukes som forsterker i det lineære området."
+      ],
+      "stem": [
+        "Hvordan må basis være forspent i forhold til emitteren?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Basis må være omtrent 0,6 V mer negativ enn emitteren."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Basis må være omtrent 0,6 V mer positiv enn emitteren."
+          ],
+          "feedback": [
+            "Det gjelder for en NPN-transistor. I en PNP-transistor er alle polariteter snudd."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Basis og emitter må ha nøyaktig samme spenning."
+          ],
+          "feedback": [
+            "Da er basis-emitterovergangen ikke forspent i lederetningen, og transistoren leder ikke."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Basis må være omtrent 6 V mer negativ enn emitteren."
+          ],
+          "feedback": [
+            "Basis-emitterovergangen oppfører seg som en diode. Med flere volt i lederetningen ville strømmen bli altfor stor."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "I en PNP-transistor er emitteren av P-type, og det er hull som er de viktigste ladningsbærerne. Basis-emitterovergangen må være forspent i lederetningen, det vil si at P-siden (emitteren) skal være mer positiv enn N-siden (basis).",
+        "Kollektoren ligger enda mer negativt enn basis, slik at basis-kollektorovergangen sperrer. Alt er altså som for en NPN-transistor, bare med motsatte polariteter og strømretninger."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 3,
+        "section_id": "s3-13",
+        "printed_pages": [
+          "3-6"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "8f6bf76bb4113ba0"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-23T21:00:00+00:00",
+        "note": "Batch 2 (ch3.json)"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T18:29:09+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "06dd2a78d4a03da49875162ad332d19f459cc3dd351b31fb99ae9079157f9aba",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T19:12:52+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "06dd2a78d4a03da49875162ad332d19f459cc3dd351b31fb99ae9079157f9aba",
+          "note": "Godkjent av redaktør etter tre runder uavhengig AI-gjennomgang (Claude) og tre runder ChatGPT-kontroll; alle beregninger kontrollert, figurer gjengitt og inspisert. Sidehenvisninger er IKKE kontrollert mot trykt bok; OCR-/side-/figurmerknader kvittert på dette grunnlaget.",
+          "acknowledged": []
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "06dd2a78d4a03da49875162ad332d19f459cc3dd351b31fb99ae9079157f9aba",
+        "errors": [],
+        "warnings": [],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-23T19:12:52+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-23T19:12:52+00:00",
+        "content_sha256": "06dd2a78d4a03da49875162ad332d19f459cc3dd351b31fb99ae9079157f9aba",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

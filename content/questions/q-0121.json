@@ -1,0 +1,165 @@
+{
+  "id": "q-0121",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 6,
+      "section_ids": [
+        "s6-26",
+        "s6-27"
+      ],
+      "topic_ids": [
+        "forforsterkere"
+      ],
+      "learning_objective": "Forstå hvorfor en forforsterker bør stå i mastetoppen når fødekabelen har tap.",
+      "priority": "exam_important",
+      "context": [
+        "En UHF-stasjon har en lang koaksialkabel med merkbart tap mellom antennen og mottakeren."
+      ],
+      "stem": [
+        [
+          "Hvorfor er det bedre å plassere en ",
+          {
+            "term": "forforsterker",
+            "text": "forforsterker"
+          },
+          " i mastetoppen enn ved mottakeren?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Signalet forsterkes før kabeltapet, så tapet betyr mindre for signal/støy-forholdet"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Tapet i kabelen blir mindre når kabelen fører et sterkere signal"
+          ],
+          "feedback": [
+            "Kabeltapet i dB er det samme uansett signalnivå."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Forforsterkeren får lavere egenstøy fordi den kjøles bedre ute"
+          ],
+          "feedback": [
+            "Plasseringen i masten handler ikke om kjøling, men om hvor i signalveien forsterkningen skjer."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "En forforsterker i masten øker det dynamiske området til anlegget"
+          ],
+          "feedback": [
+            "En forforsterker gjør normalt det dynamiske området mindre, fordi sterke signaler også forsterkes. Derfor bør forsterkningen ikke være større enn nødvendig."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Kabeltapet svekker signalet før det når mottakeren, mens mottakerens egenstøy er den samme. Signal/støy-forholdet blir dermed dårligere.",
+        "Med forforsterkeren i masten løftes signalet før tapet, og det er da forforsterkerens lave egenstøy som bestemmer følsomheten. Forsterkningen bør bare være litt større enn kabeltapet, for å ikke miste unødig dynamisk område, og filtre i forforsterkeren bør bare slippe gjennom ønsket bånd."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 6,
+        "section_id": "s6-26",
+        "printed_pages": [
+          "6-16"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "a1bb6a5fd3af6229",
+          "881570e01b06e518"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-23T21:00:00+00:00",
+        "note": "Batch 2 (ch6.json)"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T18:29:09+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "a1eb93ac800480c4e9c2d57c224e52630d06238bd726d84e285a6d8c63beab80",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T18:34:38+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "cc3e68847aff6acc651f8a830dff3a9f7009810f3c18e9782cdb15f560cd7711",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T19:12:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "cc3e68847aff6acc651f8a830dff3a9f7009810f3c18e9782cdb15f560cd7711",
+          "note": "Godkjent av redaktør etter tre runder uavhengig AI-gjennomgang (Claude) og tre runder ChatGPT-kontroll; alle beregninger kontrollert, figurer gjengitt og inspisert. Sidehenvisninger er IKKE kontrollert mot trykt bok; OCR-/side-/figurmerknader kvittert på dette grunnlaget.",
+          "acknowledged": [
+            "ocr"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "cc3e68847aff6acc651f8a830dff3a9f7009810f3c18e9782cdb15f560cd7711",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: low_ocr_confidence. Check every number, unit and formula against the printed book."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-23T19:12:55+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-23T19:12:55+00:00",
+        "content_sha256": "cc3e68847aff6acc651f8a830dff3a9f7009810f3c18e9782cdb15f560cd7711",
+        "acknowledged_hazards": [
+          "ocr"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

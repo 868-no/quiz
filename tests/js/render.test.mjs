@@ -131,6 +131,13 @@ test('waveform description states the phase relation for screen-reader users', (
   assert.ok(res.description.includes('90° etter kurve 1'));
 });
 
+test('a waveform without peak markers does not print the amplitude on the axis', () => {
+  const res = renderVisual({ template: 'waveform', version: 1, params: { traces: [{ amplitude: 325.27, frequency_hz: 50 }], markers: ['rms'] } }, TEMPLATES);
+  const text = textContent(res.node);
+  assert.ok(!text.includes('325'), 'peak value must not be visible');
+  assert.ok(text.includes('230'), 'the RMS marker is labelled');
+});
+
 test('invalid visuals render an explicit message instead of a wrong drawing', () => {
   const res = renderVisual({ template: 'dc-circuit', version: 1, params: { topology: 'parallel', source: { voltage_v: 1 }, resistors: [{ ohms: 1 }] } }, TEMPLATES);
   assert.equal(res.ok, false);

@@ -1,0 +1,174 @@
+{
+  "id": "q-0106",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "recall",
+      "difficulty": "easy",
+      "chapter": 6,
+      "section_ids": [
+        "s6-04"
+      ],
+      "topic_ids": [
+        "mottakeregenskaper"
+      ],
+      "learning_objective": "Velge passende mottakerbåndbredde for SSB-tale.",
+      "priority": "exam_important",
+      "context": [],
+      "stem": [
+        [
+          "Hvilken ",
+          {
+            "term": "baandbredde",
+            "text": "båndbredde"
+          },
+          " i ",
+          {
+            "term": "mellomfrekvens",
+            "text": "MF"
+          },
+          "-filteret passer best når du skal ta imot SSB-tale?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Omtrent ",
+            {
+              "q": 2.4,
+              "u": "kHz"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Omtrent ",
+            {
+              "q": 500,
+              "u": "Hz"
+            }
+          ],
+          "feedback": [
+            "Så smale filtre er typiske for morsetelegrafi (CW). For tale blir mange av lydfrekvensene kuttet bort."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Omtrent ",
+            {
+              "q": 6,
+              "u": "kHz"
+            }
+          ],
+          "feedback": [
+            "Det passer for AM med to sidebånd. For SSB slipper det inn unødvendig mye støy og nabosignaler."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Omtrent ",
+            {
+              "q": 15,
+              "u": "kHz"
+            }
+          ],
+          "feedback": [
+            "Så stor båndbredde hører hjemme ved smalbånds-FM. For SSB blir selektiviteten svært dårlig."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Filteret bør være omtrent like bredt som signalet som sendes. Et SSB-signal med tale tar opp et par kilohertz, så et filter på rundt 2,4–2,7 kHz slipper gjennom det som trengs.",
+        "Et bredere filter slipper også inn støy og stasjoner like ved. Et smalere filter gir bedre selektivitet, men kutter deler av talen. Ved kraftig forstyrrelse kan et litt for smalt filter likevel være et brukbart kompromiss."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 6,
+        "section_id": "s6-04",
+        "printed_pages": [
+          "6-1",
+          "6-2"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "ee9c6008753ad14e"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-23T21:00:00+00:00",
+        "note": "Batch 2 (ch6.json)"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T18:29:09+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "427f8f348e5f5921bb7b490ac68e22277f14974a49b803a4f8ebc6269fd77177",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T19:12:54+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "427f8f348e5f5921bb7b490ac68e22277f14974a49b803a4f8ebc6269fd77177",
+          "note": "Godkjent av redaktør etter tre runder uavhengig AI-gjennomgang (Claude) og tre runder ChatGPT-kontroll; alle beregninger kontrollert, figurer gjengitt og inspisert. Sidehenvisninger er IKKE kontrollert mot trykt bok; OCR-/side-/figurmerknader kvittert på dette grunnlaget.",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "427f8f348e5f5921bb7b490ac68e22277f14974a49b803a4f8ebc6269fd77177",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-23T19:12:54+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-23T19:12:54+00:00",
+        "content_sha256": "427f8f348e5f5921bb7b490ac68e22277f14974a49b803a4f8ebc6269fd77177",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

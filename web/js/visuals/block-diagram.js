@@ -62,7 +62,8 @@ function heightFor(wrap) {
 
 function render(p, tpl) {
   const n = p.chain.length;
-  const G = p.edge_labels.length ? 58 : 38;
+  // gap wide enough for the longest edge label (about 6,5 px per character at 11 px)
+  const G = p.edge_labels.length ? Math.max(58, Math.ceil(Math.max(...p.edge_labels.map((e) => e.text.length)) * 6.5) + 16) : 38;
   const rows = Math.ceil(n / PER_ROW);
   const perRow = Math.ceil(n / rows); // balance the rows (6 -> 3 + 3, not 5 + 1)
   const cols = Math.min(n, perRow);

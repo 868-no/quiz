@@ -1,0 +1,231 @@
+{
+  "id": "q-0055",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "hard",
+      "chapter": 2,
+      "section_ids": [
+        "s2-50"
+      ],
+      "topic_ids": [
+        "transformatorer",
+        "impedans"
+      ],
+      "learning_objective": "Vite at impedans transformeres med kvadratet av forholdet mellom vindingstallene.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En tapsfri ",
+          {
+            "term": "transformator",
+            "text": "transformator"
+          },
+          " har tre ganger så mange vindinger på primærsiden som på sekundærsiden. Sekundærsiden er belastet med en resistans på ",
+          {
+            "q": 50,
+            "u": "Ω"
+          },
+          "."
+        ]
+      ],
+      "stem": [
+        "Hvilken impedans ser kilden som er koblet til primærsiden?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 450,
+              "u": "Ω"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 150,
+              "u": "Ω"
+            }
+          ],
+          "feedback": [
+            "Spenningen transformeres med forholdet mellom vindingstallene, men impedansen transformeres med kvadratet av det."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 16.7,
+              "u": "Ω"
+            }
+          ],
+          "feedback": [
+            "Her er forholdet brukt feil vei og uten kvadrering. Siden med flest vindinger har høyest impedans."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 5.6,
+              "u": "Ω"
+            }
+          ],
+          "feedback": [
+            "Kvadreringen er riktig, men forholdet er snudd. Primærsiden har flest vindinger og dermed høyest impedans."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Primærspenningen er tre ganger sekundærspenningen, og primærstrømmen er en tredel av sekundærstrømmen. Forholdet U/I blir dermed 3 · 3 = 9 ganger større på primærsiden:"
+        ],
+        {
+          "steps": [
+            [
+              {
+                "math": [
+                  "Z_p",
+                  "=",
+                  "Z_s",
+                  "·",
+                  {
+                    "paren": [
+                      {
+                        "frac": [
+                          [
+                            "N_p"
+                          ],
+                          [
+                            "N_s"
+                          ]
+                        ]
+                      }
+                    ]
+                  },
+                  "²",
+                  "=",
+                  {
+                    "q": 50,
+                    "u": "Ω"
+                  },
+                  "·",
+                  "3^2",
+                  "=",
+                  {
+                    "q": 450,
+                    "u": "Ω"
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        "Denne egenskapen brukes til impedanstilpasning, for eksempel i lydtransformatorer og bredbåndstransformatorer for antenner."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 2,
+        "section_id": "s2-50",
+        "printed_pages": [
+          "2-20"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "6255d35e8e3267a0",
+          "fba01cc9833dbb8c"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-23T21:00:00+00:00",
+        "note": "Batch 2 (ch2.json)"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T18:29:09+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "97833ae8467fce03a6cbf075991536fccc9162c8ea502f2c82c9c065bc88c6b0",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T18:34:38+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "a21e8767e2ce0ffb06eb4780f3aaa72cbd8e7c9069aa4ebf214afb5b6992fa62",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T19:12:51+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "a21e8767e2ce0ffb06eb4780f3aaa72cbd8e7c9069aa4ebf214afb5b6992fa62",
+          "note": "Godkjent av redaktør etter tre runder uavhengig AI-gjennomgang (Claude) og tre runder ChatGPT-kontroll; alle beregninger kontrollert, figurer gjengitt og inspisert. Sidehenvisninger er IKKE kontrollert mot trykt bok; OCR-/side-/figurmerknader kvittert på dette grunnlaget.",
+          "acknowledged": [
+            "figures",
+            "ocr"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "a21e8767e2ce0ffb06eb4780f3aaa72cbd8e7c9069aa4ebf214afb5b6992fa62",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: equation, low_ocr_confidence, numeric_low_conf. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-23T19:12:51+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-23T19:12:51+00:00",
+        "content_sha256": "a21e8767e2ce0ffb06eb4780f3aaa72cbd8e7c9069aa4ebf214afb5b6992fa62",
+        "acknowledged_hazards": [
+          "figures",
+          "ocr"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

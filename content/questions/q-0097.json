@@ -1,0 +1,147 @@
+{
+  "id": "q-0097",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 5,
+      "section_ids": [
+        "s5-10"
+      ],
+      "topic_ids": [
+        "harmoniske"
+      ],
+      "learning_objective": "Forstå at en liten reduksjon av driveffekten til en lineær forsterker gir mye mindre ulinearitet og harmoniske.",
+      "priority": "exam_important",
+      "context": [
+        "Du har avstemt senderen og et eksternt lineært sluttrinn for størst mulig utgangseffekt. En annen radioamatør melder at han hører svake harmoniske fra deg på et høyere bånd."
+      ],
+      "stem": [
+        "Hvilket enkelt tiltak gir ofte stor forbedring, uten at signalet ditt blir merkbart svakere hos fjerne stasjoner?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Skru ned driveffekten litt, slik at forsterkeren kommer bort fra overstyringsområdet."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Skru opp driveffekten, slik at forsterkeren går helt i metning."
+          ],
+          "feedback": [
+            "Metning betyr at forsterkeren klipper signalet. Det gir mer harmoniske, ikke mindre."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Ta ut lavpassfilteret, slik at du slipper tapet i det."
+          ],
+          "feedback": [
+            "Lavpassfilteret er nettopp det som demper harmoniske. Uten det blir problemet større."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Bytt til en antenne med høyere forsterkning i senderetningen."
+          ],
+          "feedback": [
+            "Antennen stråler også ut de harmoniske. Det fjerner ikke årsaken, som er ulinearitet i forsterkeren."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Nær toppen av utgangskarakteristikken går en forsterker fort over fra lineær drift til overstyring, og der dannes harmoniske og andre uønskede produkter. Å avstemme for maksimal effekt er riktig, men etterpå bør driveffekten tas litt ned.",
+        "En reduksjon på rundt 1 dB tilsvarer omtrent 20 % mindre effekt. Det merkes knapt hos en fjern mottaker, men kan gjøre forsterkeren mye mer lineær og dempe de harmoniske kraftig."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 5,
+        "section_id": "s5-10",
+        "printed_pages": [
+          "5-3"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "c1276fd63d35dd6f"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-23T21:00:00+00:00",
+        "note": "Batch 2 (ch5.json)"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T18:29:09+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "cbd17dcdd4519a118af7126310c558bcef7913bfa708bf99f3c1e6ae4e7a200a",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T18:34:38+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "5927fb64db4de80590f9740d77f64aa21d16f586cd8e9dcb73cdf2a0983f5e83",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T19:12:53+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "5927fb64db4de80590f9740d77f64aa21d16f586cd8e9dcb73cdf2a0983f5e83",
+          "note": "Godkjent av redaktør etter tre runder uavhengig AI-gjennomgang (Claude) og tre runder ChatGPT-kontroll; alle beregninger kontrollert, figurer gjengitt og inspisert. Sidehenvisninger er IKKE kontrollert mot trykt bok; OCR-/side-/figurmerknader kvittert på dette grunnlaget.",
+          "acknowledged": []
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "5927fb64db4de80590f9740d77f64aa21d16f586cd8e9dcb73cdf2a0983f5e83",
+        "errors": [],
+        "warnings": [],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-23T19:12:53+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-23T19:12:53+00:00",
+        "content_sha256": "5927fb64db4de80590f9740d77f64aa21d16f586cd8e9dcb73cdf2a0983f5e83",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

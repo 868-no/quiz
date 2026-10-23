@@ -1,0 +1,174 @@
+{
+  "id": "q-0044",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 2,
+      "section_ids": [
+        "s2-33"
+      ],
+      "topic_ids": [
+        "fase",
+        "kondensatorer"
+      ],
+      "learning_objective": "Forstå sammenhengen mellom spenningsendring og strøm i en kondensator på vekselspenning.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En ideell ",
+          {
+            "term": "kondensator",
+            "text": "kondensator"
+          },
+          " er koblet til en sinusformet vekselspenning."
+        ]
+      ],
+      "stem": [
+        "Når i perioden er strømmen gjennom kondensatoren størst (uansett retning)?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Når spenningen over kondensatoren passerer null, i begge retninger."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Når spenningen over kondensatoren er på sin positive eller negative topp."
+          ],
+          "feedback": [
+            "På toppen står spenningen et øyeblikk stille. Da flyttes ingen ladning, og strømmen er null."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Strømmen er like stor hele tiden, siden kondensatoren slipper gjennom vekselstrøm."
+          ],
+          "feedback": [
+            "Strømmen er også sinusformet og varierer gjennom perioden. Den er bare forskjøvet i tid i forhold til spenningen."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Strøm og spenning har topp samtidig, fordi de er i fase."
+          ],
+          "feedback": [
+            "Det gjelder for en ren motstand. I en kondensator er de 90° forskjøvet."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Strømmen i en kondensator er proporsjonal med hvor raskt spenningen endrer seg. En sinusspenning endrer seg raskest når den passerer null, og står stille et øyeblikk på toppene."
+        ],
+        [
+          "Derfor er strømmen størst ved spenningens nullgjennomganger, positiv eller negativ avhengig av hvilken vei spenningen endrer seg, og null ved spenningstoppene. Strømmen ligger 90° foran spenningen; man kan også si at spenningen ligger 90° etter strømmen (",
+          {
+            "term": "faseforskyvning",
+            "text": "faseforskyvning"
+          },
+          ")."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 2,
+        "section_id": "s2-33",
+        "printed_pages": [
+          "2-12",
+          "2-13"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "4150a0886a325a3c"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-23T21:00:00+00:00",
+        "note": "Batch 2 (ch2.json)"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T18:29:09+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "7a9cbb8fada96c04ec956c6107e33078060669c658ce4d88b56bb0c9a7223f44",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T18:44:58+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "364919d28359d35d97de7d2dc89066b8ab8fee8d80f38d8a1d459d9d46c8edab",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T19:12:51+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "364919d28359d35d97de7d2dc89066b8ab8fee8d80f38d8a1d459d9d46c8edab",
+          "note": "Godkjent av redaktør etter tre runder uavhengig AI-gjennomgang (Claude) og tre runder ChatGPT-kontroll; alle beregninger kontrollert, figurer gjengitt og inspisert. Sidehenvisninger er IKKE kontrollert mot trykt bok; OCR-/side-/figurmerknader kvittert på dette grunnlaget.",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "364919d28359d35d97de7d2dc89066b8ab8fee8d80f38d8a1d459d9d46c8edab",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-23T19:12:51+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-23T19:12:51+00:00",
+        "content_sha256": "364919d28359d35d97de7d2dc89066b8ab8fee8d80f38d8a1d459d9d46c8edab",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

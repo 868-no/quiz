@@ -1,0 +1,138 @@
+{
+  "id": "q-0103",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "rejected",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "recall",
+      "difficulty": "easy",
+      "chapter": 5,
+      "section_ids": [
+        "s5-14"
+      ],
+      "topic_ids": [
+        "frekvensstabilitet"
+      ],
+      "learning_objective": "Vite hva som skjer når en frekvenssyntetisator mister faselåsingen, og at en låsedetektor skal hindre sending.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En sender bruker en frekvenssyntetisator med ",
+          {
+            "term": "pll",
+            "text": "faselåst sløyfe"
+          },
+          "."
+        ]
+      ],
+      "stem": [
+        "Hva kan skje hvis sløyfen mister låsingen, og hvordan bør senderen være beskyttet?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Frekvensen kan vandre over et stort område. En låsedetektor bør da stoppe sendingen."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Frekvensen faller tilbake til nærmeste kanal. Det trengs derfor ingen beskyttelse."
+          ],
+          "feedback": [
+            "En oscillator uten låsing har ingen kanaler å falle tilbake til. Den styres bare av en tilfeldig styrespenning."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Bare utgangseffekten blir lavere. ALC-kretsen sørger for at signalet ellers er rent."
+          ],
+          "feedback": [
+            "ALC regulerer nivået, ikke frekvensen. Problemet er at frekvensen ikke lenger er under kontroll."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Senderen sender på det dobbelte av frekvensen. Lavpassfilteret på utgangen løser dette."
+          ],
+          "feedback": [
+            "Det beskriver en harmonisk. Når låsingen mangler, kan frekvensen havne hvor som helst innenfor oscillatorens område."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "I en faselåst sløyfe sammenligner en fasekomparator den spenningsstyrte oscillatoren (VCO) med en stabil referanse og justerer styrespenningen. Hvis låsingen forsvinner, er det ingenting som holder VCO-en på riktig frekvens, og den kan gli fritt over hele området sitt.",
+        "Senderen kan da forstyrre både andre radioamatører og andre radiotjenester, også utenfor amatørbåndene. Derfor skal en detektor for manglende låsing hindre utsending så lenge sløyfen ikke er låst."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 5,
+        "section_id": "s5-14",
+        "printed_pages": [
+          "5-6"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "46caa98903406bbd"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-23T21:00:00+00:00",
+        "note": "Batch 2 (ch5.json)"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T18:29:09+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "8a2c16397d4b68a7d09022e7c5c2337ef7de1505e8d35ed42ea7aa83b8ba46de",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T18:34:28+00:00",
+          "actor": "AI-assistent (Claude), utkastredigering",
+          "action": "reject",
+          "from_status": "needs_review",
+          "to_status": "rejected",
+          "content_sha256": "8a2c16397d4b68a7d09022e7c5c2337ef7de1505e8d35ed42ea7aa83b8ba46de",
+          "note": "Nesten duplikat av q-0082 (PLL mister låsing, låsedetektor sperrer sending); funnet ved uavhengig gjennomgang."
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "8a2c16397d4b68a7d09022e7c5c2337ef7de1505e8d35ed42ea7aa83b8ba46de",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: numeric_low_conf. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-23T18:30:01+00:00"
+      }
+    }
+  ]
+}

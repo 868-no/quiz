@@ -1,0 +1,239 @@
+{
+  "id": "q-0045",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "medium",
+      "chapter": 2,
+      "section_ids": [
+        "s2-38"
+      ],
+      "topic_ids": [
+        "impedans"
+      ],
+      "learning_objective": "Finne impedansen til en seriekobling av R og X ved hjelp av Pytagoras.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En motstand på ",
+          {
+            "q": 30,
+            "u": "Ω"
+          },
+          " er koblet i serie med en kondensator som har en reaktans på ",
+          {
+            "q": 40,
+            "u": "Ω"
+          },
+          " ved den aktuelle frekvensen."
+        ]
+      ],
+      "stem": [
+        [
+          "Hva er ",
+          {
+            "term": "impedans",
+            "text": "impedansen"
+          },
+          " til seriekoblingen (absoluttverdien)?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 50,
+              "u": "Ω"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 70,
+              "u": "Ω"
+            }
+          ],
+          "feedback": [
+            "Resistans og reaktans kan ikke legges sammen direkte, fordi spenningene over dem er 90° forskjøvet."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 10,
+              "u": "Ω"
+            }
+          ],
+          "feedback": [
+            "Differansen gir ikke impedansen. Resistans og reaktans står vinkelrett på hverandre og må kombineres med Pytagoras."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 17.1,
+              "u": "Ω"
+            }
+          ],
+          "feedback": [
+            "Dette er regnet som om R og X sto i parallell (produkt delt på sum), og uten å ta hensyn til fasen."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Spenningen over motstanden er i fase med strømmen, mens spenningen over kondensatoren ligger 90° etter. Resistansen og reaktansen kombineres derfor som katetene i en rettvinklet trekant, og absoluttverdien av impedansen finnes med Pytagoras:"
+        ],
+        {
+          "steps": [
+            [
+              {
+                "math": [
+                  "Z",
+                  "=",
+                  {
+                    "sqrt": [
+                      "R^2",
+                      "+",
+                      "X_C^2"
+                    ]
+                  },
+                  "=",
+                  {
+                    "sqrt": [
+                      "30^2",
+                      "+",
+                      "40^2"
+                    ]
+                  },
+                  {
+                    "unit": "Ω"
+                  },
+                  "=",
+                  {
+                    "sqrt": [
+                      "2500"
+                    ]
+                  },
+                  {
+                    "unit": "Ω"
+                  },
+                  "=",
+                  {
+                    "q": 50,
+                    "u": "Ω"
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        "Impedansen er alltid større enn både R og X alene, men mindre enn summen av dem."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 2,
+        "section_id": "s2-38",
+        "printed_pages": [
+          "2-15"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "e1aa6b2ae9c20025"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-23T21:00:00+00:00",
+        "note": "Batch 2 (ch2.json)"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T18:29:09+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "8d5baa3641ac42cc74a32715a7dd631a33f6703ffbdc6eec5fa27104c242d3bb",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T18:44:58+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "cb4b64d29e8ef628eedb224bacac53564eb37bcbd6b9ee364d0c29f8963258fa",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T19:12:51+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "cb4b64d29e8ef628eedb224bacac53564eb37bcbd6b9ee364d0c29f8963258fa",
+          "note": "Godkjent av redaktør etter tre runder uavhengig AI-gjennomgang (Claude) og tre runder ChatGPT-kontroll; alle beregninger kontrollert, figurer gjengitt og inspisert. Sidehenvisninger er IKKE kontrollert mot trykt bok; OCR-/side-/figurmerknader kvittert på dette grunnlaget.",
+          "acknowledged": [
+            "figures",
+            "ocr"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "cb4b64d29e8ef628eedb224bacac53564eb37bcbd6b9ee364d0c29f8963258fa",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: equation. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-23T19:12:51+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-23T19:12:51+00:00",
+        "content_sha256": "cb4b64d29e8ef628eedb224bacac53564eb37bcbd6b9ee364d0c29f8963258fa",
+        "acknowledged_hazards": [
+          "figures",
+          "ocr"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

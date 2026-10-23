@@ -1,0 +1,263 @@
+{
+  "id": "q-0043",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "calculation",
+      "difficulty": "easy",
+      "chapter": 2,
+      "section_ids": [
+        "s2-28"
+      ],
+      "topic_ids": [
+        "vekselstromsverdier"
+      ],
+      "learning_objective": "Regne om fra effektivverdi til toppverdi for en sinusspenning.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "Grafen viser nettspenningen, som er sinusformet med ",
+          {
+            "term": "effektivverdi",
+            "text": "effektivverdi"
+          },
+          " ",
+          {
+            "q": 230,
+            "u": "V"
+          },
+          "."
+        ]
+      ],
+      "stem": [
+        [
+          "Hva er ",
+          {
+            "term": "toppverdi",
+            "text": "toppverdien"
+          },
+          " til spenningen?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 325,
+              "u": "V"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 163,
+              "u": "V"
+            }
+          ],
+          "feedback": [
+            "Her er det delt på √2. Toppverdien er større enn effektivverdien, så du skal gange."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 460,
+              "u": "V"
+            }
+          ],
+          "feedback": [
+            "Her er det ganget med 2 i stedet for √2."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 651,
+              "u": "V"
+            }
+          ],
+          "feedback": [
+            "Dette er topp-til-topp-verdien, altså avstanden fra positiv til negativ topp."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "For en sinusformet spenning er toppverdien √2 ganger effektivverdien:"
+        ],
+        {
+          "steps": [
+            [
+              {
+                "math": [
+                  "U_p",
+                  "=",
+                  "U_eff",
+                  "·",
+                  {
+                    "sqrt": [
+                      "2"
+                    ]
+                  },
+                  "=",
+                  {
+                    "q": 230,
+                    "u": "V"
+                  },
+                  "·",
+                  "1,414",
+                  "≈",
+                  {
+                    "q": 325,
+                    "u": "V"
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        "Det er effektivverdien som vanligvis oppgis for vekselspenning, fordi den gir samme varmeeffekt i en motstand som en like stor likespenning."
+      ],
+      "glossary_after_answer": [],
+      "visual": {
+        "template": "waveform",
+        "version": 1,
+        "params": {
+          "traces": [
+            {
+              "label": "U",
+              "shape": "sine",
+              "amplitude": 325.26911934581,
+              "unit": "V",
+              "frequency_hz": 50,
+              "phase_deg": 0,
+              "offset": 0
+            }
+          ],
+          "cycles": 2,
+          "markers": [
+            "rms"
+          ],
+          "show_values": true
+        },
+        "params_after": {
+          "markers": [
+            "rms",
+            "peak"
+          ]
+        }
+      },
+      "calculation": {
+        "formula": "peak_from_rms",
+        "inputs": {
+          "U_eff": [
+            230,
+            "V"
+          ]
+        },
+        "answer": [
+          325,
+          "V"
+        ],
+        "answer_symbol": "U_p",
+        "sig_figs": 3,
+        "visual_bindings": {
+          "U_eff": "U_rms"
+        }
+      },
+      "study_reference": {
+        "chapter": 2,
+        "section_id": "s2-28",
+        "printed_pages": [
+          "2-11"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "ed08ac76c205165b"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-23T21:00:00+00:00",
+        "note": "Batch 2 (ch2.json)"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T18:29:09+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "d6a6242c2e839bda612469b542b5f5ffe054609f79fd8136c04c7c88d0c2f562",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T19:12:51+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "d6a6242c2e839bda612469b542b5f5ffe054609f79fd8136c04c7c88d0c2f562",
+          "note": "Godkjent av redaktør etter tre runder uavhengig AI-gjennomgang (Claude) og tre runder ChatGPT-kontroll; alle beregninger kontrollert, figurer gjengitt og inspisert. Sidehenvisninger er IKKE kontrollert mot trykt bok; OCR-/side-/figurmerknader kvittert på dette grunnlaget.",
+          "acknowledged": [
+            "figures",
+            "ocr"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "d6a6242c2e839bda612469b542b5f5ffe054609f79fd8136c04c7c88d0c2f562",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: equation, subscript_garbled. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-23T19:12:51+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-23T19:12:51+00:00",
+        "content_sha256": "d6a6242c2e839bda612469b542b5f5ffe054609f79fd8136c04c7c88d0c2f562",
+        "acknowledged_hazards": [
+          "figures",
+          "ocr"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

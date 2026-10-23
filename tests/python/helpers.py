@@ -104,6 +104,12 @@ class TempRepo:
         (self.root / "content" / "glossary").mkdir(parents=True)
         (self.root / "content" / "chapters").mkdir(parents=True)
         shutil.copytree(REPO / "content" / "visuals", self.root / "content" / "visuals")
+        tpl = self.root / "content" / "visuals" / "templates.json"
+        data = json.loads(tpl.read_text())
+        for t in data["templates"]:  # tests start from unreviewed templates, whatever the repo state
+            t["status"] = "needs_review"
+            t["review_log"] = []
+        tpl.write_text(json.dumps(data, ensure_ascii=False))
         shutil.copytree(REPO / "config", self.root / "config")
         shutil.copytree(REPO / "web", self.root / "web")
         (self.root / "content" / "chapters" / "chapters.json").write_text(json.dumps({

@@ -1,0 +1,158 @@
+{
+  "id": "q-0107",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 6,
+      "section_ids": [
+        "s6-05"
+      ],
+      "topic_ids": [
+        "mottakeregenskaper"
+      ],
+      "learning_objective": "Forstå hvorfor frekvensstabilitet er viktigere jo smalere filteret er.",
+      "priority": "exam_important",
+      "context": [],
+      "stem": [
+        [
+          "Hvorfor blir ",
+          {
+            "term": "frekvensstabilitet",
+            "text": "frekvensstabiliteten"
+          },
+          " til en mottaker viktigere jo smalere filter den bruker?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Selv en liten frekvensdrift kan flytte signalet helt eller delvis ut av passbåndet"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Et smalt filter får lokaloscillatoren til å drive mer enn et bredt filter"
+          ],
+          "feedback": [
+            "Filteret påvirker ikke hvor mye oscillatoren driver. Driften skyldes blant annet temperatur, tid og forsyningsspenning."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Et smalt filter slipper gjennom mer støy, slik at driften blir mer hørbar"
+          ],
+          "feedback": [
+            "Et smalt filter slipper gjennom mindre støy enn et bredt."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Et smalt filter trenger høyere forsyningsspenning, som gir mer drift"
+          ],
+          "feedback": [
+            "Filterbredden har ingenting med forsyningsspenningen å gjøre. Poenget er hvor lite drift filteret tåler."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Frekvensstabilitet er evnen til å bli stående på innstilt frekvens uten å drive på grunn av tid, temperatur eller spenning.",
+        "Driver en oscillator i mottakeren, flytter signalet seg i forhold til MF-filteret. Et bredt filter tåler at signalet flytter seg litt. I et smalt filter, for eksempel et CW-filter på noen hundre hertz, kan signalet forsvinne helt eller bli forvrengt."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 6,
+        "section_id": "s6-05",
+        "printed_pages": [
+          "6-2"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "e56410dfdf58e200"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-23T21:00:00+00:00",
+        "note": "Batch 2 (ch6.json)"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T18:29:09+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "14ff87d6552d0882af645a0e0b74bec7c29c7da40d97a317b9bbc587e7ca5343",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T19:12:54+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "14ff87d6552d0882af645a0e0b74bec7c29c7da40d97a317b9bbc587e7ca5343",
+          "note": "Godkjent av redaktør etter tre runder uavhengig AI-gjennomgang (Claude) og tre runder ChatGPT-kontroll; alle beregninger kontrollert, figurer gjengitt og inspisert. Sidehenvisninger er IKKE kontrollert mot trykt bok; OCR-/side-/figurmerknader kvittert på dette grunnlaget.",
+          "acknowledged": [
+            "figures",
+            "ocr"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "14ff87d6552d0882af645a0e0b74bec7c29c7da40d97a317b9bbc587e7ca5343",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: equation. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-23T19:12:54+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-23T19:12:54+00:00",
+        "content_sha256": "14ff87d6552d0882af645a0e0b74bec7c29c7da40d97a317b9bbc587e7ca5343",
+        "acknowledged_hazards": [
+          "figures",
+          "ocr"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

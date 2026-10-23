@@ -1,0 +1,183 @@
+{
+  "id": "q-0108",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "medium",
+      "chapter": 6,
+      "section_ids": [
+        "s6-05"
+      ],
+      "topic_ids": [
+        "mottakeregenskaper"
+      ],
+      "learning_objective": "Tolke en følsomhetsspesifikasjon oppgitt i µV ved 12 dB SINAD.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "To VHF-mottakere er like bortsett fra følsomheten. Databladene oppgir:"
+        ],
+        [
+          "Mottaker A: ",
+          {
+            "q": 0.18,
+            "u": "µV"
+          },
+          " for 12 dB ",
+          {
+            "term": "sinad",
+            "text": "SINAD"
+          },
+          "."
+        ],
+        [
+          "Mottaker B: ",
+          {
+            "q": 0.35,
+            "u": "µV"
+          },
+          " for 12 dB SINAD."
+        ]
+      ],
+      "stem": "Hvilken påstand er riktig?",
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "A er mest følsom, fordi den trenger et svakere signal for å gi samme lydkvalitet"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "B er mest følsom, fordi den tåler en større signalspenning på inngangen"
+          ],
+          "feedback": [
+            "Tallet er det svakeste signalet som gir den oppgitte kvaliteten. Et lavere tall er bedre."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "De er like følsomme, fordi begge er oppgitt ved 12 dB SINAD"
+          ],
+          "feedback": [
+            "12 dB SINAD er bare referansekvaliteten. Signalspenningen som trengs for å nå den, er forskjellig."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "A er mest følsom, fordi den forsterker lyden 12 dB mer enn B"
+          ],
+          "feedback": [
+            "12 dB er forholdet mellom signal og støy pluss forvrengning i lyden, ikke en forsterkning. Begge måles ved samme forhold."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Følsomheten oppgis som den signalspenningen på antenneinngangen som gir en bestemt lydkvalitet, her 12 dB SINAD, der signal + støy + forvrengning er 12 dB sterkere enn støy + forvrengning alene.",
+        "Mottaker A når denne kvaliteten med et svakere signal enn B, og er derfor mest følsom. Det skyldes lavere egenstøy, særlig i de første trinnene."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 6,
+        "section_id": "s6-05",
+        "printed_pages": [
+          "6-2"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "e56410dfdf58e200"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-23T21:00:00+00:00",
+        "note": "Batch 2 (ch6.json)"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T18:29:09+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "03015da231d1590a08a6b06cb52532d53f1d60316a7db53959a31bca66ce60f9",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T18:34:38+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "fb9360f70b9acc5bfa03b3402bc51a56416291da49297861f1b6cd3b62576730",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T19:12:54+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "fb9360f70b9acc5bfa03b3402bc51a56416291da49297861f1b6cd3b62576730",
+          "note": "Godkjent av redaktør etter tre runder uavhengig AI-gjennomgang (Claude) og tre runder ChatGPT-kontroll; alle beregninger kontrollert, figurer gjengitt og inspisert. Sidehenvisninger er IKKE kontrollert mot trykt bok; OCR-/side-/figurmerknader kvittert på dette grunnlaget.",
+          "acknowledged": [
+            "figures",
+            "ocr"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "fb9360f70b9acc5bfa03b3402bc51a56416291da49297861f1b6cd3b62576730",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: equation. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-23T19:12:54+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-23T19:12:54+00:00",
+        "content_sha256": "fb9360f70b9acc5bfa03b3402bc51a56416291da49297861f1b6cd3b62576730",
+        "acknowledged_hazards": [
+          "figures",
+          "ocr"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

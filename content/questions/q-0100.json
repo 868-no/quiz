@@ -1,0 +1,138 @@
+{
+  "id": "q-0100",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "medium",
+      "chapter": 5,
+      "section_ids": [
+        "s5-13"
+      ],
+      "topic_ids": [
+        "parasittsvingninger"
+      ],
+      "learning_objective": "Kjenne igjen selvsving nær arbeidsfrekvensen og vite at løsningen er å fjerne kilden til tilbakekoblingen.",
+      "priority": "exam_important",
+      "context": [
+        "En hjemmebygget SSB-sender viser fortsatt utgangseffekt på wattmeteret i pausene mellom ordene, selv om det ikke kommer noe lydsignal inn. I en mottaker høres et ustabilt signal like ved sendefrekvensen."
+      ],
+      "stem": [
+        "Hva er den mest sannsynlige feilen, og hvordan bør den rettes?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Et trinn selvsvinger på grunn av utilsiktet tilbakekobling. Fjern kilden med skjerming, avstand og avkobling."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Senderen er overmodulert. Skru ned mikrofonforsterkningen til signalet blir rent."
+          ],
+          "feedback": [
+            "Overmodulering krever et lydsignal. Her kommer det effekt ut selv når det ikke er noe lyd på inngangen."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Oscillatoren driver på grunn av varme. La senderen varme seg opp lenger før bruk."
+          ],
+          "feedback": [
+            "Frekvensdrift flytter signalet, men gir ikke utgangseffekt når det ikke er noe signal inn."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Lavpassfilteret på utgangen er defekt. Bytt det ut med et filter med lavere knekkfrekvens."
+          ],
+          "feedback": [
+            "Et filter lager ikke signaler selv. Det demper bare harmoniske som allerede finnes."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Et forsterkertrinn som får nok utilsiktet tilbakekobling fra utgang til inngang, blir en oscillator. Slik selvsving skjer gjerne på eller nær arbeidsfrekvensen, særlig når inngang og utgang er avstemt til samme frekvens. Det viser seg ofte når det ikke er noe signal inn, for eksempel i talepausene på SSB eller mellom tegnene på CW.",
+        "Tilbakekoblingen kan gå via ledninger som ligger for nær hverandre, eller via felles tilførselsledninger og jordskinne, der strømmen fra ett trinn gir spenningsvariasjoner i et annet. Tiltak er bedre skjerming, større avstand mellom inngangs- og utgangsledninger og god avkobling. I rørforsterkere kan nøytralisering være nødvendig."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 5,
+        "section_id": "s5-13",
+        "printed_pages": [
+          "5-5"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "1eb6eddeab2b7d4e"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-23T21:00:00+00:00",
+        "note": "Batch 2 (ch5.json)"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T18:29:09+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "94b89740230d2239a5cc26166f74b7a7fb6572c563e70c9458a6752a9bca8e18",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T19:12:54+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "94b89740230d2239a5cc26166f74b7a7fb6572c563e70c9458a6752a9bca8e18",
+          "note": "Godkjent av redaktør etter tre runder uavhengig AI-gjennomgang (Claude) og tre runder ChatGPT-kontroll; alle beregninger kontrollert, figurer gjengitt og inspisert. Sidehenvisninger er IKKE kontrollert mot trykt bok; OCR-/side-/figurmerknader kvittert på dette grunnlaget.",
+          "acknowledged": []
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "94b89740230d2239a5cc26166f74b7a7fb6572c563e70c9458a6752a9bca8e18",
+        "errors": [],
+        "warnings": [],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-23T19:12:54+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-23T19:12:54+00:00",
+        "content_sha256": "94b89740230d2239a5cc26166f74b7a7fb6572c563e70c9458a6752a9bca8e18",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

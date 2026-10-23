@@ -663,6 +663,58 @@
     "version": 99,
     "params": {}
    }
+  },
+  {
+   "name": "waveform rms only does not reveal the peak",
+   "valid": true,
+   "visual": {
+    "template": "waveform",
+    "version": 1,
+    "params": {
+     "traces": [
+      {
+       "amplitude": 325.27,
+       "frequency_hz": 50
+      }
+     ],
+     "markers": [
+      "rms"
+     ]
+    }
+   },
+   "quantities": {
+    "U_p": 325.27
+   },
+   "shown": {
+    "U_p": false,
+    "U_rms": true
+   }
+  },
+  {
+   "name": "waveform peak-to-peak marker labels the amplitude axis",
+   "valid": true,
+   "visual": {
+    "template": "waveform",
+    "version": 1,
+    "params": {
+     "traces": [
+      {
+       "amplitude": 5,
+       "frequency_hz": 50
+      }
+     ],
+     "markers": [
+      "peak_to_peak"
+     ]
+    }
+   },
+   "quantities": {
+    "U_pp": 10
+   },
+   "shown": {
+    "U_p": true,
+    "U_pp": true
+   }
   }
  ]
 }

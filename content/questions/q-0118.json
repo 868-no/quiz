@@ -1,0 +1,303 @@
+{
+  "id": "q-0118",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "calculation",
+      "difficulty": "medium",
+      "chapter": 6,
+      "section_ids": [
+        "s6-23"
+      ],
+      "topic_ids": [
+        "demodulering"
+      ],
+      "learning_objective": "Finne tonehøyden ved CW-mottak ut fra mellomfrekvens og BFO-frekvens.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En mottaker tar imot et umodulert morsesignal (CW). Etter nedblandingen ligger signalet på ",
+          {
+            "term": "mellomfrekvens",
+            "text": "mellomfrekvensen"
+          },
+          " ",
+          {
+            "q": 9000,
+            "u": "kHz"
+          },
+          ". ",
+          {
+            "term": "bfo",
+            "text": "BFO"
+          },
+          " står på ",
+          {
+            "q": 9000.6,
+            "u": "kHz"
+          },
+          ", og produktdetektoren gir ut differansefrekvensen."
+        ]
+      ],
+      "stem": "Hvilken tone hører operatøren?",
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 600,
+              "u": "Hz"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 0,
+              "u": "Hz"
+            }
+          ],
+          "feedback": [
+            "Det får du hvis BFO-en står nøyaktig på mellomfrekvensen. Her ligger den 0,6 kHz ved siden av."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 6,
+              "u": "kHz"
+            }
+          ],
+          "feedback": [
+            "Sjekk omregningen: 0,6 kHz er 600 Hz, ikke 6 kHz."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 18000.6,
+              "u": "kHz"
+            }
+          ],
+          "feedback": [
+            "Det er sumfrekvensen. Den ligger på radiofrekvens, ikke i lydområdet, og blir filtrert bort."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          {
+            "math": [
+              "f_tone",
+              "=",
+              "f_BFO",
+              "−",
+              "f_MF",
+              "=",
+              {
+                "q": 9000.6,
+                "u": "kHz"
+              },
+              "−",
+              {
+                "q": 9000,
+                "u": "kHz"
+              },
+              "=",
+              {
+                "q": 0.6,
+                "u": "kHz"
+              },
+              "=",
+              {
+                "q": 600,
+                "u": "Hz"
+              }
+            ]
+          }
+        ],
+        "Et CW-signal er bare en bærebølge som slås av og på. Uten BFO er det ingenting å blande med, og med BFO-en nøyaktig på mellomfrekvensen blir differansen 0 Hz. I begge tilfeller høres ingen tone. Med BFO-en litt ved siden av blir det en hørbar tone. Samme virkning får du ved å stille mottakeren litt ved siden av signalet."
+      ],
+      "glossary_after_answer": [],
+      "visual": {
+        "template": "block-diagram",
+        "version": 1,
+        "params": {
+          "chain": [
+            {
+              "kind": "antenna"
+            },
+            {
+              "kind": "rf_amp"
+            },
+            {
+              "kind": "mixer"
+            },
+            {
+              "kind": "if_filter"
+            },
+            {
+              "kind": "if_amp"
+            },
+            {
+              "kind": "product_detector"
+            },
+            {
+              "kind": "af_amp"
+            },
+            {
+              "kind": "speaker"
+            }
+          ],
+          "side": [
+            {
+              "kind": "local_osc",
+              "into": 2
+            },
+            {
+              "kind": "bfo",
+              "label": "BFO 9 000,6 kHz",
+              "into": 5
+            }
+          ],
+          "edge_labels": [
+            {
+              "after": 4,
+              "text": "9 000 kHz"
+            },
+            {
+              "after": 5,
+              "text": "? Hz"
+            }
+          ]
+        },
+        "params_after": {
+          "edge_labels": [
+            {
+              "after": 4,
+              "text": "9 000 kHz"
+            },
+            {
+              "after": 5,
+              "text": "600 Hz"
+            }
+          ]
+        }
+      },
+      "calculation": {
+        "formula": "if_difference",
+        "inputs": {
+          "f_RF": [
+            9000,
+            "kHz"
+          ],
+          "f_LO": [
+            9000.6,
+            "kHz"
+          ]
+        },
+        "answer": [
+          600,
+          "Hz"
+        ],
+        "answer_symbol": "f_tone",
+        "sig_figs": 2
+      },
+      "study_reference": {
+        "chapter": 6,
+        "section_id": "s6-23",
+        "printed_pages": [
+          "6-13",
+          "6-14"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "8ade9205483bf4a9"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-23T21:00:00+00:00",
+        "note": "Batch 2 (ch6.json)"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T18:29:09+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "e783d41eeebc8c667d6cfcadd35f6e0dcaaab4e022fc2a700f8b11713ca124da",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T18:34:38+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "3b68ef876716293d83fe6fb86e50acf365423c82eb780f221dc2b0f3400ca09c",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T19:12:54+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "3b68ef876716293d83fe6fb86e50acf365423c82eb780f221dc2b0f3400ca09c",
+          "note": "Godkjent av redaktør etter tre runder uavhengig AI-gjennomgang (Claude) og tre runder ChatGPT-kontroll; alle beregninger kontrollert, figurer gjengitt og inspisert. Sidehenvisninger er IKKE kontrollert mot trykt bok; OCR-/side-/figurmerknader kvittert på dette grunnlaget.",
+          "acknowledged": [
+            "ocr"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "3b68ef876716293d83fe6fb86e50acf365423c82eb780f221dc2b0f3400ca09c",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: numeric_low_conf, sign_ambiguous. Check every number, unit and formula against the printed book."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-23T19:12:54+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-23T19:12:54+00:00",
+        "content_sha256": "3b68ef876716293d83fe6fb86e50acf365423c82eb780f221dc2b0f3400ca09c",
+        "acknowledged_hazards": [
+          "ocr"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

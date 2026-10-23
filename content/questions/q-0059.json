@@ -1,0 +1,164 @@
+{
+  "id": "q-0059",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "medium",
+      "chapter": 2,
+      "section_ids": [
+        "s2-53"
+      ],
+      "topic_ids": [
+        "komponentstabilitet",
+        "spoler"
+      ],
+      "learning_objective": "Vite hvordan uønsket magnetisk kobling mellom spoler kan reduseres.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "To ",
+          {
+            "term": "spole",
+            "text": "spoler"
+          },
+          " i hver sin avstemte krets står nær hverandre på samme kretskort, og det oppstår uønsket kobling mellom kretsene."
+        ]
+      ],
+      "stem": [
+        "Hvilket tiltak reduserer den magnetiske koblingen mellom spolene uten å svekke kretsene?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Montere spolene med aksene vinkelrett på hverandre, eventuelt i hver sin jordede skjermboks."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Montere spolene parallelt med hverandre og så tett sammen som mulig."
+          ],
+          "feedback": [
+            "Parallelle akser og liten avstand gir sterkest kobling, fordi feltet fra den ene spolen går rett gjennom den andre."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Sette en ekstra spole i serie med den ene, slik at feltene opphever hverandre."
+          ],
+          "feedback": [
+            "En ekstra spole endrer induktansen og lager sitt eget felt, men demper ikke koblingen mellom de opprinnelige spolene."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Legge skjermboksen helt inntil spoleviklingene for best mulig skjerming."
+          ],
+          "feedback": [
+            "En skjerm for tett på spolen tar opp energi fra feltet, slik at Q-faktoren og induktansen reduseres. Det må være god avstand til veggene."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Magnetfeltet fra en spole følger spoleaksen. Står aksene vinkelrett på hverandre, går lite av feltet fra den ene spolen gjennom den andre, og koblingen blir liten.",
+        "Alternativt kan spolen plasseres i en jordet metallboks. På radiofrekvenser brukes tynn aluminium eller kobber. Veggene må ha god avstand fra spolen, ellers induseres strømmer i skjermen som senker Q-faktoren."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 2,
+        "section_id": "s2-53",
+        "printed_pages": [
+          "2-21"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "de518583ced3a441"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-23T21:00:00+00:00",
+        "note": "Batch 2 (ch2.json)"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T18:29:09+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "778c8c7cb7355666f578550284a83b61a229156bcba101c8b681ca9f11f27f0e",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T18:34:38+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "33e43d59813c4943ec0920a68ce31cdf5ca81f02e42a57aecfc505bfa8940115",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T19:12:51+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "33e43d59813c4943ec0920a68ce31cdf5ca81f02e42a57aecfc505bfa8940115",
+          "note": "Godkjent av redaktør etter tre runder uavhengig AI-gjennomgang (Claude) og tre runder ChatGPT-kontroll; alle beregninger kontrollert, figurer gjengitt og inspisert. Sidehenvisninger er IKKE kontrollert mot trykt bok; OCR-/side-/figurmerknader kvittert på dette grunnlaget.",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "33e43d59813c4943ec0920a68ce31cdf5ca81f02e42a57aecfc505bfa8940115",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-23T19:12:51+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-23T19:12:51+00:00",
+        "content_sha256": "33e43d59813c4943ec0920a68ce31cdf5ca81f02e42a57aecfc505bfa8940115",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

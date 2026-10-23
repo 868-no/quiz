@@ -1,0 +1,210 @@
+{
+  "id": "q-0079",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "medium",
+      "chapter": 4,
+      "section_ids": [
+        "s4-03"
+      ],
+      "topic_ids": [
+        "fm",
+        "frekvensmultiplikasjon"
+      ],
+      "learning_objective": "Forstå at en frekvensmultiplikator multipliserer deviasjonen like mye som bærebølgefrekvensen.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En FM-sender har en oscillator på 12,1 MHz som frekvensmoduleres. Etter oscillatoren følger ",
+          "frekvensmultiplikatorer",
+          " som til sammen ganger frekvensen med 12, slik at senderen sender på 145,2 MHz. I oscillatoren er ",
+          {
+            "term": "deviasjon",
+            "text": "spissdeviasjonen"
+          },
+          " ",
+          {
+            "q": 200,
+            "u": "Hz"
+          },
+          "."
+        ]
+      ],
+      "stem": [
+        "Hvor stor er spissdeviasjonen i det utsendte signalet?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 2.4,
+              "u": "kHz"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 200,
+              "u": "Hz"
+            }
+          ],
+          "feedback": [
+            "Multiplikatoren ganger hele den øyeblikkelige frekvensen, ikke bare midtfrekvensen. Derfor blir også frekvenssvingene 12 ganger større."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 17,
+              "u": "Hz",
+              "approx": true
+            }
+          ],
+          "feedback": [
+            "Her er deviasjonen delt på 12. Frekvensen ganges opp i multiplikatoren, og det gjør også deviasjonen."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 4.8,
+              "u": "kHz"
+            }
+          ],
+          "feedback": [
+            "Dette er dobbelt så mye som riktig svar. Deviasjonen ganges med multiplikasjonsfaktoren 12, ikke med 24."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "En frekvensmultiplikator ganger den øyeblikkelige frekvensen. Svinger oscillatoren mellom 12,1 MHz − 200 Hz og 12,1 MHz + 200 Hz, svinger utgangen mellom 12 ganger disse verdiene.",
+        {
+          "steps": [
+            [
+              {
+                "math": [
+                  "Δf_{ut}",
+                  "=",
+                  "12",
+                  "·",
+                  {
+                    "q": 200,
+                    "u": "Hz"
+                  },
+                  "=",
+                  {
+                    "q": 2400,
+                    "u": "Hz"
+                  },
+                  "=",
+                  {
+                    "q": 2.4,
+                    "u": "kHz"
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        "Konstruktøren må derfor velge deviasjonen i oscillatoren ut fra den samlede multiplikasjonsfaktoren. Modulasjonsfrekvensen endres ikke, så modulasjonsindeksen blir også 12 ganger større."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 4,
+        "section_id": "s4-03",
+        "printed_pages": [
+          "4-1",
+          "4-2"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "d65f539f9c53dc13"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-23T21:00:00+00:00",
+        "note": "Batch 2 (ch4.json)"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T18:29:09+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "9b42802040f625e7488261ae22f976323b092a8e8b6078800c50a890741a4fe0",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T19:12:52+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "9b42802040f625e7488261ae22f976323b092a8e8b6078800c50a890741a4fe0",
+          "note": "Godkjent av redaktør etter tre runder uavhengig AI-gjennomgang (Claude) og tre runder ChatGPT-kontroll; alle beregninger kontrollert, figurer gjengitt og inspisert. Sidehenvisninger er IKKE kontrollert mot trykt bok; OCR-/side-/figurmerknader kvittert på dette grunnlaget.",
+          "acknowledged": [
+            "figures",
+            "ocr"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "9b42802040f625e7488261ae22f976323b092a8e8b6078800c50a890741a4fe0",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: numeric_low_conf. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-23T19:12:52+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-23T19:12:52+00:00",
+        "content_sha256": "9b42802040f625e7488261ae22f976323b092a8e8b6078800c50a890741a4fe0",
+        "acknowledged_hazards": [
+          "figures",
+          "ocr"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

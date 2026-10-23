@@ -1,0 +1,227 @@
+{
+  "id": "q-0065",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "easy",
+      "chapter": 3,
+      "section_ids": [
+        "s3-13"
+      ],
+      "topic_ids": [
+        "transistorer"
+      ],
+      "learning_objective": "Bruke strømforsterkningen til å finne kollektorstrømmen ut fra basisstrømmen.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En ",
+          {
+            "term": "transistor",
+            "text": "NPN-transistor"
+          },
+          " har ",
+          {
+            "term": "stromforsterkning",
+            "text": "strømforsterkning"
+          },
+          " β = 120. Den er forspent slik at basisstrømmen er ",
+          {
+            "q": 50,
+            "u": "µA"
+          },
+          ", og den arbeider i det lineære området."
+        ]
+      ],
+      "stem": [
+        "Omtrent hvor stor er kollektorstrømmen?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 6,
+              "u": "mA"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 60,
+              "u": "mA"
+            }
+          ],
+          "feedback": [
+            "Sjekk prefiksene: 120 · 50 µA = 6000 µA, som er 6 mA, ikke 60 mA."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 0.6,
+              "u": "mA"
+            }
+          ],
+          "feedback": [
+            "Sjekk prefiksene: 120 · 50 µA = 6000 µA, som er 6 mA."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 0.42,
+              "u": "µA"
+            }
+          ],
+          "feedback": [
+            "Her er basisstrømmen delt på β. Kollektorstrømmen er β ganger større enn basisstrømmen, ikke mindre."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Strømforsterkningen er forholdet mellom kollektorstrøm og basisstrøm:",
+        {
+          "steps": [
+            [
+              {
+                "math": [
+                  "I_C",
+                  "=",
+                  "β",
+                  "·",
+                  "I_B",
+                  "=",
+                  "120",
+                  "·",
+                  {
+                    "q": 50,
+                    "u": "µA"
+                  },
+                  "=",
+                  {
+                    "q": 6000,
+                    "u": "µA"
+                  },
+                  "=",
+                  {
+                    "q": 6,
+                    "u": "mA"
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        [
+          "Emitterstrømmen er summen av de to, altså ",
+          {
+            "q": 6.05,
+            "u": "mA"
+          },
+          ". En liten basisstrøm styrer altså en mye større kollektorstrøm, og det er dette som gjør transistoren til en forsterker."
+        ]
+      ],
+      "glossary_after_answer": [
+        "stromforsterkning"
+      ],
+      "study_reference": {
+        "chapter": 3,
+        "section_id": "s3-13",
+        "printed_pages": [
+          "3-5",
+          "3-6"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "08b52c6c96556bd5"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-23T21:00:00+00:00",
+        "note": "Batch 2 (ch3.json)"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T18:29:09+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "c9a1af2ac526bb31680584e24ff8cd73a2a31c57e88023cf065ef1d453e4cce9",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T18:34:38+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "37d115d15c98676d57b5fb045624103d164262fddb348fd07475b2996455e6aa",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T19:12:52+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "37d115d15c98676d57b5fb045624103d164262fddb348fd07475b2996455e6aa",
+          "note": "Godkjent av redaktør etter tre runder uavhengig AI-gjennomgang (Claude) og tre runder ChatGPT-kontroll; alle beregninger kontrollert, figurer gjengitt og inspisert. Sidehenvisninger er IKKE kontrollert mot trykt bok; OCR-/side-/figurmerknader kvittert på dette grunnlaget.",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "37d115d15c98676d57b5fb045624103d164262fddb348fd07475b2996455e6aa",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-23T19:12:52+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-23T19:12:52+00:00",
+        "content_sha256": "37d115d15c98676d57b5fb045624103d164262fddb348fd07475b2996455e6aa",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

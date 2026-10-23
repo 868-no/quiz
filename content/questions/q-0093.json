@@ -1,0 +1,259 @@
+{
+  "id": "q-0093",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "medium",
+      "chapter": 4,
+      "section_ids": [
+        "s4-26"
+      ],
+      "topic_ids": [
+        "senderoppbygging"
+      ],
+      "learning_objective": "Finne sum- og differansefrekvensen fra blandetrinnet i en sender og vite at det uønskede produktet må filtreres bort.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En HF-sender lager SSB-signalet sitt på ",
+          {
+            "q": 9.0,
+            "u": "MHz",
+            "digits": 1
+          },
+          ". For å komme til 20 m-båndet føres signalet til et ",
+          {
+            "term": "blander",
+            "text": "blandetrinn"
+          },
+          " sammen med en VFO på ",
+          {
+            "q": 5.2,
+            "u": "MHz"
+          },
+          "."
+        ]
+      ],
+      "stem": [
+        "Hvilke to hovedprodukter kommer ut av blandetrinnet?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 14.2,
+              "u": "MHz"
+            },
+            " og ",
+            {
+              "q": 3.8,
+              "u": "MHz"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 14.2,
+              "u": "MHz"
+            },
+            " og ",
+            {
+              "q": 9.0,
+              "u": "MHz",
+              "digits": 1
+            }
+          ],
+          "feedback": [
+            "Rester av inngangssignalet kan lekke gjennom, men hovedproduktene er summen og differansen av de to frekvensene."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 18.0,
+              "u": "MHz",
+              "digits": 1
+            },
+            " og ",
+            {
+              "q": 10.4,
+              "u": "MHz"
+            }
+          ],
+          "feedback": [
+            "Dette er de andre harmoniske av hvert av signalene. Et blandetrinn lager først og fremst summen og differansen."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 7.1,
+              "u": "MHz"
+            },
+            " og ",
+            {
+              "q": 14.2,
+              "u": "MHz"
+            }
+          ],
+          "feedback": [
+            "Summen er riktig, men differansen mellom 9,0 MHz og 5,2 MHz er 3,8 MHz."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        {
+          "steps": [
+            [
+              {
+                "math": [
+                  "f_{sum}",
+                  "=",
+                  {
+                    "q": 9.0,
+                    "u": "MHz",
+                    "digits": 1
+                  },
+                  "+",
+                  {
+                    "q": 5.2,
+                    "u": "MHz"
+                  },
+                  "=",
+                  {
+                    "q": 14.2,
+                    "u": "MHz"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "math": [
+                  "f_{diff}",
+                  "=",
+                  {
+                    "q": 9.0,
+                    "u": "MHz",
+                    "digits": 1
+                  },
+                  "−",
+                  {
+                    "q": 5.2,
+                    "u": "MHz"
+                  },
+                  "=",
+                  {
+                    "q": 3.8,
+                    "u": "MHz"
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        "Summen ligger i 20 m-båndet og er den ønskede frekvensen. Differansen på 3,8 MHz ligger helt i øvre kant av 80 m-båndet og må fjernes med et båndpassfilter før sluttforsterkeren. Ved å bytte VFO-område og filter kan samme prinsipp brukes på andre bånd."
+      ],
+      "glossary_after_answer": [
+        "blander"
+      ],
+      "study_reference": {
+        "chapter": 4,
+        "section_id": "s4-26",
+        "printed_pages": [
+          "4-13"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "1241b1e6d1ef7640"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-23T21:00:00+00:00",
+        "note": "Batch 2 (ch4.json)"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T18:29:09+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "9ae97389acdf57fc56bb0f3e6608f4eae068b82b874a4f8b37c1cf8ce97fccb6",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T18:34:38+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "c307790cabcc1233bb5ef44715cb6202ab9bda07bf5c90cb4c7fd3b7c151c157",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T19:12:53+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "c307790cabcc1233bb5ef44715cb6202ab9bda07bf5c90cb4c7fd3b7c151c157",
+          "note": "Godkjent av redaktør etter tre runder uavhengig AI-gjennomgang (Claude) og tre runder ChatGPT-kontroll; alle beregninger kontrollert, figurer gjengitt og inspisert. Sidehenvisninger er IKKE kontrollert mot trykt bok; OCR-/side-/figurmerknader kvittert på dette grunnlaget.",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "c307790cabcc1233bb5ef44715cb6202ab9bda07bf5c90cb4c7fd3b7c151c157",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-23T19:12:53+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-23T19:12:53+00:00",
+        "content_sha256": "c307790cabcc1233bb5ef44715cb6202ab9bda07bf5c90cb4c7fd3b7c151c157",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

@@ -1,0 +1,173 @@
+{
+  "id": "q-0094",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 4,
+      "section_ids": [
+        "s4-26",
+        "s4-25"
+      ],
+      "topic_ids": [
+        "datamodulasjon"
+      ],
+      "learning_objective": "Skille mellom FSK (F1B) og AFSK (F2B/J2B) ved datasending.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "Et datasignal i form av en likespenning fra en datamaskin styrer senderens bærebølgefrekvens direkte, slik at den skifter mellom to verdier. Det brukes ingen lydtoner underveis."
+        ]
+      ],
+      "stem": [
+        "Hva kalles denne modulasjonsmetoden?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "FSK, frekvensskiftnøkling"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "AFSK, lydfrekvensskiftnøkling"
+          ],
+          "feedback": [
+            "Ved AFSK lages først lydtoner som føres inn på mikrofoninngangen. Her moduleres bærebølgen direkte uten lydtoner."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "PSK, faseskiftnøkling"
+          ],
+          "feedback": [
+            "Ved PSK er det fasen som skiftes. Her skifter bærebølgen mellom to frekvenser."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "SSB-telefoni (J3E)"
+          ],
+          "feedback": [
+            "SSB er en modulasjonsform for tale og lydtoner. Her er det ingen lydsignal, og det er frekvensen som skiftes."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Når bærebølgen frekvensskiftes direkte av datasignalet, kalles det ",
+          {
+            "term": "fsk",
+            "text": "frekvensskiftnøkling"
+          },
+          " (FSK), med emisjonskoden F1B. De to frekvensene kalles marktone og mellomromstone."
+        ],
+        "Ved AFSK lager man i stedet to lydtoner som moduleres på en FM-sender (F2B) eller en SSB-sender (J2B). Sendes tonene via SSB, blir spekteret det samme som ved FSK, og på mottakersiden høres de likt."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 4,
+        "section_id": "s4-26",
+        "printed_pages": [
+          "4-13"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "1241b1e6d1ef7640",
+          "49f4b2e17eb8399e"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-23T21:00:00+00:00",
+        "note": "Batch 2 (ch4.json)"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T18:29:09+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "f2479613a538741f1df6419f406bf1f7f4177e1a5af77706b191bd17dcac2b26",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T18:34:38+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "072e4e4200581b01eb264f4432ab7ab18db4fb600446324e2149a940b11a5053",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T19:12:53+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "072e4e4200581b01eb264f4432ab7ab18db4fb600446324e2149a940b11a5053",
+          "note": "Godkjent av redaktør etter tre runder uavhengig AI-gjennomgang (Claude) og tre runder ChatGPT-kontroll; alle beregninger kontrollert, figurer gjengitt og inspisert. Sidehenvisninger er IKKE kontrollert mot trykt bok; OCR-/side-/figurmerknader kvittert på dette grunnlaget.",
+          "acknowledged": [
+            "figures",
+            "ocr"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "072e4e4200581b01eb264f4432ab7ab18db4fb600446324e2149a940b11a5053",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: equation, numeric_low_conf. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-23T19:12:53+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-23T19:12:53+00:00",
+        "content_sha256": "072e4e4200581b01eb264f4432ab7ab18db4fb600446324e2149a940b11a5053",
+        "acknowledged_hazards": [
+          "figures",
+          "ocr"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}
