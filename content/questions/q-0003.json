@@ -3,7 +3,7 @@
   "revisions": [
     {
       "revision": 1,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "calculation",
@@ -250,6 +250,15 @@
             "ocr",
             "pages"
           ]
+        },
+        {
+          "at": "2026-10-23T20:43:45+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "0d460f29ac09981771ec1cd3795abbe90c9f04355234efbbd1fa4eb423867f8b",
+          "note": "superseded by r2"
         }
       ],
       "checks": {
@@ -278,6 +287,332 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-23T19:12:49+00:00",
         "content_sha256": "0d460f29ac09981771ec1cd3795abbe90c9f04355234efbbd1fa4eb423867f8b",
+        "acknowledged_hazards": [
+          "figures",
+          "ocr",
+          "pages"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 2,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "calculation",
+      "difficulty": "easy",
+      "chapter": 2,
+      "section_ids": [
+        "s2-12"
+      ],
+      "topic_ids": [
+        "motstandskoblinger"
+      ],
+      "learning_objective": "Regne ut den samlede resistansen til to parallellkoblede motstander.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "To ",
+          {
+            "term": "motstand",
+            "text": "motstander"
+          },
+          ", ",
+          {
+            "math": [
+              "R_1",
+              "=",
+              {
+                "q": 100,
+                "u": "Ω"
+              }
+            ]
+          },
+          " og ",
+          {
+            "math": [
+              "R_2",
+              "=",
+              {
+                "q": 150,
+                "u": "Ω"
+              }
+            ]
+          },
+          ", er koblet ",
+          {
+            "term": "parallellkobling",
+            "text": "i parallell"
+          },
+          " over et batteri. Batterispenningen har ingen betydning for svaret."
+        ]
+      ],
+      "stem": [
+        [
+          "Hvor stor er den samlede ",
+          {
+            "term": "resistans",
+            "text": "resistansen"
+          },
+          " som batteriet «ser»?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 60,
+              "u": "Ω"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 250,
+              "u": "Ω"
+            }
+          ],
+          "feedback": [
+            [
+              "Å legge sammen verdiene gjelder ",
+              {
+                "term": "seriekobling",
+                "text": "seriekobling"
+              },
+              ". Ved parallellkobling blir den samlede resistansen mindre enn den minste av motstandene."
+            ]
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 125,
+              "u": "Ω"
+            }
+          ],
+          "feedback": [
+            "Gjennomsnittet av de to verdiene er ikke det samme som parallellresistansen. Svaret må være under 100 Ω."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 50,
+              "u": "Ω"
+            }
+          ],
+          "feedback": [
+            "Å halvere den ene verdien stemmer bare når to like store motstander står i parallell."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "For to motstander i parallell kan man bruke «produkt delt på sum»:",
+        {
+          "steps": [
+            [
+              {
+                "math": [
+                  "R",
+                  "=",
+                  {
+                    "frac": [
+                      [
+                        "R_1",
+                        "·",
+                        "R_2"
+                      ],
+                      [
+                        "R_1",
+                        "+",
+                        "R_2"
+                      ]
+                    ]
+                  },
+                  "=",
+                  {
+                    "frac": [
+                      [
+                        "100",
+                        "·",
+                        "150"
+                      ],
+                      [
+                        "100",
+                        "+",
+                        "150"
+                      ]
+                    ]
+                  },
+                  "=",
+                  {
+                    "frac": [
+                      [
+                        "15000"
+                      ],
+                      [
+                        "250"
+                      ]
+                    ]
+                  },
+                  "=",
+                  {
+                    "q": 60,
+                    "u": "Ω"
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        {
+          "note": [
+            "Kontroll: med flere strømveier blir det lettere for ",
+            {
+              "term": "strom",
+              "text": "strømmen"
+            },
+            " å gå, så resultatet må være mindre enn den minste motstanden (100 Ω)."
+          ]
+        }
+      ],
+      "glossary_after_answer": [],
+      "visual": {
+        "template": "dc-circuit",
+        "version": 1,
+        "params": {
+          "topology": "parallel",
+          "source": {
+            "voltage_v": 12
+          },
+          "resistors": [
+            {
+              "ohms": 100
+            },
+            {
+              "ohms": 150
+            }
+          ]
+        }
+      },
+      "calculation": {
+        "formula": "parallel_resistance",
+        "inputs": {
+          "R1": [
+            100,
+            "Ω"
+          ],
+          "R2": [
+            150,
+            "Ω"
+          ]
+        },
+        "answer": [
+          60,
+          "Ω"
+        ],
+        "answer_symbol": "R_total",
+        "sig_figs": 2
+      },
+      "study_reference": {
+        "chapter": 2,
+        "section_id": "s2-12",
+        "printed_pages": [
+          "2-4"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "beb55384805a14c0"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "autolink",
+        "author": "AI-assistent (Claude), autolenking",
+        "based_on": 1,
+        "at": "2026-10-23T20:41:20+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T20:41:20+00:00",
+          "actor": "AI-assistent (Claude), autolenking",
+          "action": "autolink",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "7f58484d71607040fd0a56cb617f40859c8f48f2f2e4b0179970a84c36472a11",
+          "note": "glossary links added (4); based on r1"
+        },
+        {
+          "at": "2026-10-23T20:41:22+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "7f58484d71607040fd0a56cb617f40859c8f48f2f2e4b0179970a84c36472a11",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T20:43:45+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "7f58484d71607040fd0a56cb617f40859c8f48f2f2e4b0179970a84c36472a11",
+          "note": "Godkjent av redaktør: kun nye ordforklaringslenker (automatisk lenking, kontrollert for svarlekkasje), teksten er uendret fra forrige godkjente versjon. Sidehenvisninger er fortsatt ikke kontrollert mot trykt bok.",
+          "acknowledged": [
+            "figures",
+            "ocr",
+            "pages"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "7f58484d71607040fd0a56cb617f40859c8f48f2f2e4b0179970a84c36472a11",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: equation, numeric_low_conf, subscript_garbled. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "pages",
+            "detail": "cited printed page number is uncertain in the source (printed_page_status=inferred). Confirm the page in the book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-23T20:43:45+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-23T20:43:45+00:00",
+        "content_sha256": "7f58484d71607040fd0a56cb617f40859c8f48f2f2e4b0179970a84c36472a11",
         "acknowledged_hazards": [
           "figures",
           "ocr",

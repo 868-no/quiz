@@ -160,6 +160,17 @@ class ChecksTest(unittest.TestCase):
         res = checks.check_revision(ctx, "q-0001", rev)
         self.assertTrue(any("glossary definition of 'strom'" in w for w in res["warnings"]), res["warnings"])
 
+    def test_links_only_in_the_correct_option_are_a_cue(self):
+        def cue(r):
+            r["options"][0]["content"] = [{"term": "strom", "text": "strøm"}, " på ", {"q": 25.5, "u": "mA"}]
+        self.assertWarning(self.mutate(cue), "only the correct option has glossary links")
+
+        def held_back(r):
+            cue(r)
+            r["glossary_after_answer"] = ["strom"]
+        res = self.mutate(held_back)
+        self.assertFalse(any("only the correct option" in w for w in res["warnings"]), res["warnings"])
+
     def test_unresolved_flags_are_reported(self):
         res = self.run_checks(flags=[{"type": "source_changed", "resolved": False}])
         self.assertWarning(res, "unresolved flag")

@@ -3,7 +3,7 @@
   "revisions": [
     {
       "revision": 1,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "calculation",
@@ -221,6 +221,15 @@
             "figures",
             "ocr"
           ]
+        },
+        {
+          "at": "2026-10-23T20:43:46+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "57b1e61cdd481295ea12d096eec685b981c0572ecc2efb9d091148d96961a841",
+          "note": "superseded by r2"
         }
       ],
       "checks": {
@@ -245,6 +254,296 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-23T19:12:50+00:00",
         "content_sha256": "57b1e61cdd481295ea12d096eec685b981c0572ecc2efb9d091148d96961a841",
+        "acknowledged_hazards": [
+          "figures",
+          "ocr"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 2,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "calculation",
+      "difficulty": "medium",
+      "chapter": 6,
+      "section_ids": [
+        "s6-10",
+        "s6-11"
+      ],
+      "topic_ids": [
+        "mellomfrekvens"
+      ],
+      "learning_objective": "Regne ut speilfrekvensen når lokaloscillatoren ligger over signalet.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En VHF-",
+          {
+            "term": "mottaker",
+            "text": "mottaker"
+          },
+          " har ",
+          {
+            "term": "mellomfrekvens",
+            "text": "mellomfrekvens"
+          },
+          " ",
+          {
+            "q": 10.7,
+            "u": "MHz"
+          },
+          " og er innstilt på ",
+          {
+            "q": 144.5,
+            "u": "MHz"
+          },
+          ". ",
+          {
+            "term": "lokaloscillator",
+            "text": "Lokaloscillatoren"
+          },
+          " ligger over signalfrekvensen."
+        ]
+      ],
+      "stem": [
+        [
+          "Hvilken ",
+          {
+            "term": "frekvens",
+            "text": "frekvens"
+          },
+          " er ",
+          {
+            "term": "speilfrekvens",
+            "text": "speilfrekvensen"
+          },
+          "?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 165.9,
+              "u": "MHz"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 155.2,
+              "u": "MHz"
+            }
+          ],
+          "feedback": [
+            "155,2 MHz er lokaloscillatorens frekvens (144,5 + 10,7 MHz)."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 123.1,
+              "u": "MHz"
+            }
+          ],
+          "feedback": [
+            "Det ville vært speilfrekvensen hvis lokaloscillatoren lå under signalet."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 133.8,
+              "u": "MHz"
+            }
+          ],
+          "feedback": [
+            "133,8 MHz er signalfrekvensen minus mellomfrekvensen. Det ville vært lokaloscillatorens frekvens hvis den lå under signalet, men det er ikke speilfrekvensen."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        {
+          "steps": [
+            [
+              "Lokaloscillator: ",
+              {
+                "math": [
+                  "f_LO",
+                  "=",
+                  {
+                    "q": 144.5,
+                    "u": "MHz"
+                  },
+                  "+",
+                  {
+                    "q": 10.7,
+                    "u": "MHz"
+                  },
+                  "=",
+                  {
+                    "q": 155.2,
+                    "u": "MHz"
+                  }
+                ]
+              }
+            ],
+            [
+              "Speilfrekvensen ligger like langt på den andre siden av lokaloscillatoren: ",
+              {
+                "math": [
+                  "f_speil",
+                  "=",
+                  {
+                    "q": 155.2,
+                    "u": "MHz"
+                  },
+                  "+",
+                  {
+                    "q": 10.7,
+                    "u": "MHz"
+                  },
+                  "=",
+                  {
+                    "q": 165.9,
+                    "u": "MHz"
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        [
+          "Både 144,5 MHz og 165,9 MHz gir 10,7 MHz ut av ",
+          {
+            "term": "blander",
+            "text": "blanderen"
+          },
+          ". Speilfrekvensen må derfor dempes med ",
+          {
+            "term": "filter",
+            "text": "filter"
+          },
+          " før blanderen."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "calculation": {
+        "formula": "image_frequency_high_lo",
+        "inputs": {
+          "f_RF": [
+            144.5,
+            "MHz"
+          ],
+          "f_IF": [
+            10.7,
+            "MHz"
+          ]
+        },
+        "answer": [
+          165.9,
+          "MHz"
+        ],
+        "answer_symbol": "f_image",
+        "sig_figs": 4
+      },
+      "study_reference": {
+        "chapter": 6,
+        "section_id": "s6-10",
+        "printed_pages": [
+          "6-5"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "18c4a40fdc2de427",
+          "92798468b18c6fe5"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "autolink",
+        "author": "AI-assistent (Claude), autolenking",
+        "based_on": 1,
+        "at": "2026-10-23T20:41:21+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T20:41:21+00:00",
+          "actor": "AI-assistent (Claude), autolenking",
+          "action": "autolink",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "806dfa0e0e3c07d6f45c197a29e1b5e84fc25bb135bdfcbc3ca5e5e6939971df",
+          "note": "glossary links added (4); based on r1"
+        },
+        {
+          "at": "2026-10-23T20:41:22+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "806dfa0e0e3c07d6f45c197a29e1b5e84fc25bb135bdfcbc3ca5e5e6939971df",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T20:43:46+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "806dfa0e0e3c07d6f45c197a29e1b5e84fc25bb135bdfcbc3ca5e5e6939971df",
+          "note": "Godkjent av redaktør: kun nye ordforklaringslenker (automatisk lenking, kontrollert for svarlekkasje), teksten er uendret fra forrige godkjente versjon. Sidehenvisninger er fortsatt ikke kontrollert mot trykt bok.",
+          "acknowledged": [
+            "figures",
+            "ocr"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "806dfa0e0e3c07d6f45c197a29e1b5e84fc25bb135bdfcbc3ca5e5e6939971df",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: equation, numeric_low_conf, sign_ambiguous, table. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-23T20:43:46+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-23T20:43:46+00:00",
+        "content_sha256": "806dfa0e0e3c07d6f45c197a29e1b5e84fc25bb135bdfcbc3ca5e5e6939971df",
         "acknowledged_hazards": [
           "figures",
           "ocr"

@@ -183,6 +183,12 @@ def check_revision(ctx: Context, qid: str, rev: dict[str, Any]) -> dict[str, Any
         approx = [any(q.get("approx") for q in richtext.quantities([o.get("content")])) for o in options if isinstance(o, dict)]
         if sum(approx) == 1 and correct_opt and any(q.get("approx") for q in richtext.quantities([correct_opt.get("content")])):
             warnings.append("leak?: only the correct option is marked as approximate (≈)")
+        # terms held back until answering are plain text, so they give no visual cue
+        linked = [bool(set(richtext.term_refs([o.get("content")])) - hidden) for o in options if isinstance(o, dict)]
+        if any(linked) and not all(linked) and set(
+                i for i, o in enumerate(options) if isinstance(o, dict) and o.get("id") in correct) == {
+                i for i, v in enumerate(linked) if v}:
+            warnings.append("leak?: only the correct option has glossary links (underlined terms)")
         lengths = [len(n) for n in norm_texts]
         if lengths and len(ctext) > 1.8 * max([l for l, o in zip(lengths, options) if o.get("id") not in correct] or [1]):
             warnings.append("leak?: the correct option is much longer than all distractors")

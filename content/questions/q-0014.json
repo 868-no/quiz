@@ -3,7 +3,7 @@
   "revisions": [
     {
       "revision": 1,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "concept",
@@ -129,6 +129,15 @@
             "figures",
             "ocr"
           ]
+        },
+        {
+          "at": "2026-10-23T20:43:45+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "8ad87930a350aeb61161e58b9cd24c977a432fee2e3b20bef2970a8ad533aeb5",
+          "note": "superseded by r2"
         }
       ],
       "checks": {
@@ -153,6 +162,225 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-23T19:12:49+00:00",
         "content_sha256": "8ad87930a350aeb61161e58b9cd24c977a432fee2e3b20bef2970a8ad533aeb5",
+        "acknowledged_hazards": [
+          "figures",
+          "ocr"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 2,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 2,
+      "section_ids": [
+        "s2-41"
+      ],
+      "topic_ids": [
+        "resonans"
+      ],
+      "learning_objective": "Forstå hva som kjennetegner serieresonans.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En spole og en kondensator er koblet ",
+          {
+            "term": "seriekobling",
+            "text": "i serie"
+          },
+          " med en signalkilde. ",
+          {
+            "term": "frekvens",
+            "text": "Frekvensen"
+          },
+          " justeres til kretsens ",
+          {
+            "term": "resonans",
+            "text": "resonansfrekvens"
+          },
+          ". ",
+          {
+            "term": "spole",
+            "text": "Spolen"
+          },
+          " og ",
+          {
+            "term": "kondensator",
+            "text": "kondensatoren"
+          },
+          " regnes som ideelle, men kretsen har en liten resistans (for eksempel i kilden)."
+        ]
+      ],
+      "stem": [
+        "Hva kjennetegner kretsen ved denne frekvensen?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Spolens og kondensatorens reaktanser er like store."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Strømmen i kretsen er minst mulig."
+          ],
+          "feedback": [
+            "For en seriekrets er det omvendt. Reaktansene opphever hverandre, og strømmen blir størst."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Spolens reaktans er null."
+          ],
+          "feedback": [
+            "Spolens reaktans er bare null ved 0 Hz. Ved resonans er den like stor som kondensatorens."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Spenningen over kondensatoren er null."
+          ],
+          "feedback": [
+            [
+              {
+                "term": "spenning",
+                "text": "Spenningene"
+              },
+              " over L og C er like store og i motfase, så de opphever hverandre. Hver for seg er de ikke null; de kan til og med være større enn kildespenningen."
+            ]
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          {
+            "math": [
+              "X_L",
+              "=",
+              "X_C"
+            ]
+          },
+          " ved resonans. Spenningen over spolen ligger 90° foran strømmen, og spenningen over kondensatoren 90° etter. De er altså i motfase (180°) og like store, så summen blir null."
+        ],
+        [
+          "Kretsen har da ingen samlet ",
+          {
+            "term": "reaktans",
+            "text": "reaktans"
+          },
+          ". Strømmen begrenses bare av kretsens ",
+          {
+            "term": "resistans",
+            "text": "resistans"
+          },
+          ", og blir størst ved ",
+          {
+            "term": "resonans",
+            "text": "resonansfrekvensen"
+          },
+          "."
+        ]
+      ],
+      "glossary_after_answer": [
+        "resonans"
+      ],
+      "study_reference": {
+        "chapter": 2,
+        "section_id": "s2-41",
+        "printed_pages": [
+          "2-16"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "27a8f5b76d9a6360",
+          "e154dadc8f58df55"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "autolink",
+        "author": "AI-assistent (Claude), autolenking",
+        "based_on": 1,
+        "at": "2026-10-23T20:41:20+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T20:41:20+00:00",
+          "actor": "AI-assistent (Claude), autolenking",
+          "action": "autolink",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "b36a286aa6cf8557dbc74185b59f0c66acda2589c10c29bade5ea4ad50494ae8",
+          "note": "glossary links added (8); based on r1"
+        },
+        {
+          "at": "2026-10-23T20:41:22+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "b36a286aa6cf8557dbc74185b59f0c66acda2589c10c29bade5ea4ad50494ae8",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T20:43:45+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "b36a286aa6cf8557dbc74185b59f0c66acda2589c10c29bade5ea4ad50494ae8",
+          "note": "Godkjent av redaktør: kun nye ordforklaringslenker (automatisk lenking, kontrollert for svarlekkasje), teksten er uendret fra forrige godkjente versjon. Sidehenvisninger er fortsatt ikke kontrollert mot trykt bok.",
+          "acknowledged": [
+            "figures",
+            "ocr"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "b36a286aa6cf8557dbc74185b59f0c66acda2589c10c29bade5ea4ad50494ae8",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: equation, low_ocr_confidence, numeric_low_conf. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-23T20:43:45+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-23T20:43:45+00:00",
+        "content_sha256": "b36a286aa6cf8557dbc74185b59f0c66acda2589c10c29bade5ea4ad50494ae8",
         "acknowledged_hazards": [
           "figures",
           "ocr"

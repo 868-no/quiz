@@ -3,7 +3,7 @@
   "revisions": [
     {
       "revision": 1,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "recall",
@@ -106,6 +106,15 @@
           "acknowledged": [
             "figures"
           ]
+        },
+        {
+          "at": "2026-10-23T20:43:51+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "d40fa67828c70ebc67954f806a14bc913ea6fe2f08ca295a3800e1eb5c6a9a03",
+          "note": "superseded by r2"
         }
       ],
       "checks": {
@@ -126,6 +135,192 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-23T19:12:54+00:00",
         "content_sha256": "d40fa67828c70ebc67954f806a14bc913ea6fe2f08ca295a3800e1eb5c6a9a03",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 2,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "recall",
+      "difficulty": "easy",
+      "chapter": 6,
+      "section_ids": [
+        "s6-08"
+      ],
+      "topic_ids": [
+        "superheterodyn",
+        "mottakeregenskaper"
+      ],
+      "learning_objective": "Vite at lav egenstøy er hovedkravet til RF-forsterkeren.",
+      "priority": "exam_important",
+      "context": [],
+      "stem": [
+        [
+          "Hva er det viktigste kravet til RF-forsterkeren, det første ",
+          {
+            "term": "forsterker",
+            "text": "forsterkertrinnet"
+          },
+          " i en ",
+          {
+            "term": "mottaker",
+            "text": "mottaker"
+          },
+          "?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Lav egenstøy"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Høy utgangseffekt"
+          ],
+          "feedback": [
+            [
+              "Høy utgangseffekt trengs i en ",
+              {
+                "term": "sluttforsterker",
+                "text": "sluttforsterker"
+              },
+              " i en sender. I mottakeren er signalene svært svake."
+            ]
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Størst mulig forsterkning"
+          ],
+          "feedback": [
+            "For mye forsterkning foran blanderen gjør mottakeren lettere å overstyre. Forsterkningen bør bare være passe stor."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Størst mulig båndbredde"
+          ],
+          "feedback": [
+            "En svært bredbåndet inngang slipper inn sterke signaler fra andre bånd og kan gi overstyring. Litt filtrering er en fordel."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Støy som legges til i det første trinnet, forsterkes av alle trinnene etter. Egenstøyen i RF-forsterkeren bestemmer derfor i stor grad følsomheten til hele mottakeren.",
+        [
+          "I tillegg bør RF-forsterkeren tåle sterke signaler uten å bli overstyrt (stort ",
+          {
+            "term": "dynamisk-omraade",
+            "text": "dynamisk område"
+          },
+          "), og ",
+          {
+            "term": "avstemt-krets",
+            "text": "avstemte kretser"
+          },
+          " eller båndfiltre foran den gir en viss ",
+          {
+            "term": "selektivitet",
+            "text": "selektivitet"
+          },
+          "."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 6,
+        "section_id": "s6-08",
+        "printed_pages": [
+          "6-4"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "e7fa6d8e4dfb476d"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "autolink",
+        "author": "AI-assistent (Claude), autolenking",
+        "based_on": 1,
+        "at": "2026-10-23T20:41:21+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T20:41:21+00:00",
+          "actor": "AI-assistent (Claude), autolenking",
+          "action": "autolink",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "809bb853cd08a668c324e6afbacc68af5f6fa3035bd98ff996ac197c6e19fcb1",
+          "note": "glossary links added (6); based on r1"
+        },
+        {
+          "at": "2026-10-23T20:41:22+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "809bb853cd08a668c324e6afbacc68af5f6fa3035bd98ff996ac197c6e19fcb1",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T20:43:51+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "809bb853cd08a668c324e6afbacc68af5f6fa3035bd98ff996ac197c6e19fcb1",
+          "note": "Godkjent av redaktør: kun nye ordforklaringslenker (automatisk lenking, kontrollert for svarlekkasje), teksten er uendret fra forrige godkjente versjon. Sidehenvisninger er fortsatt ikke kontrollert mot trykt bok.",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "809bb853cd08a668c324e6afbacc68af5f6fa3035bd98ff996ac197c6e19fcb1",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-23T20:43:51+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-23T20:43:51+00:00",
+        "content_sha256": "809bb853cd08a668c324e6afbacc68af5f6fa3035bd98ff996ac197c6e19fcb1",
         "acknowledged_hazards": [
           "figures"
         ],

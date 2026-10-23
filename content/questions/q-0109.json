@@ -3,7 +3,7 @@
   "revisions": [
     {
       "revision": 1,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "recall",
@@ -117,6 +117,15 @@
           "acknowledged": [
             "figures"
           ]
+        },
+        {
+          "at": "2026-10-23T20:43:51+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "b6881b706bca8be67550863a9a4881a97ba5e29e79cffd526073f64926138603",
+          "note": "superseded by r2"
         }
       ],
       "checks": {
@@ -137,6 +146,197 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-23T19:12:54+00:00",
         "content_sha256": "b6881b706bca8be67550863a9a4881a97ba5e29e79cffd526073f64926138603",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 2,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "recall",
+      "difficulty": "medium",
+      "chapter": 6,
+      "section_ids": [
+        "s6-06"
+      ],
+      "topic_ids": [
+        "mottakeregenskaper"
+      ],
+      "learning_objective": "Kjenne definisjonen av dynamisk område for en mottaker.",
+      "priority": "exam_important",
+      "context": [],
+      "stem": [
+        [
+          "Hva menes med ",
+          {
+            "term": "dynamisk-omraade",
+            "text": "det dynamiske området"
+          },
+          " til en ",
+          {
+            "term": "mottaker",
+            "text": "mottaker"
+          },
+          "?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Spennet fra svakeste brukbare signal til nivået der sterke signaler gir merkbar intermodulasjon"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Frekvensområdet som mottakeren kan stilles inn på"
+          ],
+          "feedback": [
+            [
+              "Det er frekvensdekningen. Det dynamiske området gjelder signalstyrke, ikke ",
+              {
+                "term": "frekvens",
+                "text": "frekvens"
+              },
+              "."
+            ]
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Forskjellen mellom laveste og høyeste lydstyrke i høyttaleren"
+          ],
+          "feedback": [
+            "Det dynamiske området handler om styrken på signalene ved antenneinngangen, ikke om lydvolumet."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Hvor raskt AGC-en reagerer når signalstyrken endrer seg"
+          ],
+          "feedback": [
+            [
+              "Det er ",
+              {
+                "term": "tidskonstant",
+                "text": "tidskonstanten"
+              },
+              " til den automatiske forsterkningskontrollen."
+            ]
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Nedre grense er det svakeste signalet mottakeren kan ta imot (følsomheten, bestemt av støygulvet). Øvre grense er der mottakeren begynner å bli overstyrt og ulinearitet gir ",
+          {
+            "term": "intermodulasjon",
+            "text": "intermodulasjonsprodukter"
+          },
+          " like sterke som bakgrunnsstøyen. Noen ganger brukes 1 dB-kompresjonspunktet i stedet."
+        ],
+        [
+          {
+            "term": "dynamisk-omraade",
+            "text": "Det dynamiske området"
+          },
+          " oppgis i dB. Et stort dynamisk område er viktig på HF, der sterke kringkastingsstasjoner ligger like ved svake amatørsignaler."
+        ]
+      ],
+      "glossary_after_answer": [
+        "dynamisk-omraade"
+      ],
+      "study_reference": {
+        "chapter": 6,
+        "section_id": "s6-06",
+        "printed_pages": [
+          "6-2",
+          "6-3"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "370eef8583f649a8"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "autolink",
+        "author": "AI-assistent (Claude), autolenking",
+        "based_on": 1,
+        "at": "2026-10-23T20:41:21+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T20:41:21+00:00",
+          "actor": "AI-assistent (Claude), autolenking",
+          "action": "autolink",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "a66ddac35a4b5f1e9de429f8cde9e39d0151c4d914da1afdaf4225a36f833825",
+          "note": "glossary links added (5); based on r1"
+        },
+        {
+          "at": "2026-10-23T20:41:22+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "a66ddac35a4b5f1e9de429f8cde9e39d0151c4d914da1afdaf4225a36f833825",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T20:43:51+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "a66ddac35a4b5f1e9de429f8cde9e39d0151c4d914da1afdaf4225a36f833825",
+          "note": "Godkjent av redaktør: kun nye ordforklaringslenker (automatisk lenking, kontrollert for svarlekkasje), teksten er uendret fra forrige godkjente versjon. Sidehenvisninger er fortsatt ikke kontrollert mot trykt bok.",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "a66ddac35a4b5f1e9de429f8cde9e39d0151c4d914da1afdaf4225a36f833825",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-23T20:43:51+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-23T20:43:51+00:00",
+        "content_sha256": "a66ddac35a4b5f1e9de429f8cde9e39d0151c4d914da1afdaf4225a36f833825",
         "acknowledged_hazards": [
           "figures"
         ],

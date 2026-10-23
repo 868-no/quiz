@@ -3,7 +3,7 @@
   "revisions": [
     {
       "revision": 1,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "concept",
@@ -118,6 +118,15 @@
           "acknowledged": [
             "figures"
           ]
+        },
+        {
+          "at": "2026-10-23T20:43:51+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "b51e5ae5941dce9e00bfa803652b2575b3aea62e08a18c17715406b68a1b24ea",
+          "note": "superseded by r2"
         }
       ],
       "checks": {
@@ -138,6 +147,194 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-23T19:12:54+00:00",
         "content_sha256": "b51e5ae5941dce9e00bfa803652b2575b3aea62e08a18c17715406b68a1b24ea",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 2,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "hard",
+      "chapter": 5,
+      "section_ids": [
+        "s5-13"
+      ],
+      "topic_ids": [
+        "parasittsvingninger"
+      ],
+      "learning_objective": "Forstå at parasittsvingninger kan avhenge av lastforholdene og derfor ikke alltid viser seg ved test mot kunstlast.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En radioamatør får høre at HF-",
+          {
+            "term": "sender",
+            "text": "senderen"
+          },
+          " hans gir uønskede signaler, men bare når antennetuneren står i en bestemt innstilling. Han kobler senderen direkte til en god 50 Ω ",
+          {
+            "term": "kunstlast",
+            "text": "kunstlast"
+          },
+          ", og da finner han ingen feil."
+        ]
+      ],
+      "stem": [
+        "Hva er den mest sannsynlige grunnen til at testen ikke avslørte problemet?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Kunstlasten gir en ren, tilpasset last, mens svingningene bare oppstår ved en bestemt feiltilpasning."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Kunstlasten demper alle frekvenser over 30 MHz, slik at VHF-svingningene ikke kan oppstå i den."
+          ],
+          "feedback": [
+            "En god kunstlast er tilnærmet ren resistans over et bredt frekvensområde og er ikke noe filter. Poenget er lastimpedansen senderen ser."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Parasittsvingninger ligger alltid under sendefrekvensen, der wattmeteret ikke kan måle dem."
+          ],
+          "feedback": [
+            [
+              "Parasittsvingninger i HF-",
+              {
+                "term": "forsterker",
+                "text": "forsterkere"
+              },
+              " ligger oftest over sendefrekvensen, gjerne i VHF-området."
+            ]
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Kunstlasten tar opp så mye effekt at sluttrinnet ikke lenger leverer normal sendeeffekt."
+          ],
+          "feedback": [
+            [
+              "En riktig dimensjonert kunstlast tar opp hele sendeeffekten, og ",
+              {
+                "term": "sluttforsterker",
+                "text": "sluttrinnet"
+              },
+              " leverer normal effekt. Forskjellen er lastimpedansen: kunstlasten er en ren, tilpasset 50 Ω-last, mens antennesystemet kan gi en annen ",
+              {
+                "term": "impedans",
+                "text": "impedans"
+              },
+              "."
+            ]
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          {
+            "term": "parasittsvingning",
+            "text": "Parasittsvingninger"
+          },
+          " kan være knyttet til bestemte driftsforhold: en viss effekt, en viss antenne eller en spesiell innstilling av antennetuneren. En kunstlast koblet direkte til senderen gir en ideell 50 Ω-last, og da kan svingningene utebli."
+        ],
+        "Man kan i stedet sette kunstlasten etter antennetuneren og bevisst stille inn en moderat feiltilpasning, kontrollert med et SWR-meter. Det må gjøres forsiktig. For å identifisere svingningene sikkert trengs et oscilloskop eller en spektrumanalysator som dekker frekvenser godt over sendefrekvensen."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 5,
+        "section_id": "s5-13",
+        "printed_pages": [
+          "5-6"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "80bc1ce2465ae419"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "autolink",
+        "author": "AI-assistent (Claude), autolenking",
+        "based_on": 1,
+        "at": "2026-10-23T20:41:21+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T20:41:21+00:00",
+          "actor": "AI-assistent (Claude), autolenking",
+          "action": "autolink",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "14605756edd56ea9fe638cabfeb35a1e30339826b5c8befa5269a3f1e2df7d7d",
+          "note": "glossary links added (6); based on r1"
+        },
+        {
+          "at": "2026-10-23T20:41:22+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "14605756edd56ea9fe638cabfeb35a1e30339826b5c8befa5269a3f1e2df7d7d",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T20:43:51+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "14605756edd56ea9fe638cabfeb35a1e30339826b5c8befa5269a3f1e2df7d7d",
+          "note": "Godkjent av redaktør: kun nye ordforklaringslenker (automatisk lenking, kontrollert for svarlekkasje), teksten er uendret fra forrige godkjente versjon. Sidehenvisninger er fortsatt ikke kontrollert mot trykt bok.",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "14605756edd56ea9fe638cabfeb35a1e30339826b5c8befa5269a3f1e2df7d7d",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-23T20:43:51+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-23T20:43:51+00:00",
+        "content_sha256": "14605756edd56ea9fe638cabfeb35a1e30339826b5c8befa5269a3f1e2df7d7d",
         "acknowledged_hazards": [
           "figures"
         ],

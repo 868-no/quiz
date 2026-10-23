@@ -3,7 +3,7 @@
   "revisions": [
     {
       "revision": 1,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "concept",
@@ -121,6 +121,15 @@
           "acknowledged": [
             "figures"
           ]
+        },
+        {
+          "at": "2026-10-23T20:43:46+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "e052a6ab668ec97781ebe98e314a35c190f31f8ba35516ef6d166a8f26967bfb",
+          "note": "superseded by r2"
         }
       ],
       "checks": {
@@ -141,6 +150,210 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-23T19:12:49+00:00",
         "content_sha256": "e052a6ab668ec97781ebe98e314a35c190f31f8ba35516ef6d166a8f26967bfb",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 2,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 3,
+      "section_ids": [
+        "s3-19"
+      ],
+      "topic_ids": [
+        "transistorkoblinger"
+      ],
+      "learning_objective": "Vite at en felles emitter-forsterker snur fasen på signalet.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En ",
+          {
+            "term": "transistor",
+            "text": "transistor"
+          },
+          " er koblet som ",
+          {
+            "term": "forsterker",
+            "text": "forsterker"
+          },
+          " med ",
+          {
+            "term": "felles-emitter",
+            "text": "felles emitter"
+          },
+          ". Signalet går inn på basis og tas ut fra kollektoren, som er koblet til forsyningen gjennom en ",
+          {
+            "term": "motstand",
+            "text": "motstand"
+          },
+          ". Transistoren er riktig ",
+          {
+            "term": "forspenning",
+            "text": "forspent"
+          },
+          ", og signalet er et lite signal på lav frekvens."
+        ]
+      ],
+      "stem": [
+        "Hva er faseforholdet mellom inngangssignalet og utgangssignalet?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "De er i motfase (180° forskjøvet)."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "De er i fase."
+          ],
+          "feedback": [
+            [
+              "Det gjelder for ",
+              {
+                "term": "emitterfolger",
+                "text": "felles kollektor"
+              },
+              " (emitterfølger) og ",
+              {
+                "term": "felles-basis",
+                "text": "felles basis"
+              },
+              ", ikke felles emitter."
+            ]
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Utgangen ligger 90° foran inngangen."
+          ],
+          "feedback": [
+            [
+              "Med en motstand som last og lav frekvens snur kretsen signalet, og det gir 180°, ikke 90°. Kapasitanser kan gi ekstra ",
+              {
+                "term": "faseforskyvning",
+                "text": "faseforskyvning"
+              },
+              " først ved høye frekvenser."
+            ]
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Utgangen ligger 90° etter inngangen."
+          ],
+          "feedback": [
+            [
+              "En 90° forskyvning krever at en spole eller ",
+              {
+                "term": "kondensator",
+                "text": "kondensator"
+              },
+              " dominerer. Her snur transistoren signalet, og det gir 180°."
+            ]
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Når spenningen på basis øker, øker kollektorstrømmen. Da blir spenningsfallet over kollektormotstanden større, og spenningen på kollektoren synker.",
+        "Inngangen går altså opp når utgangen går ned. Signalet blir snudd, det vil si forskjøvet 180°."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 3,
+        "section_id": "s3-19",
+        "printed_pages": [
+          "3-9"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "7fa3060530175252"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "autolink",
+        "author": "AI-assistent (Claude), autolenking",
+        "based_on": 1,
+        "at": "2026-10-23T20:41:21+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T20:41:21+00:00",
+          "actor": "AI-assistent (Claude), autolenking",
+          "action": "autolink",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "c4c5626d26c67d63c750601b96abe83f2626f56cf29566f400167ef20b62e2ba",
+          "note": "glossary links added (7); based on r1"
+        },
+        {
+          "at": "2026-10-23T20:41:22+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "c4c5626d26c67d63c750601b96abe83f2626f56cf29566f400167ef20b62e2ba",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T20:43:46+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "c4c5626d26c67d63c750601b96abe83f2626f56cf29566f400167ef20b62e2ba",
+          "note": "Godkjent av redaktør: kun nye ordforklaringslenker (automatisk lenking, kontrollert for svarlekkasje), teksten er uendret fra forrige godkjente versjon. Sidehenvisninger er fortsatt ikke kontrollert mot trykt bok.",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "c4c5626d26c67d63c750601b96abe83f2626f56cf29566f400167ef20b62e2ba",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-23T20:43:46+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-23T20:43:46+00:00",
+        "content_sha256": "c4c5626d26c67d63c750601b96abe83f2626f56cf29566f400167ef20b62e2ba",
         "acknowledged_hazards": [
           "figures"
         ],

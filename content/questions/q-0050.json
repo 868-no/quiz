@@ -3,7 +3,7 @@
   "revisions": [
     {
       "revision": 1,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "scenario",
@@ -207,6 +207,15 @@
             "figures",
             "ocr"
           ]
+        },
+        {
+          "at": "2026-10-23T20:43:48+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "ce2df1f94bf7d7142daa77e6104a85e37aee3e1e697f73e8ba764d9a870be0ae",
+          "note": "superseded by r2"
         }
       ],
       "checks": {
@@ -231,6 +240,299 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-23T19:12:51+00:00",
         "content_sha256": "ce2df1f94bf7d7142daa77e6104a85e37aee3e1e697f73e8ba764d9a870be0ae",
+        "acknowledged_hazards": [
+          "figures",
+          "ocr"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 2,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "hard",
+      "chapter": 2,
+      "section_ids": [
+        "s2-46"
+      ],
+      "topic_ids": [
+        "q-faktor"
+      ],
+      "learning_objective": "Beregne Q-faktoren til en spole som forholdet mellom induktiv reaktans og tapsresistans.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En spole på ",
+          {
+            "q": 4.5,
+            "u": "µH"
+          },
+          " brukes i en ",
+          {
+            "term": "avstemt-krets",
+            "text": "avstemt krets"
+          },
+          " ved ",
+          {
+            "q": 3.5,
+            "u": "MHz"
+          },
+          ". ",
+          {
+            "term": "spole",
+            "text": "Spolen"
+          },
+          " har en tapsresistans på ",
+          {
+            "q": 1.5,
+            "u": "Ω"
+          },
+          ", og ",
+          {
+            "term": "kondensator",
+            "text": "kondensatoren"
+          },
+          " regnes som tapsfri."
+        ]
+      ],
+      "stem": [
+        [
+          "Omtrent hvor stor er ",
+          {
+            "term": "q-faktor",
+            "text": "Q-faktoren"
+          },
+          "?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Ca. 66"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Ca. 0,015"
+          ],
+          "feedback": [
+            [
+              "Her er resistansen delt på ",
+              {
+                "term": "reaktans",
+                "text": "reaktansen"
+              },
+              ". Q-faktoren er reaktansen delt på resistansen."
+            ]
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Ca. 148"
+          ],
+          "feedback": [
+            "Her er reaktansen ganget med resistansen. Q er et forhold, ikke et produkt."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Ca. 3,0"
+          ],
+          "feedback": [
+            [
+              "Her er bare tallverdien for ",
+              {
+                "term": "induktans",
+                "text": "induktansen"
+              },
+              " (4,5) delt på resistansen. Regn først ut reaktansen ved den aktuelle frekvensen."
+            ]
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Først finner vi den ",
+          {
+            "term": "induktiv-reaktans",
+            "text": "induktive reaktansen"
+          },
+          ", deretter forholdet til ",
+          {
+            "term": "resistans",
+            "text": "resistansen"
+          },
+          ":"
+        ],
+        {
+          "steps": [
+            [
+              {
+                "math": [
+                  "X_L",
+                  "=",
+                  "2",
+                  "π",
+                  "f",
+                  "L",
+                  "=",
+                  "2",
+                  "π",
+                  "·",
+                  {
+                    "q": 3.5,
+                    "u": "MHz"
+                  },
+                  "·",
+                  {
+                    "q": 4.5,
+                    "u": "µH"
+                  },
+                  "≈",
+                  {
+                    "q": 99.0,
+                    "u": "Ω"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "math": [
+                  "Q",
+                  "=",
+                  {
+                    "frac": [
+                      [
+                        "X_L"
+                      ],
+                      [
+                        "R"
+                      ]
+                    ]
+                  },
+                  "=",
+                  {
+                    "frac": [
+                      [
+                        {
+                          "q": 99.0,
+                          "u": "Ω"
+                        }
+                      ],
+                      [
+                        {
+                          "q": 1.5,
+                          "u": "Ω"
+                        }
+                      ]
+                    ]
+                  },
+                  "≈",
+                  "66"
+                ]
+              }
+            ]
+          ]
+        },
+        "Svaret er et rent forholdstall uten enhet. Lav tapsresistans gir høy Q og en skarp avstemt krets."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 2,
+        "section_id": "s2-46",
+        "printed_pages": [
+          "2-18"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "aaef8985734acd38"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "autolink",
+        "author": "AI-assistent (Claude), autolenking",
+        "based_on": 1,
+        "at": "2026-10-23T20:41:21+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T20:41:21+00:00",
+          "actor": "AI-assistent (Claude), autolenking",
+          "action": "autolink",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "e4ce7ffbdb0664a40f7e53b6004215f4837d2474c3401dd790a0d6dd6571a4d4",
+          "note": "glossary links added (7); based on r1"
+        },
+        {
+          "at": "2026-10-23T20:41:22+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "e4ce7ffbdb0664a40f7e53b6004215f4837d2474c3401dd790a0d6dd6571a4d4",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T20:43:48+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "e4ce7ffbdb0664a40f7e53b6004215f4837d2474c3401dd790a0d6dd6571a4d4",
+          "note": "Godkjent av redaktør: kun nye ordforklaringslenker (automatisk lenking, kontrollert for svarlekkasje), teksten er uendret fra forrige godkjente versjon. Sidehenvisninger er fortsatt ikke kontrollert mot trykt bok.",
+          "acknowledged": [
+            "figures",
+            "ocr"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "e4ce7ffbdb0664a40f7e53b6004215f4837d2474c3401dd790a0d6dd6571a4d4",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: equation, numeric_low_conf. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-23T20:43:48+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-23T20:43:48+00:00",
+        "content_sha256": "e4ce7ffbdb0664a40f7e53b6004215f4837d2474c3401dd790a0d6dd6571a4d4",
         "acknowledged_hazards": [
           "figures",
           "ocr"

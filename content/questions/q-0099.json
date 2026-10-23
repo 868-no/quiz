@@ -3,7 +3,7 @@
   "revisions": [
     {
       "revision": 1,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "concept",
@@ -178,6 +178,15 @@
             "figures",
             "pages"
           ]
+        },
+        {
+          "at": "2026-10-23T20:43:50+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "0c5da79df28aac0d37d1b53a411ababfa71ecb3870a9291d396cd04058a15632",
+          "note": "superseded by r2"
         }
       ],
       "checks": {
@@ -202,6 +211,258 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-23T19:12:53+00:00",
         "content_sha256": "0c5da79df28aac0d37d1b53a411ababfa71ecb3870a9291d396cd04058a15632",
+        "acknowledged_hazards": [
+          "figures",
+          "pages"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 2,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "easy",
+      "chapter": 5,
+      "section_ids": [
+        "s5-12"
+      ],
+      "topic_ids": [
+        "harmoniske"
+      ],
+      "learning_objective": "Vite at en HF-sender vanligvis har et lavpassfilter på utgangen for å dempe harmoniske.",
+      "priority": "normal",
+      "context": [
+        [
+          "Figuren viser de siste trinnene i en HF-sender. Én blokk mellom ",
+          {
+            "term": "sluttforsterker",
+            "text": "sluttforsterkeren"
+          },
+          " og ",
+          {
+            "term": "antenne",
+            "text": "antennen"
+          },
+          " er skjult."
+        ]
+      ],
+      "stem": [
+        [
+          "Hvilken blokk står vanligvis der for å dempe ",
+          {
+            "term": "harmoniske",
+            "text": "harmoniske"
+          },
+          " av sendesignalet?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Et lavpassfilter"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Et høypassfilter"
+          ],
+          "feedback": [
+            "Harmoniske ligger over sendefrekvensen. Et høypassfilter slipper høye frekvenser gjennom og ville ikke dempe dem."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Et båndstoppfilter for sendefrekvensen"
+          ],
+          "feedback": [
+            "Det ville stoppe selve signalet du vil sende, og la de harmoniske passere."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "En bufferforsterker"
+          ],
+          "feedback": [
+            [
+              "En buffer skiller ",
+              {
+                "term": "oscillator",
+                "text": "oscillatoren"
+              },
+              " fra lastendringer. En ",
+              {
+                "term": "forsterker",
+                "text": "forsterker"
+              },
+              " på dette stedet ville forsterke de harmoniske i stedet for å dempe dem."
+            ]
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "De harmoniske ligger alltid høyere enn grunnfrekvensen, på 2, 3, 4 … ganger den. Et ",
+          {
+            "term": "lavpassfilter",
+            "text": "lavpassfilter"
+          },
+          " skal slippe gjennom sendefrekvensen med lite tap, men dempe de harmoniske. Grensefrekvensen må derfor tilpasses båndet det sendes på: på 7 MHz må filteret slippe gjennom 7 MHz, men dempe andre harmoniske på 14 MHz. En flerbåndssender har derfor flere lavpassfiltre som velges etter bånd."
+        ],
+        "Hvis den harmoniske allerede er for eksempel 25 dB svakere enn signalet ut av sluttrinnet, og filteret demper den 45 dB mer, blir den totalt 70 dB under det ønskede signalet.",
+        [
+          "På VHF og høyere brukes oftere ",
+          {
+            "term": "baandpassfilter",
+            "text": "båndpassfiltre"
+          },
+          ", fordi uønskede ",
+          {
+            "term": "intermodulasjon",
+            "text": "blandingsprodukter"
+          },
+          " der også kan ligge under sendefrekvensen."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "visual": {
+        "template": "block-diagram",
+        "version": 1,
+        "params": {
+          "chain": [
+            {
+              "kind": "vfo"
+            },
+            {
+              "kind": "driver"
+            },
+            {
+              "kind": "power_amp"
+            },
+            {
+              "kind": "lowpass_filter",
+              "hidden": true
+            },
+            {
+              "kind": "antenna"
+            }
+          ]
+        },
+        "params_after": {
+          "chain": [
+            {
+              "kind": "vfo"
+            },
+            {
+              "kind": "driver"
+            },
+            {
+              "kind": "power_amp"
+            },
+            {
+              "kind": "lowpass_filter",
+              "highlight": true
+            },
+            {
+              "kind": "antenna"
+            }
+          ]
+        }
+      },
+      "study_reference": {
+        "chapter": 5,
+        "section_id": "s5-12",
+        "printed_pages": [
+          "5-5"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "1979e24cac0fd041"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "autolink",
+        "author": "AI-assistent (Claude), autolenking",
+        "based_on": 1,
+        "at": "2026-10-23T20:41:21+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T20:41:21+00:00",
+          "actor": "AI-assistent (Claude), autolenking",
+          "action": "autolink",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "4b480f92650857d592f417234ca30f3dce64c03bfdbf48291ab3e30a4fe69464",
+          "note": "glossary links added (6); based on r1"
+        },
+        {
+          "at": "2026-10-23T20:41:22+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "4b480f92650857d592f417234ca30f3dce64c03bfdbf48291ab3e30a4fe69464",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T20:43:50+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "4b480f92650857d592f417234ca30f3dce64c03bfdbf48291ab3e30a4fe69464",
+          "note": "Godkjent av redaktør: kun nye ordforklaringslenker (automatisk lenking, kontrollert for svarlekkasje), teksten er uendret fra forrige godkjente versjon. Sidehenvisninger er fortsatt ikke kontrollert mot trykt bok.",
+          "acknowledged": [
+            "figures",
+            "pages"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "4b480f92650857d592f417234ca30f3dce64c03bfdbf48291ab3e30a4fe69464",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "pages",
+            "detail": "cited printed page number is uncertain in the source (printed_page_status=inferred). Confirm the page in the book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-23T20:43:50+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-23T20:43:50+00:00",
+        "content_sha256": "4b480f92650857d592f417234ca30f3dce64c03bfdbf48291ab3e30a4fe69464",
         "acknowledged_hazards": [
           "figures",
           "pages"

@@ -3,7 +3,7 @@
   "revisions": [
     {
       "revision": 1,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "calculation",
@@ -195,6 +195,15 @@
             "figures",
             "ocr"
           ]
+        },
+        {
+          "at": "2026-10-23T20:43:45+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "85a7580cf9ec45eed4ed79b99724cfd84c11f421a5c09793699c446992d5b72b",
+          "note": "superseded by r2"
         }
       ],
       "checks": {
@@ -219,6 +228,262 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-23T19:12:49+00:00",
         "content_sha256": "85a7580cf9ec45eed4ed79b99724cfd84c11f421a5c09793699c446992d5b72b",
+        "acknowledged_hazards": [
+          "figures",
+          "ocr"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 2,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "calculation",
+      "difficulty": "easy",
+      "chapter": 2,
+      "section_ids": [
+        "s2-21"
+      ],
+      "topic_ids": [
+        "kondensatorkoblinger"
+      ],
+      "learning_objective": "Finne samlet kapasitans for parallellkoblede kondensatorer.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "To ",
+          {
+            "term": "kondensator",
+            "text": "kondensatorer"
+          },
+          ", på ",
+          {
+            "q": 100,
+            "u": "nF"
+          },
+          " og ",
+          {
+            "q": 220,
+            "u": "nF"
+          },
+          ", er koblet ",
+          {
+            "term": "parallellkobling",
+            "text": "i parallell"
+          },
+          "."
+        ]
+      ],
+      "stem": [
+        [
+          "Hva blir den samlede ",
+          {
+            "term": "kapasitans",
+            "text": "kapasitansen"
+          },
+          "?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 320,
+              "u": "nF"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 68.8,
+              "u": "nF"
+            }
+          ],
+          "feedback": [
+            [
+              "Dette er resultatet for ",
+              {
+                "term": "seriekobling",
+                "text": "seriekobling"
+              },
+              ". Kondensatorer i parallell oppfører seg som én kondensator med større plater."
+            ]
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 160,
+              "u": "nF"
+            }
+          ],
+          "feedback": [
+            "Gjennomsnittet er ikke riktig. Kapasitansene i parallell legges sammen."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 120,
+              "u": "nF"
+            }
+          ],
+          "feedback": [
+            "Differansen mellom verdiene har ingen fysisk betydning her."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          {
+            "math": [
+              "C",
+              "=",
+              "C_1",
+              "+",
+              "C_2",
+              "=",
+              {
+                "q": 100,
+                "u": "nF"
+              },
+              "+",
+              {
+                "q": 220,
+                "u": "nF"
+              },
+              "=",
+              {
+                "q": 320,
+                "u": "nF"
+              }
+            ]
+          }
+        ],
+        [
+          "Parallellkobling gir samlet sett større plateflate, og større plateflate betyr mer kapasitans. Regelen er altså den motsatte av den for ",
+          {
+            "term": "motstand",
+            "text": "motstander"
+          },
+          "."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "calculation": {
+        "formula": "parallel_capacitance",
+        "inputs": {
+          "C1": [
+            100,
+            "nF"
+          ],
+          "C2": [
+            220,
+            "nF"
+          ]
+        },
+        "answer": [
+          320,
+          "nF"
+        ],
+        "answer_symbol": "C",
+        "sig_figs": 3
+      },
+      "study_reference": {
+        "chapter": 2,
+        "section_id": "s2-21",
+        "printed_pages": [
+          "2-8"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "7402c252c2e75611"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "autolink",
+        "author": "AI-assistent (Claude), autolenking",
+        "based_on": 1,
+        "at": "2026-10-23T20:41:20+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T20:41:20+00:00",
+          "actor": "AI-assistent (Claude), autolenking",
+          "action": "autolink",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "74457d4bbe5d1b24b7d8e690a92fcfed3127c994de166260e08a96a019281c63",
+          "note": "glossary links added (2); based on r1"
+        },
+        {
+          "at": "2026-10-23T20:41:22+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "74457d4bbe5d1b24b7d8e690a92fcfed3127c994de166260e08a96a019281c63",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T20:43:45+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "74457d4bbe5d1b24b7d8e690a92fcfed3127c994de166260e08a96a019281c63",
+          "note": "Godkjent av redaktør: kun nye ordforklaringslenker (automatisk lenking, kontrollert for svarlekkasje), teksten er uendret fra forrige godkjente versjon. Sidehenvisninger er fortsatt ikke kontrollert mot trykt bok.",
+          "acknowledged": [
+            "figures",
+            "ocr"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "74457d4bbe5d1b24b7d8e690a92fcfed3127c994de166260e08a96a019281c63",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: equation, numeric_low_conf, subscript_garbled. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-23T20:43:45+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-23T20:43:45+00:00",
+        "content_sha256": "74457d4bbe5d1b24b7d8e690a92fcfed3127c994de166260e08a96a019281c63",
         "acknowledged_hazards": [
           "figures",
           "ocr"

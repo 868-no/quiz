@@ -116,6 +116,20 @@ def cmd_glossary(paths, a) -> int:
         for e in errs:
             print(e)
         return 1 if errs else 0
+    if a.action == "suggest":
+        from .glossary_link import suggest
+        print(suggest(paths, a.ids or None))
+        return 0
+    if a.action == "autolink":
+        from .glossary_link import autolink
+        from .review import _reviewer
+        res = autolink(paths, a.ids or None, apply=a.apply, actor=_reviewer(a.reviewer))
+        for qid, added in res["changed"]:
+            print(f"{qid}: {', '.join(added)}")
+        for qid, held in res["held_back"].items():
+            print(f"{qid}: shown only after answering (definition would reveal the answer): {', '.join(held)}")
+        print(f"{len(res['changed'])} question(s) {'updated (new draft revisions)' if a.apply else 'would change; run with --apply'}")
+        return 0
     if a.action == "list":
         for t in load_glossary(paths).values():
             print(f"{t['id']:<28} [{t['status']}] {t['nb']} = {t['en']}")
@@ -297,8 +311,9 @@ def main(argv: list[str] | None = None) -> int:
     s.add_argument("--demote", action="store_true", help="resolve-flag: send an approved revision back to review")
     s.set_defaults(fn=cmd_review)
 
-    s = sub.add_parser("glossary", help="glossary: list/check/approve")
-    s.add_argument("action", choices=["list", "check", "approve"])
+    s = sub.add_parser("glossary", help="glossary: list/check/approve/suggest/autolink")
+    s.add_argument("action", choices=["list", "check", "approve", "suggest", "autolink"])
+    s.add_argument("--apply", action="store_true", help="autolink: write the changes (new draft revisions)")
     s.add_argument("ids", nargs="*")
     s.add_argument("--reviewer")
     s.add_argument("--note")

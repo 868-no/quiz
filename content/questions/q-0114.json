@@ -3,7 +3,7 @@
   "revisions": [
     {
       "revision": 1,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "concept",
@@ -114,6 +114,15 @@
           "acknowledged": [
             "figures"
           ]
+        },
+        {
+          "at": "2026-10-23T20:43:51+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "6513ced6c99400025352a979f5e14df1704984abf6bdef1861ea1732ede894b5",
+          "note": "superseded by r2"
         }
       ],
       "checks": {
@@ -134,6 +143,184 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-23T19:12:54+00:00",
         "content_sha256": "6513ced6c99400025352a979f5e14df1704984abf6bdef1861ea1732ede894b5",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 2,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "hard",
+      "chapter": 6,
+      "section_ids": [
+        "s6-16"
+      ],
+      "topic_ids": [
+        "mellomfrekvens"
+      ],
+      "learning_objective": "Kjenne virkningen av under-, kritisk og overkobling i en MF-transformator.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En ",
+          {
+            "term": "mf-transformator",
+            "text": "MF-transformator"
+          },
+          " har to ",
+          {
+            "term": "avstemt-krets",
+            "text": "avstemte kretser"
+          },
+          " som er avstemt til samme ",
+          {
+            "term": "frekvens",
+            "text": "frekvens"
+          },
+          ". Koblingen mellom ",
+          {
+            "term": "spole",
+            "text": "spolene"
+          },
+          " økes gradvis."
+        ]
+      ],
+      "stem": "Hva skjer med frekvensresponsen når koblingen blir større enn kritisk kobling?",
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Kurven får to topper med et søkk i midten, og passbåndet blir bredere"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Kurven blir lik responsen til én enkelt avstemt krets"
+          ],
+          "feedback": [
+            "Det skjer ved løs kobling (underkobling), når spolene står langt fra hverandre."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Kurven blir stadig smalere og spissere jo tettere koblingen blir"
+          ],
+          "feedback": [
+            "Flankene blir brattere bare fram til kritisk kobling. Etter det blir kurven bredere og får et søkk."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Resonansfrekvensen flytter seg til det dobbelte"
+          ],
+          "feedback": [
+            [
+              "Koblingen endrer formen på kurven, men flytter ikke ",
+              {
+                "term": "resonans",
+                "text": "resonansen"
+              },
+              " til dobbel frekvens."
+            ]
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Ved løs kobling ligner kurven på den for én avstemt krets. Når koblingen øker, blir kurven høyere og flankene brattere. Ved kritisk kobling er flankene brattest uten at toppen får noe søkk.",
+        "Overkobles kretsene, får kurven to topper med et søkk mellom dem. Litt overkobling kan likevel være nyttig, fordi kurven da får nokså flat topp og bratte flanker."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 6,
+        "section_id": "s6-16",
+        "printed_pages": [
+          "6-9"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "17a42596ad54bc8a"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "autolink",
+        "author": "AI-assistent (Claude), autolenking",
+        "based_on": 1,
+        "at": "2026-10-23T20:41:21+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T20:41:21+00:00",
+          "actor": "AI-assistent (Claude), autolenking",
+          "action": "autolink",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "4670d6d9a53f5b28295ba751a6826045c310fd0be35254ca4cd84fddd2a7bf5a",
+          "note": "glossary links added (4); based on r1"
+        },
+        {
+          "at": "2026-10-23T20:41:22+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "4670d6d9a53f5b28295ba751a6826045c310fd0be35254ca4cd84fddd2a7bf5a",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T20:43:51+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "4670d6d9a53f5b28295ba751a6826045c310fd0be35254ca4cd84fddd2a7bf5a",
+          "note": "Godkjent av redaktør: kun nye ordforklaringslenker (automatisk lenking, kontrollert for svarlekkasje), teksten er uendret fra forrige godkjente versjon. Sidehenvisninger er fortsatt ikke kontrollert mot trykt bok.",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "4670d6d9a53f5b28295ba751a6826045c310fd0be35254ca4cd84fddd2a7bf5a",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-23T20:43:51+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-23T20:43:51+00:00",
+        "content_sha256": "4670d6d9a53f5b28295ba751a6826045c310fd0be35254ca4cd84fddd2a7bf5a",
         "acknowledged_hazards": [
           "figures"
         ],

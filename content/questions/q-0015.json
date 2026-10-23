@@ -3,7 +3,7 @@
   "revisions": [
     {
       "revision": 1,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "calculation",
@@ -249,6 +249,15 @@
             "figures",
             "ocr"
           ]
+        },
+        {
+          "at": "2026-10-23T20:43:46+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "97dd68a4de222e388ecd79bf431b15680981815dd83517cd42c19727fed82235",
+          "note": "superseded by r2"
         }
       ],
       "checks": {
@@ -273,6 +282,331 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-23T19:12:49+00:00",
         "content_sha256": "97dd68a4de222e388ecd79bf431b15680981815dd83517cd42c19727fed82235",
+        "acknowledged_hazards": [
+          "figures",
+          "ocr"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 2,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "calculation",
+      "difficulty": "hard",
+      "chapter": 2,
+      "section_ids": [
+        "s2-43"
+      ],
+      "topic_ids": [
+        "resonans"
+      ],
+      "learning_objective": "Regne ut resonansfrekvensen for en LC-krets med riktige prefikser.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En ",
+          {
+            "term": "avstemt-krets",
+            "text": "avstemt krets"
+          },
+          " består av en ",
+          {
+            "term": "spole",
+            "text": "spole"
+          },
+          " på ",
+          {
+            "q": 10,
+            "u": "µH"
+          },
+          " og en ",
+          {
+            "term": "kondensator",
+            "text": "kondensator"
+          },
+          " på ",
+          {
+            "q": 100,
+            "u": "pF"
+          },
+          ". Se bort fra tap i komponentene."
+        ]
+      ],
+      "stem": [
+        [
+          "Hva er ",
+          {
+            "term": "resonans",
+            "text": "resonansfrekvensen"
+          },
+          "?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 5.03,
+              "u": "MHz"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 50.3,
+              "u": "MHz"
+            }
+          ],
+          "feedback": [
+            "Ti ganger for høyt. Sjekk prefiksene: 10 µH · 100 pF = 10⁻¹⁵."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 503,
+              "u": "kHz"
+            }
+          ],
+          "feedback": [
+            "Ti ganger for lavt. Sjekk prefiksene: 10 µH · 100 pF = 10⁻¹⁵."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 31.6,
+              "u": "MHz"
+            }
+          ],
+          "feedback": [
+            [
+              "Her mangler divisjonen med 2π. 1/√(LC) alene gir ikke ",
+              {
+                "term": "frekvens",
+                "text": "frekvensen"
+              },
+              " i hertz."
+            ]
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        {
+          "steps": [
+            [
+              {
+                "math": [
+                  "f",
+                  "=",
+                  {
+                    "frac": [
+                      [
+                        "1"
+                      ],
+                      [
+                        "2",
+                        "π",
+                        {
+                          "sqrt": [
+                            "L",
+                            "C"
+                          ]
+                        }
+                      ]
+                    ]
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "math": [
+                  "L",
+                  "C",
+                  "=",
+                  "10",
+                  "·",
+                  "10^−6",
+                  "·",
+                  "100",
+                  "·",
+                  "10^−12",
+                  "=",
+                  "10^−15"
+                ]
+              }
+            ],
+            [
+              {
+                "math": [
+                  {
+                    "sqrt": [
+                      "10^−15"
+                    ]
+                  },
+                  "≈",
+                  "3,162",
+                  "·",
+                  "10^−8"
+                ]
+              }
+            ],
+            [
+              {
+                "math": [
+                  "f",
+                  "=",
+                  {
+                    "frac": [
+                      [
+                        "1"
+                      ],
+                      [
+                        "2",
+                        "π",
+                        "·",
+                        "3,162",
+                        "·",
+                        "10^−8"
+                      ]
+                    ]
+                  },
+                  "≈",
+                  "5,03",
+                  "·",
+                  "10^6",
+                  {
+                    "unit": "Hz"
+                  },
+                  "=",
+                  {
+                    "q": 5.03,
+                    "u": "MHz"
+                  }
+                ]
+              }
+            ]
+          ]
+        }
+      ],
+      "glossary_after_answer": [],
+      "calculation": {
+        "formula": "resonance_frequency",
+        "inputs": {
+          "L": [
+            10,
+            "µH"
+          ],
+          "C": [
+            100,
+            "pF"
+          ]
+        },
+        "answer": [
+          5.03,
+          "MHz"
+        ],
+        "answer_symbol": "f",
+        "sig_figs": 3
+      },
+      "study_reference": {
+        "chapter": 2,
+        "section_id": "s2-43",
+        "printed_pages": [
+          "2-16",
+          "2-17"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "e154dadc8f58df55"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "autolink",
+        "author": "AI-assistent (Claude), autolenking",
+        "based_on": 1,
+        "at": "2026-10-23T20:41:20+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T20:41:20+00:00",
+          "actor": "AI-assistent (Claude), autolenking",
+          "action": "autolink",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "3e326c7d5e0c69ae48b32f31e5232261183dae7bfc5943ad6cf09b52465ad9e9",
+          "note": "glossary links added (5); based on r1"
+        },
+        {
+          "at": "2026-10-23T20:41:22+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "3e326c7d5e0c69ae48b32f31e5232261183dae7bfc5943ad6cf09b52465ad9e9",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T20:43:46+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "3e326c7d5e0c69ae48b32f31e5232261183dae7bfc5943ad6cf09b52465ad9e9",
+          "note": "Godkjent av redaktør: kun nye ordforklaringslenker (automatisk lenking, kontrollert for svarlekkasje), teksten er uendret fra forrige godkjente versjon. Sidehenvisninger er fortsatt ikke kontrollert mot trykt bok.",
+          "acknowledged": [
+            "figures",
+            "ocr"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "3e326c7d5e0c69ae48b32f31e5232261183dae7bfc5943ad6cf09b52465ad9e9",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: equation, numeric_low_conf. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-23T20:43:46+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-23T20:43:46+00:00",
+        "content_sha256": "3e326c7d5e0c69ae48b32f31e5232261183dae7bfc5943ad6cf09b52465ad9e9",
         "acknowledged_hazards": [
           "figures",
           "ocr"

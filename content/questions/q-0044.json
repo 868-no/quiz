@@ -3,7 +3,7 @@
   "revisions": [
     {
       "revision": 1,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "concept",
@@ -136,6 +136,15 @@
           "acknowledged": [
             "figures"
           ]
+        },
+        {
+          "at": "2026-10-23T20:43:47+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "364919d28359d35d97de7d2dc89066b8ab8fee8d80f38d8a1d459d9d46c8edab",
+          "note": "superseded by r2"
         }
       ],
       "checks": {
@@ -156,6 +165,211 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-23T19:12:51+00:00",
         "content_sha256": "364919d28359d35d97de7d2dc89066b8ab8fee8d80f38d8a1d459d9d46c8edab",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 2,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 2,
+      "section_ids": [
+        "s2-33"
+      ],
+      "topic_ids": [
+        "fase",
+        "kondensatorer"
+      ],
+      "learning_objective": "Forstå sammenhengen mellom spenningsendring og strøm i en kondensator på vekselspenning.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En ideell ",
+          {
+            "term": "kondensator",
+            "text": "kondensator"
+          },
+          " er koblet til en sinusformet ",
+          {
+            "term": "vekselspenning",
+            "text": "vekselspenning"
+          },
+          "."
+        ]
+      ],
+      "stem": [
+        [
+          "Når i ",
+          {
+            "term": "periode",
+            "text": "perioden"
+          },
+          " er ",
+          {
+            "term": "strom",
+            "text": "strømmen"
+          },
+          " gjennom kondensatoren størst (uansett retning)?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Når spenningen over kondensatoren passerer null, i begge retninger."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Når spenningen over kondensatoren er på sin positive eller negative topp."
+          ],
+          "feedback": [
+            [
+              "På toppen står spenningen et øyeblikk stille. Da flyttes ingen ",
+              {
+                "term": "ladning",
+                "text": "ladning"
+              },
+              ", og strømmen er null."
+            ]
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Strømmen er like stor hele tiden, siden kondensatoren slipper gjennom vekselstrøm."
+          ],
+          "feedback": [
+            "Strømmen er også sinusformet og varierer gjennom perioden. Den er bare forskjøvet i tid i forhold til spenningen."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Strøm og spenning har topp samtidig, fordi de er i fase."
+          ],
+          "feedback": [
+            [
+              "Det gjelder for en ren ",
+              {
+                "term": "motstand",
+                "text": "motstand"
+              },
+              ". I en kondensator er de 90° forskjøvet."
+            ]
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Strømmen i en kondensator er proporsjonal med hvor raskt ",
+          {
+            "term": "spenning",
+            "text": "spenningen"
+          },
+          " endrer seg. En sinusspenning endrer seg raskest når den passerer null, og står stille et øyeblikk på toppene."
+        ],
+        [
+          "Derfor er strømmen størst ved spenningens nullgjennomganger, positiv eller negativ avhengig av hvilken vei spenningen endrer seg, og null ved spenningstoppene. Strømmen ligger 90° foran spenningen; man kan også si at spenningen ligger 90° etter strømmen (",
+          {
+            "term": "faseforskyvning",
+            "text": "faseforskyvning"
+          },
+          ")."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 2,
+        "section_id": "s2-33",
+        "printed_pages": [
+          "2-12",
+          "2-13"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "4150a0886a325a3c"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "autolink",
+        "author": "AI-assistent (Claude), autolenking",
+        "based_on": 1,
+        "at": "2026-10-23T20:41:21+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T20:41:21+00:00",
+          "actor": "AI-assistent (Claude), autolenking",
+          "action": "autolink",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "3dfb36d2a2b5cba07c3e2e8669350770c805a2d554746ff2330d521cd71f3d88",
+          "note": "glossary links added (6); based on r1"
+        },
+        {
+          "at": "2026-10-23T20:41:22+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "3dfb36d2a2b5cba07c3e2e8669350770c805a2d554746ff2330d521cd71f3d88",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T20:43:47+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "3dfb36d2a2b5cba07c3e2e8669350770c805a2d554746ff2330d521cd71f3d88",
+          "note": "Godkjent av redaktør: kun nye ordforklaringslenker (automatisk lenking, kontrollert for svarlekkasje), teksten er uendret fra forrige godkjente versjon. Sidehenvisninger er fortsatt ikke kontrollert mot trykt bok.",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "3dfb36d2a2b5cba07c3e2e8669350770c805a2d554746ff2330d521cd71f3d88",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-23T20:43:47+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-23T20:43:47+00:00",
+        "content_sha256": "3dfb36d2a2b5cba07c3e2e8669350770c805a2d554746ff2330d521cd71f3d88",
         "acknowledged_hazards": [
           "figures"
         ],

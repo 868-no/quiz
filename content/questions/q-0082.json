@@ -3,7 +3,7 @@
   "revisions": [
     {
       "revision": 1,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "concept",
@@ -117,6 +117,15 @@
             "figures",
             "ocr"
           ]
+        },
+        {
+          "at": "2026-10-23T20:43:49+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "2a36bf66779aefdec026ae21941eaa4f0e0cb550b09da714e50c3307681c0b92",
+          "note": "superseded by r2"
         }
       ],
       "checks": {
@@ -141,6 +150,201 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-23T19:12:53+00:00",
         "content_sha256": "2a36bf66779aefdec026ae21941eaa4f0e0cb550b09da714e50c3307681c0b92",
+        "acknowledged_hazards": [
+          "figures",
+          "ocr"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 2,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 4,
+      "section_ids": [
+        "s4-14"
+      ],
+      "topic_ids": [
+        "frekvenssyntese"
+      ],
+      "learning_objective": "Forstå hvorfor en sender med PLL må sperre sending når sløyfen ikke er låst.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "Frekvensratten på en transceiver med ",
+          {
+            "term": "faselaast-sloyfe",
+            "text": "PLL"
+          },
+          "-syntetisator vris svært raskt, og sløyfen mister låsingen en kort stund."
+        ]
+      ],
+      "stem": [
+        [
+          "Hvorfor bør ",
+          {
+            "term": "sender",
+            "text": "senderen"
+          },
+          " hindre sending så lenge sløyfen ikke er låst?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "VCO-frekvensen er ikke styrt og kan havne utenfor båndet."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Referanseoscillatoren slutter å svinge til sløyfen er låst."
+          ],
+          "feedback": [
+            "Krystalloscillatoren som gir referansen, svinger hele tiden uavhengig av om sløyfen er låst."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Sluttforsterkeren mister forspenningen når sløyfen er ulåst."
+          ],
+          "feedback": [
+            [
+              "PLL-en styrer frekvensen. ",
+              {
+                "term": "forspenning",
+                "text": "Forspenningen"
+              },
+              " i ",
+              {
+                "term": "sluttforsterker",
+                "text": "sluttrinnet"
+              },
+              " påvirkes ikke av om sløyfen er låst."
+            ]
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Mikrofonsignalet kobles fra så lenge sløyfen er ulåst."
+          ],
+          "feedback": [
+            "Modulasjonen er ikke problemet. Faren er at senderen sender på en frekvens som ingen styrer."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Når sløyfen er ulåst, sammenligner fasekomparatoren to frekvenser som er helt forskjellige. Styrespenningen til ",
+          {
+            "term": "vco",
+            "text": "VCO-en"
+          },
+          " blir da tilfeldig, og ",
+          {
+            "term": "frekvens",
+            "text": "frekvensen"
+          },
+          " kan svinge langt bort fra ønsket frekvens."
+        ],
+        "Senderen kan da forstyrre andre og sende utenfor amatørbåndene. Derfor bør en låseindikator sperre sending til sløyfen er låst igjen. Gode konstruksjoner begrenser også hvor raskt frekvensen kan endres, slik at låsingen ikke går tapt."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 4,
+        "section_id": "s4-14",
+        "printed_pages": [
+          "4-8"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "7f36d1db693541c5"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "autolink",
+        "author": "AI-assistent (Claude), autolenking",
+        "based_on": 1,
+        "at": "2026-10-23T20:41:21+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T20:41:21+00:00",
+          "actor": "AI-assistent (Claude), autolenking",
+          "action": "autolink",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "880e0db3630fe28e1b8c07539877af87d9df70f8f055ac196937a45487fb8acc",
+          "note": "glossary links added (5); based on r1"
+        },
+        {
+          "at": "2026-10-23T20:41:22+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "880e0db3630fe28e1b8c07539877af87d9df70f8f055ac196937a45487fb8acc",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T20:43:49+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "880e0db3630fe28e1b8c07539877af87d9df70f8f055ac196937a45487fb8acc",
+          "note": "Godkjent av redaktør: kun nye ordforklaringslenker (automatisk lenking, kontrollert for svarlekkasje), teksten er uendret fra forrige godkjente versjon. Sidehenvisninger er fortsatt ikke kontrollert mot trykt bok.",
+          "acknowledged": [
+            "figures",
+            "ocr"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "880e0db3630fe28e1b8c07539877af87d9df70f8f055ac196937a45487fb8acc",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: equation. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-23T20:43:49+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-23T20:43:49+00:00",
+        "content_sha256": "880e0db3630fe28e1b8c07539877af87d9df70f8f055ac196937a45487fb8acc",
         "acknowledged_hazards": [
           "figures",
           "ocr"

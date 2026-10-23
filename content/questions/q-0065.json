@@ -3,7 +3,7 @@
   "revisions": [
     {
       "revision": 1,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "scenario",
@@ -189,6 +189,15 @@
           "acknowledged": [
             "figures"
           ]
+        },
+        {
+          "at": "2026-10-23T20:43:48+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "37d115d15c98676d57b5fb045624103d164262fddb348fd07475b2996455e6aa",
+          "note": "superseded by r2"
         }
       ],
       "checks": {
@@ -209,6 +218,244 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-23T19:12:52+00:00",
         "content_sha256": "37d115d15c98676d57b5fb045624103d164262fddb348fd07475b2996455e6aa",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 2,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "easy",
+      "chapter": 3,
+      "section_ids": [
+        "s3-13"
+      ],
+      "topic_ids": [
+        "transistorer"
+      ],
+      "learning_objective": "Bruke strømforsterkningen til å finne kollektorstrømmen ut fra basisstrømmen.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En ",
+          {
+            "term": "transistor",
+            "text": "NPN-transistor"
+          },
+          " har ",
+          {
+            "term": "stromforsterkning",
+            "text": "strømforsterkning"
+          },
+          " β = 120. Den er ",
+          {
+            "term": "forspenning",
+            "text": "forspent"
+          },
+          " slik at basisstrømmen er ",
+          {
+            "q": 50,
+            "u": "µA"
+          },
+          ", og den arbeider i det lineære området."
+        ]
+      ],
+      "stem": [
+        "Omtrent hvor stor er kollektorstrømmen?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 6,
+              "u": "mA"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 60,
+              "u": "mA"
+            }
+          ],
+          "feedback": [
+            "Sjekk prefiksene: 120 · 50 µA = 6000 µA, som er 6 mA, ikke 60 mA."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 0.6,
+              "u": "mA"
+            }
+          ],
+          "feedback": [
+            "Sjekk prefiksene: 120 · 50 µA = 6000 µA, som er 6 mA."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 0.42,
+              "u": "µA"
+            }
+          ],
+          "feedback": [
+            "Her er basisstrømmen delt på β. Kollektorstrømmen er β ganger større enn basisstrømmen, ikke mindre."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          {
+            "term": "stromforsterkning",
+            "text": "Strømforsterkningen"
+          },
+          " er forholdet mellom kollektorstrøm og basisstrøm:"
+        ],
+        {
+          "steps": [
+            [
+              {
+                "math": [
+                  "I_C",
+                  "=",
+                  "β",
+                  "·",
+                  "I_B",
+                  "=",
+                  "120",
+                  "·",
+                  {
+                    "q": 50,
+                    "u": "µA"
+                  },
+                  "=",
+                  {
+                    "q": 6000,
+                    "u": "µA"
+                  },
+                  "=",
+                  {
+                    "q": 6,
+                    "u": "mA"
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        [
+          "Emitterstrømmen er summen av de to, altså ",
+          {
+            "q": 6.05,
+            "u": "mA"
+          },
+          ". En liten basisstrøm styrer altså en mye større kollektorstrøm, og det er dette som gjør transistoren til en ",
+          {
+            "term": "forsterker",
+            "text": "forsterker"
+          },
+          "."
+        ]
+      ],
+      "glossary_after_answer": [
+        "stromforsterkning"
+      ],
+      "study_reference": {
+        "chapter": 3,
+        "section_id": "s3-13",
+        "printed_pages": [
+          "3-5",
+          "3-6"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "08b52c6c96556bd5"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "autolink",
+        "author": "AI-assistent (Claude), autolenking",
+        "based_on": 1,
+        "at": "2026-10-23T20:41:21+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T20:41:21+00:00",
+          "actor": "AI-assistent (Claude), autolenking",
+          "action": "autolink",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "74ecb2480455af1e820fe05302a38b16a422f227df19a168b2abbff78020f744",
+          "note": "glossary links added (3); based on r1"
+        },
+        {
+          "at": "2026-10-23T20:41:22+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "74ecb2480455af1e820fe05302a38b16a422f227df19a168b2abbff78020f744",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T20:43:48+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "74ecb2480455af1e820fe05302a38b16a422f227df19a168b2abbff78020f744",
+          "note": "Godkjent av redaktør: kun nye ordforklaringslenker (automatisk lenking, kontrollert for svarlekkasje), teksten er uendret fra forrige godkjente versjon. Sidehenvisninger er fortsatt ikke kontrollert mot trykt bok.",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "74ecb2480455af1e820fe05302a38b16a422f227df19a168b2abbff78020f744",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-23T20:43:48+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-23T20:43:48+00:00",
+        "content_sha256": "74ecb2480455af1e820fe05302a38b16a422f227df19a168b2abbff78020f744",
         "acknowledged_hazards": [
           "figures"
         ],

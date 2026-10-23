@@ -3,7 +3,7 @@
   "revisions": [
     {
       "revision": 1,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "concept",
@@ -115,6 +115,15 @@
           "acknowledged": [
             "figures"
           ]
+        },
+        {
+          "at": "2026-10-23T20:43:46+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "045c406c6b8e8838c6e7b8b73a5abf28ab79e7f7a39f276b371d062ac89c62fe",
+          "note": "superseded by r2"
         }
       ],
       "checks": {
@@ -135,6 +144,198 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-23T19:12:50+00:00",
         "content_sha256": "045c406c6b8e8838c6e7b8b73a5abf28ab79e7f7a39f276b371d062ac89c62fe",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 2,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "easy",
+      "chapter": 5,
+      "section_ids": [
+        "s5-19"
+      ],
+      "topic_ids": [
+        "senderfeil"
+      ],
+      "learning_objective": "Forstå hvorfor overmodulering gir forstyrrelser på nabofrekvenser.",
+      "priority": "exam_important",
+      "context": [],
+      "stem": [
+        [
+          "Hva er en typisk følge av ",
+          {
+            "term": "overmodulering",
+            "text": "overmodulering"
+          },
+          " av en ",
+          {
+            "term": "amplitudemodulasjon",
+            "text": "AM"
+          },
+          "- eller ",
+          {
+            "term": "ssb",
+            "text": "SSB"
+          },
+          "-sender, der modulasjonsnivået er så høyt at sendertrinnene overstyres?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Signalet blir forvrengt og bredere, og forstyrrer nabofrekvenser."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Utgangseffekten blir lavere, men signalet blir renere."
+          ],
+          "feedback": [
+            [
+              "Overmodulering gjør ikke signalet renere. Klippingen skaper nye, uønskede ",
+              {
+                "term": "frekvens",
+                "text": "frekvenser"
+              },
+              "."
+            ]
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Senderens frekvens driver sakte i løpet av sendingen."
+          ],
+          "feedback": [
+            [
+              {
+                "term": "frekvensdrift",
+                "text": "Frekvensdrift"
+              },
+              " skyldes ",
+              {
+                "term": "oscillator",
+                "text": "oscillatoren"
+              },
+              ", for eksempel temperaturendringer, ikke modulasjonsnivået."
+            ]
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Signalet blir smalere, fordi de høyeste tonene forsvinner."
+          ],
+          "feedback": [
+            "Det er motsatt. Forvrengningen lager harmoniske av lydsignalet, og da blir signalet bredere."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Når sendertrinnene overstyres, blir signaltoppene klippet og signalformen forvrengt. Forvrengningen lager nye frekvenskomponenter, blant annet ",
+          {
+            "term": "harmoniske",
+            "text": "harmoniske"
+          },
+          " av lydfrekvensene. En tone på 3 kHz kan for eksempel gi komponenter på 6 kHz og 9 kHz."
+        ],
+        "Det utsendte signalet blir derfor mye bredere enn nødvendig og «spruter» ut over nabofrekvensene (splatter). Riktig innstilt mikrofonforsterkning og lineær drift av sendertrinnene hindrer dette; ALC hjelper med å begrense overstyring."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 5,
+        "section_id": "s5-19",
+        "printed_pages": [
+          "5-8"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "c11146f234b29566",
+          "87a4b05e7b657405"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "autolink",
+        "author": "AI-assistent (Claude), autolenking",
+        "based_on": 1,
+        "at": "2026-10-23T20:41:21+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T20:41:21+00:00",
+          "actor": "AI-assistent (Claude), autolenking",
+          "action": "autolink",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "c8941eddf3fa82bf49ced07224cbb602df37d473b3194bee17d403bb7af74a48",
+          "note": "glossary links added (6); based on r1"
+        },
+        {
+          "at": "2026-10-23T20:41:22+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "c8941eddf3fa82bf49ced07224cbb602df37d473b3194bee17d403bb7af74a48",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T20:43:46+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "c8941eddf3fa82bf49ced07224cbb602df37d473b3194bee17d403bb7af74a48",
+          "note": "Godkjent av redaktør: kun nye ordforklaringslenker (automatisk lenking, kontrollert for svarlekkasje), teksten er uendret fra forrige godkjente versjon. Sidehenvisninger er fortsatt ikke kontrollert mot trykt bok.",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "c8941eddf3fa82bf49ced07224cbb602df37d473b3194bee17d403bb7af74a48",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-23T20:43:46+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-23T20:43:46+00:00",
+        "content_sha256": "c8941eddf3fa82bf49ced07224cbb602df37d473b3194bee17d403bb7af74a48",
         "acknowledged_hazards": [
           "figures"
         ],

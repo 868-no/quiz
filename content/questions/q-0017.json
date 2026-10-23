@@ -3,7 +3,7 @@
   "revisions": [
     {
       "revision": 1,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "scenario",
@@ -162,6 +162,15 @@
             "figures",
             "ocr"
           ]
+        },
+        {
+          "at": "2026-10-23T20:43:46+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "540f12afdd5fd4bac0e7bbaa9d3202756c9d4dd74cf1081c9cb74a7d1a1b3945",
+          "note": "superseded by r2"
         }
       ],
       "checks": {
@@ -186,6 +195,251 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-23T19:12:49+00:00",
         "content_sha256": "540f12afdd5fd4bac0e7bbaa9d3202756c9d4dd74cf1081c9cb74a7d1a1b3945",
+        "acknowledged_hazards": [
+          "figures",
+          "ocr"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 2,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "medium",
+      "chapter": 3,
+      "section_ids": [
+        "s3-06"
+      ],
+      "topic_ids": [
+        "likeretting",
+        "dioder"
+      ],
+      "learning_objective": "Ta hensyn til spenningsfallet over en silisiumdiode i en likeretter.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En ",
+          {
+            "term": "likeretter",
+            "text": "halvbølgelikeretter"
+          },
+          " består av én ",
+          {
+            "term": "diode",
+            "text": "silisiumdiode"
+          },
+          " og en lastmotstand ",
+          {
+            "term": "seriekobling",
+            "text": "i serie"
+          },
+          ". Dioden er koblet slik at den leder i den positive halvperioden. Kilden gir en sinusformet spenning med ",
+          {
+            "term": "toppverdi",
+            "text": "toppverdi"
+          },
+          " ",
+          {
+            "q": 10,
+            "u": "V"
+          },
+          ". Det er ingen glattekondensator. Regn med et konstant ",
+          {
+            "term": "spenning",
+            "text": "spenningsfall"
+          },
+          " på 0,6 V over dioden når den leder."
+        ]
+      ],
+      "stem": [
+        "Omtrent hvor høy blir toppspenningen over lastmotstanden?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 9.4,
+              "u": "V"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 10,
+              "u": "V"
+            }
+          ],
+          "feedback": [
+            "Dioden trenger omtrent 0,6 V i lederetningen, så litt av spenningen ligger over dioden."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 7.07,
+              "u": "V"
+            }
+          ],
+          "feedback": [
+            [
+              "Det er ",
+              {
+                "term": "effektivverdi",
+                "text": "effektivverdien"
+              },
+              " til en sinus med 10 V toppverdi. Spørsmålet gjelder toppspenningen over lasten."
+            ]
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 14.1,
+              "u": "V"
+            }
+          ],
+          "feedback": [
+            "Spenningen over lasten kan ikke bli høyere enn det kilden gir. 14,1 V er 10 V ganget med √2."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "I den positive halvperioden er dioden ",
+          {
+            "term": "lederetning",
+            "text": "forspent i lederetningen"
+          },
+          " og leder. Det ligger da omtrent 0,6 V over dioden, og resten over lastmotstanden:"
+        ],
+        [
+          {
+            "math": [
+              "U_last",
+              "≈",
+              {
+                "q": 10,
+                "u": "V"
+              },
+              "−",
+              {
+                "q": 0.6,
+                "u": "V"
+              },
+              "=",
+              {
+                "q": 9.4,
+                "u": "V"
+              }
+            ]
+          }
+        ],
+        [
+          "I den negative halvperioden sperrer dioden. Da går det ingen ",
+          {
+            "term": "strom",
+            "text": "strøm"
+          },
+          ", og hele spenningen ligger over dioden."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 3,
+        "section_id": "s3-06",
+        "printed_pages": [
+          "3-3"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "971ad1d5600f99e0"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "autolink",
+        "author": "AI-assistent (Claude), autolenking",
+        "based_on": 1,
+        "at": "2026-10-23T20:41:20+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T20:41:20+00:00",
+          "actor": "AI-assistent (Claude), autolenking",
+          "action": "autolink",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "c489a31228fce611232e573f410ada7df00f42ba5f35bb89486b77f8a76c44ff",
+          "note": "glossary links added (6); based on r1"
+        },
+        {
+          "at": "2026-10-23T20:41:22+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "c489a31228fce611232e573f410ada7df00f42ba5f35bb89486b77f8a76c44ff",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T20:43:46+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "c489a31228fce611232e573f410ada7df00f42ba5f35bb89486b77f8a76c44ff",
+          "note": "Godkjent av redaktør: kun nye ordforklaringslenker (automatisk lenking, kontrollert for svarlekkasje), teksten er uendret fra forrige godkjente versjon. Sidehenvisninger er fortsatt ikke kontrollert mot trykt bok.",
+          "acknowledged": [
+            "figures",
+            "ocr"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "c489a31228fce611232e573f410ada7df00f42ba5f35bb89486b77f8a76c44ff",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: equation. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-23T20:43:46+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-23T20:43:46+00:00",
+        "content_sha256": "c489a31228fce611232e573f410ada7df00f42ba5f35bb89486b77f8a76c44ff",
         "acknowledged_hazards": [
           "figures",
           "ocr"

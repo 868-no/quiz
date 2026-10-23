@@ -3,7 +3,7 @@
   "revisions": [
     {
       "revision": 1,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "scenario",
@@ -216,6 +216,15 @@
             "figures",
             "ocr"
           ]
+        },
+        {
+          "at": "2026-10-23T20:43:48+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "af1e0a625db69182dd3229de8b6d68fff141c2f2f6dff5de42a4fe03cacfe1df",
+          "note": "superseded by r2"
         }
       ],
       "checks": {
@@ -240,6 +249,285 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-23T19:12:51+00:00",
         "content_sha256": "af1e0a625db69182dd3229de8b6d68fff141c2f2f6dff5de42a4fe03cacfe1df",
+        "acknowledged_hazards": [
+          "figures",
+          "ocr"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 2,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "medium",
+      "chapter": 2,
+      "section_ids": [
+        "s2-46"
+      ],
+      "topic_ids": [
+        "q-faktor"
+      ],
+      "learning_objective": "Finne Q-faktoren fra resonansfrekvens og halveffektsbåndbredde.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En ",
+          {
+            "term": "avstemt-krets",
+            "text": "avstemt krets"
+          },
+          " har ",
+          {
+            "term": "resonans",
+            "text": "resonans"
+          },
+          " ved ",
+          {
+            "q": 3.6,
+            "u": "MHz"
+          },
+          ". ",
+          {
+            "term": "spenning",
+            "text": "Spenningen"
+          },
+          " over kretsen har falt til 0,707 av verdien ved resonans (halv ",
+          {
+            "term": "effekt",
+            "text": "effekt"
+          },
+          ") ved ",
+          {
+            "q": 3.57,
+            "u": "MHz"
+          },
+          " og ved ",
+          {
+            "q": 3.63,
+            "u": "MHz"
+          },
+          "."
+        ]
+      ],
+      "stem": [
+        [
+          "Hva er kretsens ",
+          {
+            "term": "q-faktor",
+            "text": "Q-faktor"
+          },
+          "?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "60"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "0,017"
+          ],
+          "feedback": [
+            "Her er båndbredden delt på resonansfrekvensen. Q er resonansfrekvensen delt på båndbredden."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "120"
+          ],
+          "feedback": [
+            "Her er bare avstanden fra resonansfrekvensen til den ene halveffektsfrekvensen brukt. Båndbredden er avstanden mellom de to."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "216"
+          ],
+          "feedback": [
+            "Her er resonansfrekvensen (3,6 i MHz) ganget med båndbredden (60 i kHz). Q er et forhold: f₀ delt på B, med samme enhet."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Halveffektsbåndbredden er avstanden mellom de to ",
+          {
+            "term": "frekvens",
+            "text": "frekvensene"
+          },
+          " der spenningen har falt til 0,707 (−3 dB):"
+        ],
+        {
+          "steps": [
+            [
+              {
+                "math": [
+                  "B",
+                  "=",
+                  {
+                    "q": 3.63,
+                    "u": "MHz"
+                  },
+                  "−",
+                  {
+                    "q": 3.57,
+                    "u": "MHz"
+                  },
+                  "=",
+                  {
+                    "q": 60,
+                    "u": "kHz"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "math": [
+                  "Q",
+                  "=",
+                  {
+                    "frac": [
+                      [
+                        "f_0"
+                      ],
+                      [
+                        "B"
+                      ]
+                    ]
+                  },
+                  "=",
+                  {
+                    "frac": [
+                      [
+                        {
+                          "q": 3600,
+                          "u": "kHz"
+                        }
+                      ],
+                      [
+                        {
+                          "q": 60,
+                          "u": "kHz"
+                        }
+                      ]
+                    ]
+                  },
+                  "=",
+                  "60"
+                ]
+              }
+            ]
+          ]
+        },
+        [
+          "Høyere Q betyr smalere ",
+          {
+            "term": "baandbredde",
+            "text": "båndbredde"
+          },
+          " for samme resonansfrekvens. Hvis Q blir for høy, kan den senkes med en dempemotstand."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 2,
+        "section_id": "s2-46",
+        "printed_pages": [
+          "2-18"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "2ad82b20e6f3669a",
+          "aaef8985734acd38"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "autolink",
+        "author": "AI-assistent (Claude), autolenking",
+        "based_on": 1,
+        "at": "2026-10-23T20:41:21+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T20:41:21+00:00",
+          "actor": "AI-assistent (Claude), autolenking",
+          "action": "autolink",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "29b9a72268054f1d285f6d1bb8aef3f628bbff483ddd655b611f11672a5d4a4e",
+          "note": "glossary links added (5); based on r1"
+        },
+        {
+          "at": "2026-10-23T20:41:22+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "29b9a72268054f1d285f6d1bb8aef3f628bbff483ddd655b611f11672a5d4a4e",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T20:43:48+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "29b9a72268054f1d285f6d1bb8aef3f628bbff483ddd655b611f11672a5d4a4e",
+          "note": "Godkjent av redaktør: kun nye ordforklaringslenker (automatisk lenking, kontrollert for svarlekkasje), teksten er uendret fra forrige godkjente versjon. Sidehenvisninger er fortsatt ikke kontrollert mot trykt bok.",
+          "acknowledged": [
+            "figures",
+            "ocr"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "29b9a72268054f1d285f6d1bb8aef3f628bbff483ddd655b611f11672a5d4a4e",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: equation, numeric_low_conf. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-23T20:43:48+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-23T20:43:48+00:00",
+        "content_sha256": "29b9a72268054f1d285f6d1bb8aef3f628bbff483ddd655b611f11672a5d4a4e",
         "acknowledged_hazards": [
           "figures",
           "ocr"

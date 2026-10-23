@@ -3,7 +3,7 @@
   "revisions": [
     {
       "revision": 1,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "calculation",
@@ -217,6 +217,15 @@
             "figures",
             "ocr"
           ]
+        },
+        {
+          "at": "2026-10-23T20:43:45+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "e8e3ded81e1ff5d662208d8c8cee37e5a9b8a2496ebb1bddf545f9d967190884",
+          "note": "superseded by r2"
         }
       ],
       "checks": {
@@ -241,6 +250,292 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-23T19:12:49+00:00",
         "content_sha256": "e8e3ded81e1ff5d662208d8c8cee37e5a9b8a2496ebb1bddf545f9d967190884",
+        "acknowledged_hazards": [
+          "figures",
+          "ocr"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 2,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "calculation",
+      "difficulty": "easy",
+      "chapter": 2,
+      "section_ids": [
+        "s2-29"
+      ],
+      "topic_ids": [
+        "vekselstromsverdier"
+      ],
+      "learning_objective": "Regne om fra toppverdi til effektivverdi for en sinusformet spenning.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "Grafen viser en sinusformet ",
+          {
+            "term": "vekselspenning",
+            "text": "vekselspenning"
+          },
+          ". ",
+          {
+            "term": "toppverdi",
+            "text": "Toppverdien"
+          },
+          " er markert."
+        ]
+      ],
+      "stem": [
+        [
+          "Hva er ",
+          {
+            "term": "effektivverdi",
+            "text": "effektivverdien"
+          },
+          " til ",
+          {
+            "term": "spenning",
+            "text": "spenningen"
+          },
+          "?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 14.1,
+              "u": "V"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 28.3,
+              "u": "V"
+            }
+          ],
+          "feedback": [
+            "Her er toppverdien ganget med √2. Effektivverdien er mindre enn toppverdien, så man skal dele på √2."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 10,
+              "u": "V"
+            }
+          ],
+          "feedback": [
+            "Halvparten av toppverdien er ikke effektivverdien. For en sinus er faktoren 1/√2 ≈ 0,707."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 40,
+              "u": "V"
+            }
+          ],
+          "feedback": [
+            "40 V er topp-til-topp-verdien, fra bunnen til toppen av kurven."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          {
+            "math": [
+              "U_eff",
+              "=",
+              {
+                "frac": [
+                  [
+                    "Û"
+                  ],
+                  [
+                    {
+                      "sqrt": [
+                        "2"
+                      ]
+                    }
+                  ]
+                ]
+              },
+              "=",
+              {
+                "frac": [
+                  [
+                    {
+                      "q": 20,
+                      "u": "V"
+                    }
+                  ],
+                  [
+                    "1,414"
+                  ]
+                ]
+              },
+              "≈",
+              {
+                "q": 14.1,
+                "u": "V"
+              }
+            ]
+          }
+        ],
+        [
+          "Effektivverdien er den ",
+          {
+            "term": "likespenning",
+            "text": "likespenningen"
+          },
+          " som ville gitt like mye varme i en ",
+          {
+            "term": "motstand",
+            "text": "motstand"
+          },
+          ". Faktoren 1/√2 ≈ 0,707 gjelder bare for sinusformede kurver."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "visual": {
+        "template": "waveform",
+        "version": 1,
+        "params": {
+          "traces": [
+            {
+              "amplitude": 20,
+              "unit": "V",
+              "frequency_hz": 50
+            }
+          ],
+          "cycles": 2,
+          "markers": [
+            "peak"
+          ],
+          "show_values": true,
+          "animate": true
+        },
+        "params_after": {
+          "markers": [
+            "peak",
+            "rms"
+          ]
+        }
+      },
+      "calculation": {
+        "formula": "rms_from_peak",
+        "inputs": {
+          "U_p": [
+            20,
+            "V"
+          ]
+        },
+        "answer": [
+          14.1,
+          "V"
+        ],
+        "answer_symbol": "U_rms",
+        "sig_figs": 3
+      },
+      "study_reference": {
+        "chapter": 2,
+        "section_id": "s2-29",
+        "printed_pages": [
+          "2-11",
+          "2-12"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "32965b71d6f17903"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "autolink",
+        "author": "AI-assistent (Claude), autolenking",
+        "based_on": 1,
+        "at": "2026-10-23T20:41:20+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T20:41:20+00:00",
+          "actor": "AI-assistent (Claude), autolenking",
+          "action": "autolink",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "9271ca74978498d943845633103cb533dc0fbfe2eb4d7bec4e0129297137f8b4",
+          "note": "glossary links added (4); based on r1"
+        },
+        {
+          "at": "2026-10-23T20:41:22+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "9271ca74978498d943845633103cb533dc0fbfe2eb4d7bec4e0129297137f8b4",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T20:43:45+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "9271ca74978498d943845633103cb533dc0fbfe2eb4d7bec4e0129297137f8b4",
+          "note": "Godkjent av redaktør: kun nye ordforklaringslenker (automatisk lenking, kontrollert for svarlekkasje), teksten er uendret fra forrige godkjente versjon. Sidehenvisninger er fortsatt ikke kontrollert mot trykt bok.",
+          "acknowledged": [
+            "figures",
+            "ocr"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "9271ca74978498d943845633103cb533dc0fbfe2eb4d7bec4e0129297137f8b4",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: equation, subscript_garbled. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-23T20:43:45+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-23T20:43:45+00:00",
+        "content_sha256": "9271ca74978498d943845633103cb533dc0fbfe2eb4d7bec4e0129297137f8b4",
         "acknowledged_hazards": [
           "figures",
           "ocr"

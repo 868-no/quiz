@@ -3,7 +3,7 @@
   "revisions": [
     {
       "revision": 1,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "calculation",
@@ -246,6 +246,15 @@
           "acknowledged": [
             "figures"
           ]
+        },
+        {
+          "at": "2026-10-23T20:43:52+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "c389f2ef2bfd90dc3a39da01553531a6e4939a79282d34a08bcfa92750573a5c",
+          "note": "superseded by r2"
         }
       ],
       "checks": {
@@ -266,6 +275,326 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-23T19:12:55+00:00",
         "content_sha256": "c389f2ef2bfd90dc3a39da01553531a6e4939a79282d34a08bcfa92750573a5c",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 2,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "calculation",
+      "difficulty": "medium",
+      "chapter": 6,
+      "section_ids": [
+        "s6-28"
+      ],
+      "topic_ids": [
+        "forforsterkere",
+        "mellomfrekvens"
+      ],
+      "learning_objective": "Finne hvilken frekvens HF-mottakeren må stilles på bak en nedkonverter.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En ",
+          {
+            "term": "nedkonverter",
+            "text": "nedkonverter"
+          },
+          " for 70-centimeterbåndet ",
+          {
+            "term": "blander",
+            "text": "blander"
+          },
+          " 432–434 MHz ned til 28–30 MHz. Den krystallstyrte ",
+          {
+            "term": "lokaloscillator",
+            "text": "lokaloscillatoren"
+          },
+          " står på ",
+          {
+            "q": 404,
+            "u": "MHz"
+          },
+          ", under signalfrekvensen, og differansefrekvensen går videre til en HF-mottaker."
+        ]
+      ],
+      "stem": [
+        [
+          "Du vil lytte på ",
+          {
+            "q": 432.25,
+            "u": "MHz"
+          },
+          ". Hvilken ",
+          {
+            "term": "frekvens",
+            "text": "frekvens"
+          },
+          " må HF-",
+          {
+            "term": "mottaker",
+            "text": "mottakeren"
+          },
+          " stilles inn på?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 28.25,
+              "u": "MHz"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 836.25,
+              "u": "MHz"
+            }
+          ],
+          "feedback": [
+            "Det er sumfrekvensen. Den brukes ikke, og en HF-mottaker kan heller ikke stilles inn på den."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 28,
+              "u": "MHz"
+            }
+          ],
+          "feedback": [
+            "28 MHz svarer til 432,00 MHz, nedre kant av båndet. Signalet ligger 250 kHz høyere."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 404,
+              "u": "MHz"
+            }
+          ],
+          "feedback": [
+            "Det er frekvensen til lokaloscillatoren, ikke den nedblandede signalfrekvensen."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          {
+            "math": [
+              "f_HF",
+              "=",
+              "f_RF",
+              "−",
+              "f_LO",
+              "=",
+              {
+                "q": 432.25,
+                "u": "MHz"
+              },
+              "−",
+              {
+                "q": 404,
+                "u": "MHz"
+              },
+              "=",
+              {
+                "q": 28.25,
+                "u": "MHz"
+              }
+            ]
+          }
+        ],
+        "Hele båndet blandes ned samtidig, og HF-mottakeren velger stasjonen. Den virkelige frekvensen finner du ved å legge 404 MHz til frekvensen HF-mottakeren viser.",
+        [
+          "Med lokaloscillatoren under signalet ligger ",
+          {
+            "term": "speilfrekvens",
+            "text": "speilfrekvensen"
+          },
+          " under ",
+          {
+            "term": "oscillator",
+            "text": "oscillatoren"
+          },
+          ", her rundt 374–376 MHz. Den må dempes med ",
+          {
+            "term": "filter",
+            "text": "filter"
+          },
+          " før blanderen."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "visual": {
+        "template": "block-diagram",
+        "version": 1,
+        "params": {
+          "chain": [
+            {
+              "kind": "antenna"
+            },
+            {
+              "kind": "rf_amp",
+              "label": "Forforsterker"
+            },
+            {
+              "kind": "bandpass_filter"
+            },
+            {
+              "kind": "mixer"
+            },
+            {
+              "kind": "custom",
+              "label": "HF-mottaker"
+            }
+          ],
+          "side": [
+            {
+              "kind": "local_osc",
+              "label": "LO 404 MHz",
+              "into": 3
+            }
+          ],
+          "edge_labels": [
+            {
+              "after": 2,
+              "text": "432,25 MHz"
+            },
+            {
+              "after": 3,
+              "text": "? MHz"
+            }
+          ]
+        },
+        "params_after": {
+          "edge_labels": [
+            {
+              "after": 2,
+              "text": "432,25 MHz"
+            },
+            {
+              "after": 3,
+              "text": "28,25 MHz"
+            }
+          ]
+        }
+      },
+      "calculation": {
+        "formula": "if_difference",
+        "inputs": {
+          "f_RF": [
+            432.25,
+            "MHz"
+          ],
+          "f_LO": [
+            404,
+            "MHz"
+          ]
+        },
+        "answer": [
+          28.25,
+          "MHz"
+        ],
+        "answer_symbol": "f_HF",
+        "sig_figs": 4
+      },
+      "study_reference": {
+        "chapter": 6,
+        "section_id": "s6-28",
+        "printed_pages": [
+          "6-16",
+          "6-17"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "a2fe480f3b131c26"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "autolink",
+        "author": "AI-assistent (Claude), autolenking",
+        "based_on": 1,
+        "at": "2026-10-23T20:41:21+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T20:41:21+00:00",
+          "actor": "AI-assistent (Claude), autolenking",
+          "action": "autolink",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "47b6d986852ee9a45f3568f0c5037e2f27635e74be32400af84a7b53b76f8c91",
+          "note": "glossary links added (6); based on r1"
+        },
+        {
+          "at": "2026-10-23T20:41:22+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "47b6d986852ee9a45f3568f0c5037e2f27635e74be32400af84a7b53b76f8c91",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T20:43:52+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "47b6d986852ee9a45f3568f0c5037e2f27635e74be32400af84a7b53b76f8c91",
+          "note": "Godkjent av redaktør: kun nye ordforklaringslenker (automatisk lenking, kontrollert for svarlekkasje), teksten er uendret fra forrige godkjente versjon. Sidehenvisninger er fortsatt ikke kontrollert mot trykt bok.",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "47b6d986852ee9a45f3568f0c5037e2f27635e74be32400af84a7b53b76f8c91",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-23T20:43:52+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-23T20:43:52+00:00",
+        "content_sha256": "47b6d986852ee9a45f3568f0c5037e2f27635e74be32400af84a7b53b76f8c91",
         "acknowledged_hazards": [
           "figures"
         ],

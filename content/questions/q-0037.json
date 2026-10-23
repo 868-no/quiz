@@ -3,7 +3,7 @@
   "revisions": [
     {
       "revision": 1,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "calculation",
@@ -209,6 +209,15 @@
             "figures",
             "ocr"
           ]
+        },
+        {
+          "at": "2026-10-23T20:43:47+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "aacb646c57024097f458d80749018d18092ff49d8335d46634d197aa81249344",
+          "note": "superseded by r2"
         }
       ],
       "checks": {
@@ -233,6 +242,273 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-23T19:12:50+00:00",
         "content_sha256": "aacb646c57024097f458d80749018d18092ff49d8335d46634d197aa81249344",
+        "acknowledged_hazards": [
+          "figures",
+          "ocr"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 2,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "calculation",
+      "difficulty": "easy",
+      "chapter": 2,
+      "section_ids": [
+        "s2-20"
+      ],
+      "topic_ids": [
+        "tidskonstant"
+      ],
+      "learning_objective": "Beregne tidskonstanten τ = R · C for en RC-krets.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En ",
+          {
+            "term": "kondensator",
+            "text": "kondensator"
+          },
+          " på ",
+          {
+            "q": 22,
+            "u": "µF"
+          },
+          " lades opp gjennom en ",
+          {
+            "term": "motstand",
+            "text": "motstand"
+          },
+          " på ",
+          {
+            "q": 47,
+            "u": "kΩ"
+          },
+          " fra en likespenningskilde."
+        ]
+      ],
+      "stem": [
+        [
+          "Hva er ",
+          {
+            "term": "tidskonstant",
+            "text": "tidskonstanten"
+          },
+          " for kretsen?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 1.03,
+              "u": "s"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 0.103,
+              "u": "s"
+            }
+          ],
+          "feedback": [
+            "Svaret er ti ganger for lite. Sjekk prefiksene: 47 000 Ω · 0,000022 F."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 10.3,
+              "u": "s"
+            }
+          ],
+          "feedback": [
+            "Svaret er ti ganger for stort. Sjekk prefiksene: 47 000 Ω · 0,000022 F."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 5.17,
+              "u": "s"
+            }
+          ],
+          "feedback": [
+            "Dette er omtrent fem tidskonstanter, altså tiden før kondensatoren er nesten fullt oppladet, ikke selve tidskonstanten."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Tidskonstanten er produktet av ",
+          {
+            "term": "resistans",
+            "text": "resistans"
+          },
+          " og ",
+          {
+            "term": "kapasitans",
+            "text": "kapasitans"
+          },
+          ":"
+        ],
+        {
+          "steps": [
+            [
+              {
+                "math": [
+                  "τ",
+                  "=",
+                  "R",
+                  "·",
+                  "C",
+                  "=",
+                  {
+                    "q": 47000,
+                    "u": "Ω"
+                  },
+                  "·",
+                  {
+                    "q": 2.2e-05,
+                    "u": "F"
+                  },
+                  "=",
+                  {
+                    "q": 1.034,
+                    "u": "s"
+                  }
+                ]
+              }
+            ],
+            [
+              "Tidskonstanten er altså omtrent ",
+              {
+                "q": 1.03,
+                "u": "s"
+              },
+              "."
+            ]
+          ]
+        },
+        "Ohm ganget med farad gir sekunder. Etter omtrent fem tidskonstanter regnes kondensatoren som praktisk talt fullt oppladet."
+      ],
+      "glossary_after_answer": [],
+      "calculation": {
+        "formula": "time_constant_rc",
+        "inputs": {
+          "R": [
+            47,
+            "kΩ"
+          ],
+          "C": [
+            22,
+            "µF"
+          ]
+        },
+        "answer": [
+          1.03,
+          "s"
+        ],
+        "answer_symbol": "τ",
+        "sig_figs": 3
+      },
+      "study_reference": {
+        "chapter": 2,
+        "section_id": "s2-20",
+        "printed_pages": [
+          "2-8"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "fe9c6b3763b81a79"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "autolink",
+        "author": "AI-assistent (Claude), autolenking",
+        "based_on": 1,
+        "at": "2026-10-23T20:41:21+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T20:41:21+00:00",
+          "actor": "AI-assistent (Claude), autolenking",
+          "action": "autolink",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "336ad59fd1d2a21f380a444830422d7d4acad6d05fca8a67820cc04b515c55da",
+          "note": "glossary links added (4); based on r1"
+        },
+        {
+          "at": "2026-10-23T20:41:22+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "336ad59fd1d2a21f380a444830422d7d4acad6d05fca8a67820cc04b515c55da",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T20:43:47+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "336ad59fd1d2a21f380a444830422d7d4acad6d05fca8a67820cc04b515c55da",
+          "note": "Godkjent av redaktør: kun nye ordforklaringslenker (automatisk lenking, kontrollert for svarlekkasje), teksten er uendret fra forrige godkjente versjon. Sidehenvisninger er fortsatt ikke kontrollert mot trykt bok.",
+          "acknowledged": [
+            "figures",
+            "ocr"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "336ad59fd1d2a21f380a444830422d7d4acad6d05fca8a67820cc04b515c55da",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: equation. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-23T20:43:47+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-23T20:43:47+00:00",
+        "content_sha256": "336ad59fd1d2a21f380a444830422d7d4acad6d05fca8a67820cc04b515c55da",
         "acknowledged_hazards": [
           "figures",
           "ocr"

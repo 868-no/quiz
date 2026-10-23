@@ -3,7 +3,7 @@
   "revisions": [
     {
       "revision": 1,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "concept",
@@ -127,6 +127,15 @@
           "acknowledged": [
             "ocr"
           ]
+        },
+        {
+          "at": "2026-10-23T20:43:52+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "cc3e68847aff6acc651f8a830dff3a9f7009810f3c18e9782cdb15f560cd7711",
+          "note": "superseded by r2"
         }
       ],
       "checks": {
@@ -147,6 +156,192 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-23T19:12:55+00:00",
         "content_sha256": "cc3e68847aff6acc651f8a830dff3a9f7009810f3c18e9782cdb15f560cd7711",
+        "acknowledged_hazards": [
+          "ocr"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 2,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 6,
+      "section_ids": [
+        "s6-26",
+        "s6-27"
+      ],
+      "topic_ids": [
+        "forforsterkere"
+      ],
+      "learning_objective": "Forstå hvorfor en forforsterker bør stå i mastetoppen når fødekabelen har tap.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En UHF-stasjon har en lang koaksialkabel med merkbart tap mellom ",
+          {
+            "term": "antenne",
+            "text": "antennen"
+          },
+          " og ",
+          {
+            "term": "mottaker",
+            "text": "mottakeren"
+          },
+          "."
+        ]
+      ],
+      "stem": [
+        [
+          "Hvorfor er det bedre å plassere en ",
+          {
+            "term": "forforsterker",
+            "text": "forforsterker"
+          },
+          " i mastetoppen enn ved mottakeren?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Signalet forsterkes før kabeltapet, så tapet betyr mindre for signal/støy-forholdet"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Tapet i kabelen blir mindre når kabelen fører et sterkere signal"
+          ],
+          "feedback": [
+            "Kabeltapet i dB er det samme uansett signalnivå."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Forforsterkeren får lavere egenstøy fordi den kjøles bedre ute"
+          ],
+          "feedback": [
+            "Plasseringen i masten handler ikke om kjøling, men om hvor i signalveien forsterkningen skjer."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "En forforsterker i masten øker det dynamiske området til anlegget"
+          ],
+          "feedback": [
+            [
+              "En forforsterker gjør normalt ",
+              {
+                "term": "dynamisk-omraade",
+                "text": "det dynamiske området"
+              },
+              " mindre, fordi sterke signaler også forsterkes. Derfor bør forsterkningen ikke være større enn nødvendig."
+            ]
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Kabeltapet svekker signalet før det når mottakeren, mens mottakerens egenstøy er den samme. Signal/støy-forholdet blir dermed dårligere.",
+        [
+          "Med forforsterkeren i masten løftes signalet før tapet, og det er da forforsterkerens lave egenstøy som bestemmer følsomheten. Forsterkningen bør bare være litt større enn kabeltapet, for å ikke miste unødig dynamisk område, og ",
+          {
+            "term": "filter",
+            "text": "filtre"
+          },
+          " i forforsterkeren bør bare slippe gjennom ønsket bånd."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 6,
+        "section_id": "s6-26",
+        "printed_pages": [
+          "6-16"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "a1bb6a5fd3af6229",
+          "881570e01b06e518"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "autolink",
+        "author": "AI-assistent (Claude), autolenking",
+        "based_on": 1,
+        "at": "2026-10-23T20:41:21+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T20:41:21+00:00",
+          "actor": "AI-assistent (Claude), autolenking",
+          "action": "autolink",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "fbc27d747e5ad65b63118f903d3a31bcfcc827638fe78dd4d0a1940b8540cb7c",
+          "note": "glossary links added (4); based on r1"
+        },
+        {
+          "at": "2026-10-23T20:41:22+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "fbc27d747e5ad65b63118f903d3a31bcfcc827638fe78dd4d0a1940b8540cb7c",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T20:43:52+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "fbc27d747e5ad65b63118f903d3a31bcfcc827638fe78dd4d0a1940b8540cb7c",
+          "note": "Godkjent av redaktør: kun nye ordforklaringslenker (automatisk lenking, kontrollert for svarlekkasje), teksten er uendret fra forrige godkjente versjon. Sidehenvisninger er fortsatt ikke kontrollert mot trykt bok.",
+          "acknowledged": [
+            "ocr"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "fbc27d747e5ad65b63118f903d3a31bcfcc827638fe78dd4d0a1940b8540cb7c",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: low_ocr_confidence. Check every number, unit and formula against the printed book."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-23T20:43:52+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-23T20:43:52+00:00",
+        "content_sha256": "fbc27d747e5ad65b63118f903d3a31bcfcc827638fe78dd4d0a1940b8540cb7c",
         "acknowledged_hazards": [
           "ocr"
         ],

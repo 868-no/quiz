@@ -3,7 +3,7 @@
   "revisions": [
     {
       "revision": 1,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "concept",
@@ -134,6 +134,15 @@
             "figures",
             "ocr"
           ]
+        },
+        {
+          "at": "2026-10-23T20:43:46+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "14b7fbb17c2c0de9a684352d2b6ad6f902c570a7b05b6ed92965d0f6ac14e813",
+          "note": "superseded by r2"
         }
       ],
       "checks": {
@@ -158,6 +167,216 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-23T19:12:49+00:00",
         "content_sha256": "14b7fbb17c2c0de9a684352d2b6ad6f902c570a7b05b6ed92965d0f6ac14e813",
+        "acknowledged_hazards": [
+          "figures",
+          "ocr"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 2,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "easy",
+      "chapter": 3,
+      "section_ids": [
+        "s3-05"
+      ],
+      "topic_ids": [
+        "dioder"
+      ],
+      "learning_objective": "Vite hvilken polaritet en ledende silisiumdiode har, og omtrent hvor stort spenningsfallet over den er.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En ",
+          {
+            "term": "diode",
+            "text": "silisiumdiode"
+          },
+          " har anoden på P-siden og katoden på N-siden."
+        ]
+      ],
+      "stem": [
+        [
+          "Hva er typisk riktig når dioden leder ",
+          {
+            "term": "strom",
+            "text": "strøm"
+          },
+          " i ",
+          {
+            "term": "lederetning",
+            "text": "lederetningen"
+          },
+          "?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Anoden er mer positiv enn katoden, og spenningsfallet over dioden er ca. 0,6–0,7 V."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Katoden er mer positiv enn anoden."
+          ],
+          "feedback": [
+            [
+              "Da er dioden ",
+              {
+                "term": "sperreretning",
+                "text": "forspent i sperreretningen"
+              },
+              ". Sperresjiktet blir bredere, og det går nesten ingen strøm."
+            ]
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Polariteten spiller ingen rolle; dioden leder begge veier."
+          ],
+          "feedback": [
+            [
+              "En diode leder bare i én retning. Det er nettopp derfor den kan brukes som ",
+              {
+                "term": "likeretter",
+                "text": "likeretter"
+              },
+              "."
+            ]
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Anoden er mer positiv enn katoden, og spenningsfallet over dioden er ca. 6–7 V."
+          ],
+          "feedback": [
+            "Spenningsfallet over en ledende silisiumdiode er omtrent en tidel av dette."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Når P-siden (anoden) gjøres positiv i forhold til N-siden (katoden), blir barrieren ved overgangen mindre. Dioden er da ",
+          {
+            "term": "lederetning",
+            "text": "forspent i lederetningen"
+          },
+          "."
+        ],
+        [
+          "Strømmen øker kraftig med ",
+          {
+            "term": "spenning",
+            "text": "spenningen"
+          },
+          ", og ved vanlig drift ligger det omtrent 0,6–0,7 V over en silisiumdiode. Det er ingen helt skarp terskel; den nøyaktige verdien avhenger av strøm og temperatur. Med motsatt polaritet blir ",
+          {
+            "term": "sperresjikt",
+            "text": "sperresjiktet"
+          },
+          " bredere, og bare en svært liten lekkasjestrøm går."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 3,
+        "section_id": "s3-05",
+        "printed_pages": [
+          "3-2"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "f4e450814fed8ffc",
+          "e4d97158f629ffd0"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "autolink",
+        "author": "AI-assistent (Claude), autolenking",
+        "based_on": 1,
+        "at": "2026-10-23T20:41:20+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T20:41:20+00:00",
+          "actor": "AI-assistent (Claude), autolenking",
+          "action": "autolink",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "7654e7a59572d155d8edbb7d10868788836ddf04b141404aa72bcd26482f6f37",
+          "note": "glossary links added (6); based on r1"
+        },
+        {
+          "at": "2026-10-23T20:41:22+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "7654e7a59572d155d8edbb7d10868788836ddf04b141404aa72bcd26482f6f37",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T20:43:46+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "7654e7a59572d155d8edbb7d10868788836ddf04b141404aa72bcd26482f6f37",
+          "note": "Godkjent av redaktør: kun nye ordforklaringslenker (automatisk lenking, kontrollert for svarlekkasje), teksten er uendret fra forrige godkjente versjon. Sidehenvisninger er fortsatt ikke kontrollert mot trykt bok.",
+          "acknowledged": [
+            "figures",
+            "ocr"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "7654e7a59572d155d8edbb7d10868788836ddf04b141404aa72bcd26482f6f37",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: equation, low_ocr_confidence, numeric_low_conf. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-23T20:43:46+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-23T20:43:46+00:00",
+        "content_sha256": "7654e7a59572d155d8edbb7d10868788836ddf04b141404aa72bcd26482f6f37",
         "acknowledged_hazards": [
           "figures",
           "ocr"

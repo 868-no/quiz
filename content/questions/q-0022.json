@@ -3,7 +3,7 @@
   "revisions": [
     {
       "revision": 1,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "calculation",
@@ -209,6 +209,15 @@
             "figures",
             "ocr"
           ]
+        },
+        {
+          "at": "2026-10-23T20:43:46+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "efc42b450346b2909919c32320af1d69143dc7c01d65fc52c789c2c87c50d2bf",
+          "note": "superseded by r2"
         }
       ],
       "checks": {
@@ -233,6 +242,274 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-23T19:12:50+00:00",
         "content_sha256": "efc42b450346b2909919c32320af1d69143dc7c01d65fc52c789c2c87c50d2bf",
+        "acknowledged_hazards": [
+          "figures",
+          "ocr"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 2,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "calculation",
+      "difficulty": "medium",
+      "chapter": 4,
+      "section_ids": [
+        "s4-07"
+      ],
+      "topic_ids": [
+        "fm"
+      ],
+      "learning_objective": "Regne ut modulasjonsindeksen for et FM-signal.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En ",
+          {
+            "term": "frekvensmodulasjon",
+            "text": "FM"
+          },
+          "-sender moduleres med én ren sinustone på ",
+          {
+            "q": 3,
+            "u": "kHz"
+          },
+          ". ",
+          {
+            "term": "deviasjon",
+            "text": "Spissdeviasjonen"
+          },
+          " blir da ",
+          {
+            "q": 2.5,
+            "u": "kHz"
+          },
+          "."
+        ]
+      ],
+      "stem": [
+        [
+          "Hva er ",
+          {
+            "term": "modulasjonsindeks",
+            "text": "modulasjonsindeksen"
+          },
+          "?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 0.83,
+              "u": ""
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 1.2,
+              "u": ""
+            }
+          ],
+          "feedback": [
+            "Her er brøken snudd. Det er deviasjonen som skal deles på lydfrekvensen."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 7.5,
+              "u": ""
+            }
+          ],
+          "feedback": [
+            "Deviasjonen og lydfrekvensen skal ikke ganges, men deles."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 0.5,
+              "u": ""
+            }
+          ],
+          "feedback": [
+            [
+              "Differansen mellom de to ",
+              {
+                "term": "frekvens",
+                "text": "frekvensene"
+              },
+              " gir ikke modulasjonsindeksen."
+            ]
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          {
+            "math": [
+              "m",
+              "=",
+              {
+                "frac": [
+                  [
+                    {
+                      "text": "spissdeviasjon"
+                    }
+                  ],
+                  [
+                    {
+                      "text": "modulasjonsfrekvens"
+                    }
+                  ]
+                ]
+              },
+              "=",
+              {
+                "frac": [
+                  [
+                    {
+                      "q": 2.5,
+                      "u": "kHz"
+                    }
+                  ],
+                  [
+                    {
+                      "q": 3,
+                      "u": "kHz"
+                    }
+                  ]
+                ]
+              },
+              "≈",
+              {
+                "q": 0.83,
+                "u": ""
+              }
+            ]
+          }
+        ],
+        "Enhetene forkortes bort, så indeksen er et rent tall. Ved samme spissdeviasjon gir en lavere modulasjonsfrekvens en høyere modulasjonsindeks."
+      ],
+      "glossary_after_answer": [],
+      "calculation": {
+        "formula": "modulation_index",
+        "inputs": {
+          "deviation": [
+            2.5,
+            "kHz"
+          ],
+          "f_mod": [
+            3,
+            "kHz"
+          ]
+        },
+        "answer": [
+          0.83,
+          ""
+        ],
+        "answer_symbol": "m",
+        "sig_figs": 2
+      },
+      "study_reference": {
+        "chapter": 4,
+        "section_id": "s4-07",
+        "printed_pages": [
+          "4-4"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "7635bec2e582a9b7",
+          "e811322bd724a668"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "autolink",
+        "author": "AI-assistent (Claude), autolenking",
+        "based_on": 1,
+        "at": "2026-10-23T20:41:21+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T20:41:21+00:00",
+          "actor": "AI-assistent (Claude), autolenking",
+          "action": "autolink",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "e5747ae341747820777e180bb8b91dbf2c1f9436be191936772fcb3ae08e4c6d",
+          "note": "glossary links added (2); based on r1"
+        },
+        {
+          "at": "2026-10-23T20:41:22+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "e5747ae341747820777e180bb8b91dbf2c1f9436be191936772fcb3ae08e4c6d",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T20:43:46+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "e5747ae341747820777e180bb8b91dbf2c1f9436be191936772fcb3ae08e4c6d",
+          "note": "Godkjent av redaktør: kun nye ordforklaringslenker (automatisk lenking, kontrollert for svarlekkasje), teksten er uendret fra forrige godkjente versjon. Sidehenvisninger er fortsatt ikke kontrollert mot trykt bok.",
+          "acknowledged": [
+            "figures",
+            "ocr"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "e5747ae341747820777e180bb8b91dbf2c1f9436be191936772fcb3ae08e4c6d",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: equation, low_ocr_confidence. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-23T20:43:46+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-23T20:43:46+00:00",
+        "content_sha256": "e5747ae341747820777e180bb8b91dbf2c1f9436be191936772fcb3ae08e4c6d",
         "acknowledged_hazards": [
           "figures",
           "ocr"

@@ -3,7 +3,7 @@
   "revisions": [
     {
       "revision": 1,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "scenario",
@@ -152,6 +152,15 @@
           "acknowledged": [
             "figures"
           ]
+        },
+        {
+          "at": "2026-10-23T20:43:51+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "dd21409d79398fee8fc47e056b045d68bf2821bf5735290943efb2fbb5e1ebcd",
+          "note": "superseded by r2"
         }
       ],
       "checks": {
@@ -172,6 +181,215 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-23T19:12:54+00:00",
         "content_sha256": "dd21409d79398fee8fc47e056b045d68bf2821bf5735290943efb2fbb5e1ebcd",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 2,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "medium",
+      "chapter": 6,
+      "section_ids": [
+        "s6-17"
+      ],
+      "topic_ids": [
+        "mellomfrekvens",
+        "mottakeregenskaper"
+      ],
+      "learning_objective": "Bruke formfaktoren til å finne båndbredden ved stor demping.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "Her er ",
+          {
+            "term": "formfaktor",
+            "text": "formfaktoren"
+          },
+          " definert som forholdet mellom ",
+          {
+            "term": "baandbredde",
+            "text": "båndbredden"
+          },
+          " ved 60 dB demping og båndbredden ved 6 dB demping. Et ",
+          {
+            "term": "mellomfrekvens",
+            "text": "MF"
+          },
+          "-",
+          {
+            "term": "filter",
+            "text": "filter"
+          },
+          " er ",
+          {
+            "q": 2.4,
+            "u": "kHz"
+          },
+          " bredt ved −6 dB og har formfaktor 1,8."
+        ]
+      ],
+      "stem": "Hvor bred er filterkurven ved −60 dB?",
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 4.32,
+              "u": "kHz"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 1.33,
+              "u": "kHz",
+              "approx": true
+            }
+          ],
+          "feedback": [
+            "Du har delt i stedet for å gange. Kurven er alltid bredere lenger ned, så båndbredden ved −60 dB må være større enn ved −6 dB."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 2.4,
+              "u": "kHz"
+            }
+          ],
+          "feedback": [
+            "Det ville bety formfaktor 1, altså helt loddrette flanker. Ekte filtre er bredere lenger ned."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 4.2,
+              "u": "kHz"
+            }
+          ],
+          "feedback": [
+            "Du har lagt sammen tallene. Formfaktoren er et forhold, så du må gange."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          {
+            "math": [
+              "B_{60}",
+              "=",
+              "1,8",
+              "·",
+              {
+                "q": 2.4,
+                "u": "kHz"
+              },
+              "=",
+              {
+                "q": 4.32,
+                "u": "kHz"
+              }
+            ]
+          }
+        ],
+        "Jo nærmere 1 formfaktoren er, desto brattere er flankene og desto bedre dempes signaler like utenfor passbåndet. Krystallfiltre kan gi formfaktor bedre enn 1,5."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 6,
+        "section_id": "s6-17",
+        "printed_pages": [
+          "6-9",
+          "6-10"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "be2407c65acc1907"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "autolink",
+        "author": "AI-assistent (Claude), autolenking",
+        "based_on": 1,
+        "at": "2026-10-23T20:41:21+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T20:41:21+00:00",
+          "actor": "AI-assistent (Claude), autolenking",
+          "action": "autolink",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "280c68e880cf91f7845bf87790597450ef07fd98fbb65a1e9e1086f684821d21",
+          "note": "glossary links added (3); based on r1"
+        },
+        {
+          "at": "2026-10-23T20:41:22+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "280c68e880cf91f7845bf87790597450ef07fd98fbb65a1e9e1086f684821d21",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T20:43:51+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "280c68e880cf91f7845bf87790597450ef07fd98fbb65a1e9e1086f684821d21",
+          "note": "Godkjent av redaktør: kun nye ordforklaringslenker (automatisk lenking, kontrollert for svarlekkasje), teksten er uendret fra forrige godkjente versjon. Sidehenvisninger er fortsatt ikke kontrollert mot trykt bok.",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "280c68e880cf91f7845bf87790597450ef07fd98fbb65a1e9e1086f684821d21",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-23T20:43:51+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-23T20:43:51+00:00",
+        "content_sha256": "280c68e880cf91f7845bf87790597450ef07fd98fbb65a1e9e1086f684821d21",
         "acknowledged_hazards": [
           "figures"
         ],

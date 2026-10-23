@@ -3,7 +3,7 @@
   "revisions": [
     {
       "revision": 1,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "concept",
@@ -135,6 +135,15 @@
           "acknowledged": [
             "figures"
           ]
+        },
+        {
+          "at": "2026-10-23T20:43:48+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "fb96789fdec061c9365936ac05f68b4ff5f5ef135f5d4dee5fc007dc15fb821d",
+          "note": "superseded by r2"
         }
       ],
       "checks": {
@@ -155,6 +164,210 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-23T19:12:51+00:00",
         "content_sha256": "fb96789fdec061c9365936ac05f68b4ff5f5ef135f5d4dee5fc007dc15fb821d",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 2,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 2,
+      "section_ids": [
+        "s2-51"
+      ],
+      "topic_ids": [
+        "krystaller"
+      ],
+      "learning_objective": "Vite at krystaller har svært høy Q og er kalibrert for enten serie- eller parallellresonans.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "Du bygger en ",
+          {
+            "term": "oscillator",
+            "text": "oscillator"
+          },
+          " som skal ha svært stabil ",
+          {
+            "term": "frekvens",
+            "text": "frekvens"
+          },
+          ", og vurderer å bruke et ",
+          {
+            "term": "kvartskrystall",
+            "text": "kvartskrystall"
+          },
+          " i stedet for en vanlig LC-krets."
+        ]
+      ],
+      "stem": [
+        "Hvilket utsagn er riktig?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Krystallet har langt høyere Q, men gir riktig frekvens bare i riktig resonansmodus."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Krystallet har omtrent samme Q som en god LC-krets, men er mindre i størrelse."
+          ],
+          "feedback": [
+            [
+              "Krystaller kan ha Q-faktorer på titusenvis, langt over det som er praktisk mulig med spoler og ",
+              {
+                "term": "kondensator",
+                "text": "kondensatorer"
+              },
+              "."
+            ]
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Krystallet gir riktig frekvens i alle kretser, uavhengig av om det brukes i serie- eller parallellresonans."
+          ],
+          "feedback": [
+            "Serie- og parallellresonansen ligger litt fra hverandre, og ytre kapasitans påvirker frekvensen. I feil krets blir frekvensen litt feil."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Krystallet kan ikke trekkes i frekvens i det hele tatt."
+          ],
+          "feedback": [
+            [
+              "Ved å endre ",
+              {
+                "term": "kapasitans",
+                "text": "kapasitansen"
+              },
+              " i kretsen rundt krystallet kan frekvensen trekkes litt, typisk noen få kilohertz eller mindre."
+            ]
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Hovedfordelen med et krystall er den svært høye ",
+          {
+            "term": "q-faktor",
+            "text": "Q-faktoren"
+          },
+          ", som gir en meget skarp og stabil ",
+          {
+            "term": "resonans",
+            "text": "resonans"
+          },
+          "."
+        ],
+        [
+          "Et krystall har to nærliggende resonanser, serieresonans og parallellresonans. Det leveres kalibrert for den ene, ofte med en bestemt ytre belastningskapasitans. Settes det inn i en krets av feil type, eller med feil kapasitans, gir det en litt annen frekvens enn den som står på ",
+          {
+            "term": "kvartskrystall",
+            "text": "krystallet"
+          },
+          "."
+        ]
+      ],
+      "glossary_after_answer": [
+        "kvartskrystall"
+      ],
+      "study_reference": {
+        "chapter": 2,
+        "section_id": "s2-51",
+        "printed_pages": [
+          "2-20",
+          "2-21"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "1ac6a3d47ddfbaf0"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "autolink",
+        "author": "AI-assistent (Claude), autolenking",
+        "based_on": 1,
+        "at": "2026-10-23T20:41:21+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T20:41:21+00:00",
+          "actor": "AI-assistent (Claude), autolenking",
+          "action": "autolink",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "864b2968fef862b93a6e468cfc5b5eb3de3de4773399c9a1e2fca6e699ebe643",
+          "note": "glossary links added (6); based on r1"
+        },
+        {
+          "at": "2026-10-23T20:41:22+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "864b2968fef862b93a6e468cfc5b5eb3de3de4773399c9a1e2fca6e699ebe643",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T20:43:48+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "864b2968fef862b93a6e468cfc5b5eb3de3de4773399c9a1e2fca6e699ebe643",
+          "note": "Godkjent av redaktør: kun nye ordforklaringslenker (automatisk lenking, kontrollert for svarlekkasje), teksten er uendret fra forrige godkjente versjon. Sidehenvisninger er fortsatt ikke kontrollert mot trykt bok.",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "864b2968fef862b93a6e468cfc5b5eb3de3de4773399c9a1e2fca6e699ebe643",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-23T20:43:48+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-23T20:43:48+00:00",
+        "content_sha256": "864b2968fef862b93a6e468cfc5b5eb3de3de4773399c9a1e2fca6e699ebe643",
         "acknowledged_hazards": [
           "figures"
         ],

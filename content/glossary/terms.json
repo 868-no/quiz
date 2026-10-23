@@ -55,7 +55,8 @@
         "motstand",
         "motstanden",
         "motstander",
-        "motstandene"
+        "motstandene",
+        "motstandens"
       ],
       "en": [
         "resistor"
@@ -80,7 +81,9 @@
         "spenning",
         "spenningen",
         "potensialdifferanse",
-        "spenningsfall"
+        "spenningsfall",
+        "spenninger",
+        "spenningene"
       ],
       "en": [
         "voltage",
@@ -104,7 +107,9 @@
       "id": "strom",
       "nb": [
         "strøm",
-        "strømmen"
+        "strømmen",
+        "strømmer",
+        "strømmene"
       ],
       "en": [
         "current"
@@ -254,7 +259,8 @@
         "kondensator",
         "kondensatoren",
         "kondensatorer",
-        "kondensatorene"
+        "kondensatorene",
+        "kondensatorens"
       ],
       "en": [
         "capacitor"
@@ -301,7 +307,9 @@
       "nb": [
         "spole",
         "spolen",
-        "spoler"
+        "spoler",
+        "spolene",
+        "spolens"
       ],
       "en": [
         "inductor",
@@ -421,7 +429,8 @@
       "nb": [
         "resonans",
         "resonansfrekvens",
-        "resonansfrekvensen"
+        "resonansfrekvensen",
+        "resonansen"
       ],
       "en": [
         "resonance",
@@ -497,7 +506,9 @@
       "id": "frekvens",
       "nb": [
         "frekvens",
-        "frekvensen"
+        "frekvensen",
+        "frekvenser",
+        "frekvensene"
       ],
       "en": [
         "frequency"
@@ -570,7 +581,10 @@
       "nb": [
         "diode",
         "dioden",
-        "silisiumdiode"
+        "silisiumdiode",
+        "dioder",
+        "diodene",
+        "diodens"
       ],
       "en": [
         "diode"
@@ -723,7 +737,9 @@
       "nb": [
         "transistor",
         "transistoren",
-        "NPN-transistor"
+        "NPN-transistor",
+        "transistorer",
+        "transistorens"
       ],
       "en": [
         "transistor",
@@ -940,7 +956,8 @@
       "id": "baandbredde",
       "nb": [
         "båndbredde",
-        "båndbredden"
+        "båndbredden",
+        "båndbredder"
       ],
       "en": [
         "bandwidth"
@@ -985,7 +1002,8 @@
       "nb": [
         "harmoniske",
         "harmonisk",
-        "andre harmoniske"
+        "andre harmoniske",
+        "harmoniske frekvenser"
       ],
       "en": [
         "harmonics",
@@ -1083,7 +1101,9 @@
         "blander",
         "blanderen",
         "blandetrinn",
-        "blandetrinnet"
+        "blandetrinnet",
+        "blandere",
+        "blanderens"
       ],
       "en": [
         "mixer"
@@ -1132,7 +1152,8 @@
       "nb": [
         "mellomfrekvens",
         "mellomfrekvensen",
-        "MF"
+        "MF",
+        "mellomfrekvenser"
       ],
       "en": [
         "intermediate frequency",
@@ -2450,6 +2471,363 @@
           "actor": "Jim C K Flaten",
           "action": "approve",
           "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        }
+      ]
+    },
+    {
+      "id": "oscillator",
+      "nb": [
+        "oscillator",
+        "oscillatoren",
+        "oscillatorer",
+        "oscillatorens"
+      ],
+      "en": [
+        "oscillator"
+      ],
+      "definition": "Krets som lager et vekselspenningssignal selv, på en frekvens som bestemmes av for eksempel en avstemt krets eller et krystall.",
+      "related": [],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T20:43:52+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Nye ordforklaringer, godkjent sammen med lenkingen."
+        }
+      ]
+    },
+    {
+      "id": "mottaker",
+      "nb": [
+        "mottaker",
+        "mottakeren",
+        "mottakere",
+        "mottakerens"
+      ],
+      "en": [
+        "receiver"
+      ],
+      "definition": "Apparat som tar imot radiosignaler fra antennen, velger ut ett av dem og gjør det om til lyd eller data.",
+      "related": [
+        "superheterodyn"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T20:43:52+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Nye ordforklaringer, godkjent sammen med lenkingen."
+        }
+      ]
+    },
+    {
+      "id": "sender",
+      "nb": [
+        "sender",
+        "senderen",
+        "sendere",
+        "senderens"
+      ],
+      "en": [
+        "transmitter"
+      ],
+      "definition": "Apparat som lager et modulert radiosignal og forsterker det før det føres til antennen.",
+      "related": [
+        "sluttforsterker"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T20:43:52+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Nye ordforklaringer, godkjent sammen med lenkingen."
+        }
+      ],
+      "no_autolink": [
+        "sender"
+      ]
+    },
+    {
+      "id": "forsterker",
+      "nb": [
+        "forsterker",
+        "forsterkeren",
+        "forsterkere",
+        "forsterkertrinn",
+        "forsterkertrinnet"
+      ],
+      "en": [
+        "amplifier",
+        "amplifier stage"
+      ],
+      "definition": "Krets som gjør et signal sterkere, ved hjelp av en ytre strømforsyning.",
+      "related": [
+        "transistor"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T20:43:52+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Nye ordforklaringer, godkjent sammen med lenkingen."
+        }
+      ]
+    },
+    {
+      "id": "antenne",
+      "nb": [
+        "antenne",
+        "antennen",
+        "antenner",
+        "antennens"
+      ],
+      "en": [
+        "antenna",
+        "aerial"
+      ],
+      "definition": "Leder eller struktur som gjør elektriske signaler om til radiobølger, og radiobølger om til elektriske signaler.",
+      "related": [],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T20:43:52+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Nye ordforklaringer, godkjent sammen med lenkingen."
+        }
+      ]
+    },
+    {
+      "id": "vekselspenning",
+      "nb": [
+        "vekselspenning",
+        "vekselspenningen",
+        "vekselspenninger"
+      ],
+      "en": [
+        "AC voltage",
+        "alternating voltage"
+      ],
+      "definition": "Spenning som skifter retning med jevne mellomrom, ofte sinusformet.",
+      "related": [
+        "vekselstrom",
+        "frekvens"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T20:43:52+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Nye ordforklaringer, godkjent sammen med lenkingen."
+        }
+      ]
+    },
+    {
+      "id": "vekselstrom",
+      "nb": [
+        "vekselstrøm",
+        "vekselstrømmen"
+      ],
+      "en": [
+        "alternating current",
+        "AC"
+      ],
+      "definition": "Strøm som skifter retning med jevne mellomrom.",
+      "related": [
+        "vekselspenning"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T20:43:52+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Nye ordforklaringer, godkjent sammen med lenkingen."
+        }
+      ]
+    },
+    {
+      "id": "likespenning",
+      "nb": [
+        "likespenning",
+        "likespenningen"
+      ],
+      "en": [
+        "DC voltage",
+        "direct voltage"
+      ],
+      "definition": "Spenning med fast retning, for eksempel fra et batteri.",
+      "related": [
+        "vekselspenning"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T20:43:52+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Nye ordforklaringer, godkjent sammen med lenkingen."
+        }
+      ]
+    },
+    {
+      "id": "filter",
+      "nb": [
+        "filter",
+        "filteret",
+        "filtre",
+        "filtrene",
+        "filterets"
+      ],
+      "en": [
+        "filter"
+      ],
+      "definition": "Krets som slipper gjennom noen frekvenser og demper andre.",
+      "related": [
+        "lavpassfilter",
+        "baandpassfilter"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T20:43:52+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Nye ordforklaringer, godkjent sammen med lenkingen."
+        }
+      ]
+    },
+    {
+      "id": "baandpassfilter",
+      "nb": [
+        "båndpassfilter",
+        "båndpassfilteret",
+        "båndpassfiltre"
+      ],
+      "en": [
+        "band-pass filter"
+      ],
+      "definition": "Filter som slipper gjennom et avgrenset frekvensområde og demper frekvenser både over og under det.",
+      "related": [
+        "filter"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T20:43:52+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Nye ordforklaringer, godkjent sammen med lenkingen."
+        }
+      ]
+    },
+    {
+      "id": "avstemt-krets",
+      "nb": [
+        "avstemt krets",
+        "avstemte krets",
+        "avstemte kretsen",
+        "avstemte kretser",
+        "svingekrets",
+        "svingekretsen"
+      ],
+      "en": [
+        "tuned circuit",
+        "resonant circuit"
+      ],
+      "definition": "Krets med spole og kondensator som er innstilt på en bestemt frekvens.",
+      "related": [
+        "resonans",
+        "spole",
+        "kondensator"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T20:43:52+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Nye ordforklaringer, godkjent sammen med lenkingen."
+        }
+      ]
+    },
+    {
+      "id": "forspenning",
+      "nb": [
+        "forspenning",
+        "forspenningen",
+        "forspent"
+      ],
+      "en": [
+        "bias"
+      ],
+      "definition": "Likespenning eller likestrøm som stiller inn arbeidspunktet til en diode, transistor eller et rør.",
+      "related": [
+        "transistor"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T20:43:52+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Nye ordforklaringer, godkjent sammen med lenkingen."
+        }
+      ]
+    },
+    {
+      "id": "demodulator",
+      "nb": [
+        "demodulator",
+        "demodulatoren",
+        "detektor",
+        "detektoren"
+      ],
+      "en": [
+        "demodulator",
+        "detector"
+      ],
+      "definition": "Trinn i en mottaker som henter lyden eller dataene ut av det modulerte signalet.",
+      "related": [
+        "mottaker"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T20:43:52+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Nye ordforklaringer, godkjent sammen med lenkingen."
+        }
+      ]
+    },
+    {
+      "id": "kunstlast",
+      "nb": [
+        "kunstlast",
+        "kunstlasten",
+        "kunstig antenne",
+        "dummy load"
+      ],
+      "en": [
+        "dummy load"
+      ],
+      "definition": "Motstand som tåler senderens effekt og brukes i stedet for antennen under testing, slik at det ikke stråles ut noe signal.",
+      "related": [
+        "antenne"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T20:43:52+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Nye ordforklaringer, godkjent sammen med lenkingen."
         }
       ]
     }

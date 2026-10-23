@@ -3,7 +3,7 @@
   "revisions": [
     {
       "revision": 1,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "scenario",
@@ -186,6 +186,15 @@
             "figures",
             "ocr"
           ]
+        },
+        {
+          "at": "2026-10-23T20:43:47+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "bcf1d124e553a5883a5392d81547ffd305179cbc255ab5d84f0f26bc0b64acb4",
+          "note": "superseded by r2"
         }
       ],
       "checks": {
@@ -210,6 +219,245 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-23T19:12:50+00:00",
         "content_sha256": "bcf1d124e553a5883a5392d81547ffd305179cbc255ab5d84f0f26bc0b64acb4",
+        "acknowledged_hazards": [
+          "figures",
+          "ocr"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 2,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "medium",
+      "chapter": 2,
+      "section_ids": [
+        "s2-18"
+      ],
+      "topic_ids": [
+        "kondensatorer",
+        "ladning"
+      ],
+      "learning_objective": "Bruke sammenhengen Q = C · U til å finne lagret ladning i en kondensator.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En elektrolyttkondensator på ",
+          {
+            "q": 220,
+            "u": "µF"
+          },
+          " er ladet opp til ",
+          {
+            "q": 15,
+            "u": "V"
+          },
+          "."
+        ]
+      ],
+      "stem": [
+        [
+          "Hvor stor ",
+          {
+            "term": "ladning",
+            "text": "ladning"
+          },
+          " er lagret i ",
+          {
+            "term": "kondensator",
+            "text": "kondensatoren"
+          },
+          "?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 0.0033,
+              "u": "C"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 3.3,
+              "u": "C"
+            }
+          ],
+          "feedback": [
+            "Dette er tusen ganger for stort. Det kan skyldes at mikrofarad (µF) er forvekslet med millifarad (mF). 220 µF = 0,000220 F, og ladningen blir 0,000220 F · 15 V = 0,0033 C."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 0.00033,
+              "u": "C"
+            }
+          ],
+          "feedback": [
+            "Svaret er ti ganger for lite. Kontroller omregningen: 220 µF er 0,00022 F, og 0,00022 · 15 = 0,0033."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 0.033,
+              "u": "C"
+            }
+          ],
+          "feedback": [
+            "Kommaet er flyttet ett sted for mye. Regn om 220 µF til farad før du ganger."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Ladningen i en kondensator er ",
+          {
+            "term": "kapasitans",
+            "text": "kapasitansen"
+          },
+          " ganget med ",
+          {
+            "term": "spenning",
+            "text": "spenningen"
+          },
+          ":"
+        ],
+        {
+          "steps": [
+            [
+              {
+                "math": [
+                  "Q",
+                  "=",
+                  "C",
+                  "·",
+                  "U",
+                  "=",
+                  {
+                    "q": 0.00022,
+                    "u": "F"
+                  },
+                  "·",
+                  {
+                    "q": 15,
+                    "u": "V"
+                  },
+                  "=",
+                  {
+                    "q": 0.0033,
+                    "u": "C"
+                  }
+                ]
+              }
+            ],
+            [
+              "Det er 3,3 millicoulomb."
+            ]
+          ]
+        },
+        "En større kondensator lagrer mer ladning ved samme spenning, og ladningen øker proporsjonalt med spenningen."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 2,
+        "section_id": "s2-18",
+        "printed_pages": [
+          "2-7"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "193515f2f358076f"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "autolink",
+        "author": "AI-assistent (Claude), autolenking",
+        "based_on": 1,
+        "at": "2026-10-23T20:41:21+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T20:41:21+00:00",
+          "actor": "AI-assistent (Claude), autolenking",
+          "action": "autolink",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "eb0cd3dd4e9d6550098e4ca32099a3182370d051bd4866013c228a33dcac7bc8",
+          "note": "glossary links added (3); based on r1"
+        },
+        {
+          "at": "2026-10-23T20:41:22+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "eb0cd3dd4e9d6550098e4ca32099a3182370d051bd4866013c228a33dcac7bc8",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T20:43:47+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "eb0cd3dd4e9d6550098e4ca32099a3182370d051bd4866013c228a33dcac7bc8",
+          "note": "Godkjent av redaktør: kun nye ordforklaringslenker (automatisk lenking, kontrollert for svarlekkasje), teksten er uendret fra forrige godkjente versjon. Sidehenvisninger er fortsatt ikke kontrollert mot trykt bok.",
+          "acknowledged": [
+            "figures",
+            "ocr"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "eb0cd3dd4e9d6550098e4ca32099a3182370d051bd4866013c228a33dcac7bc8",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: equation. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-23T20:43:47+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-23T20:43:47+00:00",
+        "content_sha256": "eb0cd3dd4e9d6550098e4ca32099a3182370d051bd4866013c228a33dcac7bc8",
         "acknowledged_hazards": [
           "figures",
           "ocr"
