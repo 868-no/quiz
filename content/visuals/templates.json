@@ -470,6 +470,393 @@
           }
         }
       }
+    },
+    {
+      "id": "rlc-circuit",
+      "version": 1,
+      "title": "Krets med R, C og L",
+      "description": "One to three resistors, capacitors and/or inductors in series or parallel, either alone between two terminals or connected to a DC or AC source (optionally with an open switch). Totals, reactances, impedance, time constant and resonance frequency are computed, never typed in. label_style 'names' shows only component names (for concept questions).",
+      "idealised": "Ideelle komponenter og ledninger uten motstand; ingen kobling mellom spolene.",
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T20:58:39+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Nye figurmaler, tegninger gjengitt og inspisert."
+        }
+      ],
+      "params": {
+        "type": "object",
+        "required": [
+          "topology",
+          "components"
+        ],
+        "properties": {
+          "source": {
+            "type": "object",
+            "properties": {
+              "kind": {
+                "type": "string",
+                "enum": [
+                  "none",
+                  "dc",
+                  "ac"
+                ],
+                "default": "none"
+              },
+              "voltage_v": {
+                "type": "number",
+                "minimum": 0.001,
+                "maximum": 100000,
+                "unit": "V",
+                "nullable": true
+              },
+              "frequency_hz": {
+                "type": "number",
+                "minimum": 0.1,
+                "maximum": 3000000000.0,
+                "unit": "Hz",
+                "nullable": true
+              },
+              "show_voltage": {
+                "type": "boolean",
+                "default": true
+              },
+              "show_frequency": {
+                "type": "boolean",
+                "default": true
+              }
+            },
+            "default": {
+              "kind": "none",
+              "show_voltage": true,
+              "show_frequency": true
+            }
+          },
+          "topology": {
+            "type": "string",
+            "enum": [
+              "series",
+              "parallel"
+            ]
+          },
+          "components": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 3,
+            "items": {
+              "type": "object",
+              "required": [
+                "kind",
+                "value"
+              ],
+              "properties": {
+                "kind": {
+                  "type": "string",
+                  "enum": [
+                    "R",
+                    "C",
+                    "L"
+                  ]
+                },
+                "value": {
+                  "type": "number",
+                  "minimum": 1e-15,
+                  "maximum": 100000000.0
+                },
+                "show_value": {
+                  "type": "boolean",
+                  "default": true
+                }
+              }
+            }
+          },
+          "switch": {
+            "type": "boolean",
+            "default": false
+          },
+          "total_label": {
+            "type": "string",
+            "enum": [
+              "none",
+              "unknown",
+              "value"
+            ],
+            "default": "none"
+          },
+          "label_style": {
+            "type": "string",
+            "enum": [
+              "values",
+              "names"
+            ],
+            "default": "values"
+          }
+        }
+      }
+    },
+    {
+      "id": "rectifier",
+      "version": 1,
+      "title": "Likeretter",
+      "description": "Half-wave (one diode) or bridge (four diodes) rectifier fed from an AC source, with optional reservoir/filter capacitor and load resistor. Also draws a simple diode detector (half-wave with C and R in parallel).",
+      "idealised": "Forenklet koblingsskjema. Diodene er tegnet slik at plussiden av utgangen er øverst.",
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T20:58:39+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Nye figurmaler, tegninger gjengitt og inspisert."
+        }
+      ],
+      "params": {
+        "type": "object",
+        "required": [
+          "kind"
+        ],
+        "properties": {
+          "kind": {
+            "type": "string",
+            "enum": [
+              "half",
+              "bridge"
+            ]
+          },
+          "source": {
+            "type": "object",
+            "properties": {
+              "u_rms": {
+                "type": "number",
+                "minimum": 0.001,
+                "maximum": 100000,
+                "unit": "V",
+                "nullable": true
+              },
+              "u_peak": {
+                "type": "number",
+                "minimum": 0.001,
+                "maximum": 100000,
+                "unit": "V",
+                "nullable": true
+              },
+              "name": {
+                "type": "string",
+                "maxLength": 16,
+                "default": ""
+              },
+              "show_value": {
+                "type": "boolean",
+                "default": true
+              }
+            },
+            "default": {
+              "name": "",
+              "show_value": true
+            }
+          },
+          "capacitor": {
+            "type": "boolean",
+            "default": false
+          },
+          "load": {
+            "type": "boolean",
+            "default": true
+          },
+          "load_name": {
+            "type": "string",
+            "enum": [
+              "R_L",
+              "R"
+            ],
+            "default": "R_L"
+          },
+          "output_label": {
+            "type": "string",
+            "enum": [
+              "none",
+              "unknown"
+            ],
+            "default": "none"
+          }
+        }
+      }
+    },
+    {
+      "id": "transformer",
+      "version": 1,
+      "title": "Transformator",
+      "description": "Transformer with AC source on the primary and an optional load on the secondary. Turns can be shown as numbers or as a ratio; secondary voltage and input impedance are computed.",
+      "idealised": "Ideell, tapsfri transformator.",
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T20:58:39+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Nye figurmaler, tegninger gjengitt og inspisert."
+        }
+      ],
+      "params": {
+        "type": "object",
+        "required": [
+          "turns_primary",
+          "turns_secondary"
+        ],
+        "properties": {
+          "turns_primary": {
+            "type": "number",
+            "minimum": 1,
+            "maximum": 100000
+          },
+          "turns_secondary": {
+            "type": "number",
+            "minimum": 1,
+            "maximum": 100000
+          },
+          "turns_display": {
+            "type": "string",
+            "enum": [
+              "numbers",
+              "ratio",
+              "none"
+            ],
+            "default": "numbers"
+          },
+          "primary_voltage_v": {
+            "type": "number",
+            "minimum": 0.001,
+            "maximum": 100000,
+            "unit": "V",
+            "nullable": true
+          },
+          "show_primary_voltage": {
+            "type": "boolean",
+            "default": true
+          },
+          "load_ohms": {
+            "type": "number",
+            "minimum": 0.01,
+            "maximum": 100000000.0,
+            "unit": "Ω",
+            "nullable": true
+          },
+          "show_load": {
+            "type": "boolean",
+            "default": true
+          },
+          "secondary_label": {
+            "type": "string",
+            "enum": [
+              "none",
+              "unknown",
+              "value"
+            ],
+            "default": "none"
+          },
+          "input_label": {
+            "type": "string",
+            "enum": [
+              "none",
+              "unknown"
+            ],
+            "default": "none"
+          }
+        }
+      }
+    },
+    {
+      "id": "transistor-stage",
+      "version": 1,
+      "title": "Transistortrinn",
+      "description": "NPN common-emitter stage: collector resistor to the supply, optional emitter resistor with optional bypass capacitor, optional base voltage divider and coupling capacitors. Node voltages and collector current can be labelled with a value or '?'.",
+      "idealised": "Forenklet koblingsskjema av et forsterkertrinn med NPN-transistor.",
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-23T20:58:39+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Nye figurmaler, tegninger gjengitt og inspisert."
+        }
+      ],
+      "params": {
+        "type": "object",
+        "required": [
+          "vcc_v"
+        ],
+        "properties": {
+          "vcc_v": {
+            "type": "number",
+            "minimum": 0.1,
+            "maximum": 1000,
+            "unit": "V"
+          },
+          "show_vcc": {
+            "type": "boolean",
+            "default": true
+          },
+          "rc_ohms": {
+            "type": "number",
+            "minimum": 0.1,
+            "maximum": 10000000.0,
+            "unit": "Ω",
+            "nullable": true
+          },
+          "re_ohms": {
+            "type": "number",
+            "minimum": 0.1,
+            "maximum": 10000000.0,
+            "unit": "Ω",
+            "nullable": true
+          },
+          "show_resistor_values": {
+            "type": "boolean",
+            "default": true
+          },
+          "bypass_capacitor": {
+            "type": "boolean",
+            "default": false
+          },
+          "divider": {
+            "type": "boolean",
+            "default": false
+          },
+          "coupling": {
+            "type": "boolean",
+            "default": false
+          },
+          "labels": {
+            "type": "array",
+            "maxItems": 4,
+            "default": [],
+            "items": {
+              "type": "object",
+              "required": [
+                "node"
+              ],
+              "properties": {
+                "node": {
+                  "type": "string",
+                  "enum": [
+                    "B",
+                    "E",
+                    "C",
+                    "IC"
+                  ]
+                },
+                "value": {
+                  "type": "number",
+                  "minimum": -1000,
+                  "maximum": 1000,
+                  "nullable": true
+                }
+              }
+            }
+          }
+        }
+      }
     }
   ]
 }

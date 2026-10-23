@@ -106,3 +106,63 @@ export function svgRoot(width, height, title, desc, children, extra = {}, minX =
     'aria-label': title, preserveAspectRatio: 'xMidYMid meet', ...extra,
   }, h('title', {}, title), h('desc', {}, desc), children);
 }
+
+/** Rotate a drawn element about (cx, cy). */
+export function rotated(node, cx, cy, deg) {
+  return deg ? h('g', { transform: `rotate(${deg} ${cx} ${cy})` }, node) : node;
+}
+
+/** R, C or L centred at (cx, cy), along a vertical (default) or horizontal wire. */
+export function component(kind, cx, cy, horizontal = false) {
+  if (kind === 'R') return resistor(cx, cy, !horizontal);
+  const sym = kind === 'C' ? capacitor(cx, cy) : inductor(cx, cy);
+  return rotated(sym, cx, cy, horizontal ? 90 : 0);
+}
+
+/**
+ * Diode centred at (cx, cy); conducts (anode → cathode) in direction `deg`
+ * (0 = towards +x, 90 = towards +y). IEC: triangle pointing at the cathode bar.
+ */
+export function diode(cx, cy, deg = 0, size = 12) {
+  const s = size;
+  return rotated(h('g', { class: 'diode' },
+    h('rect', { x: cx - s - 2, y: cy - s - 2, width: 2 * s + 4, height: 2 * s + 4, fill: 'var(--fig-bg)', stroke: 'none' }),
+    h('polygon', { points: `${cx - s},${cy - s} ${cx - s},${cy + s} ${cx + s * 0.7},${cy}`, fill: 'var(--fig-bg)', stroke: STROKE, 'stroke-width': 2, 'stroke-linejoin': 'round' }),
+    line(cx + s * 0.7, cy - s, cx + s * 0.7, cy + s, { 'stroke-width': 2.5 })), cx, cy, deg);
+}
+
+/** Open switch on a horizontal wire from (x1, y) to (x2, y). */
+export function switchOpen(x1, x2, y) {
+  return h('g', { class: 'switch' },
+    h('rect', { x: x1, y: y - 3, width: x2 - x1, height: 6, fill: 'var(--fig-bg)', stroke: 'none' }),
+    h('circle', { cx: x1 + 3, cy: y, r: 3, fill: 'var(--fig-bg)', stroke: STROKE, 'stroke-width': 2 }),
+    h('circle', { cx: x2 - 3, cy: y, r: 3, fill: 'var(--fig-bg)', stroke: STROKE, 'stroke-width': 2 }),
+    line(x1 + 5, y - 2, x2 - 6, y - 16));
+}
+
+/** Connection terminal (small open circle). */
+export function terminal(x, y) {
+  return h('circle', { cx: x, cy: y, r: 4.5, fill: 'var(--fig-bg)', stroke: STROKE, 'stroke-width': 2 });
+}
+
+/** Ground symbol hanging below (x, y). */
+export function ground(x, y) {
+  return h('g', {}, line(x, y, x, y + 8), line(x - 12, y + 8, x + 12, y + 8),
+    line(x - 7, y + 13, x + 7, y + 13), line(x - 3, y + 18, x + 3, y + 18));
+}
+
+/**
+ * NPN transistor with its base on the left. Returns {node, b, c, e} with the
+ * connection points of base, collector (up) and emitter (down).
+ */
+export function npn(cx, cy, r = 24) {
+  const bx = cx - 9;
+  const node = h('g', { class: 'transistor' },
+    h('circle', { cx, cy, r, fill: 'var(--fig-bg)', stroke: STROKE, 'stroke-width': 2 }),
+    line(cx - r - 14, cy, bx, cy),
+    line(bx, cy - 14, bx, cy + 14, { 'stroke-width': 3 }),
+    line(bx, cy - 6, cx + 9, cy - r + 4), line(cx + 9, cy - r + 4, cx + 9, cy - r - 12),
+    line(bx, cy + 6, cx + 9, cy + r - 4), line(cx + 9, cy + r - 4, cx + 9, cy + r + 12),
+    arrowHead(cx + 7, cy + r - 6, 16, 12.5, 9));
+  return { node, b: [cx - r - 14, cy], c: [cx + 9, cy - r - 12], e: [cx + 9, cy + r + 12] };
+}

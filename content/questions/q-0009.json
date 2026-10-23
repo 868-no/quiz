@@ -252,7 +252,7 @@
     },
     {
       "revision": 2,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "calculation",
@@ -484,6 +484,15 @@
             "figures",
             "ocr"
           ]
+        },
+        {
+          "at": "2026-10-23T20:58:39+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "f1ad841d58a6c914ade9fc8396cde93a9f01eef1bef570f8b0a0d5ed06978810",
+          "note": "superseded by r3"
         }
       ],
       "checks": {
@@ -508,6 +517,303 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-23T20:43:45+00:00",
         "content_sha256": "f1ad841d58a6c914ade9fc8396cde93a9f01eef1bef570f8b0a0d5ed06978810",
+        "acknowledged_hazards": [
+          "figures",
+          "ocr"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 3,
+      "status": "approved",
+      "type": "single_choice",
+      "style": "calculation",
+      "difficulty": "easy",
+      "chapter": 2,
+      "section_ids": [
+        "s2-22"
+      ],
+      "topic_ids": [
+        "kondensatorkoblinger"
+      ],
+      "learning_objective": "Finne samlet kapasitans for seriekoblede kondensatorer.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "To like ",
+          {
+            "term": "kondensator",
+            "text": "kondensatorer"
+          },
+          " på ",
+          {
+            "q": 10,
+            "u": "µF"
+          },
+          " hver er koblet ",
+          {
+            "term": "seriekobling",
+            "text": "i serie"
+          },
+          "."
+        ]
+      ],
+      "stem": [
+        [
+          "Hva blir den samlede ",
+          {
+            "term": "kapasitans",
+            "text": "kapasitansen"
+          },
+          "?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 5,
+              "u": "µF"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 20,
+              "u": "µF"
+            }
+          ],
+          "feedback": [
+            "Kapasitansene legges sammen når kondensatorene står i parallell, ikke i serie."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 10,
+              "u": "µF"
+            }
+          ],
+          "feedback": [
+            "Kapasitansen endrer seg når to kondensatorer kobles i serie; den blir mindre."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 100,
+              "u": "µF"
+            }
+          ],
+          "feedback": [
+            "Produktet alene er ikke svaret. Det skal deles på summen (10 + 10)."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "For kondensatorer i serie brukes samme type formel som for ",
+          {
+            "term": "motstand",
+            "text": "motstander"
+          },
+          " ",
+          {
+            "term": "parallellkobling",
+            "text": "i parallell"
+          },
+          ":"
+        ],
+        {
+          "steps": [
+            [
+              {
+                "math": [
+                  "C",
+                  "=",
+                  {
+                    "frac": [
+                      [
+                        "C_1",
+                        "·",
+                        "C_2"
+                      ],
+                      [
+                        "C_1",
+                        "+",
+                        "C_2"
+                      ]
+                    ]
+                  },
+                  "=",
+                  {
+                    "frac": [
+                      [
+                        "10",
+                        "·",
+                        "10"
+                      ],
+                      [
+                        "10",
+                        "+",
+                        "10"
+                      ]
+                    ]
+                  },
+                  {
+                    "unit": "µF"
+                  },
+                  "=",
+                  {
+                    "q": 5,
+                    "u": "µF"
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        "To like kondensatorer i serie gir halvparten av verdien til én. Det er som om avstanden mellom platene økte, og da synker kapasitansen."
+      ],
+      "glossary_after_answer": [],
+      "calculation": {
+        "formula": "series_capacitance",
+        "inputs": {
+          "C1": [
+            10,
+            "µF"
+          ],
+          "C2": [
+            10,
+            "µF"
+          ]
+        },
+        "answer": [
+          5,
+          "µF"
+        ],
+        "answer_symbol": "C",
+        "sig_figs": 2,
+        "visual_bindings": {
+          "C": "C_total"
+        }
+      },
+      "study_reference": {
+        "chapter": 2,
+        "section_id": "s2-22",
+        "printed_pages": [
+          "2-9"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "d3c1ef147590cb11"
+        ]
+      },
+      "tags": [],
+      "visual": {
+        "template": "rlc-circuit",
+        "version": 1,
+        "params": {
+          "topology": "series",
+          "components": [
+            {
+              "kind": "C",
+              "value": 1e-05
+            },
+            {
+              "kind": "C",
+              "value": 1e-05
+            }
+          ],
+          "total_label": "unknown"
+        },
+        "params_after": {
+          "total_label": "value"
+        }
+      },
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "AI-assistent (Claude), figurer",
+        "based_on": 2,
+        "at": "2026-10-23T20:54:14+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T20:54:14+00:00",
+          "actor": "AI-assistent (Claude), figurer",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "1d9040abf0610f2bffa279727292a66a2801721ffcd59a7fa645cb54f56cea9f",
+          "note": "figur lagt til (teksten uendret)"
+        },
+        {
+          "at": "2026-10-23T20:54:14+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "1d9040abf0610f2bffa279727292a66a2801721ffcd59a7fa645cb54f56cea9f",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T20:58:39+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "1d9040abf0610f2bffa279727292a66a2801721ffcd59a7fa645cb54f56cea9f",
+          "note": "Godkjent av redaktør: figur lagt til, teksten uendret fra forrige godkjente versjon. Sidehenvisninger er fortsatt ikke kontrollert mot trykt bok.",
+          "acknowledged": [
+            "figures",
+            "ocr"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "1d9040abf0610f2bffa279727292a66a2801721ffcd59a7fa645cb54f56cea9f",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: equation. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-23T20:58:39+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-23T20:58:39+00:00",
+        "content_sha256": "1d9040abf0610f2bffa279727292a66a2801721ffcd59a7fa645cb54f56cea9f",
         "acknowledged_hazards": [
           "figures",
           "ocr"

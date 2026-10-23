@@ -227,8 +227,156 @@ def _block_rules(p: dict[str, Any], errors: list[str]) -> None:
             errors.append(f"edge_labels[{i}].after: no connection after block {e['after']}")
 
 
-RULES = {"dc-circuit": _dc_rules, "ac-circuit": _ac_rules, "waveform": _wave_rules, "block-diagram": _block_rules}
-QUANTITIES = {"dc-circuit": _dc_quantities, "ac-circuit": _ac_quantities, "waveform": _wave_quantities}
+# --- rlc-circuit ------------------------------------------------------------------
+
+_UNIT = {"R": "Ω", "C": "F", "L": "H"}
+_LIMITS = {"R": (0.1, 1e8), "C": (1e-15, 1.0), "L": (1e-12, 100.0)}
+
+
+def rlc_names(p: dict[str, Any]) -> list[str]:
+    """R, C, L when a kind occurs once; R1, R2 … when it occurs more often."""
+    kinds = [c["kind"] for c in p["components"]]
+    seen: dict[str, int] = {}
+    out = []
+    for k in kinds:
+        seen[k] = seen.get(k, 0) + 1
+        out.append(k if kinds.count(k) == 1 else f"{k}{seen[k]}")
+    return out
+
+
+def _rlc_rules(p: dict[str, Any], errors: list[str]) -> None:
+    src = p["source"]
+    for i, c in enumerate(p["components"]):
+        lo, hi = _LIMITS[c["kind"]]
+        if not lo <= c["value"] <= hi:
+            errors.append(f"components[{i}].value: {c['value']} is implausible for {c['kind']}")
+    if src["kind"] == "ac" and src.get("frequency_hz") is None:
+        errors.append("source.frequency_hz: required for an AC source")
+    if src["kind"] == "none" and src.get("voltage_v") is not None:
+        errors.append("source.voltage_v: a circuit without a source has no voltage")
+    if p["switch"] and (p["topology"] != "series" or src["kind"] == "none"):
+        errors.append("switch: only for a series circuit with a source")
+    kinds = {c["kind"] for c in p["components"]}
+    if p["label_style"] == "names" and p["total_label"] != "none":
+        errors.append("total_label: not used with label_style 'names'")
+    if p["total_label"] != "none" and len(kinds) > 1 and not (src["kind"] == "ac" and p["topology"] == "series"):
+        errors.append("total_label: a total is only defined for components of one kind, or as impedance in a series AC circuit")
+
+
+def _rlc_quantities(p: dict[str, Any]) -> dict[str, dict[str, Any]]:
+    comps, names, src = p["components"], rlc_names(p), p["source"]
+    q: dict[str, dict[str, Any]] = {}
+    values_shown = p["label_style"] == "values"
+    for c, n in zip(comps, names):
+        q[n] = {"value": c["value"], "unit": _UNIT[c["kind"]], "shown": c["show_value"] and values_shown}
+    kinds = {c["kind"] for c in comps}
+    shown_total = p["total_label"] == "value"
+    if len(kinds) == 1:
+        k = next(iter(kinds))
+        vals = [c["value"] for c in comps]
+        add = (k == "C") == (p["topology"] == "parallel")  # C adds in parallel; R and L add in series
+        total = sum(vals) if add else 1 / sum(1 / v for v in vals)
+        q[f"{k}_total"] = {"value": total, "unit": _UNIT[k], "shown": shown_total}
+    if src.get("voltage_v") is not None:
+        q["U"] = {"value": src["voltage_v"], "unit": "V", "shown": src["show_voltage"] and values_shown}
+    if src["kind"] == "ac":
+        f = src["frequency_hz"]
+        q["f"] = {"value": f, "unit": "Hz", "shown": src["show_frequency"] and values_shown}
+        x_l = sum(2 * math.pi * f * c["value"] for c in comps if c["kind"] == "L")
+        x_c = sum(1 / (2 * math.pi * f * c["value"]) for c in comps if c["kind"] == "C")
+        if any(c["kind"] == "L" for c in comps):
+            q["X_L"] = {"value": x_l, "unit": "Ω", "shown": False}
+        if any(c["kind"] == "C" for c in comps):
+            q["X_C"] = {"value": x_c, "unit": "Ω", "shown": False}
+        if p["topology"] == "series":
+            r = sum(c["value"] for c in comps if c["kind"] == "R")
+            q["Z"] = {"value": math.hypot(r, x_l - x_c), "unit": "Ω", "shown": shown_total and len(kinds) > 1}
+    rs = [c["value"] for c in comps if c["kind"] == "R"]
+    cs = [c["value"] for c in comps if c["kind"] == "C"]
+    ls = [c["value"] for c in comps if c["kind"] == "L"]
+    if p["topology"] == "series" and len(rs) == 1 and len(cs) == 1 and not ls:
+        q["tau"] = {"value": rs[0] * cs[0], "unit": "s", "shown": False}
+    if len(cs) == 1 and len(ls) == 1:
+        q["f0"] = {"value": 1 / (2 * math.pi * math.sqrt(ls[0] * cs[0])), "unit": "Hz", "shown": False}
+    return q
+
+
+# --- rectifier ---------------------------------------------------------------------
+
+def _rect_rules(p: dict[str, Any], errors: list[str]) -> None:
+    src = p["source"]
+    if src.get("u_rms") is not None and src.get("u_peak") is not None:
+        errors.append("source: give either u_rms or u_peak, not both")
+    if not p["load"] and not p["capacitor"]:
+        errors.append("load: a rectifier needs a load or a capacitor at the output")
+
+
+def _rect_quantities(p: dict[str, Any]) -> dict[str, dict[str, Any]]:
+    src, q = p["source"], {}
+    if src.get("u_rms") is not None:
+        q["U_rms"] = {"value": src["u_rms"], "unit": "V", "shown": src["show_value"]}
+        q["U_p"] = {"value": src["u_rms"] * math.sqrt(2), "unit": "V", "shown": False}
+    if src.get("u_peak") is not None:
+        q["U_p"] = {"value": src["u_peak"], "unit": "V", "shown": src["show_value"]}
+    return q
+
+
+# --- transformer -------------------------------------------------------------------
+
+def _tr_rules(p: dict[str, Any], errors: list[str]) -> None:
+    if p["secondary_label"] != "none" and p.get("primary_voltage_v") is None:
+        errors.append("secondary_label: needs primary_voltage_v")
+    if p["input_label"] != "none" and p.get("load_ohms") is None:
+        errors.append("input_label: needs load_ohms")
+
+
+def _tr_quantities(p: dict[str, Any]) -> dict[str, dict[str, Any]]:
+    n = p["turns_primary"] / p["turns_secondary"]
+    show_turns = p["turns_display"] != "none"
+    q = {"N_p": {"value": p["turns_primary"], "unit": "", "shown": p["turns_display"] == "numbers"},
+         "N_s": {"value": p["turns_secondary"], "unit": "", "shown": p["turns_display"] == "numbers"},
+         "ratio": {"value": n, "unit": "", "shown": show_turns}}
+    if p.get("primary_voltage_v") is not None:
+        q["U_p"] = {"value": p["primary_voltage_v"], "unit": "V", "shown": p["show_primary_voltage"]}
+        q["U_s"] = {"value": p["primary_voltage_v"] / n, "unit": "V", "shown": p["secondary_label"] == "value"}
+    if p.get("load_ohms") is not None:
+        q["R_L"] = {"value": p["load_ohms"], "unit": "Ω", "shown": p["show_load"]}
+        q["Z_p"] = {"value": p["load_ohms"] * n * n, "unit": "Ω", "shown": False}
+    return q
+
+
+# --- transistor-stage --------------------------------------------------------------
+
+_NODE_Q = {"B": ("U_B", "V"), "E": ("U_E", "V"), "C": ("U_C", "V"), "IC": ("I_C", "A")}
+
+
+def _ts_rules(p: dict[str, Any], errors: list[str]) -> None:
+    nodes = [l["node"] for l in p["labels"]]
+    if len(set(nodes)) != len(nodes):
+        errors.append("labels: each node can be labelled once")
+    if p["bypass_capacitor"] and p.get("re_ohms") is None:
+        errors.append("bypass_capacitor: needs an emitter resistor (re_ohms)")
+    if p["rc_ohms"] is None:
+        errors.append("rc_ohms: required (the collector resistor is always drawn)")
+
+
+def _ts_quantities(p: dict[str, Any]) -> dict[str, dict[str, Any]]:
+    q = {"U_CC": {"value": p["vcc_v"], "unit": "V", "shown": p["show_vcc"]}}
+    for k, name in (("rc_ohms", "R_C"), ("re_ohms", "R_E")):
+        if p.get(k) is not None:
+            q[name] = {"value": p[k], "unit": "Ω", "shown": p["show_resistor_values"]}
+    for l in p["labels"]:
+        sym, unit = _NODE_Q[l["node"]]
+        if l.get("value") is not None:
+            q[sym] = {"value": l["value"], "unit": unit, "shown": True}
+    return q
+
+
+RULES = {"dc-circuit": _dc_rules, "ac-circuit": _ac_rules, "waveform": _wave_rules, "block-diagram": _block_rules,
+         "rlc-circuit": _rlc_rules, "rectifier": _rect_rules, "transformer": _tr_rules, "transistor-stage": _ts_rules}
+QUANTITIES = {"dc-circuit": _dc_quantities, "ac-circuit": _ac_quantities, "waveform": _wave_quantities,
+              "rlc-circuit": _rlc_quantities, "rectifier": _rect_quantities, "transformer": _tr_quantities,
+              "transistor-stage": _ts_quantities}
 
 
 def validate_visual(templates: dict[str, dict[str, Any]], visual: Any, where: str = "visual"

@@ -263,7 +263,7 @@
     },
     {
       "revision": 2,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "calculation",
@@ -501,6 +501,15 @@
             "figures",
             "ocr"
           ]
+        },
+        {
+          "at": "2026-10-23T20:58:39+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "867edd6e776c6adc387a960933a64dae0d577dd76684aef3c7ac2fdb2c39191a",
+          "note": "superseded by r3"
         }
       ],
       "checks": {
@@ -525,6 +534,313 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-23T20:43:47+00:00",
         "content_sha256": "867edd6e776c6adc387a960933a64dae0d577dd76684aef3c7ac2fdb2c39191a",
+        "acknowledged_hazards": [
+          "figures",
+          "ocr"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 3,
+      "status": "approved",
+      "type": "single_choice",
+      "style": "calculation",
+      "difficulty": "easy",
+      "chapter": 2,
+      "section_ids": [
+        "s2-27"
+      ],
+      "topic_ids": [
+        "spoler"
+      ],
+      "learning_objective": "Beregne samlet induktans for spoler i serie uten magnetisk kobling.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "Tre ",
+          {
+            "term": "spole",
+            "text": "spoler"
+          },
+          " på ",
+          {
+            "q": 15,
+            "u": "µH"
+          },
+          ", ",
+          {
+            "q": 33,
+            "u": "µH"
+          },
+          " og ",
+          {
+            "q": 4.7,
+            "u": "µH"
+          },
+          " er koblet ",
+          {
+            "term": "seriekobling",
+            "text": "i serie"
+          },
+          ". De står så langt fra hverandre at det ikke er magnetisk kobling mellom dem."
+        ]
+      ],
+      "stem": [
+        [
+          "Hva blir den samlede ",
+          {
+            "term": "induktans",
+            "text": "induktansen"
+          },
+          "?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 52.7,
+              "u": "µH"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 3.23,
+              "u": "µH"
+            }
+          ],
+          "feedback": [
+            [
+              "Dette er regnet som om spolene sto ",
+              {
+                "term": "parallellkobling",
+                "text": "i parallell"
+              },
+              ". I serie legges induktansene sammen som resistanser i serie."
+            ]
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 33,
+              "u": "µH"
+            }
+          ],
+          "feedback": [
+            "Den største spolen alene gir ikke den samlede verdien. Alle tre bidrar."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 527,
+              "u": "µH"
+            }
+          ],
+          "feedback": [
+            "Summen er riktig regnet, men kommaet har havnet feil. 15 + 33 + 4,7 er 52,7."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Uten gjensidig induktans adderes induktanser i serie på samme måte som resistanser:"
+        ],
+        {
+          "steps": [
+            [
+              {
+                "math": [
+                  "L",
+                  "=",
+                  "L_1",
+                  "+",
+                  "L_2",
+                  "+",
+                  "L_3",
+                  "=",
+                  {
+                    "q": 15,
+                    "u": "µH"
+                  },
+                  "+",
+                  {
+                    "q": 33,
+                    "u": "µH"
+                  },
+                  "+",
+                  {
+                    "q": 4.7,
+                    "u": "µH"
+                  },
+                  "=",
+                  {
+                    "q": 52.7,
+                    "u": "µH"
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        [
+          "Hver spole lager sin egen motspenning når ",
+          {
+            "term": "strom",
+            "text": "strømmen"
+          },
+          " endres, og disse legges sammen. Står spolene nær hverandre, kan den magnetiske koblingen øke eller minske totalen."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "calculation": {
+        "formula": "series_inductance",
+        "inputs": {
+          "L1": [
+            15,
+            "µH"
+          ],
+          "L2": [
+            33,
+            "µH"
+          ],
+          "L3": [
+            4.7,
+            "µH"
+          ]
+        },
+        "answer": [
+          52.7,
+          "µH"
+        ],
+        "answer_symbol": "L",
+        "sig_figs": 3,
+        "visual_bindings": {
+          "L": "L_total"
+        }
+      },
+      "study_reference": {
+        "chapter": 2,
+        "section_id": "s2-27",
+        "printed_pages": [
+          "2-11"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "956a12192cffc79c"
+        ]
+      },
+      "tags": [],
+      "visual": {
+        "template": "rlc-circuit",
+        "version": 1,
+        "params": {
+          "topology": "series",
+          "components": [
+            {
+              "kind": "L",
+              "value": 1.5e-05
+            },
+            {
+              "kind": "L",
+              "value": 3.3e-05
+            },
+            {
+              "kind": "L",
+              "value": 4.7e-06
+            }
+          ],
+          "total_label": "unknown"
+        },
+        "params_after": {
+          "total_label": "value"
+        }
+      },
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "AI-assistent (Claude), figurer",
+        "based_on": 2,
+        "at": "2026-10-23T20:54:14+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T20:54:14+00:00",
+          "actor": "AI-assistent (Claude), figurer",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "d46c092de4701c5d111db8ab46f7906cf69f7761339dcb795ef33ddbb36fd989",
+          "note": "figur lagt til (teksten uendret)"
+        },
+        {
+          "at": "2026-10-23T20:54:15+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "d46c092de4701c5d111db8ab46f7906cf69f7761339dcb795ef33ddbb36fd989",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T20:58:39+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "d46c092de4701c5d111db8ab46f7906cf69f7761339dcb795ef33ddbb36fd989",
+          "note": "Godkjent av redaktør: figur lagt til, teksten uendret fra forrige godkjente versjon. Sidehenvisninger er fortsatt ikke kontrollert mot trykt bok.",
+          "acknowledged": [
+            "figures",
+            "ocr"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "d46c092de4701c5d111db8ab46f7906cf69f7761339dcb795ef33ddbb36fd989",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: equation, numeric_low_conf. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-23T20:58:39+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-23T20:58:39+00:00",
+        "content_sha256": "d46c092de4701c5d111db8ab46f7906cf69f7761339dcb795ef33ddbb36fd989",
         "acknowledged_hazards": [
           "figures",
           "ocr"

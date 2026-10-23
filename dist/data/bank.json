@@ -1,8 +1,8 @@
 {
   "schema": 1,
   "mode": "production",
-  "built_at": "2026-10-23T20:43:52+00:00",
-  "bank_id": "6c72a7fc31a03b98",
+  "built_at": "2026-10-23T20:58:41+00:00",
+  "bank_id": "33f272944f0bd69c",
   "book": {
     "title": "Veien til internasjonal radioamatørlisens"
   },
@@ -2394,6 +2394,353 @@
         }
       }
     },
+    "rectifier@1": {
+      "id": "rectifier",
+      "version": 1,
+      "title": "Likeretter",
+      "idealised": "Forenklet koblingsskjema. Diodene er tegnet slik at plussiden av utgangen er øverst.",
+      "params": {
+        "type": "object",
+        "required": [
+          "kind"
+        ],
+        "properties": {
+          "kind": {
+            "type": "string",
+            "enum": [
+              "half",
+              "bridge"
+            ]
+          },
+          "source": {
+            "type": "object",
+            "properties": {
+              "u_rms": {
+                "type": "number",
+                "minimum": 0.001,
+                "maximum": 100000,
+                "unit": "V",
+                "nullable": true
+              },
+              "u_peak": {
+                "type": "number",
+                "minimum": 0.001,
+                "maximum": 100000,
+                "unit": "V",
+                "nullable": true
+              },
+              "name": {
+                "type": "string",
+                "maxLength": 16,
+                "default": ""
+              },
+              "show_value": {
+                "type": "boolean",
+                "default": true
+              }
+            },
+            "default": {
+              "name": "",
+              "show_value": true
+            }
+          },
+          "capacitor": {
+            "type": "boolean",
+            "default": false
+          },
+          "load": {
+            "type": "boolean",
+            "default": true
+          },
+          "load_name": {
+            "type": "string",
+            "enum": [
+              "R_L",
+              "R"
+            ],
+            "default": "R_L"
+          },
+          "output_label": {
+            "type": "string",
+            "enum": [
+              "none",
+              "unknown"
+            ],
+            "default": "none"
+          }
+        }
+      }
+    },
+    "rlc-circuit@1": {
+      "id": "rlc-circuit",
+      "version": 1,
+      "title": "Krets med R, C og L",
+      "idealised": "Ideelle komponenter og ledninger uten motstand; ingen kobling mellom spolene.",
+      "params": {
+        "type": "object",
+        "required": [
+          "topology",
+          "components"
+        ],
+        "properties": {
+          "source": {
+            "type": "object",
+            "properties": {
+              "kind": {
+                "type": "string",
+                "enum": [
+                  "none",
+                  "dc",
+                  "ac"
+                ],
+                "default": "none"
+              },
+              "voltage_v": {
+                "type": "number",
+                "minimum": 0.001,
+                "maximum": 100000,
+                "unit": "V",
+                "nullable": true
+              },
+              "frequency_hz": {
+                "type": "number",
+                "minimum": 0.1,
+                "maximum": 3000000000.0,
+                "unit": "Hz",
+                "nullable": true
+              },
+              "show_voltage": {
+                "type": "boolean",
+                "default": true
+              },
+              "show_frequency": {
+                "type": "boolean",
+                "default": true
+              }
+            },
+            "default": {
+              "kind": "none",
+              "show_voltage": true,
+              "show_frequency": true
+            }
+          },
+          "topology": {
+            "type": "string",
+            "enum": [
+              "series",
+              "parallel"
+            ]
+          },
+          "components": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 3,
+            "items": {
+              "type": "object",
+              "required": [
+                "kind",
+                "value"
+              ],
+              "properties": {
+                "kind": {
+                  "type": "string",
+                  "enum": [
+                    "R",
+                    "C",
+                    "L"
+                  ]
+                },
+                "value": {
+                  "type": "number",
+                  "minimum": 1e-15,
+                  "maximum": 100000000.0
+                },
+                "show_value": {
+                  "type": "boolean",
+                  "default": true
+                }
+              }
+            }
+          },
+          "switch": {
+            "type": "boolean",
+            "default": false
+          },
+          "total_label": {
+            "type": "string",
+            "enum": [
+              "none",
+              "unknown",
+              "value"
+            ],
+            "default": "none"
+          },
+          "label_style": {
+            "type": "string",
+            "enum": [
+              "values",
+              "names"
+            ],
+            "default": "values"
+          }
+        }
+      }
+    },
+    "transformer@1": {
+      "id": "transformer",
+      "version": 1,
+      "title": "Transformator",
+      "idealised": "Ideell, tapsfri transformator.",
+      "params": {
+        "type": "object",
+        "required": [
+          "turns_primary",
+          "turns_secondary"
+        ],
+        "properties": {
+          "turns_primary": {
+            "type": "number",
+            "minimum": 1,
+            "maximum": 100000
+          },
+          "turns_secondary": {
+            "type": "number",
+            "minimum": 1,
+            "maximum": 100000
+          },
+          "turns_display": {
+            "type": "string",
+            "enum": [
+              "numbers",
+              "ratio",
+              "none"
+            ],
+            "default": "numbers"
+          },
+          "primary_voltage_v": {
+            "type": "number",
+            "minimum": 0.001,
+            "maximum": 100000,
+            "unit": "V",
+            "nullable": true
+          },
+          "show_primary_voltage": {
+            "type": "boolean",
+            "default": true
+          },
+          "load_ohms": {
+            "type": "number",
+            "minimum": 0.01,
+            "maximum": 100000000.0,
+            "unit": "Ω",
+            "nullable": true
+          },
+          "show_load": {
+            "type": "boolean",
+            "default": true
+          },
+          "secondary_label": {
+            "type": "string",
+            "enum": [
+              "none",
+              "unknown",
+              "value"
+            ],
+            "default": "none"
+          },
+          "input_label": {
+            "type": "string",
+            "enum": [
+              "none",
+              "unknown"
+            ],
+            "default": "none"
+          }
+        }
+      }
+    },
+    "transistor-stage@1": {
+      "id": "transistor-stage",
+      "version": 1,
+      "title": "Transistortrinn",
+      "idealised": "Forenklet koblingsskjema av et forsterkertrinn med NPN-transistor.",
+      "params": {
+        "type": "object",
+        "required": [
+          "vcc_v"
+        ],
+        "properties": {
+          "vcc_v": {
+            "type": "number",
+            "minimum": 0.1,
+            "maximum": 1000,
+            "unit": "V"
+          },
+          "show_vcc": {
+            "type": "boolean",
+            "default": true
+          },
+          "rc_ohms": {
+            "type": "number",
+            "minimum": 0.1,
+            "maximum": 10000000.0,
+            "unit": "Ω",
+            "nullable": true
+          },
+          "re_ohms": {
+            "type": "number",
+            "minimum": 0.1,
+            "maximum": 10000000.0,
+            "unit": "Ω",
+            "nullable": true
+          },
+          "show_resistor_values": {
+            "type": "boolean",
+            "default": true
+          },
+          "bypass_capacitor": {
+            "type": "boolean",
+            "default": false
+          },
+          "divider": {
+            "type": "boolean",
+            "default": false
+          },
+          "coupling": {
+            "type": "boolean",
+            "default": false
+          },
+          "labels": {
+            "type": "array",
+            "maxItems": 4,
+            "default": [],
+            "items": {
+              "type": "object",
+              "required": [
+                "node"
+              ],
+              "properties": {
+                "node": {
+                  "type": "string",
+                  "enum": [
+                    "B",
+                    "E",
+                    "C",
+                    "IC"
+                  ]
+                },
+                "value": {
+                  "type": "number",
+                  "minimum": -1000,
+                  "maximum": 1000,
+                  "nullable": true
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "waveform@1": {
       "id": "waveform",
       "version": 1,
@@ -3836,7 +4183,7 @@
     },
     {
       "id": "q-0008",
-      "rev": 2,
+      "rev": 3,
       "chapter": 2,
       "sections": [
         "s2-21"
@@ -3976,7 +4323,27 @@
           "."
         ]
       ],
-      "visual": null,
+      "visual": {
+        "template": "rlc-circuit",
+        "version": 1,
+        "params": {
+          "topology": "parallel",
+          "components": [
+            {
+              "kind": "C",
+              "value": 1e-07
+            },
+            {
+              "kind": "C",
+              "value": 2.2e-07
+            }
+          ],
+          "total_label": "unknown"
+        },
+        "params_after": {
+          "total_label": "value"
+        }
+      },
       "glossary_after_answer": [],
       "ref": {
         "chapter": 2,
@@ -3988,7 +4355,7 @@
     },
     {
       "id": "q-0009",
-      "rev": 2,
+      "rev": 3,
       "chapter": 2,
       "sections": [
         "s2-22"
@@ -4145,7 +4512,27 @@
         },
         "To like kondensatorer i serie gir halvparten av verdien til én. Det er som om avstanden mellom platene økte, og da synker kapasitansen."
       ],
-      "visual": null,
+      "visual": {
+        "template": "rlc-circuit",
+        "version": 1,
+        "params": {
+          "topology": "series",
+          "components": [
+            {
+              "kind": "C",
+              "value": 1e-05
+            },
+            {
+              "kind": "C",
+              "value": 1e-05
+            }
+          ],
+          "total_label": "unknown"
+        },
+        "params_after": {
+          "total_label": "value"
+        }
+      },
       "glossary_after_answer": [],
       "ref": {
         "chapter": 2,
@@ -4365,7 +4752,7 @@
     },
     {
       "id": "q-0011",
-      "rev": 2,
+      "rev": 3,
       "chapter": 2,
       "sections": [
         "s2-35"
@@ -4483,7 +4870,24 @@
         ],
         "Med høyere frekvens må strømmen endre seg raskere, og spolen motvirker raske endringer sterkere."
       ],
-      "visual": null,
+      "visual": {
+        "template": "rlc-circuit",
+        "version": 1,
+        "params": {
+          "source": {
+            "kind": "ac",
+            "frequency_hz": 50
+          },
+          "topology": "series",
+          "components": [
+            {
+              "kind": "L",
+              "value": 0.1
+            }
+          ],
+          "label_style": "names"
+        }
+      },
       "glossary_after_answer": [],
       "ref": {
         "chapter": 2,
@@ -4829,7 +5233,7 @@
     },
     {
       "id": "q-0014",
-      "rev": 2,
+      "rev": 3,
       "chapter": 2,
       "sections": [
         "s2-41"
@@ -4948,7 +5352,28 @@
           "."
         ]
       ],
-      "visual": null,
+      "visual": {
+        "template": "rlc-circuit",
+        "version": 1,
+        "params": {
+          "source": {
+            "kind": "ac",
+            "frequency_hz": 50
+          },
+          "topology": "series",
+          "components": [
+            {
+              "kind": "L",
+              "value": 0.001
+            },
+            {
+              "kind": "C",
+              "value": 1e-06
+            }
+          ],
+          "label_style": "names"
+        }
+      },
       "glossary_after_answer": [
         "resonans"
       ],
@@ -5307,7 +5732,7 @@
     },
     {
       "id": "q-0017",
-      "rev": 2,
+      "rev": 3,
       "chapter": 3,
       "sections": [
         "s3-06"
@@ -5455,7 +5880,17 @@
           ", og hele spenningen ligger over dioden."
         ]
       ],
-      "visual": null,
+      "visual": {
+        "template": "rectifier",
+        "version": 1,
+        "params": {
+          "kind": "half",
+          "source": {
+            "u_peak": 10
+          },
+          "output_label": "unknown"
+        }
+      },
       "glossary_after_answer": [],
       "ref": {
         "chapter": 3,
@@ -5696,7 +6131,7 @@
     },
     {
       "id": "q-0020",
-      "rev": 2,
+      "rev": 3,
       "chapter": 3,
       "sections": [
         "s3-19"
@@ -5809,7 +6244,18 @@
         "Når spenningen på basis øker, øker kollektorstrømmen. Da blir spenningsfallet over kollektormotstanden større, og spenningen på kollektoren synker.",
         "Inngangen går altså opp når utgangen går ned. Signalet blir snudd, det vil si forskjøvet 180°."
       ],
-      "visual": null,
+      "visual": {
+        "template": "transistor-stage",
+        "version": 1,
+        "params": {
+          "vcc_v": 12,
+          "show_vcc": false,
+          "rc_ohms": 2200,
+          "show_resistor_values": false,
+          "divider": true,
+          "coupling": true
+        }
+      },
       "glossary_after_answer": [],
       "ref": {
         "chapter": 3,
@@ -7140,7 +7586,7 @@
     },
     {
       "id": "q-0030",
-      "rev": 2,
+      "rev": 3,
       "chapter": 6,
       "sections": [
         "s6-10",
@@ -7313,7 +7759,46 @@
           " før blanderen."
         ]
       ],
-      "visual": null,
+      "visual": {
+        "template": "block-diagram",
+        "version": 1,
+        "params": {
+          "chain": [
+            {
+              "kind": "antenna"
+            },
+            {
+              "kind": "rf_amp"
+            },
+            {
+              "kind": "mixer"
+            },
+            {
+              "kind": "if_filter"
+            },
+            {
+              "kind": "if_amp"
+            }
+          ],
+          "side": [
+            {
+              "kind": "local_osc",
+              "label": "LO (over signalet)",
+              "into": 2
+            }
+          ],
+          "edge_labels": [
+            {
+              "after": 1,
+              "text": "144,5 MHz"
+            },
+            {
+              "after": 2,
+              "text": "10,7 MHz"
+            }
+          ]
+        }
+      },
       "glossary_after_answer": [],
       "ref": {
         "chapter": 6,
@@ -8085,7 +8570,7 @@
     },
     {
       "id": "q-0037",
-      "rev": 2,
+      "rev": 3,
       "chapter": 2,
       "sections": [
         "s2-20"
@@ -8236,7 +8721,27 @@
         },
         "Ohm ganget med farad gir sekunder. Etter omtrent fem tidskonstanter regnes kondensatoren som praktisk talt fullt oppladet."
       ],
-      "visual": null,
+      "visual": {
+        "template": "rlc-circuit",
+        "version": 1,
+        "params": {
+          "source": {
+            "kind": "dc"
+          },
+          "topology": "series",
+          "components": [
+            {
+              "kind": "R",
+              "value": 47000
+            },
+            {
+              "kind": "C",
+              "value": 2.2e-05
+            }
+          ],
+          "switch": true
+        }
+      },
       "glossary_after_answer": [],
       "ref": {
         "chapter": 2,
@@ -8746,7 +9251,7 @@
     },
     {
       "id": "q-0042",
-      "rev": 2,
+      "rev": 3,
       "chapter": 2,
       "sections": [
         "s2-27"
@@ -8905,7 +9410,31 @@
           " endres, og disse legges sammen. Står spolene nær hverandre, kan den magnetiske koblingen øke eller minske totalen."
         ]
       ],
-      "visual": null,
+      "visual": {
+        "template": "rlc-circuit",
+        "version": 1,
+        "params": {
+          "topology": "series",
+          "components": [
+            {
+              "kind": "L",
+              "value": 1.5e-05
+            },
+            {
+              "kind": "L",
+              "value": 3.3e-05
+            },
+            {
+              "kind": "L",
+              "value": 4.7e-06
+            }
+          ],
+          "total_label": "unknown"
+        },
+        "params_after": {
+          "total_label": "value"
+        }
+      },
       "glossary_after_answer": [],
       "ref": {
         "chapter": 2,
@@ -9102,7 +9631,7 @@
     },
     {
       "id": "q-0044",
-      "rev": 2,
+      "rev": 3,
       "chapter": 2,
       "sections": [
         "s2-33"
@@ -9215,7 +9744,24 @@
           ")."
         ]
       ],
-      "visual": null,
+      "visual": {
+        "template": "rlc-circuit",
+        "version": 1,
+        "params": {
+          "source": {
+            "kind": "ac",
+            "frequency_hz": 50
+          },
+          "topology": "series",
+          "components": [
+            {
+              "kind": "C",
+              "value": 1e-06
+            }
+          ],
+          "label_style": "names"
+        }
+      },
       "glossary_after_answer": [],
       "ref": {
         "chapter": 2,
@@ -9421,7 +9967,7 @@
     },
     {
       "id": "q-0046",
-      "rev": 2,
+      "rev": 3,
       "chapter": 2,
       "sections": [
         "s2-40"
@@ -9532,7 +10078,28 @@
           " blir √(R² + X_L²)."
         ]
       ],
-      "visual": null,
+      "visual": {
+        "template": "rlc-circuit",
+        "version": 1,
+        "params": {
+          "source": {
+            "kind": "ac",
+            "frequency_hz": 50
+          },
+          "topology": "series",
+          "components": [
+            {
+              "kind": "R",
+              "value": 100
+            },
+            {
+              "kind": "L",
+              "value": 0.1
+            }
+          ],
+          "label_style": "names"
+        }
+      },
       "glossary_after_answer": [],
       "ref": {
         "chapter": 2,
@@ -9653,7 +10220,7 @@
     },
     {
       "id": "q-0048",
-      "rev": 2,
+      "rev": 3,
       "chapter": 2,
       "sections": [
         "s2-44"
@@ -9759,7 +10326,28 @@
           " er høy og resistiv. Derfor brukes en parallellresonanskrets ofte som sperrekrets."
         ]
       ],
-      "visual": null,
+      "visual": {
+        "template": "rlc-circuit",
+        "version": 1,
+        "params": {
+          "source": {
+            "kind": "ac",
+            "frequency_hz": 50
+          },
+          "topology": "parallel",
+          "components": [
+            {
+              "kind": "L",
+              "value": 0.001
+            },
+            {
+              "kind": "C",
+              "value": 1e-06
+            }
+          ],
+          "label_style": "names"
+        }
+      },
       "glossary_after_answer": [],
       "ref": {
         "chapter": 2,
@@ -10576,7 +11164,7 @@
     },
     {
       "id": "q-0054",
-      "rev": 2,
+      "rev": 3,
       "chapter": 2,
       "sections": [
         "s2-50"
@@ -10733,7 +11321,19 @@
           " på sekundærsiden større enn på primærsiden, i samme forhold som primærsiden har flere vindinger enn sekundærsiden."
         ]
       ],
-      "visual": null,
+      "visual": {
+        "template": "transformer",
+        "version": 1,
+        "params": {
+          "turns_primary": 1150,
+          "turns_secondary": 60,
+          "primary_voltage_v": 230,
+          "secondary_label": "unknown"
+        },
+        "params_after": {
+          "secondary_label": "value"
+        }
+      },
       "glossary_after_answer": [],
       "ref": {
         "chapter": 2,
@@ -10746,7 +11346,7 @@
     },
     {
       "id": "q-0055",
-      "rev": 2,
+      "rev": 3,
       "chapter": 2,
       "sections": [
         "s2-50"
@@ -10899,7 +11499,17 @@
           "."
         ]
       ],
-      "visual": null,
+      "visual": {
+        "template": "transformer",
+        "version": 1,
+        "params": {
+          "turns_primary": 3,
+          "turns_secondary": 1,
+          "turns_display": "ratio",
+          "load_ohms": 50,
+          "input_label": "unknown"
+        }
+      },
       "glossary_after_answer": [],
       "ref": {
         "chapter": 2,
@@ -11662,7 +12272,7 @@
     },
     {
       "id": "q-0063",
-      "rev": 2,
+      "rev": 3,
       "chapter": 3,
       "sections": [
         "s3-06"
@@ -11839,7 +12449,18 @@
         },
         "Dioden bør derfor velges med god margin over dette, for eksempel en diode som tåler minst 100 V i sperreretningen."
       ],
-      "visual": null,
+      "visual": {
+        "template": "rectifier",
+        "version": 1,
+        "params": {
+          "kind": "half",
+          "source": {
+            "u_rms": 15
+          },
+          "capacitor": true,
+          "load": false
+        }
+      },
       "glossary_after_answer": [],
       "ref": {
         "chapter": 3,
@@ -11852,7 +12473,7 @@
     },
     {
       "id": "q-0064",
-      "rev": 2,
+      "rev": 3,
       "chapter": 3,
       "sections": [
         "s3-08",
@@ -11999,7 +12620,17 @@
         },
         "Fordelen med broen er at man får fullbølgelikeretting uten midtuttak på transformatoren. Prisen er to diodefall i stedet for ett."
       ],
-      "visual": null,
+      "visual": {
+        "template": "rectifier",
+        "version": 1,
+        "params": {
+          "kind": "bridge",
+          "source": {
+            "u_peak": 14
+          },
+          "output_label": "unknown"
+        }
+      },
       "glossary_after_answer": [],
       "ref": {
         "chapter": 3,
@@ -12280,7 +12911,7 @@
     },
     {
       "id": "q-0067",
-      "rev": 2,
+      "rev": 3,
       "chapter": 3,
       "sections": [
         "s3-16"
@@ -12479,7 +13110,24 @@
           " prøver å øke, øker spenningen over R_E. Basisspenningen ligger fast, så spenningen mellom basis og emitter blir mindre, og strømmen trekkes tilbake."
         ]
       ],
-      "visual": null,
+      "visual": {
+        "template": "transistor-stage",
+        "version": 1,
+        "params": {
+          "vcc_v": 12,
+          "show_vcc": false,
+          "rc_ohms": 2200,
+          "re_ohms": 1200,
+          "show_resistor_values": false,
+          "divider": true,
+          "labels": [
+            {
+              "node": "B",
+              "value": 2.4
+            }
+          ]
+        }
+      },
       "glossary_after_answer": [],
       "ref": {
         "chapter": 3,
@@ -12492,7 +13140,7 @@
     },
     {
       "id": "q-0068",
-      "rev": 2,
+      "rev": 3,
       "chapter": 3,
       "sections": [
         "s3-16"
@@ -12594,7 +13242,20 @@
           " ved signalfrekvensen og legger emitteren til jord for signalet. For likestrøm er den et brudd, så stabiliseringen av arbeidspunktet virker fortsatt."
         ]
       ],
-      "visual": null,
+      "visual": {
+        "template": "transistor-stage",
+        "version": 1,
+        "params": {
+          "vcc_v": 12,
+          "show_vcc": false,
+          "rc_ohms": 2200,
+          "re_ohms": 1000,
+          "show_resistor_values": false,
+          "bypass_capacitor": true,
+          "divider": true,
+          "coupling": true
+        }
+      },
       "glossary_after_answer": [],
       "ref": {
         "chapter": 3,
@@ -12606,7 +13267,7 @@
     },
     {
       "id": "q-0069",
-      "rev": 2,
+      "rev": 3,
       "chapter": 3,
       "sections": [
         "s3-15"
@@ -12751,7 +13412,25 @@
         },
         "Denne effekten avgis hele tiden, også uten signal. Transistoren må tåle den, og ved større effekter trengs kjøleribbe."
       ],
-      "visual": null,
+      "visual": {
+        "template": "transistor-stage",
+        "version": 1,
+        "params": {
+          "vcc_v": 12,
+          "rc_ohms": 400,
+          "show_resistor_values": false,
+          "labels": [
+            {
+              "node": "C",
+              "value": 6
+            },
+            {
+              "node": "IC",
+              "value": 0.015
+            }
+          ]
+        }
+      },
       "glossary_after_answer": [],
       "ref": {
         "chapter": 3,
@@ -15877,7 +16556,7 @@
     },
     {
       "id": "q-0093",
-      "rev": 2,
+      "rev": 3,
       "chapter": 4,
       "sections": [
         "s4-26"
@@ -16067,7 +16746,40 @@
           ". Ved å bytte VFO-område og filter kan samme prinsipp brukes på andre bånd."
         ]
       ],
-      "visual": null,
+      "visual": {
+        "template": "block-diagram",
+        "version": 1,
+        "params": {
+          "chain": [
+            {
+              "kind": "custom",
+              "label": "SSB 9,0 MHz"
+            },
+            {
+              "kind": "mixer"
+            },
+            {
+              "kind": "bandpass_filter"
+            },
+            {
+              "kind": "power_amp"
+            }
+          ],
+          "side": [
+            {
+              "kind": "vfo",
+              "label": "VFO 5,2 MHz",
+              "into": 1
+            }
+          ],
+          "edge_labels": [
+            {
+              "after": 1,
+              "text": "?"
+            }
+          ]
+        }
+      },
       "glossary_after_answer": [
         "blander"
       ],
@@ -17897,7 +18609,7 @@
     },
     {
       "id": "q-0110",
-      "rev": 2,
+      "rev": 3,
       "chapter": 6,
       "sections": [
         "s6-08"
@@ -17992,7 +18704,39 @@
           "."
         ]
       ],
-      "visual": null,
+      "visual": {
+        "template": "block-diagram",
+        "version": 1,
+        "params": {
+          "chain": [
+            {
+              "kind": "antenna"
+            },
+            {
+              "kind": "rf_amp",
+              "highlight": true
+            },
+            {
+              "kind": "mixer"
+            },
+            {
+              "kind": "if_filter"
+            },
+            {
+              "kind": "if_amp"
+            },
+            {
+              "kind": "demodulator"
+            }
+          ],
+          "side": [
+            {
+              "kind": "local_osc",
+              "into": 2
+            }
+          ]
+        }
+      },
       "glossary_after_answer": [],
       "ref": {
         "chapter": 6,
@@ -18661,7 +19405,7 @@
     },
     {
       "id": "q-0116",
-      "rev": 2,
+      "rev": 3,
       "chapter": 6,
       "sections": [
         "s6-18"
@@ -18776,7 +19520,18 @@
           "."
         ]
       ],
-      "visual": null,
+      "visual": {
+        "template": "rectifier",
+        "version": 1,
+        "params": {
+          "kind": "half",
+          "source": {
+            "name": "MF-signal"
+          },
+          "capacitor": true,
+          "load_name": "R"
+        }
+      },
       "glossary_after_answer": [],
       "ref": {
         "chapter": 6,
@@ -19243,7 +19998,7 @@
     },
     {
       "id": "q-0120",
-      "rev": 2,
+      "rev": 3,
       "chapter": 6,
       "sections": [
         "s6-27",
@@ -19345,7 +20100,25 @@
           ". Trengs en forforsterker, er moderat forsterkning, gjerne rundt 10 dB, vanligvis nok."
         ]
       ],
-      "visual": null,
+      "visual": {
+        "template": "block-diagram",
+        "version": 1,
+        "params": {
+          "chain": [
+            {
+              "kind": "antenna"
+            },
+            {
+              "kind": "custom",
+              "label": "Forforsterker 20 dB"
+            },
+            {
+              "kind": "custom",
+              "label": "Mottaker"
+            }
+          ]
+        }
+      },
       "glossary_after_answer": [],
       "ref": {
         "chapter": 6,
@@ -19357,7 +20130,7 @@
     },
     {
       "id": "q-0121",
-      "rev": 2,
+      "rev": 3,
       "chapter": 6,
       "sections": [
         "s6-26",
@@ -19451,7 +20224,29 @@
           " i forforsterkeren bør bare slippe gjennom ønsket bånd."
         ]
       ],
-      "visual": null,
+      "visual": {
+        "template": "block-diagram",
+        "version": 1,
+        "params": {
+          "chain": [
+            {
+              "kind": "antenna"
+            },
+            {
+              "kind": "custom",
+              "label": "Forforsterker i masten"
+            },
+            {
+              "kind": "custom",
+              "label": "Lang kabel med tap"
+            },
+            {
+              "kind": "custom",
+              "label": "Mottaker"
+            }
+          ]
+        }
+      },
       "glossary_after_answer": [],
       "ref": {
         "chapter": 6,

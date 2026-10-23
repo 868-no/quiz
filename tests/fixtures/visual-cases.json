@@ -715,6 +715,468 @@
     "U_p": true,
     "U_pp": true
    }
+  },
+  {
+   "name": "rlc two capacitors in parallel add",
+   "valid": true,
+   "visual": {
+    "template": "rlc-circuit",
+    "version": 1,
+    "params": {
+     "topology": "parallel",
+     "components": [
+      {
+       "kind": "C",
+       "value": 1e-07
+      },
+      {
+       "kind": "C",
+       "value": 2.2e-07
+      }
+     ],
+     "total_label": "unknown"
+    }
+   },
+   "quantities": {
+    "C_total": 3.2e-07,
+    "C1": 1e-07
+   },
+   "shown": {
+    "C_total": false,
+    "C1": true
+   }
+  },
+  {
+   "name": "rlc two equal capacitors in series halve",
+   "valid": true,
+   "visual": {
+    "template": "rlc-circuit",
+    "version": 1,
+    "params": {
+     "topology": "series",
+     "components": [
+      {
+       "kind": "C",
+       "value": 1e-05
+      },
+      {
+       "kind": "C",
+       "value": 1e-05
+      }
+     ]
+    }
+   },
+   "quantities": {
+    "C_total": 5e-06
+   },
+   "shown": {}
+  },
+  {
+   "name": "rlc three coils in series add",
+   "valid": true,
+   "visual": {
+    "template": "rlc-circuit",
+    "version": 1,
+    "params": {
+     "topology": "series",
+     "components": [
+      {
+       "kind": "L",
+       "value": 1.5e-05
+      },
+      {
+       "kind": "L",
+       "value": 3.3e-05
+      },
+      {
+       "kind": "L",
+       "value": 4.7e-06
+      }
+     ],
+     "total_label": "value"
+    }
+   },
+   "quantities": {
+    "L_total": 5.27e-05
+   },
+   "shown": {
+    "L_total": true
+   }
+  },
+  {
+   "name": "rlc series RC on AC: impedance",
+   "valid": true,
+   "visual": {
+    "template": "rlc-circuit",
+    "version": 1,
+    "params": {
+     "source": {
+      "kind": "ac",
+      "frequency_hz": 1000
+     },
+     "topology": "series",
+     "components": [
+      {
+       "kind": "R",
+       "value": 30
+      },
+      {
+       "kind": "C",
+       "value": 3.978873577297384e-06
+      }
+     ],
+     "total_label": "unknown"
+    }
+   },
+   "quantities": {
+    "X_C": 40,
+    "Z": 50
+   },
+   "shown": {
+    "Z": false,
+    "f": true
+   }
+  },
+  {
+   "name": "rlc RC with DC source: time constant",
+   "valid": true,
+   "visual": {
+    "template": "rlc-circuit",
+    "version": 1,
+    "params": {
+     "source": {
+      "kind": "dc",
+      "voltage_v": 12
+     },
+     "topology": "series",
+     "components": [
+      {
+       "kind": "R",
+       "value": 47000
+      },
+      {
+       "kind": "C",
+       "value": 2.2e-05
+      }
+     ],
+     "switch": true
+    }
+   },
+   "quantities": {
+    "tau": 1.034,
+    "U": 12
+   },
+   "shown": {
+    "U": true
+   }
+  },
+  {
+   "name": "rlc LC resonance",
+   "valid": true,
+   "visual": {
+    "template": "rlc-circuit",
+    "version": 1,
+    "params": {
+     "source": {
+      "kind": "ac",
+      "frequency_hz": 5000000.0
+     },
+     "topology": "parallel",
+     "components": [
+      {
+       "kind": "L",
+       "value": 1e-05
+      },
+      {
+       "kind": "C",
+       "value": 1e-10
+      }
+     ]
+    }
+   },
+   "quantities": {
+    "f0": 5032921.210448704
+   },
+   "shown": {}
+  },
+  {
+   "name": "rlc AC source needs a frequency",
+   "valid": false,
+   "error": "frequency_hz",
+   "visual": {
+    "template": "rlc-circuit",
+    "version": 1,
+    "params": {
+     "source": {
+      "kind": "ac"
+     },
+     "topology": "series",
+     "components": [
+      {
+       "kind": "R",
+       "value": 10
+      }
+     ]
+    }
+   }
+  },
+  {
+   "name": "rlc switch needs a series circuit with a source",
+   "valid": false,
+   "error": "switch",
+   "visual": {
+    "template": "rlc-circuit",
+    "version": 1,
+    "params": {
+     "topology": "series",
+     "components": [
+      {
+       "kind": "R",
+       "value": 10
+      }
+     ],
+     "switch": true
+    }
+   }
+  },
+  {
+   "name": "rlc total of mixed kinds without AC is undefined",
+   "valid": false,
+   "error": "total_label",
+   "visual": {
+    "template": "rlc-circuit",
+    "version": 1,
+    "params": {
+     "topology": "parallel",
+     "components": [
+      {
+       "kind": "R",
+       "value": 10
+      },
+      {
+       "kind": "C",
+       "value": 1e-06
+      }
+     ],
+     "total_label": "unknown"
+    }
+   }
+  },
+  {
+   "name": "rectifier rms gives peak",
+   "valid": true,
+   "visual": {
+    "template": "rectifier",
+    "version": 1,
+    "params": {
+     "kind": "half",
+     "source": {
+      "u_rms": 15
+     },
+     "capacitor": true,
+     "load": false
+    }
+   },
+   "quantities": {
+    "U_rms": 15,
+    "U_p": 21.213203435596427
+   },
+   "shown": {
+    "U_rms": true,
+    "U_p": false
+   }
+  },
+  {
+   "name": "rectifier bridge with peak",
+   "valid": true,
+   "visual": {
+    "template": "rectifier",
+    "version": 1,
+    "params": {
+     "kind": "bridge",
+     "source": {
+      "u_peak": 14
+     }
+    }
+   },
+   "quantities": {
+    "U_p": 14
+   },
+   "shown": {
+    "U_p": true
+   }
+  },
+  {
+   "name": "rectifier needs load or capacitor",
+   "valid": false,
+   "error": "load",
+   "visual": {
+    "template": "rectifier",
+    "version": 1,
+    "params": {
+     "kind": "half",
+     "load": false
+    }
+   }
+  },
+  {
+   "name": "rectifier rms and peak together",
+   "valid": false,
+   "error": "either",
+   "visual": {
+    "template": "rectifier",
+    "version": 1,
+    "params": {
+     "kind": "half",
+     "source": {
+      "u_rms": 1,
+      "u_peak": 2
+     }
+    }
+   }
+  },
+  {
+   "name": "transformer secondary voltage",
+   "valid": true,
+   "visual": {
+    "template": "transformer",
+    "version": 1,
+    "params": {
+     "turns_primary": 1150,
+     "turns_secondary": 60,
+     "primary_voltage_v": 230,
+     "secondary_label": "unknown"
+    }
+   },
+   "quantities": {
+    "U_s": 12,
+    "N_p": 1150
+   },
+   "shown": {
+    "U_s": false,
+    "N_p": true
+   }
+  },
+  {
+   "name": "transformer impedance transformation",
+   "valid": true,
+   "visual": {
+    "template": "transformer",
+    "version": 1,
+    "params": {
+     "turns_primary": 3,
+     "turns_secondary": 1,
+     "turns_display": "ratio",
+     "load_ohms": 50,
+     "input_label": "unknown"
+    }
+   },
+   "quantities": {
+    "Z_p": 450,
+    "ratio": 3
+   },
+   "shown": {
+    "Z_p": false,
+    "N_p": false,
+    "ratio": true
+   }
+  },
+  {
+   "name": "transformer secondary label needs a primary voltage",
+   "valid": false,
+   "error": "primary_voltage_v",
+   "visual": {
+    "template": "transformer",
+    "version": 1,
+    "params": {
+     "turns_primary": 2,
+     "turns_secondary": 1,
+     "secondary_label": "unknown"
+    }
+   }
+  },
+  {
+   "name": "transistor stage labels",
+   "valid": true,
+   "visual": {
+    "template": "transistor-stage",
+    "version": 1,
+    "params": {
+     "vcc_v": 12,
+     "rc_ohms": 400,
+     "labels": [
+      {
+       "node": "C",
+       "value": 6
+      },
+      {
+       "node": "IC",
+       "value": 0.015
+      },
+      {
+       "node": "E",
+       "value": null
+      }
+     ]
+    }
+   },
+   "quantities": {
+    "U_C": 6,
+    "I_C": 0.015,
+    "U_CC": 12
+   },
+   "shown": {
+    "U_C": true,
+    "R_C": true
+   }
+  },
+  {
+   "name": "transistor bypass capacitor needs an emitter resistor",
+   "valid": false,
+   "error": "bypass",
+   "visual": {
+    "template": "transistor-stage",
+    "version": 1,
+    "params": {
+     "vcc_v": 12,
+     "rc_ohms": 1000,
+     "bypass_capacitor": true
+    }
+   }
+  },
+  {
+   "name": "rlc names only hides all values",
+   "valid": true,
+   "visual": {
+    "template": "rlc-circuit",
+    "version": 1,
+    "params": {
+     "source": {
+      "kind": "ac",
+      "frequency_hz": 50
+     },
+     "topology": "series",
+     "components": [
+      {
+       "kind": "R",
+       "value": 10
+      },
+      {
+       "kind": "L",
+       "value": 0.1
+      }
+     ],
+     "label_style": "names"
+    }
+   },
+   "quantities": {
+    "X_L": 31.415926535897935
+   },
+   "shown": {
+    "R": false,
+    "L": false,
+    "f": false
+   }
   }
  ]
 }

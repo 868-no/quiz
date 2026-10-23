@@ -8,9 +8,13 @@ import dcCircuit from './dc-circuit.js';
 import acCircuit from './ac-circuit.js';
 import waveform from './waveform.js';
 import blockDiagram from './block-diagram.js';
+import rlcCircuit from './rlc-circuit.js';
+import rectifier from './rectifier.js';
+import transformer from './transformer.js';
+import transistorStage from './transistor-stage.js';
 
 export const IMPLEMENTATIONS = new Map(
-  [dcCircuit, acCircuit, waveform, blockDiagram].map((m) => [`${m.id}@${m.version}`, m]),
+  [dcCircuit, acCircuit, waveform, blockDiagram, rlcCircuit, rectifier, transformer, transistorStage].map((m) => [`${m.id}@${m.version}`, m]),
 );
 
 /** Validate parameters for a phase ('before' or 'after'); returns {errors, params}. */

@@ -285,7 +285,7 @@
     },
     {
       "revision": 2,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "calculation",
@@ -560,6 +560,15 @@
             "figures",
             "ocr"
           ]
+        },
+        {
+          "at": "2026-10-23T20:58:40+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "6b8e9cabeb64b46b3981582e73fc74169ea0b04a63a412930fe668cbf86befcd",
+          "note": "superseded by r3"
         }
       ],
       "checks": {
@@ -584,6 +593,340 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-23T20:43:49+00:00",
         "content_sha256": "6b8e9cabeb64b46b3981582e73fc74169ea0b04a63a412930fe668cbf86befcd",
+        "acknowledged_hazards": [
+          "figures",
+          "ocr"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 3,
+      "status": "approved",
+      "type": "single_choice",
+      "style": "calculation",
+      "difficulty": "medium",
+      "chapter": 3,
+      "section_ids": [
+        "s3-16"
+      ],
+      "topic_ids": [
+        "transistorforspenning"
+      ],
+      "learning_objective": "Beregne emittermotstanden i en forspenningskrets med spenningsdeler.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En ",
+          {
+            "term": "transistor",
+            "text": "NPN-transistor"
+          },
+          " av silisium er ",
+          {
+            "term": "forspenning",
+            "text": "forspent"
+          },
+          " med en ",
+          {
+            "term": "spenningsdeler",
+            "text": "spenningsdeler"
+          },
+          " som holder basis på ",
+          {
+            "q": 2.4,
+            "u": "V"
+          },
+          " i forhold til jord. Mellom emitteren og jord sitter en emittermotstand R_E. Regn med et ",
+          {
+            "term": "spenning",
+            "text": "spenningsfall"
+          },
+          " på ",
+          {
+            "q": 0.6,
+            "u": "V"
+          },
+          " fra basis til emitter, og at emitterstrømmen skal være ",
+          {
+            "q": 1.5,
+            "u": "mA"
+          },
+          "."
+        ]
+      ],
+      "stem": [
+        "Hvor stor må R_E være?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 1.2,
+              "u": "kΩ"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 1.6,
+              "u": "kΩ"
+            }
+          ],
+          "feedback": [
+            "Her er hele basisspenningen brukt. Spenningen over R_E er 0,6 V lavere enn basisspenningen."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 400,
+              "u": "Ω"
+            }
+          ],
+          "feedback": [
+            "Her er spenningen mellom basis og emitter brukt. Det er spenningen fra emitteren til jord som ligger over R_E."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 12,
+              "u": "kΩ"
+            }
+          ],
+          "feedback": [
+            "Kommaet har havnet feil. 1,8 V delt på 1,5 mA er 1200 Ω."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Spenningen på emitteren er basisspenningen minus spenningsfallet mellom basis og emitter. Deretter gir ",
+          {
+            "term": "ohms-lov",
+            "text": "Ohms lov"
+          },
+          " ",
+          {
+            "term": "motstand",
+            "text": "motstanden"
+          },
+          ":"
+        ],
+        {
+          "steps": [
+            [
+              {
+                "math": [
+                  "U_E",
+                  "=",
+                  {
+                    "q": 2.4,
+                    "u": "V"
+                  },
+                  "−",
+                  {
+                    "q": 0.6,
+                    "u": "V"
+                  },
+                  "=",
+                  {
+                    "q": 1.8,
+                    "u": "V"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "math": [
+                  "R_E",
+                  "=",
+                  {
+                    "frac": [
+                      [
+                        "U_E"
+                      ],
+                      [
+                        "I_E"
+                      ]
+                    ]
+                  },
+                  "=",
+                  {
+                    "frac": [
+                      [
+                        {
+                          "q": 1.8,
+                          "u": "V"
+                        }
+                      ],
+                      [
+                        {
+                          "q": 1.5,
+                          "u": "mA"
+                        }
+                      ]
+                    ]
+                  },
+                  "=",
+                  {
+                    "q": 1200,
+                    "u": "Ω"
+                  },
+                  "=",
+                  {
+                    "q": 1.2,
+                    "u": "kΩ"
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        [
+          "Emittermotstanden stabiliserer arbeidspunktet: Hvis ",
+          {
+            "term": "strom",
+            "text": "strømmen"
+          },
+          " prøver å øke, øker spenningen over R_E. Basisspenningen ligger fast, så spenningen mellom basis og emitter blir mindre, og strømmen trekkes tilbake."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "calculation": {
+        "formula": "ohms_law_resistance",
+        "inputs": {
+          "U": [
+            1.8,
+            "V"
+          ],
+          "I": [
+            1.5,
+            "mA"
+          ]
+        },
+        "answer": [
+          1.2,
+          "kΩ"
+        ],
+        "answer_symbol": "R_E",
+        "sig_figs": 2
+      },
+      "study_reference": {
+        "chapter": 3,
+        "section_id": "s3-16",
+        "printed_pages": [
+          "3-7",
+          "3-8"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "c7613788ae29b22c"
+        ]
+      },
+      "tags": [],
+      "visual": {
+        "template": "transistor-stage",
+        "version": 1,
+        "params": {
+          "vcc_v": 12,
+          "show_vcc": false,
+          "rc_ohms": 2200,
+          "re_ohms": 1200,
+          "show_resistor_values": false,
+          "divider": true,
+          "labels": [
+            {
+              "node": "B",
+              "value": 2.4
+            }
+          ]
+        }
+      },
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "AI-assistent (Claude), figurer",
+        "based_on": 2,
+        "at": "2026-10-23T20:54:14+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T20:54:14+00:00",
+          "actor": "AI-assistent (Claude), figurer",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "e23fe4be3965697b9c18f3a2b2d14d7ded0b68fa3e63ae1ee362fbaf481f3939",
+          "note": "figur lagt til (teksten uendret)"
+        },
+        {
+          "at": "2026-10-23T20:54:15+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "e23fe4be3965697b9c18f3a2b2d14d7ded0b68fa3e63ae1ee362fbaf481f3939",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T20:58:40+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "e23fe4be3965697b9c18f3a2b2d14d7ded0b68fa3e63ae1ee362fbaf481f3939",
+          "note": "Godkjent av redaktør: figur lagt til, teksten uendret fra forrige godkjente versjon. Sidehenvisninger er fortsatt ikke kontrollert mot trykt bok.",
+          "acknowledged": [
+            "figures",
+            "ocr"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "e23fe4be3965697b9c18f3a2b2d14d7ded0b68fa3e63ae1ee362fbaf481f3939",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: equation, numeric_low_conf. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-23T20:58:40+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-23T20:58:40+00:00",
+        "content_sha256": "e23fe4be3965697b9c18f3a2b2d14d7ded0b68fa3e63ae1ee362fbaf481f3939",
         "acknowledged_hazards": [
           "figures",
           "ocr"

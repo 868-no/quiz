@@ -249,7 +249,7 @@
     },
     {
       "revision": 2,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "calculation",
@@ -471,6 +471,15 @@
             "figures",
             "ocr"
           ]
+        },
+        {
+          "at": "2026-10-23T20:58:40+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "83d8f43b997f372a35b5f449c418fd16dac10f0cb461cfa9c887dbfd1cc24d8c",
+          "note": "superseded by r3"
         }
       ],
       "checks": {
@@ -495,6 +504,301 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-23T20:43:49+00:00",
         "content_sha256": "83d8f43b997f372a35b5f449c418fd16dac10f0cb461cfa9c887dbfd1cc24d8c",
+        "acknowledged_hazards": [
+          "figures",
+          "ocr"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 3,
+      "status": "approved",
+      "type": "single_choice",
+      "style": "calculation",
+      "difficulty": "easy",
+      "chapter": 3,
+      "section_ids": [
+        "s3-15"
+      ],
+      "topic_ids": [
+        "transistorforspenning"
+      ],
+      "learning_objective": "Beregne effekten som avgis i en transistor ut fra spenningen over den og strømmen gjennom den.",
+      "priority": "normal",
+      "context": [
+        [
+          "En ",
+          {
+            "term": "transistor",
+            "text": "NPN-transistor"
+          },
+          " er ",
+          {
+            "term": "forspenning",
+            "text": "forspent"
+          },
+          " slik at kollektorstrømmen er ",
+          {
+            "q": 15,
+            "u": "mA"
+          },
+          " når det ikke er noe signal. Forsyningsspenningen er ",
+          {
+            "q": 12,
+            "u": "V"
+          },
+          ", emitteren ligger direkte på jord, og kollektoren er koblet til forsyningen gjennom en kollektormotstand og ligger på ",
+          {
+            "q": 6,
+            "u": "V"
+          },
+          " i forhold til jord. Se bort fra ",
+          {
+            "term": "effekt",
+            "text": "effekten"
+          },
+          " som skyldes basisstrømmen."
+        ]
+      ],
+      "stem": [
+        "Hvor stor effekt avgis som varme i transistoren?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 90,
+              "u": "mW"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 180,
+              "u": "mW"
+            }
+          ],
+          "feedback": [
+            "Her er hele forsyningsspenningen brukt. Halvparten av den ligger over kollektormotstanden, og det er bare spenningen fra kollektor til emitter som ligger over transistoren."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 9,
+              "u": "mW"
+            }
+          ],
+          "feedback": [
+            "Sjekk prefiksene: 6 V · 0,015 A = 0,09 W, som er 90 mW."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 0.9,
+              "u": "W"
+            }
+          ],
+          "feedback": [
+            "Sjekk prefiksene: 6 V · 0,015 A = 0,09 W, ikke 0,9 W."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          {
+            "term": "spenning",
+            "text": "Spenningen"
+          },
+          " over transistoren er spenningen mellom kollektor og emitter, altså 6 V. Effekten er spenning ganger ",
+          {
+            "term": "strom",
+            "text": "strøm"
+          },
+          ":"
+        ],
+        {
+          "steps": [
+            [
+              {
+                "math": [
+                  "P",
+                  "=",
+                  "U_{CE}",
+                  "·",
+                  "I_C",
+                  "=",
+                  {
+                    "q": 6,
+                    "u": "V"
+                  },
+                  "·",
+                  {
+                    "q": 15,
+                    "u": "mA"
+                  },
+                  "=",
+                  {
+                    "q": 90,
+                    "u": "mW"
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        "Denne effekten avgis hele tiden, også uten signal. Transistoren må tåle den, og ved større effekter trengs kjøleribbe."
+      ],
+      "glossary_after_answer": [],
+      "calculation": {
+        "formula": "power_ui",
+        "inputs": {
+          "U": [
+            6,
+            "V"
+          ],
+          "I": [
+            15,
+            "mA"
+          ]
+        },
+        "answer": [
+          90,
+          "mW"
+        ],
+        "answer_symbol": "P",
+        "sig_figs": 2,
+        "visual_bindings": {
+          "U": "U_C",
+          "I": "I_C"
+        }
+      },
+      "study_reference": {
+        "chapter": 3,
+        "section_id": "s3-15",
+        "printed_pages": [
+          "3-6",
+          "3-7"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "d7dd0bb3df117f8c",
+          "306700e7fea6ff1d"
+        ]
+      },
+      "tags": [],
+      "visual": {
+        "template": "transistor-stage",
+        "version": 1,
+        "params": {
+          "vcc_v": 12,
+          "rc_ohms": 400,
+          "show_resistor_values": false,
+          "labels": [
+            {
+              "node": "C",
+              "value": 6
+            },
+            {
+              "node": "IC",
+              "value": 0.015
+            }
+          ]
+        }
+      },
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "AI-assistent (Claude), figurer",
+        "based_on": 2,
+        "at": "2026-10-23T20:54:14+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-23T20:54:14+00:00",
+          "actor": "AI-assistent (Claude), figurer",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "631f701e7dfc13d2c6e8635a4f5ede85f0a7ae3891a641304b20240ff120c895",
+          "note": "figur lagt til (teksten uendret)"
+        },
+        {
+          "at": "2026-10-23T20:54:15+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "631f701e7dfc13d2c6e8635a4f5ede85f0a7ae3891a641304b20240ff120c895",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T20:54:26+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "ad46a0e0c71b848a7d8e868e6ace42f11bc356c653edab13c1fc79d2aa39a1e2",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-23T20:58:40+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "ad46a0e0c71b848a7d8e868e6ace42f11bc356c653edab13c1fc79d2aa39a1e2",
+          "note": "Godkjent av redaktør: figur lagt til, teksten uendret fra forrige godkjente versjon. Sidehenvisninger er fortsatt ikke kontrollert mot trykt bok.",
+          "acknowledged": [
+            "figures",
+            "ocr"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "ad46a0e0c71b848a7d8e868e6ace42f11bc356c653edab13c1fc79d2aa39a1e2",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: equation, low_ocr_confidence, numeric_low_conf. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-23T20:58:40+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-23T20:58:40+00:00",
+        "content_sha256": "ad46a0e0c71b848a7d8e868e6ace42f11bc356c653edab13c1fc79d2aa39a1e2",
         "acknowledged_hazards": [
           "figures",
           "ocr"
