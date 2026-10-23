@@ -11,6 +11,7 @@ import {
 import { randomSeed } from '../quiz/rng.js';
 import { clearSession, loadSession, saveSession } from '../quiz/storage.js';
 import { createGlossary } from './glossary.js';
+import { chapterDial, roundDial, setDialWidth } from './dial.js';
 
 const LETTERS = ['A', 'B', 'C', 'D', 'E', 'F'];
 const DIFFICULTY_LABEL = { easy: 'Lett', medium: 'Middels', hard: 'Vanskelig' };
@@ -42,9 +43,23 @@ export function createApp(root, bank) {
     return c && c.title ? `Kapittel ${n} – ${c.title}` : `Kapittel ${n}`;
   };
 
+  let lastNeedleX = null;
+
+  // Let the needle glide from where it was to its new position (unless reduced motion).
+  function glideNeedle() {
+    const needle = root.querySelector('.dial-needle');
+    const x = needle ? Number(needle.getAttribute('data-x')) : null;
+    if (needle && lastNeedleX !== null && x !== lastNeedleX && !reducedMotion() && needle.animate) {
+      needle.animate([{ transform: `translateX(${lastNeedleX - x}px)` }, { transform: 'translateX(0)' }],
+        { duration: 450, easing: 'cubic-bezier(.3,.7,.2,1)' });
+    }
+    lastNeedleX = x;
+  }
+
   function mount(vnode, focusSelector) {
     glossaryUi.close();
     root.replaceChildren(toDOM(vnode));
+    glideNeedle();
     if (reducedMotion()) root.querySelectorAll('.fig-anim-toggle').forEach((b) => b.remove());
     const target = focusSelector && root.querySelector(focusSelector);
     if (target) target.focus({ preventScroll: false });
@@ -78,7 +93,33 @@ export function createApp(root, bank) {
           h('label', { for: `${key}-${v}` }, labels[v])))));
   }
 
+  // One row per scanned chapter; runs of unscanned chapters collapse into one line.
+  function chapterRows() {
+    const rows = [];
+    const cs = bank.chapters;
+    for (let i = 0; i < cs.length; i++) {
+      const c = cs[i];
+      if (c.status === 'not_scanned') {
+        let j = i;
+        while (j + 1 < cs.length && cs[j + 1].status === 'not_scanned') j += 1;
+        const label = j > i ? `Kapittel ${c.number}–${cs[j].number}` : `Kapittel ${c.number}`;
+        rows.push(h('li', { class: 'is-unavailable is-unscanned' },
+          h('span', { class: 'ch-blank' }, label), h('span', { class: 'ch-status' }, ' (ikke skannet ennå)')));
+        i = j;
+        continue;
+      }
+      const ok = c.status === 'available';
+      const status = ok ? `${c.questions} spørsmål` : 'ingen godkjente spørsmål ennå';
+      rows.push(h('li', { class: ok ? '' : 'is-unavailable' },
+        h('input', { type: 'checkbox', id: `ch-${c.number}`, name: 'chapter', value: String(c.number), checked: ok && state.selection.chapters.has(c.number), disabled: !ok, 'aria-describedby': `ch-${c.number}-st` }),
+        h('label', { for: `ch-${c.number}` }, chapterName(c.number)),
+        h('span', { class: 'ch-status', id: `ch-${c.number}-st` }, ` (${status})`)));
+    }
+    return rows;
+  }
+
   function renderSetup(focus = 'h2') {
+    fitDial();
     const avail = selectionPool().length;
     const anyAvailable = bank.chapters.some((c) => c.status === 'available');
     const counts = COUNT_CHOICES.filter((n) => n < avail);
@@ -88,6 +129,7 @@ export function createApp(root, bank) {
     const view = h('section', { class: 'setup', 'aria-labelledby': 'setup-title' },
       h('h2', { id: 'setup-title', tabindex: '-1' }, 'Sett opp en øvingsrunde'),
       h('p', { class: 'lead' }, 'Velg kapitlene du vil øve på og hvor mange spørsmål du vil ha. Etter hvert svar får du vite om det var riktig, hvorfor, og hvor i læreboka du kan lese mer.'),
+      h('div', { class: 'dial-wrap' }, chapterDial(bank.chapters, state.selection.chapters)),
       resume ? h('div', { class: 'notice', role: 'status' },
         h('p', {}, `Du har en påbegynt runde (spørsmål ${resume.index + 1} av ${resume.items.length}).`),
         h('div', { class: 'actions' },
@@ -101,15 +143,7 @@ export function createApp(root, bank) {
           h('div', { class: 'actions actions-compact' },
             h('button', { type: 'button', class: 'btn-small', 'data-action': 'select-all', disabled: !anyAvailable }, 'Velg alle'),
             h('button', { type: 'button', class: 'btn-small', 'data-action': 'select-none', disabled: !anyAvailable }, 'Fjern alle')),
-          h('ul', { class: 'check-list' }, bank.chapters.map((c) => {
-            const ok = c.status === 'available';
-            const status = ok ? `${c.questions} spørsmål`
-              : c.status === 'no_questions' ? 'ingen godkjente spørsmål ennå' : 'ikke tilgjengelig ennå';
-            return h('li', { class: ok ? '' : 'is-unavailable' },
-              h('input', { type: 'checkbox', id: `ch-${c.number}`, name: 'chapter', value: String(c.number), checked: ok && state.selection.chapters.has(c.number), disabled: !ok, 'aria-describedby': `ch-${c.number}-st` }),
-              h('label', { for: `ch-${c.number}` }, chapterName(c.number)),
-              h('span', { class: 'ch-status', id: `ch-${c.number}-st` }, ` (${status})`));
-          }))),
+          h('ul', { class: 'check-list' }, chapterRows())),
         filterFieldset('difficulty', DIFFICULTY_LABEL, 'Vanskelighetsgrad', state.selection.difficulties),
         filterFieldset('style', STYLE_LABEL, 'Spørsmålstyper', state.selection.styles),
         h('div', { class: 'count-row' },
@@ -126,6 +160,10 @@ export function createApp(root, bank) {
   }
 
   // ------------------------------------------------------------- question
+  function marksOf(session) {
+    return session.items.map((it) => (it.answer ? (it.answer.correct ? 'correct' : 'wrong') : null));
+  }
+
   function refText(q) {
     const r = q.ref;
     const parts = [chapterName(r.chapter)];
@@ -220,6 +258,7 @@ export function createApp(root, bank) {
   }
 
   function renderQuestion(focus) {
+    fitDial();
     const s = state.session;
     const it = currentItem(s);
     const q = byId.get(it.qid);
@@ -230,9 +269,9 @@ export function createApp(root, bank) {
     const view = h('section', { class: 'question', 'aria-labelledby': 'q-progress' },
       h('div', { class: 'q-head' },
         h('h2', { id: 'q-progress', class: 'q-progress', tabindex: '-1' }, `Spørsmål ${s.index + 1} av ${total}`),
-        h('progress', { max: String(total), value: String(s.index + (answered ? 1 : 0)), 'aria-hidden': 'true' }),
-        h('p', { class: 'q-meta' }, h('span', {}, [chapterName(q.chapter),
-          ...q.topics.filter((t) => bank.topics[t]).map((t) => ` · ${bank.topics[t].title}`)].join('')),
+        h('div', { class: 'dial-wrap' }, roundDial(marksOf(s), s.index)),
+        h('p', { class: 'q-meta' }, h('span', { class: 'q-chapter' }, chapterName(q.chapter)),
+          q.topics.filter((t) => bank.topics[t]).map((t) => h('span', { class: 'q-topic' }, bank.topics[t].title)),
           q.priority === 'exam_important' ? h('span', { class: 'badge', title: 'Markert med ! i læreboka: forvent dette til eksamen' }, '! Eksamensrelevant') : null,
           bank.mode === 'preview' ? h('span', { class: 'badge badge-preview' }, `Status: ${q.preview_status}`) : null),
         h('button', { type: 'button', class: 'btn-small btn-quit', 'data-action': 'quit' }, 'Avslutt runden')),
@@ -251,11 +290,13 @@ export function createApp(root, bank) {
 
   // -------------------------------------------------------------- results
   function renderResults() {
+    fitDial();
     const sum = summary(state.session, byId);
     const pct = sum.total ? Math.round((100 * sum.correct) / sum.total) : 0;
     const items = sum.items.filter((x) => !state.onlyWrong || !x.correct);
     const view = h('section', { class: 'results', 'aria-labelledby': 'res-title' },
       h('h2', { id: 'res-title', tabindex: '-1' }, 'Resultat'),
+      h('div', { class: 'dial-wrap' }, roundDial(marksOf(state.session), null)),
       h('p', { class: 'score' }, h('strong', {}, `${sum.correct} av ${sum.total}`), ` riktige (${pct} %)`),
       sum.byChapter.length > 1 ? h('table', { class: 'by-chapter' },
         h('caption', {}, 'Resultat per kapittel'),
@@ -292,6 +333,13 @@ export function createApp(root, bank) {
               reportLink(q))));
       })));
     mount(view, '#res-title');
+  }
+
+  // Match the dial's drawing width to the text column before building a screen,
+  // so its numbers are not scaled down on phones.
+  function fitDial() {
+    const w = root.clientWidth || (globalThis.innerWidth || 640);
+    setDialWidth(Math.min(w, 672) - 32);
   }
 
   function render(focus) {

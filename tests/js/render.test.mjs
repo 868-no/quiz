@@ -58,6 +58,14 @@ test('math renders sub/superscripts, fractions and a spoken alternative', () => 
   assert.equal(plainText([['I = ', { q: 2, u: 'mA' }]]), 'I = 2 mA');
 });
 
+test('a glossary term and the punctuation after it stay together', () => {
+  const glossary = { b: { nb: ['blanderen'], en: ['mixer'], definition: 'x' } };
+  const p = renderRich([['Det er ', { term: 'b', text: 'blanderen' }, '. Den lager …']], { glossary })[0];
+  const span = findAll(p, (n) => n.a.class === 'nowrap')[0];
+  assert.equal(textContent(span), 'blanderen.');
+  assert.equal(textContent(p), 'Det er blanderen. Den lager …');
+});
+
 test('rich text blocks: paragraphs, steps and notes', () => {
   const out = renderRich(['a', { steps: ['b', 'c'] }, { note: ['d'] }]);
   assert.deepEqual(out.map((n) => n.t), ['p', 'ol', 'p']);

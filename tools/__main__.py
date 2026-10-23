@@ -206,8 +206,11 @@ def cmd_serve(paths, a) -> int:
     root = paths.preview if a.preview else paths.dist
     if not (root / "index.html").exists():
         raise ToolError(f"{root} has no build; run `python3 -m tools {'preview' if a.preview else 'publish'}` first")
-    handler = functools.partial(http.server.SimpleHTTPRequestHandler, directory=str(root))
-    handler.extensions_map[".js"] = "text/javascript"
+    class Handler(http.server.SimpleHTTPRequestHandler):
+        extensions_map = {**http.server.SimpleHTTPRequestHandler.extensions_map,
+                          ".js": "text/javascript", ".woff2": "font/woff2"}
+
+    handler = functools.partial(Handler, directory=str(root))
     with http.server.ThreadingHTTPServer(("127.0.0.1", a.port), handler) as httpd:
         print(f"serving {root} on http://127.0.0.1:{a.port}/  (Ctrl+C to stop)")
         try:

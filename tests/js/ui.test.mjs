@@ -62,11 +62,13 @@ function choose(root, letterIndex) {
 
 test('setup lists chapters and marks unavailable ones', { skip }, async () => {
   const { root } = await app(bankWithTerms());
+  assert.equal($(root, 'svg.dial').getAttribute('aria-hidden'), 'true');
+  assert.equal($$(root, '.dial-station.is-on').length, 2, 'selected chapters are lit on the dial');
   const items = $$(root, '.check-list li');
   assert.equal(items.length, 7);
-  const ch7 = $(root, '#ch-7');
-  assert.equal(ch7.disabled, true);
-  assert.ok(items[6].textContent.includes('ikke tilgjengelig ennå'));
+  assert.equal($(root, '#ch-7'), null, 'unscanned chapters have no checkbox');
+  assert.ok(items[6].textContent.includes('Kapittel 7'));
+  assert.ok(items[6].textContent.includes('ikke skannet ennå'));
   assert.ok(items[0].textContent.includes('ingen godkjente spørsmål ennå'));
   assert.ok(items[1].textContent.includes('3 spørsmål'));
   $(root, '[data-action=select-none]').click();

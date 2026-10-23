@@ -1,0 +1,98 @@
+// The tuning dial: the site's one signature element. A glass scale with ticks
+// and numbers and a red needle, used for the chapter selection, the progress of
+// a round and the result. It is decorative (aria-hidden): the same information
+// is always available as text and real form controls next to it.
+
+import { h } from '../render/vnode.js';
+
+// Geometry in SVG units. On narrow screens the dial is drawn narrower (not just scaled
+// down), so numbers and marks stay readable at phone width.
+let W = 640;
+const PAD = 28;
+
+export function setDialWidth(width) {
+  W = Math.max(320, Math.min(640, Math.round(width)));
+}
+
+function scaleX(i, n) {
+  // positions 1..n spread across the glass, with a margin at both ends
+  return n <= 1 ? W / 2 : PAD + ((W - 2 * PAD) * (i - 1)) / (n - 1);
+}
+
+function glass(height, extra = {}) {
+  return h('svg', {
+    viewBox: `0 0 ${W} ${height}`, class: 'dial', 'aria-hidden': 'true', focusable: 'false',
+    preserveAspectRatio: 'xMidYMid meet', ...extra,
+  }, h('rect', { x: 1, y: 1, width: W - 2, height: height - 2, rx: 6, class: 'dial-glass' }));
+}
+
+function needle(x, top, bottom) {
+  return h('g', { class: 'dial-needle', 'data-x': x.toFixed(1) },
+    h('line', { x1: x, y1: top, x2: x, y2: bottom }),
+    h('polygon', { points: `${x - 5},${top - 1} ${x + 5},${top - 1} ${x},${top + 6}` }));
+}
+
+/**
+ * Chapter scale for the setup screen. chapters: [{number, status}]; selected: Set of numbers.
+ * Available chapters are stations (hollow, or lit when selected); chapters without
+ * questions are faint; chapters not yet scanned are blank scale.
+ */
+export function chapterDial(chapters, selected) {
+  const n = chapters.length;
+  const H = 76;
+  const base = 46;
+  const svg = glass(H);
+  const els = [h('line', { x1: PAD - 10, y1: base, x2: W - PAD + 10, y2: base, class: 'dial-base' })];
+  const blank = chapters.filter((c) => c.status === 'not_scanned');
+  for (const c of chapters) {
+    const x = scaleX(c.number, n);
+    if (c.status === 'not_scanned') {
+      els.push(h('line', { x1: x, y1: base, x2: x, y2: base + 5, class: 'dial-tick dial-tick-minor' }));
+      continue;
+    }
+    const avail = c.status === 'available';
+    els.push(h('line', { x1: x, y1: base, x2: x, y2: base + 10, class: avail ? 'dial-tick' : 'dial-tick dial-tick-faint' }));
+    els.push(h('text', { x, y: base + 24, class: avail ? 'dial-num' : 'dial-num dial-faint', 'text-anchor': 'middle' }, String(c.number)));
+    if (avail) {
+      els.push(h('circle', { cx: x, cy: base - 14, r: 6, class: selected.has(c.number) ? 'dial-station is-on' : 'dial-station' }));
+    }
+  }
+  if (blank.length) {
+    const x1 = scaleX(blank[0].number, n);
+    const x2 = scaleX(blank[blank.length - 1].number, n);
+    els.push(h('text', { x: (x1 + x2) / 2, y: base - 12, class: 'dial-note', 'text-anchor': 'middle' }, 'ikke skannet ennå'));
+  }
+  svg.c.push(...els);
+  return svg;
+}
+
+/**
+ * Progress scale for a round. marks: array of 'correct' | 'wrong' | null per question;
+ * current: index of the question being shown, or null on the results screen.
+ * Correct answers leave a dot and wrong answers a cross, so the marks differ by
+ * shape and not only by colour.
+ */
+export function roundDial(marks, current) {
+  const n = marks.length;
+  const H = 70;
+  const base = 40;
+  const svg = glass(H, { class: 'dial dial-round' });
+  const els = [h('line', { x1: PAD - 10, y1: base, x2: W - PAD + 10, y2: base, class: 'dial-base' })];
+  const every = n <= 12 ? 1 : n <= 30 ? 5 : 10;
+  marks.forEach((m, i) => {
+    const x = scaleX(i + 1, n);
+    const major = (i + 1) % every === 0 || i === 0;
+    els.push(h('line', { x1: x, y1: base, x2: x, y2: base + (major ? 10 : 5), class: major ? 'dial-tick' : 'dial-tick dial-tick-minor' }));
+    if (major) els.push(h('text', { x, y: base + 23, class: 'dial-num', 'text-anchor': 'middle' }, String(i + 1)));
+    const r = n <= 30 ? 4.5 : 3;
+    if (m === 'correct') els.push(h('circle', { cx: x, cy: base - 11, r, class: 'dial-mark-ok' }));
+    if (m === 'wrong') {
+      els.push(h('path', { d: `M ${x - r} ${base - 11 - r} L ${x + r} ${base - 11 + r} M ${x + r} ${base - 11 - r} L ${x - r} ${base - 11 + r}`, class: 'dial-mark-bad' }));
+    }
+  });
+  if (current !== null && current !== undefined) els.push(needle(scaleX(current + 1, n), 6, H - 6));
+  svg.c.push(...els);
+  return svg;
+}
+
+export { scaleX };

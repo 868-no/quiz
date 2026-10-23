@@ -104,15 +104,34 @@ export function renderInline(node, opts = {}) {
   return '';
 }
 
+// A term button followed by punctuation ("blanderen.") must not wrap between the two.
+function glue(rendered) {
+  const out = [];
+  for (let i = 0; i < rendered.length; i++) {
+    const cur = rendered[i];
+    const next = rendered[i + 1];
+    if (cur && typeof cur === 'object' && cur.t === 'button' && typeof next === 'string') {
+      const m = /^[.,;:!?)»]+/.exec(next);
+      if (m) {
+        out.push(h('span', { class: 'nowrap' }, cur, m[0]));
+        rendered[i + 1] = next.slice(m[0].length);
+        continue;
+      }
+    }
+    out.push(cur);
+  }
+  return out;
+}
+
 export function renderParagraph(par, opts, tag = 'p') {
   const inl = typeof par === 'string' ? [par] : par;
-  return h(tag, { class: opts.pClass || null }, inl.map((n) => renderInline(n, opts)));
+  return h(tag, { class: opts.pClass || null }, glue(inl.map((n) => renderInline(n, opts))));
 }
 
 /** Render a paragraph's inlines without a wrapping block element. */
 export function renderInlines(par, opts = {}) {
   const inl = typeof par === 'string' ? [par] : par || [];
-  return inl.map((n) => renderInline(n, opts));
+  return glue(inl.map((n) => renderInline(n, opts)));
 }
 
 export function renderRich(value, opts = {}) {
