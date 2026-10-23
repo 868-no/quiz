@@ -95,7 +95,8 @@ export function createGlossary(getGlossary, doc = document) {
     if (activeBtn !== btn) hide(false);
     if (!pop) {
       pop = build(term);
-      btn.insertAdjacentElement('afterend', pop);
+      // after the term, but outside any no-wrap wrapper (term + trailing punctuation)
+      (btn.closest('.nowrap') || btn).insertAdjacentElement('afterend', pop);
     }
     activeBtn = btn;
     pinned = pinned || pin;

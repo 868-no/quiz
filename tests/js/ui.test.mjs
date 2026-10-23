@@ -216,6 +216,23 @@ test('glossary popover inside an answer does not select the answer', { skip }, a
   assert.ok($(root, '.term-pop'));
 });
 
+test('a popover is never placed inside the no-wrap wrapper around a term', { skip }, async () => {
+  const bank = bankWithTerms();
+  bank.questions = [bank.questions[0]];
+  bank.questions[0].explanation = [['Se ', { term: 'strom', text: 'strøm' }, '. Mer tekst.']];
+  bank.chapters.find((c) => c.number === 2).questions = 1;
+  const { root } = await app(bank);
+  start(root, [2]);
+  choose(root, 0);
+  $(root, '#answer-form button[type=submit]').click();
+  const term = $(root, '.feedback .nowrap > button.term');
+  assert.ok(term, 'term with trailing punctuation is wrapped');
+  term.click();
+  const pop = $(root, '.term-pop');
+  assert.ok(pop);
+  assert.equal(pop.closest('.nowrap'), null);
+});
+
 test('an in-progress quiz can be resumed or discarded', { skip }, async () => {
   const bank = bankWithTerms();
   const first = await app(bank);

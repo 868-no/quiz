@@ -242,6 +242,7 @@ details summary { cursor: pointer; padding: 6px 0; font-weight: 700; }
   position: absolute; z-index: 20; display: block; background: var(--surface); color: var(--ink);
   border: 2px solid var(--line); border-radius: var(--radius);
   padding: 10px 36px 10px 12px; font-size: 0.95rem; font-weight: 400; line-height: 1.45; text-align: left; cursor: auto;
+  white-space: normal; overflow-wrap: break-word; font-style: normal;
 }
 .term-pop > span { display: block; }
 .term-pop-title { font-weight: 700; }
