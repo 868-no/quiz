@@ -152,7 +152,7 @@ legend { font-weight: 700; padding: 0 8px 0 0; font-size: 1.05rem; }
 .check-list label { cursor: pointer; }
 .ch-status { color: var(--muted); font-size: 0.92rem; }
 .is-unavailable label, .ch-blank { color: var(--muted); cursor: not-allowed; }
-.is-unscanned { padding-left: 30px !important; }
+.is-upcoming { padding-left: 30px !important; }
 .dial text { font-variant-numeric: tabular-nums; }
 .count-row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 12px 0 4px; font-weight: 700; }
 select {

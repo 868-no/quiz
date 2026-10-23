@@ -93,18 +93,18 @@ export function createApp(root, bank) {
           h('label', { for: `${key}-${v}` }, labels[v])))));
   }
 
-  // One row per scanned chapter; runs of unscanned chapters collapse into one line.
+  // One row per chapter; runs of upcoming chapters (no content yet) collapse into one line.
   function chapterRows() {
     const rows = [];
     const cs = bank.chapters;
     for (let i = 0; i < cs.length; i++) {
       const c = cs[i];
-      if (c.status === 'not_scanned') {
+      if (c.status === 'upcoming') {
         let j = i;
-        while (j + 1 < cs.length && cs[j + 1].status === 'not_scanned') j += 1;
+        while (j + 1 < cs.length && cs[j + 1].status === 'upcoming') j += 1;
         const label = j > i ? `Kapittel ${c.number}–${cs[j].number}` : `Kapittel ${c.number}`;
-        rows.push(h('li', { class: 'is-unavailable is-unscanned' },
-          h('span', { class: 'ch-blank' }, label), h('span', { class: 'ch-status' }, ' (ikke skannet ennå)')));
+        rows.push(h('li', { class: 'is-unavailable is-upcoming' },
+          h('span', { class: 'ch-blank' }, label), h('span', { class: 'ch-status' }, ' (ingen spørsmål ennå)')));
         i = j;
         continue;
       }

@@ -43,7 +43,7 @@ test('insufficient stock is reported, never padded from other chapters', () => {
 
 test('unavailable chapters are excluded even if requested', () => {
   const b = makeBank();
-  b.chapters.find((c) => c.number === 3).status = 'not_scanned';
+  b.chapters.find((c) => c.number === 3).status = 'upcoming';
   assert.equal(pool(b, { chapters: [3] }).length, 0);
 });
 

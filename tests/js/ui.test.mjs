@@ -68,7 +68,7 @@ test('setup lists chapters and marks unavailable ones', { skip }, async () => {
   assert.equal(items.length, 7);
   assert.equal($(root, '#ch-7'), null, 'unscanned chapters have no checkbox');
   assert.ok(items[6].textContent.includes('Kapittel 7'));
-  assert.ok(items[6].textContent.includes('ikke skannet ennå'));
+  assert.ok(items[6].textContent.includes('ingen spørsmål ennå'));
   assert.ok(items[0].textContent.includes('ingen godkjente spørsmål ennå'));
   assert.ok(items[1].textContent.includes('3 spørsmål'));
   $(root, '[data-action=select-none]').click();

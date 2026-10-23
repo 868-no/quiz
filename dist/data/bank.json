@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "mode": "production",
-  "built_at": "2026-10-23T19:46:40+00:00",
+  "built_at": "2026-10-23T19:55:53+00:00",
   "bank_id": "070a98e0a3467ece",
   "book": {
     "title": "Veien til internasjonal radioamatørlisens"
@@ -50,61 +50,61 @@
     {
       "number": 7,
       "title": null,
-      "status": "not_scanned",
+      "status": "upcoming",
       "questions": 0
     },
     {
       "number": 8,
       "title": null,
-      "status": "not_scanned",
+      "status": "upcoming",
       "questions": 0
     },
     {
       "number": 9,
       "title": null,
-      "status": "not_scanned",
+      "status": "upcoming",
       "questions": 0
     },
     {
       "number": 10,
       "title": null,
-      "status": "not_scanned",
+      "status": "upcoming",
       "questions": 0
     },
     {
       "number": 11,
       "title": null,
-      "status": "not_scanned",
+      "status": "upcoming",
       "questions": 0
     },
     {
       "number": 12,
       "title": null,
-      "status": "not_scanned",
+      "status": "upcoming",
       "questions": 0
     },
     {
       "number": 13,
       "title": null,
-      "status": "not_scanned",
+      "status": "upcoming",
       "questions": 0
     },
     {
       "number": 14,
       "title": null,
-      "status": "not_scanned",
+      "status": "upcoming",
       "questions": 0
     },
     {
       "number": 15,
       "title": null,
-      "status": "not_scanned",
+      "status": "upcoming",
       "questions": 0
     },
     {
       "number": 16,
       "title": null,
-      "status": "not_scanned",
+      "status": "upcoming",
       "questions": 0
     }
   ],

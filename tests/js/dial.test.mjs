@@ -12,14 +12,14 @@ test('the dial is decorative and hidden from screen readers', () => {
 });
 
 test('chapter dial: stations for available chapters, lit when selected, blank scale when not scanned', () => {
-  const chapters = [1, 2, 3, 4, 5].map((n) => ({ number: n, status: n === 1 ? 'no_questions' : n <= 3 ? 'available' : 'not_scanned' }));
+  const chapters = [1, 2, 3, 4, 5].map((n) => ({ number: n, status: n === 1 ? 'no_questions' : n <= 3 ? 'available' : 'upcoming' }));
   const svg = chapterDial(chapters, new Set([3]));
   assert.equal(cls(svg, 'dial-station').length, 2);
   assert.equal(cls(svg, 'is-on').length, 1);
   const nums = cls(svg, 'dial-num').map(textContent);
   assert.deepEqual(nums, ['1', '2', '3']);
   assert.equal(cls(svg, 'dial-faint').length, 1);
-  assert.ok(textContent(svg).includes('ikke skannet'));
+  assert.ok(textContent(svg).includes('kommer senere'));
 });
 
 test('round dial: marks differ by shape, needle at the current question', () => {

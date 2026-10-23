@@ -35,7 +35,7 @@ export function makeBank({ perChapter = { 2: 6, 3: 3, 6: 2 } } = {}) {
     schema: 1, mode: 'production', built_at: 'x', bank_id: 'test', book: { title: 'Testbok' },
     chapters: [1, 2, 3, 4, 5, 6, 7].map((n) => ({
       number: n, title: n <= 6 ? `Kapittel-tittel ${n}` : null,
-      status: counts[n] ? 'available' : n <= 6 ? 'no_questions' : 'not_scanned', questions: counts[n] || 0,
+      status: counts[n] ? 'available' : n <= 6 ? 'no_questions' : 'upcoming', questions: counts[n] || 0,
     })),
     sections: {}, topics: {},
     glossary: {

@@ -101,7 +101,7 @@ class PipelineTest(unittest.TestCase):
                           "pdf_page", "SYNTETISK TESTDATA"):
             self.assertNotIn(f'"{forbidden}"' if forbidden.isidentifier() else forbidden, blob)
         self.assertEqual(q["ref"], {"chapter": 2, "section": None, "pages": ["2-1"]})  # heading not verified
-        self.assertEqual([c["status"] for c in bank["chapters"]][:3], ["not_scanned", "available", "not_scanned"])
+        self.assertEqual([c["status"] for c in bank["chapters"]][:3], ["upcoming", "available", "upcoming"])
         self.assertEqual(list(bank["glossary"]), ["strom"])
         self.assertEqual(list(bank["templates"]), ["dc-circuit@1"])
 
@@ -189,6 +189,13 @@ class PipelineTest(unittest.TestCase):
         self.assertIn("source chunk id", errs)
         self.assertIn("private path", errs)
         self.assertIn("8-word passage", errs)
+
+    def test_release_check_rejects_mentions_of_scanning(self):
+        self.repo.approve_templates()
+        publish.publish(self.paths)
+        (self.paths.dist / "about.txt").write_text("Spørsmålene er laget fra skannede sider.")
+        errs = "\n".join(release_check(self.paths.dist, self.paths)["errors"])
+        self.assertIn("mention of scanning/OCR", errs)
 
     def test_release_check_rejects_non_public_bank_fields(self):
         self.repo.approve_templates()

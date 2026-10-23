@@ -163,7 +163,7 @@ def build_bank(paths: Paths, *, mode: str, skip_flagged: bool = False,
         chapters.append({
             "number": n,
             "title": c.get("title") if c else None,
-            "status": "available" if counts.get(n) else ("no_questions" if scanned else "not_scanned"),
+            "status": "available" if counts.get(n) else ("no_questions" if scanned else "upcoming"),
             "questions": counts.get(n, 0),
         })
     sections = {

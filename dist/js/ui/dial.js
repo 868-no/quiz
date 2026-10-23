@@ -35,7 +35,7 @@ function needle(x, top, bottom) {
 /**
  * Chapter scale for the setup screen. chapters: [{number, status}]; selected: Set of numbers.
  * Available chapters are stations (hollow, or lit when selected); chapters without
- * questions are faint; chapters not yet scanned are blank scale.
+ * questions are faint; upcoming chapters are blank scale.
  */
 export function chapterDial(chapters, selected) {
   const n = chapters.length;
@@ -43,10 +43,10 @@ export function chapterDial(chapters, selected) {
   const base = 46;
   const svg = glass(H);
   const els = [h('line', { x1: PAD - 10, y1: base, x2: W - PAD + 10, y2: base, class: 'dial-base' })];
-  const blank = chapters.filter((c) => c.status === 'not_scanned');
+  const blank = chapters.filter((c) => c.status === 'upcoming');
   for (const c of chapters) {
     const x = scaleX(c.number, n);
-    if (c.status === 'not_scanned') {
+    if (c.status === 'upcoming') {
       els.push(h('line', { x1: x, y1: base, x2: x, y2: base + 5, class: 'dial-tick dial-tick-minor' }));
       continue;
     }
@@ -60,7 +60,7 @@ export function chapterDial(chapters, selected) {
   if (blank.length) {
     const x1 = scaleX(blank[0].number, n);
     const x2 = scaleX(blank[blank.length - 1].number, n);
-    els.push(h('text', { x: (x1 + x2) / 2, y: base - 12, class: 'dial-note', 'text-anchor': 'middle' }, 'ikke skannet ennå'));
+    els.push(h('text', { x: (x1 + x2) / 2, y: base - 12, class: 'dial-note', 'text-anchor': 'middle' }, 'kommer senere'));
   }
   svg.c.push(...els);
   return svg;
