@@ -244,6 +244,16 @@ class DeployTest(unittest.TestCase):
                              capture_output=True, text=True, check=True).stdout
         return set(out.split())
 
+    def test_site_links_are_published_and_validated(self):
+        (self.paths.config / "site.json").write_text(json.dumps(
+            {"cname": None, "issues_url": "https://github.com/868-no/quiz-site/issues"}))
+        publish.publish(self.paths)
+        self.assertEqual(read_json(self.paths.dist / "data" / "bank.json")["site"],
+                         {"issues_url": "https://github.com/868-no/quiz-site/issues"})
+        (self.paths.config / "site.json").write_text(json.dumps({"issues_url": "https://evil.example/x"}))
+        with self.assertRaises(publish.PublishError):
+            publish.publish(self.paths)
+
     def test_publish_writes_github_pages_files(self):
         (self.paths.config / "site.json").write_text(json.dumps({"cname": "quiz.868.no"}))
         publish.publish(self.paths)

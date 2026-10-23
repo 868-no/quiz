@@ -9,13 +9,13 @@ const HTML_TAGS = new Set([
   'div', 'span', 'p', 'ol', 'ul', 'li', 'em', 'strong', 'sub', 'sup', 'var', 'button', 'figure',
   'figcaption', 'details', 'summary', 'section', 'h1', 'h2', 'h3', 'h4', 'small', 'abbr', 'br', 'input',
   'label', 'select', 'option', 'fieldset', 'legend', 'progress', 'table', 'caption', 'thead', 'tbody', 'tr',
-  'th', 'td', 'form', 'i', 'b',
+  'th', 'td', 'form', 'i', 'b', 'a',
 ]);
 const SVG_TAGS = new Set([
   'svg', 'g', 'path', 'line', 'polyline', 'polygon', 'rect', 'circle', 'ellipse', 'text', 'tspan',
   'title', 'desc', 'defs', 'marker', 'pattern',
 ]);
-const ATTR_OK = /^(class|id|role|tabindex|type|lang|title|hidden|name|value|checked|disabled|for|selected|max|min|scope|open|autocomplete|novalidate|viewBox|width|height|x|y|dx|dy|x1|y1|x2|y2|cx|cy|r|rx|ry|d|points|fill|stroke|stroke-width|stroke-dasharray|stroke-linecap|stroke-linejoin|font-size|font-weight|font-style|text-anchor|dominant-baseline|transform|marker-end|marker-start|markerWidth|markerHeight|refX|refY|orient|preserveAspectRatio|pathLength|focusable|patternUnits|opacity|baseline-shift|aria-[a-z]+|data-[a-z-]+)$/;
+const ATTR_OK = /^(class|id|role|tabindex|type|lang|title|hidden|href|rel|target|name|value|checked|disabled|for|selected|max|min|scope|open|autocomplete|novalidate|viewBox|width|height|x|y|dx|dy|x1|y1|x2|y2|cx|cy|r|rx|ry|d|points|fill|stroke|stroke-width|stroke-dasharray|stroke-linecap|stroke-linejoin|font-size|font-weight|font-style|text-anchor|dominant-baseline|transform|marker-end|marker-start|markerWidth|markerHeight|refX|refY|orient|preserveAspectRatio|pathLength|focusable|patternUnits|opacity|baseline-shift|aria-[a-z]+|data-[a-z-]+)$/;
 
 /** Create a vnode. Children may be strings, numbers, vnodes, arrays, null/false (skipped). */
 export function h(t, a = {}, ...children) {
@@ -33,8 +33,12 @@ function flatten(children) {
   return out;
 }
 
+// Links may only point to the project's GitHub pages (issue reporting).
+const HREF_OK = /^https:\/\/github\.com\/[^\s"<>]*$/;
+
 function checkNode(node) {
   if (!HTML_TAGS.has(node.t) && !SVG_TAGS.has(node.t)) throw new Error(`tag not allowed: ${node.t}`);
+  if ('href' in node.a && !HREF_OK.test(String(node.a.href))) throw new Error(`link not allowed: ${node.a.href}`);
   for (const k of Object.keys(node.a)) {
     if (!ATTR_OK.test(k)) throw new Error(`attribute not allowed: ${k}`);
   }

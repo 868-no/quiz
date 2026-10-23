@@ -1,4 +1,6 @@
 {
-  "about": "Public site settings used by `python3 -m tools publish` and `deploy`. cname is written to dist/CNAME for GitHub Pages; set it to null for other hosts.",
-  "cname": "quiz.868.no"
+  "about": "Public site settings used by `python3 -m tools publish` and `deploy`. cname is written to dist/CNAME for GitHub Pages (null for other hosts). repo_url/issues_url (https://github.com/… only) are shown on the site so learners can report errors; null hides the links.",
+  "cname": "quiz.868.no",
+  "repo_url": "https://github.com/868-no/quiz",
+  "issues_url": "https://github.com/868-no/quiz/issues"
 }

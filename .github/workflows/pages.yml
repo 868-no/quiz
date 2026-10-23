@@ -1,0 +1,42 @@
+# Deploys the committed dist/ directory to GitHub Pages (https://quiz.868.no/).
+#
+# dist/ is built locally with `python3 -m tools publish`, which needs the private
+# source import for its full checks. CI never builds content; it only re-runs the
+# release check on dist/ (file types, private markers, allowlisted bank fields)
+# and refuses to deploy if it fails. Nothing outside dist/ is ever published.
+name: Deploy site
+
+on:
+  push:
+    branches: [main]
+    paths: ["dist/**", ".github/workflows/pages.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Release check (fails closed)
+        run: python3 -m tools release-check dist
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+      - id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,7 +1,7 @@
 # Private, never deployed, never committed (copyrighted source material, prompts, raw LLM output)
 /private/
-# Build output (regenerate with `python3 -m tools publish`)
-/dist/
+# dist/ IS committed: it is the deployed site, built locally by `python3 -m tools publish`
+# (approved content only, release-checked) and deployed by .github/workflows/pages.yml.
 # Local secrets
 *.env
 .env*

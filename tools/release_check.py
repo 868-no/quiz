@@ -32,7 +32,7 @@ FORBIDDEN_PATTERNS = [
     (re.compile(r"(api[_-]?key|secret|password)\s*[:=]\s*\S{8,}", re.I), "credential"),
     (re.compile(r"\bsk-[A-Za-z0-9]{20,}"), "credential"),
 ]
-BANK_TOP = {"schema", "mode", "built_at", "bank_id", "book", "chapters", "sections", "topics", "glossary",
+BANK_TOP = {"schema", "mode", "built_at", "bank_id", "book", "site", "chapters", "sections", "topics", "glossary",
             "templates", "questions"}
 QUESTION_KEYS = {"id", "rev", "chapter", "sections", "topics", "difficulty", "style", "priority", "context",
                  "stem", "options", "correct", "explanation", "visual", "glossary_after_answer", "ref"}

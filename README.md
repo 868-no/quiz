@@ -8,10 +8,9 @@ wrong, and where to read more in the textbook (chapter, section, printed page).
 The repository also contains the **offline editorial pipeline** that turns the
 private textbook digitization exports into reviewed, original, publishable questions.
 
-> **Status:** working end to end. The production build currently publishes
-> **0 questions**: nothing has been approved by a human reviewer yet. 33 original
-> draft questions (chapters 2–6) are ready for review (status `needs_review`).
-> See [What remains before public deployment](#what-remains-before-public-deployment).
+> **Status:** live at https://quiz.868.no/ with **121 approved questions** for chapters 2–6
+> (chapters 7–16 are not scanned yet). Study page references have not yet been checked
+> against the printed book; corrections are welcome as [GitHub issues](https://github.com/868-no/quiz/issues).
 
 ## Quick start
 
@@ -37,8 +36,8 @@ python3 -m tools review approve q-0001 --reviewer "Navn" --ack ocr,figures --che
 python3 -m tools publish
 python3 -m tools serve                    # serves dist/
 
-# 6. Deploy dist/ to GitHub Pages (https://quiz.868.no/); see docs/architecture.md#deployment
-python3 -m tools deploy --remote git@github.com:OWNER/quiz-site.git
+# 6. Deploy: commit dist/ and push; GitHub Actions publishes it to https://quiz.868.no/
+git add dist content && git commit -m "Publish" && git push
 
 # Tests
 ./run-tests.sh
@@ -98,21 +97,19 @@ More: [docs/architecture.md](docs/architecture.md).
 | Path | Public? | Committed? | Contents |
 |---|---|---|---|
 | `private/` | **never** | **no** (`.gitignore`) | imported exports and figure crops, LLM prompts/outputs, check reports, audit log, preview build |
-| `dist/` | **yes – this is the deployable site** | no (build output; pushed only to the site repo's `gh-pages`) | only `index.html`, `styles.css`, `js/`, `data/bank.json`, `CNAME`, `.nojekyll` |
+| `dist/` | **yes – this is the deployed site** | yes (deployed by `.github/workflows/pages.yml`) | only `index.html`, `styles.css`, `js/`, `data/bank.json`, `CNAME`, `.nojekyll` |
 | `web/` | yes (copied into `dist/`) | yes | site source code |
-| `content/` | only the allowlisted projection in `data/bank.json` | yes | original questions (incl. drafts), glossary, chapter registry, template schemas |
+| `content/` | readable in the public repository; the site uses only the allowlisted projection in `data/bank.json` | yes | original questions (incl. review history), glossary, chapter registry, template schemas |
 | `tools/`, `tests/`, `config/`, `docs/` | no | yes | pipeline, tests, configuration, documentation |
 
 `content/` contains chunk *identifiers* and review history but no textbook text. The
 public bank never contains chunk ids, source mappings, provenance, review data,
 learning objectives or unapproved items; `release-check` enforces this.
 
-## What remains before public deployment
+## Open items
 
-1. **Human review.** No question, glossary term, visual template version or section
-   heading has been approved. Every item was drafted by an AI assistant from the
-   imported source text and must be checked by a competent person against the printed
-   book (technical correctness, single defensible answer, originality, study reference).
+1. **Page references.** Approved questions cite chapter and printed page, but these have
+   not yet been checked against the printed book.
 2. **Copyright review** of the approach and the approved texts before launch.
    Automated similarity checks are aids, not legal determinations.
 3. **Section headings:** verify headings (`chapters verify-section`) so references can
@@ -120,6 +117,8 @@ learning objectives or unapproved items; `release-check` enforces this.
 4. **Manual browser testing** on real devices and screen readers (VoiceOver, NVDA,
    TalkBack). UI behaviour is tested in a simulated DOM (jsdom), and the figures were
    rendered and inspected, but no real browser was available in the build environment.
-5. GitHub Pages setup for quiz.868.no: a separate public site repository, DNS `CNAME`,
-   verified domain and *Enforce HTTPS* – see [docs/architecture.md](docs/architecture.md#deployment).
-   Keep this source repository **private**.
+5. GitHub Pages setup for quiz.868.no (public repository, Pages source *GitHub Actions*,
+   DNS `CNAME`, verified domain, *Enforce HTTPS*) – see [docs/architecture.md](docs/architecture.md#deployment).
+
+Errors can be reported as [GitHub issues](https://github.com/868-no/quiz/issues); each question
+shows its id after answering, with a link to a pre-filled issue.

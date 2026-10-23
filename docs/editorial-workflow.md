@@ -136,14 +136,22 @@ source, page and copy checks are then skipped, so prefer publishing where the im
 
 ## Deployment
 
-The site is published to GitHub Pages at https://quiz.868.no/ from a separate public
-repository that holds only the build (see [architecture.md](architecture.md#deployment)):
+The site at https://quiz.868.no/ is served by GitHub Pages from the committed `dist/`
+directory of the public repository (see [architecture.md](architecture.md#deployment)):
 
 ```sh
 python3 -m tools publish
-python3 -m tools deploy --remote git@github.com:OWNER/quiz-site.git     # asks before pushing
+git add dist content && git commit -m "Publish …" && git push
 ```
 
-Never push `private/`, `content/` or this repository to the public site repository. The
-preview (`private/preview/`) must never be deployed; it fails the production release
-check by design, and `deploy` only ever pushes `dist/`.
+The repository is public, so never commit anything from `private/` (it is git-ignored)
+and never paste textbook text into questions, docs or commit messages. The preview
+(`private/preview/`) must never be deployed; it fails the production release check by
+design.
+
+## Error reports from learners
+
+Learners report problems as GitHub issues; the title starts with the question id and
+version, e.g. `[q-0012 v1]`. To act on one: `python3 -m tools review show q-0012`, then
+`review edit q-0012` (creates a new draft revision), `verify`, `review approve`,
+`publish`, commit and push. The old revision stays published until the new one is approved.

@@ -107,6 +107,31 @@ test('answering locks the question and shows complete feedback', { skip }, async
   assert.equal($$(root, '.feedback').length, 1);
 });
 
+test('feedback has a pre-filled GitHub issue link identifying the question', { skip }, async () => {
+  const bank = bankWithTerms();
+  bank.site = { issues_url: 'https://github.com/868-no/quiz-site/issues' };
+  const { root } = await app(bank);
+  start(root, [2]);
+  choose(root, 0);
+  $(root, '#answer-form button[type=submit]').click();
+  const a = $(root, '.feedback .report a');
+  const id = $(root, '.feedback .report .qid').textContent;
+  assert.match(id, /Spørsmål q-\d+, versjon 1/);
+  const url = new URL(a.getAttribute('href'));
+  assert.equal(url.origin + url.pathname, 'https://github.com/868-no/quiz-site/issues/new');
+  assert.match(url.searchParams.get('title'), /^\[q-\d+ v1\] $/);
+  assert.ok(url.searchParams.get('body').includes('Hva er feil eller uklart?'));
+  assert.equal(a.getAttribute('rel'), 'noopener noreferrer');
+});
+
+test('no report link when the site has no issue tracker configured', { skip }, async () => {
+  const { root } = await app(bankWithTerms());
+  start(root, [2]);
+  choose(root, 0);
+  $(root, '#answer-form button[type=submit]').click();
+  assert.equal($(root, '.feedback .report'), null);
+});
+
 test('a correct answer still gets an explanation and a study reference', { skip }, async () => {
   const { root, instance } = await app(bankWithTerms());
   start(root, [2]);

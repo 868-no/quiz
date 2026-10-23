@@ -166,6 +166,9 @@ details summary { cursor: pointer; padding: 6px 0; }
 .steps li { margin: 0.3em 0; }
 .note { color: var(--muted); font-style: italic; }
 
+.report { font-size: 0.92rem; color: var(--muted); margin: 8px 0 0; }
+.report a, .site-footer a { color: var(--accent); }
+
 /* ---- results ---- */
 .score { font-size: 1.4rem; }
 .by-chapter { border-collapse: collapse; margin: 12px 0; width: 100%; }

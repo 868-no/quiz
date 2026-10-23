@@ -185,6 +185,7 @@ def build_bank(paths: Paths, *, mode: str, skip_flagged: bool = False,
         "built_at": now_iso(),
         "bank_id": canonical_hash([[q["id"], q["rev"]] for q in public_qs])[:16],
         "book": {"title": book.get("title")},
+        "site": public_site_links(paths),
         "chapters": chapters,
         "sections": sections,
         "topics": topics,
@@ -204,6 +205,19 @@ def _copy_web(paths: Paths, out: Path) -> None:
 def site_config(paths: Paths) -> dict[str, Any]:
     path = paths.config / "site.json"
     return read_json(path) if path.exists() else {}
+
+
+def public_site_links(paths: Paths) -> dict[str, Any]:
+    """Links to the public repository and its issue tracker, shown on the site."""
+    cfg = site_config(paths)
+    out = {}
+    for key in ("repo_url", "issues_url"):
+        url = cfg.get(key)
+        if url is not None:
+            if not re.fullmatch(r"https://github\.com/[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+(/issues)?", url):
+                raise PublishError(f"config/site.json: {key} must be a https://github.com/OWNER/REPO URL")
+            out[key] = url
+    return out
 
 
 def _write_host_files(paths: Paths, out: Path) -> None:

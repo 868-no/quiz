@@ -14,6 +14,14 @@ async function boot() {
   if (res.bank.mode === 'preview') {
     document.getElementById('preview-banner').hidden = false;
   }
+  const site = res.bank.site || {};
+  if (site.issues_url) {
+    const p = document.getElementById('footer-report');
+    p.replaceChildren(toDOM(h('span', {}, 'Har du funnet en feil, eller et forslag til forbedring? ',
+      h('a', { href: site.issues_url, target: '_blank', rel: 'noopener noreferrer' }, 'Meld fra på GitHub'),
+      '. Det krever en gratis GitHub-konto.')));
+    p.hidden = false;
+  }
   createApp(root, res.bank);
 }
 

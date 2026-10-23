@@ -137,6 +137,31 @@ export function createApp(root, bank) {
     return `${parts.join(', ')}${book}.`;
   }
 
+  // Pre-filled GitHub issue for a question (id + revision identify it exactly).
+  function reportLink(q) {
+    const issues = bank.site && bank.site.issues_url;
+    if (!issues) return null;
+    const title = `[${q.id} v${q.rev}] `;
+    const body = [
+      `Spørsmål: ${q.id} (versjon ${q.rev}), kapittel ${q.chapter}`,
+      `> ${plainText(q.stem).replace(/\n/g, ' ')}`,
+      '',
+      '**Hva er feil eller uklart?**',
+      '',
+      '',
+      '**Forslag til retting:**',
+      '',
+      '',
+      '**Sidehenvisning i boka (hvis du har den):**',
+      '',
+    ].join('\n');
+    const href = `${issues}/new?title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}`;
+    return h('p', { class: 'report' },
+      h('span', { class: 'qid' }, `Spørsmål ${q.id}, versjon ${q.rev}. `),
+      h('a', { href, target: '_blank', rel: 'noopener noreferrer' }, 'Fant du en feil? Rapporter den på GitHub'),
+      h('span', { class: 'visually-hidden' }, ' (åpnes i ny fane)'));
+  }
+
   function richOpts(q, answered) {
     return { glossary: bank.glossary, plainTerms: answered ? null : new Set(q.glossary_after_answer || []) };
   }
@@ -189,6 +214,7 @@ export function createApp(root, bank) {
           h('strong', {}, `${letterOf(id)}: `), optText(id),
           renderRich(q.options.find((o) => o.id === id).feedback, opts))))) : null,
       h('p', { class: 'ref' }, h('span', { 'aria-hidden': 'true' }, '📖 '), h('strong', {}, 'Les mer: '), refText(q)),
+      reportLink(q),
       h('div', { class: 'actions' },
         h('button', { type: 'button', class: 'btn btn-primary', 'data-action': 'next' }, last ? 'Se resultatet' : 'Neste spørsmål')));
   }
@@ -262,7 +288,8 @@ export function createApp(root, bank) {
               h('p', {}, h('strong', {}, 'Riktig svar: '), `${letterOf(q.correct[0])} – `, optText(q.correct[0])),
               chosen && !x.correct ? h('div', { class: 'fb-block' }, h('h4', {}, 'Hvorfor svaret ditt er feil'), renderRich(chosen.feedback, opts)) : null,
               h('div', { class: 'fb-block' }, h('h4', {}, 'Forklaring'), renderRich(q.explanation, opts)),
-              h('p', { class: 'ref' }, h('strong', {}, 'Les mer: '), refText(q)))));
+              h('p', { class: 'ref' }, h('strong', {}, 'Les mer: '), refText(q)),
+              reportLink(q))));
       })));
     mount(view, '#res-title');
   }

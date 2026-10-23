@@ -80,41 +80,43 @@ The site is deployed to **GitHub Pages at https://quiz.868.no/**. `config/site.j
 sets the custom domain; `publish` writes `dist/CNAME` and an empty `dist/.nojekyll`
 (both allowlisted by the release check).
 
-### Repository layout on GitHub
+### How it is deployed
 
-Use **two repositories**:
+The repository `868-no/quiz` is public and holds both the source and the built site.
+`dist/` is committed: it is built locally with `python3 -m tools publish`, where the
+private import is available for the full checks (sources, pages, textbook overlap).
+On every push that changes `dist/`, `.github/workflows/pages.yml` re-runs the release
+check on `dist/` and deploys **only that folder** to GitHub Pages. CI never builds or
+approves content.
 
-| Repository | Visibility | Contains |
-|---|---|---|
-| source (this repo) | **private** | tools, web source, `content/` (drafts, chunk ids, review logs with reviewer names) |
-| site, e.g. `OWNER/quiz-site` | public | only the built site on branch `gh-pages` |
+What the public repository shows besides the site: all question files including review
+history and reviewer names, internal source references (chunk ids, page numbers, exam
+markers), learning objectives and the tooling. It never contains textbook text: imports,
+OCR text and figure crops stay in the git-ignored `private/` directory, and the chapter
+registry stores neutral section ids and heading hashes only. Check this before every
+commit (see editorial-workflow.md).
 
-Do not make the source repository public or serve Pages from it: `content/` holds
-unreviewed drafts, source chunk ids and the audit trail, which must not be hosted
-publicly. `private/` and `dist/` are git-ignored in any case.
+Learners report errors as GitHub issues (`config/site.json: issues_url`). Each question
+shows its id and version after answering, with a link to a pre-filled issue.
 
 ### One-time setup
 
-1. Create the site repository on GitHub (empty).
-2. Build and push: `python3 -m tools publish` then
-   `python3 -m tools deploy --remote git@github.com:OWNER/quiz-site.git --dry-run`, and without
-   `--dry-run` to push. It creates `gh-pages` on first use.
-3. In the site repository: *Settings → Pages → Build and deployment*: *Deploy from a branch*,
-   branch `gh-pages`, folder `/ (root)`. The custom domain is picked up from `CNAME`.
-4. DNS for 868.no: add `quiz  CNAME  OWNER.github.io.`
-5. Recommended: verify `868.no` under your GitHub account (*Settings → Pages → Verified
-   domains*) to prevent subdomain takeover, then tick *Enforce HTTPS* once the certificate is issued.
+1. Make the repository public (*Settings → General → Danger zone*).
+2. *Settings → Pages → Build and deployment → Source: GitHub Actions*.
+3. *Settings → Pages → Custom domain*: `quiz.868.no`. DNS for 868.no: `quiz  CNAME  868-no.github.io.`
+4. Verify `868.no` for the organisation (*Organization settings → Pages → Verified domains*)
+   to prevent subdomain takeover, then tick *Enforce HTTPS* once the certificate is issued.
 
 ### Every release
 
 ```sh
-python3 -m tools publish        # approved content only, runs the release check
-python3 -m tools deploy --remote git@github.com:OWNER/quiz-site.git
+python3 -m tools publish            # approved content only; full checks with the private import
+git add dist content && git commit -m "Publish …" && git push
 ```
 
-`deploy` re-runs the release check, replaces the branch's files with `dist/` as a normal
-commit (no force-push, history kept), and refuses a target branch that contains source
-code. Nothing is pushed without confirmation (`--yes` for scripts).
+The workflow deploys within a minute or two. `python3 -m tools deploy` (push `dist/` to a
+separate site repository) remains available if the source repository should ever be
+made private again.
 
 ### HTTP headers on GitHub Pages
 
