@@ -115,6 +115,8 @@ def _dc_rules(p: dict[str, Any], errors: list[str]) -> None:
     vm = p.get("voltmeter")
     if vm and vm["across"] != "source" and vm["across"] not in names:
         errors.append(f"voltmeter.across: {vm['across']} does not exist")
+    if p["source"].get("internal_ohms") is not None and p["topology"] != "series":
+        errors.append("source.internal_ohms: only drawn for a series circuit")
 
 
 def _dc_quantities(p: dict[str, Any]) -> dict[str, dict[str, Any]]:
@@ -122,10 +124,11 @@ def _dc_quantities(p: dict[str, Any]) -> dict[str, dict[str, Any]]:
     rs = [r["ohms"] for r in p["resistors"]]
     q: dict[str, dict[str, Any]] = {"U": {"value": u, "unit": "V", "shown": p["source"]["show_value"]}}
     for i, r in enumerate(p["resistors"]):
-        q[f"R{i + 1}"] = {"value": r["ohms"], "unit": "Ω", "shown": r["show_value"]}
+        q[f"R{i + 1}"] = {"value": r["ohms"], "unit": "Ω", "shown": r["show_value"] and not r["name_only"]}
     am, vm = p.get("ammeter"), p.get("voltmeter")
+    r_int = p["source"].get("internal_ohms")
     if p["topology"] == "series":
-        rt = sum(rs)
+        rt = sum(rs) + (r_int or 0)  # the source's internal resistance is in the loop
         i_main = u / rt
         branch_i = [i_main] * len(rs)
         branch_u = [i_main * r for r in rs]
@@ -144,6 +147,13 @@ def _dc_quantities(p: dict[str, Any]) -> dict[str, dict[str, Any]]:
                                         (am["branch"] == name or (p["topology"] == "series" and am["branch"] == "main")))}
         q[f"U_{name}"] = {"value": branch_u[i], "unit": "V",
                           "shown": bool(vm and vm["show_reading"] and vm["across"] == name)}
+        q[f"P_{name}"] = {"value": branch_i[i] * branch_u[i], "unit": "W", "shown": False}
+    if r_int is not None:
+        q["r"] = {"value": r_int, "unit": "Ω", "shown": p["source"]["show_internal"]}
+        q["U_r"] = {"value": i_main * r_int, "unit": "V", "shown": False}
+    # what a voltmeter across the source's terminals reads (EMF minus the internal drop)
+    q["U_terminal"] = {"value": u - i_main * (r_int or 0), "unit": "V",
+                       "shown": bool(vm and vm["show_reading"] and vm["across"] == "source")}
     q["P"] = {"value": u * i_main, "unit": "W", "shown": False}
     return q
 
@@ -390,6 +400,8 @@ def _ts_rules(p: dict[str, Any], errors: list[str]) -> None:
         errors.append("bypass_capacitor: needs an emitter resistor (re_ohms)")
     if p["rc_ohms"] is None:
         errors.append("rc_ohms: required (the collector resistor is always drawn)")
+    if p.get("base_resistor") and p["divider"]:
+        errors.append("base_resistor: use either a base resistor from the supply or a divider, not both")
 
 
 def _ts_quantities(p: dict[str, Any]) -> dict[str, dict[str, Any]]:
@@ -397,6 +409,9 @@ def _ts_quantities(p: dict[str, Any]) -> dict[str, dict[str, Any]]:
     for k, name in (("rc_ohms", "R_C"), ("re_ohms", "R_E")):
         if p.get(k) is not None:
             q[name] = {"value": p[k], "unit": "Ω", "shown": p["show_resistor_values"]}
+    rb = p.get("base_resistor")
+    if rb and rb.get("ohms") is not None:
+        q["R_B"] = {"value": rb["ohms"], "unit": "Ω", "shown": rb["show_value"]}
     for l in p["labels"]:
         sym, unit = _NODE_Q[l["node"]]
         if l.get("value") is not None:
@@ -430,11 +445,37 @@ def _reg_quantities(p: dict[str, Any]) -> dict[str, dict[str, Any]]:
     return q
 
 
+# --- zener-regulator --------------------------------------------------------------
+
+def _zen_rules(p: dict[str, Any], errors: list[str]) -> None:
+    if p["u_z_v"] >= p["u_in_v"]:
+        errors.append("u_z_v: the zener voltage must be lower than the input voltage")
+    if len(set(p["unknown"])) != len(p["unknown"]):
+        errors.append("unknown: duplicates")
+    if p.get("i_a") is None and ("I" in p["unknown"] or "R" in p["unknown"]):
+        errors.append("unknown: I and R need i_a")
+
+
+def _zen_quantities(p: dict[str, Any]) -> dict[str, dict[str, Any]]:
+    unk = set(p["unknown"])
+    u_r = p["u_in_v"] - p["u_z_v"]
+    q: dict[str, dict[str, Any]] = {
+        "U_in": {"value": p["u_in_v"], "unit": "V", "shown": "U_in" not in unk},
+        "U_Z": {"value": p["u_z_v"], "unit": "V", "shown": "U_Z" not in unk},
+        "U_R": {"value": u_r, "unit": "V", "shown": False},
+    }
+    if p.get("i_a") is not None:
+        q["I"] = {"value": p["i_a"], "unit": "A", "shown": "I" not in unk}
+        q["R"] = {"value": u_r / p["i_a"], "unit": "Ω", "shown": "R" not in unk}
+    return q
+
+
 RULES = {"dc-circuit": _dc_rules, "ac-circuit": _ac_rules, "waveform": _wave_rules, "block-diagram": _block_rules,
-         "rlc-circuit": _rlc_rules, "rectifier": _rect_rules, "transformer": _tr_rules, "transistor-stage": _ts_rules, "series-regulator": _reg_rules}
+         "rlc-circuit": _rlc_rules, "rectifier": _rect_rules, "transformer": _tr_rules, "transistor-stage": _ts_rules,
+         "series-regulator": _reg_rules, "zener-regulator": _zen_rules}
 QUANTITIES = {"dc-circuit": _dc_quantities, "ac-circuit": _ac_quantities, "waveform": _wave_quantities,
               "rlc-circuit": _rlc_quantities, "rectifier": _rect_quantities, "transformer": _tr_quantities,
-              "transistor-stage": _ts_quantities, "series-regulator": _reg_quantities}
+              "transistor-stage": _ts_quantities, "series-regulator": _reg_quantities, "zener-regulator": _zen_quantities}
 
 
 def validate_visual(templates: dict[str, dict[str, Any]], visual: Any, where: str = "visual"

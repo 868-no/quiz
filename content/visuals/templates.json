@@ -20,6 +20,12 @@
           "actor": "Jim C K Flaten",
           "action": "approve",
           "note": "Re-approved after layout changes for phone screens (no values changed)"
+        },
+        {
+          "at": "2026-10-24T10:03:56+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Re-approved: optional internal resistance in series circuits and name-only resistor labels (existing figures unchanged)"
         }
       ],
       "params": {
@@ -52,6 +58,17 @@
               "show_value": {
                 "type": "boolean",
                 "default": true
+              },
+              "internal_ohms": {
+                "type": "number",
+                "minimum": 0.001,
+                "maximum": 1000000,
+                "unit": "Ω",
+                "nullable": true
+              },
+              "show_internal": {
+                "type": "boolean",
+                "default": true
               }
             }
           },
@@ -74,6 +91,10 @@
                 "show_value": {
                   "type": "boolean",
                   "default": true
+                },
+                "name_only": {
+                  "type": "boolean",
+                  "default": false
                 }
               }
             }
@@ -653,6 +674,12 @@
           "actor": "Jim C K Flaten",
           "action": "approve",
           "note": "Nye figurmaler, tegninger gjengitt og inspisert."
+        },
+        {
+          "at": "2026-10-24T10:03:56+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Re-approved: centre-tap kind added (existing figures unchanged)"
         }
       ],
       "params": {
@@ -665,7 +692,8 @@
             "type": "string",
             "enum": [
               "half",
-              "bridge"
+              "bridge",
+              "center_tap"
             ]
           },
           "source": {
@@ -823,6 +851,12 @@
           "actor": "Jim C K Flaten",
           "action": "approve",
           "note": "Nye figurmaler, tegninger gjengitt og inspisert."
+        },
+        {
+          "at": "2026-10-24T10:03:57+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Re-approved: optional base resistor from the supply (existing figures unchanged)"
         }
       ],
       "params": {
@@ -898,6 +932,23 @@
                 }
               }
             }
+          },
+          "base_resistor": {
+            "type": "object",
+            "nullable": true,
+            "properties": {
+              "ohms": {
+                "type": "number",
+                "minimum": 1,
+                "maximum": 100000000.0,
+                "unit": "Ω",
+                "nullable": true
+              },
+              "show_value": {
+                "type": "boolean",
+                "default": true
+              }
+            }
           }
         }
       }
@@ -965,6 +1016,70 @@
           "input_capacitor": {
             "type": "boolean",
             "default": false
+          }
+        }
+      }
+    },
+    {
+      "id": "zener-regulator",
+      "version": 1,
+      "title": "Zenerdiode med seriemotstand",
+      "description": "Simple zener voltage reference: a DC input feeds a zener diode to ground through a series resistor R, and the zener voltage is taken out at the output terminals. Input voltage, zener voltage and current are shown as values or '?'; the voltage across R and R itself are computed.",
+      "idealised": "Forenklet koblingsskjema. Zenerdioden regnes å holde spenningen sin konstant, og strømmen som trekkes på utgangen er neglisjerbar.",
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T10:03:57+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Reviewed rendered figure for q-0158"
+        }
+      ],
+      "params": {
+        "type": "object",
+        "required": [
+          "u_in_v",
+          "u_z_v"
+        ],
+        "properties": {
+          "u_in_v": {
+            "type": "number",
+            "minimum": 0.1,
+            "maximum": 1000,
+            "unit": "V"
+          },
+          "u_z_v": {
+            "type": "number",
+            "minimum": 0.1,
+            "maximum": 1000,
+            "unit": "V"
+          },
+          "i_a": {
+            "type": "number",
+            "minimum": 1e-06,
+            "maximum": 10,
+            "unit": "A",
+            "nullable": true
+          },
+          "unknown": {
+            "type": "array",
+            "maxItems": 5,
+            "default": [],
+            "items": {
+              "type": "string",
+              "enum": [
+                "U_in",
+                "U_Z",
+                "I",
+                "U_R",
+                "R"
+              ]
+            }
+          },
+          "output_label": {
+            "type": "string",
+            "maxLength": 16,
+            "default": ""
           }
         }
       }

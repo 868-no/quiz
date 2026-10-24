@@ -1,9 +1,11 @@
-// dc-circuit@1: ideal DC source with resistors in series or parallel and optional
-// ideal meters. Meter readings are computed from the circuit, never typed in.
+// dc-circuit@1: DC source with resistors in series or parallel and optional ideal
+// meters. In a series circuit the source can have an internal resistance r, drawn
+// inside a dashed box with the battery. Meter readings are computed from the circuit,
+// never typed in.
 
 import { h } from '../render/vnode.js';
 import { formatSI } from '../render/format.js';
-import { arrowHead, battery, dot, label, meter, resistor, svgRoot, symLabel, wire } from './svg.js';
+import { arrowHead, battery, dot, label, meter, resistor, svgRoot, symLabel, wire, STROKE } from './svg.js';
 
 function rules(p) {
   const errors = [];
@@ -17,6 +19,7 @@ function rules(p) {
   }
   const vm = p.voltmeter;
   if (vm && vm.across !== 'source' && !names.has(vm.across)) errors.push(`voltmeter.across: ${vm.across} does not exist`);
+  if (p.source.internal_ohms != null && p.topology !== 'series') errors.push('source.internal_ohms: only drawn for a series circuit');
   return errors;
 }
 
@@ -26,13 +29,14 @@ function quantities(p) {
   const am = p.ammeter;
   const vm = p.voltmeter;
   const q = { U: { value: u, unit: 'V', shown: p.source.show_value } };
-  p.resistors.forEach((r, i) => { q[`R${i + 1}`] = { value: r.ohms, unit: 'Ω', shown: r.show_value }; });
+  p.resistors.forEach((r, i) => { q[`R${i + 1}`] = { value: r.ohms, unit: 'Ω', shown: r.show_value && !r.name_only }; });
   let rt;
   let iMain;
   let branchI;
   let branchU;
+  const rInt = p.source.internal_ohms;
   if (p.topology === 'series') {
-    rt = rs.reduce((a, b) => a + b, 0);
+    rt = rs.reduce((a, b) => a + b, 0) + (rInt || 0); // the source's internal resistance is in the loop
     iMain = u / rt;
     branchI = rs.map(() => iMain);
     branchU = rs.map((r) => iMain * r);
@@ -51,7 +55,14 @@ function quantities(p) {
       shown: Boolean(am && am.show_reading && (am.branch === name || (p.topology === 'series' && am.branch === 'main'))),
     };
     q[`U_${name}`] = { value: branchU[i], unit: 'V', shown: Boolean(vm && vm.show_reading && vm.across === name) };
+    q[`P_${name}`] = { value: branchI[i] * branchU[i], unit: 'W', shown: false };
   });
+  if (rInt != null) {
+    q.r = { value: rInt, unit: 'Ω', shown: p.source.show_internal };
+    q.U_r = { value: iMain * rInt, unit: 'V', shown: false };
+  }
+  // what a voltmeter across the source's terminals reads (EMF minus the internal drop)
+  q.U_terminal = { value: u - iMain * (rInt || 0), unit: 'V', shown: Boolean(vm && vm.show_reading && vm.across === 'source') };
   q.P = { value: u * iMain, unit: 'W', shown: false };
   return q;
 }
@@ -60,10 +71,13 @@ const val = (shown, value, unit) => (shown ? formatSI(value, unit) : '?');
 
 function describe(p, q) {
   const parts = [];
-  const rs = p.resistors.map((r, i) => `R${i + 1} = ${r.show_value ? formatSI(r.ohms, 'Ω') : 'ukjent'}`);
+  const rs = p.resistors.map((r, i) => (r.name_only ? `R${i + 1}` : `R${i + 1} = ${r.show_value ? formatSI(r.ohms, 'Ω') : 'ukjent'}`));
   const kind = p.topology === 'series' ? 'i serie' : 'i parallell';
   parts.push(`Koblingsskjema: et batteri med spenning ${p.source.show_value ? formatSI(p.source.voltage_v, 'V') : 'ukjent'} ` +
     `er koblet til ${rs.length === 1 ? 'én motstand' : `${rs.length} motstander ${kind}`}: ${rs.join(', ')}.`);
+  if (p.source.internal_ohms != null) {
+    parts.push(`Batteriet har en indre resistans r = ${p.source.show_internal ? formatSI(p.source.internal_ohms, 'Ω') : 'ukjent (?)'}, tegnet i serie med batteriet inne i en stiplet ramme.`);
+  }
   if (p.ammeter) {
     const where = p.ammeter.branch === 'main' ? 'i hovedledningen' : `i grenen med ${p.ammeter.branch}`;
     const sym = p.ammeter.branch === 'main' ? 'I' : `I_${p.ammeter.branch}`;
@@ -71,8 +85,8 @@ function describe(p, q) {
   }
   if (p.voltmeter) {
     const across = p.voltmeter.across === 'source' ? 'batteriet' : p.voltmeter.across;
-    const reading = p.voltmeter.across === 'source' ? q.U.value : q[`U_${p.voltmeter.across}`].value;
-    parts.push(`Et voltmeter over ${across} viser ${p.voltmeter.show_reading ? formatSI(reading, 'V') : 'en ukjent spenning (?)'}.`);
+    const reading = p.voltmeter.across === 'source' ? q.U_terminal.value : q[`U_${p.voltmeter.across}`].value;
+    parts.push(`Et voltmeter over ${across === 'batteriet' && p.source.internal_ohms != null ? 'batteriets klemmer' : across} viser ${p.voltmeter.show_reading ? formatSI(reading, 'V') : 'en ukjent spenning (?)'}.`);
   }
   if (p.show_current_direction) parts.push('Piler viser strømretningen (konvensjonell strøm, fra plusspolen gjennom kretsen til minuspolen).');
   return parts.join(' ');
@@ -88,12 +102,23 @@ function renderSeries(p, q) {
   const xs = { 1: [280], 2: [225, 335], 3: [190, 280, 370] }[n];
   const els = [wire([[L, BY - 6], [L, T], [R, T], [R, B], [L, B], [L, BY + 6]])];
   const flow = [`M ${L} ${BY - 6} L ${L} ${T} L ${R} ${T} L ${R} ${B} L ${L} ${B} L ${L} ${BY + 6}`];
+  const rInt = p.source.internal_ohms;
+  // with an internal resistance the battery moves up and r sits below it, both in a dashed box
+  // (the box stays clear of the rails, so a voltmeter across the source taps outside it)
+  const bY = rInt != null ? BY - 15 : BY;
+  if (rInt != null) {
+    const rY = BY + 20;
+    els.push(h('rect', { x: L - 40, y: bY - 18, width: 64, height: rY - bY + 38, fill: 'none', stroke: STROKE, 'stroke-width': 1.2, 'stroke-dasharray': '5 4' }));
+    els.push(wire([[L, bY + 6], [L, BY + 6]]), resistor(L, rY, true, 34, 14));
+    els.push(symLabel(L + 34, rY, 'r', null, ` = ${val(p.source.show_internal, rInt, 'Ω')}`, { 'text-anchor': 'start', 'font-size': 13 }));
+  }
   p.resistors.forEach((r, i) => {
     els.push(resistor(xs[i], T));
-    els.push(symLabel(xs[i], T + 30, 'R', String(i + 1), ` = ${val(r.show_value, r.ohms, 'Ω')}`, { 'font-size': 13 }));
+    // name_only: just "R1", for a resistor whose value is neither given nor asked
+    els.push(symLabel(xs[i], T + 30, 'R', String(i + 1), r.name_only ? null : ` = ${val(r.show_value, r.ohms, 'Ω')}`, { 'font-size': 13 }));
   });
-  els.push(battery(L, BY));
-  els.push(symLabel(L + 22, BY, 'U', null, ` = ${val(p.source.show_value, p.source.voltage_v, 'V')}`, { 'text-anchor': 'start', 'font-size': 13 }));
+  els.push(battery(L, bY));
+  els.push(symLabel(L + (rInt != null ? 34 : 22), bY, 'U', rInt != null ? '0' : null, ` = ${val(p.source.show_value, p.source.voltage_v, 'V')}`, { 'text-anchor': 'start', 'font-size': 13 }));
   if (p.ammeter) {
     const cx = 280;
     els.push(meter(cx, B, 'A'));
@@ -102,10 +127,12 @@ function renderSeries(p, q) {
   if (p.voltmeter) {
     if (p.voltmeter.across === 'source') {
       const mx = L - 85;
-      els.push(dot(L, T + 25), dot(L, B - 25));
-      els.push(wire([[L, T + 25], [mx, T + 25], [mx, BY - 17]]), wire([[mx, BY + 17], [mx, B - 25], [L, B - 25]]));
+      const t1 = rInt != null ? T + 10 : T + 25; // the terminals: outside the dashed box
+      const t2 = rInt != null ? B - 10 : B - 25;
+      els.push(dot(L, t1), dot(L, t2));
+      els.push(wire([[L, t1], [mx, t1], [mx, BY - 17]]), wire([[mx, BY + 17], [mx, t2], [L, t2]]));
       els.push(meter(mx, BY, 'V'));
-      els.push(symLabel(mx, B - 8, 'U', null, ` = ${val(p.voltmeter.show_reading, q.U.value, 'V')}`, { 'font-size': 12 }));
+      els.push(symLabel(mx, rInt != null ? t2 + 22 : B - 8, 'U', rInt != null ? 'kl' : null, ` = ${val(p.voltmeter.show_reading, q.U_terminal.value, 'V')}`, { 'font-size': 12 }));
     } else {
       const k = Number(p.voltmeter.across.slice(1)) - 1;
       const cx = xs[k];

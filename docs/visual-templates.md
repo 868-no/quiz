@@ -25,7 +25,7 @@ Figures are drawn from **parameters**, never stored as images or HTML. A questio
   shapes exports `fixedTextSize: true`; `minScale` (default 0.6) is the smallest scale a
   figure is shown at before it scrolls sideways.
 
-There are nine templates, all **approved** at version 1. A new template or version
+There are ten templates, all **approved** at version 1. A new template or version
 starts as `needs_review`: a person checks the drawings (`python3 -m tools preview`) and
 approves it (`python3 -m tools visuals approve id@version`) before questions using it
 can be published. Changing an approved template's code or schema calls for a new
@@ -41,13 +41,13 @@ circuit to −; optional animated current flow.
 | Param | Type |
 |---|---|
 | `topology` | `series` \| `parallel` |
-| `source` | `{voltage_v (0,1–1000), show_value=true}` |
-| `resistors` | 1–3 × `{ohms (0,1–10⁷), show_value=true}` (named R1, R2, R3) |
+| `source` | `{voltage_v (0,1–1000), show_value=true, internal_ohms?, show_internal=true}` – `internal_ohms` (series only) draws the source's internal resistance r inside a dashed box; the source voltage is then labelled U₀ and a voltmeter across the source reads the terminal voltage |
+| `resistors` | 1–3 × `{ohms (0,1–10⁷), show_value=true, name_only=false}` (named R1, R2, R3; `name_only` shows just the name, for a value neither given nor asked) |
 | `ammeter` | `null` or `{branch: main\|R1\|R2\|R3 = main, show_reading=false}` (series: main only) |
 | `voltmeter` | `null` or `{across: source\|R1\|R2\|R3, show_reading=false}` |
 | `show_current_direction`, `animate_current` | booleans |
 
-Quantities for checks: `U`, `R1…`, `R_total`, `I`, `I_R1…`, `U_R1…`, `P` (each with `shown`).
+Quantities for checks: `U`, `R1…`, `R_total`, `I`, `I_R1…`, `U_R1…`, `P_R1…`, `P`, `U_terminal`, and with an internal resistance `r` and `U_r` (each with `shown`).
 Hidden values are drawn as `?`.
 
 ## `ac-circuit@1` – vekselstrømskrets
@@ -113,13 +113,14 @@ Quantities: component names (`R1`, `C1` …), `R_total`/`C_total`/`L_total`, `U`
 
 ## `rectifier@1` – likeretter
 
-Half-wave (one diode) or bridge (four diodes) rectifier from an AC source, with an
-optional reservoir capacitor and load; also used for a simple diode detector. The
+Half-wave (one diode), bridge (four diodes) or centre-tap (transformer with a
+centre-tapped secondary and two diodes) rectifier from an AC source, with an optional
+reservoir capacitor and load; also used for a simple diode detector. The
 output's plus side is always at the top.
 
 | Param | Type |
 |---|---|
-| `kind` | `half` \| `bridge` |
+| `kind` | `half` \| `bridge` \| `center_tap` |
 | `source` | `{u_rms? \| u_peak? (not both), name?, show_value=true}` |
 | `capacitor`, `load` | booleans (at least one) |
 | `load_name` | `R_L` \| `R` |
@@ -155,9 +156,10 @@ and the collector current are author-given labels.
 | `rc_ohms` (required), `re_ohms?`, `show_resistor_values` | resistors |
 | `bypass_capacitor` | needs `re_ohms` |
 | `divider`, `coupling` | booleans |
+| `base_resistor` | `null` or `{ohms?, show_value=true}`: a single resistor R_B from the supply to the base (not with `divider`); no value or a hidden one draws `?` |
 | `labels` | up to 4 × `{node: B\|E\|C\|IC, value?}` – no value draws `?` |
 
-Quantities: `U_CC`, `R_C`, `R_E`, `U_B`, `U_E`, `U_C`, `I_C` (labelled ones).
+Quantities: `U_CC`, `R_C`, `R_E`, `R_B`, `U_B`, `U_E`, `U_C`, `I_C` (labelled ones).
 
 ## `series-regulator@1` – spenningsregulator med serietransistor
 
@@ -174,6 +176,21 @@ never typed in.
 | `input_capacitor` | boolean |
 
 Quantities: `U_in`, `U_out`, `I_L`, `U_pass`, `P_pass` (the last two are never shown).
+
+## `zener-regulator@1` – zenerdiode med seriemotstand
+
+A DC input feeds a zener diode to ground through a series resistor R; the zener voltage
+is taken out at the output terminals. The voltage across R and the value of R are
+**computed**.
+
+| Param | Type |
+|---|---|
+| `u_in_v`, `u_z_v` | input and zener voltage (zener lower than input) |
+| `i_a` | current through R and the zener (optional; needed for `R`) |
+| `unknown` | subset of `U_in`, `U_Z`, `I`, `U_R`, `R`, drawn as `?` |
+| `output_label` | short text at the output, e.g. "til basis" |
+
+Quantities: `U_in`, `U_Z`, `I`, `U_R` (never shown), `R` (shown with its value unless unknown).
 
 ## Adding or changing a template
 

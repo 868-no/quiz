@@ -1,10 +1,11 @@
-// rectifier@1: half-wave (one diode) or bridge (four diodes) rectifier from an AC
-// source, with optional reservoir capacitor and load. Also used for a simple diode
-// detector (half-wave with C and R in parallel).
+// rectifier@1: half-wave (one diode), bridge (four diodes) or centre-tap (transformer
+// with a centre-tapped secondary and two diodes) rectifier from an AC source, with
+// optional reservoir capacitor and load. Also used for a simple diode detector
+// (half-wave with C and R in parallel).
 
 import { h } from '../render/vnode.js';
 import { formatSI } from '../render/format.js';
-import { acSource, component, diode, dot, label, line, svgRoot, symLabel, terminal, wire, STROKE } from './svg.js';
+import { acSource, component, diode, dot, inductor, label, line, rotated, svgRoot, symLabel, terminal, wire, STROKE } from './svg.js';
 
 function rules(p) {
   const errors = [];
@@ -71,6 +72,33 @@ function render(p) {
     W = output(p, 300, T, B, els);
     H = 270;
     els.push(...sourceLabel(p, SX - 32, SY));
+  } else if (p.kind === 'center_tap') {
+    const SX = 110;
+    const CY = 170;
+    const PX = 190; // primary coil
+    const SXC = 250; // secondary coil, centre tap at CY
+    const T = 70;
+    const B = 270;
+    const NEG = 320;
+    const JX = 360; // the diodes' cathodes meet here
+    // primary circuit and core
+    els.push(wire([[SX, CY - 22], [SX, CY - 70], [PX, CY - 70], [PX, CY - 36]]), wire([[SX, CY + 22], [SX, CY + 70], [PX, CY + 70], [PX, CY + 36]]));
+    els.push(acSource(SX, CY), inductor(PX, CY, 72));
+    els.push(line(214, CY - 80, 214, CY + 80, { 'stroke-width': 2.5 }), line(226, CY - 80, 226, CY + 80, { 'stroke-width': 2.5 }));
+    // secondary: one long winding (turns facing the core) with a tap in the middle
+    els.push(rotated(inductor(SXC, CY, 144), SXC, CY, 180));
+    // diode from each end to the + node
+    els.push(wire([[SXC, CY - 72], [SXC, T], [JX, T]]), diode(310, T, 0));
+    els.push(wire([[SXC, CY + 72], [SXC, B], [JX, B], [JX, T]]), diode(310, B, 0), dot(JX, T));
+    // centre tap to −, hopping over the lower diode's wire
+    const hx = 275;
+    els.push(dot(SXC, CY), wire([[SXC, CY], [hx, CY], [hx, B - 8]]),
+      h('path', { d: `M ${hx} ${B - 8} a 8 8 0 0 0 0 16`, fill: 'none', stroke: STROKE, 'stroke-width': 2 }),
+      wire([[hx, B + 8], [hx, NEG], [JX + 30, NEG]]));
+    els.push(wire([[JX, T], [JX + 30, T]]));
+    W = output(p, JX + 40, T, NEG, els);
+    H = NEG + 40;
+    els.push(...sourceLabel(p, SX - 32, CY));
   } else {
     const SX = 140;
     const SY = 160;
@@ -107,11 +135,12 @@ function render(p) {
   const s = p.source;
   const uTxt = s.u_rms != null ? `effektivverdi ${s.show_value ? formatSI(s.u_rms, 'V') : 'ukjent'}`
     : s.u_peak != null ? `toppverdi ${s.show_value ? formatSI(s.u_peak, 'V') : 'ukjent'}` : '';
-  const kindTxt = p.kind === 'half' ? 'én diode (halvbølgelikeretter)' : 'fire dioder i bro (brolikeretter)';
+  const kindTxt = { half: 'én diode (halvbølgelikeretter)', bridge: 'fire dioder i bro (brolikeretter)',
+    center_tap: 'primærsiden av en transformator med midtuttak på sekundærsiden; hver ende av sekundærviklingen går gjennom hver sin diode til plussiden av utgangen, og midtuttaket går til minussiden (helbølgelikeretter med midtuttak)' }[p.kind];
   const parts = [p.capacitor ? 'en kondensator' : null, p.load ? (p.load_name === 'R_L' ? 'en lastmotstand' : 'en motstand') : null].filter(Boolean);
   let description = `Koblingsskjema: en vekselspenningskilde${s.name ? ` (${s.name})` : ''}${uTxt ? ` med ${uTxt}` : ''} er koblet til ${kindTxt}. Over utgangen sitter ${parts.join(' i parallell med ')}. Plussiden av utgangen er øverst.`;
   if (p.output_label === 'unknown') description += ' Utgangsspenningen er markert med spørsmålstegn.';
-  const title = p.kind === 'half' ? 'Halvbølgelikeretter' : 'Brolikeretter';
+  const title = { half: 'Halvbølgelikeretter', bridge: 'Brolikeretter', center_tap: 'Helbølgelikeretter med midtuttak' }[p.kind];
   return { svg: svgRoot(W, H, title, description, els), description, animatable: false };
 }
 

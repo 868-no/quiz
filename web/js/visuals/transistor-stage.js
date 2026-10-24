@@ -1,7 +1,8 @@
 // transistor-stage@1: NPN common-emitter stage. Collector resistor to the supply,
 // optional emitter resistor (with optional bypass capacitor), optional base voltage
-// divider and coupling capacitors. Node voltages and the collector current can be
-// labelled with a value or '?'. Values are author-given labels (SI units).
+// divider or a single base resistor from the supply, and coupling capacitors. Node
+// voltages and the collector current can be labelled with a value or '?'. Values are
+// author-given labels (SI units).
 
 import { formatSI } from '../render/format.js';
 import { arrowHead, component, dot, ground, label, line, npn, svgRoot, symLabel, terminal, wire } from './svg.js';
@@ -14,6 +15,7 @@ function rules(p) {
   if (new Set(nodes).size !== nodes.length) errors.push('labels: each node can be labelled once');
   if (p.bypass_capacitor && p.re_ohms == null) errors.push('bypass_capacitor: needs an emitter resistor (re_ohms)');
   if (p.rc_ohms == null) errors.push('rc_ohms: required (the collector resistor is always drawn)');
+  if (p.base_resistor && p.divider) errors.push('base_resistor: use either a base resistor from the supply or a divider, not both');
   return errors;
 }
 
@@ -21,6 +23,8 @@ function quantities(p) {
   const q = { U_CC: { value: p.vcc_v, unit: 'V', shown: p.show_vcc } };
   if (p.rc_ohms != null) q.R_C = { value: p.rc_ohms, unit: 'Ω', shown: p.show_resistor_values };
   if (p.re_ohms != null) q.R_E = { value: p.re_ohms, unit: 'Ω', shown: p.show_resistor_values };
+  const rb = p.base_resistor;
+  if (rb && rb.ohms != null) q.R_B = { value: rb.ohms, unit: 'Ω', shown: rb.show_value };
   for (const l of p.labels) {
     const [sym, unit] = NODE_Q[l.node];
     if (l.value != null) q[sym] = { value: l.value, unit, shown: true };
@@ -40,7 +44,9 @@ function render(p) {
   const fmt = (l, unit) => (l.value == null ? '?' : formatSI(l.value, unit));
   const rv = (v) => (p.show_resistor_values ? ` = ${formatSI(v, 'Ω')}` : '');
   // supply rail
-  const left = p.divider ? 180 : cx;
+  const rb = p.base_resistor;
+  const rbX = bx - 60;
+  const left = p.divider ? 180 : rb ? rbX : cx;
   els.push(wire([[left, VCC], [cx + 90, VCC]]));
   els.push(symLabel(cx + 96, VCC, '+U', 'CC', p.show_vcc ? ` = ${formatSI(p.vcc_v, 'V')}` : '', { 'text-anchor': 'start', 'font-size': 13 }));
   // collector resistor
@@ -68,19 +74,24 @@ function render(p) {
     els.push(wire([[ex, ey], [ex, GND]]), ground(ex, GND));
   }
   // base: divider or plain bias input
-  const nodeX = p.divider ? left : bx;
+  const nodeX = p.divider || rb ? left : bx;
   if (p.divider) {
     els.push(wire([[left, VCC], [left, GND]]), dot(left, VCC), dot(left, by), component('R', left, (VCC + by) / 2), component('R', left, (by + GND) / 2), ground(left, GND));
     els.push(symLabel(left - 16, (VCC + by) / 2, 'R', '1', null, { 'text-anchor': 'end', 'font-size': 13 }));
     els.push(symLabel(left - 16, (by + GND) / 2, 'R', '2', null, { 'text-anchor': 'end', 'font-size': 13 }));
     els.push(wire([[left, by], [bx, by]]));
   }
-  if (!p.divider && !p.coupling) {
+  if (rb) {
+    // base current from the supply through R_B
+    els.push(dot(rbX, VCC), wire([[rbX, VCC], [rbX, by], [bx, by]]), component('R', rbX, (VCC + by) / 2));
+    const v = rb.ohms != null && rb.show_value ? ` = ${formatSI(rb.ohms, 'Ω')}` : ' = ?';
+    els.push(symLabel(rbX - 16, (VCC + by) / 2, 'R', 'B', v, { 'text-anchor': 'end', 'font-size': 13 }));
+  } else if (!p.divider && !p.coupling) {
     els.push(terminal(bx - 40, by), wire([[bx - 40, by], [bx, by]]));
     els.push(label(bx - 52, by, 'inn', { 'font-size': 13, 'text-anchor': 'end' }));
   }
   if (p.coupling) {
-    const inX = (p.divider ? left : bx) - 100;
+    const inX = nodeX - 100;
     els.push(wire([[inX, by], [nodeX, by]]), component('C', inX + 45, by, true), terminal(inX, by));
     els.push(label(inX - 10, by, 'inn', { 'font-size': 13, 'text-anchor': 'end' }));
   }
@@ -100,11 +111,12 @@ function render(p) {
   if (p.re_ohms != null) parts.push(`emittermotstand${p.show_resistor_values ? ` = ${formatSI(p.re_ohms, 'Ω')}` : ''} mot jord${p.bypass_capacitor ? ', avkoblet med en kondensator' : ''}`);
   else parts.push('emitteren rett på jord');
   if (p.divider) parts.push('spenningsdeler R1–R2 på basis');
+  if (rb) parts.push(`basismotstand R_B${rb.ohms != null && rb.show_value ? ` = ${formatSI(rb.ohms, 'Ω')}` : ' (ukjent, ?)'} fra forsyningen til basis`);
   if (p.coupling) parts.push('koblingskondensatorer på inngang og utgang');
   const NODE_NAME = { B: 'spenningen på basis', E: 'spenningen på emitteren', C: 'spenningen på kollektoren', IC: 'kollektorstrømmen' };
   const labTxt = p.labels.map((l) => `${NODE_NAME[l.node]} = ${l.value == null ? 'ukjent (?)' : formatSI(l.value, NODE_Q[l.node][1])}`);
   const description = `Koblingsskjema av et forsterkertrinn med NPN-transistor i felles emitter-kobling, forsyningsspenning ${p.show_vcc ? formatSI(p.vcc_v, 'V') : 'ukjent'}: ${parts.join('; ')}.${labTxt.length ? ` Markert: ${labTxt.join(', ')}.` : ''}`;
-  const minX = p.divider ? 40 : p.coupling ? bx - 180 : bx - 110;
+  const minX = p.divider ? 40 : rb ? (p.coupling ? rbX - 140 : bx - 170) : p.coupling ? bx - 180 : bx - 110;
   return { svg: svgRoot(560 - minX, 370, 'Transistortrinn med felles emitter', description, els, {}, minX, 0), description, animatable: false };
 }
 

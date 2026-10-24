@@ -13,9 +13,11 @@ import rectifier from './rectifier.js';
 import transformer from './transformer.js';
 import transistorStage from './transistor-stage.js';
 import seriesRegulator from './series-regulator.js';
+import zenerRegulator from './zener-regulator.js';
 
 export const IMPLEMENTATIONS = new Map(
-  [dcCircuit, acCircuit, waveform, blockDiagram, rlcCircuit, rectifier, transformer, transistorStage, seriesRegulator].map((m) => [`${m.id}@${m.version}`, m]),
+  [dcCircuit, acCircuit, waveform, blockDiagram, rlcCircuit, rectifier, transformer, transistorStage, seriesRegulator, zenerRegulator]
+    .map((m) => [`${m.id}@${m.version}`, m]),
 );
 
 /** Validate parameters for a phase ('before' or 'after'); returns {errors, params}. */
