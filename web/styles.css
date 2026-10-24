@@ -76,7 +76,8 @@ body {
   line-height: 1.6;
 }
 
-.wrap { max-width: 42rem; margin: 0 auto; padding: 0 16px; }
+/* the side padding grows to clear a notch in landscape (viewport-fit=cover) */
+.wrap { max-width: 42rem; margin: 0 auto; padding: 0 max(16px, env(safe-area-inset-right, 0px)) 0 max(16px, env(safe-area-inset-left, 0px)); }
 
 :focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; border-radius: 2px; }
 
@@ -95,7 +96,7 @@ a { color: var(--action); text-underline-offset: 3px; }
   background: var(--frame); color: var(--frame-ink);
   --focus: #ffb27a;           /* the light-mode focus colour is too dark on the frame */
 }
-.site-header { border-bottom: 1px solid var(--frame-edge); }
+.site-header { border-bottom: 1px solid var(--frame-edge); padding-top: env(safe-area-inset-top, 0px); } /* under the iPhone status bar */
 .site-header .wrap { display: flex; align-items: center; gap: 12px; padding-top: 12px; padding-bottom: 12px; }
 .site-logo { width: 36px; height: 36px; flex: none; display: block; }
 .site-title { font-size: 1.25rem; font-weight: 700; margin: 0; line-height: 1.25; letter-spacing: 0.01em; }
