@@ -15,6 +15,8 @@ function rules(p) {
     if (b.kind === 'custom' && !b.label) errors.push(`block ${i}: kind 'custom' needs a label`);
   });
   p.side.forEach((s, i) => { if (s.into >= n) errors.push(`side[${i}].into: no chain block ${s.into}`); });
+  // one side block per chain block: two would be drawn on top of each other
+  p.side.forEach((s, i) => { if (p.side.findIndex((o) => o.into === s.into) < i) errors.push(`side[${i}].into: chain block ${s.into} already has a side block`); });
   p.edge_labels.forEach((e, i) => { if (e.after >= n - 1) errors.push(`edge_labels[${i}].after: no connection after block ${e.after}`); });
   return errors;
 }

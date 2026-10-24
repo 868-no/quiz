@@ -70,7 +70,7 @@ function pushPull(els) {
   els.push(terminal(140, 110), terminal(140, 230), wire([[140, 110], [200, 110], [200, 230], [140, 230]]), inductor(200, 170, 110), lbl(130, 170, 'inn', 'end'));
   els.push(line(226, 106, 226, 234, { 'stroke-width': 1.5 }), line(232, 106, 232, 234, { 'stroke-width': 1.5 }));
   els.push(wire([[262, 100], [262, 240]]), rotated(inductor(262, 170, 120), 262, 170, 180));
-  els.push(wire([[262, 100], t1.b]), wire([[262, 240], t2.b]), dot(262, 170), wire([[262, 170], [286, 170]]), terminal(290, 170), lbl(290, 190, 'forspenning'));
+  els.push(wire([[262, 100], t1.b]), wire([[262, 240], t2.b]), dot(262, 170), wire([[262, 170], [286, 170]]), terminal(290, 170), lbl(296, 152, 'forspenning'));
   // emitters together to ground
   els.push(wire([t1.e, t2.e]), dot(t1.e[0], 170), wire([[t1.e[0], 170], [372, 170]]), ground(372, 170));
   // output transformer, centre tap to +U_CC
@@ -124,26 +124,30 @@ function transistorMixer(els, reveal) {
 }
 
 function dualGate(els, reveal) {
-  const x = 320;
-  const yT = 120;
-  const yB = 220;
-  // channel, drain up, source down, two insulated gates on the left
-  els.push(line(x, yT, x, yB, { 'stroke-width': 3 }), wire([[x, yT], [x, yT - 30]]), wire([[x, yB], [x, yB + 50]]), ground(x, yB + 50));
-  els.push(line(x - 12, yT + 6, x - 12, yT + 40, { 'stroke-width': 2.5 }), line(x - 12, yB - 40, x - 12, yB - 6, { 'stroke-width': 2.5 }));
-  els.push(lbl(x + 10, yT - 20, 'drain', 'start'), lbl(x + 10, yB + 30, 'source', 'start'));
-  const g1y = yB - 23;
+  // the transistor sits well to the right, so the gate 2 network has room on the left
+  const x = 410;
+  const yT = 110;
+  const yB = 210;
   const g2y = yT + 23;
-  els.push(wire([[x - 12, g1y], [280, g1y], [280, 265], [200, 265]]), lbl(x - 18, g1y + 16, 'gate 1', 'end', 11), hcap(190, 265), wire([[180, 265], [80, 265]]), terminal(80, 265), lbl(80, 249, 'signal inn', 'start'));
-  els.push(wire([[x - 12, g2y], [250, g2y]]), lbl(x - 18, g2y - 12, 'gate 2', 'end', 11));
+  const g1y = yB - 23;
+  // channel, drain up, source down, two insulated gates on the left
+  els.push(line(x, yT, x, yB, { 'stroke-width': 3 }), wire([[x, yT], [x, 50]]), wire([[x, yB], [x, yB + 46]]), ground(x, yB + 46));
+  els.push(line(x - 12, yT + 6, x - 12, yT + 40, { 'stroke-width': 2.5 }), line(x - 12, yB - 40, x - 12, yB - 6, { 'stroke-width': 2.5 }));
+  els.push(lbl(x + 10, 46, 'til avstemt last', 'start'), lbl(x + 10, yT - 4, 'drain', 'start'), lbl(x + 10, yB + 24, 'source', 'start'));
+  // gate 1: from the signal input through a capacitor, coming up from below
+  els.push(wire([[x - 12, g1y], [340, g1y], [340, 270], [250, 270]]), hcap(240, 270), wire([[230, 270], [90, 270]]), terminal(90, 270), lbl(90, 254, 'signal inn', 'start'));
+  els.push(lbl(x - 18, g1y + 16, 'gate 1', 'end', 11));
+  // gate 2
+  const n = 300;
+  els.push(wire([[x - 12, g2y], [n, g2y]]), lbl(x - 18, g2y - 12, 'gate 2', 'end', 11));
   if (reveal) {
-    els.push(dot(250, g2y), wire([[250, g2y], [250, 40]]), resistor(250, 80, true, 36, 14), lbl(250, 32, '+U'));
-    els.push(lbl(236, 74, 'liten positiv', 'end'), lbl(236, 90, 'likespenning', 'end'));
-    els.push(wire([[250, g2y], [215, g2y]]), dot(215, g2y), wire([[215, g2y], [215, g2y + 56]]), capacitor(215, g2y + 28), ground(215, g2y + 56), lbl(200, g2y + 28, 'avkobling', 'end'));
-    els.push(markBox(130, 44, 130, g2y + 36));
+    els.push(dot(n, g2y), wire([[n, g2y], [n, 38]]), resistor(n, 80, true, 36, 14), lbl(n - 8, 42, '+U', 'end'));
+    els.push(lbl(n - 16, 72, 'liten positiv', 'end'), lbl(n - 16, 88, 'likespenning', 'end'));
+    els.push(wire([[n, g2y], [240, g2y]]), dot(240, g2y), wire([[240, g2y], [240, g2y + 60]]), capacitor(240, g2y + 30), ground(240, g2y + 60), lbl(212, g2y + 30, 'avkobling', 'end'));
+    els.push(markBox(140, 24, 178, g2y + 78 - 24));
   } else {
-    els.push(terminal(250, g2y), lbl(240, g2y, '?', 'end', 18));
+    els.push(terminal(n, g2y), lbl(n - 10, g2y, '?', 'end', 18));
   }
-  els.push(wire([[x, yT - 30], [x, 60]]), lbl(x + 8, 56, 'til avstemt last', 'start'));
   const desc = 'Koblingsskjema av en MOSFET med to isolerte gater (dual-gate). Signalet kommer inn på gate 1, nærmest source, gjennom en kondensator. Source ligger på jord, og drain går til en avstemt last.' +
     (reveal ? ' Gate 2 får en liten positiv likespenning fra en motstand og er avkoblet til jord med en kondensator, markert med en stiplet ramme.' : ' Tilkoblingen av gate 2 er vist med et spørsmålstegn.');
   return { height: 290, desc };

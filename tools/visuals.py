@@ -232,6 +232,8 @@ def _block_rules(p: dict[str, Any], errors: list[str]) -> None:
     for i, s in enumerate(p["side"]):
         if s["into"] >= n:
             errors.append(f"side[{i}].into: no chain block {s['into']}")
+        elif any(o["into"] == s["into"] for o in p["side"][:i]):
+            errors.append(f"side[{i}].into: chain block {s['into']} already has a side block")
     for i, e in enumerate(p["edge_labels"]):
         if e["after"] >= n - 1:
             errors.append(f"edge_labels[{i}].after: no connection after block {e['after']}")

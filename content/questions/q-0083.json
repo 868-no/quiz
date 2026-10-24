@@ -999,6 +999,226 @@
         },
         "verifier": "deterministic-v1"
       }
+    },
+    {
+      "revision": 5,
+      "status": "needs_review",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 4,
+      "section_ids": [
+        "s4-14",
+        "s4-15"
+      ],
+      "topic_ids": [
+        "frekvenssyntese"
+      ],
+      "learning_objective": "Kjenne prinsippet for direkte digital syntese og hvilke blokker den består av.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "Blokkskjemaet viser prinsippet for ",
+          {
+            "term": "dds",
+            "text": "direkte digital syntese"
+          },
+          ". Tallverdier for en sinuskurve hentes fra et minne i takt med en klokke, og ",
+          {
+            "term": "frekvens",
+            "text": "frekvensen"
+          },
+          " velges med hvor raskt man går gjennom tabellen. Ett trinn er erstattet med et spørsmålstegn."
+        ]
+      ],
+      "stem": [
+        "Hvilket trinn mangler?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Digital-til-analog-omformer"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Analog-til-digital-omformer"
+          ],
+          "feedback": [
+            "Den omformer motsatt vei, fra spenning til tall. Her skal tall bli til en spenning."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Fasekomparator"
+          ],
+          "feedback": [
+            [
+              "En fasekomparator hører til i en ",
+              {
+                "term": "faselaast-sloyfe",
+                "text": "faselåst sløyfe"
+              },
+              ". En ",
+              {
+                "term": "dds",
+                "text": "DDS"
+              },
+              " har ingen tilbakekobling som skal sammenligne faser."
+            ]
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Frekvensmultiplikator"
+          ],
+          "feedback": [
+            "En multiplikator lager harmoniske frekvenser av et analogt signal. Tallene fra minnet må først bli til en spenning."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Tallene fra tabellen må gjøres om til en ",
+          {
+            "term": "spenning",
+            "text": "spenning"
+          },
+          ". Det gjør en digital-til-analog-omformer (DAC). Utgangen blir en trappetrinnsformet tilnærming til en sinus."
+        ],
+        [
+          {
+            "term": "lavpassfilter",
+            "text": "Lavpassfilteret"
+          },
+          " til slutt glatter trappetrinnene til en jevn sinus. Jo flere bit per verdi og jo flere verdier per ",
+          {
+            "term": "periode",
+            "text": "periode"
+          },
+          ", desto renere blir signalet, med svakere ",
+          {
+            "term": "harmoniske",
+            "text": "harmoniske signaler"
+          },
+          " og andre uønskede signaler."
+        ]
+      ],
+      "visual": {
+        "template": "block-diagram",
+        "version": 1,
+        "params": {
+          "chain": [
+            {
+              "kind": "custom",
+              "label": "Sinustabell i minne"
+            },
+            {
+              "kind": "custom",
+              "label": "D/A-omformer",
+              "hidden": true
+            },
+            {
+              "kind": "lowpass_filter"
+            }
+          ],
+          "side": [
+            {
+              "kind": "custom",
+              "label": "Klokke og frekvensvalg",
+              "into": 0
+            }
+          ]
+        },
+        "params_after": {
+          "chain": [
+            {
+              "kind": "custom",
+              "label": "Sinustabell i minne"
+            },
+            {
+              "kind": "custom",
+              "label": "D/A-omformer",
+              "highlight": true
+            },
+            {
+              "kind": "lowpass_filter"
+            }
+          ]
+        }
+      },
+      "glossary_after_answer": [
+        "dds"
+      ],
+      "study_reference": {
+        "chapter": 4,
+        "section_id": "s4-14",
+        "printed_pages": [
+          "4-8"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "81620fa8210fe703",
+          "c74c8d7639160316"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "Jim C K Flaten",
+        "based_on": 4,
+        "at": "2026-10-24T17:19:01+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T17:19:01+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "d6b52b0cff58464e7a894d2f3243fb5939a993773c9e4a1439a90b3b3ff147ee",
+          "note": "One side block: the clock and the frequency choice were drawn on top of each other"
+        },
+        {
+          "at": "2026-10-24T17:19:01+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "67c5682180296088ed0c4fd6321bad651b9ddb44001f4cec00e2c188ade06ea7",
+          "note": "automated checks passed"
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "67c5682180296088ed0c4fd6321bad651b9ddb44001f4cec00e2c188ade06ea7",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: equation. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T17:19:01+00:00"
+      }
     }
   ]
 }

@@ -2797,6 +2797,37 @@
           "u_z_v": 6.8
         }
       }
+    },
+    {
+      "name": "block diagram: one side block per chain block",
+      "valid": false,
+      "error": "already has a side block",
+      "visual": {
+        "template": "block-diagram",
+        "version": 1,
+        "params": {
+          "chain": [
+            {
+              "kind": "oscillator"
+            },
+            {
+              "kind": "power_amp"
+            }
+          ],
+          "side": [
+            {
+              "kind": "custom",
+              "label": "A",
+              "into": 0
+            },
+            {
+              "kind": "custom",
+              "label": "B",
+              "into": 0
+            }
+          ]
+        }
+      }
     }
   ]
 }
