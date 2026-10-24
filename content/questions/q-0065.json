@@ -469,6 +469,222 @@
         },
         "verifier": "deterministic-v1"
       }
+    },
+    {
+      "revision": 3,
+      "status": "needs_review",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "easy",
+      "chapter": 3,
+      "section_ids": [
+        "s3-13"
+      ],
+      "topic_ids": [
+        "transistorer"
+      ],
+      "learning_objective": "Bruke strømforsterkningen til å finne kollektorstrømmen ut fra basisstrømmen.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En ",
+          {
+            "term": "transistor",
+            "text": "NPN-transistor"
+          },
+          " har ",
+          {
+            "term": "stromforsterkning",
+            "text": "strømforsterkning"
+          },
+          " β = 120. Den er ",
+          {
+            "term": "forspenning",
+            "text": "forspent"
+          },
+          " slik at basisstrømmen er ",
+          {
+            "q": 50,
+            "u": "µA"
+          },
+          ", og den arbeider i det lineære området."
+        ]
+      ],
+      "stem": [
+        "Omtrent hvor stor er kollektorstrømmen?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 6,
+              "u": "mA"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 60,
+              "u": "mA"
+            }
+          ],
+          "feedback": [
+            "Sjekk prefiksene: 120 · 50 µA = 6000 µA, som er 6 mA, ikke 60 mA."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 0.6,
+              "u": "mA"
+            }
+          ],
+          "feedback": [
+            "Sjekk prefiksene: 120 · 50 µA = 6000 µA, som er 6 mA."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 0.42,
+              "u": "µA"
+            }
+          ],
+          "feedback": [
+            "Her er basisstrømmen delt på β. Kollektorstrømmen er β ganger større enn basisstrømmen, ikke mindre."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          {
+            "term": "stromforsterkning",
+            "text": "Strømforsterkningen"
+          },
+          " er forholdet mellom kollektorstrøm og basisstrøm:"
+        ],
+        {
+          "steps": [
+            [
+              {
+                "math": [
+                  "I_C",
+                  "=",
+                  "β",
+                  "·",
+                  "I_B",
+                  "=",
+                  "120",
+                  "·",
+                  {
+                    "q": 50,
+                    "u": "µA"
+                  },
+                  "=",
+                  {
+                    "q": 6000,
+                    "u": "µA"
+                  },
+                  "=",
+                  {
+                    "q": 6,
+                    "u": "mA"
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        [
+          "Emitterstrømmen er summen av de to, altså ",
+          {
+            "q": 6.05,
+            "u": "mA"
+          },
+          ". En liten basisstrøm styrer altså en mye større kollektorstrøm, og det er dette som gjør transistoren til en ",
+          {
+            "term": "forsterker",
+            "text": "forsterker"
+          },
+          "."
+        ]
+      ],
+      "glossary_after_answer": [
+        "stromforsterkning"
+      ],
+      "study_reference": {
+        "chapter": 3,
+        "section_id": "s3-13",
+        "printed_pages": [
+          "3-5",
+          "3-6"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "08b52c6c96556bd5"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "Jim C K Flaten",
+        "based_on": 2,
+        "at": "2026-10-24T17:09:39+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T17:09:39+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "74ecb2480455af1e820fe05302a38b16a422f227df19a168b2abbff78020f744",
+          "note": "Add a figure"
+        },
+        {
+          "at": "2026-10-24T17:09:42+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "23ac411b705b89928bca947015a5620eb2b9c06700495c31bdaed3c642b9dfdc",
+          "note": "automated checks passed"
+        }
+      ],
+      "visual": {
+        "template": "stage",
+        "version": 1,
+        "params": {
+          "kind": "currents"
+        }
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "23ac411b705b89928bca947015a5620eb2b9c06700495c31bdaed3c642b9dfdc",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T17:09:42+00:00"
+      }
     }
   ]
 }

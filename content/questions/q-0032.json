@@ -348,6 +348,225 @@
         },
         "verifier": "deterministic-v1"
       }
+    },
+    {
+      "revision": 3,
+      "status": "needs_review",
+      "type": "single_choice",
+      "style": "recall",
+      "difficulty": "easy",
+      "chapter": 6,
+      "section_ids": [
+        "s6-03"
+      ],
+      "topic_ids": [
+        "mottakeregenskaper"
+      ],
+      "learning_objective": "Skille selektivitet fra andre mottakeregenskaper.",
+      "priority": "exam_important",
+      "context": [],
+      "stem": [
+        [
+          "Hva beskriver ",
+          {
+            "term": "selektivitet",
+            "text": "selektiviteten"
+          },
+          " til en ",
+          {
+            "term": "mottaker",
+            "text": "mottaker"
+          },
+          "?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Evnen til å skille ut ønsket signal fra signaler like ved i frekvens"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Hvor svake signaler mottakeren kan ta imot"
+          ],
+          "feedback": [
+            "Det er følsomheten (sensitiviteten)."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Hvor godt mottakeren holder frekvensen over tid"
+          ],
+          "feedback": [
+            [
+              "Det er ",
+              {
+                "term": "frekvensstabilitet",
+                "text": "frekvensstabiliteten"
+              },
+              "."
+            ]
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Hvor stor styrkeforskjell den tåler mellom svake og sterke signaler"
+          ],
+          "feedback": [
+            [
+              "Det er ",
+              {
+                "term": "dynamisk-omraade",
+                "text": "det dynamiske området"
+              },
+              "."
+            ]
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "En selektiv mottaker slipper gjennom stasjonen du lytter på, mens sterke stasjoner noen kilohertz unna blir kraftig svekket. Selektiviteten oppgis ofte som hvor langt unna et signal må ligge for å bli dempet med et bestemt antall desibel, eller som dempingen av nabokanalen.",
+        [
+          "I en ",
+          {
+            "term": "superheterodyn",
+            "text": "superheterodynmottaker"
+          },
+          " bestemmes selektiviteten først og fremst av ",
+          {
+            "term": "filter",
+            "text": "filtrene"
+          },
+          " i mellomfrekvensdelen."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 6,
+        "section_id": "s6-03",
+        "printed_pages": [
+          "6-1"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "121576d2a500fe1c"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "Jim C K Flaten",
+        "based_on": 2,
+        "at": "2026-10-24T17:09:41+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T17:09:41+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "814489bc17d4a86491daece62f07e61fd23ab09cb895896c6b94f88e1b092e00",
+          "note": "Add a figure"
+        },
+        {
+          "at": "2026-10-24T17:09:42+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "97256c8eb0b3b1ff6583557c2426334d7cd0b65c50e9fe4754ea99f550b2dc84",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T17:11:40+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "7b7a45a04b9589cb833418fb2f721a2861387caadd794c16a8db70ede8e5bc0f",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T17:12:10+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "cd7e6be6c5000e13abe5ca01833485713a9d1e5d2bd4708af4c63f3ca5a7d2c5",
+          "note": "automated checks passed"
+        }
+      ],
+      "visual": {
+        "template": "spectrum",
+        "version": 1,
+        "params": {
+          "x_min_hz": 7092000.0,
+          "x_max_hz": 7108000.0,
+          "freq_labels": false,
+          "panels": [
+            {
+              "lines": [
+                {
+                  "f_hz": 7095500.0,
+                  "level": 0.6,
+                  "label": "nabostasjon",
+                  "mark": false
+                },
+                {
+                  "f_hz": 7100000.0,
+                  "level": 0.7,
+                  "label": "ønsket",
+                  "mark": false
+                },
+                {
+                  "f_hz": 7104500.0,
+                  "level": 0.75,
+                  "label": "nabostasjon",
+                  "mark": false
+                }
+              ],
+              "filter": {
+                "from_hz": 7098800.0,
+                "to_hz": 7101200.0,
+                "label": "MF-filteret"
+              }
+            }
+          ]
+        },
+        "after_only": true
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "cd7e6be6c5000e13abe5ca01833485713a9d1e5d2bd4708af4c63f3ca5a7d2c5",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: table. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T17:12:10+00:00"
+      }
     }
   ]
 }

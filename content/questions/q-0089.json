@@ -1271,6 +1271,322 @@
         },
         "verifier": "deterministic-v1"
       }
+    },
+    {
+      "revision": 5,
+      "status": "needs_review",
+      "type": "single_choice",
+      "style": "calculation",
+      "difficulty": "easy",
+      "chapter": 4,
+      "section_ids": [
+        "s4-30"
+      ],
+      "topic_ids": [
+        "sluttforsterker"
+      ],
+      "learning_objective": "Regne ut virkningsgraden til et sluttrinn ut fra tilført likestrømseffekt og RF-effekt.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En ",
+          {
+            "term": "sluttforsterker",
+            "text": "sluttforsterker"
+          },
+          " får ",
+          {
+            "q": 13.5,
+            "u": "V"
+          },
+          " fra strømforsyningen og trekker ",
+          {
+            "q": 3.0,
+            "u": "A",
+            "digits": 1
+          },
+          " mens den leverer ",
+          {
+            "q": 27,
+            "u": "W"
+          },
+          " RF-",
+          {
+            "term": "effekt",
+            "text": "effekt"
+          },
+          " til en tilpasset last."
+        ]
+      ],
+      "stem": [
+        [
+          "Hva er ",
+          {
+            "term": "virkningsgrad",
+            "text": "virkningsgraden"
+          },
+          " til trinnet?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 67,
+              "u": "%"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 150,
+              "u": "%"
+            }
+          ],
+          "feedback": [
+            "Her er brøken snudd. En virkningsgrad kan ikke være over 100 %; det er utgangseffekten som deles på tilført effekt."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 33,
+              "u": "%"
+            }
+          ],
+          "feedback": [
+            "Dette er andelen av den tilførte effekten som blir til varme, ikke andelen som blir RF-effekt."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 50,
+              "u": "%"
+            }
+          ],
+          "feedback": [
+            [
+              "Dette er varmetapet delt på RF-effekten (13,5 W / 27 W). ",
+              {
+                "term": "virkningsgrad",
+                "text": "Virkningsgraden"
+              },
+              " er RF-effekten delt på tilført effekt."
+            ]
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        {
+          "steps": [
+            [
+              "Tilført likestrømseffekt: ",
+              {
+                "math": [
+                  "P_{inn}",
+                  "=",
+                  "U",
+                  "·",
+                  "I",
+                  "=",
+                  {
+                    "q": 13.5,
+                    "u": "V"
+                  },
+                  "·",
+                  {
+                    "q": 3.0,
+                    "u": "A",
+                    "digits": 1
+                  },
+                  "=",
+                  {
+                    "q": 40.5,
+                    "u": "W"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "math": [
+                  "η",
+                  "=",
+                  {
+                    "frac": [
+                      [
+                        "P_{ut}"
+                      ],
+                      [
+                        "P_{inn}"
+                      ]
+                    ]
+                  },
+                  "·",
+                  "100",
+                  "%",
+                  "=",
+                  {
+                    "frac": [
+                      [
+                        {
+                          "q": 27,
+                          "u": "W"
+                        }
+                      ],
+                      [
+                        {
+                          "q": 40.5,
+                          "u": "W"
+                        }
+                      ]
+                    ]
+                  },
+                  "·",
+                  "100",
+                  "%",
+                  "≈",
+                  {
+                    "q": 67,
+                    "u": "%"
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        [
+          "Resten, 40,5 W − 27 W = 13,5 W, blir varme i ",
+          {
+            "term": "transistor",
+            "text": "transistoren"
+          },
+          ". En virkningsgrad på rundt to tredjedeler er typisk for klasse C, mens lineære ",
+          {
+            "term": "forsterkerklasse",
+            "text": "klasse A"
+          },
+          "-trinn ligger langt lavere."
+        ]
+      ],
+      "glossary_after_answer": [
+        "virkningsgrad"
+      ],
+      "calculation": {
+        "formula": "efficiency_percent",
+        "inputs": {
+          "P_out": [
+            27,
+            "W"
+          ],
+          "P_in": [
+            40.5,
+            "W"
+          ]
+        },
+        "answer": [
+          67,
+          "%"
+        ],
+        "answer_symbol": "η",
+        "sig_figs": 2
+      },
+      "study_reference": {
+        "chapter": 4,
+        "section_id": "s4-30",
+        "printed_pages": [
+          "4-15",
+          "4-16"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "7939f52ee16e7a09"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "Jim C K Flaten",
+        "based_on": 4,
+        "at": "2026-10-24T17:09:41+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T17:09:41+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "73bdd2a165e9fd4f0972d073707f4fda09b04e0b9e40b71f85cf61f22c5cb8c8",
+          "note": "Add a figure"
+        },
+        {
+          "at": "2026-10-24T17:09:42+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "5933b38f22e74cc6c041749cd84b2a6b80d993227cecf06201b126be5c6e9a5b",
+          "note": "automated checks passed"
+        }
+      ],
+      "visual": {
+        "template": "block-diagram",
+        "version": 1,
+        "params": {
+          "chain": [
+            {
+              "kind": "custom",
+              "label": "Strømforsyning"
+            },
+            {
+              "kind": "power_amp"
+            },
+            {
+              "kind": "custom",
+              "label": "Tilpasset last"
+            }
+          ],
+          "edge_labels": [
+            {
+              "after": 0,
+              "text": "13,5V 3,0A"
+            },
+            {
+              "after": 1,
+              "text": "27 W"
+            }
+          ]
+        }
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "5933b38f22e74cc6c041749cd84b2a6b80d993227cecf06201b126be5c6e9a5b",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T17:09:42+00:00"
+      }
     }
   ]
 }

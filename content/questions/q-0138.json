@@ -175,6 +175,164 @@
         },
         "verifier": "deterministic-v1"
       }
+    },
+    {
+      "revision": 2,
+      "status": "needs_review",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 2,
+      "section_ids": [
+        "s2-24"
+      ],
+      "topic_ids": [
+        "spoler"
+      ],
+      "learning_objective": "Kjenne hvordan antall vindinger, diameter og avstand mellom vindingene påvirker induktansen til en luftspole.",
+      "priority": "normal",
+      "context": [
+        [
+          "En luftspole er viklet med 20 vindinger tett inntil hverandre på et plastrør med diameter ",
+          {
+            "q": 2,
+            "u": "cm"
+          },
+          ". Du ønsker større ",
+          {
+            "term": "induktans",
+            "text": "induktans"
+          },
+          " uten å bruke kjerne."
+        ]
+      ],
+      "stem": [
+        "Hvilken endring vil gi større induktans?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Vikle flere vindinger tett på det samme røret"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Trekke vindingene fra hverandre så spolen blir lengre"
+          ],
+          "feedback": [
+            "Når vindingene får større avstand, blir den magnetiske koblingen mellom dem svakere, og induktansen minker."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Vikle de samme 20 vindingene på et tynnere rør"
+          ],
+          "feedback": [
+            "Mindre diameter gir mindre areal for magnetfeltet, og dermed mindre induktans. Større diameter ville økt den."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Bruke tykkere tråd med samme antall vindinger og samme form"
+          ],
+          "feedback": [
+            [
+              "Tykkere tråd gir mindre ",
+              {
+                "term": "resistans",
+                "text": "resistans"
+              },
+              " i spolen, men endrer induktansen svært lite. Om noe blir den litt mindre."
+            ]
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Induktansen til en luftspole øker med antall vindinger (omtrent med kvadratet av antallet når formen er lik) og med diameteren. Den minker når vindingene flyttes lenger fra hverandre."
+        ],
+        [
+          "Enheten er henry: en ",
+          {
+            "term": "spole",
+            "text": "spole"
+          },
+          " har induktansen 1 H når det induseres 1 V i den mens ",
+          {
+            "term": "strom",
+            "text": "strømmen"
+          },
+          " endres med 1 A per sekund."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 2,
+        "section_id": "s2-24",
+        "printed_pages": [
+          "2-9",
+          "2-10"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "6eaaeb4fb134515e"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "Jim C K Flaten",
+        "based_on": 1,
+        "at": "2026-10-24T17:09:40+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T17:09:40+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "db76552ad34ab6cfbc2a051fbf3d6a80d097bf49c402cbd8036a8adc6947ed30",
+          "note": "Add a figure"
+        },
+        {
+          "at": "2026-10-24T17:09:42+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "c027fb79d863ab4d66b4ad9e493b6493b36fe2ae7e5d16777a0a480ff10edde4",
+          "note": "automated checks passed"
+        }
+      ],
+      "visual": {
+        "template": "illustration",
+        "version": 1,
+        "params": {
+          "kind": "air_coil"
+        }
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "c027fb79d863ab4d66b4ad9e493b6493b36fe2ae7e5d16777a0a480ff10edde4",
+        "errors": [],
+        "warnings": [],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T17:09:42+00:00"
+      }
     }
   ]
 }

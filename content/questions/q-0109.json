@@ -550,6 +550,176 @@
         },
         "verifier": "deterministic-v1"
       }
+    },
+    {
+      "revision": 4,
+      "status": "needs_review",
+      "type": "single_choice",
+      "style": "recall",
+      "difficulty": "medium",
+      "chapter": 6,
+      "section_ids": [
+        "s6-06"
+      ],
+      "topic_ids": [
+        "mottakeregenskaper"
+      ],
+      "learning_objective": "Kjenne definisjonen av dynamisk område for en mottaker.",
+      "priority": "exam_important",
+      "context": [],
+      "stem": [
+        [
+          "Hva menes med ",
+          {
+            "term": "dynamisk-omraade",
+            "text": "det dynamiske området"
+          },
+          " til en ",
+          {
+            "term": "mottaker",
+            "text": "mottaker"
+          },
+          "?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Spennet fra svakeste brukbare signal til sterkeste signal uten overstyring"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Spennet fra laveste til høyeste frekvens mottakeren kan stilles inn på"
+          ],
+          "feedback": [
+            [
+              "Det er frekvensdekningen. Det dynamiske området gjelder signalstyrke, ikke ",
+              {
+                "term": "frekvens",
+                "text": "frekvens"
+              },
+              "."
+            ]
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Spennet fra laveste til høyeste lydstyrke volumkontrollen gir i høyttaleren"
+          ],
+          "feedback": [
+            "Det dynamiske området handler om styrken på signalene ved antenneinngangen, ikke om lydvolumet."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Hvor raskt AGC-en reagerer når signalstyrken endrer seg"
+          ],
+          "feedback": [
+            [
+              "Det er ",
+              {
+                "term": "tidskonstant",
+                "text": "tidskonstanten"
+              },
+              " til den automatiske forsterkningskontrollen."
+            ]
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Nedre grense er det svakeste signalet mottakeren kan ta imot (følsomheten, bestemt av støygulvet). Øvre grense er der mottakeren begynner å bli overstyrt og ulinearitet gir ",
+          {
+            "term": "intermodulasjon",
+            "text": "intermodulasjonsprodukter"
+          },
+          " like sterke som bakgrunnsstøyen. Noen ganger brukes 1 dB-kompresjonspunktet i stedet."
+        ],
+        [
+          {
+            "term": "dynamisk-omraade",
+            "text": "Det dynamiske området"
+          },
+          " oppgis i dB. Et stort dynamisk område er viktig på HF, der sterke kringkastingsstasjoner ligger like ved svake amatørsignaler."
+        ]
+      ],
+      "glossary_after_answer": [
+        "dynamisk-omraade"
+      ],
+      "study_reference": {
+        "chapter": 6,
+        "section_id": "s6-06",
+        "printed_pages": [
+          "6-2",
+          "6-3"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "370eef8583f649a8"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "Jim C K Flaten",
+        "based_on": 3,
+        "at": "2026-10-24T17:09:40+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T17:09:40+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "3c4ddb967854f548f76487ce83900e7f0cca1b780f59fe39c6374eca93cd06ab",
+          "note": "Add a figure"
+        },
+        {
+          "at": "2026-10-24T17:09:42+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "416bd3f3b2f9852eb7c079025a649c6299e1d5d7298ab1e0b87375ace738a5b5",
+          "note": "automated checks passed"
+        }
+      ],
+      "visual": {
+        "template": "illustration",
+        "version": 1,
+        "params": {
+          "kind": "range"
+        },
+        "after_only": true
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "416bd3f3b2f9852eb7c079025a649c6299e1d5d7298ab1e0b87375ace738a5b5",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T17:09:42+00:00"
+      }
     }
   ]
 }

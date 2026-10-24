@@ -599,6 +599,199 @@
         },
         "verifier": "deterministic-v1"
       }
+    },
+    {
+      "revision": 4,
+      "status": "needs_review",
+      "type": "single_choice",
+      "style": "recall",
+      "difficulty": "easy",
+      "chapter": 3,
+      "section_ids": [
+        "s3-11"
+      ],
+      "topic_ids": [
+        "zenerdiode"
+      ],
+      "learning_objective": "Kjenne til hva en zenerdiode brukes til.",
+      "priority": "exam_important",
+      "context": [],
+      "stem": [
+        [
+          "Hva er den vanligste bruken av en ",
+          {
+            "term": "zenerdiode",
+            "text": "zenerdiode"
+          },
+          "?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Å holde en spenning tilnærmet konstant"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Å likerette store strømmer i en strømforsyning"
+          ],
+          "feedback": [
+            [
+              "Til likeretting brukes vanlige likeretterdioder i ",
+              {
+                "term": "lederetning",
+                "text": "lederetningen"
+              },
+              "."
+            ]
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Å virke som en spenningsstyrt kondensator"
+          ],
+          "feedback": [
+            [
+              "Det beskriver en ",
+              {
+                "term": "varicap",
+                "text": "varicap-diode"
+              },
+              "."
+            ]
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Å forsterke svake signaler"
+          ],
+          "feedback": [
+            [
+              "En zenerdiode brukes ikke til å forsterke signaler. Til det brukes for eksempel ",
+              {
+                "term": "transistor",
+                "text": "transistorer"
+              },
+              "."
+            ]
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "En zenerdiode kobles i ",
+          {
+            "term": "sperreretning",
+            "text": "sperreretningen"
+          },
+          ". Ved zenerspenningen øker ",
+          {
+            "term": "strom",
+            "text": "strømmen"
+          },
+          " kraftig, mens ",
+          {
+            "term": "spenning",
+            "text": "spenningen"
+          },
+          " over ",
+          {
+            "term": "diode",
+            "text": "dioden"
+          },
+          " holder seg nesten konstant. Derfor brukes den som spenningsreferanse og til enkel spenningsstabilisering."
+        ],
+        {
+          "note": [
+            "En seriemotstand må begrense strømmen, og varmetapet i dioden (zenerspenning ganger strøm) må holdes innenfor det dioden tåler."
+          ]
+        }
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 3,
+        "section_id": "s3-11",
+        "printed_pages": [
+          "3-4",
+          "3-5"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "22a58c3cfab163a7"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "Jim C K Flaten",
+        "based_on": 3,
+        "at": "2026-10-24T17:09:40+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T17:09:40+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "5dde1616b8b9318027baf53a70654015ed11533561a11a4bf439ea5742783623",
+          "note": "Add a figure"
+        },
+        {
+          "at": "2026-10-24T17:09:42+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "93181ebcd1c8dc809195e36d4ba63e0e52bbe7df5fef2eab335e83a47b5fbd9b",
+          "note": "automated checks passed"
+        }
+      ],
+      "visual": {
+        "template": "zener-regulator",
+        "version": 1,
+        "params": {
+          "u_in_v": 15,
+          "u_z_v": 6.8,
+          "output_label": "stabil spenning"
+        },
+        "after_only": true
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "93181ebcd1c8dc809195e36d4ba63e0e52bbe7df5fef2eab335e83a47b5fbd9b",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: equation. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "pages",
+            "detail": "cited printed page number is uncertain in the source (printed_page_status=inferred). Confirm the page in the book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T17:09:42+00:00"
+      }
     }
   ]
 }

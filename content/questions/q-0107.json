@@ -360,6 +360,216 @@
         },
         "verifier": "deterministic-v1"
       }
+    },
+    {
+      "revision": 3,
+      "status": "needs_review",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 6,
+      "section_ids": [
+        "s6-05"
+      ],
+      "topic_ids": [
+        "mottakeregenskaper"
+      ],
+      "learning_objective": "Forstå hvorfor frekvensstabilitet er viktigere jo smalere filteret er.",
+      "priority": "exam_important",
+      "context": [],
+      "stem": [
+        [
+          "Hvorfor blir ",
+          {
+            "term": "frekvensstabilitet",
+            "text": "frekvensstabiliteten"
+          },
+          " til en ",
+          {
+            "term": "mottaker",
+            "text": "mottaker"
+          },
+          " viktigere jo smalere ",
+          {
+            "term": "filter",
+            "text": "filter"
+          },
+          " den bruker?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Selv en liten frekvensdrift kan flytte signalet helt eller delvis ut av passbåndet"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Et smalt filter får lokaloscillatoren til å drive mer enn et bredt filter"
+          ],
+          "feedback": [
+            [
+              "Filteret påvirker ikke hvor mye ",
+              {
+                "term": "oscillator",
+                "text": "oscillatoren"
+              },
+              " driver. Driften skyldes blant annet temperatur, tid og forsyningsspenning."
+            ]
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Et smalt filter slipper gjennom mer støy, slik at driften blir mer hørbar"
+          ],
+          "feedback": [
+            "Et smalt filter slipper gjennom mindre støy enn et bredt."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Et smalt filter trenger høyere forsyningsspenning, som gir mer drift"
+          ],
+          "feedback": [
+            "Filterbredden har ingenting med forsyningsspenningen å gjøre. Poenget er hvor lite drift filteret tåler."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Frekvensstabilitet er evnen til å bli stående på innstilt ",
+          {
+            "term": "frekvens",
+            "text": "frekvens"
+          },
+          " uten å drive på grunn av tid, temperatur eller ",
+          {
+            "term": "spenning",
+            "text": "spenning"
+          },
+          "."
+        ],
+        [
+          "Driver en oscillator i mottakeren, flytter signalet seg i forhold til ",
+          {
+            "term": "mellomfrekvens",
+            "text": "MF"
+          },
+          "-filteret. Et bredt filter tåler at signalet flytter seg litt. I et smalt filter, for eksempel et CW-filter på noen hundre hertz, kan signalet forsvinne helt eller bli forvrengt."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 6,
+        "section_id": "s6-05",
+        "printed_pages": [
+          "6-2"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "e56410dfdf58e200"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "Jim C K Flaten",
+        "based_on": 2,
+        "at": "2026-10-24T17:09:41+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T17:09:41+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "be076dbbf0cf5c9c9534fefe3e158e4a93f40794d04c6e31d2f0d569f69519d5",
+          "note": "Add a figure"
+        },
+        {
+          "at": "2026-10-24T17:09:42+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "68809d02ecb6def261182c4e7389ce455bd3e71701e62063ee26338e77eb1caf",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T17:11:40+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "2c07757c479a6b19270b79ea8fadb2685278e7cb32b30eb6b4c0b544042b3039",
+          "note": "automated checks passed"
+        }
+      ],
+      "visual": {
+        "template": "spectrum",
+        "version": 1,
+        "params": {
+          "x_min_hz": 7095000.0,
+          "x_max_hz": 7105000.0,
+          "freq_labels": false,
+          "panels": [
+            {
+              "lines": [
+                {
+                  "f_hz": 7100000.0,
+                  "level": 0.7,
+                  "label": "signal",
+                  "mark": false
+                }
+              ],
+              "filter": {
+                "from_hz": 7098800.0,
+                "to_hz": 7101200.0,
+                "label": "smalt filter"
+              }
+            }
+          ]
+        },
+        "after_only": true,
+        "animation": {
+          "param": "panels.0.lines.0.f_hz",
+          "from": 7100000.0,
+          "to": 7102200.0,
+          "phase": "after",
+          "text": "Animasjonen viser signalet som driver litt i frekvens, nok til å gli helt eller delvis ut av det smale passbåndet."
+        }
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "2c07757c479a6b19270b79ea8fadb2685278e7cb32b30eb6b4c0b544042b3039",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: equation. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T17:11:40+00:00"
+      }
     }
   ]
 }

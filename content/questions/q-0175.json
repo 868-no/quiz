@@ -197,6 +197,223 @@
         },
         "verifier": "deterministic-v1"
       }
+    },
+    {
+      "revision": 2,
+      "status": "needs_review",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 4,
+      "section_ids": [
+        "s4-12",
+        "s4-13"
+      ],
+      "topic_ids": [
+        "frekvenssyntese"
+      ],
+      "learning_objective": "Kjenne fordelene med frekvenssyntetisatorer (PLL og DDS) og at signalet ofte er litt mindre rent enn fra de beste LC- og krystalloscillatorene.",
+      "priority": "normal",
+      "context": [
+        [
+          "De fleste moderne ",
+          {
+            "term": "sender",
+            "text": "sendere"
+          },
+          " får ",
+          {
+            "term": "frekvens",
+            "text": "frekvensen"
+          },
+          " sin fra en syntetisator med ",
+          {
+            "term": "faselaast-sloyfe",
+            "text": "faselåst sløyfe"
+          },
+          " eller ",
+          {
+            "term": "dds",
+            "text": "direkte digital syntese"
+          },
+          ". ",
+          {
+            "term": "frekvenssyntetisator",
+            "text": "Syntetisatoren"
+          },
+          " styres av en krystallreferanse og kan stilles inn i små steg over hele frekvensområdet."
+        ]
+      ],
+      "stem": [
+        "Hvilken ulempe har en syntetisator ofte sammenlignet med en virkelig god krystalloscillator?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Signalet er litt mindre rent og inneholder noe mer støy"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Den kan bare stilles inn på noen få faste kanaler"
+          ],
+          "feedback": [
+            "Det gjaldt eldre sendere med ett krystall per kanal. En syntetisator har like stor fleksibilitet som en VFO."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Frekvensen driver omtrent like mye som i en VFO"
+          ],
+          "feedback": [
+            "Syntetisatoren er låst til en krystallreferanse, og frekvensen blir derfor like stabil som referansen."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Den krever en egen kalibrator for å vise riktig frekvens"
+          ],
+          "feedback": [
+            "Et slikt krav har enkelte land hatt for VFO-styrte sendere. Med en syntetisator følger nøyaktigheten av krystallreferansen."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "En syntetisator kan stilles fritt som en ",
+          {
+            "term": "vfo",
+            "text": "VFO"
+          },
+          ", men holder frekvensen like presist som krystallreferansen den er låst til. Prisen er at signalet ofte har litt mer støy rundt ",
+          {
+            "term": "baerebolge",
+            "text": "bærebølgen"
+          },
+          " og enkelte uønskede signaler ved siden av, sammenlignet med de beste LC- og krystalloscillatorene.",
+          " Et godt ",
+          {
+            "term": "kvartskrystall",
+            "text": "kvartskrystall"
+          },
+          " alene gir et svært rent signal."
+        ],
+        [
+          "Derfor må både PLL- og DDS-syntetisatorer konstrueres og filtreres nøye. Uønskede signaler fra syntetisatoren kan blande seg med sterke signaler i ",
+          {
+            "term": "mottaker",
+            "text": "mottakeren"
+          },
+          " og gi forstyrrelser."
+        ]
+      ],
+      "glossary_after_answer": [
+        "frekvenssyntetisator"
+      ],
+      "study_reference": {
+        "chapter": 4,
+        "section_id": "s4-12",
+        "printed_pages": [
+          "4-6"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "e713ceb0a98959bf",
+          "9da6068ce756a26c"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "Jim C K Flaten",
+        "based_on": 1,
+        "at": "2026-10-24T17:09:41+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T17:09:41+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "7d1df8d1d2d5b05bf02d7394a20266956282b732fed7d1c836c7a5ecdb2133de",
+          "note": "Add a figure"
+        },
+        {
+          "at": "2026-10-24T17:09:42+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "7c2bf6eec3b435d01e111e6b576a5d2bb56ec4a2978912910c6305f2ad8eb343",
+          "note": "automated checks passed"
+        }
+      ],
+      "visual": {
+        "template": "spectrum",
+        "version": 1,
+        "params": {
+          "x_min_hz": 145490000.0,
+          "x_max_hz": 145510000.0,
+          "panels": [
+            {
+              "title": "God krystalloscillator",
+              "lines": [
+                {
+                  "f_hz": 145500000.0,
+                  "level": 1,
+                  "label": "",
+                  "mark": false
+                }
+              ],
+              "skirt": {
+                "center_hz": 145500000.0,
+                "width_hz": 300,
+                "level": 0.12
+              }
+            },
+            {
+              "title": "Syntetisator",
+              "lines": [
+                {
+                  "f_hz": 145500000.0,
+                  "level": 1,
+                  "label": "",
+                  "mark": false
+                }
+              ],
+              "skirt": {
+                "center_hz": 145500000.0,
+                "width_hz": 1500,
+                "level": 0.3,
+                "label": "mer støy"
+              }
+            }
+          ]
+        },
+        "after_only": true
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "7c2bf6eec3b435d01e111e6b576a5d2bb56ec4a2978912910c6305f2ad8eb343",
+        "errors": [],
+        "warnings": [],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T17:09:42+00:00"
+      }
     }
   ]
 }

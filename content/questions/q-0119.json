@@ -571,6 +571,216 @@
         },
         "verifier": "deterministic-v1"
       }
+    },
+    {
+      "revision": 4,
+      "status": "needs_review",
+      "type": "single_choice",
+      "style": "recall",
+      "difficulty": "easy",
+      "chapter": 6,
+      "section_ids": [
+        "s6-24"
+      ],
+      "topic_ids": [
+        "brussperre"
+      ],
+      "learning_objective": "Kjenne funksjonen til brussperren (squelch).",
+      "priority": "normal",
+      "context": [],
+      "stem": [
+        [
+          "Hva gjør ",
+          {
+            "term": "brussperre",
+            "text": "brussperren"
+          },
+          " i en ",
+          {
+            "term": "frekvensmodulasjon",
+            "text": "FM"
+          },
+          "-",
+          {
+            "term": "mottaker",
+            "text": "mottaker"
+          },
+          "?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Demper lyden når det ikke finnes noe brukbart signal"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Klipper korte støypulser, for eksempel fra tenningsanlegg"
+          ],
+          "feedback": [
+            "Det er oppgaven til en støybegrenser."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Reduserer forsterkningen når signalet blir sterkt"
+          ],
+          "feedback": [
+            [
+              "Det er ",
+              {
+                "term": "agc",
+                "text": "automatisk forsterkningskontroll"
+              },
+              " (AGC)."
+            ]
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Fjerner bakgrunnsstøyen fra et svakt signal, slik at det blir tydelig"
+          ],
+          "feedback": [
+            "Brussperren slår bare lyden av eller på. Den kan ikke fjerne støy som ligger oppå et signal."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Uten signal står forsterkningen på maks, og en FM-",
+          {
+            "term": "demodulator",
+            "text": "demodulator"
+          },
+          " gir da kraftig brus, nesten på full lydstyrke. Det er ubehagelig og kan være skadelig i hodetelefoner."
+        ],
+        [
+          {
+            "term": "brussperre",
+            "text": "Brussperren"
+          },
+          " oppdager at det ikke finnes noe gyldig signal og kutter lyden. Det kan for eksempel gjøres ved å måle signalnivået eller ved å se etter støy på ",
+          {
+            "term": "frekvens",
+            "text": "frekvenser"
+          },
+          " langt over taleområdet i det demodulerte signalet."
+        ]
+      ],
+      "glossary_after_answer": [
+        "brussperre"
+      ],
+      "study_reference": {
+        "chapter": 6,
+        "section_id": "s6-24",
+        "printed_pages": [
+          "6-14"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "9c7bb7b84f4203f2"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "Jim C K Flaten",
+        "based_on": 3,
+        "at": "2026-10-24T17:09:40+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T17:09:40+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "c4297cd452c408ca07fa0e6f16b693569d415135de342e07f76595652847c40c",
+          "note": "Add a figure"
+        },
+        {
+          "at": "2026-10-24T17:09:42+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "7ed5827495c5acfe4864b53c4a5e5dd8fdcf053d9111c32d5493d76ed9b90786",
+          "note": "automated checks passed"
+        }
+      ],
+      "visual": {
+        "template": "block-diagram",
+        "version": 1,
+        "params": {
+          "chain": [
+            {
+              "kind": "antenna"
+            },
+            {
+              "kind": "rf_amp"
+            },
+            {
+              "kind": "mixer"
+            },
+            {
+              "kind": "if_amp"
+            },
+            {
+              "kind": "discriminator"
+            },
+            {
+              "kind": "custom",
+              "label": "Brussperre",
+              "highlight": true
+            },
+            {
+              "kind": "af_amp"
+            },
+            {
+              "kind": "speaker"
+            }
+          ],
+          "side": [
+            {
+              "kind": "local_osc",
+              "into": 2
+            }
+          ]
+        },
+        "after_only": true,
+        "caption": "Brussperren stenger lyden når det ikke kommer noe brukbart signal."
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "7ed5827495c5acfe4864b53c4a5e5dd8fdcf053d9111c32d5493d76ed9b90786",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: equation, low_ocr_confidence. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T17:09:42+00:00"
+      }
     }
   ]
 }

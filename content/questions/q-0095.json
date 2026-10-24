@@ -1599,6 +1599,228 @@
         },
         "verifier": "deterministic-v1"
       }
+    },
+    {
+      "revision": 8,
+      "status": "needs_review",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "easy",
+      "chapter": 5,
+      "section_ids": [
+        "s5-02",
+        "s5-03"
+      ],
+      "topic_ids": [
+        "frekvensstabilitet"
+      ],
+      "learning_objective": "Kjenne igjen frekvensdrift etter oppstart og forstå at temperaturendringer i oscillatoren er årsaken.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "Du har nettopp slått på en eldre, hjemmebygget ",
+          {
+            "term": "ssb",
+            "text": "SSB"
+          },
+          "-sender med LC-",
+          {
+            "term": "oscillator",
+            "text": "oscillator"
+          },
+          ". Stasjonen du snakker med, forteller at tonehøyden på stemmen din endrer seg langsomt i løpet av de første minuttene."
+        ]
+      ],
+      "stem": [
+        "Hva er den mest sannsynlige årsaken?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Oscillatoren varmes opp, og verdiene i den avstemte kretsen endrer seg."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Sluttforsterkeren blir overstyrt, slik at det dannes harmoniske signaler."
+          ],
+          "feedback": [
+            [
+              {
+                "term": "harmoniske",
+                "text": "Harmoniske frekvenser"
+              },
+              " havner på multipler av sendefrekvensen. De gir ikke en langsom endring av tonehøyden."
+            ]
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Mikrofonforsterkningen er så høy at signalet blir overmodulert."
+          ],
+          "feedback": [
+            [
+              {
+                "term": "overmodulering",
+                "text": "Overmodulering"
+              },
+              " gir forvrengt og bredt signal, men ikke en gradvis endring av frekvensen."
+            ]
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Nøklingen har for bratte flanker, slik at signalet blir for bredt."
+          ],
+          "feedback": [
+            [
+              "Det beskriver ",
+              {
+                "term": "nokkelklikk",
+                "text": "nøkkelklikk"
+              },
+              " på CW. Her er det en langsom endring over flere minutter."
+            ]
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          {
+            "term": "frekvensdrift",
+            "text": "Frekvensdrift"
+          },
+          " betyr at sendefrekvensen sakte flytter seg. På SSB og CW høres det som at tonehøyden glir over tid."
+        ],
+        [
+          "Temperaturen påvirker både ",
+          {
+            "term": "induktans",
+            "text": "induktansen"
+          },
+          " og ",
+          {
+            "term": "kapasitans",
+            "text": "kapasitansen"
+          },
+          " i oscillatorens ",
+          {
+            "term": "avstemt-krets",
+            "text": "avstemte krets"
+          },
+          ", og dermed ",
+          {
+            "term": "resonans",
+            "text": "resonansfrekvensen"
+          },
+          ". Den største endringen kommer like etter påslag, mens ",
+          {
+            "term": "sender",
+            "text": "senderen"
+          },
+          " varmes opp. Etter en stund stabiliserer ",
+          {
+            "term": "frekvens",
+            "text": "frekvensen"
+          },
+          " seg."
+        ],
+        [
+          "Tiltak er å plassere oscillatoren unna varme komponenter, for eksempel ",
+          {
+            "term": "sluttforsterker",
+            "text": "sluttforsterkeren"
+          },
+          ", og å kombinere komponenter med motsatt ",
+          {
+            "term": "temperaturkoeffisient",
+            "text": "temperaturkoeffisient"
+          },
+          ". Hvis noen sier at du driver, kan det lønne seg å spørre en tredje stasjon – det kan også være ",
+          {
+            "term": "mottaker",
+            "text": "mottakeren"
+          },
+          " hos motparten som driver."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 5,
+        "section_id": "s5-02",
+        "printed_pages": [
+          "5-1"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "7708a47a52c5b85b",
+          "59d8a7b849bac5ef"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "Jim C K Flaten",
+        "based_on": 7,
+        "at": "2026-10-24T17:09:40+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T17:09:40+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "a5d4263979332edbeefa48988c3ef70cad0533374d7a9e8a7be049b7f3680e62",
+          "note": "Add a figure"
+        },
+        {
+          "at": "2026-10-24T17:09:42+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "e704ada9c187153fe996e5d10faa52873c96eb726541e8a680d0fb143187beb3",
+          "note": "automated checks passed"
+        }
+      ],
+      "visual": {
+        "template": "time-signal",
+        "version": 1,
+        "params": {
+          "kind": "drift",
+          "traces": [
+            "warmup"
+          ]
+        },
+        "after_only": true
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "e704ada9c187153fe996e5d10faa52873c96eb726541e8a680d0fb143187beb3",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T17:09:42+00:00"
+      }
     }
   ]
 }
