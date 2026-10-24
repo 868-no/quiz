@@ -487,7 +487,7 @@
     },
     {
       "revision": 3,
-      "status": "approved",
+      "status": "retired",
       "type": "single_choice",
       "style": "scenario",
       "difficulty": "medium",
@@ -700,6 +700,15 @@
           "content_sha256": "5338bbc57e27f4223e08e49866141b8b008a39f93333120d4d45ef8239b3aeb0",
           "note": "Harmoniske always followed by a noun",
           "acknowledged": []
+        },
+        {
+          "at": "2026-10-24T15:40:53+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "5338bbc57e27f4223e08e49866141b8b008a39f93333120d4d45ef8239b3aeb0",
+          "note": "superseded by r4"
         }
       ],
       "checks": {
@@ -715,6 +724,257 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-24T14:32:01+00:00",
         "content_sha256": "5338bbc57e27f4223e08e49866141b8b008a39f93333120d4d45ef8239b3aeb0",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 4,
+      "status": "approved",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "medium",
+      "chapter": 5,
+      "section_ids": [
+        "s5-04"
+      ],
+      "topic_ids": [
+        "frekvensstabilitet"
+      ],
+      "learning_objective": "Forstå at varierende forsyningsspenning til oscillatoren gir frekvensendringer, og at en egen stabilisert forsyning til oscillatoren løser det.",
+      "priority": "normal",
+      "context": [
+        [
+          "Du sender ",
+          {
+            "term": "frekvensmodulasjon",
+            "text": "FM"
+          },
+          " fra en hjemmebygget 2 m-stasjon i bilen. ",
+          {
+            "term": "oscillator",
+            "text": "Oscillatoren"
+          },
+          " får strøm rett fra den samme forsyningsledningen som ",
+          {
+            "term": "sluttforsterker",
+            "text": "sluttforsterkeren"
+          },
+          ". Hver gang du trykker inn PTT-knappen, faller ",
+          {
+            "term": "spenning",
+            "text": "spenningen"
+          },
+          " på ledningen merkbart, og andre stasjoner forteller at ",
+          {
+            "term": "frekvens",
+            "text": "frekvensen"
+          },
+          " din hopper litt idet du begynner å sende."
+        ]
+      ],
+      "stem": [
+        "Hvilket tiltak vil mest sannsynlig fjerne problemet?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Sette inn et bedre lavpassfilter mellom senderen og antennen."
+          ],
+          "feedback": [
+            [
+              "Et ",
+              {
+                "term": "lavpassfilter",
+                "text": "lavpassfilter"
+              },
+              " demper ",
+              {
+                "term": "harmoniske",
+                "text": "harmoniske signaler"
+              },
+              ". Det kan ikke hindre at selve oscillatorfrekvensen flytter seg når forsyningsspenningen endrer seg."
+            ]
+          ]
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Gi oscillatoren en egen, stabilisert spenning fra en regulator."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Øke utgangseffekten, slik at spenningsfallet får mindre betydning."
+          ],
+          "feedback": [
+            [
+              "Mer ",
+              {
+                "term": "effekt",
+                "text": "effekt"
+              },
+              " betyr at sluttforsterkeren trekker enda mer strøm. Spenningsfallet blir større, og problemet blir verre."
+            ]
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Skru ned mikrofonforsterkningen, slik at deviasjonen blir mindre."
+          ],
+          "feedback": [
+            [
+              "Mindre ",
+              {
+                "term": "deviasjon",
+                "text": "deviasjon"
+              },
+              " gjør signalet smalere, men hoppet skyldes at oscillatoren får varierende spenning, ikke modulasjonen."
+            ]
+          ]
+        }
+      ],
+      "correct": [
+        "o2"
+      ],
+      "explanation": [
+        [
+          {
+            "term": "kapasitans",
+            "text": "Kapasitansen"
+          },
+          " i aktive komponenter, for eksempel en ",
+          {
+            "term": "transistor",
+            "text": "transistor"
+          },
+          ", avhenger av spenningen over dem. Når sluttforsterkeren begynner å trekke ",
+          {
+            "term": "strom",
+            "text": "strøm"
+          },
+          " og forsyningsspenningen synker, endres derfor oscillatorens ",
+          {
+            "term": "avstemt-krets",
+            "text": "avstemte krets"
+          },
+          " litt, og frekvensen flytter seg."
+        ],
+        [
+          "Løsningen er å forsyne oscillatoren (og gjerne ",
+          {
+            "term": "bufferforsterker",
+            "text": "bufferforsterkeren"
+          },
+          " etter den) fra en egen, godt avkoblet ",
+          {
+            "term": "spenningsregulator",
+            "text": "spenningsregulator"
+          },
+          ". Da holder spenningen seg konstant uansett hvor mye strøm resten av ",
+          {
+            "term": "sender",
+            "text": "senderen"
+          },
+          " trekker. Oscillatoren og bufferen bør også stå på hele tiden mens stasjonen er i bruk, i stedet for å slås av og på med PTT."
+        ],
+        [
+          "På CW gir den samme feilen ",
+          {
+            "term": "kvitter",
+            "text": "kvitter"
+          },
+          " i starten av hvert tegn."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 5,
+        "section_id": "s5-04",
+        "printed_pages": [
+          "5-1",
+          "5-2"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "c8b389ee1f73f7ee"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "Jim C K Flaten",
+        "based_on": 3,
+        "at": "2026-10-24T15:16:42+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T15:16:42+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "5338bbc57e27f4223e08e49866141b8b008a39f93333120d4d45ef8239b3aeb0",
+          "note": "Terminology: PA, gate, kunstlast, knekkfrekvens, avstemt krets, glattekondensator"
+        },
+        {
+          "at": "2026-10-24T15:17:34+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "439b370524a9ed305043fd0bc5d4ac98e5a1da9900a5331af6cded98187ced17",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T15:32:12+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "7b69201d4c5e020b458643e5fb306e861b3f868f9db6fc97331fad4cf0cfeb3f",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T15:40:53+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "7b69201d4c5e020b458643e5fb306e861b3f868f9db6fc97331fad4cf0cfeb3f",
+          "note": "Book terminology: sluttforsterker, gate, kunstlast, knekkfrekvens, avstemt krets, glattekondensator, harmoniske signaler, variabel kondensator",
+          "acknowledged": []
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "7b69201d4c5e020b458643e5fb306e861b3f868f9db6fc97331fad4cf0cfeb3f",
+        "errors": [],
+        "warnings": [],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T15:40:53+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T15:40:53+00:00",
+        "content_sha256": "7b69201d4c5e020b458643e5fb306e861b3f868f9db6fc97331fad4cf0cfeb3f",
         "acknowledged_hazards": [],
         "checklist": {
           "one_correct": true,

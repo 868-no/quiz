@@ -752,7 +752,7 @@
     },
     {
       "revision": 5,
-      "status": "approved",
+      "status": "retired",
       "type": "single_choice",
       "style": "concept",
       "difficulty": "medium",
@@ -919,6 +919,15 @@
           "content_sha256": "73a59772fb4b11b15ff4f42457f3b64ba8c992fd3e44c7757d0a196a98f8cc7b",
           "note": "Harmoniske always followed by a noun",
           "acknowledged": []
+        },
+        {
+          "at": "2026-10-24T15:40:48+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "73a59772fb4b11b15ff4f42457f3b64ba8c992fd3e44c7757d0a196a98f8cc7b",
+          "note": "superseded by r6"
         }
       ],
       "checks": {
@@ -934,6 +943,211 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-24T14:31:58+00:00",
         "content_sha256": "73a59772fb4b11b15ff4f42457f3b64ba8c992fd3e44c7757d0a196a98f8cc7b",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 6,
+      "status": "approved",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 5,
+      "section_ids": [
+        "s5-10"
+      ],
+      "topic_ids": [
+        "harmoniske"
+      ],
+      "learning_objective": "Forstå at en liten reduksjon av driveffekten til en lineær forsterker gir mye mindre ulinearitet og harmoniske.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "Du har avstemt ",
+          {
+            "term": "sender",
+            "text": "senderen"
+          },
+          " og en ekstern lineær ",
+          {
+            "term": "sluttforsterker",
+            "text": "sluttforsterker"
+          },
+          " for størst mulig utgangseffekt. En annen radioamatør melder at han hører svake ",
+          {
+            "term": "harmoniske",
+            "text": "harmoniske signaler"
+          },
+          " fra deg på et høyere bånd."
+        ]
+      ],
+      "stem": [
+        "Hvilket enkelt tiltak gir ofte stor forbedring, uten at signalet ditt blir merkbart svakere hos fjerne stasjoner?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Skru ned driveffekten litt, slik at forsterkeren blir mer lineær."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Skru opp driveffekten, slik at forsterkeren går helt i metning."
+          ],
+          "feedback": [
+            [
+              {
+                "term": "metning",
+                "text": "Metning"
+              },
+              " betyr at forsterkeren klipper signalet. Det gir sterkere harmoniske signaler, ikke svakere."
+            ]
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Ta ut lavpassfilteret, slik at du slipper tapet i det."
+          ],
+          "feedback": [
+            [
+              {
+                "term": "lavpassfilter",
+                "text": "Lavpassfilteret"
+              },
+              " er nettopp det som demper de harmoniske signalene. Uten det blir problemet større."
+            ]
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Bytt til en antenne med høyere forsterkning i senderetningen."
+          ],
+          "feedback": [
+            [
+              {
+                "term": "antenne",
+                "text": "Antennen"
+              },
+              " stråler også ut de harmoniske signalene. Det fjerner ikke årsaken, som er ulinearitet i forsterkeren."
+            ]
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Nær toppen av utgangskarakteristikken går en forsterker fort over fra lineær drift til overstyring, og der dannes harmoniske signaler og andre uønskede produkter. Å avstemme for maksimal ",
+          {
+            "term": "effekt",
+            "text": "effekt"
+          },
+          " er riktig, men etterpå bør driveffekten tas litt ned."
+        ],
+        [
+          "En reduksjon på rundt 1 dB tilsvarer omtrent 20 % mindre effekt. Det merkes knapt hos en fjern ",
+          {
+            "term": "mottaker",
+            "text": "mottaker"
+          },
+          ", men kan gjøre ",
+          {
+            "term": "forsterker",
+            "text": "forsterkeren"
+          },
+          " mye mer lineær og dempe de harmoniske signalene kraftig."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 5,
+        "section_id": "s5-10",
+        "printed_pages": [
+          "5-3"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "c1276fd63d35dd6f"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "Jim C K Flaten",
+        "based_on": 5,
+        "at": "2026-10-24T15:16:41+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T15:16:41+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "73a59772fb4b11b15ff4f42457f3b64ba8c992fd3e44c7757d0a196a98f8cc7b",
+          "note": "Terminology: PA, gate, kunstlast, knekkfrekvens, avstemt krets, glattekondensator"
+        },
+        {
+          "at": "2026-10-24T15:17:33+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "d60b15826aa2e6cee3d3f687414931243e1ae4196abcb217e60a41549deebb47",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T15:32:11+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "5e78ec635a3e8b0701204e1695b08276fa9d032e673298575e8073562eda44f5",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T15:40:48+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "5e78ec635a3e8b0701204e1695b08276fa9d032e673298575e8073562eda44f5",
+          "note": "Book terminology: sluttforsterker, gate, kunstlast, knekkfrekvens, avstemt krets, glattekondensator, harmoniske signaler, variabel kondensator",
+          "acknowledged": []
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "5e78ec635a3e8b0701204e1695b08276fa9d032e673298575e8073562eda44f5",
+        "errors": [],
+        "warnings": [],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T15:40:48+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T15:40:48+00:00",
+        "content_sha256": "5e78ec635a3e8b0701204e1695b08276fa9d032e673298575e8073562eda44f5",
         "acknowledged_hazards": [],
         "checklist": {
           "one_correct": true,

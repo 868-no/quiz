@@ -368,7 +368,7 @@
     },
     {
       "revision": 3,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "concept",
@@ -542,6 +542,15 @@
           "acknowledged": [
             "figures"
           ]
+        },
+        {
+          "at": "2026-10-24T15:40:47+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "f4aa03e1182872c5a4c51a87c84074b617456da1d840ff50b8bf51af1691c2eb",
+          "note": "superseded by r4"
         }
       ],
       "checks": {
@@ -562,6 +571,225 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-24T09:32:18+00:00",
         "content_sha256": "f4aa03e1182872c5a4c51a87c84074b617456da1d840ff50b8bf51af1691c2eb",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 4,
+      "status": "approved",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 4,
+      "section_ids": [
+        "s4-35",
+        "s4-28"
+      ],
+      "topic_ids": [
+        "sluttforsterker"
+      ],
+      "learning_objective": "Forstå hvorfor høy SWR kan skade et transistorsluttrinn, og hva en avstemmingsenhet ved senderen gjør.",
+      "priority": "exam_important",
+      "context": [],
+      "stem": [
+        [
+          "Hvorfor kan en høy ",
+          {
+            "term": "swr",
+            "text": "SWR"
+          },
+          " skade ",
+          {
+            "term": "sluttforsterker",
+            "text": "sluttforsterkeren"
+          },
+          " i en transistorsender?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Sluttforsterkeren får en lastimpedans som avviker sterkt fra 50 Ω."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "All reflektert effekt blir omgjort til varme i antennen."
+          ],
+          "feedback": [
+            "Varme i antennen skader ikke sendertransistorene. Det er impedansen senderen ser, som er problemet."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Høy SWR får senderen til å sende på en harmonisk frekvens."
+          ],
+          "feedback": [
+            [
+              "SWR endrer ikke ",
+              {
+                "term": "frekvens",
+                "text": "frekvensen"
+              },
+              ". Den sier noe om hvor godt lasten er tilpasset kabelen."
+            ]
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Den reflekterte effekten går tapt, så signalet blir svakere."
+          ],
+          "feedback": [
+            "Reflektert effekt går ikke nødvendigvis tapt: i en kabel med lite tap reflekteres den på nytt ved senderen og når til slutt antennen. Det forklarer uansett ikke at sluttforsterkeren kan bli skadet."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Med høy SWR ser ",
+          {
+            "term": "sender",
+            "text": "senderen"
+          },
+          " inn i en impedans som er feil. Sluttforsterkeren kan da få for høye ",
+          {
+            "term": "spenning",
+            "text": "spenninger"
+          },
+          " eller ",
+          {
+            "term": "strom",
+            "text": "strømmer"
+          },
+          ", og ",
+          {
+            "term": "transistor",
+            "text": "transistorer"
+          },
+          " tåler dette dårlig. Mange sendere måler derfor reflektert ",
+          {
+            "term": "effekt",
+            "text": "effekt"
+          },
+          " og skrur ned utgangseffekten gradvis ved feiltilpasning."
+        ],
+        [
+          "En antenneavstemmingsenhet ved senderen avstemmer ikke selve ",
+          {
+            "term": "antenne",
+            "text": "antennen"
+          },
+          ". Den transformerer ",
+          {
+            "term": "impedans",
+            "text": "impedansen"
+          },
+          " som fødekabelen har i senderenden, til de 50 Ω senderen er laget for."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 4,
+        "section_id": "s4-35",
+        "printed_pages": [
+          "4-16",
+          "4-17"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "293e12ad93262f57",
+          "22452184a5f54926"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "Jim C K Flaten",
+        "based_on": 3,
+        "at": "2026-10-24T15:16:40+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T15:16:40+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "f4aa03e1182872c5a4c51a87c84074b617456da1d840ff50b8bf51af1691c2eb",
+          "note": "Terminology: PA, gate, kunstlast, knekkfrekvens, avstemt krets, glattekondensator"
+        },
+        {
+          "at": "2026-10-24T15:17:33+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "94fc21f0d8b164a5071328d46e9f78e6e8ce9ba21f510f5893ccec06319a17db",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T15:32:11+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "cb75acc0ff1546e6fa7bd295f1fbd02be9cfabba306ca734fd9e4f4e1c27fb39",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T15:40:47+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "cb75acc0ff1546e6fa7bd295f1fbd02be9cfabba306ca734fd9e4f4e1c27fb39",
+          "note": "Book terminology: sluttforsterker, gate, kunstlast, knekkfrekvens, avstemt krets, glattekondensator, harmoniske signaler, variabel kondensator",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "cb75acc0ff1546e6fa7bd295f1fbd02be9cfabba306ca734fd9e4f4e1c27fb39",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T15:40:47+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T15:40:47+00:00",
+        "content_sha256": "cb75acc0ff1546e6fa7bd295f1fbd02be9cfabba306ca734fd9e4f4e1c27fb39",
         "acknowledged_hazards": [
           "figures"
         ],

@@ -1104,7 +1104,7 @@
     },
     {
       "revision": 6,
-      "status": "approved",
+      "status": "retired",
       "type": "single_choice",
       "style": "scenario",
       "difficulty": "easy",
@@ -1308,6 +1308,15 @@
           "acknowledged": [
             "figures"
           ]
+        },
+        {
+          "at": "2026-10-24T15:40:48+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "2fd7c482e67e8057329e3f81baae18ca07181039a3bf344e7877d8a0e57ffc45",
+          "note": "superseded by r7"
         }
       ],
       "checks": {
@@ -1328,6 +1337,255 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-24T15:08:37+00:00",
         "content_sha256": "2fd7c482e67e8057329e3f81baae18ca07181039a3bf344e7877d8a0e57ffc45",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 7,
+      "status": "approved",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "easy",
+      "chapter": 5,
+      "section_ids": [
+        "s5-02",
+        "s5-03"
+      ],
+      "topic_ids": [
+        "frekvensstabilitet"
+      ],
+      "learning_objective": "Kjenne igjen frekvensdrift etter oppstart og forstå at temperaturendringer i oscillatoren er årsaken.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "Du har nettopp slått på en eldre, hjemmebygget ",
+          {
+            "term": "ssb",
+            "text": "SSB"
+          },
+          "-sender med LC-",
+          {
+            "term": "oscillator",
+            "text": "oscillator"
+          },
+          ". Stasjonen du snakker med, forteller at tonehøyden på stemmen din endrer seg langsomt i løpet av de første minuttene."
+        ]
+      ],
+      "stem": [
+        "Hva er den mest sannsynlige årsaken?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Oscillatoren varmes opp, og verdiene i den avstemte kretsen endrer seg."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Sluttforsterkeren blir overstyrt, slik at det dannes harmoniske signaler."
+          ],
+          "feedback": [
+            [
+              {
+                "term": "harmoniske",
+                "text": "Harmoniske frekvenser"
+              },
+              " havner på multipler av sendefrekvensen. De gir ikke en langsom endring av tonehøyden."
+            ]
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Mikrofonforsterkningen er så høy at signalet blir overmodulert."
+          ],
+          "feedback": [
+            [
+              {
+                "term": "overmodulering",
+                "text": "Overmodulering"
+              },
+              " gir forvrengt og bredt signal, men ikke en gradvis endring av frekvensen."
+            ]
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Nøklingen har for bratte flanker, slik at signalet blir for bredt."
+          ],
+          "feedback": [
+            [
+              "Det beskriver ",
+              {
+                "term": "nokkelklikk",
+                "text": "nøkkelklikk"
+              },
+              " på CW. Her er det en langsom endring over flere minutter."
+            ]
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          {
+            "term": "frekvensdrift",
+            "text": "Frekvensdrift"
+          },
+          " betyr at sendefrekvensen sakte flytter seg. På SSB og CW høres det som at tonehøyden glir over tid."
+        ],
+        [
+          "Temperaturen påvirker både ",
+          {
+            "term": "induktans",
+            "text": "induktansen"
+          },
+          " og ",
+          {
+            "term": "kapasitans",
+            "text": "kapasitansen"
+          },
+          " i oscillatorens ",
+          {
+            "term": "avstemt-krets",
+            "text": "avstemte krets"
+          },
+          ", og dermed ",
+          {
+            "term": "resonans",
+            "text": "resonansfrekvensen"
+          },
+          ". Den største endringen kommer like etter påslag, mens ",
+          {
+            "term": "sender",
+            "text": "senderen"
+          },
+          " varmes opp. Etter en stund stabiliserer ",
+          {
+            "term": "frekvens",
+            "text": "frekvensen"
+          },
+          " seg."
+        ],
+        [
+          "Tiltak er å plassere oscillatoren unna varme komponenter, for eksempel ",
+          {
+            "term": "sluttforsterker",
+            "text": "sluttforsterkeren"
+          },
+          ", og å kombinere komponenter med motsatt ",
+          {
+            "term": "temperaturkoeffisient",
+            "text": "temperaturkoeffisient"
+          },
+          ". Hvis noen sier at du driver, kan det lønne seg å spørre en tredje stasjon – det kan også være ",
+          {
+            "term": "mottaker",
+            "text": "mottakeren"
+          },
+          " hos motparten som driver."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 5,
+        "section_id": "s5-02",
+        "printed_pages": [
+          "5-1"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "7708a47a52c5b85b",
+          "59d8a7b849bac5ef"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "Jim C K Flaten",
+        "based_on": 6,
+        "at": "2026-10-24T15:16:40+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T15:16:40+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "2fd7c482e67e8057329e3f81baae18ca07181039a3bf344e7877d8a0e57ffc45",
+          "note": "Terminology: PA, gate, kunstlast, knekkfrekvens, avstemt krets, glattekondensator"
+        },
+        {
+          "at": "2026-10-24T15:17:33+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "0b26feac7b9a85ebd6c06a0327a2927de2e60348488b5453532c51d94616c27e",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T15:32:11+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "a5d4263979332edbeefa48988c3ef70cad0533374d7a9e8a7be049b7f3680e62",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T15:40:48+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "a5d4263979332edbeefa48988c3ef70cad0533374d7a9e8a7be049b7f3680e62",
+          "note": "Book terminology: sluttforsterker, gate, kunstlast, knekkfrekvens, avstemt krets, glattekondensator, harmoniske signaler, variabel kondensator",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "a5d4263979332edbeefa48988c3ef70cad0533374d7a9e8a7be049b7f3680e62",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T15:40:48+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T15:40:48+00:00",
+        "content_sha256": "a5d4263979332edbeefa48988c3ef70cad0533374d7a9e8a7be049b7f3680e62",
         "acknowledged_hazards": [
           "figures"
         ],

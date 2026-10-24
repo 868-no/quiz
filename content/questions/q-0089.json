@@ -624,7 +624,7 @@
     },
     {
       "revision": 3,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "calculation",
@@ -904,6 +904,15 @@
           "acknowledged": [
             "figures"
           ]
+        },
+        {
+          "at": "2026-10-24T15:40:46+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "cd0db1fc0a6fee230bfe5e788efd70541d8d76e146e78c887622c3198d34ec2e",
+          "note": "superseded by r4"
         }
       ],
       "checks": {
@@ -924,6 +933,331 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-24T09:32:18+00:00",
         "content_sha256": "cd0db1fc0a6fee230bfe5e788efd70541d8d76e146e78c887622c3198d34ec2e",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 4,
+      "status": "approved",
+      "type": "single_choice",
+      "style": "calculation",
+      "difficulty": "easy",
+      "chapter": 4,
+      "section_ids": [
+        "s4-30"
+      ],
+      "topic_ids": [
+        "sluttforsterker"
+      ],
+      "learning_objective": "Regne ut virkningsgraden til et sluttrinn ut fra tilført likestrømseffekt og RF-effekt.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En ",
+          {
+            "term": "sluttforsterker",
+            "text": "sluttforsterker"
+          },
+          " får ",
+          {
+            "q": 13.5,
+            "u": "V"
+          },
+          " fra strømforsyningen og trekker ",
+          {
+            "q": 3.0,
+            "u": "A",
+            "digits": 1
+          },
+          " mens den leverer ",
+          {
+            "q": 27,
+            "u": "W"
+          },
+          " RF-",
+          {
+            "term": "effekt",
+            "text": "effekt"
+          },
+          " til en tilpasset last."
+        ]
+      ],
+      "stem": [
+        [
+          "Hva er ",
+          {
+            "term": "virkningsgrad",
+            "text": "virkningsgraden"
+          },
+          " til trinnet?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 67,
+              "u": "%"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 150,
+              "u": "%"
+            }
+          ],
+          "feedback": [
+            "Her er brøken snudd. En virkningsgrad kan ikke være over 100 %; det er utgangseffekten som deles på tilført effekt."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 33,
+              "u": "%"
+            }
+          ],
+          "feedback": [
+            "Dette er andelen av den tilførte effekten som blir til varme, ikke andelen som blir RF-effekt."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 50,
+              "u": "%"
+            }
+          ],
+          "feedback": [
+            [
+              "Dette er varmetapet delt på RF-effekten (13,5 W / 27 W). ",
+              {
+                "term": "virkningsgrad",
+                "text": "Virkningsgraden"
+              },
+              " er RF-effekten delt på tilført effekt."
+            ]
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        {
+          "steps": [
+            [
+              "Tilført likestrømseffekt: ",
+              {
+                "math": [
+                  "P_{inn}",
+                  "=",
+                  "U",
+                  "·",
+                  "I",
+                  "=",
+                  {
+                    "q": 13.5,
+                    "u": "V"
+                  },
+                  "·",
+                  {
+                    "q": 3.0,
+                    "u": "A",
+                    "digits": 1
+                  },
+                  "=",
+                  {
+                    "q": 40.5,
+                    "u": "W"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "math": [
+                  "η",
+                  "=",
+                  {
+                    "frac": [
+                      [
+                        "P_{ut}"
+                      ],
+                      [
+                        "P_{inn}"
+                      ]
+                    ]
+                  },
+                  "·",
+                  "100",
+                  "%",
+                  "=",
+                  {
+                    "frac": [
+                      [
+                        {
+                          "q": 27,
+                          "u": "W"
+                        }
+                      ],
+                      [
+                        {
+                          "q": 40.5,
+                          "u": "W"
+                        }
+                      ]
+                    ]
+                  },
+                  "·",
+                  "100",
+                  "%",
+                  "≈",
+                  {
+                    "q": 67,
+                    "u": "%"
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        [
+          "Resten, 40,5 W − 27 W = 13,5 W, blir varme i ",
+          {
+            "term": "transistor",
+            "text": "transistoren"
+          },
+          ". En virkningsgrad på rundt to tredjedeler er typisk for klasse C, mens lineære ",
+          {
+            "term": "forsterkerklasse",
+            "text": "klasse A"
+          },
+          "-trinn ligger langt lavere."
+        ]
+      ],
+      "glossary_after_answer": [
+        "virkningsgrad"
+      ],
+      "calculation": {
+        "formula": "efficiency_percent",
+        "inputs": {
+          "P_out": [
+            27,
+            "W"
+          ],
+          "P_in": [
+            40.5,
+            "W"
+          ]
+        },
+        "answer": [
+          67,
+          "%"
+        ],
+        "answer_symbol": "η",
+        "sig_figs": 2
+      },
+      "study_reference": {
+        "chapter": 4,
+        "section_id": "s4-30",
+        "printed_pages": [
+          "4-15",
+          "4-16"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "7939f52ee16e7a09"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "Jim C K Flaten",
+        "based_on": 3,
+        "at": "2026-10-24T15:16:40+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T15:16:40+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "cd0db1fc0a6fee230bfe5e788efd70541d8d76e146e78c887622c3198d34ec2e",
+          "note": "Terminology: PA, gate, kunstlast, knekkfrekvens, avstemt krets, glattekondensator"
+        },
+        {
+          "at": "2026-10-24T15:17:33+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "15b8dbf3e991a3c59a38d94072108e73b38d4ad016662bba09d95b46ad23f9dd",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T15:32:11+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "73bdd2a165e9fd4f0972d073707f4fda09b04e0b9e40b71f85cf61f22c5cb8c8",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T15:40:46+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "73bdd2a165e9fd4f0972d073707f4fda09b04e0b9e40b71f85cf61f22c5cb8c8",
+          "note": "Book terminology: sluttforsterker, gate, kunstlast, knekkfrekvens, avstemt krets, glattekondensator, harmoniske signaler, variabel kondensator",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "73bdd2a165e9fd4f0972d073707f4fda09b04e0b9e40b71f85cf61f22c5cb8c8",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T15:40:46+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T15:40:46+00:00",
+        "content_sha256": "73bdd2a165e9fd4f0972d073707f4fda09b04e0b9e40b71f85cf61f22c5cb8c8",
         "acknowledged_hazards": [
           "figures"
         ],

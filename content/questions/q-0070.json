@@ -364,7 +364,7 @@
     },
     {
       "revision": 3,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "recall",
@@ -527,6 +527,15 @@
           "acknowledged": [
             "figures"
           ]
+        },
+        {
+          "at": "2026-10-24T15:40:42+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "4244399be1d690264827ddf9915247ddd625f40ee253eea438c4953315e23f22",
+          "note": "superseded by r4"
         }
       ],
       "checks": {
@@ -547,6 +556,205 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-24T09:32:13+00:00",
         "content_sha256": "4244399be1d690264827ddf9915247ddd625f40ee253eea438c4953315e23f22",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 4,
+      "status": "approved",
+      "type": "single_choice",
+      "style": "recall",
+      "difficulty": "medium",
+      "chapter": 3,
+      "section_ids": [
+        "s3-20"
+      ],
+      "topic_ids": [
+        "transistorkoblinger"
+      ],
+      "learning_objective": "Kjenne igjen egenskapene til en forsterker med felles basis.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En transistorforsterker har disse egenskapene: lav inngangsimpedans, høy utgangsimpedans, ",
+          {
+            "term": "stromforsterkning",
+            "text": "strømforsterkning"
+          },
+          " litt under 1, og inn- og utsignal har samme fase."
+        ]
+      ],
+      "stem": [
+        "Hvilken kobling er dette?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "term": "felles-basis",
+              "text": "felles basis"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "felles emitter"
+          ],
+          "feedback": [
+            [
+              {
+                "term": "felles-emitter",
+                "text": "Felles emitter"
+              },
+              " gir både ",
+              {
+                "term": "strom",
+                "text": "strøm"
+              },
+              "- og spenningsforsterkning og snur fasen 180°."
+            ]
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "felles kollektor"
+          ],
+          "feedback": [
+            [
+              {
+                "term": "emitterfolger",
+                "text": "Felles kollektor"
+              },
+              " (emitterfølger) har høy inngangsimpedans og lav utgangsimpedans, altså omvendt."
+            ]
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "felles kilde med FET"
+          ],
+          "feedback": [
+            [
+              "En ",
+              {
+                "term": "felteffekttransistor",
+                "text": "FET"
+              },
+              "-",
+              {
+                "term": "forsterker",
+                "text": "forsterker"
+              },
+              " har svært høy inngangsimpedans fordi gate nesten ikke trekker strøm."
+            ]
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Når basis er felles for inngang og utgang (avkoblet til jord for signalet), går signalet inn på emitteren. Inngangen ser da rett inn i en emitter som leder hele emitterstrømmen, og inngangsimpedansen blir lav.",
+        [
+          "Kollektorstrømmen er nesten lik emitterstrømmen, så det er ingen strømforsterkning, men en god spenningsforsterkning. Inn- og utsignal har samme fase. Koblingen virker godt ved høye ",
+          {
+            "term": "frekvens",
+            "text": "frekvenser"
+          },
+          "."
+        ]
+      ],
+      "glossary_after_answer": [
+        "felles-basis"
+      ],
+      "study_reference": {
+        "chapter": 3,
+        "section_id": "s3-20",
+        "printed_pages": [
+          "3-9"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "5b964122103e1b01"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "Jim C K Flaten",
+        "based_on": 3,
+        "at": "2026-10-24T15:16:38+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T15:16:38+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "4244399be1d690264827ddf9915247ddd625f40ee253eea438c4953315e23f22",
+          "note": "Terminology: PA, gate, kunstlast, knekkfrekvens, avstemt krets, glattekondensator"
+        },
+        {
+          "at": "2026-10-24T15:17:33+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "88442d61da59c4bacdff826b7d4cea91b039e4a15158f66c3d3f35866d6ad508",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T15:40:42+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "88442d61da59c4bacdff826b7d4cea91b039e4a15158f66c3d3f35866d6ad508",
+          "note": "Book terminology: sluttforsterker, gate, kunstlast, knekkfrekvens, avstemt krets, glattekondensator, harmoniske signaler, variabel kondensator",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "88442d61da59c4bacdff826b7d4cea91b039e4a15158f66c3d3f35866d6ad508",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T15:40:42+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T15:40:42+00:00",
+        "content_sha256": "88442d61da59c4bacdff826b7d4cea91b039e4a15158f66c3d3f35866d6ad508",
         "acknowledged_hazards": [
           "figures"
         ],

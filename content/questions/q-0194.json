@@ -231,7 +231,7 @@
     },
     {
       "revision": 2,
-      "status": "approved",
+      "status": "retired",
       "type": "single_choice",
       "style": "scenario",
       "difficulty": "medium",
@@ -413,6 +413,15 @@
           "content_sha256": "a7e0f628add13354ec4fa9923c63a33f3775d04b68dc6912386848c7defcdf54",
           "note": "Harmoniske always followed by a noun",
           "acknowledged": []
+        },
+        {
+          "at": "2026-10-24T15:40:54+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "a7e0f628add13354ec4fa9923c63a33f3775d04b68dc6912386848c7defcdf54",
+          "note": "superseded by r3"
         }
       ],
       "checks": {
@@ -428,6 +437,226 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-24T14:32:01+00:00",
         "content_sha256": "a7e0f628add13354ec4fa9923c63a33f3775d04b68dc6912386848c7defcdf54",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 3,
+      "status": "approved",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "medium",
+      "chapter": 5,
+      "section_ids": [
+        "s5-17"
+      ],
+      "topic_ids": [
+        "senderfeil"
+      ],
+      "learning_objective": "Kjenne igjen RF-innslag på mikrofonledningen (forvrengning, PTT som henger) og vite at ferrittringer, RF-filter og god skjerming er tiltakene.",
+      "priority": "normal",
+      "context": [
+        [
+          "Du sender ",
+          {
+            "term": "ssb",
+            "text": "SSB"
+          },
+          " på 14 MHz med en ",
+          {
+            "term": "antenne",
+            "text": "antenne"
+          },
+          " like ved huset. Ved høy ",
+          {
+            "term": "effekt",
+            "text": "effekt"
+          },
+          " melder andre at lyden din blir forvrengt, og av og til fortsetter ",
+          {
+            "term": "sender",
+            "text": "senderen"
+          },
+          " å sende etter at du har sluppet mikrofonknappen (PTT). Når du bytter antennen med en ",
+          {
+            "term": "kunstlast",
+            "text": "kunstlast"
+          },
+          ", virker alt som det skal."
+        ]
+      ],
+      "stem": [
+        "Hva er den mest sannsynlige årsaken, og hva bør du prøve først?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Sluttforsterkeren har parasittsvingninger. Sett en ferrittperle i kollektorledningen."
+          ],
+          "feedback": [
+            [
+              "En ",
+              {
+                "term": "sluttforsterker",
+                "text": "sluttforsterker"
+              },
+              " kan bli ustabil med enkelte belastninger, men symptomene her peker særlig mot ",
+              {
+                "term": "rf-innslag",
+                "text": "RF-innslag"
+              },
+              " på mikrofon- eller PTT-ledningen. Ferritter på kabelen er derfor et naturlig første tiltak."
+            ]
+          ]
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Oscillatoren driver fordi den blir varm. Flytt den bort fra sluttforsterkeren."
+          ],
+          "feedback": [
+            [
+              {
+                "term": "frekvensdrift",
+                "text": "Frekvensdrift"
+              },
+              " gir en langsom endring av tonehøyden. Den forklarer verken forvrengt lyd eller at PTT henger, og den ville ikke forsvunnet med kunstlast."
+            ]
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "RF fra antennen kommer inn på mikrofonledningen. Sett ferrittringer på kabelen."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Lavpassfilteret er defekt. Bytt ut filteret på antenneutgangen til senderen."
+          ],
+          "feedback": [
+            [
+              {
+                "term": "lavpassfilter",
+                "text": "Lavpassfilteret"
+              },
+              " demper ",
+              {
+                "term": "harmoniske",
+                "text": "harmoniske signaler"
+              },
+              " på utgangen. En feil i det gir ikke forvrengt lyd eller en PTT-knapp som henger seg opp."
+            ]
+          ]
+        }
+      ],
+      "correct": [
+        "o3"
+      ],
+      "explanation": [
+        "Når antennen står nær stasjonen, kan sendesignalet plukkes opp av mikrofonledningen. RF-en likerettes i mikrofonforsterkeren eller PTT-kretsen og gir forvrengning, ustabilitet eller at senderen blir stående på. At feilen forsvinner med kunstlast, styrker mistanken om at RF fra antennesystemet kommer tilbake til stasjonen og påvirker mikrofon- eller styrekretsene.",
+        [
+          "Tiltak: sett flere ",
+          {
+            "term": "ferrittring",
+            "text": "ferrittringer"
+          },
+          " på mikrofonkabelen, både ved mikrofonen og ved pluggen, eller bygg et lite RF-",
+          {
+            "term": "filter",
+            "text": "filter"
+          },
+          " inn i mikrofonen hvis det er plass. Kabelskjermen må være tett og ha god forbindelse til jordpunktet som resten av stasjonen bruker."
+        ],
+        "Tilsvarende kan strømforsynings- og styrekabler stråle ut eller plukke opp RF. Der hjelper RF-sperrer og avkoblingskondensatorer ved inngangen til apparatet."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 5,
+        "section_id": "s5-17",
+        "printed_pages": [
+          "5-7"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "dcc7dbf333789226"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "Jim C K Flaten",
+        "based_on": 2,
+        "at": "2026-10-24T15:16:43+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T15:16:43+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "a7e0f628add13354ec4fa9923c63a33f3775d04b68dc6912386848c7defcdf54",
+          "note": "Terminology: PA, gate, kunstlast, knekkfrekvens, avstemt krets, glattekondensator"
+        },
+        {
+          "at": "2026-10-24T15:17:34+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "55ca17160803be3c5aa2ac429b19d84bdd5bd816d027bdd10441b8e002ccd581",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T15:32:12+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "e806529a4667145afb6e14e74639103aea1f5798b2abb5005ac4c0ff3dc01b2e",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T15:40:54+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "e806529a4667145afb6e14e74639103aea1f5798b2abb5005ac4c0ff3dc01b2e",
+          "note": "Book terminology: sluttforsterker, gate, kunstlast, knekkfrekvens, avstemt krets, glattekondensator, harmoniske signaler, variabel kondensator",
+          "acknowledged": []
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "e806529a4667145afb6e14e74639103aea1f5798b2abb5005ac4c0ff3dc01b2e",
+        "errors": [],
+        "warnings": [],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T15:40:54+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T15:40:54+00:00",
+        "content_sha256": "e806529a4667145afb6e14e74639103aea1f5798b2abb5005ac4c0ff3dc01b2e",
         "acknowledged_hazards": [],
         "checklist": {
           "one_correct": true,

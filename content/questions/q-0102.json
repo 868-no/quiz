@@ -581,7 +581,7 @@
     },
     {
       "revision": 4,
-      "status": "approved",
+      "status": "retired",
       "type": "single_choice",
       "style": "concept",
       "difficulty": "hard",
@@ -767,6 +767,15 @@
           "acknowledged": [
             "figures"
           ]
+        },
+        {
+          "at": "2026-10-24T15:40:49+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "fab7490230e9bcd294ca0557dc819b7ff6da28c317273ec51ae8558eb5847acc",
+          "note": "superseded by r5"
         }
       ],
       "checks": {
@@ -787,6 +796,237 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-24T10:04:06+00:00",
         "content_sha256": "fab7490230e9bcd294ca0557dc819b7ff6da28c317273ec51ae8558eb5847acc",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 5,
+      "status": "approved",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "hard",
+      "chapter": 5,
+      "section_ids": [
+        "s5-13"
+      ],
+      "topic_ids": [
+        "parasittsvingninger"
+      ],
+      "learning_objective": "Forstå at parasittsvingninger kan avhenge av lastforholdene og derfor ikke alltid viser seg ved test mot kunstlast.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En radioamatør får høre at HF-",
+          {
+            "term": "sender",
+            "text": "senderen"
+          },
+          " hans gir uønskede signaler, men bare når antennetuneren står i en bestemt innstilling. Han kobler senderen direkte til en god 50 Ω ",
+          {
+            "term": "kunstlast",
+            "text": "kunstlast"
+          },
+          ", og da finner han ingen feil."
+        ]
+      ],
+      "stem": [
+        "Hva er den mest sannsynlige grunnen til at testen ikke avslørte problemet?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Svingningene oppstår bare ved en viss feiltilpasning, og kunstlasten gir en ren 50 Ω-last."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Kunstlasten demper alle frekvenser over 30 MHz, slik at VHF-svingningene ikke kan oppstå i den."
+          ],
+          "feedback": [
+            [
+              "En god kunstlast er tilnærmet ren ",
+              {
+                "term": "resistans",
+                "text": "resistans"
+              },
+              " over et bredt frekvensområde og er ikke noe ",
+              {
+                "term": "filter",
+                "text": "filter"
+              },
+              ". Poenget er lastimpedansen senderen ser."
+            ]
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Parasittsvingningene ligger under sendefrekvensen, der wattmeteret ikke kan måle dem."
+          ],
+          "feedback": [
+            [
+              "Parasittsvingninger i HF-",
+              {
+                "term": "forsterker",
+                "text": "forsterkere"
+              },
+              " ligger oftest over sendefrekvensen, gjerne i VHF-området."
+            ]
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Kunstlasten tar opp så mye effekt at sluttforsterkeren ikke lenger leverer normal sendeeffekt."
+          ],
+          "feedback": [
+            [
+              "En riktig dimensjonert kunstlast tar opp hele sendeeffekten, og ",
+              {
+                "term": "sluttforsterker",
+                "text": "sluttforsterkeren"
+              },
+              " leverer normal effekt. Forskjellen er lastimpedansen: kunstlasten er en ren, tilpasset 50 Ω-last, mens antennesystemet kan gi en annen ",
+              {
+                "term": "impedans",
+                "text": "impedans"
+              },
+              "."
+            ]
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          {
+            "term": "parasittsvingning",
+            "text": "Parasittsvingninger"
+          },
+          " kan være knyttet til bestemte driftsforhold: en viss ",
+          {
+            "term": "effekt",
+            "text": "effekt"
+          },
+          ", en viss ",
+          {
+            "term": "antenne",
+            "text": "antenne"
+          },
+          " eller en spesiell innstilling av antennetuneren. En kunstlast koblet direkte til senderen gir en ideell 50 Ω-last, og da kan svingningene utebli."
+        ],
+        [
+          "Man kan i stedet sette kunstlasten etter antennetuneren og bevisst stille inn en moderat feiltilpasning, kontrollert med et ",
+          {
+            "term": "swr",
+            "text": "SWR"
+          },
+          "-meter. Det må gjøres forsiktig. For å identifisere svingningene sikkert trengs et oscilloskop eller en spektrumanalysator som dekker ",
+          {
+            "term": "frekvens",
+            "text": "frekvenser"
+          },
+          " godt over sendefrekvensen."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 5,
+        "section_id": "s5-13",
+        "printed_pages": [
+          "5-6"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "80bc1ce2465ae419"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "Jim C K Flaten",
+        "based_on": 4,
+        "at": "2026-10-24T15:16:41+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T15:16:41+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "fab7490230e9bcd294ca0557dc819b7ff6da28c317273ec51ae8558eb5847acc",
+          "note": "Terminology: PA, gate, kunstlast, knekkfrekvens, avstemt krets, glattekondensator"
+        },
+        {
+          "at": "2026-10-24T15:17:33+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "5b5720b09905e7b4929a1cd80fe320312d1b39d26b9fdb68f6d38ec2903d66f3",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T15:32:11+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "d7e4a8d610db4b2f05818aa50fe7bdc758ea2790b468b73201001ba256c2b827",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T15:40:49+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "d7e4a8d610db4b2f05818aa50fe7bdc758ea2790b468b73201001ba256c2b827",
+          "note": "Book terminology: sluttforsterker, gate, kunstlast, knekkfrekvens, avstemt krets, glattekondensator, harmoniske signaler, variabel kondensator",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "d7e4a8d610db4b2f05818aa50fe7bdc758ea2790b468b73201001ba256c2b827",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T15:40:49+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T15:40:49+00:00",
+        "content_sha256": "d7e4a8d610db4b2f05818aa50fe7bdc758ea2790b468b73201001ba256c2b827",
         "acknowledged_hazards": [
           "figures"
         ],

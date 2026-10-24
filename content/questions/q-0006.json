@@ -269,7 +269,7 @@
     },
     {
       "revision": 2,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "calculation",
@@ -540,6 +540,15 @@
             "figures",
             "ocr"
           ]
+        },
+        {
+          "at": "2026-10-24T15:40:39+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "e48aa6936268c09b8f6c1aed058a6de44620153537ff230acf9ad7997cf78539",
+          "note": "superseded by r3"
         }
       ],
       "checks": {
@@ -564,6 +573,327 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-23T20:43:45+00:00",
         "content_sha256": "e48aa6936268c09b8f6c1aed058a6de44620153537ff230acf9ad7997cf78539",
+        "acknowledged_hazards": [
+          "figures",
+          "ocr"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 3,
+      "status": "approved",
+      "type": "single_choice",
+      "style": "calculation",
+      "difficulty": "medium",
+      "chapter": 2,
+      "section_ids": [
+        "s2-09"
+      ],
+      "topic_ids": [
+        "effekt",
+        "ohms-lov"
+      ],
+      "learning_objective": "Kombinere effektloven og Ohms lov til P = U²/R.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En ",
+          {
+            "term": "kunstlast",
+            "text": "kunstlast"
+          },
+          " er i praksis en ",
+          {
+            "term": "motstand",
+            "text": "motstand"
+          },
+          " på ",
+          {
+            "q": 50,
+            "u": "Ω"
+          },
+          " som tåler høy ",
+          {
+            "term": "effekt",
+            "text": "effekt"
+          },
+          ". Under en test måles ",
+          {
+            "q": 100,
+            "u": "V"
+          },
+          " ",
+          {
+            "term": "effektivverdi",
+            "text": "effektivverdi"
+          },
+          " over den."
+        ]
+      ],
+      "stem": [
+        [
+          "Hvor stor effekt blir omsatt til varme i ",
+          {
+            "term": "kunstlast",
+            "text": "kunstlasten"
+          },
+          "?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 200,
+              "u": "W"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 2,
+              "u": "W"
+            }
+          ],
+          "feedback": [
+            [
+              "100 V delt på 50 Ω gir ",
+              {
+                "term": "strom",
+                "text": "strømmen"
+              },
+              " (2 A), ikke effekten. Effekten er spenning ganger strøm: 100 V · 2 A."
+            ]
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 5,
+              "u": "kW"
+            }
+          ],
+          "feedback": [
+            "Spenning ganget med resistans gir ingen effekt. Bruk P = U² / R."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 400,
+              "u": "W"
+            }
+          ],
+          "feedback": [
+            "Effektivverdien skal brukes direkte i formelen. Den skal ikke ganges med √2 først."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Setter man I = U / R inn i P = U · I, får man et uttrykk med bare spenning og ",
+          {
+            "term": "resistans",
+            "text": "resistans"
+          },
+          ":"
+        ],
+        {
+          "steps": [
+            [
+              {
+                "math": [
+                  "P",
+                  "=",
+                  {
+                    "frac": [
+                      [
+                        "U^2"
+                      ],
+                      [
+                        "R"
+                      ]
+                    ]
+                  },
+                  "=",
+                  {
+                    "frac": [
+                      [
+                        {
+                          "paren": [
+                            {
+                              "q": 100,
+                              "u": "V"
+                            }
+                          ]
+                        },
+                        "²"
+                      ],
+                      [
+                        {
+                          "q": 50,
+                          "u": "Ω"
+                        }
+                      ]
+                    ]
+                  },
+                  "=",
+                  {
+                    "frac": [
+                      [
+                        "10000"
+                      ],
+                      [
+                        "50"
+                      ]
+                    ]
+                  },
+                  "=",
+                  {
+                    "q": 200,
+                    "u": "W"
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        {
+          "note": [
+            "Når ",
+            {
+              "term": "spenning",
+              "text": "spenningen"
+            },
+            " oppgis som effektivverdi, gir formelen direkte middeleffekten."
+          ]
+        }
+      ],
+      "glossary_after_answer": [],
+      "calculation": {
+        "formula": "power_u2r",
+        "inputs": {
+          "U": [
+            100,
+            "V"
+          ],
+          "R": [
+            50,
+            "Ω"
+          ]
+        },
+        "answer": [
+          200,
+          "W"
+        ],
+        "answer_symbol": "P",
+        "sig_figs": 2
+      },
+      "study_reference": {
+        "chapter": 2,
+        "section_id": "s2-09",
+        "printed_pages": [
+          "2-3"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "de95a442eb1e7dc2",
+          "f624dcaabd631f06"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "Jim C K Flaten",
+        "based_on": 2,
+        "at": "2026-10-24T15:16:38+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T15:16:38+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "e48aa6936268c09b8f6c1aed058a6de44620153537ff230acf9ad7997cf78539",
+          "note": "Terminology: PA, gate, kunstlast, knekkfrekvens, avstemt krets, glattekondensator"
+        },
+        {
+          "at": "2026-10-24T15:17:32+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "69eb37d96e841ab221f50b4fe8e7e2ca3914905e267b76c5f1ef2db2cd81f484",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T15:18:38+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "267469da47ec3a5af72701038fab6b7875bfe9dc40f77566b7d204be9542b549",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T15:40:39+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "267469da47ec3a5af72701038fab6b7875bfe9dc40f77566b7d204be9542b549",
+          "note": "Book terminology: sluttforsterker, gate, kunstlast, knekkfrekvens, avstemt krets, glattekondensator, harmoniske signaler, variabel kondensator",
+          "acknowledged": [
+            "figures",
+            "ocr"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "267469da47ec3a5af72701038fab6b7875bfe9dc40f77566b7d204be9542b549",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: equation, low_ocr_confidence, numeric_low_conf, table. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T15:40:39+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T15:40:39+00:00",
+        "content_sha256": "267469da47ec3a5af72701038fab6b7875bfe9dc40f77566b7d204be9542b549",
         "acknowledged_hazards": [
           "figures",
           "ocr"

@@ -244,7 +244,7 @@
     },
     {
       "revision": 2,
-      "status": "approved",
+      "status": "retired",
       "type": "single_choice",
       "style": "concept",
       "difficulty": "medium",
@@ -436,6 +436,15 @@
             "figures",
             "ocr"
           ]
+        },
+        {
+          "at": "2026-10-24T15:40:54+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "fa8f654b133d23053b82666017c0aef5d43e3c3efbd44f6aedd5ff556d6c501e",
+          "note": "superseded by r3"
         }
       ],
       "checks": {
@@ -460,6 +469,256 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-24T14:32:01+00:00",
         "content_sha256": "fa8f654b133d23053b82666017c0aef5d43e3c3efbd44f6aedd5ff556d6c501e",
+        "acknowledged_hazards": [
+          "figures",
+          "ocr"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 3,
+      "status": "approved",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 5,
+      "section_ids": [
+        "s5-15"
+      ],
+      "topic_ids": [
+        "senderfeil",
+        "frekvensstabilitet"
+      ],
+      "learning_objective": "Kjenne igjen fasestøy fra en frekvenssyntetisator som støy tett inntil bærebølgen, og forstå at det forstyrrer nabofrekvensene.",
+      "priority": "normal",
+      "context": [
+        [
+          "En VHF-sender får frekvensen sin fra en ",
+          {
+            "term": "frekvenssyntetisator",
+            "text": "frekvenssyntetisator"
+          },
+          " med ",
+          {
+            "term": "faselaast-sloyfe",
+            "text": "PLL"
+          },
+          " og ",
+          {
+            "term": "vco",
+            "text": "VCO"
+          },
+          ". Du ser på signalet med en spektrumanalysator mens ",
+          {
+            "term": "sender",
+            "text": "senderen"
+          },
+          " sender en umodulert ",
+          {
+            "term": "baerebolge",
+            "text": "bærebølge"
+          },
+          ". I stedet for én smal, ren strek viser skjermen et «skjørt» av støy som ligger tett inntil bærebølgen på begge sider og avtar gradvis utover."
+        ]
+      ],
+      "stem": [
+        "Hva er dette, og hvorfor er det et problem?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Harmoniske signaler på multipler av sendefrekvensen, som forstyrrer på andre bånd lenger opp."
+          ],
+          "feedback": [
+            [
+              {
+                "term": "harmoniske",
+                "text": "Harmoniske signaler"
+              },
+              " ligger på hele multipler av sendefrekvensen, langt unna bærebølgen. De gir ikke støy tett inntil den."
+            ]
+          ]
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Fasestøy fra oscillatoren, som kan dekke svake signaler på nabofrekvensene."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Nøkkelklikk fra nøklingen, som bare høres når senderen slås av og på."
+          ],
+          "feedback": [
+            [
+              {
+                "term": "nokkelklikk",
+                "text": "Nøkkelklikk"
+              },
+              " oppstår når signalet slås raskt av og på. Her sender senderen en jevn, umodulert bærebølge."
+            ]
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Parasittsvingninger i sluttforsterkeren, som gir ett sterkt signal langt unna."
+          ],
+          "feedback": [
+            [
+              {
+                "term": "parasittsvingning",
+                "text": "Parasittsvingninger"
+              },
+              " gir typisk et tydelig, separat signal på en helt annen frekvens, ikke jevn støy rundt bærebølgen."
+            ]
+          ]
+        }
+      ],
+      "correct": [
+        "o2"
+      ],
+      "explanation": [
+        [
+          {
+            "term": "fasestoy",
+            "text": "Fasestøy"
+          },
+          " betyr at fasen (og dermed ",
+          {
+            "term": "frekvens",
+            "text": "frekvensen"
+          },
+          ") til en ",
+          {
+            "term": "oscillator",
+            "text": "oscillator"
+          },
+          " vandrer litt tilfeldig og raskt fram og tilbake. Det sprer en del av ",
+          {
+            "term": "effekt",
+            "text": "effekten"
+          },
+          " ut i støyliknende ",
+          {
+            "term": "sidebaand",
+            "text": "sidebånd"
+          },
+          " tett inntil bærebølgen."
+        ],
+        "Et sterkt signal med mye fasestøy kan dekke over svake stasjoner på frekvenser like ved, både hos deg selv og hos andre. I tillegg til denne støyen kan en syntetisator også gi enkelte smale, falske signaler i fast avstand fra bærebølgen, dannet av referansefrekvensen i fasekomparatoren.Slike problemer må løses allerede når senderen konstrueres, blant annet med god filtrering av styrespenningen til VCO-en og en støysvak referanse."
+      ],
+      "glossary_after_answer": [
+        "frekvenssyntetisator"
+      ],
+      "study_reference": {
+        "chapter": 5,
+        "section_id": "s5-15",
+        "printed_pages": [
+          "5-6",
+          "5-7"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "c1d811ac0ffb8ef4"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "Jim C K Flaten",
+        "based_on": 2,
+        "at": "2026-10-24T15:16:42+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T15:16:42+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "fa8f654b133d23053b82666017c0aef5d43e3c3efbd44f6aedd5ff556d6c501e",
+          "note": "Terminology: PA, gate, kunstlast, knekkfrekvens, avstemt krets, glattekondensator"
+        },
+        {
+          "at": "2026-10-24T15:17:34+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "608833ce652ba9658c0e09eaf72ee71546db6318610fe4df0fffce5605a34af0",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T15:26:12+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "70f21513173a68b25611575d0e9c481c95f96c762492eb7735605fb07fda7af8",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T15:32:12+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "15dc4f2f8bf4cf6f2b98fe870d36f1e2ac5d7804bf37841b33eae31664737669",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T15:40:54+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "15dc4f2f8bf4cf6f2b98fe870d36f1e2ac5d7804bf37841b33eae31664737669",
+          "note": "Book terminology: sluttforsterker, gate, kunstlast, knekkfrekvens, avstemt krets, glattekondensator, harmoniske signaler, variabel kondensator",
+          "acknowledged": [
+            "figures",
+            "ocr"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "15dc4f2f8bf4cf6f2b98fe870d36f1e2ac5d7804bf37841b33eae31664737669",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: equation, numeric_low_conf. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T15:40:54+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T15:40:54+00:00",
+        "content_sha256": "15dc4f2f8bf4cf6f2b98fe870d36f1e2ac5d7804bf37841b33eae31664737669",
         "acknowledged_hazards": [
           "figures",
           "ocr"

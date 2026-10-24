@@ -1054,7 +1054,7 @@
     },
     {
       "revision": 6,
-      "status": "approved",
+      "status": "retired",
       "type": "single_choice",
       "style": "concept",
       "difficulty": "medium",
@@ -1238,6 +1238,15 @@
             "figures",
             "ocr"
           ]
+        },
+        {
+          "at": "2026-10-24T15:40:40+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "d63d0b3a5339ac6e51dd4695d4f092a0819e8bcd5baf2264325344754f84290e",
+          "note": "superseded by r7"
         }
       ],
       "checks": {
@@ -1262,6 +1271,231 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-24T15:08:36+00:00",
         "content_sha256": "d63d0b3a5339ac6e51dd4695d4f092a0819e8bcd5baf2264325344754f84290e",
+        "acknowledged_hazards": [
+          "figures",
+          "ocr"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 7,
+      "status": "approved",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 4,
+      "section_ids": [
+        "s4-18"
+      ],
+      "topic_ids": [
+        "frekvensmultiplikasjon"
+      ],
+      "learning_objective": "Forstå hvorfor en frekvensmultiplikator arbeider i klasse C.",
+      "priority": "exam_important",
+      "context": [],
+      "stem": [
+        [
+          "Hvorfor forspennes ",
+          {
+            "term": "transistor",
+            "text": "transistoren"
+          },
+          " i en ",
+          {
+            "term": "frekvensmultiplikator",
+            "text": "frekvensmultiplikator"
+          },
+          " ofte i ",
+          {
+            "term": "forsterkerklasse",
+            "text": "klasse C"
+          },
+          "?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "For å forvrenge signalet, slik at det dannes mange harmoniske signaler."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "For å gi minst mulig forvrengning av inngangssignalet."
+          ],
+          "feedback": [
+            [
+              "Lav forvrengning er målet i en ",
+              {
+                "term": "lineaer-forsterker",
+                "text": "lineær forsterker"
+              },
+              ". En multiplikator trenger tvert imot forvrengning."
+            ]
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "For å gjøre trinnet lineært, slik at det passer for SSB."
+          ],
+          "feedback": [
+            [
+              "Klasse C er sterkt ulineær og egner seg ikke for ",
+              {
+                "term": "ssb",
+                "text": "SSB"
+              },
+              "."
+            ]
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "For å holde frekvensen stabil når belastningen varierer."
+          ],
+          "feedback": [
+            [
+              "Klasseinndelingen påvirker ikke ",
+              {
+                "term": "frekvensstabilitet",
+                "text": "frekvensstabiliteten"
+              },
+              ", som bestemmes av ",
+              {
+                "term": "oscillator",
+                "text": "oscillatoren"
+              },
+              ". Klasse C brukes fordi forvrengningen gir harmoniske frekvenser."
+            ]
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "I ",
+          {
+            "term": "forsterkerklasse",
+            "text": "klasse C"
+          },
+          " leder transistoren bare i en liten del av hver ",
+          {
+            "term": "periode",
+            "text": "periode"
+          },
+          ". Utgangen blir da korte strømpulser, som inneholder mange ",
+          {
+            "term": "harmoniske",
+            "text": "harmoniske frekvenser"
+          },
+          ", altså multipler av inngangsfrekvensen."
+        ],
+        [
+          "En ",
+          {
+            "term": "avstemt-krets",
+            "text": "avstemt krets"
+          },
+          " i kollektoren plukker ut ønsket multiplum, for eksempel to eller tre ganger inngangsfrekvensen, og demper de andre."
+        ]
+      ],
+      "glossary_after_answer": [
+        "forsterkerklasse"
+      ],
+      "study_reference": {
+        "chapter": 4,
+        "section_id": "s4-18",
+        "printed_pages": [
+          "4-9",
+          "4-10"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "c953d39298dad443"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "Jim C K Flaten",
+        "based_on": 6,
+        "at": "2026-10-24T15:31:32+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T15:31:32+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "d63d0b3a5339ac6e51dd4695d4f092a0819e8bcd5baf2264325344754f84290e",
+          "note": "Book terms: sluttforsterker, harmoniske signaler, variabel kondensator"
+        },
+        {
+          "at": "2026-10-24T15:32:11+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "77bf887500c78cad0d288f26119c1980e46d6c7bb495bbf4be54eff2e1324343",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T15:40:40+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "77bf887500c78cad0d288f26119c1980e46d6c7bb495bbf4be54eff2e1324343",
+          "note": "Book terminology: sluttforsterker, gate, kunstlast, knekkfrekvens, avstemt krets, glattekondensator, harmoniske signaler, variabel kondensator",
+          "acknowledged": [
+            "figures",
+            "ocr"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "77bf887500c78cad0d288f26119c1980e46d6c7bb495bbf4be54eff2e1324343",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: numeric_low_conf. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T15:40:40+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T15:40:40+00:00",
+        "content_sha256": "77bf887500c78cad0d288f26119c1980e46d6c7bb495bbf4be54eff2e1324343",
         "acknowledged_hazards": [
           "figures",
           "ocr"

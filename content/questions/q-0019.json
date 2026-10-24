@@ -385,7 +385,7 @@
     },
     {
       "revision": 3,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "concept",
@@ -562,6 +562,15 @@
             "figures",
             "ocr"
           ]
+        },
+        {
+          "at": "2026-10-24T15:40:39+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "132da5b1de70241d3e3607f39d21be61a26f51d6e30d8c425c0a5bd9ccb3e400",
+          "note": "superseded by r4"
         }
       ],
       "checks": {
@@ -586,6 +595,224 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-24T09:32:03+00:00",
         "content_sha256": "132da5b1de70241d3e3607f39d21be61a26f51d6e30d8c425c0a5bd9ccb3e400",
+        "acknowledged_hazards": [
+          "figures",
+          "ocr"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 4,
+      "status": "approved",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 3,
+      "section_ids": [
+        "s3-12"
+      ],
+      "topic_ids": [
+        "varicap"
+      ],
+      "learning_objective": "Forstå hvordan kapasitansen i en varicap-diode avhenger av sperrespenningen.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En ",
+          {
+            "term": "varicap",
+            "text": "varicap-diode"
+          },
+          " er ",
+          {
+            "term": "sperreretning",
+            "text": "forspent i sperreretningen"
+          },
+          " og brukes godt under gjennombruddsspenningen."
+        ]
+      ],
+      "stem": [
+        [
+          "Hva skjer med ",
+          {
+            "term": "diode",
+            "text": "diodens"
+          },
+          " ",
+          {
+            "term": "kapasitans",
+            "text": "kapasitans"
+          },
+          " når sperrespenningen økes?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Den blir mindre."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Den blir større."
+          ],
+          "feedback": [
+            "Større sperrespenning gjør det isolerende sjiktet bredere. Det svarer til større avstand mellom kondensatorplatene, og det gir mindre kapasitans."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Den er uendret."
+          ],
+          "feedback": [
+            [
+              "Hele poenget med en varicap-diode er at kapasitansen kan styres med ",
+              {
+                "term": "spenning",
+                "text": "spenningen"
+              },
+              "."
+            ]
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Den forsvinner, fordi dioden begynner å lede."
+          ],
+          "feedback": [
+            [
+              "En diode som er ",
+              {
+                "term": "forspenning",
+                "text": "forspent"
+              },
+              " i sperreretningen, leder ikke (så lenge den er under gjennombruddsspenningen)."
+            ]
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          {
+            "term": "sperresjikt",
+            "text": "Sperresjiktet"
+          },
+          " i dioden er tomt for frie ladningsbærere og virker som isolatoren i en ",
+          {
+            "term": "kondensator",
+            "text": "kondensator"
+          },
+          ". P- og N-områdene på hver side er «platene»."
+        ],
+        [
+          "Økt sperrespenning gjør sjiktet bredere, akkurat som om platene ble flyttet fra hverandre, og kapasitansen synker. Slik kan en spenning avstemme en ",
+          {
+            "term": "avstemt-krets",
+            "text": "avstemt krets"
+          },
+          ", for eksempel i en ",
+          {
+            "term": "oscillator",
+            "text": "oscillator"
+          },
+          "."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 3,
+        "section_id": "s3-12",
+        "printed_pages": [
+          "3-5"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "4fdf547d8e0ffd1b"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "Jim C K Flaten",
+        "based_on": 3,
+        "at": "2026-10-24T15:16:38+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T15:16:38+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "132da5b1de70241d3e3607f39d21be61a26f51d6e30d8c425c0a5bd9ccb3e400",
+          "note": "Terminology: PA, gate, kunstlast, knekkfrekvens, avstemt krets, glattekondensator"
+        },
+        {
+          "at": "2026-10-24T15:17:32+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "27c778f9f95311827584a1c7a8d8f4588f82c556fd112376f9ece2eb63c1e9bf",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T15:40:39+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "27c778f9f95311827584a1c7a8d8f4588f82c556fd112376f9ece2eb63c1e9bf",
+          "note": "Book terminology: sluttforsterker, gate, kunstlast, knekkfrekvens, avstemt krets, glattekondensator, harmoniske signaler, variabel kondensator",
+          "acknowledged": [
+            "figures",
+            "ocr"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "27c778f9f95311827584a1c7a8d8f4588f82c556fd112376f9ece2eb63c1e9bf",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: equation, numeric_low_conf. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T15:40:39+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T15:40:39+00:00",
+        "content_sha256": "27c778f9f95311827584a1c7a8d8f4588f82c556fd112376f9ece2eb63c1e9bf",
         "acknowledged_hazards": [
           "figures",
           "ocr"

@@ -1005,13 +1005,10 @@
         "harmoniske frekvensene",
         "harmonisk frekvens",
         "harmoniske signaler",
+        "harmoniske signalet",
         "harmoniske signalene",
         "harmonisk signal",
-        "andre harmoniske frekvensen",
-        "harmoniske komponenter",
-        "harmoniske komponenten",
-        "harmoniske komponentene",
-        "harmonisk komponent"
+        "andre harmoniske frekvensen"
       ],
       "en": [
         "harmonics",
@@ -1040,6 +1037,18 @@
           "actor": "Jim C K Flaten",
           "action": "approve",
           "note": "ChatGPT review round 4: components are cancelled; drop the bare forms that could link the wrong words"
+        },
+        {
+          "at": "2026-10-24T15:31:56+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Book terms: sluttforsterker, harmoniske signaler, variabel kondensator"
+        },
+        {
+          "at": "2026-10-24T15:33:09+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Add form «harmoniske signalet»"
         }
       ]
     },
@@ -1503,7 +1512,7 @@
       "en": [
         "quartz crystal"
       ],
-      "definition": "Tynn skive eller stav av kvarts med elektroder, som svinger mekanisk ved en bestemt frekvens og elektrisk oppfører seg som en resonanskrets med svært høy Q.",
+      "definition": "Tynn skive eller stav av kvarts med elektroder, som svinger mekanisk ved en bestemt frekvens og elektrisk oppfører seg som en avstemt krets med svært høy Q.",
       "related": [
         "resonans",
         "q-faktor"
@@ -1515,6 +1524,12 @@
           "actor": "Jim C K Flaten",
           "action": "approve",
           "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        },
+        {
+          "at": "2026-10-24T15:16:53+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Terminology: PA, gate, avstemt krets, kunstlast"
         }
       ]
     },
@@ -1740,7 +1755,7 @@
         "JFET",
         "MOSFET"
       ],
-      "definition": "Transistor der spenningen på porten (gate) styrer strømmen gjennom en kanal mellom drain og source.",
+      "definition": "Transistor der spenningen på gate styrer strømmen gjennom en kanal mellom drain og source.",
       "related": [
         "transistor"
       ],
@@ -1751,6 +1766,12 @@
           "actor": "Jim C K Flaten",
           "action": "approve",
           "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        },
+        {
+          "at": "2026-10-24T15:16:53+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Terminology: PA, gate, avstemt krets, kunstlast"
         }
       ]
     },
@@ -1909,16 +1930,16 @@
       "nb": [
         "sluttforsterker",
         "sluttforsterkeren",
-        "sluttrinn",
-        "sluttrinnet",
-        "PA-trinn"
+        "sluttforsterkere",
+        "sluttforsterkerne",
+        "sluttforsterkerens"
       ],
       "en": [
         "power amplifier",
         "PA",
         "final amplifier"
       ],
-      "definition": "Det siste forsterkertrinnet i en sender, som gir den effekten som sendes ut til antennen.",
+      "definition": "Det siste forsterkertrinnet i en sender, som gir den effekten som sendes ut til antennen. Kalles også effektforsterker eller PA (power amplifier).",
       "related": [
         "virkningsgrad",
         "lineaer-forsterker"
@@ -1930,6 +1951,18 @@
           "actor": "Jim C K Flaten",
           "action": "approve",
           "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        },
+        {
+          "at": "2026-10-24T15:16:53+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Terminology: PA, gate, avstemt krets, kunstlast"
+        },
+        {
+          "at": "2026-10-24T15:31:56+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Book terms: sluttforsterker, harmoniske signaler, variabel kondensator"
         }
       ]
     },
@@ -2752,9 +2785,7 @@
         "avstemt krets",
         "avstemte krets",
         "avstemte kretsen",
-        "avstemte kretser",
-        "svingekrets",
-        "svingekretsen"
+        "avstemte kretser"
       ],
       "en": [
         "tuned circuit",
@@ -2773,6 +2804,12 @@
           "actor": "Jim C K Flaten",
           "action": "approve",
           "note": "Nye ordforklaringer, godkjent sammen med lenkingen."
+        },
+        {
+          "at": "2026-10-24T15:16:53+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Terminology: PA, gate, avstemt krets, kunstlast"
         }
       ]
     },
@@ -2830,9 +2867,7 @@
       "id": "kunstlast",
       "nb": [
         "kunstlast",
-        "kunstlasten",
-        "kunstig antenne",
-        "dummy load"
+        "kunstlasten"
       ],
       "en": [
         "dummy load"
@@ -2848,6 +2883,12 @@
           "actor": "Jim C K Flaten",
           "action": "approve",
           "note": "Nye ordforklaringer, godkjent sammen med lenkingen."
+        },
+        {
+          "at": "2026-10-24T15:16:53+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Terminology: PA, gate, avstemt krets, kunstlast"
         }
       ]
     },
@@ -3015,11 +3056,10 @@
     {
       "id": "dreiekondensator",
       "nb": [
-        "dreiekondensator",
-        "dreiekondensatoren",
-        "dreiekondensatorer",
         "variabel kondensator",
-        "variable kondensatoren"
+        "variable kondensatoren",
+        "variable kondensatorer",
+        "variable kondensatorene"
       ],
       "en": [
         "variable capacitor",
@@ -3037,6 +3077,12 @@
           "actor": "Jim C K Flaten",
           "action": "approve",
           "note": "Ordlisterunde 2: definisjoner gjennomgått av AI-kontroll (ChatGPT), 16 rettet."
+        },
+        {
+          "at": "2026-10-24T15:31:56+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Book terms: sluttforsterker, harmoniske signaler, variabel kondensator"
         }
       ]
     },
@@ -3341,7 +3387,7 @@
         "push-pull configuration",
         "push-pull"
       ],
-      "definition": "Forsterkerkobling med to transistorer eller rør som arbeider i motfase mot en felles last. I klasse B og AB leverer de hovedsakelig hver sin halvperiode. Koblingen kan gi høy virkningsgrad, og når trinnet er symmetrisk, blir harmoniske komponenter ved 2, 4, 6 … ganger grunnfrekvensen i stor grad kansellert i utgangssignalet.",
+      "definition": "Forsterkerkobling med to transistorer eller rør som arbeider i motfase mot en felles last. I klasse B og AB leverer de hovedsakelig hver sin halvperiode. Koblingen kan gi høy virkningsgrad, og når trinnet er symmetrisk, blir harmoniske signaler ved 2, 4, 6 … ganger grunnfrekvensen i stor grad kansellert i utgangssignalet.",
       "related": [
         "forsterkerklasse",
         "harmoniske"
@@ -3365,6 +3411,12 @@
           "actor": "Jim C K Flaten",
           "action": "approve",
           "note": "ChatGPT review round 4: components are cancelled; drop the bare forms that could link the wrong words"
+        },
+        {
+          "at": "2026-10-24T15:31:56+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Book terms: sluttforsterker, harmoniske signaler, variabel kondensator"
         }
       ]
     },
@@ -3553,6 +3605,18 @@
           "actor": "Jim C K Flaten",
           "action": "approve",
           "note": "Harmoniske always followed by a noun (frekvenser/signaler)"
+        },
+        {
+          "at": "2026-10-24T15:16:53+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Terminology: PA, gate, avstemt krets, kunstlast"
+        },
+        {
+          "at": "2026-10-24T15:31:56+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Book terms: sluttforsterker, harmoniske signaler, variabel kondensator"
         }
       ]
     },
@@ -3665,6 +3729,18 @@
           "actor": "Jim C K Flaten",
           "action": "approve",
           "note": "Ordlisterunde 2: definisjoner gjennomgått av AI-kontroll (ChatGPT), 16 rettet."
+        },
+        {
+          "at": "2026-10-24T15:16:53+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Terminology: PA, gate, avstemt krets, kunstlast"
+        },
+        {
+          "at": "2026-10-24T15:31:56+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Book terms: sluttforsterker, harmoniske signaler, variabel kondensator"
         }
       ]
     },
@@ -3720,6 +3796,18 @@
           "actor": "Jim C K Flaten",
           "action": "approve",
           "note": "Ordlisterunde 2: definisjoner gjennomgått av AI-kontroll (ChatGPT), 16 rettet."
+        },
+        {
+          "at": "2026-10-24T15:16:53+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Terminology: PA, gate, avstemt krets, kunstlast"
+        },
+        {
+          "at": "2026-10-24T15:31:56+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Book terms: sluttforsterker, harmoniske signaler, variabel kondensator"
         }
       ]
     },

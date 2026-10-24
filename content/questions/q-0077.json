@@ -327,7 +327,7 @@
     },
     {
       "revision": 3,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "recall",
@@ -476,6 +476,15 @@
           "content_sha256": "c17b3347627c48085fa3cdf184108d87736d413fec033dd1decf392911208b12",
           "note": "Nye ordlistelenker (runde 2); teksten er uendret.",
           "acknowledged": []
+        },
+        {
+          "at": "2026-10-24T15:40:44+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "c17b3347627c48085fa3cdf184108d87736d413fec033dd1decf392911208b12",
+          "note": "superseded by r4"
         }
       ],
       "checks": {
@@ -491,6 +500,193 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-24T09:32:14+00:00",
         "content_sha256": "c17b3347627c48085fa3cdf184108d87736d413fec033dd1decf392911208b12",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 4,
+      "status": "approved",
+      "type": "single_choice",
+      "style": "recall",
+      "difficulty": "easy",
+      "chapter": 3,
+      "section_ids": [
+        "s3-35"
+      ],
+      "topic_ids": [
+        "radiorør"
+      ],
+      "learning_objective": "Kjenne de viktigste fordelene og ulempene ved rørforsterkere sammenlignet med transistorer.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En radioamatør vurderer en sluttforsterker med rør i stedet for en sluttforsterker med transistorer for høy ",
+          {
+            "term": "effekt",
+            "text": "effekt"
+          },
+          "."
+        ]
+      ],
+      "stem": [
+        "Hva er en typisk fordel med rørforsterkeren?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Den tåler feiltilpasning mot antennen bedre."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Den trenger bare lav forsyningsspenning."
+          ],
+          "feedback": [
+            [
+              "Det er omvendt. Rør trenger høy anodespenning, ofte flere tusen volt i store ",
+              {
+                "term": "sluttforsterker",
+                "text": "sluttforsterkere"
+              },
+              "."
+            ]
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Den blir ikke dårligere med alderen."
+          ],
+          "feedback": [
+            "Rør slites, blant annet fordi katoden etter hvert avgir færre elektroner."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Den er mekanisk robust og tåler støt godt."
+          ],
+          "feedback": [
+            "Rør har glass- eller keramikkhus og tynne elektroder, og er fysisk mer ømtålige enn transistorer."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Rør tåler kortvarig overbelastning og dårlig ",
+          {
+            "term": "tilpasning",
+            "text": "tilpasning"
+          },
+          " mot ",
+          {
+            "term": "antenne",
+            "text": "antennen"
+          },
+          " bedre enn ",
+          {
+            "term": "transistor",
+            "text": "transistorer"
+          },
+          ", som kan bli ødelagt på et øyeblikk. Kretsene kan også være enkle, og rør håndterer høye ",
+          {
+            "term": "spenning",
+            "text": "spenninger"
+          },
+          " og effekter godt, også på VHF."
+        ],
+        "Ulempene er høye og farlige spenninger, at rørene slites og må byttes, at de er ømtålige, og at de ofte trenger støyende viftekjøling."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 3,
+        "section_id": "s3-35",
+        "printed_pages": [
+          "3-17"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "414ad86d0afc8a47"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "Jim C K Flaten",
+        "based_on": 3,
+        "at": "2026-10-24T15:16:39+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T15:16:39+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "c17b3347627c48085fa3cdf184108d87736d413fec033dd1decf392911208b12",
+          "note": "Terminology: PA, gate, kunstlast, knekkfrekvens, avstemt krets, glattekondensator"
+        },
+        {
+          "at": "2026-10-24T15:17:33+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "8664370335d23bd86bb9a1944a874661cc6666166c72870a3443d75b456c7e48",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T15:32:11+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "d8dc8c6cd50c37864486a492cb14dda7189fa98128653d929472817e43486cb6",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T15:40:44+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "d8dc8c6cd50c37864486a492cb14dda7189fa98128653d929472817e43486cb6",
+          "note": "Book terminology: sluttforsterker, gate, kunstlast, knekkfrekvens, avstemt krets, glattekondensator, harmoniske signaler, variabel kondensator",
+          "acknowledged": []
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "d8dc8c6cd50c37864486a492cb14dda7189fa98128653d929472817e43486cb6",
+        "errors": [],
+        "warnings": [],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T15:40:44+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T15:40:44+00:00",
+        "content_sha256": "d8dc8c6cd50c37864486a492cb14dda7189fa98128653d929472817e43486cb6",
         "acknowledged_hazards": [],
         "checklist": {
           "one_correct": true,

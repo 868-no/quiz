@@ -299,7 +299,7 @@
     },
     {
       "revision": 2,
-      "status": "approved",
+      "status": "retired",
       "type": "single_choice",
       "style": "concept",
       "difficulty": "medium",
@@ -542,6 +542,15 @@
           "acknowledged": [
             "figures"
           ]
+        },
+        {
+          "at": "2026-10-24T15:40:51+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "1c4e721fc5c9f7ce9c019782dbb3dcf52d41fde1ad03be65e48162b5466cb714",
+          "note": "superseded by r3"
         }
       ],
       "visual": {
@@ -574,6 +583,323 @@
         "verifier": "deterministic-v1",
         "content_sha256": "1c4e721fc5c9f7ce9c019782dbb3dcf52d41fde1ad03be65e48162b5466cb714",
         "errors": [],
+        "warnings": [
+          "terminology: 'sluttrinnet' – use PA (en PA, PA-en, PA-er)",
+          "glossary: 'sluttrinnet' is not a listed form of sluttforsterker ['pa', 'pa-en', 'pa-er', 'pa-ene', 'pa-ens', 'pa-trinn', 'pa-trinnet']"
+        ],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T15:17:33+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T10:04:11+00:00",
+        "content_sha256": "1c4e721fc5c9f7ce9c019782dbb3dcf52d41fde1ad03be65e48162b5466cb714",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 3,
+      "status": "approved",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 2,
+      "section_ids": [
+        "s2-16"
+      ],
+      "topic_ids": [
+        "effekt",
+        "ohms-lov"
+      ],
+      "learning_objective": "Forstå at størst effekt avgis i lasten når lastresistansen er lik kildens indre resistans.",
+      "priority": "normal",
+      "context": [
+        [
+          "En spenningskilde har en kildespenning (EMS) på ",
+          {
+            "q": 12,
+            "u": "V"
+          },
+          " og en indre ",
+          {
+            "term": "resistans",
+            "text": "resistans"
+          },
+          " på ",
+          {
+            "q": 4,
+            "u": "Ω"
+          },
+          ". En justerbar lastmotstand kobles mellom polene."
+        ]
+      ],
+      "stem": [
+        [
+          "Ved hvilken lastresistans blir ",
+          {
+            "term": "effekt",
+            "text": "effekten"
+          },
+          " som avgis i lastmotstanden, størst?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 4,
+              "u": "Ω"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 2,
+              "u": "Ω"
+            }
+          ],
+          "feedback": [
+            "Med 2 Ω går det 2 A, og lasten får 2 A · 2 A · 2 Ω = 8 W. Det er mindre enn ved 4 Ω, fordi en større del av effekten nå går tapt i kilden."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 8,
+              "u": "Ω"
+            }
+          ],
+          "feedback": [
+            [
+              "Med 8 Ω går det 1 A, og lasten får 1 A · 1 A · 8 Ω = 8 W. ",
+              {
+                "term": "spenning",
+                "text": "Spenningen"
+              },
+              " over lasten er høyere, men strømmen er blitt for liten."
+            ]
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 0.1,
+              "u": "Ω"
+            }
+          ],
+          "feedback": [
+            [
+              "Nær kortslutning blir strømmen størst, men nesten all spenning ligger da over den ",
+              {
+                "term": "indre-resistans",
+                "text": "indre resistansen"
+              },
+              ". Lasten får nesten ingen effekt."
+            ]
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          {
+            "term": "strom",
+            "text": "Strømmen"
+          },
+          " er ",
+          {
+            "math": [
+              "I",
+              "=",
+              {
+                "frac": [
+                  [
+                    "U"
+                  ],
+                  [
+                    "R",
+                    "+",
+                    "r"
+                  ]
+                ]
+              }
+            ]
+          },
+          " og effekten i lasten ",
+          {
+            "math": [
+              "P",
+              "=",
+              "I^2",
+              "·",
+              "R"
+            ]
+          },
+          ". Liten R gir stor strøm, men lav spenning over lasten; stor R gir høy spenning, men liten strøm. Effekten blir størst midt imellom, når R = r."
+        ],
+        {
+          "steps": [
+            [
+              "R = 2 Ω: I = 2 A, P = 8 W"
+            ],
+            [
+              "R = 4 Ω: I = 1,5 A, P = 9 W"
+            ],
+            [
+              "R = 8 Ω: I = 1 A, P = 8 W"
+            ]
+          ]
+        },
+        {
+          "note": [
+            "Ved ",
+            {
+              "term": "tilpasning",
+              "text": "tilpasning"
+            },
+            " (R = r) går like mye effekt tapt i kilden som i lasten, så ",
+            {
+              "term": "virkningsgrad",
+              "text": "virkningsgraden"
+            },
+            " er bare 50 %. Dette kalles prinsippet om maksimal effektoverføring og gjelder for en spenningskilde med fast indre resistans. I radiosendere brukes impedanstilpasning også for å gi ",
+            {
+              "term": "sluttforsterker",
+              "text": "sluttforsterkeren"
+            },
+            " riktig belastning og for å begrense refleksjoner i antennesystemet. Det betyr ikke at ",
+            {
+              "term": "sender",
+              "text": "senderens"
+            },
+            " indre resistans nødvendigvis er ",
+            {
+              "q": 50,
+              "u": "Ω"
+            },
+            "."
+          ]
+        }
+      ],
+      "visual": {
+        "template": "dc-circuit",
+        "version": 1,
+        "params": {
+          "topology": "series",
+          "source": {
+            "voltage_v": 12,
+            "internal_ohms": 4
+          },
+          "resistors": [
+            {
+              "ohms": 4,
+              "show_value": false
+            }
+          ]
+        },
+        "params_after": {
+          "resistors": [
+            {
+              "ohms": 4,
+              "show_value": true
+            }
+          ]
+        },
+        "caption": "R₁ er den justerbare lastmotstanden."
+      },
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 2,
+        "section_id": "s2-16",
+        "printed_pages": [
+          "2-6"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "3d47cf23d37f8bc4"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "Jim C K Flaten",
+        "based_on": 2,
+        "at": "2026-10-24T15:18:38+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T15:18:38+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "1c4e721fc5c9f7ce9c019782dbb3dcf52d41fde1ad03be65e48162b5466cb714",
+          "note": "Terminology: PA"
+        },
+        {
+          "at": "2026-10-24T15:18:39+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "671b75a6ab3894a2b0bc4e68c1d74da9c69874fc7c6762cc385e230fe9898b98",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T15:32:12+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "622ccf143c9ad93d7a00bf119553d2f367b157bcfd8b5b400f6c73bd37142579",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T15:40:51+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "622ccf143c9ad93d7a00bf119553d2f367b157bcfd8b5b400f6c73bd37142579",
+          "note": "Book terminology: sluttforsterker, gate, kunstlast, knekkfrekvens, avstemt krets, glattekondensator, harmoniske signaler, variabel kondensator",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "622ccf143c9ad93d7a00bf119553d2f367b157bcfd8b5b400f6c73bd37142579",
+        "errors": [],
         "warnings": [],
         "hazards": [
           {
@@ -582,12 +908,12 @@
           }
         ],
         "passed": true,
-        "at": "2026-10-24T10:04:11+00:00"
+        "at": "2026-10-24T15:40:51+00:00"
       },
       "approval": {
         "by": "Jim C K Flaten",
-        "at": "2026-10-24T10:04:11+00:00",
-        "content_sha256": "1c4e721fc5c9f7ce9c019782dbb3dcf52d41fde1ad03be65e48162b5466cb714",
+        "at": "2026-10-24T15:40:51+00:00",
+        "content_sha256": "622ccf143c9ad93d7a00bf119553d2f367b157bcfd8b5b400f6c73bd37142579",
         "acknowledged_hazards": [
           "figures"
         ],

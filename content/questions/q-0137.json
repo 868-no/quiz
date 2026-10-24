@@ -3,7 +3,7 @@
   "revisions": [
     {
       "revision": 1,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "recall",
@@ -162,6 +162,15 @@
           "acknowledged": [
             "figures"
           ]
+        },
+        {
+          "at": "2026-10-24T15:40:51+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "a8d64bed90d7b2846f7b00dddaeaf8efae09a741b4148761692d9fd1f376b1a3",
+          "note": "superseded by r2"
         }
       ],
       "provenance": {
@@ -187,6 +196,207 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-24T09:30:02+00:00",
         "content_sha256": "a8d64bed90d7b2846f7b00dddaeaf8efae09a741b4148761692d9fd1f376b1a3",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 2,
+      "status": "approved",
+      "type": "single_choice",
+      "style": "recall",
+      "difficulty": "easy",
+      "chapter": 2,
+      "section_ids": [
+        "s2-19"
+      ],
+      "topic_ids": [
+        "kondensatorer"
+      ],
+      "learning_objective": "Vite at en dreiekondensator endrer kapasitansen ved å endre platearealet som overlapper.",
+      "priority": "normal",
+      "context": [
+        [
+          "En variabel ",
+          {
+            "term": "kondensator",
+            "text": "kondensator"
+          },
+          " med luft som ",
+          {
+            "term": "dielektrikum",
+            "text": "dielektrikum"
+          },
+          " har ett sett faste plater og ett sett plater festet til en aksling. Platene i de to settene griper inn mellom hverandre uten å berøre hverandre."
+        ]
+      ],
+      "stem": [
+        [
+          "Hva er det som endrer ",
+          {
+            "term": "kapasitans",
+            "text": "kapasitansen"
+          },
+          " når du dreier akslingen?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Hvor stor del av platearealet som ligger overfor hverandre"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Hvor stor avstand det er mellom de faste og de dreibare platene"
+          ],
+          "feedback": [
+            [
+              "Avstanden mellom platene er den samme i alle stillinger i en variabel kondensator. Den bestemmer i stedet hvor høy ",
+              {
+                "term": "spenning",
+                "text": "spenning"
+              },
+              " kondensatoren tåler."
+            ]
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Hvor stor dielektrisitetskonstanten til luften mellom platene er"
+          ],
+          "feedback": [
+            "Dielektrikumet er luft hele tiden, og egenskapene til luften endres ikke når platene dreies."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Hvor mange av platene som er elektrisk koblet til kretsen"
+          ],
+          "feedback": [
+            "Alle platene er koblet til hele tiden. Kapasitansen endres gradvis fordi platene glir inn og ut av hverandre."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Kapasitansen er proporsjonal med arealet som ligger overfor hverandre og omvendt proporsjonal med avstanden mellom platene. I en variabel kondensator endrer akslingen det overlappende arealet: helt inndreid gir størst kapasitans, helt utdreid gir minst."
+        ],
+        [
+          "Avstanden mellom platene bestemmer ",
+          {
+            "term": "arbeidsspenning",
+            "text": "arbeidsspenningen"
+          },
+          ". ",
+          {
+            "term": "dreiekondensator",
+            "text": "Variable kondensatorer"
+          },
+          " i ",
+          {
+            "term": "sender",
+            "text": "sendere"
+          },
+          " og antennetilpasningsenheter har derfor stor plateavstand, mens de i ",
+          {
+            "term": "mottaker",
+            "text": "mottakere"
+          },
+          " kan ha platene tett."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 2,
+        "section_id": "s2-19",
+        "printed_pages": [
+          "2-8"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "3925a1a81220026d"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "Jim C K Flaten",
+        "based_on": 1,
+        "at": "2026-10-24T15:31:33+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T15:31:33+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "a8d64bed90d7b2846f7b00dddaeaf8efae09a741b4148761692d9fd1f376b1a3",
+          "note": "Book terms: sluttforsterker, harmoniske signaler, variabel kondensator"
+        },
+        {
+          "at": "2026-10-24T15:32:12+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "75df7462fea62200f6c0bffe7768cc9b6b11aa3d628c630247a126a19fe8e4bd",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T15:40:51+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "75df7462fea62200f6c0bffe7768cc9b6b11aa3d628c630247a126a19fe8e4bd",
+          "note": "Book terminology: sluttforsterker, gate, kunstlast, knekkfrekvens, avstemt krets, glattekondensator, harmoniske signaler, variabel kondensator",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "75df7462fea62200f6c0bffe7768cc9b6b11aa3d628c630247a126a19fe8e4bd",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T15:40:51+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T15:40:51+00:00",
+        "content_sha256": "75df7462fea62200f6c0bffe7768cc9b6b11aa3d628c630247a126a19fe8e4bd",
         "acknowledged_hazards": [
           "figures"
         ],

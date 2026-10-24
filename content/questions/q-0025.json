@@ -708,7 +708,7 @@
     },
     {
       "revision": 4,
-      "status": "approved",
+      "status": "retired",
       "type": "single_choice",
       "style": "calculation",
       "difficulty": "easy",
@@ -908,6 +908,15 @@
           "acknowledged": [
             "figures"
           ]
+        },
+        {
+          "at": "2026-10-24T15:40:40+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "bad7075aa40fc4b3182df6d7af268bf40db9a080e18a0932d506e6b897647f3a",
+          "note": "superseded by r5"
         }
       ],
       "checks": {
@@ -928,6 +937,242 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-24T15:08:37+00:00",
         "content_sha256": "bad7075aa40fc4b3182df6d7af268bf40db9a080e18a0932d506e6b897647f3a",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 5,
+      "status": "approved",
+      "type": "single_choice",
+      "style": "calculation",
+      "difficulty": "easy",
+      "chapter": 5,
+      "section_ids": [
+        "s5-09"
+      ],
+      "topic_ids": [
+        "harmoniske"
+      ],
+      "learning_objective": "Finne frekvensen til andre harmoniske av et sendersignal.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En sender på ",
+          {
+            "q": 7.05,
+            "u": "MHz"
+          },
+          " har dårlig filtrering på utgangen. Foruten signalet på 7,05 MHz stråler den også ut et svakt signal på den ",
+          {
+            "term": "harmoniske",
+            "text": "andre harmoniske frekvensen"
+          },
+          "."
+        ]
+      ],
+      "stem": [
+        [
+          "På hvilken ",
+          {
+            "term": "frekvens",
+            "text": "frekvens"
+          },
+          " ligger dette uønskede signalet?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 14.1,
+              "u": "MHz"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 21.15,
+              "u": "MHz"
+            }
+          ],
+          "feedback": [
+            "Det er tre ganger grunnfrekvensen, altså den tredje harmoniske frekvensen."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 3.525,
+              "u": "MHz"
+            }
+          ],
+          "feedback": [
+            "Harmoniske frekvenser ligger over grunnfrekvensen, på hele multipler av den."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 28.2,
+              "u": "MHz"
+            }
+          ],
+          "feedback": [
+            "Det er fire ganger grunnfrekvensen."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Grunnfrekvensen regnes som den første harmoniske frekvensen, så den ",
+          {
+            "term": "harmoniske",
+            "text": "andre harmoniske frekvensen"
+          },
+          " ligger på det dobbelte:"
+        ],
+        [
+          {
+            "math": [
+              "f_2",
+              "=",
+              "2",
+              "·",
+              {
+                "q": 7.05,
+                "u": "MHz"
+              },
+              "=",
+              {
+                "q": 14.1,
+                "u": "MHz"
+              }
+            ]
+          }
+        ],
+        [
+          "Den frekvensen ligger inne i 20-metersbåndet (14,000–14,350 MHz), og kan derfor forstyrre andre radioamatører. Harmoniske signaler dannes når bølgeformen avviker fra en ren sinus, og de dempes med et ",
+          {
+            "term": "lavpassfilter",
+            "text": "lavpassfilter"
+          },
+          " på senderutgangen."
+        ]
+      ],
+      "glossary_after_answer": [
+        "harmoniske"
+      ],
+      "calculation": {
+        "formula": "harmonic_frequency",
+        "inputs": {
+          "f": [
+            7.05,
+            "MHz"
+          ],
+          "n": [
+            2,
+            ""
+          ]
+        },
+        "answer": [
+          14.1,
+          "MHz"
+        ],
+        "answer_symbol": "f_2",
+        "sig_figs": 3
+      },
+      "study_reference": {
+        "chapter": 5,
+        "section_id": "s5-09",
+        "printed_pages": [
+          "5-3"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "22bac5b85015a5a1"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "Jim C K Flaten",
+        "based_on": 4,
+        "at": "2026-10-24T15:31:32+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T15:31:32+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "bad7075aa40fc4b3182df6d7af268bf40db9a080e18a0932d506e6b897647f3a",
+          "note": "Book terms: sluttforsterker, harmoniske signaler, variabel kondensator"
+        },
+        {
+          "at": "2026-10-24T15:32:11+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "595bd05b92c3d40ef9fa3df80c8a08b8dd877b1be783121593b9d488b9f1b747",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T15:40:40+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "595bd05b92c3d40ef9fa3df80c8a08b8dd877b1be783121593b9d488b9f1b747",
+          "note": "Book terminology: sluttforsterker, gate, kunstlast, knekkfrekvens, avstemt krets, glattekondensator, harmoniske signaler, variabel kondensator",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "595bd05b92c3d40ef9fa3df80c8a08b8dd877b1be783121593b9d488b9f1b747",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T15:40:40+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T15:40:40+00:00",
+        "content_sha256": "595bd05b92c3d40ef9fa3df80c8a08b8dd877b1be783121593b9d488b9f1b747",
         "acknowledged_hazards": [
           "figures"
         ],

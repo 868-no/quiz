@@ -637,7 +637,7 @@
     },
     {
       "revision": 4,
-      "status": "approved",
+      "status": "retired",
       "type": "single_choice",
       "style": "concept",
       "difficulty": "medium",
@@ -803,6 +803,15 @@
           "acknowledged": [
             "figures"
           ]
+        },
+        {
+          "at": "2026-10-24T15:40:52+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "bb320293c0b581b5b644d16f5bcef26dfbdb53165ec6c4f1864131d801601ed8",
+          "note": "superseded by r5"
         }
       ],
       "checks": {
@@ -823,6 +832,208 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-24T15:08:38+00:00",
         "content_sha256": "bb320293c0b581b5b644d16f5bcef26dfbdb53165ec6c4f1864131d801601ed8",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 5,
+      "status": "approved",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 2,
+      "section_ids": [
+        "s2-31"
+      ],
+      "topic_ids": [
+        "vekselstromsverdier"
+      ],
+      "learning_objective": "Vite at harmoniske er heltallige multipler av grunnfrekvensen.",
+      "priority": "normal",
+      "context": [
+        [
+          "En ",
+          {
+            "term": "sender",
+            "text": "sender"
+          },
+          " på ",
+          {
+            "q": 7.05,
+            "u": "MHz"
+          },
+          " har for dårlig filtrering på utgangen, og bølgeformen er ikke helt sinusformet. Den sender derfor også ut svake signaler på andre ",
+          {
+            "term": "frekvens",
+            "text": "frekvenser"
+          },
+          "."
+        ]
+      ],
+      "stem": [
+        [
+          "Hvilken av disse frekvensene kan være en ",
+          {
+            "term": "harmoniske",
+            "text": "harmonisk frekvens"
+          },
+          " av senderfrekvensen?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 21.15,
+              "u": "MHz"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 10.575,
+              "u": "MHz"
+            }
+          ],
+          "feedback": [
+            "Dette er 1,5 ganger senderfrekvensen. Harmoniske frekvenser er hele multipler: 2, 3, 4 … ganger grunnfrekvensen."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 3.525,
+              "u": "MHz"
+            }
+          ],
+          "feedback": [
+            "Dette er halve senderfrekvensen. Harmoniske frekvenser ligger over grunnfrekvensen, aldri under."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 14.05,
+              "u": "MHz"
+            }
+          ],
+          "feedback": [
+            "Dette er nesten, men ikke nøyaktig, det dobbelte av senderfrekvensen. Den andre harmoniske frekvensen ligger på 2 · 7,05 MHz = 14,1 MHz. Harmoniske frekvenser ligger nøyaktig på hele multipler av grunnfrekvensen."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          {
+            "term": "harmoniske",
+            "text": "Harmoniske frekvenser"
+          },
+          " ligger på 2, 3, 4 … ganger grunnfrekvensen. Den andre harmoniske frekvensen til 7,05 MHz er 14,1 MHz, og den tredje er 3 · 7,05 MHz = 21,15 MHz."
+        ],
+        [
+          "Harmoniske signaler oppstår når bølgeformen er forvrengt i forhold til en ren sinus. Et ",
+          {
+            "term": "lavpassfilter",
+            "text": "lavpassfilter"
+          },
+          " på utgangen av senderen demper dem, slik at de ikke forstyrrer andre brukere."
+        ]
+      ],
+      "glossary_after_answer": [
+        "harmoniske"
+      ],
+      "study_reference": {
+        "chapter": 2,
+        "section_id": "s2-31",
+        "printed_pages": [
+          "2-12"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "ee651ef3ba0565da"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "Jim C K Flaten",
+        "based_on": 4,
+        "at": "2026-10-24T15:31:33+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T15:31:33+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "bb320293c0b581b5b644d16f5bcef26dfbdb53165ec6c4f1864131d801601ed8",
+          "note": "Book terms: sluttforsterker, harmoniske signaler, variabel kondensator"
+        },
+        {
+          "at": "2026-10-24T15:32:12+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "4e01d916bbe2a4421c04a9bc83415b0dd709a1d85bb694d4c7604b55cb976b5d",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T15:40:52+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "4e01d916bbe2a4421c04a9bc83415b0dd709a1d85bb694d4c7604b55cb976b5d",
+          "note": "Book terminology: sluttforsterker, gate, kunstlast, knekkfrekvens, avstemt krets, glattekondensator, harmoniske signaler, variabel kondensator",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "4e01d916bbe2a4421c04a9bc83415b0dd709a1d85bb694d4c7604b55cb976b5d",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T15:40:52+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T15:40:52+00:00",
+        "content_sha256": "4e01d916bbe2a4421c04a9bc83415b0dd709a1d85bb694d4c7604b55cb976b5d",
         "acknowledged_hazards": [
           "figures"
         ],

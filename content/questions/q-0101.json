@@ -588,7 +588,7 @@
     },
     {
       "revision": 4,
-      "status": "approved",
+      "status": "retired",
       "type": "single_choice",
       "style": "recall",
       "difficulty": "medium",
@@ -779,6 +779,15 @@
           "acknowledged": [
             "figures"
           ]
+        },
+        {
+          "at": "2026-10-24T15:40:49+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "e164262c83c06a4d7957622eae408eda2db91abc03a1d0f1d0da208957d44f8a",
+          "note": "superseded by r5"
         }
       ],
       "checks": {
@@ -799,6 +808,242 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-24T10:04:06+00:00",
         "content_sha256": "e164262c83c06a4d7957622eae408eda2db91abc03a1d0f1d0da208957d44f8a",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 5,
+      "status": "approved",
+      "type": "single_choice",
+      "style": "recall",
+      "difficulty": "medium",
+      "chapter": 5,
+      "section_ids": [
+        "s5-13"
+      ],
+      "topic_ids": [
+        "parasittsvingninger"
+      ],
+      "learning_objective": "Vite at parasittsvingninger dempes ved å øke tapene (senke Q), for eksempel med ferrittperler eller små seriemotstander.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En transistorisert HF-",
+          {
+            "term": "sluttforsterker",
+            "text": "sluttforsterker"
+          },
+          " viser seg å ha ",
+          {
+            "term": "parasittsvingning",
+            "text": "parasittsvingninger"
+          },
+          " på en ",
+          {
+            "term": "frekvens",
+            "text": "frekvens"
+          },
+          " i VHF-området."
+        ]
+      ],
+      "stem": [
+        "Hvilket tiltak er vanlig for å dempe slike svingninger?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Sette en ferrittperle eller seriemotstand i basis- eller kollektorledningen"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Øke Q-faktoren i kretsen slik at de uønskede resonansene blir skarpere"
+          ],
+          "feedback": [
+            "Det er motsatt. En skarpere resonans med høy Q gjør det lettere for kretsen å svinge."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Gjøre ledningene i trinnet lengre slik at induktansen i dem øker"
+          ],
+          "feedback": [
+            [
+              "Lange ledninger gir mer ",
+              {
+                "term": "induktans",
+                "text": "induktans"
+              },
+              " og mer kapasitiv kobling, og dermed flere tilfeldige resonanser."
+            ]
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Øke forsyningsspenningen slik at transistoren arbeider mer lineært"
+          ],
+          "feedback": [
+            [
+              "Høyere forsyningsspenning fjerner ikke den uønskede resonansen. ",
+              {
+                "term": "transistor",
+                "text": "Transistoren"
+              },
+              " kan heller få mer forsterkning, og svingningene kan bli kraftigere."
+            ]
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Parasittsvingninger skyldes tilfeldige resonanser i ledninger, ",
+          {
+            "term": "spole",
+            "text": "spoler"
+          },
+          " og ",
+          {
+            "term": "kondensator",
+            "text": "kondensatorer"
+          },
+          ", og i HF-",
+          {
+            "term": "forsterker",
+            "text": "forsterkere"
+          },
+          " ligger de typisk på VHF, der kapasitiv tilbakekobling virker godt."
+        ],
+        [
+          "Det vanlige botemiddelet er å gjøre den uønskede ",
+          {
+            "term": "resonans",
+            "text": "resonansen"
+          },
+          " mer tapsbeheftet, altså senke ",
+          {
+            "term": "q-faktor",
+            "text": "Q-faktoren"
+          },
+          ". En ferrittperle eller en liten ",
+          {
+            "term": "motstand",
+            "text": "motstand"
+          },
+          " ",
+          {
+            "term": "seriekobling",
+            "text": "i serie"
+          },
+          " med basis eller kollektor demper VHF-",
+          {
+            "term": "energi",
+            "text": "energien"
+          },
+          ", men påvirker nesten ikke HF-signalet. I tillegg bør ledningene være korte og direkte, og avkoblingskondensatorene bør ha lav egeninduktans, for eksempel keramiske kondensatorer med korte ben."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 5,
+        "section_id": "s5-13",
+        "printed_pages": [
+          "5-6"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "e5ca3b17cbd3c585",
+          "44b1f050e014a3c6"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "Jim C K Flaten",
+        "based_on": 4,
+        "at": "2026-10-24T15:16:41+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T15:16:41+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "e164262c83c06a4d7957622eae408eda2db91abc03a1d0f1d0da208957d44f8a",
+          "note": "Terminology: PA, gate, kunstlast, knekkfrekvens, avstemt krets, glattekondensator"
+        },
+        {
+          "at": "2026-10-24T15:17:33+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "ebc76b56c57858d41066f6fa818cdfac7750bbfbd44c120a030ebd5337eb29a1",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T15:32:11+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "26eeff301b5443031032ac9a468087138d8585d513a7634be41496232dd4cb50",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T15:40:49+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "26eeff301b5443031032ac9a468087138d8585d513a7634be41496232dd4cb50",
+          "note": "Book terminology: sluttforsterker, gate, kunstlast, knekkfrekvens, avstemt krets, glattekondensator, harmoniske signaler, variabel kondensator",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "26eeff301b5443031032ac9a468087138d8585d513a7634be41496232dd4cb50",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T15:40:49+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T15:40:49+00:00",
+        "content_sha256": "26eeff301b5443031032ac9a468087138d8585d513a7634be41496232dd4cb50",
         "acknowledged_hazards": [
           "figures"
         ],

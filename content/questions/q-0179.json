@@ -230,7 +230,7 @@
     },
     {
       "revision": 2,
-      "status": "approved",
+      "status": "retired",
       "type": "single_choice",
       "style": "scenario",
       "difficulty": "medium",
@@ -413,6 +413,15 @@
             "figures",
             "ocr"
           ]
+        },
+        {
+          "at": "2026-10-24T15:40:53+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "296eabe8069b62e512cfa723c7c5e161bfcd34600fd983ab96f97e1a435305d7",
+          "note": "superseded by r3"
         }
       ],
       "checks": {
@@ -437,6 +446,239 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-24T10:04:14+00:00",
         "content_sha256": "296eabe8069b62e512cfa723c7c5e161bfcd34600fd983ab96f97e1a435305d7",
+        "acknowledged_hazards": [
+          "figures",
+          "ocr"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 3,
+      "status": "approved",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "medium",
+      "chapter": 4,
+      "section_ids": [
+        "s4-32"
+      ],
+      "topic_ids": [
+        "datamodulasjon",
+        "sluttforsterker"
+      ],
+      "learning_objective": "Forstå at datamoduser med konstant amplitude gir en gjennomsnittseffekt nær spisseffekten, og at sluttrinn og strømforsyning da belastes mye hardere enn ved SSB-tale.",
+      "priority": "normal",
+      "context": [
+        [
+          "En transceiver gir ",
+          {
+            "q": 100,
+            "u": "W"
+          },
+          " ",
+          {
+            "term": "spisseffekt",
+            "text": "spisseffekt"
+          },
+          " og har gått uten problemer på ",
+          {
+            "term": "ssb",
+            "text": "SSB"
+          },
+          "-tale med full ",
+          {
+            "term": "effekt",
+            "text": "effekt"
+          },
+          ". Nå skal du sende ",
+          {
+            "term": "rtty",
+            "text": "RTTY"
+          },
+          " i lange perioder, der ",
+          {
+            "term": "sender",
+            "text": "senderen"
+          },
+          " hele tiden moduleres med én tone av gangen."
+        ]
+      ],
+      "stem": [
+        "Hvorfor kan det være nødvendig å redusere effektinnstillingen?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Gjennomsnittseffekten blir nær spisseffekten og varmer opp sluttforsterkeren"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "RTTY-signalet blir mye bredere enn et talesignal og forstyrrer andre"
+          ],
+          "feedback": [
+            [
+              "RTTY er svært smalt, bare noen hundre hertz. Problemet er ikke ",
+              {
+                "term": "baandbredde",
+                "text": "båndbredden"
+              },
+              ", men hvor lenge senderen gir full effekt."
+            ]
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Spisseffekten blir høyere enn 100 W fordi tonene legges oppå hverandre"
+          ],
+          "feedback": [
+            "Det sendes bare én tone av gangen, så spisseffekten blir ikke høyere enn innstilt. Det er gjennomsnittet som øker."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "ALC-kretsen virker ikke i datamodus, så sluttforsterkeren blir overstyrt"
+          ],
+          "feedback": [
+            [
+              {
+                "term": "alc",
+                "text": "ALC"
+              },
+              " virker like godt med en konstant tone. Senderen blir ikke overstyrt, men den gir full effekt hele tiden."
+            ]
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Ved tale varierer amplituden mye, og den gjennomsnittlige effekten er bare en liten del av spisseffekten. Sluttforsterkeren og strømforsyningen blir derfor sjelden varme."
+        ],
+        [
+          "En datamodus med konstant amplitude, som ",
+          {
+            "term": "rtty",
+            "text": "RTTY"
+          },
+          " eller SSTV, holder senderen på full effekt hele tiden. Da blir gjennomsnittseffekten omtrent lik ",
+          {
+            "term": "spisseffekt",
+            "text": "spisseffekten"
+          },
+          ", og varmen i ",
+          {
+            "term": "sluttforsterker",
+            "text": "sluttforsterkeren"
+          },
+          " blir mange ganger større. Hvis kjøleribber og strømforsyning ikke er dimensjonert for kontinuerlig drift, må effekten reduseres."
+        ]
+      ],
+      "glossary_after_answer": [
+        "rtty"
+      ],
+      "study_reference": {
+        "chapter": 4,
+        "section_id": "s4-32",
+        "printed_pages": [
+          "4-16"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "1c62c6a17e24d5f6"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "Jim C K Flaten",
+        "based_on": 2,
+        "at": "2026-10-24T15:16:42+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T15:16:42+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "296eabe8069b62e512cfa723c7c5e161bfcd34600fd983ab96f97e1a435305d7",
+          "note": "Terminology: PA, gate, kunstlast, knekkfrekvens, avstemt krets, glattekondensator"
+        },
+        {
+          "at": "2026-10-24T15:17:34+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "93e8edff5c8f21335f26064c648e6e18b4d95c9eb0132afe0f1faa7d0f2faf17",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T15:32:12+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "c7f64906494df9488b240492a05e35fd0bb7743618367950a183ee1278adb567",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T15:40:53+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "c7f64906494df9488b240492a05e35fd0bb7743618367950a183ee1278adb567",
+          "note": "Book terminology: sluttforsterker, gate, kunstlast, knekkfrekvens, avstemt krets, glattekondensator, harmoniske signaler, variabel kondensator",
+          "acknowledged": [
+            "figures",
+            "ocr"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "c7f64906494df9488b240492a05e35fd0bb7743618367950a183ee1278adb567",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: equation. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T15:40:53+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T15:40:53+00:00",
+        "content_sha256": "c7f64906494df9488b240492a05e35fd0bb7743618367950a183ee1278adb567",
         "acknowledged_hazards": [
           "figures",
           "ocr"
