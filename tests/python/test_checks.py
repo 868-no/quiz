@@ -48,6 +48,13 @@ class ChecksTest(unittest.TestCase):
         def fine(r):
             r["options"][1]["content"] = ["Tale gjøres om til digitale data"]
         self.assertTrue(self.mutate(fine)["passed"])
+        # the signal-processing sense used in chapter 7's headings is allowed, nothing else
+        def dsp(r):
+            r["explanation"] = ["Sampling er digitalisering av tid, kvantisering er digitalisering av amplitude."]
+        self.assertTrue(self.mutate(dsp)["passed"], self.mutate(dsp)["errors"])
+        def book(r):
+            r["explanation"] = ["Spørsmålet bygger på digitalisering av boka."]
+        self.assertError(self.mutate(book), "mention of scanning/OCR")
 
     def test_question_must_stand_on_its_own(self):
         def opens_with_her(r):

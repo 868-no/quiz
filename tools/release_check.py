@@ -34,8 +34,10 @@ FORBIDDEN_PATTERNS = [
                 r"import_id|text_sha256|ocr_hazards|learning_objective|checks)\""), "private field name"),
     (re.compile(r"private/|figures/[0-9a-f]{8}-\d+|img\d+\.jpe?g", re.I), "private path"),
     (re.compile(r"\[(EQUATION|FIGURE|TABLE|FOOTNOTE)\b"), "OCR annotation"),
-    # the public site does not describe how the source material was obtained
-    (re.compile(r"skann|scann|\bscan|\bOCR\b|digitali[sz]", re.I), "mention of scanning/OCR"),
+    # the public site does not describe how the source material was obtained; the only
+    # exception is the signal-processing sense in chapter 7's headings ("digitalisering av tid")
+    (re.compile(r"skann|scann|\bscan|\bOCR\b|digitali[sz](?!ering av (amplitude|tid)\b)", re.I),
+     "mention of scanning/OCR"),
     (re.compile(r"curriculum\.(pdf|md)|chunks\.jsonl|visuals\.jsonl|manifest\.json"), "source export file name"),
     (re.compile(r"(api[_-]?key|secret|password)\s*[:=]\s*\S{8,}", re.I), "credential"),
     (re.compile(r"\bsk-[A-Za-z0-9]{20,}"), "credential"),
