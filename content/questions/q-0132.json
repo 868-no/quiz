@@ -1,0 +1,431 @@
+{
+  "id": "q-0132",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "calculation",
+      "difficulty": "medium",
+      "chapter": 2,
+      "section_ids": [
+        "s2-12"
+      ],
+      "topic_ids": [
+        "motstandskoblinger",
+        "ohms-lov"
+      ],
+      "learning_objective": "Finne totalstrømmen i en parallellkobling av tre motstander.",
+      "priority": "normal",
+      "context": [
+        [
+          "Tre ",
+          {
+            "term": "motstand",
+            "text": "motstander"
+          },
+          ", ",
+          {
+            "math": [
+              "R_1",
+              "=",
+              {
+                "q": 100,
+                "u": "Ω"
+              }
+            ]
+          },
+          ", ",
+          {
+            "math": [
+              "R_2",
+              "=",
+              {
+                "q": 150,
+                "u": "Ω"
+              }
+            ]
+          },
+          " og ",
+          {
+            "math": [
+              "R_3",
+              "=",
+              {
+                "q": 300,
+                "u": "Ω"
+              }
+            ]
+          },
+          ", er koblet ",
+          {
+            "term": "parallellkobling",
+            "text": "i parallell"
+          },
+          " over en ideell spenningskilde på ",
+          {
+            "q": 6,
+            "u": "V"
+          },
+          ". Amperemeteret er ideelt."
+        ]
+      ],
+      "stem": [
+        [
+          "Hvor stor ",
+          {
+            "term": "strom",
+            "text": "strøm"
+          },
+          " viser amperemeteret i hovedledningen?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 120,
+              "u": "mA"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 60,
+              "u": "mA"
+            }
+          ],
+          "feedback": [
+            "Dette er bare strømmen gjennom R1. I en parallellkobling er hovedstrømmen summen av strømmene i alle grenene."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 11,
+              "u": "mA"
+            }
+          ],
+          "feedback": [
+            [
+              "Her er resistansene lagt sammen som om de var ",
+              {
+                "term": "seriekobling",
+                "text": "seriekoblet"
+              },
+              " (550 Ω). Parallellkoblede motstander gir lavere, ikke høyere, samlet resistans."
+            ]
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 40,
+              "u": "mA"
+            }
+          ],
+          "feedback": [
+            [
+              "Dette er strømmen du ville fått gjennom én motstand på 150 Ω. Den samlede ",
+              {
+                "term": "resistans",
+                "text": "resistansen"
+              },
+              " er mindre enn den minste motstanden, så strømmen blir større."
+            ]
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Alle tre motstandene har hele ",
+          {
+            "term": "spenning",
+            "text": "spenningen"
+          },
+          " over seg, og strømmene i grenene legges sammen."
+        ],
+        {
+          "steps": [
+            [
+              "Samlet resistans: ",
+              {
+                "math": [
+                  {
+                    "frac": [
+                      [
+                        "1"
+                      ],
+                      [
+                        "R"
+                      ]
+                    ]
+                  },
+                  "=",
+                  {
+                    "frac": [
+                      [
+                        "1"
+                      ],
+                      [
+                        {
+                          "q": 100,
+                          "u": "Ω"
+                        }
+                      ]
+                    ]
+                  },
+                  "+",
+                  {
+                    "frac": [
+                      [
+                        "1"
+                      ],
+                      [
+                        {
+                          "q": 150,
+                          "u": "Ω"
+                        }
+                      ]
+                    ]
+                  },
+                  "+",
+                  {
+                    "frac": [
+                      [
+                        "1"
+                      ],
+                      [
+                        {
+                          "q": 300,
+                          "u": "Ω"
+                        }
+                      ]
+                    ]
+                  },
+                  "=",
+                  {
+                    "frac": [
+                      [
+                        "6"
+                      ],
+                      [
+                        {
+                          "q": 300,
+                          "u": "Ω"
+                        }
+                      ]
+                    ]
+                  }
+                ]
+              },
+              " som gir ",
+              {
+                "math": [
+                  "R",
+                  "=",
+                  {
+                    "q": 50,
+                    "u": "Ω"
+                  }
+                ]
+              }
+            ],
+            [
+              "Hovedstrøm: ",
+              {
+                "math": [
+                  "I",
+                  "=",
+                  {
+                    "frac": [
+                      [
+                        {
+                          "q": 6,
+                          "u": "V"
+                        }
+                      ],
+                      [
+                        {
+                          "q": 50,
+                          "u": "Ω"
+                        }
+                      ]
+                    ]
+                  },
+                  "=",
+                  {
+                    "q": 0.12,
+                    "u": "A"
+                  },
+                  "=",
+                  {
+                    "q": 120,
+                    "u": "mA"
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        {
+          "note": [
+            "Kontroll: grenstrømmene er 60 mA, 40 mA og 20 mA, til sammen 120 mA."
+          ]
+        }
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 2,
+        "section_id": "s2-12",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "7349c9c3e2bac78f"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T03:12:11+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "d4b3169a91a3ad65ef3db4b03c4a8574fba44d2e61907e9a3d1ab6327d817f5c",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:19:31+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "cc25e0eab9f68691d7e453e8c9f144c8d944694b60c96b03d6b481d49a27aacd",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:30:00+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "cc25e0eab9f68691d7e453e8c9f144c8d944694b60c96b03d6b481d49a27aacd",
+          "note": "Runde 2: faglig kontrollert av AI (ChatGPT), 11 spørsmål rettet.",
+          "acknowledged": [
+            "figures",
+            "ocr"
+          ]
+        }
+      ],
+      "calculation": {
+        "formula": "ohms_law_current",
+        "inputs": {
+          "U": [
+            6,
+            "V"
+          ],
+          "R": [
+            50,
+            "Ω"
+          ]
+        },
+        "answer": [
+          120,
+          "mA"
+        ],
+        "answer_symbol": "I",
+        "sig_figs": 2,
+        "visual_bindings": {
+          "U": "U",
+          "R": "R_total",
+          "I": "I"
+        }
+      },
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-24T03:09:08+00:00"
+      },
+      "visual": {
+        "template": "dc-circuit",
+        "version": 1,
+        "params": {
+          "topology": "parallel",
+          "source": {
+            "voltage_v": 6
+          },
+          "resistors": [
+            {
+              "ohms": 100
+            },
+            {
+              "ohms": 150
+            },
+            {
+              "ohms": 300
+            }
+          ],
+          "ammeter": {
+            "branch": "main",
+            "show_reading": false
+          }
+        },
+        "params_after": {
+          "ammeter": {
+            "show_reading": true
+          }
+        }
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "cc25e0eab9f68691d7e453e8c9f144c8d944694b60c96b03d6b481d49a27aacd",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: equation, numeric_low_conf, subscript_garbled. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T09:30:00+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T09:30:00+00:00",
+        "content_sha256": "cc25e0eab9f68691d7e453e8c9f144c8d944694b60c96b03d6b481d49a27aacd",
+        "acknowledged_hazards": [
+          "figures",
+          "ocr"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

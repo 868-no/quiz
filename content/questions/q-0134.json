@@ -1,0 +1,292 @@
+{
+  "id": "q-0134",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 2,
+      "section_ids": [
+        "s2-16"
+      ],
+      "topic_ids": [
+        "effekt",
+        "ohms-lov"
+      ],
+      "learning_objective": "Forstå at størst effekt avgis i lasten når lastresistansen er lik kildens indre resistans.",
+      "priority": "normal",
+      "context": [
+        [
+          "En spenningskilde har en kildespenning (EMS) på ",
+          {
+            "q": 12,
+            "u": "V"
+          },
+          " og en indre ",
+          {
+            "term": "resistans",
+            "text": "resistans"
+          },
+          " på ",
+          {
+            "q": 4,
+            "u": "Ω"
+          },
+          ". En justerbar lastmotstand kobles mellom polene."
+        ]
+      ],
+      "stem": [
+        [
+          "Ved hvilken lastresistans blir ",
+          {
+            "term": "effekt",
+            "text": "effekten"
+          },
+          " som avgis i lastmotstanden, størst?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 4,
+              "u": "Ω"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 2,
+              "u": "Ω"
+            }
+          ],
+          "feedback": [
+            "Med 2 Ω går det 2 A, og lasten får 2 A · 2 A · 2 Ω = 8 W. Det er mindre enn ved 4 Ω, fordi en større del av effekten nå går tapt i kilden."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 8,
+              "u": "Ω"
+            }
+          ],
+          "feedback": [
+            [
+              "Med 8 Ω går det 1 A, og lasten får 1 A · 1 A · 8 Ω = 8 W. ",
+              {
+                "term": "spenning",
+                "text": "Spenningen"
+              },
+              " over lasten er høyere, men strømmen er blitt for liten."
+            ]
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 0.1,
+              "u": "Ω"
+            }
+          ],
+          "feedback": [
+            [
+              "Nær kortslutning blir strømmen størst, men nesten all spenning ligger da over den ",
+              {
+                "term": "indre-resistans",
+                "text": "indre resistansen"
+              },
+              ". Lasten får nesten ingen effekt."
+            ]
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          {
+            "term": "strom",
+            "text": "Strømmen"
+          },
+          " er ",
+          {
+            "math": [
+              "I",
+              "=",
+              {
+                "frac": [
+                  [
+                    "U"
+                  ],
+                  [
+                    "R",
+                    "+",
+                    "r"
+                  ]
+                ]
+              }
+            ]
+          },
+          " og effekten i lasten ",
+          {
+            "math": [
+              "P",
+              "=",
+              "I^2",
+              "·",
+              "R"
+            ]
+          },
+          ". Liten R gir stor strøm, men lav spenning over lasten; stor R gir høy spenning, men liten strøm. Effekten blir størst midt imellom, når R = r."
+        ],
+        {
+          "steps": [
+            [
+              "R = 2 Ω: I = 2 A, P = 8 W"
+            ],
+            [
+              "R = 4 Ω: I = 1,5 A, P = 9 W"
+            ],
+            [
+              "R = 8 Ω: I = 1 A, P = 8 W"
+            ]
+          ]
+        },
+        {
+          "note": [
+            "Ved ",
+            {
+              "term": "tilpasning",
+              "text": "tilpasning"
+            },
+            " (R = r) går like mye effekt tapt i kilden som i lasten, så ",
+            {
+              "term": "virkningsgrad",
+              "text": "virkningsgraden"
+            },
+            " er bare 50 %. Dette kalles prinsippet om maksimal effektoverføring og gjelder for en spenningskilde med fast indre resistans. I radiosendere brukes impedanstilpasning også for å gi ",
+            {
+              "term": "sluttforsterker",
+              "text": "sluttrinnet"
+            },
+            " riktig belastning og for å begrense refleksjoner i antennesystemet. Det betyr ikke at ",
+            {
+              "term": "sender",
+              "text": "senderens"
+            },
+            " indre resistans nødvendigvis er ",
+            {
+              "q": 50,
+              "u": "Ω"
+            },
+            "."
+          ]
+        }
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 2,
+        "section_id": "s2-16",
+        "printed_pages": [
+          "2-6"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "3d47cf23d37f8bc4"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T03:12:11+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "72e4d14049a3e972a6732c0be85294d3965b3958e5c29b2f4a45281c0b33e782",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:19:31+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "75ba801a56a62ab3b308a2c248aeef0e6aabce35b213f9634362babb16bc8eb2",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:23:29+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "3ab3a540701a34a953fd66328e39ace76b1ccc05ae5444075dd960523443a78a",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:30:01+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "3ab3a540701a34a953fd66328e39ace76b1ccc05ae5444075dd960523443a78a",
+          "note": "Runde 2: faglig kontrollert av AI (ChatGPT), 11 spørsmål rettet.",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-24T03:09:09+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "3ab3a540701a34a953fd66328e39ace76b1ccc05ae5444075dd960523443a78a",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T09:30:01+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T09:30:01+00:00",
+        "content_sha256": "3ab3a540701a34a953fd66328e39ace76b1ccc05ae5444075dd960523443a78a",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

@@ -1,0 +1,180 @@
+{
+  "id": "q-0138",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 2,
+      "section_ids": [
+        "s2-24"
+      ],
+      "topic_ids": [
+        "spoler"
+      ],
+      "learning_objective": "Kjenne hvordan antall vindinger, diameter og avstand mellom vindingene påvirker induktansen til en luftspole.",
+      "priority": "normal",
+      "context": [
+        [
+          "En luftspole er viklet med 20 vindinger tett inntil hverandre på et plastrør med diameter ",
+          {
+            "q": 2,
+            "u": "cm"
+          },
+          ". Du ønsker større ",
+          {
+            "term": "induktans",
+            "text": "induktans"
+          },
+          " uten å bruke kjerne."
+        ]
+      ],
+      "stem": [
+        "Hvilken endring vil gi større induktans?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Vikle flere vindinger tett på det samme røret"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Trekke vindingene fra hverandre så spolen blir lengre"
+          ],
+          "feedback": [
+            "Når vindingene får større avstand, blir den magnetiske koblingen mellom dem svakere, og induktansen minker."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Vikle de samme 20 vindingene på et tynnere rør"
+          ],
+          "feedback": [
+            "Mindre diameter gir mindre areal for magnetfeltet, og dermed mindre induktans. Større diameter ville økt den."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Bruke tykkere tråd med samme antall vindinger og samme form"
+          ],
+          "feedback": [
+            [
+              "Tykkere tråd gir mindre ",
+              {
+                "term": "resistans",
+                "text": "resistans"
+              },
+              " i spolen, men endrer induktansen svært lite. Om noe blir den litt mindre."
+            ]
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Induktansen til en luftspole øker med antall vindinger (omtrent med kvadratet av antallet når formen er lik) og med diameteren. Den minker når vindingene flyttes lenger fra hverandre."
+        ],
+        [
+          "Enheten er henry: en ",
+          {
+            "term": "spole",
+            "text": "spole"
+          },
+          " har induktansen 1 H når det induseres 1 V i den mens ",
+          {
+            "term": "strom",
+            "text": "strømmen"
+          },
+          " endres med 1 A per sekund."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 2,
+        "section_id": "s2-24",
+        "printed_pages": [
+          "2-9",
+          "2-10"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "6eaaeb4fb134515e"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T03:12:11+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "8bcca414c088d04d4eeff6527fa4ab1813b8ef04b7a1c01aa3193d2aec01da80",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:19:31+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "db76552ad34ab6cfbc2a051fbf3d6a80d097bf49c402cbd8036a8adc6947ed30",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:30:02+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "db76552ad34ab6cfbc2a051fbf3d6a80d097bf49c402cbd8036a8adc6947ed30",
+          "note": "Runde 2: faglig kontrollert av AI (ChatGPT), 11 spørsmål rettet.",
+          "acknowledged": []
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-24T03:09:10+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "db76552ad34ab6cfbc2a051fbf3d6a80d097bf49c402cbd8036a8adc6947ed30",
+        "errors": [],
+        "warnings": [],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T09:30:02+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T09:30:02+00:00",
+        "content_sha256": "db76552ad34ab6cfbc2a051fbf3d6a80d097bf49c402cbd8036a8adc6947ed30",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

@@ -1,0 +1,220 @@
+{
+  "id": "q-0136",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 2,
+      "section_ids": [
+        "s2-19"
+      ],
+      "topic_ids": [
+        "kondensatorer",
+        "komponentstabilitet"
+      ],
+      "learning_objective": "Velge en kondensatortype med lavt tap og stabil kapasitans til en avstemt krets på radiofrekvens.",
+      "priority": "normal",
+      "context": [
+        [
+          "Du trenger en fast ",
+          {
+            "term": "kondensator",
+            "text": "kondensator"
+          },
+          " på ",
+          {
+            "q": 100,
+            "u": "pF"
+          },
+          " til den ",
+          {
+            "term": "avstemt-krets",
+            "text": "avstemte kretsen"
+          },
+          " i en ",
+          {
+            "term": "oscillator",
+            "text": "oscillator"
+          },
+          " for ",
+          {
+            "q": 14,
+            "u": "MHz"
+          },
+          ". Den må ha lite tap og stabil ",
+          {
+            "term": "kapasitans",
+            "text": "kapasitans"
+          },
+          "."
+        ]
+      ],
+      "stem": [
+        "Hvilken type passer best?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "En keramisk kondensator med lav dielektrisitetskonstant"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "En keramisk kondensator med høy dielektrisitetskonstant"
+          ],
+          "feedback": [
+            "Høy-k-keramikk gir stor kapasitans i liten størrelse, men har større tap og kapasitans som endrer seg mer med temperatur og spenning. Den egner seg til avkobling, ikke til avstemte kretser."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "En papirkondensator med aluminiumsfolie"
+          ],
+          "feedback": [
+            [
+              "Papirkondensatorer er store og har betydelige tap ved høye ",
+              {
+                "term": "frekvens",
+                "text": "frekvenser"
+              },
+              ". De brukes ved lave frekvenser og høye ",
+              {
+                "term": "spenning",
+                "text": "spenninger"
+              },
+              ", ikke i RF-oscillatorer."
+            ]
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "En elektrolyttkondensator med lav arbeidsspenning"
+          ],
+          "feedback": [
+            [
+              {
+                "term": "elektrolyttkondensator",
+                "text": "Elektrolyttkondensatorer"
+              },
+              " er laget for store kapasitanser ved lave frekvenser, for eksempel glatting i strømforsyninger. De er polariserte, har store tap og passer ikke på radiofrekvenser."
+            ]
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Keramiske kondensatorer med lav ",
+          {
+            "term": "dielektrisitetskonstant",
+            "text": "dielektrisitetskonstant"
+          },
+          " (ofte merket NP0 eller C0G) finnes i verdier fra noen få til noen hundre pikofarad. De har lite tap og svært lav ",
+          {
+            "term": "temperaturkoeffisient",
+            "text": "temperaturkoeffisient"
+          },
+          ", og passer derfor i oscillatorer og andre avstemte kretser."
+        ],
+        [
+          "Glimmerkondensatorer og noen plastfilmtyper (for eksempel polystyren) er også gode valg. Høy-k-keramikk, papir og elektrolytt har for store tap eller for ustabil kapasitans til dette formålet."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 2,
+        "section_id": "s2-19",
+        "printed_pages": [
+          "2-7"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "4d744e4826453ddc"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T03:12:11+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "873219e96610f3460a24606438d66ceff45cc71fa274003bf4a173d78bd4389d",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:19:31+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "248961d6f95dd00a802504fc88e8abe2a0cbcadc66c441d332c36f431c559fe9",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:30:02+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "248961d6f95dd00a802504fc88e8abe2a0cbcadc66c441d332c36f431c559fe9",
+          "note": "Runde 2: faglig kontrollert av AI (ChatGPT), 11 spørsmål rettet.",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-24T03:09:09+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "248961d6f95dd00a802504fc88e8abe2a0cbcadc66c441d332c36f431c559fe9",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T09:30:02+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T09:30:02+00:00",
+        "content_sha256": "248961d6f95dd00a802504fc88e8abe2a0cbcadc66c441d332c36f431c559fe9",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

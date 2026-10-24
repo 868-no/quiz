@@ -1,0 +1,238 @@
+{
+  "id": "q-0171",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 4,
+      "section_ids": [
+        "s4-29",
+        "s4-30"
+      ],
+      "topic_ids": [
+        "sluttforsterker"
+      ],
+      "learning_objective": "Kjenne oppgavene til de to variable kondensatorene i pi-filteret i et rørsluttrinn: avstemming til resonans og tilpasning til lasten.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "Et ",
+          {
+            "term": "sluttforsterker",
+            "text": "sluttrinn"
+          },
+          " med radiorør har et ",
+          {
+            "term": "pi-filter",
+            "text": "pi-filter"
+          },
+          " mellom anoden og antenneutgangen. ",
+          {
+            "term": "filter",
+            "text": "Filteret"
+          },
+          " består av en variabel ",
+          {
+            "term": "kondensator",
+            "text": "kondensator"
+          },
+          " på anodesiden, en spole med uttak for de ulike båndene og en variabel kondensator på antennesiden."
+        ]
+      ],
+      "stem": [
+        [
+          "Hva er hovedoppgaven til den ",
+          {
+            "term": "dreiekondensator",
+            "text": "variable kondensatoren"
+          },
+          " på anodesiden?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Å avstemme utgangskretsen til resonans på sendefrekvensen"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Å tilpasse sluttrinnet til impedansen i antennekabelen"
+          ],
+          "feedback": [
+            [
+              "Tilpasningen til lasten justeres hovedsakelig med ",
+              {
+                "term": "spole",
+                "text": "spolen"
+              },
+              " og kondensatoren på antennesiden. Kondensatoren på anodesiden brukes til å finne resonans."
+            ]
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Å hindre at anodespenningen når fram til antennen"
+          ],
+          "feedback": [
+            [
+              "Det er en egen fast blokkondensator foran filteret som sperrer for ",
+              {
+                "term": "likespenning",
+                "text": "likespenningen"
+              },
+              ". Den variable kondensatoren justeres ikke for dette."
+            ]
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Å stille inn forspenningen på styregitteret til røret"
+          ],
+          "feedback": [
+            [
+              {
+                "term": "forspenning",
+                "text": "Forspenningen"
+              },
+              " hører til inngangskretsen til røret. Pi-filteret sitter på utgangssiden og påvirker bare RF-signalet ut."
+            ]
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "I et pi-filter justeres kondensatoren på anodesiden (ofte merket «TUNE» eller «PLATE») slik at kretsen kommer i ",
+          {
+            "term": "resonans",
+            "text": "resonans"
+          },
+          " på sendefrekvensen. Da faller anodestrømmen til et tydelig minimum."
+        ],
+        [
+          "Spolen og kondensatoren på antennesiden (ofte merket «LOAD») bestemmer hvor hardt røret belastes, altså ",
+          {
+            "term": "tilpasning",
+            "text": "tilpasningen"
+          },
+          " av den høye ",
+          {
+            "term": "impedans",
+            "text": "impedansen"
+          },
+          " ved anoden til 50 Ω. Filteret demper samtidig ",
+          {
+            "term": "harmoniske",
+            "text": "harmoniske"
+          },
+          ". Fordi de to innstillingene påvirker hverandre, må de justeres vekselvis hver gang ",
+          {
+            "term": "frekvens",
+            "text": "frekvensen"
+          },
+          " endres."
+        ]
+      ],
+      "glossary_after_answer": [
+        "pi-filter"
+      ],
+      "study_reference": {
+        "chapter": 4,
+        "section_id": "s4-29",
+        "printed_pages": [
+          "4-15",
+          "4-16"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "fa415aee5adf4d11",
+          "7939f52ee16e7a09"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T03:11:44+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "fbf892ede0c8f9349fe6e5e9c21eebc82bedaabe48de05ecdc65edbf620e954a",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:19:31+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "f2deb00afa64433f92bd4c2f7876d5b097cfff1431a84d5c1fd6afa6440e1126",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:30:07+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "f2deb00afa64433f92bd4c2f7876d5b097cfff1431a84d5c1fd6afa6440e1126",
+          "note": "Runde 2: faglig kontrollert av AI (ChatGPT), 11 spørsmål rettet.",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-24T03:09:13+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "f2deb00afa64433f92bd4c2f7876d5b097cfff1431a84d5c1fd6afa6440e1126",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T09:30:07+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T09:30:07+00:00",
+        "content_sha256": "f2deb00afa64433f92bd4c2f7876d5b097cfff1431a84d5c1fd6afa6440e1126",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

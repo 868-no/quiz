@@ -1,0 +1,222 @@
+{
+  "id": "q-0157",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "hard",
+      "chapter": 3,
+      "section_ids": [
+        "s3-29"
+      ],
+      "topic_ids": [
+        "felteffekttransistorer"
+      ],
+      "learning_objective": "Skille mellom felteffekttransistorer i tømmingsmodus og forsterkningsmodus.",
+      "priority": "normal",
+      "context": [
+        [
+          "To N-kanal-",
+          {
+            "term": "felteffekttransistor",
+            "text": "MOSFET"
+          },
+          "-er får samme positive spenning mellom drain og source. ",
+          {
+            "term": "spenning",
+            "text": "Spenningen"
+          },
+          " mellom gate og source er 0 V på begge. Den ene er laget for ",
+          {
+            "term": "tommingsmodus",
+            "text": "tømmingsmodus"
+          },
+          " (depletion mode), den andre for ",
+          {
+            "term": "forsterkningsmodus",
+            "text": "forsterkningsmodus"
+          },
+          " (enhancement mode)."
+        ]
+      ],
+      "stem": [
+        "Hva er det mest sannsynlige resultatet?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Bare den i tømmingsmodus leder nevneverdig; den andre trenger positiv gatespenning."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Bare den i forsterkningsmodus leder nevneverdig; den andre trenger positiv gatespenning."
+          ],
+          "feedback": [
+            "Det er omvendt. Tømmingsmodus har en åpen kanal allerede ved 0 V og styres ved å gjøre gate negativ."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Begge leder like mye, fordi gate ikke trekker strøm og derfor ikke påvirker kanalen."
+          ],
+          "feedback": [
+            "Gate trekker nesten ingen strøm, men spenningen på gate styrer kanalen. De to typene er bygd ulikt og oppfører seg ulikt ved 0 V."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Ingen av dem leder før gate gjøres negativ i forhold til source."
+          ],
+          "feedback": [
+            "På en N-kanal-FET gjør negativ gatespenning tømmingssjiktet bredere og kanalen smalere. Det reduserer strømmen i stedet for å starte den."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "I ",
+          {
+            "term": "tommingsmodus",
+            "text": "tømmingsmodus"
+          },
+          " finnes det en ledende kanal mellom drain og source selv når gate ligger på 0 V. Gjøres gate negativ, vokser ",
+          {
+            "term": "sperresjikt",
+            "text": "tømmingssjiktet"
+          },
+          " inn i kanalen og ",
+          {
+            "term": "strom",
+            "text": "strømmen"
+          },
+          " avtar, helt til kanalen knipes av."
+        ],
+        [
+          "I en MOSFET av forsterkningstypen finnes det normalt ingen ledende kanal mellom drain og source når gatespenningen er 0 V. Når gate gjøres tilstrekkelig positiv i forhold til source, dannes en ledende kanal, og ",
+          {
+            "term": "transistor",
+            "text": "transistoren"
+          },
+          " kan føre strøm."
+        ],
+        [
+          "Derfor vil MOSFET-en i tømmingsmodus normalt lede ved 0 V gatespenning, mens MOSFET-en i ",
+          {
+            "term": "forsterkningsmodus",
+            "text": "forsterkningsmodus"
+          },
+          " normalt er sperret."
+        ]
+      ],
+      "glossary_after_answer": [
+        "forsterkningsmodus",
+        "tommingsmodus"
+      ],
+      "study_reference": {
+        "chapter": 3,
+        "section_id": "s3-29",
+        "printed_pages": [
+          "3-12",
+          "3-13"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "448d78eddb48dd6e"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T03:13:24+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "4ade6b72241b7a2794771f16c61fb1a3075cfd78b3bcbba1114cd224edb83ee8",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:19:31+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "4ff9b9dc60680975915cbd9a22bff524877a17ed0ae07a0313db6adcf15a2843",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:23:29+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "fb852bd498e7815e5e5a473f718291dfcc49962decfadb50698e678d451d7460",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:30:06+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "fb852bd498e7815e5e5a473f718291dfcc49962decfadb50698e678d451d7460",
+          "note": "Runde 2: faglig kontrollert av AI (ChatGPT), 11 spørsmål rettet.",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-24T03:09:23+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "fb852bd498e7815e5e5a473f718291dfcc49962decfadb50698e678d451d7460",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T09:30:06+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T09:30:06+00:00",
+        "content_sha256": "fb852bd498e7815e5e5a473f718291dfcc49962decfadb50698e678d451d7460",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

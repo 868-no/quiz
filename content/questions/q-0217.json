@@ -1,0 +1,227 @@
+{
+  "id": "q-0217",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "easy",
+      "chapter": 6,
+      "section_ids": [
+        "s6-12"
+      ],
+      "topic_ids": [
+        "superheterodyn"
+      ],
+      "learning_objective": "Forstå at den avstemte lasten i et blandetrinn plukker ut mellomfrekvensen blant blandingsproduktene.",
+      "priority": "normal",
+      "context": [
+        [
+          "I en ",
+          {
+            "term": "blander",
+            "text": "blander"
+          },
+          " med én ",
+          {
+            "term": "transistor",
+            "text": "transistor"
+          },
+          " føres RF-signalet til basis og signalet fra ",
+          {
+            "term": "lokaloscillator",
+            "text": "lokaloscillatoren"
+          },
+          " til emitteren. Transistoren arbeider ikke-lineært og lager mange nye ",
+          {
+            "term": "frekvens",
+            "text": "frekvenser"
+          },
+          "."
+        ]
+      ],
+      "stem": [
+        [
+          "Hva sørger for at det i hovedsak bare er ",
+          {
+            "term": "mellomfrekvens",
+            "text": "mellomfrekvensen"
+          },
+          " som går videre fra blanderen?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Kollektorlasten er en krets som er avstemt til mellomfrekvensen"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Lokaloscillatoren er koblet til emitteren og ikke til basis"
+          ],
+          "feedback": [
+            [
+              "Den koblingen gjør at mindre oscillatorsignal lekker ut til ",
+              {
+                "term": "antenne",
+                "text": "antennen"
+              },
+              ". Den velger ikke ut noen frekvens på utgangen."
+            ]
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Transistoren er forspent i klasse A, slik at den er helt lineær"
+          ],
+          "feedback": [
+            [
+              "En lineær transistor ville ikke blandet signalene i det hele tatt. Blanderen må være ikke-lineær, ofte ",
+              {
+                "term": "forspenning",
+                "text": "forspent"
+              },
+              " nær ",
+              {
+                "term": "forsterkerklasse",
+                "text": "klasse B"
+              },
+              "."
+            ]
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "RF-signalet filtreres før basis, slik at bare én frekvens kommer inn"
+          ],
+          "feedback": [
+            [
+              "Et ",
+              {
+                "term": "filter",
+                "text": "filter"
+              },
+              " foran blanderen begrenser hva som kommer inn, men blandingsproduktene oppstår i transistoren og må skilles ut etter den."
+            ]
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Blanderen lager blant annet sum- og differansefrekvenser av RF-signalet og lokaloscillatoren. Kollektorlasten er en ",
+          {
+            "term": "avstemt-krets",
+            "text": "avstemt krets"
+          },
+          " for ",
+          {
+            "term": "mellomfrekvens",
+            "text": "mellomfrekvensen"
+          },
+          ". Den gir stor spenning bare nær denne frekvensen og demper de andre ",
+          {
+            "term": "intermodulasjon",
+            "text": "blandingsproduktene"
+          },
+          "."
+        ],
+        "Modulasjonen i RF-signalet følger med uendret over på mellomfrekvensen. Blandere med en FET som har to styreelektroder (dual gate) virker etter samme prinsipp: RF-signalet og oscillatorsignalet går inn på hver sin gate, og lasten er avstemt til mellomfrekvensen."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 6,
+        "section_id": "s6-12",
+        "printed_pages": [
+          "6-7"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "674a7e5e1667c065"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T03:12:57+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "1c6823685346fb26ec6b46800c741ef21e194e7ad20d7df11ecb454765d22f23",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:19:31+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "88b39f247376e3fbed68d5774e6176aef1ecdb45343e429f28ecb502fac0e33b",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:30:16+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "88b39f247376e3fbed68d5774e6176aef1ecdb45343e429f28ecb502fac0e33b",
+          "note": "Runde 2: faglig kontrollert av AI (ChatGPT), 11 spørsmål rettet.",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-24T03:09:21+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "88b39f247376e3fbed68d5774e6176aef1ecdb45343e429f28ecb502fac0e33b",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T09:30:16+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T09:30:16+00:00",
+        "content_sha256": "88b39f247376e3fbed68d5774e6176aef1ecdb45343e429f28ecb502fac0e33b",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

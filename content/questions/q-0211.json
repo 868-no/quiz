@@ -1,0 +1,182 @@
+{
+  "id": "q-0211",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "easy",
+      "chapter": 6,
+      "section_ids": [
+        "s6-18"
+      ],
+      "topic_ids": [
+        "agc"
+      ],
+      "learning_objective": "Skille mellom AGC-ens reaksjonstid ved økende signalstyrke og tilbakegangstid ved avtakende signalstyrke.",
+      "priority": "normal",
+      "context": [
+        [
+          "Du lytter med hodetelefoner på en svak stasjon. Plutselig begynner en kraftig stasjon å sende på samme ",
+          {
+            "term": "frekvens",
+            "text": "frekvens"
+          },
+          ", og signalet på inngangen til ",
+          {
+            "term": "mottaker",
+            "text": "mottakeren"
+          },
+          " blir mange ganger sterkere."
+        ]
+      ],
+      "stem": [
+        [
+          "Hvilken egenskap ved ",
+          {
+            "term": "agc",
+            "text": "AGC"
+          },
+          "-en er viktigst for at lyden ikke skal bli plagsomt sterk?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "At forsterkningen reduseres svært raskt når signalet øker"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "At forsterkningen øker svært raskt når signalet blir svakere"
+          ],
+          "feedback": [
+            "Det gjelder hvor fort følsomheten kommer tilbake etter at signalet har forsvunnet. Det har ingen betydning for et signal som nettopp har økt."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "At AGC-en er slått av, slik at forsterkningen holder seg fast"
+          ],
+          "feedback": [
+            "Uten AGC beholder mottakeren full forsterkning, og den kraftige stasjonen kommer ut med fullt lydtrykk."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "At AGC-en reagerer langsomt, slik at lydnivået endres jevnt"
+          ],
+          "feedback": [
+            "Reagerer AGC-en langsomt, får du et kraftig smell i ørene før forsterkningen rekker å gå ned."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Når et sterkt signal plutselig dukker opp, bør AGC redusere forsterkningen raskt for å hindre kraftige lydtopper og overstyring.",
+        [
+          "Hvor fort forsterkningen øker igjen når signalet blir svakere, avhenger av mottaksforholdene og modulasjonstypen. Langsom tilbakegang kan gi roligere lytting på ",
+          {
+            "term": "ssb",
+            "text": "SSB"
+          },
+          ", mens raskere tilbakegang kan være nyttig ved enkelte andre signaltyper."
+        ],
+        "Mange mottakere har valgene FAST, SLOW og OFF. I slike mottakere er det ofte først og fremst AGC-ens tilbakegangstid som endres mellom FAST og SLOW."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 6,
+        "section_id": "s6-18",
+        "printed_pages": [
+          "6-11"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "e3cd74c5546fc99b"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T03:12:42+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "df72ce63c0dee517009da7713614d021ee47cf6df09f9086884f10739997021b",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:19:31+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "da529b10979baccc7a6f789af26ab32bc2cb8c29c7d78d5f80b9e934b0d812f0",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:23:29+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "a86b0c2b1346bfcab01d61b0c436c34f5ea810b431ef47d34b03ba32c97eea44",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:30:14+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "a86b0c2b1346bfcab01d61b0c436c34f5ea810b431ef47d34b03ba32c97eea44",
+          "note": "Runde 2: faglig kontrollert av AI (ChatGPT), 11 spørsmål rettet.",
+          "acknowledged": []
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-24T03:09:20+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "a86b0c2b1346bfcab01d61b0c436c34f5ea810b431ef47d34b03ba32c97eea44",
+        "errors": [],
+        "warnings": [],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T09:30:14+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T09:30:14+00:00",
+        "content_sha256": "a86b0c2b1346bfcab01d61b0c436c34f5ea810b431ef47d34b03ba32c97eea44",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

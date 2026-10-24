@@ -1,0 +1,330 @@
+{
+  "id": "q-0133",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "calculation",
+      "difficulty": "hard",
+      "chapter": 2,
+      "section_ids": [
+        "s2-15"
+      ],
+      "topic_ids": [
+        "ohms-lov"
+      ],
+      "learning_objective": "Bestemme den indre resistansen i en spenningskilde ut fra spenningsfallet ved belastning.",
+      "priority": "normal",
+      "context": [
+        [
+          "Et batteri har ",
+          {
+            "q": 12.6,
+            "u": "V"
+          },
+          " mellom polene når ingen ",
+          {
+            "term": "strom",
+            "text": "strøm"
+          },
+          " trekkes. Når en sender kobles til og trekker ",
+          {
+            "q": 8,
+            "u": "A"
+          },
+          ", måles ",
+          {
+            "q": 11.4,
+            "u": "V"
+          },
+          " mellom polene. Regn batteriet som en ideell spenningskilde ",
+          {
+            "term": "seriekobling",
+            "text": "i serie"
+          },
+          " med en indre ",
+          {
+            "term": "resistans",
+            "text": "resistans"
+          },
+          "."
+        ]
+      ],
+      "stem": [
+        [
+          "Hvor stor er den ",
+          {
+            "term": "indre-resistans",
+            "text": "indre resistansen"
+          },
+          " i batteriet?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 0.15,
+              "u": "Ω"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 1.4,
+              "u": "Ω"
+            }
+          ],
+          "feedback": [
+            [
+              "Dette er 11,4 V delt på 8 A, altså resistansen i lasten (",
+              {
+                "term": "sender",
+                "text": "senderen"
+              },
+              "). Den indre resistansen finnes fra spenningsfallet inne i batteriet."
+            ]
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 1.6,
+              "u": "Ω"
+            }
+          ],
+          "feedback": [
+            "Dette er tomgangsspenningen delt på strømmen, altså den samlede resistansen i kretsen. Den indre resistansen er bare en liten del av den."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 6.7,
+              "u": "Ω"
+            }
+          ],
+          "feedback": [
+            [
+              "Her er strømmen delt på spenningsfallet. ",
+              {
+                "term": "ohms-lov",
+                "text": "Ohms lov"
+              },
+              " gir resistans som spenning delt på strøm, ikke omvendt."
+            ]
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Uten belastning går det ingen strøm, og polspenningen er lik kildespenningen (EMS). Med belastning blir en del av spenningen liggende over den indre resistansen."
+        ],
+        {
+          "steps": [
+            [
+              {
+                "term": "spenning",
+                "text": "Spenningsfall"
+              },
+              " i batteriet: ",
+              {
+                "math": [
+                  "ΔU",
+                  "=",
+                  {
+                    "q": 12.6,
+                    "u": "V"
+                  },
+                  "−",
+                  {
+                    "q": 11.4,
+                    "u": "V"
+                  },
+                  "=",
+                  {
+                    "q": 1.2,
+                    "u": "V"
+                  }
+                ]
+              }
+            ],
+            [
+              "Indre resistans: ",
+              {
+                "math": [
+                  "r",
+                  "=",
+                  {
+                    "frac": [
+                      [
+                        "ΔU"
+                      ],
+                      [
+                        "I"
+                      ]
+                    ]
+                  },
+                  "=",
+                  {
+                    "frac": [
+                      [
+                        {
+                          "q": 1.2,
+                          "u": "V"
+                        }
+                      ],
+                      [
+                        {
+                          "q": 8,
+                          "u": "A"
+                        }
+                      ]
+                    ]
+                  },
+                  "=",
+                  {
+                    "q": 0.15,
+                    "u": "Ω"
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        {
+          "note": [
+            "Jo lavere indre resistans, desto mindre synker spenningen når strømmen øker. En god strømforsyning holder spenningen nesten konstant opp til største oppgitte strøm, og ser derfor ut til å ha svært lav indre resistans."
+          ]
+        }
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 2,
+        "section_id": "s2-15",
+        "printed_pages": [
+          "2-6"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "8217b92eafdb6c13",
+          "4b09af4a46d73090"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T03:12:11+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "dcdde4234746d88335e45cff10958af41cf9fc8d5b93b52b453cc1c6977c71e9",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:19:31+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "74aaf179abda784520d6ec96a4d25bdbad51ae45ea7623b87c974301cab866b8",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:30:01+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "74aaf179abda784520d6ec96a4d25bdbad51ae45ea7623b87c974301cab866b8",
+          "note": "Runde 2: faglig kontrollert av AI (ChatGPT), 11 spørsmål rettet.",
+          "acknowledged": [
+            "figures",
+            "ocr",
+            "pages"
+          ]
+        }
+      ],
+      "calculation": {
+        "formula": "ohms_law_resistance",
+        "inputs": {
+          "U": [
+            1.2,
+            "V"
+          ],
+          "I": [
+            8,
+            "A"
+          ]
+        },
+        "answer": [
+          0.15,
+          "Ω"
+        ],
+        "answer_symbol": "r",
+        "sig_figs": 2
+      },
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-24T03:09:09+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "74aaf179abda784520d6ec96a4d25bdbad51ae45ea7623b87c974301cab866b8",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: equation, numeric_low_conf. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "pages",
+            "detail": "cited printed page number is uncertain in the source (page_number_conflict, printed_page_status=inferred). Confirm the page in the book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T09:30:01+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T09:30:01+00:00",
+        "content_sha256": "74aaf179abda784520d6ec96a4d25bdbad51ae45ea7623b87c974301cab866b8",
+        "acknowledged_hazards": [
+          "figures",
+          "ocr",
+          "pages"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

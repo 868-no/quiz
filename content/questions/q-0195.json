@@ -1,0 +1,318 @@
+{
+  "id": "q-0195",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "calculation",
+      "difficulty": "easy",
+      "chapter": 5,
+      "section_ids": [
+        "s5-17"
+      ],
+      "topic_ids": [
+        "harmoniske"
+      ],
+      "learning_objective": "Forstå at mellomtrinn i en sender med frekvensmultiplikatorer arbeider på andre frekvenser enn sendefrekvensen, og regne ut frekvensen etter en multiplikator.",
+      "priority": "normal",
+      "context": [
+        [
+          "Figuren viser en enkel ",
+          {
+            "term": "frekvensmodulasjon",
+            "text": "FM"
+          },
+          "-",
+          {
+            "term": "sender",
+            "text": "sender"
+          },
+          " for 2 m. En krystalloscillator på ",
+          {
+            "q": 12,
+            "u": "MHz"
+          },
+          " følges av to ",
+          {
+            "term": "frekvensmultiplikator",
+            "text": "frekvensmultiplikator"
+          },
+          "-trinn, først ×3 og deretter ×4, slik at sluttfrekvensen blir ",
+          {
+            "q": 144,
+            "u": "MHz"
+          },
+          ". Trinnene er ikke skjermet fra hverandre, så signal fra mellomtrinnene kan stråle direkte ut av kabinettet."
+        ]
+      ],
+      "stem": [
+        [
+          "På hvilken ",
+          {
+            "term": "frekvens",
+            "text": "frekvens"
+          },
+          " arbeider det uthevede trinnet (×3)?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 48,
+              "u": "MHz"
+            }
+          ],
+          "feedback": [
+            "Det er 4 · 12 MHz. Det fremhevede trinnet multipliserer med 3, og ×4-trinnet kommer først etter det."
+          ]
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 36,
+              "u": "MHz"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 15,
+              "u": "MHz"
+            }
+          ],
+          "feedback": [
+            "Du har lagt til 3 i stedet for å multiplisere. En multiplikator lager en harmonisk, altså et helt multiplum av frekvensen inn."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 4,
+              "u": "MHz"
+            }
+          ],
+          "feedback": [
+            "En frekvensmultiplikator øker frekvensen. Å dele 12 MHz på 3 gir en frekvens under oscillatorfrekvensen."
+          ]
+        }
+      ],
+      "correct": [
+        "o2"
+      ],
+      "explanation": [
+        [
+          "En ",
+          {
+            "term": "frekvensmultiplikator",
+            "text": "frekvensmultiplikator"
+          },
+          " velger ut en ",
+          {
+            "term": "harmoniske",
+            "text": "harmonisk"
+          },
+          " av signalet den får inn. Det første trinnet tar ut den tredje harmoniske av oscillatorsignalet:"
+        ],
+        [
+          {
+            "math": [
+              "f_ut",
+              "=",
+              "3",
+              "·",
+              {
+                "q": 12,
+                "u": "MHz"
+              },
+              "=",
+              {
+                "q": 36,
+                "u": "MHz"
+              }
+            ]
+          }
+        ],
+        [
+          "Neste trinn gir 4 · 36 MHz = 144 MHz. Både 12 MHz og 36 MHz er altså frekvenser som finnes inne i senderen, men som ikke skal sendes ut. Uten ",
+          {
+            "term": "skjerming",
+            "text": "skjerming"
+          },
+          " kan de stråle direkte fra trinnene og forstyrre andre tjenester – utgangsfilteret hjelper ikke mot det som lekker ut før ",
+          {
+            "term": "filter",
+            "text": "filteret"
+          },
+          "."
+        ],
+        [
+          "Tiltak er skjerming av hvert trinn, god koaksialkabel for signalene mellom de skjermede trinnene, et metallkabinett og RF-sperrer og avkobling på ",
+          {
+            "term": "strom",
+            "text": "strøm"
+          },
+          "- og styreledninger."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 5,
+        "section_id": "s5-17",
+        "printed_pages": [
+          "5-7"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "dcc7dbf333789226"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T03:12:23+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "cfca60f80ef90511543ae0378eb9510376c17c2f9ac25507b43373e9d1b1a431",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:19:31+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "29bc929b5005928b18c8effd2909d6ee30f941f82e44655379556e346e548f78",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:30:12+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "29bc929b5005928b18c8effd2909d6ee30f941f82e44655379556e346e548f78",
+          "note": "Runde 2: faglig kontrollert av AI (ChatGPT), 11 spørsmål rettet.",
+          "acknowledged": []
+        }
+      ],
+      "calculation": {
+        "formula": "harmonic_frequency",
+        "inputs": {
+          "f": [
+            12,
+            "MHz"
+          ],
+          "n": [
+            3,
+            ""
+          ]
+        },
+        "answer": [
+          36,
+          "MHz"
+        ],
+        "answer_symbol": "f_ut",
+        "sig_figs": 2
+      },
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-24T03:09:13+00:00"
+      },
+      "visual": {
+        "template": "block-diagram",
+        "version": 1,
+        "params": {
+          "chain": [
+            {
+              "kind": "crystal_osc"
+            },
+            {
+              "kind": "multiplier",
+              "label": "Multiplikator ×3",
+              "highlight": true
+            },
+            {
+              "kind": "multiplier",
+              "label": "Multiplikator ×4"
+            },
+            {
+              "kind": "power_amp"
+            },
+            {
+              "kind": "bandpass_filter"
+            },
+            {
+              "kind": "antenna"
+            }
+          ],
+          "edge_labels": [
+            {
+              "after": 0,
+              "text": "12 MHz"
+            },
+            {
+              "after": 2,
+              "text": "144 MHz"
+            }
+          ]
+        },
+        "params_after": {
+          "edge_labels": [
+            {
+              "after": 0,
+              "text": "12 MHz"
+            },
+            {
+              "after": 1,
+              "text": "36 MHz"
+            },
+            {
+              "after": 2,
+              "text": "144 MHz"
+            }
+          ]
+        },
+        "caption": "FM-sender for 2 m med to frekvensmultiplikatorer"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "29bc929b5005928b18c8effd2909d6ee30f941f82e44655379556e346e548f78",
+        "errors": [],
+        "warnings": [],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T09:30:12+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T09:30:12+00:00",
+        "content_sha256": "29bc929b5005928b18c8effd2909d6ee30f941f82e44655379556e346e548f78",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

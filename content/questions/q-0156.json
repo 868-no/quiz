@@ -1,0 +1,194 @@
+{
+  "id": "q-0156",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "easy",
+      "chapter": 3,
+      "section_ids": [
+        "s3-29"
+      ],
+      "topic_ids": [
+        "felteffekttransistorer"
+      ],
+      "learning_objective": "Vite hvordan statisk følsomme komponenter som MOSFET skal håndteres.",
+      "priority": "normal",
+      "context": [
+        [
+          "Du skal bytte en ",
+          {
+            "term": "felteffekttransistor",
+            "text": "MOSFET"
+          },
+          " i ",
+          {
+            "term": "forforsterker",
+            "text": "forforsterkeren"
+          },
+          " i en ",
+          {
+            "term": "mottaker",
+            "text": "mottaker"
+          },
+          ". Den nye komponenten ligger i en ledende antistatisk pose. Mottakeren er koblet fra strømnettet."
+        ]
+      ],
+      "stem": [
+        "Hva er den beste fremgangsmåten?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Bruk et jordet antistatisk armbånd, og ta komponenten ut av posen først når den skal monteres."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Ta komponenten ut av posen i god tid, slik at statisk ladning i posen rekker å lekke bort."
+          ],
+          "feedback": [
+            "Posen beskytter komponenten. Den er svakt ledende og holder alle beina på samme potensial. Komponenten bør ligge i posen til den skal monteres."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Bruk et armbånd koblet rett til jord uten seriemotstand, så ladningen ledes bort raskest mulig."
+          ],
+          "feedback": [
+            [
+              "Armbåndet skal ha en seriemotstand på noen megaohm. Den begrenser ",
+              {
+                "term": "strom",
+                "text": "strømmen"
+              },
+              " gjennom kroppen om du skulle komme borti noe spenningsførende."
+            ]
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Det trengs ingen særlige tiltak, fordi gate tåler flere tusen volt uten skade."
+          ],
+          "feedback": [
+            "Det isolerende laget under gate er svært tynt. Noen få titalls volt kan slå det igjennom, og en person kan lett være ladet opp til flere tusen volt."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "I en MOSFET er gate skilt fra kanalen med et ekstremt tynt isolerende lag. Det gir svært høy inngangsimpedans, men laget kan ødelegges av ",
+          {
+            "term": "spenning",
+            "text": "spenninger"
+          },
+          " ned mot 5–10 V. Statisk elektrisitet fra kroppen kan være mange kilovolt, selv om du ikke kjenner noe."
+        ],
+        [
+          "Et antistatisk armbånd kobles til et jordpunkt gjennom en ",
+          {
+            "term": "motstand",
+            "text": "motstand"
+          },
+          " på noen megaohm. Det holder deg på samme potensial som arbeidsflaten uten å gi en farlig strømvei. Ikke bruk armbåndet når du arbeider på utstyr som er tilkoblet og har høy spenning."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 3,
+        "section_id": "s3-29",
+        "printed_pages": [
+          "3-12",
+          "3-13"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "448d78eddb48dd6e"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T03:13:24+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "3e38bcb60fff5a072d75576000ff4b60118aeadcbdcdcc8834d7051022bfa6c4",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:19:31+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "0c7ef4983ace91c65d5920b22f733d2d744920fa0b6bbdc3234a48b37b8b61a1",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:30:05+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "0c7ef4983ace91c65d5920b22f733d2d744920fa0b6bbdc3234a48b37b8b61a1",
+          "note": "Runde 2: faglig kontrollert av AI (ChatGPT), 11 spørsmål rettet.",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-24T03:09:23+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "0c7ef4983ace91c65d5920b22f733d2d744920fa0b6bbdc3234a48b37b8b61a1",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T09:30:05+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T09:30:05+00:00",
+        "content_sha256": "0c7ef4983ace91c65d5920b22f733d2d744920fa0b6bbdc3234a48b37b8b61a1",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

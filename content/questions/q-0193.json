@@ -1,0 +1,237 @@
+{
+  "id": "q-0193",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 5,
+      "section_ids": [
+        "s5-15"
+      ],
+      "topic_ids": [
+        "senderfeil",
+        "frekvensstabilitet"
+      ],
+      "learning_objective": "Kjenne igjen fasestøy fra en frekvenssyntetisator som et støyskjørt tett inntil bærebølgen, og forstå at det forstyrrer nabofrekvensene.",
+      "priority": "normal",
+      "context": [
+        [
+          "En VHF-sender får frekvensen sin fra en ",
+          {
+            "term": "frekvenssyntetisator",
+            "text": "frekvenssyntetisator"
+          },
+          " med ",
+          {
+            "term": "faselaast-sloyfe",
+            "text": "PLL"
+          },
+          " og ",
+          {
+            "term": "vco",
+            "text": "VCO"
+          },
+          ". Du ser på signalet med en spektrumanalysator mens ",
+          {
+            "term": "sender",
+            "text": "senderen"
+          },
+          " sender en umodulert ",
+          {
+            "term": "baerebolge",
+            "text": "bærebølge"
+          },
+          ". I stedet for én smal, ren strek viser skjermen et «skjørt» av støy som ligger tett inntil bærebølgen på begge sider og avtar gradvis utover."
+        ]
+      ],
+      "stem": [
+        "Hva er dette, og hvorfor er det et problem?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Harmoniske av sendefrekvensen, som forstyrrer på andre bånd lenger opp."
+          ],
+          "feedback": [
+            [
+              {
+                "term": "harmoniske",
+                "text": "Harmoniske"
+              },
+              " ligger på hele multipler av sendefrekvensen, langt unna bærebølgen. De gir ikke et støyskjørt tett inntil den."
+            ]
+          ]
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Fasestøy fra oscillatoren, som kan dekke svake signaler på nabofrekvensene."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Nøkkelklikk fra nøklingen, som bare høres når senderen slås av og på."
+          ],
+          "feedback": [
+            [
+              {
+                "term": "nokkelklikk",
+                "text": "Nøkkelklikk"
+              },
+              " oppstår når signalet slås raskt av og på. Her sender senderen en jevn, umodulert bærebølge."
+            ]
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Parasittsvingninger i sluttrinnet, som gir ett sterkt signal langt unna."
+          ],
+          "feedback": [
+            [
+              {
+                "term": "parasittsvingning",
+                "text": "Parasittsvingninger"
+              },
+              " gir typisk et tydelig, separat signal på en helt annen frekvens, ikke et jevnt støyskjørt rundt bærebølgen."
+            ]
+          ]
+        }
+      ],
+      "correct": [
+        "o2"
+      ],
+      "explanation": [
+        [
+          {
+            "term": "fasestoy",
+            "text": "Fasestøy"
+          },
+          " betyr at fasen (og dermed ",
+          {
+            "term": "frekvens",
+            "text": "frekvensen"
+          },
+          ") til en ",
+          {
+            "term": "oscillator",
+            "text": "oscillator"
+          },
+          " vandrer litt tilfeldig og raskt fram og tilbake. Det sprer en del av ",
+          {
+            "term": "effekt",
+            "text": "effekten"
+          },
+          " ut i støyliknende ",
+          {
+            "term": "sidebaand",
+            "text": "sidebånd"
+          },
+          " tett inntil bærebølgen."
+        ],
+        "Et sterkt signal med mye fasestøy kan dekke over svake stasjoner på frekvenser like ved, både hos deg selv og hos andre. Ved siden av støyskjørtet kan en syntetisator også gi enkeltstående sidebånd i fast avstand fra bærebølgen, dannet av referansefrekvensen i fasekomparatoren.",
+        "Slike problemer må løses allerede når senderen konstrueres, blant annet med god filtrering av styrespenningen til VCO-en og en støysvak referanse."
+      ],
+      "glossary_after_answer": [
+        "frekvenssyntetisator"
+      ],
+      "study_reference": {
+        "chapter": 5,
+        "section_id": "s5-15",
+        "printed_pages": [
+          "5-6",
+          "5-7"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "c1d811ac0ffb8ef4"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T03:12:23+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "04b24edd2b53888395b0a3f76f4136bed51cb561fa684374675a9ef955fd4d84",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:19:31+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "2adeb285582f328ecc1c2328e7ae31738280eca3f09bcebb71c50ae6d849b456",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:30:11+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "2adeb285582f328ecc1c2328e7ae31738280eca3f09bcebb71c50ae6d849b456",
+          "note": "Runde 2: faglig kontrollert av AI (ChatGPT), 11 spørsmål rettet.",
+          "acknowledged": [
+            "figures",
+            "ocr"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-24T03:09:13+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "2adeb285582f328ecc1c2328e7ae31738280eca3f09bcebb71c50ae6d849b456",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: equation, numeric_low_conf. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T09:30:11+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T09:30:11+00:00",
+        "content_sha256": "2adeb285582f328ecc1c2328e7ae31738280eca3f09bcebb71c50ae6d849b456",
+        "acknowledged_hazards": [
+          "figures",
+          "ocr"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

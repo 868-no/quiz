@@ -1,0 +1,196 @@
+{
+  "id": "q-0197",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "hard",
+      "chapter": 5,
+      "section_ids": [
+        "s5-20"
+      ],
+      "topic_ids": [
+        "senderfeil"
+      ],
+      "learning_objective": "Vite at sidebåndene i et FM-signal ligger med avstand lik modulasjonsfrekvensen, og at for stor deviasjon gjør flere sidebånd kraftige.",
+      "priority": "normal",
+      "context": [
+        [
+          "Du kontrollerer en ",
+          {
+            "term": "frekvensmodulasjon",
+            "text": "FM"
+          },
+          "-sender med en spektrumanalysator. ",
+          {
+            "term": "sender",
+            "text": "Senderen"
+          },
+          " moduleres med en ren sinustone på ",
+          {
+            "q": 1.5,
+            "u": "kHz"
+          },
+          ", og ",
+          {
+            "term": "deviasjon",
+            "text": "spissdeviasjonen"
+          },
+          " er stilt altfor høyt. Skjermen viser ",
+          {
+            "term": "baerebolge",
+            "text": "bærebølgen"
+          },
+          " og mange ",
+          {
+            "term": "sidebaand",
+            "text": "sidebånd"
+          },
+          " som smale linjer på hver side av den."
+        ]
+      ],
+      "stem": [
+        "Hvor stor er avstanden mellom to linjer som ligger ved siden av hverandre i spekteret?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "3 kHz, det dobbelte av frekvensen til tonen"
+          ],
+          "feedback": [
+            "Ett par sidebånd spenner over to ganger tonefrekvensen, men avstanden fra én linje til den neste er bare én tonefrekvens."
+          ]
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Like stor som deviasjonen, uansett hvilken tone som brukes"
+          ],
+          "feedback": [
+            "Deviasjonen bestemmer hvor mange sidebånd som blir kraftige, og hvor sterke de er, men ikke avstanden mellom dem."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "1,5 kHz, det samme som frekvensen til tonen"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o4",
+          "content": [
+            "0,75 kHz, halvparten av frekvensen til tonen"
+          ],
+          "feedback": [
+            "Sidebåndene ligger på hele multipler av tonefrekvensen ut fra bærebølgen, ikke på halve."
+          ]
+        }
+      ],
+      "correct": [
+        "o3"
+      ],
+      "explanation": [
+        [
+          "Et FM-signal som moduleres med én tone, har sidebånd på bærebølgefrekvensen pluss og minus 1, 2, 3 … ganger tonefrekvensen. Avstanden mellom nabolinjene er derfor alltid lik tonefrekvensen, her 1,5 kHz."
+        ],
+        [
+          "Med liten deviasjon er bare det første sidebåndsparet merkbart, og spekteret kan likne på ",
+          {
+            "term": "amplitudemodulasjon",
+            "text": "AM"
+          },
+          ". Når deviasjonen øker, blir stadig flere sidebånd kraftige. Med for stor deviasjon blir signalet derfor mye bredere enn tiltenkt og forstyrrer nabokanalene."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 5,
+        "section_id": "s5-20",
+        "printed_pages": [
+          "5-9"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "a8878d1c89eb855e"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T03:12:23+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "baad74c134d9a5afc1ff2f086ddb2cd73f28f3b23af29f0944330a244d188b5e",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:19:31+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "63d7174dea63c334e9d47bbdeb9aec9e7a9cd8d261452913aef5b62b211782bd",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:30:12+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "63d7174dea63c334e9d47bbdeb9aec9e7a9cd8d261452913aef5b62b211782bd",
+          "note": "Runde 2: faglig kontrollert av AI (ChatGPT), 11 spørsmål rettet.",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-24T03:09:14+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "63d7174dea63c334e9d47bbdeb9aec9e7a9cd8d261452913aef5b62b211782bd",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T09:30:12+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T09:30:12+00:00",
+        "content_sha256": "63d7174dea63c334e9d47bbdeb9aec9e7a9cd8d261452913aef5b62b211782bd",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

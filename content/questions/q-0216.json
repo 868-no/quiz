@@ -1,0 +1,218 @@
+{
+  "id": "q-0216",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "recall",
+      "difficulty": "easy",
+      "chapter": 6,
+      "section_ids": [
+        "s6-13"
+      ],
+      "topic_ids": [
+        "superheterodyn"
+      ],
+      "learning_objective": "Kjenne kravene til signalet fra lokaloscillatoren i en mottaker.",
+      "priority": "normal",
+      "context": [
+        [
+          "I en ",
+          {
+            "term": "superheterodyn",
+            "text": "superheterodynmottaker"
+          },
+          " blandes antennesignalet med signalet fra ",
+          {
+            "term": "lokaloscillator",
+            "text": "lokaloscillatoren"
+          },
+          ". ",
+          {
+            "term": "oscillator",
+            "text": "Oscillatoren"
+          },
+          " kan for eksempel bygges som en fritt avstembar VFO, med ",
+          {
+            "term": "faselaast-sloyfe",
+            "text": "PLL"
+          },
+          " eller med ",
+          {
+            "term": "dds",
+            "text": "DDS"
+          },
+          "."
+        ]
+      ],
+      "stem": "Hvilke egenskaper er viktigst for signalet fra lokaloscillatoren?",
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Det må være rent, stabilt og avstembart"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Det må være kraftig, rikt på harmoniske og fast i frekvens"
+          ],
+          "feedback": [
+            [
+              {
+                "term": "harmoniske",
+                "text": "Harmoniske"
+              },
+              " gir ekstra ",
+              {
+                "term": "intermodulasjon",
+                "text": "blandingsprodukter"
+              },
+              " og falske signaler. Mottakeren må dessuten kunne stilles inn, så frekvensen kan ikke ligge fast."
+            ]
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Det må være amplitudemodulert, stabilt og avstembart"
+          ],
+          "feedback": [
+            "Modulasjon på lokaloscillatoren blandes inn i mellomfrekvensen og høres som støy eller forvrengning på det ønskede signalet."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Det må være bredbåndet, avstembart og like svakt som antennesignalet"
+          ],
+          "feedback": [
+            [
+              "Signalet skal være så smalt og rent som mulig, og vanligvis mye sterkere enn antennesignalet for å styre ",
+              {
+                "term": "blander",
+                "text": "blanderen"
+              },
+              " riktig."
+            ]
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Lokaloscillatoren bestemmer hvilken ",
+          {
+            "term": "frekvens",
+            "text": "frekvens"
+          },
+          " ",
+          {
+            "term": "mottaker",
+            "text": "mottakeren"
+          },
+          " tar imot, så den må kunne stilles inn. Driver den, driver også mottakerfrekvensen."
+        ],
+        [
+          "Støy, brum eller modulasjon på oscillatorsignalet blir overført til ",
+          {
+            "term": "mellomfrekvens",
+            "text": "mellomfrekvensen"
+          },
+          " og høres på det ønskede signalet. Har en PLL eller DDS av dårlig kvalitet falske signaler ved siden av hovedfrekvensen, kan disse også blande kraftige stasjoner utenfor kanalen inn på mellomfrekvensen, der de ikke kan filtreres bort. Derfor trenger oscillatoren ren strømforsyning og god mekanisk stabilitet."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 6,
+        "section_id": "s6-13",
+        "printed_pages": [
+          "6-7",
+          "6-8"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "cce882440c2cb17b"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T03:12:57+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "fdc1e7ba17cff156a3819143a930c8e7c44f81213eb483bd377f862a8cbd2a57",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:19:31+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "08495826e4f5644a8a95a1ffd5ea4466dc0ee663f28dae2a4c8f04b48e2b34c6",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:30:15+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "08495826e4f5644a8a95a1ffd5ea4466dc0ee663f28dae2a4c8f04b48e2b34c6",
+          "note": "Runde 2: faglig kontrollert av AI (ChatGPT), 11 spørsmål rettet.",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-24T03:09:21+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "08495826e4f5644a8a95a1ffd5ea4466dc0ee663f28dae2a4c8f04b48e2b34c6",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T09:30:15+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T09:30:15+00:00",
+        "content_sha256": "08495826e4f5644a8a95a1ffd5ea4466dc0ee663f28dae2a4c8f04b48e2b34c6",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

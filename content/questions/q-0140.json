@@ -1,0 +1,321 @@
+{
+  "id": "q-0140",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "calculation",
+      "difficulty": "easy",
+      "chapter": 2,
+      "section_ids": [
+        "s2-26"
+      ],
+      "topic_ids": [
+        "tidskonstant",
+        "spoler"
+      ],
+      "learning_objective": "Regne ut tidskonstanten τ = L/R i en krets med spole og motstand.",
+      "priority": "normal",
+      "context": [
+        [
+          "En ",
+          {
+            "term": "spole",
+            "text": "spole"
+          },
+          " på ",
+          {
+            "q": 150,
+            "u": "mH"
+          },
+          " og en ",
+          {
+            "term": "motstand",
+            "text": "motstand"
+          },
+          " på ",
+          {
+            "q": 30,
+            "u": "Ω"
+          },
+          " er ",
+          {
+            "term": "seriekobling",
+            "text": "seriekoblet"
+          },
+          " med et batteri og en bryter. Spolen regnes som ideell (uten egen ",
+          {
+            "term": "resistans",
+            "text": "resistans"
+          },
+          ")."
+        ]
+      ],
+      "stem": [
+        [
+          "Hva er ",
+          {
+            "term": "tidskonstant",
+            "text": "tidskonstanten"
+          },
+          " for kretsen når bryteren sluttes?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 5,
+              "u": "ms"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 4.5,
+              "u": "s"
+            }
+          ],
+          "feedback": [
+            "Her er L og R ganget sammen. I en LR-krets er tidskonstanten L delt på R."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 25,
+              "u": "ms"
+            }
+          ],
+          "feedback": [
+            "Dette er fem tidskonstanter, altså omtrent tiden det tar før strømmen har nådd sin endelige verdi."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 0.2,
+              "u": "s"
+            }
+          ],
+          "feedback": [
+            "Her er R delt på L med L i millihenry (30/150). Tidskonstanten er L/R, og L må regnes i henry."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Når en ",
+          {
+            "term": "induktans",
+            "text": "induktans"
+          },
+          " og en ",
+          {
+            "term": "resistans",
+            "text": "resistans"
+          },
+          " står i serie, er tidskonstanten"
+        ],
+        {
+          "steps": [
+            [
+              {
+                "math": [
+                  "τ",
+                  "=",
+                  {
+                    "frac": [
+                      [
+                        "L"
+                      ],
+                      [
+                        "R"
+                      ]
+                    ]
+                  },
+                  "=",
+                  {
+                    "frac": [
+                      [
+                        {
+                          "q": 0.15,
+                          "u": "H"
+                        }
+                      ],
+                      [
+                        {
+                          "q": 30,
+                          "u": "Ω"
+                        }
+                      ]
+                    ]
+                  },
+                  "=",
+                  {
+                    "q": 0.005,
+                    "u": "s"
+                  },
+                  "=",
+                  {
+                    "q": 5,
+                    "u": "ms"
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        [
+          "Etter én tidskonstant har ",
+          {
+            "term": "strom",
+            "text": "strømmen"
+          },
+          " nådd omtrent 63 % av sluttverdien U/R, og etter omtrent fem tidskonstanter (her 25 ms) regnes den som fullt oppbygd. Henry delt på ohm gir sekunder."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 2,
+        "section_id": "s2-26",
+        "printed_pages": [
+          "2-10",
+          "2-11"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "cb4ece6c64d33fea"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T03:12:33+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "58be170c2a513642341dc1690eee06ac513fcf01040d5fba2aac9f9c61395b06",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:19:31+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "539d2ad3beb23e42a254ab7434463ce672e3643d2bd8092e33e71af92d9f7168",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:30:03+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "539d2ad3beb23e42a254ab7434463ce672e3643d2bd8092e33e71af92d9f7168",
+          "note": "Runde 2: faglig kontrollert av AI (ChatGPT), 11 spørsmål rettet.",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "calculation": {
+        "formula": "time_constant_lr",
+        "inputs": {
+          "L": [
+            150,
+            "mH"
+          ],
+          "R": [
+            30,
+            "Ω"
+          ]
+        },
+        "answer": [
+          5,
+          "ms"
+        ],
+        "answer_symbol": "τ",
+        "sig_figs": 2,
+        "visual_bindings": {
+          "L": "L",
+          "R": "R"
+        }
+      },
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-24T03:09:10+00:00"
+      },
+      "visual": {
+        "template": "rlc-circuit",
+        "version": 1,
+        "params": {
+          "source": {
+            "kind": "dc",
+            "voltage_v": 12
+          },
+          "topology": "series",
+          "components": [
+            {
+              "kind": "R",
+              "value": 30
+            },
+            {
+              "kind": "L",
+              "value": 0.15
+            }
+          ],
+          "switch": true
+        }
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "539d2ad3beb23e42a254ab7434463ce672e3643d2bd8092e33e71af92d9f7168",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T09:30:03+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T09:30:03+00:00",
+        "content_sha256": "539d2ad3beb23e42a254ab7434463ce672e3643d2bd8092e33e71af92d9f7168",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

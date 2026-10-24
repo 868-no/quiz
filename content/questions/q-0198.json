@@ -1,0 +1,223 @@
+{
+  "id": "q-0198",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "hard",
+      "chapter": 5,
+      "section_ids": [
+        "s5-21"
+      ],
+      "topic_ids": [
+        "blandingsprodukter",
+        "senderfeil"
+      ],
+      "learning_objective": "Forstå at intermodulasjonsprodukter fra en overstyrt lineærforsterker ligger like ved sendefrekvensen, slik at utgangsfilteret ikke kan fjerne splatter.",
+      "priority": "normal",
+      "context": [
+        [
+          "En radioamatør har en ",
+          {
+            "term": "lineaer-forsterker",
+            "text": "lineærforsterker"
+          },
+          " etter ",
+          {
+            "term": "ssb",
+            "text": "SSB"
+          },
+          "-stasjonen sin på 40 m og driver den så hardt at den blir ulineær. Stasjoner noen få kilohertz unna klager over at signalet hans «spruter» utover. Mellom ",
+          {
+            "term": "forsterker",
+            "text": "forsterkeren"
+          },
+          " og ",
+          {
+            "term": "antenne",
+            "text": "antennen"
+          },
+          " står et godt ",
+          {
+            "term": "lavpassfilter",
+            "text": "lavpassfilter"
+          },
+          " med knekkfrekvens like over 40 m-båndet."
+        ]
+      ],
+      "stem": [
+        "Hvorfor fjerner ikke filteret denne forstyrrelsen?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Et lavpassfilter slipper gjennom de harmoniske og stopper grunnfrekvensen."
+          ],
+          "feedback": [
+            "Det er omvendt: et lavpassfilter slipper gjennom de lave frekvensene, altså grunnfrekvensen, og demper de harmoniske over knekkfrekvensen."
+          ]
+        },
+        {
+          "id": "o2",
+          "content": [
+            "De uønskede produktene ligger like ved sendefrekvensen, innenfor filterets passbånd."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Forstyrrelsen oppstår først i antennen, etter at signalet har passert filteret."
+          ],
+          "feedback": [
+            [
+              "Produktene dannes i den overstyrte forsterkeren, før ",
+              {
+                "term": "filter",
+                "text": "filteret"
+              },
+              ". Problemet er at de ligger på frekvenser filteret slipper gjennom."
+            ]
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Et lavpassfilter virker bare på FM-signaler og ikke på SSB-signaler."
+          ],
+          "feedback": [
+            "Et filter skiller signaler etter frekvens, uansett modulasjonsart. Det demper SSB-signaler over knekkfrekvensen like godt som FM."
+          ]
+        }
+      ],
+      "correct": [
+        "o2"
+      ],
+      "explanation": [
+        [
+          "Når en forsterker overstyres, ",
+          {
+            "term": "blander",
+            "text": "blander"
+          },
+          " de ulike frekvensene i talesignalet seg med hverandre og danner ",
+          {
+            "term": "intermodulasjon",
+            "text": "intermodulasjonsprodukter"
+          },
+          ", for eksempel 2·f1 − f2 og 2·f2 − f1. Mange av dem ligger bare noen kilohertz fra det ønskede signalet, slik at signalet blir mye bredere enn det skal (",
+          {
+            "term": "splatter",
+            "text": "splatter"
+          },
+          ")."
+        ],
+        [
+          "Utgangsfilteret skal slippe gjennom hele båndet og fjerner bare det som ligger over knekkfrekvensen, som de ",
+          {
+            "term": "harmoniske",
+            "text": "harmoniske"
+          },
+          " på høyere bånd. Splatter innenfor båndet kan det ikke gjøre noe med."
+        ],
+        "Den eneste løsningen er å unngå å skape produktene: reduser driveffekten (og bruk ALC riktig), slik at forsterkeren arbeider lineært. Kontroller at signalet er rent fram til forsterkeren, at det ikke er klikk eller støy på nabokanalene, at du holder deg innenfor båndet, og at harmoniske er dempet."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 5,
+        "section_id": "s5-21",
+        "printed_pages": [
+          "5-9",
+          "5-10"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "27358d0b3c2d8975",
+          "2f7a5bd9f503a553"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T03:12:23+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "9f275e1d838650cce0ed813d764de0febab1c446c35f8eb7ef295433f50c49a6",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:19:31+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "f713f0b70a5da6f478f4d76e3922cb79deef73084665ee296eb1554294b8b503",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:30:13+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "f713f0b70a5da6f478f4d76e3922cb79deef73084665ee296eb1554294b8b503",
+          "note": "Runde 2: faglig kontrollert av AI (ChatGPT), 11 spørsmål rettet.",
+          "acknowledged": [
+            "figures",
+            "ocr"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-24T03:09:14+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "f713f0b70a5da6f478f4d76e3922cb79deef73084665ee296eb1554294b8b503",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: equation, numeric_low_conf, table. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T09:30:13+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T09:30:13+00:00",
+        "content_sha256": "f713f0b70a5da6f478f4d76e3922cb79deef73084665ee296eb1554294b8b503",
+        "acknowledged_hazards": [
+          "figures",
+          "ocr"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

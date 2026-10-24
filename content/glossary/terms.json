@@ -2830,6 +2830,1366 @@
           "note": "Nye ordforklaringer, godkjent sammen med lenkingen."
         }
       ]
+    },
+    {
+      "id": "energi",
+      "nb": [
+        "energi",
+        "energien"
+      ],
+      "en": [
+        "energy"
+      ],
+      "definition": "Evne til å utføre arbeid. Elektrisk energi er effekt ganget med tid og måles i joule (J), som er det samme som wattsekund; strømregningen bruker kilowattimer (kWh).",
+      "related": [
+        "effekt"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T09:29:59+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 2: definisjoner gjennomgått av AI-kontroll (ChatGPT), 16 rettet."
+        }
+      ]
+    },
+    {
+      "id": "indre-resistans",
+      "nb": [
+        "indre resistans",
+        "indre resistansen",
+        "indre motstand",
+        "indre motstanden",
+        "kildemotstand",
+        "kildemotstanden"
+      ],
+      "en": [
+        "internal resistance",
+        "source resistance"
+      ],
+      "definition": "Resistansen inne i en spenningskilde, for eksempel et batteri. Når kilden leverer strøm, faller en del av spenningen over den, så klemmespenningen blir lavere enn tomgangsspenningen.",
+      "related": [
+        "resistans",
+        "elektromotorisk-spenning"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T09:29:59+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 2: definisjoner gjennomgått av AI-kontroll (ChatGPT), 16 rettet."
+        }
+      ]
+    },
+    {
+      "id": "elektromotorisk-spenning",
+      "nb": [
+        "elektromotorisk spenning",
+        "elektromotoriske spenningen",
+        "EMS"
+      ],
+      "en": [
+        "electromotive force",
+        "EMF"
+      ],
+      "definition": "Spenningen en kilde lager internt, lik spenningen over klemmene når ingen strøm trekkes (tomgangsspenning). Under belastning blir klemmespenningen lavere på grunn av den indre resistansen.",
+      "related": [
+        "spenning",
+        "indre-resistans"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T09:29:59+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 2: definisjoner gjennomgått av AI-kontroll (ChatGPT), 16 rettet."
+        }
+      ],
+      "no_autolink": [
+        "EMS"
+      ]
+    },
+    {
+      "id": "tilpasning",
+      "nb": [
+        "tilpasning",
+        "tilpasningen",
+        "impedanstilpasning",
+        "impedanstilpasningen"
+      ],
+      "en": [
+        "impedance matching",
+        "matching"
+      ],
+      "definition": "Å tilpasse impedanser slik at en krets eller et signalsystem fungerer med ønsket effektoverføring og minst mulig uønsket refleksjon. I et antennesystem tilpasses ofte antenne og senderutgang til kabelens karakteristiske impedans, vanligvis 50 Ω. For en enkel spenningskilde med fast indre resistans blir effekten i lasten størst når lastresistansen er lik den indre resistansen.",
+      "related": [
+        "impedans",
+        "indre-resistans",
+        "swr"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T09:29:59+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 2: definisjoner gjennomgått av AI-kontroll (ChatGPT), 16 rettet."
+        }
+      ]
+    },
+    {
+      "id": "dielektrikum",
+      "nb": [
+        "dielektrikum",
+        "dielektrikumet",
+        "dielektriske materialet"
+      ],
+      "en": [
+        "dielectric"
+      ],
+      "definition": "Det isolerende materialet mellom platene i en kondensator, for eksempel luft, keramikk, plast eller et oksidlag. Materialet bestemmer blant annet hvor stor kapasitansen blir og hvor høy spenning kondensatoren tåler.",
+      "related": [
+        "kondensator",
+        "dielektrisitetskonstant"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T09:29:59+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 2: definisjoner gjennomgått av AI-kontroll (ChatGPT), 16 rettet."
+        }
+      ]
+    },
+    {
+      "id": "dielektrisitetskonstant",
+      "nb": [
+        "dielektrisitetskonstant",
+        "dielektrisitetskonstanten",
+        "relativ permittivitet",
+        "relative permittiviteten"
+      ],
+      "en": [
+        "relative permittivity",
+        "dielectric constant"
+      ],
+      "definition": "Tall som sier hvor mange ganger større kapasitansen blir med et bestemt materiale mellom platene enn med vakuum (tilnærmet luft). Høy verdi gir stor kapasitans på liten plass.",
+      "related": [
+        "dielektrikum",
+        "kapasitans"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T09:29:59+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 2: definisjoner gjennomgått av AI-kontroll (ChatGPT), 16 rettet."
+        }
+      ]
+    },
+    {
+      "id": "dreiekondensator",
+      "nb": [
+        "dreiekondensator",
+        "dreiekondensatoren",
+        "dreiekondensatorer",
+        "variabel kondensator",
+        "variable kondensatoren"
+      ],
+      "en": [
+        "variable capacitor",
+        "tuning capacitor"
+      ],
+      "definition": "Kondensator med kapasitans som kan endres ved å dreie en aksel. Et sett plater dreies inn mellom et fast sett, og jo større overlapp, desto større kapasitans. Brukes til å stille inn avstemte kretser.",
+      "related": [
+        "kondensator",
+        "avstemt-krets"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T09:29:59+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 2: definisjoner gjennomgått av AI-kontroll (ChatGPT), 16 rettet."
+        }
+      ]
+    },
+    {
+      "id": "elektrolyttkondensator",
+      "nb": [
+        "elektrolyttkondensator",
+        "elektrolyttkondensatoren",
+        "elektrolyttkondensatorer",
+        "elektrolytt-kondensator"
+      ],
+      "en": [
+        "electrolytic capacitor"
+      ],
+      "definition": "Kondensator med et svært tynt oksidlag som dielektrikum, som gir stor kapasitans på liten plass. Vanlige elektrolyttkondensatorer er polariserte og må kobles riktig vei, men det finnes også upolariserte typer. De egner seg vanligvis dårlig på radiofrekvenser og brukes blant annet til glatting og avkobling.",
+      "related": [
+        "kondensator",
+        "glattekondensator"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T09:29:59+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 2: definisjoner gjennomgått av AI-kontroll (ChatGPT), 16 rettet."
+        }
+      ]
+    },
+    {
+      "id": "selvinduksjon",
+      "nb": [
+        "selvinduksjon",
+        "selvinduksjonen",
+        "selvindusert spenning",
+        "selvinduserte spenningen"
+      ],
+      "en": [
+        "self-induction"
+      ],
+      "definition": "At en spole lager en spenning i seg selv når strømmen gjennom den endres, fordi magnetfeltet endres. Spenningen motvirker endringen og kan bli svært høy når strømmen brytes brått.",
+      "related": [
+        "induktans",
+        "spole"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T09:29:59+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 2: definisjoner gjennomgått av AI-kontroll (ChatGPT), 16 rettet."
+        }
+      ]
+    },
+    {
+      "id": "halvleder",
+      "nb": [
+        "halvleder",
+        "halvlederen",
+        "halvledere",
+        "halvlederne",
+        "halvledermateriale",
+        "halvledermaterialet"
+      ],
+      "en": [
+        "semiconductor"
+      ],
+      "definition": "Materiale, for eksempel silisium eller germanium, som leder strøm dårligere enn metaller men bedre enn isolatorer. Ved å tilsette små mengder andre stoffer (doping) kan ledningsevnen styres, og det er grunnlaget for dioder og transistorer.",
+      "related": [
+        "doping",
+        "diode",
+        "transistor"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T09:29:59+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 2: definisjoner gjennomgått av AI-kontroll (ChatGPT), 16 rettet."
+        }
+      ]
+    },
+    {
+      "id": "hull",
+      "nb": [
+        "hull",
+        "hullet",
+        "hullene"
+      ],
+      "en": [
+        "hole"
+      ],
+      "definition": "I en halvleder: et sted i krystallgitteret der et elektron mangler. Hullet oppfører seg som en positiv ladningsbærer som kan flytte seg når elektroner hopper inn i det.",
+      "related": [
+        "halvleder",
+        "p-type"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T09:29:59+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 2: definisjoner gjennomgått av AI-kontroll (ChatGPT), 16 rettet."
+        }
+      ],
+      "no_autolink": [
+        "hull",
+        "hullet",
+        "hullene"
+      ]
+    },
+    {
+      "id": "p-type",
+      "nb": [
+        "P-type",
+        "p-type",
+        "P-typen",
+        "p-typen",
+        "P-ledende",
+        "p-ledende",
+        "P-materiale",
+        "p-materiale"
+      ],
+      "en": [
+        "p-type"
+      ],
+      "definition": "Halvleder som er dopet med et stoff med tre elektroner i ytterste skall (for eksempel bor). Da blir det overskudd av hull, som er de dominerende ladningsbærerne.",
+      "related": [
+        "halvleder",
+        "doping",
+        "hull",
+        "n-type"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T09:29:59+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 2: definisjoner gjennomgått av AI-kontroll (ChatGPT), 16 rettet."
+        }
+      ]
+    },
+    {
+      "id": "n-type",
+      "nb": [
+        "N-type",
+        "n-type",
+        "N-typen",
+        "n-typen",
+        "N-ledende",
+        "n-ledende",
+        "N-materiale",
+        "n-materiale"
+      ],
+      "en": [
+        "n-type"
+      ],
+      "definition": "Halvleder som er dopet med et stoff med fem elektroner i ytterste skall (for eksempel fosfor). Da blir det overskudd av frie elektroner, som er de dominerende ladningsbærerne.",
+      "related": [
+        "halvleder",
+        "doping",
+        "p-type"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T09:29:59+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 2: definisjoner gjennomgått av AI-kontroll (ChatGPT), 16 rettet."
+        }
+      ]
+    },
+    {
+      "id": "glattekondensator",
+      "nb": [
+        "glattekondensator",
+        "glattekondensatoren",
+        "glattekondensatorer",
+        "ladekondensator",
+        "ladekondensatoren"
+      ],
+      "en": [
+        "reservoir capacitor",
+        "smoothing capacitor"
+      ],
+      "definition": "Stor kondensator etter en likeretter som lades opp på toppene av den likerettede spenningen og leverer strøm mellom dem. Den jevner ut spenningen, så det blir mindre rippel.",
+      "related": [
+        "likeretter",
+        "rippel",
+        "kondensator"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T09:29:59+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 2: definisjoner gjennomgått av AI-kontroll (ChatGPT), 16 rettet."
+        }
+      ]
+    },
+    {
+      "id": "rippel",
+      "nb": [
+        "rippel",
+        "rippelen",
+        "rippelspenning",
+        "rippelspenningen"
+      ],
+      "en": [
+        "ripple"
+      ],
+      "definition": "Den gjenværende vekselspenningen som ligger oppå likespenningen fra en likeretter. Frekvensen er lik nettfrekvensen ved halvbølgelikeretting og det dobbelte ved helbølgelikeretting.",
+      "related": [
+        "likeretter",
+        "glattekondensator",
+        "likespenning"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T09:29:59+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 2: definisjoner gjennomgått av AI-kontroll (ChatGPT), 16 rettet."
+        }
+      ]
+    },
+    {
+      "id": "hvilestrom",
+      "nb": [
+        "hvilestrøm",
+        "hvilestrømmen"
+      ],
+      "en": [
+        "quiescent current",
+        "idle current"
+      ],
+      "definition": "Strømmen som går gjennom et forsterkertrinn når det ikke er noe signal inn. Den bestemmes av forspenningen og er stor i klasse A og liten eller null i klasse B og C.",
+      "related": [
+        "forspenning",
+        "forsterkerklasse"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T09:29:59+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 2: definisjoner gjennomgått av AI-kontroll (ChatGPT), 16 rettet."
+        }
+      ]
+    },
+    {
+      "id": "forsterkerklasse",
+      "nb": [
+        "forsterkerklasse",
+        "forsterkerklassen",
+        "forsterkerklasser",
+        "klasse A",
+        "klasse AB",
+        "klasse B",
+        "klasse C"
+      ],
+      "en": [
+        "amplifier class",
+        "class of operation"
+      ],
+      "definition": "Inndeling av forsterkere etter hvordan de arbeider. I de tradisjonelle klassene leder transistoren eller røret hele signalperioden i klasse A (360°), mer enn halve i klasse AB, omtrent halve i klasse B og mindre enn halve i klasse C. Klasse A gir vanligvis god linearitet, mens B og C kan gi høyere virkningsgrad, ofte på bekostning av lineariteten.",
+      "related": [
+        "forspenning",
+        "hvilestrom",
+        "virkningsgrad"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T09:29:59+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 2: definisjoner gjennomgått av AI-kontroll (ChatGPT), 16 rettet."
+        }
+      ]
+    },
+    {
+      "id": "push-pull",
+      "nb": [
+        "push-pull",
+        "push-pull-trinn",
+        "push-pull-trinnet",
+        "mottaktkobling",
+        "mottaktkoblingen",
+        "mottakt"
+      ],
+      "en": [
+        "push-pull amplifier",
+        "push-pull configuration",
+        "push-pull"
+      ],
+      "definition": "Forsterkerkobling med to transistorer eller rør som arbeider i motfase mot en felles last. I klasse B og AB leverer de hovedsakelig hver sin halvperiode. Koblingen kan gi høy virkningsgrad, og når trinnet er symmetrisk, kanselleres mange likeordens harmoniske.",
+      "related": [
+        "forsterkerklasse",
+        "harmoniske"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T09:29:59+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 2: definisjoner gjennomgått av AI-kontroll (ChatGPT), 16 rettet."
+        }
+      ]
+    },
+    {
+      "id": "esd",
+      "nb": [
+        "ESD",
+        "statisk utladning",
+        "elektrostatisk utladning",
+        "elektrostatiske utladningen"
+      ],
+      "en": [
+        "electrostatic discharge",
+        "ESD"
+      ],
+      "definition": "Rask utladning av statisk elektrisitet, for eksempel fra kroppen til en elektronisk komponent. En slik utladning kan skade følsomme komponenter som MOSFET-er, selv uten merkbar gnist. Antistatisk emballasje og en egnet, jordet håndleddsstropp brukes for å redusere risikoen.",
+      "related": [
+        "felteffekttransistor"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T09:29:59+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 2: definisjoner gjennomgått av AI-kontroll (ChatGPT), 16 rettet."
+        }
+      ]
+    },
+    {
+      "id": "tommingsmodus",
+      "nb": [
+        "tømmingsmodus",
+        "tømmingsmodusen",
+        "depletion-modus"
+      ],
+      "en": [
+        "depletion mode"
+      ],
+      "definition": "Type felteffekttransistor som leder når spenningen mellom gate og source er null, og som strupes ved å gjøre gate-spenningen negativ (for N-kanal).",
+      "related": [
+        "felteffekttransistor",
+        "forsterkningsmodus"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T09:29:59+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 2: definisjoner gjennomgått av AI-kontroll (ChatGPT), 16 rettet."
+        }
+      ]
+    },
+    {
+      "id": "forsterkningsmodus",
+      "nb": [
+        "forsterkningsmodus",
+        "forsterkningsmodusen",
+        "enhancement-modus"
+      ],
+      "en": [
+        "enhancement mode"
+      ],
+      "definition": "Type felteffekttransistor som ikke leder når spenningen mellom gate og source er null, men begynner å lede når gate-spenningen gjøres positiv nok (for N-kanal). De fleste MOSFET-er er av denne typen.",
+      "related": [
+        "felteffekttransistor",
+        "tommingsmodus"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T09:29:59+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 2: definisjoner gjennomgått av AI-kontroll (ChatGPT), 16 rettet."
+        }
+      ]
+    },
+    {
+      "id": "metning",
+      "nb": [
+        "metning",
+        "metningen",
+        "mettet",
+        "metningsområdet"
+      ],
+      "en": [
+        "saturation",
+        "BJT saturation"
+      ],
+      "definition": "I en bipolar transistor: tilstanden der transistoren er drevet så hardt at kollektorstrømmen i hovedsak begrenses av den ytre kretsen. Spenningen mellom kollektor og emitter er da svært lav, og transistoren virker omtrent som en lukket bryter. For MOSFET-er har begrepet metning en annen betydning.",
+      "related": [
+        "transistor",
+        "forspenning"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T09:29:59+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 2: definisjoner gjennomgått av AI-kontroll (ChatGPT), 16 rettet."
+        }
+      ],
+      "no_autolink": [
+        "mettet"
+      ]
+    },
+    {
+      "id": "rtty",
+      "nb": [
+        "RTTY"
+      ],
+      "en": [
+        "radioteletype",
+        "RTTY"
+      ],
+      "definition": "Radiofjernskriver: digital overføring av tekst der tegnene kodes som en serie bit og sendes med frekvensskift (FSK) mellom to frekvenser. RF-signalet har vanligvis tilnærmet konstant effekt under sending, slik at sendertrinnene belastes kontinuerlig.",
+      "related": [
+        "fsk"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T09:29:59+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 2: definisjoner gjennomgått av AI-kontroll (ChatGPT), 16 rettet."
+        }
+      ]
+    },
+    {
+      "id": "amtor",
+      "nb": [
+        "AMTOR"
+      ],
+      "en": [
+        "AMTOR"
+      ],
+      "definition": "Digital tekstmodus for amatørradio som bygger på fjernskriver, men med feilsikring: mottakeren kvitterer for hver blokk og ber om ny sending ved feil, eller hvert tegn sendes to ganger.",
+      "related": [
+        "rtty",
+        "fsk"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T09:29:59+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 2: definisjoner gjennomgått av AI-kontroll (ChatGPT), 16 rettet."
+        }
+      ]
+    },
+    {
+      "id": "pi-filter",
+      "nb": [
+        "pi-filter",
+        "pi-filteret",
+        "pi-filtre",
+        "pi-nettverk",
+        "pi-nettverket",
+        "pi-link"
+      ],
+      "en": [
+        "pi network",
+        "pi filter"
+      ],
+      "definition": "Tilpasnings- og filterkrets formet som den greske bokstaven π: en kondensator på hver side og en spole i midten. Brukes på utgangen av sluttforsterkere for å tilpasse impedansen til antennen og dempe harmoniske.",
+      "related": [
+        "tilpasning",
+        "lavpassfilter",
+        "sluttforsterker"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T09:29:59+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 2: definisjoner gjennomgått av AI-kontroll (ChatGPT), 16 rettet."
+        }
+      ]
+    },
+    {
+      "id": "fasemodulasjon",
+      "nb": [
+        "fasemodulasjon",
+        "fasemodulasjonen",
+        "fasemodulert",
+        "PM"
+      ],
+      "en": [
+        "phase modulation"
+      ],
+      "definition": "Modulasjon der fasen til bærebølgen endres i takt med modulasjonssignalet. Når modulasjonssignalet er en sinustone, øker frekvenssvinget både med tonens amplitude og med frekvensen. Fasemodulasjon (PM) er derfor nært beslektet med frekvensmodulasjon (FM).",
+      "related": [
+        "frekvensmodulasjon",
+        "baerebolge",
+        "deviasjon"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T09:29:59+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 2: definisjoner gjennomgått av AI-kontroll (ChatGPT), 16 rettet."
+        }
+      ],
+      "no_autolink": [
+        "PM"
+      ]
+    },
+    {
+      "id": "frekvenssyntetisator",
+      "nb": [
+        "frekvenssyntetisator",
+        "frekvenssyntetisatoren",
+        "syntetisator",
+        "syntetisatoren",
+        "synthesizer"
+      ],
+      "en": [
+        "frequency synthesizer"
+      ],
+      "definition": "Krets som lager mange nøyaktige frekvenser fra én stabil referanse, vanligvis med en faselåst sløyfe eller direkte digital syntese. Gir krystallstabilitet med fri innstilling, men kan gi mer fasestøy enn en god krystalloscillator.",
+      "related": [
+        "faselaast-sloyfe",
+        "dds",
+        "fasestoy"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T09:29:59+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 2: definisjoner gjennomgått av AI-kontroll (ChatGPT), 16 rettet."
+        }
+      ]
+    },
+    {
+      "id": "vfo",
+      "nb": [
+        "VFO",
+        "VFO-en",
+        "VFO-er"
+      ],
+      "en": [
+        "variable-frequency oscillator",
+        "VFO"
+      ],
+      "definition": "Oscillator med variabel frekvens, som stilles inn for å velge sende- eller mottaksfrekvens. Klassisk en LC-oscillator; må være mekanisk og elektrisk stabil for ikke å drive.",
+      "related": [
+        "oscillator",
+        "frekvensdrift"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T09:29:59+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 2: definisjoner gjennomgått av AI-kontroll (ChatGPT), 16 rettet."
+        }
+      ]
+    },
+    {
+      "id": "drivertrinn",
+      "nb": [
+        "drivertrinn",
+        "drivertrinnet",
+        "drivertrinnene",
+        "driverforsterker",
+        "driverforsterkeren"
+      ],
+      "en": [
+        "driver stage",
+        "driver"
+      ],
+      "definition": "Forsterkertrinnet rett foran sluttforsterkeren i en sender. Det løfter signalet til nivået sluttforsterkeren trenger for å gi full effekt.",
+      "related": [
+        "sluttforsterker",
+        "forsterker"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T09:29:59+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 2: definisjoner gjennomgått av AI-kontroll (ChatGPT), 16 rettet."
+        }
+      ]
+    },
+    {
+      "id": "bufferforsterker",
+      "nb": [
+        "bufferforsterker",
+        "bufferforsterkeren",
+        "buffertrinn",
+        "buffertrinnet",
+        "buffer"
+      ],
+      "en": [
+        "buffer amplifier",
+        "buffer"
+      ],
+      "definition": "Forsterkertrinn rett etter en oscillator som skiller den fra trinnene etter. Oscillatoren ser da en konstant belastning, så frekvensen ikke trekkes når lasten endres, for eksempel ved nøkling.",
+      "related": [
+        "oscillator",
+        "frekvensstabilitet"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T09:29:59+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 2: definisjoner gjennomgått av AI-kontroll (ChatGPT), 16 rettet."
+        }
+      ],
+      "no_autolink": [
+        "buffer"
+      ]
+    },
+    {
+      "id": "alc",
+      "nb": [
+        "ALC"
+      ],
+      "en": [
+        "automatic level control",
+        "ALC"
+      ],
+      "definition": "Automatisk nivåkontroll i en sender. Et kontrollsignal, ofte avledet fra sluttforsterkerens utgang, regulerer forsterkningen tidligere i signalkjeden. Hensikten er å begrense utgangseffekten og redusere risikoen for overstyring og splatter.",
+      "related": [
+        "sluttforsterker",
+        "overmodulering"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T09:29:59+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 2: definisjoner gjennomgått av AI-kontroll (ChatGPT), 16 rettet."
+        }
+      ]
+    },
+    {
+      "id": "rf-drossel",
+      "nb": [
+        "RF-drossel",
+        "RF-drosselen",
+        "RF-drosler",
+        "drosselspole",
+        "drosselspolen",
+        "drossel"
+      ],
+      "en": [
+        "RF choke"
+      ],
+      "definition": "Spole som slipper likestrøm gjennom, men har høy impedans ved de aktuelle radiofrekvensene. Den brukes for eksempel til å føre forsyningsspenning inn til et forsterkertrinn, samtidig som den hindrer RF-signalet i å følge forsyningsledningen.",
+      "related": [
+        "spole",
+        "induktiv-reaktans"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T09:29:59+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 2: definisjoner gjennomgått av AI-kontroll (ChatGPT), 16 rettet."
+        }
+      ],
+      "no_autolink": [
+        "drossel"
+      ]
+    },
+    {
+      "id": "fasestoy",
+      "nb": [
+        "fasestøy",
+        "fasestøyen"
+      ],
+      "en": [
+        "phase noise"
+      ],
+      "definition": "Små, tilfeldige variasjoner i fasen til et oscillatorsignal. Viser seg som et støyskjørt på hver side av bæren og kan dekke svake signaler på nabofrekvenser, både ved sending og mottak.",
+      "related": [
+        "oscillator",
+        "frekvenssyntetisator"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T09:29:59+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 2: definisjoner gjennomgått av AI-kontroll (ChatGPT), 16 rettet."
+        }
+      ]
+    },
+    {
+      "id": "strokapasitans",
+      "nb": [
+        "strøkapasitans",
+        "strøkapasitansen",
+        "strøkapasitanser"
+      ],
+      "en": [
+        "stray capacitance"
+      ],
+      "definition": "Uønsket kapasitans mellom ledere og komponenter, for eksempel mellom en hånd og en oscillatorspole. Den kan endre frekvensen i avstemte kretser og gi uønsket kobling mellom trinn.",
+      "related": [
+        "kapasitans",
+        "avstemt-krets"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T09:29:59+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 2: definisjoner gjennomgått av AI-kontroll (ChatGPT), 16 rettet."
+        }
+      ]
+    },
+    {
+      "id": "aldring",
+      "nb": [
+        "aldring",
+        "aldringen"
+      ],
+      "en": [
+        "ageing",
+        "aging"
+      ],
+      "definition": "Langsom endring av en komponents verdi over tid. Et kvartskrystall endrer for eksempel frekvensen litt de første årene, typisk noen få milliontedeler (ppm) per år.",
+      "related": [
+        "kvartskrystall",
+        "frekvensstabilitet"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T09:29:59+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 2: definisjoner gjennomgått av AI-kontroll (ChatGPT), 16 rettet."
+        }
+      ],
+      "no_autolink": [
+        "aldring",
+        "aldringen"
+      ]
+    },
+    {
+      "id": "ppm",
+      "nb": [
+        "ppm"
+      ],
+      "en": [
+        "parts per million",
+        "ppm"
+      ],
+      "definition": "Milliontedeler. Brukes om små relative avvik, for eksempel frekvensnøyaktighet: 1 ppm av 10 MHz er 10 Hz.",
+      "related": [
+        "frekvensstabilitet"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T09:29:59+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 2: definisjoner gjennomgått av AI-kontroll (ChatGPT), 16 rettet."
+        }
+      ]
+    },
+    {
+      "id": "splatter",
+      "nb": [
+        "splatter",
+        "splatteren"
+      ],
+      "en": [
+        "splatter"
+      ],
+      "definition": "Uønskede signaler på nabofrekvensene rundt et sendersignal, som oftest fordi senderen er overstyrt eller overmodulert. Ligger så nær signalet at et lavpassfilter på utgangen ikke kan fjerne dem.",
+      "related": [
+        "overmodulering",
+        "intermodulasjon",
+        "alc"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T09:29:59+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 2: definisjoner gjennomgått av AI-kontroll (ChatGPT), 16 rettet."
+        }
+      ]
+    },
+    {
+      "id": "rf-innslag",
+      "nb": [
+        "RF-innslag",
+        "RF-innslaget"
+      ],
+      "en": [
+        "RF feedback",
+        "RF pickup"
+      ],
+      "definition": "At radiofrekvens fra egen sender kommer inn i utstyr der den ikke skal være, for eksempel i mikrofonkabelen. Kan gi forvrengt lyd, ustabilitet eller at sendingen henger seg opp.",
+      "related": [
+        "ferrittring",
+        "skjerming"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T09:29:59+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 2: definisjoner gjennomgått av AI-kontroll (ChatGPT), 16 rettet."
+        }
+      ]
+    },
+    {
+      "id": "ferrittring",
+      "nb": [
+        "ferrittring",
+        "ferrittringen",
+        "ferrittringer",
+        "ferrittkjerne",
+        "ferrittkjernen"
+      ],
+      "en": [
+        "ferrite ring",
+        "ferrite core",
+        "ferrite toroid"
+      ],
+      "definition": "Ring eller annen kjerne av ferritt som en kabel eller leder føres gjennom, eventuelt med flere vindinger. Ferritten gir høy impedans for uønskede høyfrekvente strømmer. Når hele kabelen føres gjennom kjernen, kan den dempe fellesmodusstrømmer uten å dempe det ønskede signalet i kabelen i samme grad.",
+      "related": [
+        "impedans",
+        "rf-innslag"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T09:29:59+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 2: definisjoner gjennomgått av AI-kontroll (ChatGPT), 16 rettet."
+        }
+      ],
+      "no_autolink": [
+        "ferrittkjerne",
+        "ferrittkjernen"
+      ]
+    },
+    {
+      "id": "skjerming",
+      "nb": [
+        "skjerming",
+        "skjermingen",
+        "skjermet",
+        "skjermede"
+      ],
+      "en": [
+        "shielding",
+        "screening"
+      ],
+      "definition": "Å bruke ledende materiale, vanligvis metall, rundt en krets eller kabel for å redusere elektromagnetisk kobling til omgivelsene. Skjerming kan både hindre uønsket utstråling og beskytte følsomme kretser mot innstråling. Virkningen avhenger blant annet av frekvensen, skjermens utforming og hvordan den er tilkoblet.",
+      "related": [
+        "rf-innslag"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T09:29:59+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 2: definisjoner gjennomgått av AI-kontroll (ChatGPT), 16 rettet."
+        }
+      ],
+      "no_autolink": [
+        "skjermet",
+        "skjermede"
+      ]
+    },
+    {
+      "id": "direkte-straling",
+      "nb": [
+        "direkte stråling",
+        "direkte strålingen",
+        "direkte utstråling",
+        "direkte utstrålingen"
+      ],
+      "en": [
+        "direct radiation"
+      ],
+      "definition": "Utstråling fra selve senderkretsene, for eksempel fra oscillator- eller multiplikatortrinn, og ikke via antennen. Hindres med god skjerming og filtrering av ledninger som går ut av kassen.",
+      "related": [
+        "skjerming",
+        "frekvensmultiplikator"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T09:29:59+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 2: definisjoner gjennomgått av AI-kontroll (ChatGPT), 16 rettet."
+        }
+      ]
+    },
+    {
+      "id": "carsons-regel",
+      "nb": [
+        "Carsons regel",
+        "Carsons formel"
+      ],
+      "en": [
+        "Carson's rule"
+      ],
+      "definition": "Tommelfingerregel for båndbredden til et FM-signal: to ganger summen av frekvenssvinget og den høyeste modulasjonsfrekvensen.",
+      "related": [
+        "frekvensmodulasjon",
+        "deviasjon",
+        "baandbredde"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T09:29:59+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 2: definisjoner gjennomgått av AI-kontroll (ChatGPT), 16 rettet."
+        }
+      ]
+    },
+    {
+      "id": "dobbeltbalansert-blander",
+      "nb": [
+        "dobbeltbalansert blander",
+        "dobbeltbalanserte blanderen",
+        "dobbeltbalanserte blandere",
+        "ringblander",
+        "ringblanderen"
+      ],
+      "en": [
+        "double-balanced mixer",
+        "double-balanced diode-ring mixer"
+      ],
+      "definition": "Blander der en symmetrisk kobling undertrykker gjennomslag fra begge inngangssignalene og flere uønskede blandingsprodukter. De ønskede sum- og differansefrekvensene dannes fortsatt, men også enkelte andre blandingsprodukter kan forekomme. En vanlig utførelse bruker fire dioder i ring og to transformatorer.",
+      "related": [
+        "blander"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T09:29:59+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 2: definisjoner gjennomgått av AI-kontroll (ChatGPT), 16 rettet."
+        }
+      ]
+    },
+    {
+      "id": "resonanskurve",
+      "nb": [
+        "resonanskurve",
+        "resonanskurven",
+        "resonanskurver"
+      ],
+      "en": [
+        "resonance curve"
+      ],
+      "definition": "Kurve som viser hvordan en avstemt krets reagerer på ulike frekvenser. Ved resonans får den målte størrelsen et maksimum eller minimum, avhengig av kretsen og hva som måles. En høy Q-verdi gir normalt en smalere resonanskurve og bedre selektivitet.",
+      "related": [
+        "resonans",
+        "q-faktor",
+        "avstemt-krets"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T09:29:59+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 2: definisjoner gjennomgått av AI-kontroll (ChatGPT), 16 rettet."
+        }
+      ]
+    },
+    {
+      "id": "flankedetektering",
+      "nb": [
+        "flankedetektering",
+        "flankedetekteringen",
+        "flankedetektor",
+        "flankedetektoren"
+      ],
+      "en": [
+        "slope detection"
+      ],
+      "definition": "Enkel FM-demodulering der mottakeren stilles litt ved siden av signalet, slik at det havner på flanken av resonanskurven. Frekvensendringer blir da til amplitudeendringer som en AM-detektor kan gjøre om til lyd.",
+      "related": [
+        "resonanskurve",
+        "frekvensmodulasjon",
+        "demodulator"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T09:29:59+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 2: definisjoner gjennomgått av AI-kontroll (ChatGPT), 16 rettet."
+        }
+      ]
+    },
+    {
+      "id": "diskriminator",
+      "nb": [
+        "diskriminator",
+        "diskriminatoren",
+        "diskriminatorer"
+      ],
+      "en": [
+        "discriminator"
+      ],
+      "definition": "FM-demodulator som gir en utgangsspenning som følger hvor langt signalets frekvens avviker fra midtfrekvensen.",
+      "related": [
+        "frekvensmodulasjon",
+        "demodulator",
+        "forholdsdetektor"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T09:29:59+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 2: definisjoner gjennomgått av AI-kontroll (ChatGPT), 16 rettet."
+        }
+      ]
+    },
+    {
+      "id": "krystallfilter",
+      "nb": [
+        "krystallfilter",
+        "krystallfilteret",
+        "krystallfiltre",
+        "krystallfiltrene"
+      ],
+      "en": [
+        "crystal filter"
+      ],
+      "definition": "Båndpassfilter bygget av kvartskrystaller. Det kan gjøres svært smalt med bratte flanker og brukes i MF-trinnet for god selektivitet, for eksempel for SSB.",
+      "related": [
+        "kvartskrystall",
+        "baandpassfilter",
+        "selektivitet"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T09:29:59+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 2: definisjoner gjennomgått av AI-kontroll (ChatGPT), 16 rettet."
+        }
+      ]
+    },
+    {
+      "id": "passband",
+      "nb": [
+        "passbånd",
+        "passbåndet"
+      ],
+      "en": [
+        "passband"
+      ],
+      "definition": "Frekvensområdet et filter slipper gjennom med liten demping.",
+      "related": [
+        "filter",
+        "baandbredde"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T09:29:59+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 2: definisjoner gjennomgått av AI-kontroll (ChatGPT), 16 rettet."
+        }
+      ]
+    },
+    {
+      "id": "signal-stoy-forhold",
+      "nb": [
+        "signal/støy-forhold",
+        "signal/støy-forholdet",
+        "signal-støy-forhold",
+        "signal-støy-forholdet",
+        "S/N"
+      ],
+      "en": [
+        "signal-to-noise ratio",
+        "SNR"
+      ],
+      "definition": "Forholdet mellom signaleffekt og støyeffekt, oftest oppgitt i desibel. Jo høyere, desto tydeligere skiller signalet seg fra støyen.",
+      "related": [
+        "stoytall",
+        "sinad"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T09:29:59+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 2: definisjoner gjennomgått av AI-kontroll (ChatGPT), 16 rettet."
+        }
+      ]
+    },
+    {
+      "id": "pll-detektor",
+      "nb": [
+        "PLL-detektor",
+        "PLL-detektoren"
+      ],
+      "en": [
+        "PLL detector"
+      ],
+      "definition": "FM-demodulator som bruker en faselåst sløyfe. VCO-en følger signalets frekvens, og styrespenningen til VCO-en blir den demodulerte lyden.",
+      "related": [
+        "faselaast-sloyfe",
+        "vco",
+        "frekvensmodulasjon"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T09:29:59+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 2: definisjoner gjennomgått av AI-kontroll (ChatGPT), 16 rettet."
+        }
+      ]
     }
   ]
 }

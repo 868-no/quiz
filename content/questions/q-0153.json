@@ -1,0 +1,338 @@
+{
+  "id": "q-0153",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "calculation",
+      "difficulty": "hard",
+      "chapter": 3,
+      "section_ids": [
+        "s3-16"
+      ],
+      "topic_ids": [
+        "transistorforspenning"
+      ],
+      "learning_objective": "Forstå hvordan spredning i strømforsterkningen flytter arbeidspunktet når basisstrømmen ligger fast.",
+      "priority": "normal",
+      "context": [
+        [
+          "Figuren viser et trinn med en ",
+          {
+            "term": "transistor",
+            "text": "NPN-transistor"
+          },
+          " og kollektormotstand R_C på ",
+          {
+            "q": 1,
+            "u": "kΩ"
+          },
+          " til en forsyning på ",
+          {
+            "q": 12,
+            "u": "V"
+          },
+          ". Basisstrømmen holdes fast på ",
+          {
+            "q": 40,
+            "u": "µA"
+          },
+          ". Trinnet er beregnet for en ",
+          {
+            "term": "stromforsterkning",
+            "text": "strømforsterkning"
+          },
+          " på 150, men transistoren som blir satt inn, har strømforsterkning 250."
+        ]
+      ],
+      "stem": [
+        "Hvor stort blir spenningsfallet over R_C med denne transistoren?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 10,
+              "u": "V"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 6,
+              "u": "V"
+            }
+          ],
+          "feedback": [
+            "Det er verdien med strømforsterkningen trinnet ble beregnet for. Med 250 blir kollektorstrømmen større."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 2,
+              "u": "V"
+            }
+          ],
+          "feedback": [
+            "Det er spenningen som blir igjen mellom kollektor og emitter, ikke spenningen over R_C."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 40,
+              "u": "mV"
+            }
+          ],
+          "feedback": [
+            "Her er basisstrømmen brukt. Det er kollektorstrømmen som går gjennom R_C, og den er 250 ganger større."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Med fast basisstrøm bestemmes kollektorstrømmen av strømforsterkningen β. ",
+          {
+            "term": "ohms-lov",
+            "text": "Ohms lov"
+          },
+          " gir så ",
+          {
+            "term": "spenning",
+            "text": "spenningen"
+          },
+          " over R_C:"
+        ],
+        {
+          "steps": [
+            [
+              {
+                "math": [
+                  "I_C",
+                  "=",
+                  "β",
+                  "·",
+                  "I_B",
+                  "=",
+                  "250",
+                  "·",
+                  {
+                    "q": 40,
+                    "u": "µA"
+                  },
+                  "=",
+                  {
+                    "q": 10,
+                    "u": "mA"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "math": [
+                  "U_{RC}",
+                  "=",
+                  "I_C",
+                  "·",
+                  "R_C",
+                  "=",
+                  {
+                    "q": 10,
+                    "u": "mA"
+                  },
+                  "·",
+                  {
+                    "q": 1,
+                    "u": "kΩ"
+                  },
+                  "=",
+                  {
+                    "q": 10,
+                    "u": "V"
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        [
+          "Bare ",
+          {
+            "q": 2,
+            "u": "V"
+          },
+          " blir igjen mellom kollektor og emitter. Med strømforsterkning 150 ville kollektoren ligget på ",
+          {
+            "q": 6,
+            "u": "V"
+          },
+          ", midt mellom jord og forsyningen. Nå ligger arbeidspunktet nær ",
+          {
+            "term": "metning",
+            "text": "metning"
+          },
+          ", og et signal blir klippet på den ene siden. Slike variasjoner er grunnen til at ",
+          {
+            "term": "forspenning",
+            "text": "forspenningen"
+          },
+          " bør gjøres mindre avhengig av strømforsterkningen, for eksempel med emittermotstand."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 3,
+        "section_id": "s3-16",
+        "printed_pages": [
+          "3-7"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "069f19f7b3a40aeb"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T03:13:39+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "ed22e3059f76e2c35bb0112d187755e78d4d8aa3b228a184b4fe635b96d5dbe0",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:19:31+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "9c4008a596357c8acc07348741c8d430d772b4154699125f4ed0ccca48bfea41",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:30:04+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "9c4008a596357c8acc07348741c8d430d772b4154699125f4ed0ccca48bfea41",
+          "note": "Runde 2: faglig kontrollert av AI (ChatGPT), 11 spørsmål rettet.",
+          "acknowledged": [
+            "figures",
+            "ocr"
+          ]
+        }
+      ],
+      "calculation": {
+        "formula": "ohms_law_voltage",
+        "inputs": {
+          "I": [
+            10,
+            "mA"
+          ],
+          "R": [
+            1,
+            "kΩ"
+          ]
+        },
+        "answer": [
+          10,
+          "V"
+        ],
+        "answer_symbol": "U_{RC}",
+        "sig_figs": 2,
+        "visual_bindings": {
+          "R": "R_C"
+        }
+      },
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-24T03:09:22+00:00"
+      },
+      "visual": {
+        "template": "transistor-stage",
+        "version": 1,
+        "params": {
+          "vcc_v": 12,
+          "rc_ohms": 1000,
+          "show_resistor_values": true,
+          "labels": [
+            {
+              "node": "IC"
+            },
+            {
+              "node": "C"
+            }
+          ]
+        },
+        "params_after": {
+          "labels": [
+            {
+              "node": "IC",
+              "value": 0.01
+            },
+            {
+              "node": "C",
+              "value": 2
+            }
+          ]
+        }
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "9c4008a596357c8acc07348741c8d430d772b4154699125f4ed0ccca48bfea41",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: equation, numeric_low_conf. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T09:30:04+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T09:30:04+00:00",
+        "content_sha256": "9c4008a596357c8acc07348741c8d430d772b4154699125f4ed0ccca48bfea41",
+        "acknowledged_hazards": [
+          "figures",
+          "ocr"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

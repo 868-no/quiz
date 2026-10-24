@@ -1,0 +1,304 @@
+{
+  "id": "q-0172",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "calculation",
+      "difficulty": "medium",
+      "chapter": 4,
+      "section_ids": [
+        "s4-08"
+      ],
+      "topic_ids": [
+        "fm"
+      ],
+      "learning_objective": "Bruke Carsons regel til å finne den nødvendige båndbredden for et FM-signal.",
+      "priority": "normal",
+      "context": [
+        [
+          "En ",
+          {
+            "term": "frekvensmodulasjon",
+            "text": "FM"
+          },
+          "-sender er innstilt med ",
+          {
+            "term": "deviasjon",
+            "text": "spissdeviasjon"
+          },
+          " ",
+          {
+            "q": 3,
+            "u": "kHz"
+          },
+          ". Den høyeste lydfrekvensen som slipper gjennom mikrofonforsterkeren, er ",
+          {
+            "q": 2.8,
+            "u": "kHz"
+          },
+          ". Bruk ",
+          {
+            "term": "carsons-regel",
+            "text": "Carsons regel"
+          },
+          "."
+        ]
+      ],
+      "stem": [
+        [
+          "Hvor stor ",
+          {
+            "term": "baandbredde",
+            "text": "båndbredde"
+          },
+          " trenger signalet omtrent?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 11.6,
+              "u": "kHz"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 5.8,
+              "u": "kHz"
+            }
+          ],
+          "feedback": [
+            [
+              "Summen av deviasjon og lydfrekvens gjelder bare den ene siden av ",
+              {
+                "term": "baerebolge",
+                "text": "bærebølgen"
+              },
+              ". Sidebåndene ligger på begge sider, så summen skal ganges med 2."
+            ]
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 6,
+              "u": "kHz"
+            }
+          ],
+          "feedback": [
+            "Her er bare deviasjonen tatt med. Signalet når lenger ut fra bærebølgen enn bare deviasjonen, så lydfrekvensen må legges til før du ganger med 2."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 8.6,
+              "u": "kHz"
+            }
+          ],
+          "feedback": [
+            "Her er bare lydfrekvensen ganget med 2 før deviasjonen er lagt til. Hele summen skal ganges med 2."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Carsons regel sier at båndbredden er omtrent det dobbelte av summen av spissdeviasjonen og den høyeste modulasjonsfrekvensen:"
+        ],
+        {
+          "steps": [
+            [
+              {
+                "math": [
+                  "B",
+                  "≈",
+                  "2",
+                  "·",
+                  {
+                    "paren": [
+                      {
+                        "text": "spissdeviasjon"
+                      },
+                      "+",
+                      {
+                        "text": "høyeste lydfrekvens"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "math": [
+                  "B",
+                  "≈",
+                  "2",
+                  "·",
+                  {
+                    "paren": [
+                      {
+                        "q": 3,
+                        "u": "kHz"
+                      },
+                      "+",
+                      {
+                        "q": 2.8,
+                        "u": "kHz"
+                      }
+                    ]
+                  },
+                  "=",
+                  "2",
+                  "·",
+                  {
+                    "q": 5.8,
+                    "u": "kHz"
+                  },
+                  "=",
+                  {
+                    "q": 11.6,
+                    "u": "kHz"
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        [
+          {
+            "term": "sidebaand",
+            "text": "Sidebåndene"
+          },
+          " i et FM-signal fortsetter i prinsippet uendelig langt ut, men utenfor dette området er de så svake at de kan filtreres bort uten at signalet blir merkbart dårligere."
+        ]
+      ],
+      "glossary_after_answer": [
+        "carsons-regel"
+      ],
+      "study_reference": {
+        "chapter": 4,
+        "section_id": "s4-08",
+        "printed_pages": [
+          "4-4",
+          "4-5"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "3a86074c633c8871"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T03:11:44+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "114f18b096958683a5a4dd9be2aa1e7df822a1e2a6d72a7e0281f21a8fe9d051",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:19:31+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "8c7f02e386ac9dbe435b12ded70b02c39bc2c7720938d634f427854e0d2b69c9",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:30:07+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "8c7f02e386ac9dbe435b12ded70b02c39bc2c7720938d634f427854e0d2b69c9",
+          "note": "Runde 2: faglig kontrollert av AI (ChatGPT), 11 spørsmål rettet.",
+          "acknowledged": [
+            "figures",
+            "ocr"
+          ]
+        }
+      ],
+      "calculation": {
+        "formula": "fm_carson_bandwidth",
+        "inputs": {
+          "deviation": [
+            3,
+            "kHz"
+          ],
+          "f_mod": [
+            2.8,
+            "kHz"
+          ]
+        },
+        "answer": [
+          11.6,
+          "kHz"
+        ],
+        "answer_symbol": "B",
+        "sig_figs": 3
+      },
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-24T03:09:13+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "8c7f02e386ac9dbe435b12ded70b02c39bc2c7720938d634f427854e0d2b69c9",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: equation, numeric_low_conf. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T09:30:07+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T09:30:07+00:00",
+        "content_sha256": "8c7f02e386ac9dbe435b12ded70b02c39bc2c7720938d634f427854e0d2b69c9",
+        "acknowledged_hazards": [
+          "figures",
+          "ocr"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

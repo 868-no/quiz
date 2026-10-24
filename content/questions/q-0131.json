@@ -1,0 +1,225 @@
+{
+  "id": "q-0131",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "recall",
+      "difficulty": "easy",
+      "chapter": 2,
+      "section_ids": [
+        "s2-06"
+      ],
+      "topic_ids": [
+        "ohms-lov",
+        "ladning"
+      ],
+      "learning_objective": "Kjenne definisjonen av volt som energi per ladning (1 V = 1 J/C).",
+      "priority": "normal",
+      "context": [
+        [
+          "Enheten volt kan defineres ut fra ",
+          {
+            "term": "energi",
+            "text": "energi"
+          },
+          " og ",
+          {
+            "term": "ladning",
+            "text": "ladning"
+          },
+          ". Et voltmeter viser ",
+          {
+            "q": 1,
+            "u": "V"
+          },
+          " mellom to punkter A og B i en krets."
+        ]
+      ],
+      "stem": [
+        [
+          "Hva betyr det at det er en ",
+          {
+            "term": "spenning",
+            "text": "potensialdifferanse"
+          },
+          " på ",
+          {
+            "q": 1,
+            "u": "V"
+          },
+          " mellom A og B?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Det overføres 1 J energi for hver coulomb ladning som går fra det ene punktet til det andre."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Det går 1 C ladning per sekund fra det ene punktet til det andre."
+          ],
+          "feedback": [
+            "Ladning per tid er strøm: 1 C/s er 1 ampere. Spenning sier noe om energien per ladning, ikke hvor mye ladning som går."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Det omsettes 1 J energi per sekund mellom det ene punktet og det andre."
+          ],
+          "feedback": [
+            [
+              "Energi per tid er effekt: 1 J/s er 1 watt. Hvor stor ",
+              {
+                "term": "effekt",
+                "text": "effekten"
+              },
+              " blir, avhenger også av ",
+              {
+                "term": "strom",
+                "text": "strømmen"
+              },
+              "."
+            ]
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Begge punktene ligger på 1 V i forhold til jord eller en annen felles referanse."
+          ],
+          "feedback": [
+            "Da ville det ikke vært noen forskjell mellom punktene, og voltmeteret ville vist 0 V. Det er forskjellen mellom punktene som måles."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Spenning er energi per ladning: ",
+          {
+            "math": [
+              "U",
+              "=",
+              {
+                "frac": [
+                  [
+                    "W"
+                  ],
+                  [
+                    "Q"
+                  ]
+                ]
+              }
+            ]
+          },
+          ". 1 volt betyr altså 1 joule per coulomb. Går det 3 C fra A til B, omsettes 3 J."
+        ],
+        [
+          "Spenning måles alltid mellom to punkter. Det er forskjellen i potensial som driver ladningen gjennom kretsen; to punkter med samme potensial gir ingen strøm, uansett hvor høyt potensialet er i forhold til jord."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 2,
+        "section_id": "s2-06",
+        "printed_pages": [
+          "2-2"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "1820f3b0f65fc1cc",
+          "c317859c6c00078b"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T03:12:11+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "8da6e8048babf45db4338d58796a8f4b1c4297f541c4740b26c7db8e233200f5",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:19:31+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "f3f313b3ff9ca047f62f3f4c6a923365bca16db81652ceb14719cf91cad29310",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:30:00+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "f3f313b3ff9ca047f62f3f4c6a923365bca16db81652ceb14719cf91cad29310",
+          "note": "Runde 2: faglig kontrollert av AI (ChatGPT), 11 spørsmål rettet.",
+          "acknowledged": [
+            "figures",
+            "ocr"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-24T03:09:08+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "f3f313b3ff9ca047f62f3f4c6a923365bca16db81652ceb14719cf91cad29310",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: equation, low_ocr_confidence, numeric_low_conf, table. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T09:30:00+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T09:30:00+00:00",
+        "content_sha256": "f3f313b3ff9ca047f62f3f4c6a923365bca16db81652ceb14719cf91cad29310",
+        "acknowledged_hazards": [
+          "figures",
+          "ocr"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

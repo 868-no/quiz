@@ -1,0 +1,207 @@
+{
+  "id": "q-0141",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 2,
+      "section_ids": [
+        "s2-31"
+      ],
+      "topic_ids": [
+        "vekselstromsverdier"
+      ],
+      "learning_objective": "Vite at harmoniske er heltallige multipler av grunnfrekvensen.",
+      "priority": "normal",
+      "context": [
+        [
+          "En ",
+          {
+            "term": "sender",
+            "text": "sender"
+          },
+          " på ",
+          {
+            "q": 7.05,
+            "u": "MHz"
+          },
+          " har for dårlig filtrering på utgangen, og bølgeformen er ikke helt sinusformet. Den sender derfor også ut svake signaler på andre ",
+          {
+            "term": "frekvens",
+            "text": "frekvenser"
+          },
+          "."
+        ]
+      ],
+      "stem": [
+        [
+          "Hvilken av disse frekvensene kan være en ",
+          {
+            "term": "harmoniske",
+            "text": "harmonisk"
+          },
+          " av senderfrekvensen?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 21.15,
+              "u": "MHz"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 10.575,
+              "u": "MHz"
+            }
+          ],
+          "feedback": [
+            "Dette er 1,5 ganger senderfrekvensen. Harmoniske er hele multipler: 2, 3, 4 … ganger grunnfrekvensen."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 3.525,
+              "u": "MHz"
+            }
+          ],
+          "feedback": [
+            "Dette er halve senderfrekvensen. Harmoniske ligger over grunnfrekvensen, aldri under."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 7.1,
+              "u": "MHz"
+            }
+          ],
+          "feedback": [
+            "Dette er bare en frekvens litt over senderfrekvensen, ikke et helt multiplum av den."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "De ",
+          {
+            "term": "harmoniske",
+            "text": "harmoniske"
+          },
+          " er heltallige multipler av grunnfrekvensen. Den andre harmoniske av 7,05 MHz er 14,1 MHz, og den tredje er 3 · 7,05 MHz = 21,15 MHz."
+        ],
+        [
+          "Harmoniske oppstår når bølgeformen er forvrengt i forhold til en ren sinus. Et ",
+          {
+            "term": "lavpassfilter",
+            "text": "lavpassfilter"
+          },
+          " på utgangen av senderen demper dem, slik at de ikke forstyrrer andre brukere."
+        ]
+      ],
+      "glossary_after_answer": [
+        "harmoniske"
+      ],
+      "study_reference": {
+        "chapter": 2,
+        "section_id": "s2-31",
+        "printed_pages": [
+          "2-12"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "ee651ef3ba0565da"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T03:12:11+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "1cc45ba485683fa91be63cf7506abb3e23a5d83e3201c19c9b280451aa773a0a",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:19:31+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "a41a6bd79404fef3205df8809709a4070472d626ebf5874747fc70c5c3ffae78",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:30:03+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "a41a6bd79404fef3205df8809709a4070472d626ebf5874747fc70c5c3ffae78",
+          "note": "Runde 2: faglig kontrollert av AI (ChatGPT), 11 spørsmål rettet.",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-24T03:09:11+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "a41a6bd79404fef3205df8809709a4070472d626ebf5874747fc70c5c3ffae78",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T09:30:03+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T09:30:03+00:00",
+        "content_sha256": "a41a6bd79404fef3205df8809709a4070472d626ebf5874747fc70c5c3ffae78",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

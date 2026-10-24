@@ -1,0 +1,234 @@
+{
+  "id": "q-0173",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 4,
+      "section_ids": [
+        "s4-10"
+      ],
+      "topic_ids": [
+        "frekvensstabilitet",
+        "senderoppbygging"
+      ],
+      "learning_objective": "Kjenne tiltak som gir en VFO god frekvensstabilitet.",
+      "priority": "normal",
+      "context": [
+        [
+          "Du bygger en ",
+          {
+            "term": "oscillator",
+            "text": "oscillator"
+          },
+          " med variabel frekvens (VFO) som skal styre en hjemmelaget sender. Frekvensen er bestemt av en ",
+          {
+            "term": "avstemt-krets",
+            "text": "avstemt krets"
+          },
+          " med en spole og en ",
+          {
+            "term": "dreiekondensator",
+            "text": "variabel kondensator"
+          },
+          "."
+        ]
+      ],
+      "stem": [
+        [
+          "Hvilket av disse tiltakene gir ",
+          {
+            "term": "vfo",
+            "text": "VFO-en"
+          },
+          " bedre ",
+          {
+            "term": "frekvensstabilitet",
+            "text": "frekvensstabilitet"
+          },
+          "?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "En egen stabilisert spenningsforsyning, atskilt fra sluttrinnet"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Spolen vikles løst, så tråden kan utvide seg fritt med varmen"
+          ],
+          "feedback": [
+            [
+              "En løst viklet ",
+              {
+                "term": "spole",
+                "text": "spole"
+              },
+              " endrer form og ",
+              {
+                "term": "induktans",
+                "text": "induktans"
+              },
+              " ved varme og vibrasjoner. Spolen bør vikles fast, gjerne på en spoleform av et lavtapsmateriale."
+            ]
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "VFO-en monteres tett inntil kjøleribben på sluttrinnet"
+          ],
+          "feedback": [
+            "Varmen fra sluttrinnet vil endre verdiene i den avstemte kretsen og få frekvensen til å drive. Oscillatoren bør ligge langt fra varmekilder."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Utgangssignalet hentes direkte fra den avstemte kretsen"
+          ],
+          "feedback": [
+            [
+              "Da vil lasten fra neste trinn trekke frekvensen. Signalet bør hentes ut et sted som isolerer den avstemte kretsen, og helst via en ",
+              {
+                "term": "bufferforsterker",
+                "text": "bufferforsterker"
+              },
+              "."
+            ]
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Frekvensen i en LC-oscillator påvirkes av forsyningsspenningen. Når ",
+          {
+            "term": "sluttforsterker",
+            "text": "sluttrinnet"
+          },
+          " trekker mye strøm under sending, synker ",
+          {
+            "term": "spenning",
+            "text": "spenningen"
+          },
+          " på en felles forsyning, og VFO-en flytter seg. En egen, stabilisert forsyning hindrer dette."
+        ],
+        [
+          {
+            "term": "frekvensstabilitet",
+            "text": "Frekvensstabiliteten"
+          },
+          " blir også bedre med komponenter av god kvalitet, en fast viklet spole, en mekanisk stiv variabel ",
+          {
+            "term": "kondensator",
+            "text": "kondensator"
+          },
+          ", korte og stive ledninger og god avstand til varmekilder. Utgangssignalet bør hentes ut slik at lasten ikke påvirker den avstemte kretsen."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 4,
+        "section_id": "s4-10",
+        "printed_pages": [
+          "4-5",
+          "4-6"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "cd97d03db7e252d9"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T03:11:44+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "5677d86abc260f1a2053e87e3b7533de5a8e1d0288a2fed41c7f33c2c914167e",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:19:31+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "02f54883413e0bf720d5178d72efc784e09edda13b2119ff2f825a86a48191ff",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:30:08+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "02f54883413e0bf720d5178d72efc784e09edda13b2119ff2f825a86a48191ff",
+          "note": "Runde 2: faglig kontrollert av AI (ChatGPT), 11 spørsmål rettet.",
+          "acknowledged": [
+            "figures",
+            "ocr"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-24T03:09:14+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "02f54883413e0bf720d5178d72efc784e09edda13b2119ff2f825a86a48191ff",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: numeric_low_conf. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T09:30:08+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T09:30:08+00:00",
+        "content_sha256": "02f54883413e0bf720d5178d72efc784e09edda13b2119ff2f825a86a48191ff",
+        "acknowledged_hazards": [
+          "figures",
+          "ocr"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

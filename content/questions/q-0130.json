@@ -1,0 +1,276 @@
+{
+  "id": "q-0130",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "calculation",
+      "difficulty": "easy",
+      "chapter": 2,
+      "section_ids": [
+        "s2-05"
+      ],
+      "topic_ids": [
+        "effekt"
+      ],
+      "learning_objective": "Regne ut elektrisk energi som effekt ganget med tid, med tiden i sekunder.",
+      "priority": "normal",
+      "context": [
+        [
+          "En håndholdt VHF-stasjon sender med en ",
+          {
+            "term": "effekt",
+            "text": "effekt"
+          },
+          " på ",
+          {
+            "q": 5,
+            "u": "W"
+          },
+          ". I løpet av en kveld sender den til sammen i ",
+          {
+            "q": 12,
+            "u": "min"
+          },
+          "."
+        ]
+      ],
+      "stem": [
+        [
+          "Hvor mye ",
+          {
+            "term": "energi",
+            "text": "energi"
+          },
+          " sender stasjonen ut som radiosignal i løpet av kvelden?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 3600,
+              "u": "J"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 60,
+              "u": "J"
+            }
+          ],
+          "feedback": [
+            "Her er minuttene brukt direkte. Watt er joule per sekund, så tiden må regnes om til sekunder først."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 216000,
+              "u": "J"
+            }
+          ],
+          "feedback": [
+            "Her er de 12 minuttene regnet som timer (12 · 3600 s). Det er 60 sekunder i et minutt, ikke 3600."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 144,
+              "u": "J"
+            }
+          ],
+          "feedback": [
+            "Her er tiden delt på effekten. Energi er effekt ganget med tid, ikke tid delt på effekt."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Energi er effekt ganget med tid. Når effekten er i watt og tiden i sekunder, blir energien i joule (1 J = 1 Ws)."
+        ],
+        {
+          "steps": [
+            [
+              "Tid i sekunder: ",
+              {
+                "math": [
+                  "t",
+                  "=",
+                  "12",
+                  "·",
+                  {
+                    "q": 60,
+                    "u": "s"
+                  },
+                  "=",
+                  {
+                    "q": 720,
+                    "u": "s"
+                  }
+                ]
+              }
+            ],
+            [
+              "Energi: ",
+              {
+                "math": [
+                  "W",
+                  "=",
+                  "P",
+                  "·",
+                  "t",
+                  "=",
+                  {
+                    "q": 5,
+                    "u": "W"
+                  },
+                  "·",
+                  {
+                    "q": 720,
+                    "u": "s"
+                  },
+                  "=",
+                  {
+                    "q": 3600,
+                    "u": "J"
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        {
+          "note": [
+            "Det samme er 1 Wh (5 W i 0,2 h). Strømregningen bruker kilowattimer: 1 kWh = 3,6 MJ."
+          ]
+        }
+      ],
+      "glossary_after_answer": [
+        "energi"
+      ],
+      "study_reference": {
+        "chapter": 2,
+        "section_id": "s2-05",
+        "printed_pages": [
+          "2-1",
+          "2-2"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "01fb9a25c475b0b6"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T03:12:33+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "22eac6eb35b51b3ba48921669e5d8cd912d9fb5744de1f114693fafa2378b4d5",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:19:31+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "b276e7a4b9f74c706787b0e8df927ea699273eabe2f384200a79f45db27473ac",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:30:00+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "b276e7a4b9f74c706787b0e8df927ea699273eabe2f384200a79f45db27473ac",
+          "note": "Runde 2: faglig kontrollert av AI (ChatGPT), 11 spørsmål rettet.",
+          "acknowledged": [
+            "figures",
+            "ocr"
+          ]
+        }
+      ],
+      "calculation": {
+        "formula": "energy",
+        "inputs": {
+          "P": [
+            5,
+            "W"
+          ],
+          "t": [
+            12,
+            "min"
+          ]
+        },
+        "answer": [
+          3600,
+          "J"
+        ],
+        "answer_symbol": "W",
+        "sig_figs": 2
+      },
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-24T03:09:08+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "b276e7a4b9f74c706787b0e8df927ea699273eabe2f384200a79f45db27473ac",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: table. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T09:30:00+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T09:30:00+00:00",
+        "content_sha256": "b276e7a4b9f74c706787b0e8df927ea699273eabe2f384200a79f45db27473ac",
+        "acknowledged_hazards": [
+          "figures",
+          "ocr"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

@@ -1,0 +1,224 @@
+{
+  "id": "q-0192",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "medium",
+      "chapter": 5,
+      "section_ids": [
+        "s5-07"
+      ],
+      "topic_ids": [
+        "frekvensstabilitet"
+      ],
+      "learning_objective": "Regne om et frekvensavvik oppgitt i ppm (toleranse pluss aldring) til hertz for et krystall.",
+      "priority": "normal",
+      "context": [
+        [
+          "En ",
+          {
+            "term": "sender",
+            "text": "sender"
+          },
+          " bruker et ",
+          {
+            "term": "kvartskrystall",
+            "text": "kvartskrystall"
+          },
+          " på ",
+          {
+            "q": 20,
+            "u": "MHz"
+          },
+          " som frekvensreferanse. Ifølge databladet kan det nye krystallet avvike opptil 3 ",
+          {
+            "term": "ppm",
+            "text": "ppm"
+          },
+          " fra påstemplet frekvens, og aldring kan flytte ",
+          {
+            "term": "frekvens",
+            "text": "frekvensen"
+          },
+          " opptil 5 ppm til i løpet av det første året. (ppm betyr milliondeler.)"
+        ]
+      ],
+      "stem": [
+        "Hvor langt fra påstemplet frekvens kan krystallet i verste fall svinge etter ett år?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 16,
+              "u": "Hz"
+            }
+          ],
+          "feedback": [
+            "Du har regnet med én tierpotens for lite. 8 milliondeler av 20 000 000 Hz er 160 Hz, ikke 16 Hz."
+          ]
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 100,
+              "u": "Hz"
+            }
+          ],
+          "feedback": [
+            "Det er bare aldringen (5 ppm). I verste fall kommer toleransen fra starten (3 ppm) i tillegg."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 1.6,
+              "u": "kHz"
+            }
+          ],
+          "feedback": [
+            "Du har regnet med én tierpotens for mye. 8 milliondeler av 20 MHz er 160 Hz."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 160,
+              "u": "Hz"
+            }
+          ],
+          "feedback": []
+        }
+      ],
+      "correct": [
+        "o4"
+      ],
+      "explanation": [
+        "I verste fall legges toleransen og aldringen sammen: 3 ppm + 5 ppm = 8 ppm, altså 8 milliondeler av frekvensen.",
+        [
+          {
+            "math": [
+              "Δf",
+              "=",
+              "8",
+              "·",
+              "10^−6",
+              "·",
+              {
+                "q": 20,
+                "u": "MHz"
+              },
+              "=",
+              {
+                "q": 160,
+                "u": "Hz"
+              }
+            ]
+          }
+        ],
+        [
+          "Selv om krystaller er mye mer stabile enn LC-kretser, er de altså ikke perfekte. Mange ",
+          {
+            "term": "oscillator",
+            "text": "oscillatorer"
+          },
+          " har en trimmekondensator, så frekvensen kan justeres inn igjen mot en kjent, nøyaktig referanse, for eksempel en sender for standardfrekvens og tidssignal."
+        ]
+      ],
+      "glossary_after_answer": [
+        "ppm"
+      ],
+      "study_reference": {
+        "chapter": 5,
+        "section_id": "s5-07",
+        "printed_pages": [
+          "5-2"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "d3d409c953d7c856"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T03:12:23+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "ae644827955cc3c99dd6f0b06f8a73c1a1e943b40fd0bb396497fc26b87c70a9",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:19:31+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "00ada92ad4071ac292d3169773f304185a12fc2f866e1ec83ec6a6f851de2858",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:30:11+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "00ada92ad4071ac292d3169773f304185a12fc2f866e1ec83ec6a6f851de2858",
+          "note": "Runde 2: faglig kontrollert av AI (ChatGPT), 11 spørsmål rettet.",
+          "acknowledged": [
+            "ocr"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-24T03:09:12+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "00ada92ad4071ac292d3169773f304185a12fc2f866e1ec83ec6a6f851de2858",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: sign_ambiguous. Check every number, unit and formula against the printed book."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T09:30:11+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T09:30:11+00:00",
+        "content_sha256": "00ada92ad4071ac292d3169773f304185a12fc2f866e1ec83ec6a6f851de2858",
+        "acknowledged_hazards": [
+          "ocr"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

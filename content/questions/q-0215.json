@@ -1,0 +1,255 @@
+{
+  "id": "q-0215",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "calculation",
+      "difficulty": "hard",
+      "chapter": 6,
+      "section_ids": [
+        "s6-25"
+      ],
+      "topic_ids": [
+        "forforsterkere",
+        "mottakeregenskaper"
+      ],
+      "learning_objective": "Regne ut hvordan mottakerens egenstøy reduserer signal/støy-forholdet, som grunnlag for å vurdere en forforsterker.",
+      "priority": "normal",
+      "context": [
+        [
+          "En ",
+          {
+            "term": "mottaker",
+            "text": "mottaker"
+          },
+          " er koblet direkte til ",
+          {
+            "term": "antenne",
+            "text": "antennen"
+          },
+          " uten ",
+          {
+            "term": "forforsterker",
+            "text": "forforsterker"
+          },
+          ". På inngangen er signaleffekten 8 pW, og støyen som kommer inn fra antennen, er 0,08 pW. Mottakeren legger selv til 0,32 pW støy."
+        ],
+        "Regn med at støyeffektene legges sammen, og at forsterkningen i mottakeren påvirker signal og støy likt."
+      ],
+      "stem": [
+        [
+          "Hvor stort blir ",
+          {
+            "term": "signal-stoy-forhold",
+            "text": "signal/støy-forholdet"
+          },
+          " i mottakeren?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 13.0,
+              "u": "dB",
+              "digits": 1
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 20.0,
+              "u": "dB",
+              "digits": 1
+            }
+          ],
+          "feedback": [
+            "Det er forholdet ved antenneinngangen. Her er mottakerens egen støy ikke tatt med."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 14.0,
+              "u": "dB",
+              "digits": 1
+            }
+          ],
+          "feedback": [
+            "Her er bare mottakerens egen støy tatt med. Støyen fra antennen må legges til."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 26.0,
+              "u": "dB",
+              "digits": 1
+            }
+          ],
+          "feedback": [
+            [
+              "Her er effektforholdet regnet om med 20 · log. For ",
+              {
+                "term": "effekt",
+                "text": "effekt"
+              },
+              " brukes 10 · log."
+            ]
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        {
+          "steps": [
+            "Samlet støy: 0,08 pW + 0,32 pW = 0,40 pW.",
+            "Effektforhold: 8 pW / 0,40 pW = 20.",
+            [
+              {
+                "math": [
+                  "S",
+                  "/",
+                  "N",
+                  "=",
+                  "10",
+                  "·",
+                  "log",
+                  {
+                    "paren": [
+                      "20"
+                    ]
+                  },
+                  "≈",
+                  {
+                    "q": 13.0,
+                    "u": "dB",
+                    "digits": 1
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        "Ved antenneinngangen var forholdet 20 dB, så mottakerens egenstøy koster her 7 dB. En god forforsterker foran en slik støyende mottaker kan hente inn mye av dette tapet, fordi signal og antennestøy da blir forsterket opp over mottakerstøyen.",
+        "Er mottakeren derimot allerede like stille som forforsterkeren, legger forforsterkeren bare til sin egen støy, og forholdet blir litt dårligere."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 6,
+        "section_id": "s6-25",
+        "printed_pages": [
+          "6-15",
+          "6-16"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "974174d055515c42",
+          "3ce5721efbc16205"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T03:12:42+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "08acf571e9cb6faf1b177896d7649b70789e38396d89b9ba762d0d04978a6191",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:19:31+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "54000979789131de07840bf85a793a1e8b1618cc036ae9a9dcfcdc2ff5aa7439",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:30:15+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "54000979789131de07840bf85a793a1e8b1618cc036ae9a9dcfcdc2ff5aa7439",
+          "note": "Runde 2: faglig kontrollert av AI (ChatGPT), 11 spørsmål rettet.",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "calculation": {
+        "formula": "db_power_ratio",
+        "inputs": {
+          "P1": [
+            0.4,
+            "pW"
+          ],
+          "P2": [
+            8,
+            "pW"
+          ]
+        },
+        "answer": [
+          13.0,
+          "dB"
+        ],
+        "answer_symbol": "S/N",
+        "sig_figs": 3
+      },
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-24T03:09:21+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "54000979789131de07840bf85a793a1e8b1618cc036ae9a9dcfcdc2ff5aa7439",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T09:30:15+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T09:30:15+00:00",
+        "content_sha256": "54000979789131de07840bf85a793a1e8b1618cc036ae9a9dcfcdc2ff5aa7439",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

@@ -1,0 +1,171 @@
+{
+  "id": "q-0170",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "recall",
+      "difficulty": "easy",
+      "chapter": 4,
+      "section_ids": [
+        "s4-24"
+      ],
+      "topic_ids": [
+        "datamodulasjon"
+      ],
+      "learning_objective": "Vite at AMTOR var den første utbredte amatørdatamodusen med innebygget feildeteksjon og feilretting, i motsetning til vanlig RTTY.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "Datasendinger blant radioamatører startet med radiofjernskriver (",
+          {
+            "term": "rtty",
+            "text": "RTTY"
+          },
+          "). Senere kom flere datamoduser som ble laget for å tåle støy og fading bedre."
+        ]
+      ],
+      "stem": [
+        "Hvilken av disse sendeformene har innebygget feildeteksjon og feilretting?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "AMTOR"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "RTTY med femenhetskode"
+          ],
+          "feedback": [
+            "Vanlig RTTY sender hvert tegn som fem enheter uten kontrollbiter. Et tegn som blir ødelagt av støy, skrives bare ut feil."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Morsetelegrafi (CW)"
+          ],
+          "feedback": [
+            "I morsetelegrafi er det operatøren som må oppdage feil og be om repetisjon. Selve sendeformen har ingen automatisk feilretting."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Analog SSTV"
+          ],
+          "feedback": [
+            "Analog SSTV sender bildet som varierende tonefrekvenser. Støy gir bare striper og prikker i bildet, og ingenting blir rettet."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          {
+            "term": "amtor",
+            "text": "AMTOR"
+          },
+          " ble laget for radiobruk der fading og støy ødelegger enkelttegn. Koden er bygget slik at ",
+          {
+            "term": "mottaker",
+            "text": "mottakeren"
+          },
+          " kan se om et tegn er ugyldig, og i den ene driftsformen kvitterer mottakeren for hver liten blokk med tegn og ber om ny sending når noe er galt. I den andre driftsformen sendes hvert tegn to ganger."
+        ],
+        [
+          "Klassisk RTTY med femenhetskode har ingen slik kontroll. Senere moduser som pakkeradio bruker også feildeteksjon, mens for eksempel PSK31 i grunnformen satser på smal ",
+          {
+            "term": "baandbredde",
+            "text": "båndbredde"
+          },
+          " og god kode i stedet for automatisk repetisjon."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 4,
+        "section_id": "s4-24",
+        "printed_pages": [
+          "4-12"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "86ab135711970474"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T03:11:44+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "2d4e6e83e47ff0def7977b5873a9a03c165ee98558dce115c27828b192c2f0ad",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:19:31+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "53b1e8545edd98b61c523ac1de69dc5f96a0fa78c1ca190c53301f3fd2ca8d34",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:30:07+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "53b1e8545edd98b61c523ac1de69dc5f96a0fa78c1ca190c53301f3fd2ca8d34",
+          "note": "Runde 2: faglig kontrollert av AI (ChatGPT), 11 spørsmål rettet.",
+          "acknowledged": []
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-24T03:09:13+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "53b1e8545edd98b61c523ac1de69dc5f96a0fa78c1ca190c53301f3fd2ca8d34",
+        "errors": [],
+        "warnings": [],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T09:30:07+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T09:30:07+00:00",
+        "content_sha256": "53b1e8545edd98b61c523ac1de69dc5f96a0fa78c1ca190c53301f3fd2ca8d34",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

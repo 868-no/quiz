@@ -1,0 +1,291 @@
+{
+  "id": "q-0178",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "medium",
+      "chapter": 4,
+      "section_ids": [
+        "s4-23"
+      ],
+      "topic_ids": [
+        "senderoppbygging"
+      ],
+      "learning_objective": "Vite hvor en enkel CW-sender hensiktsmessig kan nøkles direkte, og hvorfor oscillatoren bør gå kontinuerlig.",
+      "priority": "normal",
+      "context": [
+        [
+          "Blokkskjemaet viser en enkel ",
+          {
+            "term": "sender",
+            "text": "sender"
+          },
+          " for morsetelegrafi (CW). Du skal bestemme hvilket trinn morsenøkkelen skal slå signalet av og på i."
+        ]
+      ],
+      "stem": [
+        [
+          "Hvor er det mest hensiktsmessig å koble inn morsenøkkelen for direkte nøkling med lav ",
+          {
+            "term": "spenning",
+            "text": "spenning"
+          },
+          " og ",
+          {
+            "term": "strom",
+            "text": "strøm"
+          },
+          "?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Drivertrinnet"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Oscillatoren"
+          ],
+          "feedback": [
+            [
+              "Når oscillatoren slås av og på, rekker den ikke å stabilisere seg, og frekvensen glir i starten av hvert tegn. Det gir ",
+              {
+                "term": "kvitter",
+                "text": "kvitter"
+              },
+              "."
+            ]
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Direkte i sluttforsterkerens høyspenningsforsyning"
+          ],
+          "feedback": [
+            "Å la morsenøkkelen bryte høy spenning og stor strøm direkte er både upraktisk og farlig. Sluttforsterkere kan nøkkelstyres elektronisk, men i denne enkle senderen er drivertrinnet et bedre sted for direkte nøkling."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Lavpassfilteret ved antennen"
+          ],
+          "feedback": [
+            [
+              {
+                "term": "filter",
+                "text": "Filteret"
+              },
+              " er passivt og har ingen strøm å slå av. Å bryte signalet der ville også gi sluttrinnet en feil last."
+            ]
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          {
+            "term": "oscillator",
+            "text": "Oscillatoren"
+          },
+          " bør gå kontinuerlig for å holde ",
+          {
+            "term": "frekvens",
+            "text": "frekvensen"
+          },
+          " stabil. I denne enkle senderen er det derfor hensiktsmessig å nøkle ",
+          {
+            "term": "drivertrinn",
+            "text": "drivertrinnet"
+          },
+          ", for eksempel ved å bryte emitterstrømmen, der ",
+          {
+            "term": "spenning",
+            "text": "spenningen"
+          },
+          " og strømmen er forholdsvis lave. Andre senderkonstruksjoner kan bruke elektronisk nøkling av ",
+          {
+            "term": "sluttforsterker",
+            "text": "sluttrinnet"
+          },
+          "."
+        ],
+        [
+          "Nøklingskretsen bør dessuten gi en myk stigning og et mykt fall. For brå overganger gir ",
+          {
+            "term": "sidebaand",
+            "text": "sidebånd"
+          },
+          " langt utenfor signalet, hørt som ",
+          {
+            "term": "nokkelklikk",
+            "text": "nøkkelklikk"
+          },
+          " på nabofrekvensene."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 4,
+        "section_id": "s4-23",
+        "printed_pages": [
+          "4-11",
+          "4-12"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "504a3a4836d7a292",
+          "37086e2bfcd50e43"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T03:11:44+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "eacd920d71cff4242c4e077c194625a75d88e19a2716cbe46d1d2574f1f7b638",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:19:31+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "9cd61d5a867c2024ca771a5fa699296161019686d2f4bf6625f08dccffeb791a",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:23:29+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "f6b68d287ddbc4d756b8dc96b16b01bc28f76a851427f015a9d71db0644ad2d5",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:30:09+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "f6b68d287ddbc4d756b8dc96b16b01bc28f76a851427f015a9d71db0644ad2d5",
+          "note": "Runde 2: faglig kontrollert av AI (ChatGPT), 11 spørsmål rettet.",
+          "acknowledged": [
+            "figures",
+            "ocr"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-24T03:09:15+00:00"
+      },
+      "visual": {
+        "template": "block-diagram",
+        "version": 1,
+        "params": {
+          "chain": [
+            {
+              "kind": "vfo"
+            },
+            {
+              "kind": "buffer"
+            },
+            {
+              "kind": "driver"
+            },
+            {
+              "kind": "power_amp"
+            },
+            {
+              "kind": "lowpass_filter"
+            },
+            {
+              "kind": "antenna"
+            }
+          ]
+        },
+        "params_after": {
+          "chain": [
+            {
+              "kind": "vfo"
+            },
+            {
+              "kind": "buffer"
+            },
+            {
+              "kind": "driver",
+              "highlight": true
+            },
+            {
+              "kind": "power_amp"
+            },
+            {
+              "kind": "lowpass_filter"
+            },
+            {
+              "kind": "antenna"
+            }
+          ]
+        }
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "f6b68d287ddbc4d756b8dc96b16b01bc28f76a851427f015a9d71db0644ad2d5",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: equation. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T09:30:09+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T09:30:09+00:00",
+        "content_sha256": "f6b68d287ddbc4d756b8dc96b16b01bc28f76a851427f015a9d71db0644ad2d5",
+        "acknowledged_hazards": [
+          "figures",
+          "ocr"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

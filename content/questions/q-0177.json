@@ -1,0 +1,198 @@
+{
+  "id": "q-0177",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "hard",
+      "chapter": 4,
+      "section_ids": [
+        "s4-20"
+      ],
+      "topic_ids": [
+        "fm"
+      ],
+      "learning_objective": "Forstå forskjellen på frekvens- og fasemodulasjon: ved fasemodulasjon øker frekvensdeviasjonen med modulasjonsfrekvensen.",
+      "priority": "normal",
+      "context": [
+        [
+          "En sender er ",
+          {
+            "term": "fasemodulasjon",
+            "text": "fasemodulert"
+          },
+          ", uten noen korreksjon av lydsignalet. Den moduleres med en sinustone med konstant amplitude, og tonefrekvensen økes fra 1 kHz til 2 kHz."
+        ]
+      ],
+      "stem": [
+        [
+          "Hva skjer med ",
+          {
+            "term": "deviasjon",
+            "text": "spissdeviasjonen"
+          },
+          " (frekvensutslaget) i det utsendte signalet?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Den blir omtrent dobbelt så stor"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Den forblir uendret"
+          ],
+          "feedback": [
+            [
+              "Slik er det ved ren ",
+              {
+                "term": "frekvensmodulasjon",
+                "text": "frekvensmodulasjon"
+              },
+              ", der deviasjonen bare avhenger av amplituden til lydsignalet. Ved fasemodulasjon er det faseutslaget som er bestemt av amplituden."
+            ]
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Den blir omtrent halvert"
+          ],
+          "feedback": [
+            [
+              "Det er ",
+              {
+                "term": "modulasjonsindeks",
+                "text": "modulasjonsindeksen"
+              },
+              " ved vanlig FM som halveres når tonefrekvensen dobles og deviasjonen er den samme. Her spør vi om deviasjonen ved fasemodulasjon."
+            ]
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Den blir null, fordi bare fasen endres"
+          ],
+          "feedback": [
+            "Når fasen endres, endres også øyeblikksfrekvensen. Et fasemodulert signal har derfor alltid et frekvensutslag."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Ved fasemodulasjon er det største faseutslaget bestemt av amplituden til lydsignalet. ",
+          {
+            "term": "frekvens",
+            "text": "Frekvensen"
+          },
+          " er et mål på hvor raskt fasen endrer seg, og når den samme faseendringen skjer dobbelt så ofte, blir frekvensutslaget dobbelt så stort. Deviasjonen øker altså i takt med tonefrekvensen."
+        ],
+        [
+          "Mange FM-",
+          {
+            "term": "sender",
+            "text": "sendere"
+          },
+          " bruker likevel fasemodulasjon, fordi den kan gjøres på signalet etter ",
+          {
+            "term": "oscillator",
+            "text": "oscillatoren"
+          },
+          " uten å påvirke ",
+          {
+            "term": "frekvensstabilitet",
+            "text": "frekvensstabiliteten"
+          },
+          ". Et RC-ledd demper da de høye lydfrekvensene på forhånd, slik at det utsendte signalet oppfører seg som frekvensmodulasjon."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 4,
+        "section_id": "s4-20",
+        "printed_pages": [
+          "4-10"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "f7ade5d63265ed4b"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T03:11:44+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "9d117cdd80cf01baa55554b1e448d19500de9e2278d1796ad3797d1e6e156d10",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:19:31+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "55d53c65e9ca37f4586da5be790f5b57e211dfb1b8117c6e1401309782910f3e",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:30:09+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "55d53c65e9ca37f4586da5be790f5b57e211dfb1b8117c6e1401309782910f3e",
+          "note": "Runde 2: faglig kontrollert av AI (ChatGPT), 11 spørsmål rettet.",
+          "acknowledged": []
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-24T03:09:15+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "55d53c65e9ca37f4586da5be790f5b57e211dfb1b8117c6e1401309782910f3e",
+        "errors": [],
+        "warnings": [],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T09:30:09+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T09:30:09+00:00",
+        "content_sha256": "55d53c65e9ca37f4586da5be790f5b57e211dfb1b8117c6e1401309782910f3e",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

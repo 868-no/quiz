@@ -1,0 +1,274 @@
+{
+  "id": "q-0214",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "hard",
+      "chapter": 6,
+      "section_ids": [
+        "s6-22"
+      ],
+      "topic_ids": [
+        "demodulering",
+        "superheterodyn"
+      ],
+      "learning_objective": "Forstå hvordan BFO-frekvensens plassering i forhold til MF-filteret og den undertrykte bærebølgen bestemmer om et SSB-signal demoduleres riktig.",
+      "priority": "normal",
+      "context": [
+        [
+          "En hjemmebygd ",
+          {
+            "term": "ssb",
+            "text": "SSB"
+          },
+          "-mottaker har ett krystallfilter i MF-trinnet og en ",
+          {
+            "term": "produktdetektor",
+            "text": "produktdetektor"
+          },
+          " med ",
+          {
+            "term": "bfo",
+            "text": "BFO"
+          },
+          ". Den gjengir det ene sidebåndet riktig. For å ta imot det andre ",
+          {
+            "term": "sidebaand",
+            "text": "sidebåndet"
+          },
+          " flytter byggeren bare ",
+          {
+            "term": "lokaloscillator",
+            "text": "lokaloscillatoren"
+          },
+          ", slik at signalet havner i det samme filteret."
+        ],
+        "Talen kommer gjennom, men er uforståelig: lyse toner høres mørke ut og mørke toner lyse."
+      ],
+      "stem": "Hva må byggeren gjøre i tillegg?",
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Flytte BFO-en til motsatt kant av filterets passbånd"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Flytte BFO-en til midten av filterets passbånd"
+          ],
+          "feedback": [
+            "Da havner halve talebåndet på hver side av BFO-frekvensen. De to halvdelene legger seg oppå hverandre i lyden og blir like uforståelige."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Bytte ut krystallfilteret med et bredere filter"
+          ],
+          "feedback": [
+            "Signalet passerer allerede filteret. Problemet er at lydspekteret er speilvendt, og det løser ikke et bredere filter."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Bytte om de to ledningene til høyttaleren"
+          ],
+          "feedback": [
+            [
+              "Å bytte polaritet snur bare fortegnet på lydsignalet. ",
+              {
+                "term": "frekvens",
+                "text": "Frekvensene"
+              },
+              " blir de samme, og øret hører ingen forskjell."
+            ]
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "BFO-en skal ligge der den undertrykte ",
+          {
+            "term": "baerebolge",
+            "text": "bærebølgen"
+          },
+          " ville ha ligget, altså på den ene kanten av ",
+          {
+            "term": "passband",
+            "text": "passbåndet"
+          },
+          ". Lydfrekvensen er avstanden mellom BFO-en og hver del av sidebåndet."
+        ],
+        [
+          "Når lokaloscillatoren flyttes for å få det andre sidebåndet inn i ",
+          {
+            "term": "filter",
+            "text": "filteret"
+          },
+          ", kommer bærebølgeposisjonen på motsatt kant av passbåndet. Står BFO-en fortsatt på den gamle kanten, blir lave lydfrekvenser til høye og høye til lave. Lyden er speilvendt."
+        ],
+        [
+          "Flyttes BFO-en til den nye bærebølgeposisjonen, blir lyden riktig igjen. Alternativet er å bytte til et eget filter for hvert sidebånd. I ",
+          {
+            "term": "mottaker",
+            "text": "mottakere"
+          },
+          " med syntetiserte ",
+          {
+            "term": "oscillator",
+            "text": "oscillatorer"
+          },
+          " gjør sidebåndsvenderen gjerne begge flyttingene automatisk."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 6,
+        "section_id": "s6-22",
+        "printed_pages": [
+          "6-13"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "f6343bfb795c8b14",
+          "13373c7b88964306"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T03:12:42+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "4cdce1e277fdc35fdbdaeef056107493abe155e2ad939b6f0a70bb7b264fd438",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:19:31+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "238764378de19ddd5ab14a6a15f6d4053f014d289c4d85b6044192c2a0b52fe9",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:23:29+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "53b7a2cf6544ef72c8dc06366d6aa57d6c97d97fd3069d0aa4499436ca2a0c98",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:30:15+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "53b7a2cf6544ef72c8dc06366d6aa57d6c97d97fd3069d0aa4499436ca2a0c98",
+          "note": "Runde 2: faglig kontrollert av AI (ChatGPT), 11 spørsmål rettet.",
+          "acknowledged": [
+            "figures",
+            "ocr"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-24T03:09:21+00:00"
+      },
+      "visual": {
+        "template": "block-diagram",
+        "version": 1,
+        "params": {
+          "chain": [
+            {
+              "kind": "antenna"
+            },
+            {
+              "kind": "mixer"
+            },
+            {
+              "kind": "if_filter",
+              "label": "Krystallfilter"
+            },
+            {
+              "kind": "if_amp"
+            },
+            {
+              "kind": "product_detector"
+            },
+            {
+              "kind": "af_amp"
+            }
+          ],
+          "side": [
+            {
+              "kind": "local_osc",
+              "into": 1
+            },
+            {
+              "kind": "bfo",
+              "into": 4
+            }
+          ]
+        }
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "53b7a2cf6544ef72c8dc06366d6aa57d6c97d97fd3069d0aa4499436ca2a0c98",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: numeric_low_conf. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T09:30:15+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T09:30:15+00:00",
+        "content_sha256": "53b7a2cf6544ef72c8dc06366d6aa57d6c97d97fd3069d0aa4499436ca2a0c98",
+        "acknowledged_hazards": [
+          "figures",
+          "ocr"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

@@ -1,0 +1,202 @@
+{
+  "id": "q-0175",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 4,
+      "section_ids": [
+        "s4-12",
+        "s4-13"
+      ],
+      "topic_ids": [
+        "frekvenssyntese"
+      ],
+      "learning_objective": "Kjenne fordelene med frekvenssyntetisatorer (PLL og DDS) og at signalet ofte er litt mindre rent enn fra de beste LC- og krystalloscillatorene.",
+      "priority": "normal",
+      "context": [
+        [
+          "De fleste moderne ",
+          {
+            "term": "sender",
+            "text": "sendere"
+          },
+          " får ",
+          {
+            "term": "frekvens",
+            "text": "frekvensen"
+          },
+          " sin fra en syntetisator med ",
+          {
+            "term": "faselaast-sloyfe",
+            "text": "faselåst sløyfe"
+          },
+          " eller ",
+          {
+            "term": "dds",
+            "text": "direkte digital syntese"
+          },
+          ". ",
+          {
+            "term": "frekvenssyntetisator",
+            "text": "Syntetisatoren"
+          },
+          " styres av en krystallreferanse og kan stilles inn i små steg over hele frekvensområdet."
+        ]
+      ],
+      "stem": [
+        "Hvilken ulempe har en syntetisator ofte sammenlignet med en virkelig god krystalloscillator?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Signalet er litt mindre rent og inneholder noe mer støy"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Den kan bare stilles inn på noen få faste kanaler"
+          ],
+          "feedback": [
+            "Det gjaldt eldre sendere med ett krystall per kanal. En syntetisator har like stor fleksibilitet som en VFO."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Frekvensen driver omtrent like mye som i en VFO"
+          ],
+          "feedback": [
+            "Syntetisatoren er låst til en krystallreferanse, og frekvensen blir derfor like stabil som referansen."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Den krever en egen kalibrator for å vise riktig frekvens"
+          ],
+          "feedback": [
+            "Et slikt krav har enkelte land hatt for VFO-styrte sendere. Med en syntetisator følger nøyaktigheten av krystallreferansen."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "En syntetisator kan stilles fritt som en ",
+          {
+            "term": "vfo",
+            "text": "VFO"
+          },
+          ", men holder frekvensen like presist som krystallreferansen den er låst til. Prisen er at signalet ofte har litt mer støy rundt ",
+          {
+            "term": "baerebolge",
+            "text": "bærebølgen"
+          },
+          " og enkelte uønskede signaler ved siden av, sammenlignet med de beste LC- og krystalloscillatorene.",
+          " Et godt ",
+          {
+            "term": "kvartskrystall",
+            "text": "kvartskrystall"
+          },
+          " alene gir et svært rent signal."
+        ],
+        [
+          "Derfor må både PLL- og DDS-syntetisatorer konstrueres og filtreres nøye. Uønskede signaler fra syntetisatoren kan blande seg med sterke signaler i ",
+          {
+            "term": "mottaker",
+            "text": "mottakeren"
+          },
+          " og gi forstyrrelser."
+        ]
+      ],
+      "glossary_after_answer": [
+        "frekvenssyntetisator"
+      ],
+      "study_reference": {
+        "chapter": 4,
+        "section_id": "s4-12",
+        "printed_pages": [
+          "4-6"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "e713ceb0a98959bf",
+          "9da6068ce756a26c"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T03:11:44+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "63cae62a38ebf04f0a563a9e5bd2aa9387e7187c43ed6c5e597497d7393f1396",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:19:31+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "7d1df8d1d2d5b05bf02d7394a20266956282b732fed7d1c836c7a5ecdb2133de",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:30:08+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "7d1df8d1d2d5b05bf02d7394a20266956282b732fed7d1c836c7a5ecdb2133de",
+          "note": "Runde 2: faglig kontrollert av AI (ChatGPT), 11 spørsmål rettet.",
+          "acknowledged": []
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-24T03:09:14+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "7d1df8d1d2d5b05bf02d7394a20266956282b732fed7d1c836c7a5ecdb2133de",
+        "errors": [],
+        "warnings": [],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T09:30:08+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T09:30:08+00:00",
+        "content_sha256": "7d1df8d1d2d5b05bf02d7394a20266956282b732fed7d1c836c7a5ecdb2133de",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

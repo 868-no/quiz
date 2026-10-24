@@ -1,0 +1,197 @@
+{
+  "id": "q-0174",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "recall",
+      "difficulty": "easy",
+      "chapter": 4,
+      "section_ids": [
+        "s4-11"
+      ],
+      "topic_ids": [
+        "krystaller",
+        "frekvensstabilitet"
+      ],
+      "learning_objective": "Vite at en krystalloscillator er svært stabil, men bare kan justeres litt i frekvens.",
+      "priority": "normal",
+      "context": [
+        [
+          "En ",
+          {
+            "term": "oscillator",
+            "text": "oscillator"
+          },
+          " kan få ",
+          {
+            "term": "frekvens",
+            "text": "frekvensen"
+          },
+          " sin bestemt enten av en ",
+          {
+            "term": "spole",
+            "text": "spole"
+          },
+          " og en ",
+          {
+            "term": "kondensator",
+            "text": "kondensator"
+          },
+          " (LC-oscillator) eller av et ",
+          {
+            "term": "kvartskrystall",
+            "text": "kvartskrystall"
+          },
+          "."
+        ]
+      ],
+      "stem": [
+        "Hva er den viktigste ulempen med en krystalloscillator sammenlignet med en LC-oscillator?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Frekvensen kan bare justeres svært lite"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Frekvensen driver mer når temperaturen endres"
+          ],
+          "feedback": [
+            "Det er motsatt. Et krystall er langt mer stabilt enn en spole og en kondensator, også når temperaturen endres."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Utgangssignalet inneholder langt mer støy"
+          ],
+          "feedback": [
+            "En god krystalloscillator gir et svært rent signal. Det er derfor den brukes som referanse i frekvenssyntetisatorer."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Den kan bare svinge på frekvenser under 1 MHz"
+          ],
+          "feedback": [
+            "Krystaller lages for frekvenser langt opp i HF-området, og overtonekrystaller går enda høyere."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Et krystall svinger på en frekvens som er bestemt av kvartsskiven selv. Det gir høy nøyaktighet og stabilitet, men frekvensen kan bare trekkes litt med en trimmekondensator eller en ",
+          {
+            "term": "varicap",
+            "text": "varaktordiode"
+          },
+          "."
+        ],
+        [
+          "Eldre ",
+          {
+            "term": "sender",
+            "text": "sendere"
+          },
+          " som skulle bruke flere kanaler, trengte derfor ett krystall per kanal og en bryter for å velge mellom dem. I dag brukes krystalloscillatorer mest som referanse for syntetisatorer, som kombinerer stabiliteten med fritt valg av frekvens."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 4,
+        "section_id": "s4-11",
+        "printed_pages": [
+          "4-6"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "7de21de341cbe50a"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T03:11:44+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "e861835c813859fc761e91ac8b0696c1f565bacc0c198c4115dfb9b8ab4467ce",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:19:31+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "c587619644c85edfeced23e7e393473f98d511c18e952142ab35d1a9a94b071b",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:30:08+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "c587619644c85edfeced23e7e393473f98d511c18e952142ab35d1a9a94b071b",
+          "note": "Runde 2: faglig kontrollert av AI (ChatGPT), 11 spørsmål rettet.",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-24T03:09:14+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "c587619644c85edfeced23e7e393473f98d511c18e952142ab35d1a9a94b071b",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T09:30:08+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T09:30:08+00:00",
+        "content_sha256": "c587619644c85edfeced23e7e393473f98d511c18e952142ab35d1a9a94b071b",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

@@ -1,0 +1,205 @@
+{
+  "id": "q-0154",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "recall",
+      "difficulty": "medium",
+      "chapter": 3,
+      "section_ids": [
+        "s3-26"
+      ],
+      "topic_ids": [
+        "forspenningsklasser"
+      ],
+      "learning_objective": "Kjenne igjen klasse AB ut fra hvilestrøm og ledevinkel.",
+      "priority": "normal",
+      "context": [
+        [
+          "En ",
+          {
+            "term": "transistor",
+            "text": "transistor"
+          },
+          " i en ",
+          {
+            "term": "forsterker",
+            "text": "forsterker"
+          },
+          " er ",
+          {
+            "term": "forspenning",
+            "text": "forspent"
+          },
+          " slik at det går en liten ",
+          {
+            "term": "hvilestrom",
+            "text": "hvilestrøm"
+          },
+          " også uten signal. Ved svake signaler leder den gjennom hele ",
+          {
+            "term": "periode",
+            "text": "perioden"
+          },
+          ". Ved sterke signaler sperrer den i en del av perioden, men i mindre enn en halv periode."
+        ]
+      ],
+      "stem": [
+        "Hvilken forspenningsklasse er dette?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Klasse AB"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Klasse A"
+          ],
+          "feedback": [
+            "I klasse A leder transistoren hele perioden også ved full utstyring. Det krever en stor hvilestrøm, som må være minst like stor som halve toppstrømmen."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Klasse B"
+          ],
+          "feedback": [
+            "I klasse B er transistoren forspent akkurat på grensen til å lede. Det går nesten ingen hvilestrøm, og den leder bare i den ene halvperioden."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Klasse C"
+          ],
+          "feedback": [
+            "I klasse C er transistoren forspent forbi sperregrensen. Den leder i mindre enn en halv periode, og det går ingen hvilestrøm."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Klassene skilles på hvor stor del av perioden transistoren leder:"
+        ],
+        {
+          "steps": [
+            [
+              "Klasse A: hele perioden (360°), stor hvilestrøm."
+            ],
+            [
+              "Klasse AB: mer enn en halv, men mindre enn en hel periode; liten hvilestrøm."
+            ],
+            [
+              "Klasse B: omtrent en halv periode (180°); nesten ingen hvilestrøm."
+            ],
+            [
+              "Klasse C: mindre enn en halv periode; ingen hvilestrøm."
+            ]
+          ]
+        },
+        [
+          "Klasse AB er et kompromiss: Den lille hvilestrømmen fjerner mye av forvrengningen rundt nullgjennomgangen som klasse B gir, men trinnet blir langt mindre varmt enn i ",
+          {
+            "term": "forsterkerklasse",
+            "text": "klasse A"
+          },
+          ". Det er vanlig i ",
+          {
+            "term": "push-pull",
+            "text": "push-pull-trinn"
+          },
+          "."
+        ]
+      ],
+      "glossary_after_answer": [
+        "hvilestrom"
+      ],
+      "study_reference": {
+        "chapter": 3,
+        "section_id": "s3-26",
+        "printed_pages": [
+          "3-11"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "371572868171b1ed"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T03:13:24+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "699c0fb6ab53749479b6a56c095a0e2670272348a3c1ad0d1368f1ac4154ab96",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:19:31+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "babf5304e73afb29d0b2839971bad6dd3648e025d89a1476cfd2ffa9da60be2f",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:30:05+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "babf5304e73afb29d0b2839971bad6dd3648e025d89a1476cfd2ffa9da60be2f",
+          "note": "Runde 2: faglig kontrollert av AI (ChatGPT), 11 spørsmål rettet.",
+          "acknowledged": []
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-24T03:09:22+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "babf5304e73afb29d0b2839971bad6dd3648e025d89a1476cfd2ffa9da60be2f",
+        "errors": [],
+        "warnings": [],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T09:30:05+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T09:30:05+00:00",
+        "content_sha256": "babf5304e73afb29d0b2839971bad6dd3648e025d89a1476cfd2ffa9da60be2f",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

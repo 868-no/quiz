@@ -1,0 +1,224 @@
+{
+  "id": "q-0194",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "medium",
+      "chapter": 5,
+      "section_ids": [
+        "s5-17"
+      ],
+      "topic_ids": [
+        "senderfeil"
+      ],
+      "learning_objective": "Kjenne igjen RF-innslag på mikrofonledningen (forvrengning, PTT som henger) og vite at ferrittringer, RF-filter og god skjerming er tiltakene.",
+      "priority": "normal",
+      "context": [
+        [
+          "Du sender ",
+          {
+            "term": "ssb",
+            "text": "SSB"
+          },
+          " på 14 MHz med en ",
+          {
+            "term": "antenne",
+            "text": "antenne"
+          },
+          " like ved huset. Ved høy ",
+          {
+            "term": "effekt",
+            "text": "effekt"
+          },
+          " melder andre at lyden din blir forvrengt, og av og til fortsetter ",
+          {
+            "term": "sender",
+            "text": "senderen"
+          },
+          " å sende etter at du har sluppet mikrofonknappen (PTT). Når du bytter antennen med en ",
+          {
+            "term": "kunstlast",
+            "text": "kunstlast"
+          },
+          ", virker alt som det skal."
+        ]
+      ],
+      "stem": [
+        "Hva er den mest sannsynlige årsaken, og hva bør du prøve først?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Sluttrinnet har parasittsvingninger. Sett en ferrittperle i kollektorledningen."
+          ],
+          "feedback": [
+            [
+              "Et ",
+              {
+                "term": "sluttforsterker",
+                "text": "sluttrinn"
+              },
+              " kan bli ustabilt med enkelte belastninger, men symptomene her peker særlig mot ",
+              {
+                "term": "rf-innslag",
+                "text": "RF-innslag"
+              },
+              " på mikrofon- eller PTT-ledningen. Ferritter på kabelen er derfor et naturlig første tiltak."
+            ]
+          ]
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Oscillatoren driver fordi den blir varm. Flytt den bort fra sluttrinnet."
+          ],
+          "feedback": [
+            [
+              {
+                "term": "frekvensdrift",
+                "text": "Frekvensdrift"
+              },
+              " gir en langsom endring av tonehøyden. Den forklarer verken forvrengt lyd eller at PTT henger, og den ville ikke forsvunnet med kunstlast."
+            ]
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "RF fra antennen kommer inn på mikrofonledningen. Sett ferrittringer på kabelen."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Lavpassfilteret er defekt. Bytt ut filteret på antenneutgangen til senderen."
+          ],
+          "feedback": [
+            [
+              {
+                "term": "lavpassfilter",
+                "text": "Lavpassfilteret"
+              },
+              " demper ",
+              {
+                "term": "harmoniske",
+                "text": "harmoniske"
+              },
+              " på utgangen. En feil i det gir ikke forvrengt lyd eller en PTT-knapp som henger seg opp."
+            ]
+          ]
+        }
+      ],
+      "correct": [
+        "o3"
+      ],
+      "explanation": [
+        "Når antennen står nær stasjonen, kan sendesignalet plukkes opp av mikrofonledningen. RF-en likerettes i mikrofonforsterkeren eller PTT-kretsen og gir forvrengning, ustabilitet eller at senderen blir stående på. At feilen forsvinner med kunstlast, styrker mistanken om at RF fra antennesystemet kommer tilbake til stasjonen og påvirker mikrofon- eller styrekretsene.",
+        [
+          "Tiltak: sett flere ",
+          {
+            "term": "ferrittring",
+            "text": "ferrittringer"
+          },
+          " på mikrofonkabelen, både ved mikrofonen og ved pluggen, eller bygg et lite RF-",
+          {
+            "term": "filter",
+            "text": "filter"
+          },
+          " inn i mikrofonen hvis det er plass. Kabelskjermen må være tett og ha god forbindelse til jordpunktet som resten av stasjonen bruker."
+        ],
+        "Tilsvarende kan strømforsynings- og styrekabler stråle ut eller plukke opp RF. Der hjelper RF-sperrer og avkoblingskondensatorer ved inngangen til apparatet."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 5,
+        "section_id": "s5-17",
+        "printed_pages": [
+          "5-7"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "dcc7dbf333789226"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T03:12:23+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "16c797240c49fb9bd87754a63f101520bf15b7b17272f7be7e8710e0980f868a",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:19:31+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "43f9cf89202db963f28257aff1934dda33bd2e7fa97ee2f34f65bcd0e80a5b5f",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:23:29+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "9f2e9ea93a7119273eec97eeef9a6896cadada029abe9217f7a013d310b6cf96",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:30:11+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "9f2e9ea93a7119273eec97eeef9a6896cadada029abe9217f7a013d310b6cf96",
+          "note": "Runde 2: faglig kontrollert av AI (ChatGPT), 11 spørsmål rettet.",
+          "acknowledged": []
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-24T03:09:13+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "9f2e9ea93a7119273eec97eeef9a6896cadada029abe9217f7a013d310b6cf96",
+        "errors": [],
+        "warnings": [],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T09:30:11+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T09:30:11+00:00",
+        "content_sha256": "9f2e9ea93a7119273eec97eeef9a6896cadada029abe9217f7a013d310b6cf96",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}
