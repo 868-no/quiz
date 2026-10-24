@@ -18,7 +18,9 @@ async function boot() {
   if (site.issues_url) {
     const p = document.getElementById('footer-report');
     p.replaceChildren(toDOM(h('span', {},
-      'Siden er et dugnadsprosjekt fra Meshtastic Users Norway, og alle kan hjelpe til med å lese korrektur på spørsmålene. Har du funnet en feil eller har et forslag, ',
+      'Siden er et dugnadsprosjekt fra ',
+      h('a', { href: 'https://868.no', target: '_blank', rel: 'noopener noreferrer' }, 'Meshtastic Users Norway'),
+      ', og alle kan hjelpe til med å lese korrektur på spørsmålene. Har du funnet en feil eller har et forslag, ',
       h('a', { href: site.issues_url, target: '_blank', rel: 'noopener noreferrer' }, 'meld fra på GitHub'),
       ' (det krever en gratis konto).')));
     p.hidden = false;
