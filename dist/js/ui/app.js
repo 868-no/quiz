@@ -9,7 +9,8 @@ import {
   advance, createSession, currentItem, indexBank, pool, restoreSession, submitAnswer, summary,
 } from '../quiz/engine.js';
 import { randomSeed } from '../quiz/rng.js';
-import { clearSession, loadSession, saveSession } from '../quiz/storage.js';
+import { clearMissed, clearSession, loadMissed, loadSession, saveMissed, saveSession } from '../quiz/storage.js';
+import { missedIds, parseMissed, recordAnswer } from '../quiz/progress.js';
 import { createGlossary } from './glossary.js';
 import { chapterDial, roundDial, setDialWidth } from './dial.js';
 
@@ -17,6 +18,8 @@ const LETTERS = ['A', 'B', 'C', 'D', 'E', 'F'];
 const DIFFICULTY_LABEL = { easy: 'Lett', medium: 'Middels', hard: 'Vanskelig' };
 const STYLE_LABEL = { recall: 'Faktakunnskap', concept: 'Forståelse', scenario: 'Praktiske situasjoner', calculation: 'Regneoppgaver' };
 const COUNT_CHOICES = [5, 10, 20, 30, 50];
+const MISSED_ROUND = 20; // most questions in one round of practising earlier mistakes
+const LINK_RE = /^#(q-\d+)$/;
 
 const reducedMotion = () => Boolean(globalThis.matchMedia && globalThis.matchMedia('(prefers-reduced-motion: reduce)').matches);
 
@@ -34,7 +37,9 @@ export function createApp(root, bank) {
       styles: new Set(),
     },
     resumable: restoreSession(loadSession(), bank),
+    missed: parseMissed(loadMissed()),
     message: '',
+    linkNotice: '',
   };
 
   const chapterOf = (n) => bank.chapters.find((c) => c.number === n);
@@ -65,8 +70,78 @@ export function createApp(root, bank) {
     if (target) target.focus({ preventScroll: false });
   }
 
+  // A question opened from a link is not saved, so it never replaces a round in progress.
   function persist() {
-    if (state.session) saveSession(state.session);
+    if (state.session && state.session.kind !== 'single') saveSession(state.session);
+  }
+
+  const isSingle = () => Boolean(state.session && state.session.kind === 'single');
+
+  // ---------------------------------------------------------------- links
+  function questionUrl(id) {
+    const loc = globalThis.location;
+    return loc ? `${loc.origin}${loc.pathname}#${id}` : `#${id}`;
+  }
+
+  function linkedId() {
+    const m = LINK_RE.exec((globalThis.location && globalThis.location.hash) || '');
+    return m ? m[1] : null;
+  }
+
+  function clearHash() {
+    const loc = globalThis.location;
+    if (loc && loc.hash && globalThis.history) globalThis.history.replaceState(null, '', loc.pathname + loc.search);
+  }
+
+  /** Open one question from a link (#q-0045) as a round of its own. */
+  function openLinked(id, focus) {
+    const q = byId.get(id);
+    const res = q ? createSession(bank, { chapters: [q.chapter], ids: [id], count: 1, kind: 'single', seed: randomSeed() }) : { ok: false };
+    if (!res.ok) {
+      clearHash();
+      state.session = null;
+      state.linkNotice = `Fant ikke spørsmål ${id}. Det kan ha blitt fjernet.`;
+      renderSetup(focus === null ? null : '.link-notice');
+      return;
+    }
+    state.linkNotice = '';
+    state.session = res.session;
+    state.choice = null;
+    renderQuestion(focus);
+  }
+
+  /** Leave a round and go back to the setup screen (a saved round stays resumable). */
+  function toSetup() {
+    if (isSingle()) clearHash();
+    else clearSession();
+    state.session = null;
+    state.resumable = restoreSession(loadSession(), bank);
+    renderSetup();
+  }
+
+  // --------------------------------------------------------------- missed
+  const missedNow = () => missedIds(state.missed, bank);
+
+  function startMissed() {
+    const ids = missedNow();
+    if (!ids.length) {
+      renderSetup();
+      return;
+    }
+    const chapters = [...new Set(ids.map((id) => byId.get(id).chapter))].sort((a, b) => a - b);
+    start({ chapters, ids, count: Math.min(ids.length, MISSED_ROUND), kind: 'missed' });
+  }
+
+  function missedNotice() {
+    const n = missedNow().length;
+    if (!n) return null;
+    const what = n === 1 ? 'ett spørsmål' : `${n} spørsmål`;
+    return h('div', { class: 'notice notice-missed' },
+      h('p', {}, `Du har svart feil på ${what} som du ikke har fått riktig senere. Et spørsmål forsvinner fra lista når du svarer riktig på det.`),
+      n > MISSED_ROUND ? h('p', { class: 'hint' }, `En runde tar ${MISSED_ROUND} av dem om gangen.`) : null,
+      h('div', { class: 'actions' },
+        h('button', { type: 'button', class: 'btn', 'data-action': 'practice-missed' }, 'Øv på de du bommet på'),
+        h('button', { type: 'button', class: 'btn btn-secondary', 'data-action': 'clear-missed' }, 'Tøm lista')));
   }
 
   // ---------------------------------------------------------------- setup
@@ -130,11 +205,13 @@ export function createApp(root, bank) {
       h('h2', { id: 'setup-title', tabindex: '-1' }, 'Sett opp en øvingsrunde'),
       h('p', { class: 'lead' }, 'Velg kapitlene du vil øve på og hvor mange spørsmål du vil ha. Etter hvert svar får du vite om det var riktig, hvorfor, og hvor i læreboka du kan lese mer.'),
       h('div', { class: 'dial-wrap' }, chapterDial(bank.chapters, state.selection.chapters)),
+      state.linkNotice ? h('div', { class: 'notice notice-error link-notice', role: 'alert', tabindex: '-1' }, h('p', {}, state.linkNotice)) : null,
       resume ? h('div', { class: 'notice', role: 'status' },
         h('p', {}, `Du har en påbegynt runde (spørsmål ${resume.index + 1} av ${resume.items.length}).`),
         h('div', { class: 'actions' },
           h('button', { type: 'button', class: 'btn', 'data-action': 'resume' }, 'Fortsett runden'),
           h('button', { type: 'button', class: 'btn btn-secondary', 'data-action': 'discard' }, 'Forkast den'))) : null,
+      missedNotice(),
       !anyAvailable ? h('div', { class: 'notice notice-empty', role: 'status' },
         h('p', {}, 'Det er ikke publisert noen godkjente spørsmål ennå. Kom tilbake senere.')) : null,
       h('form', { id: 'setup-form', novalidate: true },
@@ -181,7 +258,7 @@ export function createApp(root, bank) {
     if (!issues) return null;
     const title = `[${q.id} v${q.rev}] `;
     const body = [
-      `Spørsmål: ${q.id} (versjon ${q.rev}), kapittel ${q.chapter}`,
+      `Spørsmål: ${q.id} (versjon ${q.rev}), kapittel ${q.chapter}: ${questionUrl(q.id)}`,
       `> ${plainText(q.stem).replace(/\n/g, ' ')}`,
       '',
       '**Hva er feil eller uklart?**',
@@ -198,6 +275,24 @@ export function createApp(root, bank) {
       h('span', { class: 'qid' }, `Spørsmål ${q.id}, versjon ${q.rev}. `),
       h('a', { href, target: '_blank', rel: 'noopener noreferrer' }, 'Fant du en feil? Rapporter den på GitHub'),
       h('span', { class: 'visually-hidden' }, ' (åpnes i ny fane)'));
+  }
+
+  // Copy a link that opens this one question. Shows the address if copying is not possible.
+  function shareLink(q) {
+    return h('p', { class: 'share' },
+      h('button', { type: 'button', class: 'btn-small', 'data-action': 'copy-link', 'data-qid': q.id }, 'Kopier lenke til spørsmålet'),
+      h('span', { class: 'copy-status', role: 'status' }));
+  }
+
+  async function copyLink(btn) {
+    const url = questionUrl(btn.dataset.qid);
+    const status = btn.parentElement.querySelector('.copy-status');
+    try {
+      await globalThis.navigator.clipboard.writeText(url);
+      status.textContent = ' Lenken er kopiert.';
+    } catch {
+      status.replaceChildren(toDOM(h('span', {}, ' Lenke: ', h('a', { href: `#${btn.dataset.qid}` }, url))));
+    }
   }
 
   function richOpts(q, answered) {
@@ -252,9 +347,12 @@ export function createApp(root, bank) {
           h('strong', {}, `${letterOf(id)}: `), optText(id),
           renderRich(q.options.find((o) => o.id === id).feedback, opts))))) : null,
       h('p', { class: 'ref' }, h('span', { 'aria-hidden': 'true' }, '📖 '), h('strong', {}, 'Les mer: '), refText(q)),
+      shareLink(q),
       reportLink(q),
       h('div', { class: 'actions' },
-        h('button', { type: 'button', class: 'btn btn-primary', 'data-action': 'next' }, last ? 'Se resultatet' : 'Neste spørsmål')));
+        isSingle()
+          ? h('button', { type: 'button', class: 'btn btn-primary', 'data-action': 'leave' }, 'Øv på flere spørsmål')
+          : h('button', { type: 'button', class: 'btn btn-primary', 'data-action': 'next' }, last ? 'Se resultatet' : 'Neste spørsmål')));
   }
 
   function renderQuestion(focus) {
@@ -268,13 +366,16 @@ export function createApp(root, bank) {
     const opts = richOpts(q, answered);
     const view = h('section', { class: 'question', 'aria-labelledby': 'q-progress' },
       h('div', { class: 'q-head' },
-        h('h2', { id: 'q-progress', class: 'q-progress', tabindex: '-1' }, `Spørsmål ${s.index + 1} av ${total}`),
-        h('div', { class: 'dial-wrap' }, roundDial(marksOf(s), s.index)),
+        h('h2', { id: 'q-progress', class: 'q-progress', tabindex: '-1' },
+          isSingle() ? `Spørsmål ${q.id}` : `${s.kind === 'missed' ? 'Feil fra før: spørsmål' : 'Spørsmål'} ${s.index + 1} av ${total}`),
+        isSingle() ? null : h('div', { class: 'dial-wrap' }, roundDial(marksOf(s), s.index)),
         h('p', { class: 'q-meta' }, h('span', { class: 'q-chapter' }, chapterName(q.chapter)),
           q.topics.filter((t) => bank.topics[t]).map((t) => h('span', { class: 'q-topic' }, bank.topics[t].title)),
           q.priority === 'exam_important' ? h('span', { class: 'badge', title: 'Markert med ! i læreboka: forvent dette til eksamen' }, '! Eksamensrelevant') : null,
           bank.mode === 'preview' ? h('span', { class: 'badge badge-preview' }, `Status: ${q.preview_status}`) : null),
-        h('button', { type: 'button', class: 'btn-small btn-quit', 'data-action': 'quit' }, 'Avslutt runden')),
+        isSingle()
+          ? h('button', { type: 'button', class: 'btn-small btn-quit', 'data-action': 'leave' }, 'Til forsiden')
+          : h('button', { type: 'button', class: 'btn-small btn-quit', 'data-action': 'quit' }, 'Avslutt runden')),
       q.context && q.context.length ? h('div', { class: 'q-context' }, renderRich(q.context, opts)) : null,
       visual ? visual.node : null,
       h('form', { id: 'answer-form', class: 'answer-form', novalidate: true },
@@ -289,6 +390,20 @@ export function createApp(root, bank) {
   }
 
   // -------------------------------------------------------------- results
+  function resultActions() {
+    if (state.session.kind === 'missed') {
+      const left = missedNow().length;
+      return [
+        left ? h('button', { type: 'button', class: 'btn btn-primary', 'data-action': 'practice-missed' }, `Øv videre på feilene (${left} igjen)`) : null,
+        h('button', { type: 'button', class: left ? 'btn btn-secondary' : 'btn btn-primary', 'data-action': 'new' }, 'Til forsiden'),
+      ];
+    }
+    return [
+      h('button', { type: 'button', class: 'btn btn-primary', 'data-action': 'restart-same' }, 'Ny runde med samme valg'),
+      h('button', { type: 'button', class: 'btn btn-secondary', 'data-action': 'new' }, 'Velg andre kapitler'),
+    ];
+  }
+
   function renderResults() {
     fitDial();
     const sum = summary(state.session, byId);
@@ -302,9 +417,7 @@ export function createApp(root, bank) {
         h('caption', {}, 'Resultat per kapittel'),
         h('thead', {}, h('tr', {}, h('th', { scope: 'col' }, 'Kapittel'), h('th', { scope: 'col' }, 'Riktige'))),
         h('tbody', {}, sum.byChapter.map((r) => h('tr', {}, h('th', { scope: 'row' }, chapterName(r.chapter)), h('td', {}, `${r.correct} av ${r.total}`))))) : null,
-      h('div', { class: 'actions' },
-        h('button', { type: 'button', class: 'btn btn-primary', 'data-action': 'restart-same' }, 'Ny runde med samme valg'),
-        h('button', { type: 'button', class: 'btn btn-secondary', 'data-action': 'new' }, 'Velg andre kapitler')),
+      h('div', { class: 'actions' }, resultActions()),
       h('h3', {}, 'Gjennomgang'),
       sum.wrong > 0 ? h('div', { class: 'toggle' },
         h('input', { type: 'checkbox', id: 'only-wrong', checked: state.onlyWrong, 'data-action': 'only-wrong' }),
@@ -359,6 +472,8 @@ export function createApp(root, bank) {
       return;
     }
     state.message = '';
+    state.linkNotice = '';
+    clearHash();
     state.session = res.session;
     state.choice = null;
     state.onlyWrong = true;
@@ -381,6 +496,9 @@ export function createApp(root, bank) {
       } catch {
         return; // already answered: ignore repeated submissions
       }
+      const it = currentItem(state.session);
+      state.missed = recordAnswer(state.missed, it.qid, it.answer.correct);
+      saveMissed(state.missed);
       state.choice = null;
       persist();
       renderQuestion('#fb-title');
@@ -427,6 +545,26 @@ export function createApp(root, bank) {
       return;
     }
     switch (el.dataset.action) {
+      case 'copy-link':
+        copyLink(el);
+        break;
+      case 'leave':
+        toSetup();
+        break;
+      case 'practice-missed':
+        if (state.session) {
+          state.session = null;
+          clearSession();
+        }
+        startMissed();
+        break;
+      case 'clear-missed':
+        if (globalThis.confirm('Vil du tømme lista over spørsmål du har svart feil på?')) {
+          state.missed = {};
+          clearMissed();
+          renderSetup();
+        }
+        break;
       case 'select-all':
         bank.chapters.filter((c) => c.status === 'available').forEach((c) => state.selection.chapters.add(c.number));
         renderSetup('[data-action=select-all]');
@@ -451,7 +589,7 @@ export function createApp(root, bank) {
         render();
         break;
       case 'quit':
-        if (globalThis.confirm('Vil du avslutte runden? Svarene dine så langt blir ikke lagret.')) {
+        if (globalThis.confirm('Vil du avslutte runden? Du kan ikke fortsette den senere.')) {
           state.session = null;
           clearSession();
           renderSetup();
@@ -473,6 +611,15 @@ export function createApp(root, bank) {
     }
   });
 
-  render(null); // no focus move on first load
+  // A link to one question (#q-0045) opens it, also when pasted into an open tab.
+  globalThis.addEventListener?.('hashchange', () => {
+    const id = linkedId();
+    if (id) openLinked(id, '#q-progress');
+    else if (isSingle()) toSetup();
+  });
+
+  const first = linkedId();
+  if (first) openLinked(first, null); // no focus move on first load
+  else render(null);
   return { state };
 }

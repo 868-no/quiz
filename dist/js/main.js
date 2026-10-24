@@ -25,4 +25,26 @@ async function boot() {
   createApp(root, res.bank);
 }
 
+// Offline copy (sw.js). When a newer version of the site takes over while this
+// page is open, offer a reload; the page keeps working with what it has loaded.
+function registerOffline() {
+  const sw = globalThis.navigator && navigator.serviceWorker;
+  if (!sw) return;
+  const hadController = Boolean(sw.controller);
+  sw.addEventListener('controllerchange', () => {
+    if (!hadController) return;
+    const banner = document.getElementById('update-banner');
+    banner.replaceChildren(toDOM(h('div', { class: 'notice notice-update' },
+      h('p', {}, 'En ny versjon av siden er lastet ned. ',
+        h('button', { type: 'button', class: 'btn-small', 'data-action': 'reload' }, 'Last inn på nytt')))));
+    banner.hidden = false;
+  });
+  document.getElementById('update-banner').addEventListener('click', (e) => {
+    if (e.target instanceof Element && e.target.closest('[data-action=reload]')) location.reload();
+  });
+  sw.register('sw.js').catch(() => { /* offline copy is optional */ });
+}
+
+registerOffline();
+
 boot();
