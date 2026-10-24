@@ -143,6 +143,70 @@ once after; never inside math). Forms that are also ordinary words (e.g. the ver
 "sender") are listed in the term's `no_autolink` and are never linked automatically.
 The new revisions go through `verify` and approval like any other change.
 
+## Printable flashcards
+
+### Requirements
+
+- Python 3.12 is used in CI. Use a virtual environment so the optional PDF packages
+   do not affect the rest of the project.
+- `requirements-flashcard.txt` pins Pillow 13.0.0 and ReportLab 5.1.0. Pillow is
+   needed by both commands; ReportLab is needed by `flashcard`.
+- To render or refresh figure snapshots, install Node.js 18 or newer and Inkscape
+   1.2.2 or newer. CI uses Node.js 22. Both `node` and `inkscape` must be available
+   on `PATH`. Node runs the
+   repository's existing JavaScript visual renderers; Inkscape converts their SVG
+   output to PNG. No `npm install` is needed for these commands.
+
+On Debian or Ubuntu, install Inkscape with `sudo apt install inkscape`; install
+Node.js 18 or newer using the official Node.js installer or a version manager. On
+macOS, `brew install inkscape` installs Inkscape; install Node.js 18 or newer using
+the official installer or a version manager. On Windows, install Node.js and Inkscape
+using their official installers and ensure both commands are on `PATH`.
+
+Create and activate the Python environment, then install the pinned packages:
+
+```sh
+python3.12 -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements-flashcard.txt
+node --version
+inkscape --version
+```
+
+On Windows PowerShell, create the environment with `py -3.12 -m venv .venv` and
+activate it with `.\.venv\Scripts\Activate.ps1` instead of the two Unix commands.
+
+### Generate the PDF
+
+Render the image cache first. This command needs Pillow, Node.js, and Inkscape:
+
+```sh
+python -m tools flashcard-images                 # includes all variants by default
+python -m tools flashcard-images --chapter 4
+python -m tools flashcard-images --no-variants   # only the base form of each question
+```
+
+Then generate the PDF. This command needs the Python packages and a valid cache,
+but does not invoke Node.js or Inkscape:
+
+```sh
+python -m tools flashcard
+python -m tools flashcard --chapter 4
+python -m tools flashcard --no-variants
+```
+
+Variants are included by default (`--variants` makes this explicit).
+`--no-variants` exports only each question's base form. The large card heading is a
+running number. The small upper-right q-code is `q-NNNN` for a single form or
+`q-NNNN-Y` for a variant (for example, `q-0349-1`). Keep `--chapter`,
+`--approved-only`, and `--no-variants` consistent between both commands so the image
+cache covers the PDF selection. The cache is stored
+under `private/flashcard-images/`; the PDF defaults to `private/flashcard.pdf`. The PDF
+command refuses to use missing or outdated snapshots, so rerun `flashcard-images` after
+changing a question's visual. These files are private and must never be added to the
+public site build. `flashcard` embeds the cached PNGs directly with ReportLab, avoiding
+the slower pure-Python image conversion used by the retired PDF backend.
+
 ## Stage D – publish
 
 ```sh

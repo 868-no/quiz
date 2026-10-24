@@ -459,3 +459,15 @@ At completion, report:
 5. What tests passed and what remains unverified/manual.
 6. Exactly which files/directories are public versus private.
 7. What remains before it is safe to deploy publicly.
+
+## 15. Implementation update — 2026-10-25
+
+The offline tooling generates a printable A4 flashcard PDF from the selected question revisions. Each sheet holds up to eight landscape cards in a 2-column by 4-row grid. Each card has the question in its upper half and the FASIT answer and explanation in its lower half. Print at 100% scale, cut along the heavier dotted card borders, and fold along the thinner horizontal center line. The introductory page explains the workflow, shows the NRRL, quiz, and GitHub links, and includes an icon legend. On the cards, the book icon marks the study reference; the robot and person marks show machine and human verification status, respectively, using review metadata. Study references show chapter and printed page numbers, or the section title when page numbers are unavailable.
+
+Calculation variants are included as separate cards by default; `--no-variants` on both `flashcard-images` and `flashcard` limits the output to each question's base form. The large card heading is a running number, while the small upper-right q-code is `q-NNNN` for a single form or `q-NNNN-Y` for a variant (for example, `q-0349-1`). Keep the variant option consistent between cache generation and PDF export.
+
+The `flashcard-images` command uses Node.js and Inkscape to render the quiz's SVG visuals as cached PNGs under `private/flashcard-images/`. The `flashcard` command uses the cached images and Python packages pinned in `requirements-flashcard.txt` (Pillow 13.0.0 and ReportLab 5.1.0); it does not need Node.js or Inkscape when the cache is current. A virtual environment is recommended. The cache and generated PDF are private and must not be included in the public website build.
+
+The current variant-enabled export contains 433 cards across 56 A4 pages: one introductory page and 55 card sheets. The generator emitted no fit warnings, and the output contains no overflow-text appendix. The current test run passed all 120 Python tests and 60 JavaScript tests. Thirty-one jsdom-dependent JavaScript tests and two Playwright accessibility/layout checks were skipped because those packages were unavailable in the environment.
+
+AI assistance for this implementation: GitHub Copilot. The exact underlying model name/version was not exposed in the session and is therefore unrecorded; do not infer or fabricate it. Record the model/version in future implementation notes when the tooling makes it available.

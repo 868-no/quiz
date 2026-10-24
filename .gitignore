@@ -9,3 +9,5 @@ config/*.local.json
 __pycache__/
 *.pyc
 node_modules/
+# Optional python venv
+.venv/
