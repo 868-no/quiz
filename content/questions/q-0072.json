@@ -1102,6 +1102,227 @@
         },
         "verifier": "deterministic-v1"
       }
+    },
+    {
+      "revision": 6,
+      "status": "needs_review",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 3,
+      "section_ids": [
+        "s3-23",
+        "s3-27"
+      ],
+      "topic_ids": [
+        "forspenningsklasser"
+      ],
+      "learning_objective": "Kjenne forskjellen på forspenningsklassene og vite hvilken som ikke egner seg for lineær forsterkning.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En radioamatør bygger en ",
+          {
+            "term": "sluttforsterker",
+            "text": "sluttforsterker"
+          },
+          " og vurderer hvilken forspenningsklasse som skal brukes. Sendersignalet er ",
+          {
+            "term": "ssb",
+            "text": "SSB"
+          },
+          ", som krever at ",
+          {
+            "term": "forsterker",
+            "text": "forsterkeren"
+          },
+          " gjengir amplituden nøyaktig."
+        ]
+      ],
+      "stem": [
+        [
+          "Hvilken klasse gir høy ",
+          {
+            "term": "virkningsgrad",
+            "text": "virkningsgrad"
+          },
+          ", men så mye forvrengning at den ikke egner seg til SSB?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Klasse C"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Klasse A"
+          ],
+          "feedback": [
+            [
+              "Klasse A leder hele ",
+              {
+                "term": "periode",
+                "text": "perioden"
+              },
+              " og gir minst forvrengning, men har lav virkningsgrad."
+            ]
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Klasse AB"
+          ],
+          "feedback": [
+            [
+              "Klasse AB leder litt mer enn en halv periode og brukes ofte i lineære sluttforsterkere for SSB, gjerne i ",
+              {
+                "term": "push-pull",
+                "text": "push-pull"
+              },
+              "."
+            ]
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Klasse B"
+          ],
+          "feedback": [
+            [
+              "Klasse B leder en halv periode. I push-pull, der to transistorer tar hver sin halvdel, kan den brukes som ",
+              {
+                "term": "lineaer-forsterker",
+                "text": "lineær forsterker"
+              },
+              "."
+            ]
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "I ",
+          {
+            "term": "forsterkerklasse",
+            "text": "klasse C"
+          },
+          " er ",
+          {
+            "term": "transistor",
+            "text": "transistoren"
+          },
+          " ",
+          {
+            "term": "forspenning",
+            "text": "forspent"
+          },
+          " forbi sperregrensen, så den leder bare på toppene av signalet, i mindre enn en halv periode. Utgangsstrømmen kommer i korte pulser, og det gir mange harmoniske frekvenser."
+        ],
+        [
+          "Virkningsgraden blir høy, men amplituden gjengis ikke riktig. Klasse C brukes derfor til signaler med konstant amplitude, som CW og ",
+          {
+            "term": "frekvensmodulasjon",
+            "text": "FM"
+          },
+          ", med et avstemt ",
+          {
+            "term": "filter",
+            "text": "filter"
+          },
+          " på utgangen som fjerner de ",
+          {
+            "term": "harmoniske",
+            "text": "harmoniske frekvensene"
+          },
+          "."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 3,
+        "section_id": "s3-23",
+        "printed_pages": [
+          "3-11"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "fecb3a149448ff58",
+          "67329d25f18f89fc"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "Jim C K Flaten",
+        "based_on": 5,
+        "at": "2026-10-24T16:17:18+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T16:17:18+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "439003800ebc56d227e0b827ee77e47914a61035b3305603d2d52da0ebde626b",
+          "note": "Add a figure"
+        },
+        {
+          "at": "2026-10-24T16:17:20+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "641e43eda9335e0a85b474d231aef104d7ffc9d0498862ca574d11d2a34aa052",
+          "note": "automated checks passed"
+        }
+      ],
+      "visual": {
+        "template": "time-signal",
+        "version": 1,
+        "params": {
+          "kind": "conduction",
+          "traces": [
+            "A",
+            "AB",
+            "B",
+            "C"
+          ],
+          "blank": true,
+          "note": "Figuren vises når du har svart"
+        },
+        "params_after": {
+          "blank": false
+        }
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "641e43eda9335e0a85b474d231aef104d7ffc9d0498862ca574d11d2a34aa052",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T16:17:20+00:00"
+      }
     }
   ]
 }

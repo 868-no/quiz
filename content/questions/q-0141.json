@@ -1047,6 +1047,222 @@
         },
         "verifier": "deterministic-v1"
       }
+    },
+    {
+      "revision": 6,
+      "status": "needs_review",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 2,
+      "section_ids": [
+        "s2-31"
+      ],
+      "topic_ids": [
+        "vekselstromsverdier"
+      ],
+      "learning_objective": "Vite at harmoniske er heltallige multipler av grunnfrekvensen.",
+      "priority": "normal",
+      "context": [
+        [
+          "En ",
+          {
+            "term": "sender",
+            "text": "sender"
+          },
+          " på ",
+          {
+            "q": 7.05,
+            "u": "MHz"
+          },
+          " har for dårlig filtrering på utgangen, og bølgeformen er ikke helt sinusformet. Den sender derfor også ut svake signaler på andre ",
+          {
+            "term": "frekvens",
+            "text": "frekvenser"
+          },
+          "."
+        ]
+      ],
+      "stem": [
+        [
+          "Hvilken av disse frekvensene kan være en ",
+          {
+            "term": "harmoniske",
+            "text": "harmonisk frekvens"
+          },
+          " av senderfrekvensen?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 21.15,
+              "u": "MHz"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 10.575,
+              "u": "MHz"
+            }
+          ],
+          "feedback": [
+            "Dette er 1,5 ganger senderfrekvensen. Harmoniske frekvenser er hele multipler: 2, 3, 4 … ganger grunnfrekvensen."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 3.525,
+              "u": "MHz"
+            }
+          ],
+          "feedback": [
+            "Dette er halve senderfrekvensen. Harmoniske frekvenser ligger over grunnfrekvensen, aldri under."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 14.05,
+              "u": "MHz"
+            }
+          ],
+          "feedback": [
+            "Dette er nesten, men ikke nøyaktig, det dobbelte av senderfrekvensen. Den andre harmoniske frekvensen ligger på 2 · 7,05 MHz = 14,1 MHz. Harmoniske frekvenser ligger nøyaktig på hele multipler av grunnfrekvensen."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          {
+            "term": "harmoniske",
+            "text": "Harmoniske frekvenser"
+          },
+          " ligger på 2, 3, 4 … ganger grunnfrekvensen. Den andre harmoniske frekvensen til 7,05 MHz er 14,1 MHz, og den tredje er 3 · 7,05 MHz = 21,15 MHz."
+        ],
+        [
+          "Harmoniske signaler oppstår når bølgeformen er forvrengt i forhold til en ren sinus. Et ",
+          {
+            "term": "lavpassfilter",
+            "text": "lavpassfilter"
+          },
+          " på utgangen av senderen demper dem, slik at de ikke forstyrrer andre brukere."
+        ]
+      ],
+      "glossary_after_answer": [
+        "harmoniske"
+      ],
+      "study_reference": {
+        "chapter": 2,
+        "section_id": "s2-31",
+        "printed_pages": [
+          "2-12"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "ee651ef3ba0565da"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "Jim C K Flaten",
+        "based_on": 5,
+        "at": "2026-10-24T16:20:16+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T16:20:16+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "4e01d916bbe2a4421c04a9bc83415b0dd709a1d85bb694d4c7604b55cb976b5d",
+          "note": "Add a figure"
+        },
+        {
+          "at": "2026-10-24T16:20:18+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "9f0abbbd52f4c95e73e91e2dbb5cef9dbe3f21edf5da6e86ac4c036746d21f2d",
+          "note": "automated checks passed"
+        }
+      ],
+      "visual": {
+        "template": "spectrum",
+        "version": 1,
+        "params": {
+          "x_min_hz": 0,
+          "x_max_hz": 30000000.0,
+          "blank": true,
+          "note": "Spekteret vises når du har svart"
+        },
+        "params_after": {
+          "blank": false,
+          "panels": [
+            {
+              "lines": [
+                {
+                  "f_hz": 7050000.0,
+                  "level": 1,
+                  "label": "f",
+                  "mark": false
+                },
+                {
+                  "f_hz": 14100000.0,
+                  "level": 0.35,
+                  "label": "2f",
+                  "mark": false
+                },
+                {
+                  "f_hz": 21150000.0,
+                  "level": 0.2,
+                  "label": "3f",
+                  "mark": true
+                },
+                {
+                  "f_hz": 28200000.0,
+                  "level": 0.1,
+                  "label": "4f",
+                  "mark": false
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "9f0abbbd52f4c95e73e91e2dbb5cef9dbe3f21edf5da6e86ac4c036746d21f2d",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T16:20:18+00:00"
+      }
     }
   ]
 }

@@ -353,6 +353,191 @@
         },
         "verifier": "deterministic-v1"
       }
+    },
+    {
+      "revision": 3,
+      "status": "needs_review",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "medium",
+      "chapter": 4,
+      "section_ids": [
+        "s4-31"
+      ],
+      "topic_ids": [
+        "spisseffekt"
+      ],
+      "learning_objective": "Forstå at spisseffekten fra en SSB-sender må måles med et instrument som følger taletoppene.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "Du vil kontrollere at ",
+          {
+            "term": "ssb",
+            "text": "SSB"
+          },
+          "-",
+          {
+            "term": "sender",
+            "text": "senderen"
+          },
+          " din ikke overskrider tillatt ",
+          {
+            "term": "spisseffekt",
+            "text": "spisseffekt"
+          },
+          " når du snakker. Du har bare et vanlig wattmeter med viser."
+        ]
+      ],
+      "stem": [
+        "Hvorfor vil wattmeteret vise for lite i denne situasjonen?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Viseren er for treg til å følge de korte taletoppene."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Wattmeteret måler bare effekten i bærebølgen."
+          ],
+          "feedback": [
+            [
+              "Et wattmeter registrerer den RF-effekten som går gjennom det, også ",
+              {
+                "term": "sidebaand",
+                "text": "sidebånd"
+              },
+              ". Problemet er hvor raskt det reagerer."
+            ]
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Taletoppene ligger utenfor wattmeterets frekvensområde."
+          ],
+          "feedback": [
+            "Taletoppene ligger på samme radiofrekvens som resten av signalet. Det er varigheten deres som er kort."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Wattmeteret måler bare den reflekterte effekten."
+          ],
+          "feedback": [
+            [
+              "Et vanlig wattmeter kan måle effekten som går mot ",
+              {
+                "term": "antenne",
+                "text": "antennen"
+              },
+              ". Feilen skyldes at viseren ikke rekker å følge toppene."
+            ]
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          {
+            "term": "effekt",
+            "text": "Effekten"
+          },
+          " i et SSB-signal varierer fra null i pausene til maksimum på taletoppene, og toppene kan være mange ganger høyere enn gjennomsnittet. De varer kort, men likevel over mange RF-perioder."
+        ],
+        [
+          "Et mekanisk instrument følger bare et kortvarig gjennomsnitt. Grensen i forskriften gjelder spisseffekten, så den må måles med et oscilloskop eller et elektronisk instrument som holder ",
+          {
+            "term": "toppverdi",
+            "text": "toppverdien"
+          },
+          "."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 4,
+        "section_id": "s4-31",
+        "printed_pages": [
+          "4-16"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "796b29602a90d584"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "Jim C K Flaten",
+        "based_on": 2,
+        "at": "2026-10-24T16:17:18+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T16:17:18+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "e09c08e4c7e631ef0971dfb0ea3f62dd40db9a9b0da7e05b4aadca33074ca4f9",
+          "note": "Add a figure"
+        },
+        {
+          "at": "2026-10-24T16:17:20+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "d16649408431f668fa6684c38c58888c44f9d78e01ee2461cfba965fec0452fa",
+          "note": "automated checks passed"
+        }
+      ],
+      "visual": {
+        "template": "time-signal",
+        "version": 1,
+        "params": {
+          "kind": "envelope",
+          "traces": [
+            "speech"
+          ],
+          "blank": true,
+          "note": "Figuren vises når du har svart",
+          "markers": [
+            "peak",
+            "average"
+          ]
+        },
+        "params_after": {
+          "blank": false
+        }
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "d16649408431f668fa6684c38c58888c44f9d78e01ee2461cfba965fec0452fa",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: low_ocr_confidence. Check every number, unit and formula against the printed book."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T16:17:20+00:00"
+      }
     }
   ]
 }

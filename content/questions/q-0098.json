@@ -470,6 +470,262 @@
         },
         "verifier": "deterministic-v1"
       }
+    },
+    {
+      "revision": 3,
+      "status": "needs_review",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "medium",
+      "chapter": 5,
+      "section_ids": [
+        "s5-11"
+      ],
+      "topic_ids": [
+        "blandingsprodukter"
+      ],
+      "learning_objective": "Regne ut et tredjeordens blandingsprodukt av typen 2·f1 − f2.",
+      "priority": "normal",
+      "context": [
+        [
+          "Et ",
+          {
+            "term": "blander",
+            "text": "blandetrinn"
+          },
+          " i en sender får inn to signaler, f1 = ",
+          {
+            "q": 8,
+            "u": "MHz"
+          },
+          " og f2 = ",
+          {
+            "q": 6,
+            "u": "MHz"
+          },
+          ". Fordi blanderen ikke er lineær, inneholder utgangen også produkter av typen m·f1 ± n·f2, der m og n er hele tall."
+        ]
+      ],
+      "stem": [
+        [
+          "På hvilken ",
+          {
+            "term": "frekvens",
+            "text": "frekvens"
+          },
+          " ligger tredjeordensproduktet 2·f1 − f2?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 10,
+              "u": "MHz"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 14,
+              "u": "MHz"
+            }
+          ],
+          "feedback": [
+            "Det er summen f1 + f2, et andreordens produkt."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 4,
+              "u": "MHz"
+            }
+          ],
+          "feedback": [
+            "Det er 2·f2 − f1. Du har byttet om f1 og f2."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 2,
+              "u": "MHz"
+            }
+          ],
+          "feedback": [
+            "Det er differansen f1 − f2, et andreordens produkt."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          {
+            "math": [
+              "2",
+              "·",
+              "f_1",
+              "−",
+              "f_2",
+              "=",
+              "2",
+              "·",
+              {
+                "q": 8,
+                "u": "MHz"
+              },
+              "−",
+              {
+                "q": 6,
+                "u": "MHz"
+              },
+              "=",
+              {
+                "q": 10,
+                "u": "MHz"
+              }
+            ]
+          }
+        ],
+        [
+          "Ordenen til et ",
+          {
+            "term": "intermodulasjon",
+            "text": "blandingsprodukt"
+          },
+          " er m + n, her 2 + 1 = 3. Av alle produktene ønsker man bare ett, for eksempel summen 14 MHz. Resten må filtreres bort, og det blir vanskelig hvis et uønsket produkt havner nær den ønskede frekvensen."
+        ],
+        "Derfor velger konstruktøren inngangsfrekvensene slik at de sterkeste uønskede produktene havner langt unna det ønskede båndet. Balanserte blandere kan i tillegg undertrykke noen av produktene."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 5,
+        "section_id": "s5-11",
+        "printed_pages": [
+          "5-3"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "fa7f48d6a8c066a1"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "Jim C K Flaten",
+        "based_on": 2,
+        "at": "2026-10-24T16:20:17+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T16:20:17+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "f7140bd753bbae1ab6f4e048f7d4ac4369b4f1ab53365f242811ec991276f422",
+          "note": "Add a figure"
+        },
+        {
+          "at": "2026-10-24T16:20:18+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "a183123a2817241645b5671dbe0a4a630996a181219471e6ae27db6818ad775b",
+          "note": "automated checks passed"
+        }
+      ],
+      "visual": {
+        "template": "spectrum",
+        "version": 1,
+        "params": {
+          "x_min_hz": 0,
+          "x_max_hz": 16000000.0,
+          "blank": true,
+          "note": "Spekteret vises når du har svart"
+        },
+        "params_after": {
+          "blank": false,
+          "panels": [
+            {
+              "lines": [
+                {
+                  "f_hz": 2000000.0,
+                  "level": 0.4,
+                  "label": "f1 − f2",
+                  "mark": false
+                },
+                {
+                  "f_hz": 4000000.0,
+                  "level": 0.18,
+                  "label": "2f2 − f1",
+                  "mark": false
+                },
+                {
+                  "f_hz": 6000000.0,
+                  "level": 1,
+                  "label": "f2",
+                  "mark": false
+                },
+                {
+                  "f_hz": 8000000.0,
+                  "level": 1,
+                  "label": "f1",
+                  "mark": false
+                },
+                {
+                  "f_hz": 10000000.0,
+                  "level": 0.18,
+                  "label": "2f1 − f2",
+                  "mark": true
+                },
+                {
+                  "f_hz": 14000000.0,
+                  "level": 0.4,
+                  "label": "f1 + f2",
+                  "mark": false
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "a183123a2817241645b5671dbe0a4a630996a181219471e6ae27db6818ad775b",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: equation. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "pages",
+            "detail": "cited printed page number is uncertain in the source (printed_page_status=inferred). Confirm the page in the book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T16:20:18+00:00"
+      }
     }
   ]
 }

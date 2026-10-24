@@ -980,6 +980,196 @@
         },
         "verifier": "deterministic-v1"
       }
+    },
+    {
+      "revision": 6,
+      "status": "needs_review",
+      "type": "single_choice",
+      "style": "recall",
+      "difficulty": "easy",
+      "chapter": 5,
+      "section_ids": [
+        "s5-08"
+      ],
+      "topic_ids": [
+        "senderfeil"
+      ],
+      "learning_objective": "Kjenne igjen senderfeilen kvitter (chirp).",
+      "priority": "exam_important",
+      "context": [],
+      "stem": [
+        [
+          "Hva er ",
+          {
+            "term": "kvitter",
+            "text": "kvitter"
+          },
+          " på et morsesignal?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "At frekvensen glir litt når senderen nøkles, før den blir stabil"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Korte, brede klikk hver gang senderen slås av og på"
+          ],
+          "feedback": [
+            "Det beskriver nøkleklikk, som skyldes for brå av- og påslag av signalet."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Utstråling på det dobbelte av senderfrekvensen"
+          ],
+          "feedback": [
+            [
+              "Det er et ",
+              {
+                "term": "harmoniske",
+                "text": "harmonisk signal"
+              },
+              ", ikke kvitter."
+            ]
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "At tonen får en ru brumlyd fordi strømforsyningen er dårlig glattet"
+          ],
+          "feedback": [
+            "Det er brum fra dårlig glattet forsyningsspenning. Kvitter er en frekvensendring ved hver nøkling, ikke brum."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          {
+            "term": "kvitter",
+            "text": "Kvitter"
+          },
+          " er en liten, rask frekvensendring i begynnelsen av hvert morsetegn. I ",
+          {
+            "term": "mottaker",
+            "text": "mottakeren"
+          },
+          " høres tonen «gli», og signalet tar mer ",
+          {
+            "term": "baandbredde",
+            "text": "båndbredde"
+          },
+          " enn nødvendig."
+        ],
+        [
+          "Typiske årsaker er at forsyningsspenningen til ",
+          {
+            "term": "oscillator",
+            "text": "oscillatoren"
+          },
+          " synker når ",
+          {
+            "term": "sender",
+            "text": "senderen"
+          },
+          " trekker ",
+          {
+            "term": "strom",
+            "text": "strøm"
+          },
+          ", eller at belastningen på oscillatoren endres når senderen nøkles. Bedre spenningsregulering og et ",
+          {
+            "term": "bufferforsterker",
+            "text": "buffertrinn"
+          },
+          " hjelper."
+        ]
+      ],
+      "glossary_after_answer": [
+        "kvitter"
+      ],
+      "study_reference": {
+        "chapter": 5,
+        "section_id": "s5-08",
+        "printed_pages": [
+          "5-2"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "b1b1bc833142e4d0"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "Jim C K Flaten",
+        "based_on": 5,
+        "at": "2026-10-24T16:17:19+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T16:17:19+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "5aa389802ea6cc43fc5133bdd5faac694de4c3e1caa3cd13881d080b20bb0fec",
+          "note": "Add a figure"
+        },
+        {
+          "at": "2026-10-24T16:17:20+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "86be69a973589404fd9ef27e842f7392bf1852b391dcfca24c12fdcce98874fe",
+          "note": "automated checks passed"
+        }
+      ],
+      "visual": {
+        "template": "time-signal",
+        "version": 1,
+        "params": {
+          "kind": "chirp",
+          "traces": [
+            "chirp",
+            "stable"
+          ],
+          "blank": true,
+          "note": "Figuren vises når du har svart"
+        },
+        "params_after": {
+          "blank": false
+        }
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "86be69a973589404fd9ef27e842f7392bf1852b391dcfca24c12fdcce98874fe",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T16:17:20+00:00"
+      }
     }
   ]
 }

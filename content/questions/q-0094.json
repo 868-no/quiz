@@ -586,6 +586,186 @@
         },
         "verifier": "deterministic-v1"
       }
+    },
+    {
+      "revision": 4,
+      "status": "needs_review",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 4,
+      "section_ids": [
+        "s4-26",
+        "s4-25"
+      ],
+      "topic_ids": [
+        "datamodulasjon"
+      ],
+      "learning_objective": "Skille mellom FSK (F1B) og AFSK (F2B/J2B) ved datasending.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "Et datasignal i form av en ",
+          {
+            "term": "likespenning",
+            "text": "likespenning"
+          },
+          " fra en datamaskin styrer ",
+          {
+            "term": "sender",
+            "text": "senderens"
+          },
+          " bærebølgefrekvens direkte, slik at den skifter mellom to verdier. Det brukes ingen lydtoner underveis."
+        ]
+      ],
+      "stem": [
+        "Hva kalles denne modulasjonsmetoden?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "FSK, frekvensskiftnøkling"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "AFSK, frekvensskiftnøkling med lydtoner"
+          ],
+          "feedback": [
+            "Ved AFSK lages først lydtoner som føres inn på mikrofoninngangen. Her moduleres bærebølgen direkte uten lydtoner."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "PSK, faseskiftnøkling"
+          ],
+          "feedback": [
+            "Ved PSK er det fasen som skiftes. Her skifter bærebølgen mellom to frekvenser."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "SSB-telefoni (J3E)"
+          ],
+          "feedback": [
+            "SSB er en modulasjonsform for tale og lydtoner. Her er det ingen lydsignal, og det er frekvensen som skiftes."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Når ",
+          {
+            "term": "baerebolge",
+            "text": "bærebølgen"
+          },
+          " frekvensskiftes direkte av datasignalet, kalles det ",
+          {
+            "term": "fsk",
+            "text": "frekvensskiftnøkling"
+          },
+          " (FSK), med emisjonskoden F1B. De to ",
+          {
+            "term": "frekvens",
+            "text": "frekvensene"
+          },
+          " kalles marktone og mellomromstone."
+        ],
+        [
+          "Ved AFSK lager man i stedet to lydtoner som moduleres på en ",
+          {
+            "term": "frekvensmodulasjon",
+            "text": "FM"
+          },
+          "-sender (F2B) eller en ",
+          {
+            "term": "ssb",
+            "text": "SSB"
+          },
+          "-sender (J2B). Sendes tonene via SSB, blir spekteret det samme som ved FSK, og på mottakersiden høres de likt."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 4,
+        "section_id": "s4-26",
+        "printed_pages": [
+          "4-13"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "1241b1e6d1ef7640",
+          "49f4b2e17eb8399e"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "Jim C K Flaten",
+        "based_on": 3,
+        "at": "2026-10-24T16:17:19+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T16:17:19+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "59a2b52d21255c9e7b481cfecb257c6eea0b95ba1e1d436fc75dc99b8a08a17e",
+          "note": "Add a figure"
+        },
+        {
+          "at": "2026-10-24T16:17:20+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "b77764756f324ea128764227811dc05a19329826a8b218c8969c77c2ac57ff6b",
+          "note": "automated checks passed"
+        }
+      ],
+      "visual": {
+        "template": "time-signal",
+        "version": 1,
+        "params": {
+          "kind": "fsk",
+          "traces": [
+            "fsk"
+          ],
+          "bits": "1011001"
+        }
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "b77764756f324ea128764227811dc05a19329826a8b218c8969c77c2ac57ff6b",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: equation, numeric_low_conf. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T16:17:20+00:00"
+      }
     }
   ]
 }

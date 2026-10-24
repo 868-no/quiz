@@ -1073,6 +1073,224 @@
         },
         "verifier": "deterministic-v1"
       }
+    },
+    {
+      "revision": 6,
+      "status": "needs_review",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 5,
+      "section_ids": [
+        "s5-18"
+      ],
+      "topic_ids": [
+        "senderfeil"
+      ],
+      "learning_objective": "Vite at nøkkelklikk skyldes for brå av- og påslag av CW-signalet, og at et klikkfilter gir mykere flanker.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En CW-sender gir harde ",
+          {
+            "term": "nokkelklikk",
+            "text": "nøkkelklikk"
+          },
+          " som høres et godt stykke på begge sider av signalet, i takt med nøklingen. ",
+          {
+            "term": "frekvens",
+            "text": "Frekvensen"
+          },
+          " er ellers stabil."
+        ]
+      ],
+      "stem": [
+        "Hva er det beste tiltaket?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Gjør stige- og falltiden lengre med et klikkfilter i nøklingskretsen."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Gjør stige- og falltiden kortere, slik at morsetegnene blir skarpere."
+          ],
+          "feedback": [
+            "Det er motsatt. Jo brattere av- og påslag, desto bredere sidebånd og kraftigere klikk."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Monter et lavpassfilter mellom senderen og antennen."
+          ],
+          "feedback": [
+            [
+              {
+                "term": "lavpassfilter",
+                "text": "Lavpassfilteret"
+              },
+              " demper ",
+              {
+                "term": "harmoniske",
+                "text": "harmoniske frekvenser"
+              },
+              " langt over sendefrekvensen. Klikkene ligger like ved signalet og slipper gjennom ",
+              {
+                "term": "filter",
+                "text": "filteret"
+              },
+              "."
+            ]
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Gi oscillatoren en egen, stabilisert spenningsforsyning."
+          ],
+          "feedback": [
+            [
+              "Det er et tiltak mot ",
+              {
+                "term": "kvitter",
+                "text": "kvitter"
+              },
+              " (frekvensen glir ved nøkling). Her er frekvensen stabil."
+            ]
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Når RF-signalet slås av og på med svært bratte flanker, dannes ",
+          {
+            "term": "sidebaand",
+            "text": "sidebånd"
+          },
+          " langt ut til sidene for signalet. De høres som klikk hos stasjoner på nabofrekvensene."
+        ],
+        [
+          "Et klikkfilter i nøklingskretsen gjør flankene mykere: en ",
+          {
+            "term": "spole",
+            "text": "spole"
+          },
+          " bremser økningen i ",
+          {
+            "term": "strom",
+            "text": "strømmen"
+          },
+          " når nøkkelen lukkes, og en ",
+          {
+            "term": "kondensator",
+            "text": "kondensator"
+          },
+          " som lades via en ",
+          {
+            "term": "motstand",
+            "text": "motstand"
+          },
+          " holder strømmen litt oppe etter at nøkkelen åpnes. Gnister i nøkkelkontaktene kan i tillegg gi bredbåndet støy på kort avstand. Det dempes med en motstand og en kondensator ",
+          {
+            "term": "seriekobling",
+            "text": "i serie"
+          },
+          " over kontaktene, og ved at det bare går liten strøm og lav ",
+          {
+            "term": "spenning",
+            "text": "spenning"
+          },
+          " gjennom nøkkelen."
+        ]
+      ],
+      "glossary_after_answer": [
+        "nokkelklikk"
+      ],
+      "study_reference": {
+        "chapter": 5,
+        "section_id": "s5-18",
+        "printed_pages": [
+          "5-7"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "411677446b4c75f4"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "Jim C K Flaten",
+        "based_on": 5,
+        "at": "2026-10-24T16:17:18+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T16:17:18+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "e347553291b0cfe075d2f2bdfe2fbb45d54cce0e6d22ae9ba37c4a12b6a534e3",
+          "note": "Add a figure"
+        },
+        {
+          "at": "2026-10-24T16:17:20+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "c43a2395d36ee446f93c79be22bdce7cb945db50dce0b0f68554bc372d0b55c0",
+          "note": "automated checks passed"
+        }
+      ],
+      "visual": {
+        "template": "time-signal",
+        "version": 1,
+        "params": {
+          "kind": "keying",
+          "traces": [
+            "hard"
+          ]
+        },
+        "params_after": {
+          "traces": [
+            "hard",
+            "soft"
+          ]
+        }
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "c43a2395d36ee446f93c79be22bdce7cb945db50dce0b0f68554bc372d0b55c0",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: equation, numeric_low_conf. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T16:17:20+00:00"
+      }
     }
   ]
 }

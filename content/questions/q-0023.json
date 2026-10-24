@@ -355,6 +355,231 @@
         },
         "verifier": "deterministic-v1"
       }
+    },
+    {
+      "revision": 3,
+      "status": "needs_review",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "easy",
+      "chapter": 4,
+      "section_ids": [
+        "s4-04"
+      ],
+      "topic_ids": [
+        "ssb"
+      ],
+      "learning_objective": "Forstå hvorfor SSB bruker mindre båndbredde enn AM.",
+      "priority": "normal",
+      "context": [],
+      "stem": [
+        [
+          "Hvorfor opptar et ",
+          {
+            "term": "ssb",
+            "text": "SSB"
+          },
+          "-signal omtrent halvparten så stor ",
+          {
+            "term": "baandbredde",
+            "text": "båndbredde"
+          },
+          " som et ",
+          {
+            "term": "amplitudemodulasjon",
+            "text": "AM"
+          },
+          "-signal med det samme lydsignalet?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Bare ett av de to sidebåndene sendes ut."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Bærebølgen fjernes, og den tar halve båndbredden."
+          ],
+          "feedback": [
+            [
+              "Bærebølgen fjernes også, men den er én enkelt ",
+              {
+                "term": "frekvens",
+                "text": "frekvens"
+              },
+              " og tar nesten ingen båndbredde. Det er det manglende sidebåndet som halverer bredden."
+            ]
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Lyden komprimeres til halve frekvensområdet først."
+          ],
+          "feedback": [
+            "Lydens frekvensområde endres ikke. Lyden overføres med samme frekvensinnhold som i AM."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "SSB bruker frekvensmodulasjon i stedet."
+          ],
+          "feedback": [
+            [
+              "SSB er en form for amplitudemodulasjon, ikke ",
+              {
+                "term": "frekvensmodulasjon",
+                "text": "frekvensmodulasjon"
+              },
+              "."
+            ]
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Et AM-signal har to sidebånd, ett på hver side av ",
+          {
+            "term": "baerebolge",
+            "text": "bærebølgen"
+          },
+          ", og hvert av dem inneholder all informasjonen. AM-signalet blir derfor dobbelt så bredt som den høyeste lydfrekvensen."
+        ],
+        [
+          "SSB sender bare det ene ",
+          {
+            "term": "sidebaand",
+            "text": "sidebåndet"
+          },
+          ", og bærebølgen er også fjernet. Båndbredden blir omtrent lik lydens båndbredde, typisk rundt 3 kHz for tale."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 4,
+        "section_id": "s4-04",
+        "printed_pages": [
+          "4-2"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "cd7ef82985172734"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "Jim C K Flaten",
+        "based_on": 2,
+        "at": "2026-10-24T16:20:17+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T16:20:17+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "7a313698fd8b914e58da6998a36af368598f8bd7a45c8de2c361f65bccb79e3e",
+          "note": "Add a figure"
+        },
+        {
+          "at": "2026-10-24T16:20:18+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "4a43898d13d9b14e90025700c657edda4461e71ccd7fcf9910381610336016e8",
+          "note": "automated checks passed"
+        }
+      ],
+      "visual": {
+        "template": "spectrum",
+        "version": 1,
+        "params": {
+          "x_min_hz": 7095500.0,
+          "x_max_hz": 7104500.0,
+          "blank": true,
+          "note": "Spekteret vises når du har svart",
+          "freq_labels": true
+        },
+        "params_after": {
+          "blank": false,
+          "panels": [
+            {
+              "title": "AM",
+              "lines": [
+                {
+                  "f_hz": 7100000.0,
+                  "level": 1,
+                  "label": "",
+                  "mark": false
+                }
+              ],
+              "bands": [
+                {
+                  "from_hz": 7097000.0,
+                  "to_hz": 7099700.0,
+                  "level": 0.45,
+                  "label": "nedre sidebånd"
+                },
+                {
+                  "from_hz": 7100300.0,
+                  "to_hz": 7103000.0,
+                  "level": 0.45,
+                  "label": "øvre sidebånd"
+                }
+              ]
+            },
+            {
+              "title": "SSB (øvre sidebånd)",
+              "bands": [
+                {
+                  "from_hz": 7100300.0,
+                  "to_hz": 7103000.0,
+                  "level": 0.9,
+                  "label": "øvre sidebånd"
+                }
+              ],
+              "lines": [
+                {
+                  "f_hz": 7100000.0,
+                  "level": 0.02,
+                  "label": "",
+                  "mark": false
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "4a43898d13d9b14e90025700c657edda4461e71ccd7fcf9910381610336016e8",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T16:20:18+00:00"
+      }
     }
   ]
 }
