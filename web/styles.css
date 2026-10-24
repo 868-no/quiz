@@ -99,7 +99,8 @@ a { color: var(--action); text-underline-offset: 3px; }
 .site-footer p { max-width: 38rem; }
 .preview-banner { background: var(--bad); color: #fff; text-align: center; padding: 8px 16px; font-weight: 700; }
 
-main { padding-top: 24px; padding-bottom: 24px; }
+/* main is also .wrap, whose padding shorthand would otherwise win */
+main.wrap { padding-top: 16px; padding-bottom: 24px; }
 main:focus { outline: none; }
 h2 { font-size: 1.5rem; line-height: 1.25; margin: 0.4em 0 0.4em; font-weight: 700; }
 h3 { font-size: 1.15rem; margin: 1.2em 0 0.4em; }
