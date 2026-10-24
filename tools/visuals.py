@@ -597,6 +597,17 @@ def _semi_rules(p: dict[str, Any], errors: list[str]) -> None:
         errors.append("depletion: forward bias narrows the layer, it cannot be wide")
 
 
+# --- illustration ---------------------------------------------------------------------
+
+def _illu_rules(p: dict[str, Any], errors: list[str]) -> None:
+    if p["kind"] == "prefixes" and p["from"] == p["to"]:
+        errors.append("to: must differ from from")
+    if p["kind"] == "s_meter" and not (1 <= p["from_s"] < p["to_s"] <= 9):
+        errors.append("from_s/to_s: two S-units 1–9, from below to")
+    if p["kind"] == "tolerance" and p.get("nominal") is None:
+        errors.append("nominal: required for kind tolerance")
+
+
 # --- pi-network, ratio-detector, stage --------------------------------------------
 
 def _no_rules(p: dict[str, Any], errors: list[str]) -> None:
@@ -609,7 +620,7 @@ RULES = {"dc-circuit": _dc_rules, "ac-circuit": _ac_rules, "waveform": _wave_rul
          "frequency-response": _fr_rules, "pi-network": _no_rules,
          "ratio-detector": _no_rules, "time-signal": _ts_rules_time,
          "spectrum": _spectrum_rules, "semiconductor": _semi_rules,
-         "stage": _no_rules}
+         "stage": _no_rules, "illustration": _illu_rules}
 QUANTITIES = {"dc-circuit": _dc_quantities, "ac-circuit": _ac_quantities, "waveform": _wave_quantities,
               "rlc-circuit": _rlc_quantities, "rectifier": _rect_quantities, "transformer": _tr_quantities,
               "transistor-stage": _ts_quantities, "series-regulator": _reg_quantities, "zener-regulator": _zen_quantities,

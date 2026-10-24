@@ -410,6 +410,190 @@
         },
         "verifier": "deterministic-v1"
       }
+    },
+    {
+      "revision": 3,
+      "status": "needs_review",
+      "type": "single_choice",
+      "style": "recall",
+      "difficulty": "easy",
+      "chapter": 2,
+      "section_ids": [
+        "s2-19"
+      ],
+      "topic_ids": [
+        "kondensatorer"
+      ],
+      "learning_objective": "Vite at en dreiekondensator endrer kapasitansen ved å endre platearealet som overlapper.",
+      "priority": "normal",
+      "context": [
+        [
+          "En variabel ",
+          {
+            "term": "kondensator",
+            "text": "kondensator"
+          },
+          " med luft som ",
+          {
+            "term": "dielektrikum",
+            "text": "dielektrikum"
+          },
+          " har ett sett faste plater og ett sett plater festet til en aksling. Platene i de to settene griper inn mellom hverandre uten å berøre hverandre."
+        ]
+      ],
+      "stem": [
+        [
+          "Hva er det som endrer ",
+          {
+            "term": "kapasitans",
+            "text": "kapasitansen"
+          },
+          " når du dreier akslingen?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Hvor stor del av platearealet som ligger overfor hverandre"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Hvor stor avstand det er mellom de faste og de dreibare platene"
+          ],
+          "feedback": [
+            [
+              "Avstanden mellom platene er den samme i alle stillinger i en variabel kondensator. Den bestemmer i stedet hvor høy ",
+              {
+                "term": "spenning",
+                "text": "spenning"
+              },
+              " kondensatoren tåler."
+            ]
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Hvor stor dielektrisitetskonstanten til luften mellom platene er"
+          ],
+          "feedback": [
+            "Dielektrikumet er luft hele tiden, og egenskapene til luften endres ikke når platene dreies."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Hvor mange av platene som er elektrisk koblet til kretsen"
+          ],
+          "feedback": [
+            "Alle platene er koblet til hele tiden. Kapasitansen endres gradvis fordi platene glir inn og ut av hverandre."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Kapasitansen er proporsjonal med arealet som ligger overfor hverandre og omvendt proporsjonal med avstanden mellom platene. I en variabel kondensator endrer akslingen det overlappende arealet: helt inndreid gir størst kapasitans, helt utdreid gir minst."
+        ],
+        [
+          "Avstanden mellom platene bestemmer ",
+          {
+            "term": "arbeidsspenning",
+            "text": "arbeidsspenningen"
+          },
+          ". ",
+          {
+            "term": "dreiekondensator",
+            "text": "Variable kondensatorer"
+          },
+          " i ",
+          {
+            "term": "sender",
+            "text": "sendere"
+          },
+          " og antennetilpasningsenheter har derfor stor plateavstand, mens de i ",
+          {
+            "term": "mottaker",
+            "text": "mottakere"
+          },
+          " kan ha platene tett."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 2,
+        "section_id": "s2-19",
+        "printed_pages": [
+          "2-8"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "3925a1a81220026d"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "Jim C K Flaten",
+        "based_on": 2,
+        "at": "2026-10-24T16:33:21+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T16:33:21+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "75df7462fea62200f6c0bffe7768cc9b6b11aa3d628c630247a126a19fe8e4bd",
+          "note": "Add a figure"
+        },
+        {
+          "at": "2026-10-24T16:33:22+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "08971e30fde626b0e87bcf2a43cab82c1b9a900e49b56cbcf8a12f829c830150",
+          "note": "automated checks passed"
+        }
+      ],
+      "visual": {
+        "template": "illustration",
+        "version": 1,
+        "params": {
+          "kind": "variable_capacitor",
+          "blank": true,
+          "note": "Tegningen vises når du har svart"
+        },
+        "params_after": {
+          "blank": false
+        }
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "08971e30fde626b0e87bcf2a43cab82c1b9a900e49b56cbcf8a12f829c830150",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T16:33:22+00:00"
+      }
     }
   ]
 }

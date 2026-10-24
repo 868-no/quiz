@@ -1790,6 +1790,117 @@
           }
         }
       }
+    },
+    {
+      "id": "illustration",
+      "version": 1,
+      "title": "Illustrasjon",
+      "description": "Small explanatory drawings: the SI prefix ladder with a step marked (prefixes), a tolerance range on a number line (tolerance), an S-meter scale with two readings and optionally the dB per S-unit (s_meter), a plate capacitor with area and distance and optionally half the distance (plates), a variable capacitor's rotor and stator with the overlap shaded (variable_capacitor), two coils with parallel and optionally perpendicular axes (coils), and an oscillator and final stage on one supply line, optionally with a separate regulator (supply). 'blank' shows only a note.",
+      "idealised": "Forenklet illustrasjon av prinsippet.",
+      "status": "needs_review",
+      "params": {
+        "type": "object",
+        "required": [
+          "kind"
+        ],
+        "properties": {
+          "kind": {
+            "type": "string",
+            "enum": [
+              "prefixes",
+              "tolerance",
+              "s_meter",
+              "plates",
+              "variable_capacitor",
+              "coils",
+              "supply"
+            ]
+          },
+          "reveal": {
+            "type": "boolean",
+            "default": false
+          },
+          "blank": {
+            "type": "boolean",
+            "default": false
+          },
+          "note": {
+            "type": "string",
+            "maxLength": 48,
+            "default": ""
+          },
+          "from": {
+            "type": "string",
+            "enum": [
+              "p",
+              "n",
+              "µ",
+              "m",
+              "",
+              "k",
+              "M",
+              "G"
+            ],
+            "default": "p"
+          },
+          "to": {
+            "type": "string",
+            "enum": [
+              "p",
+              "n",
+              "µ",
+              "m",
+              "",
+              "k",
+              "M",
+              "G"
+            ],
+            "default": "n"
+          },
+          "nominal": {
+            "type": "number",
+            "minimum": 1e-12,
+            "maximum": 1000000000000.0,
+            "nullable": true
+          },
+          "unit": {
+            "type": "string",
+            "enum": [
+              "Ω",
+              "F",
+              "H",
+              "V",
+              "A",
+              "Hz"
+            ],
+            "default": "Ω"
+          },
+          "percent": {
+            "type": "number",
+            "minimum": 0.1,
+            "maximum": 50,
+            "default": 10
+          },
+          "from_s": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 9,
+            "default": 5
+          },
+          "to_s": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 9,
+            "default": 8
+          },
+          "db_per_s": {
+            "type": "number",
+            "minimum": 1,
+            "maximum": 10,
+            "default": 6
+          }
+        }
+      }
     }
   ]
 }

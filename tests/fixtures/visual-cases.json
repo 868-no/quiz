@@ -2417,6 +2417,133 @@
           "kind": "tetrode"
         }
       }
+    },
+    {
+      "name": "illustration: prefixes",
+      "valid": true,
+      "visual": {
+        "template": "illustration",
+        "version": 1,
+        "params": {
+          "kind": "prefixes",
+          "from": "p",
+          "to": "n"
+        }
+      },
+      "quantities": {},
+      "shown": {}
+    },
+    {
+      "name": "illustration: tolerance",
+      "valid": true,
+      "visual": {
+        "template": "illustration",
+        "version": 1,
+        "params": {
+          "kind": "tolerance",
+          "nominal": 1000,
+          "percent": 10
+        }
+      },
+      "quantities": {},
+      "shown": {}
+    },
+    {
+      "name": "illustration: s_meter",
+      "valid": true,
+      "visual": {
+        "template": "illustration",
+        "version": 1,
+        "params": {
+          "kind": "s_meter",
+          "from_s": 5,
+          "to_s": 8,
+          "reveal": true
+        }
+      },
+      "quantities": {},
+      "shown": {}
+    },
+    {
+      "name": "illustration: plates",
+      "valid": true,
+      "visual": {
+        "template": "illustration",
+        "version": 1,
+        "params": {
+          "kind": "plates",
+          "reveal": true
+        }
+      },
+      "quantities": {},
+      "shown": {}
+    },
+    {
+      "name": "illustration: variable_capacitor",
+      "valid": true,
+      "visual": {
+        "template": "illustration",
+        "version": 1,
+        "params": {
+          "kind": "variable_capacitor"
+        }
+      },
+      "quantities": {},
+      "shown": {}
+    },
+    {
+      "name": "illustration: coils",
+      "valid": true,
+      "visual": {
+        "template": "illustration",
+        "version": 1,
+        "params": {
+          "kind": "coils",
+          "reveal": true
+        }
+      },
+      "quantities": {},
+      "shown": {}
+    },
+    {
+      "name": "illustration: supply",
+      "valid": true,
+      "visual": {
+        "template": "illustration",
+        "version": 1,
+        "params": {
+          "kind": "supply",
+          "reveal": true
+        }
+      },
+      "quantities": {},
+      "shown": {}
+    },
+    {
+      "name": "illustration: S-meter readings must go upwards",
+      "valid": false,
+      "error": "from_s",
+      "visual": {
+        "template": "illustration",
+        "version": 1,
+        "params": {
+          "kind": "s_meter",
+          "from_s": 8,
+          "to_s": 5
+        }
+      }
+    },
+    {
+      "name": "illustration: tolerance needs a nominal value",
+      "valid": false,
+      "error": "nominal",
+      "visual": {
+        "template": "illustration",
+        "version": 1,
+        "params": {
+          "kind": "tolerance"
+        }
+      }
     }
   ]
 }

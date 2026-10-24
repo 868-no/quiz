@@ -371,6 +371,189 @@
         },
         "verifier": "deterministic-v1"
       }
+    },
+    {
+      "revision": 3,
+      "status": "needs_review",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "medium",
+      "chapter": 6,
+      "section_ids": [
+        "s6-15"
+      ],
+      "topic_ids": [
+        "agc"
+      ],
+      "learning_objective": "Regne om endring i S-enheter til dB.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "Anta at ",
+          {
+            "term": "s-meter",
+            "text": "S-meteret"
+          },
+          " er kalibrert med 6 dB per S-enhet. Et signal som først viser S5, øker til S8."
+        ]
+      ],
+      "stem": "Hvor mye sterkere er signalet blitt?",
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 18,
+              "u": "dB"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 3,
+              "u": "dB"
+            }
+          ],
+          "feedback": [
+            "3 er antall S-enheter. Hver S-enhet er her 6 dB."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 9,
+              "u": "dB"
+            }
+          ],
+          "feedback": [
+            "Det ville vært riktig med 3 dB per S-enhet. Her er en S-enhet 6 dB."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 30,
+              "u": "dB"
+            }
+          ],
+          "feedback": [
+            "Trinn på 10 dB brukes på skalaen over S9 (S9 + 10 dB osv.), ikke mellom S5 og S8."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          {
+            "math": [
+              "3",
+              "·",
+              {
+                "q": 6,
+                "u": "dB"
+              },
+              "=",
+              {
+                "q": 18,
+                "u": "dB"
+              }
+            ]
+          }
+        ],
+        [
+          "18 dB svarer til omtrent 8 ganger så stor spenning, eller omtrent 63 ganger så stor ",
+          {
+            "term": "effekt",
+            "text": "effekt"
+          },
+          "."
+        ],
+        [
+          "S-meteret drives vanligvis av ",
+          {
+            "term": "agc",
+            "text": "AGC"
+          },
+          "-",
+          {
+            "term": "spenning",
+            "text": "spenningen"
+          },
+          ". I praksis er de fleste S-metere ikke nøyaktig kalibrert, så avlesningen egner seg best til å sammenligne signaler."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 6,
+        "section_id": "s6-15",
+        "printed_pages": [
+          "6-9"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "5e4ce7d56d6ba8da"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "Jim C K Flaten",
+        "based_on": 2,
+        "at": "2026-10-24T16:33:21+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T16:33:21+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "9d3cb5b5128ecaa57e216ebdd0dc6351fc89b94169d7b0ec17a18617f33bf800",
+          "note": "Add a figure"
+        },
+        {
+          "at": "2026-10-24T16:33:22+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "c61de4987b84e72dd487f882ee69a2595852dde5f7e636fba01a7c5e6942abe7",
+          "note": "automated checks passed"
+        }
+      ],
+      "visual": {
+        "template": "illustration",
+        "version": 1,
+        "params": {
+          "kind": "s_meter",
+          "from_s": 5,
+          "to_s": 8,
+          "db_per_s": 6
+        },
+        "params_after": {
+          "reveal": true
+        }
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "c61de4987b84e72dd487f882ee69a2595852dde5f7e636fba01a7c5e6942abe7",
+        "errors": [],
+        "warnings": [],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T16:33:22+00:00"
+      }
     }
   ]
 }
