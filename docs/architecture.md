@@ -3,20 +3,22 @@
 ## Layout
 
 ```text
-web/                      site source (copied verbatim into dist/)
+web/                      site source (copied into dist/; publish fills in sw.js)
   index.html styles.css
-  js/main.js              boot: load + validate data/bank.json, start the app
+  sw.js                   service worker: offline copy of the site
+  fonts/                  self-hosted Atkinson Hyperlegible Next (OFL)
+  js/main.js              boot: load + validate data/bank.json, start the app, register sw.js
   js/content/bank.js      defensive bank validation (invalid questions are dropped)
-  js/quiz/                engine.js (pure), policies.js, rng.js, storage.js
+  js/quiz/                engine.js (pure), policies.js, rng.js, progress.js (mistakes list), storage.js
   js/render/              vnode.js (allowlisted DOM builder), richtext.js, format.js
   js/visuals/             registry.js, schema.js, svg.js + one module per template
-  js/ui/                  app.js (screens), glossary.js (popovers)
+  js/ui/                  app.js (screens), dial.js (tuning-dial graphic), glossary.js (popovers)
 tools/                    offline pipeline (python3 -m tools …)
 content/                  original content (questions, glossary, chapters, template schemas)
 config/generation.json    LLM provider configuration (off by default)
 tests/python, tests/js    test suites; tests/fixtures shared cases
 private/                  git-ignored; imports, generation runs, reviews, preview
-dist/                     build output = the deployable site
+dist/                     build output = the deployable site (not committed; CI builds it)
 ```
 
 ## Quiz engine and session policies
@@ -24,16 +26,24 @@ dist/                     build output = the deployable site
 `web/js/quiz/engine.js` is pure and fully unit-tested:
 
 * `pool` – questions in the selected, *available* chapters matching optional
-  difficulty/style filters. Unavailable chapters can never contribute.
+  difficulty/style filters and, if given, a list of question ids. Unavailable chapters
+  can never contribute.
 * `selectQuestions` – shuffle within each section, visit sections round-robin in random
   order, shuffle the result: no duplicates, topics spread out, every question in a
   section equally likely. Insufficient stock returns an error; nothing is padded.
 * `createSession` – stores `{qid, rev, order, answer}` per item plus the seed, so a
   session can be persisted and restored exactly. Option order is shuffled; option ids
-  and the correct key never change.
+  and the correct key never change. `kind` marks special rounds: `missed` (practising
+  earlier mistakes) and `single` (one question opened from a link; never saved, so it
+  cannot replace a round in progress).
 * `submitAnswer` – only once per item (throws otherwise); correctness is computed from
   the bank, never trusted from storage. `restoreSession` discards a stored session if
   any question or revision is no longer published.
+* **Mistakes** (`progress.js`): a question answered wrong is added to a list in
+  `localStorage` and removed the next time it is answered right; the start screen
+  offers a round of up to 20 of them.
+* **Links**: `#q-0045` opens that question on its own (also on `hashchange`); the
+  feedback offers a button that copies the link.
 * **Policies** (`policies.js`): `learning` (immediate feedback, cannot advance before
   feedback) is the MVP. `exam` (deferred feedback) is defined but disabled; adding it is
   a UI change, not a content change. Future multiple-answer/numeric types are reserved
@@ -69,6 +79,9 @@ dist/                     build output = the deployable site
 * Math uses real sub/superscripts and fractions with a spoken Norwegian `aria-label`.
 * Figures: `role="img"` + title + description, visible text description, idealisation
   note, no forced animation, `prefers-reduced-motion` respected.
+* The tuning dial (chapter selection and round progress) is decorative and hidden from
+  assistive technology; the same information is in the text and form controls. Its
+  needle animation is skipped with `prefers-reduced-motion`.
 
 ## Privacy and copyright boundary
 
@@ -137,8 +150,10 @@ Content-Security-Policy and referrer policy with `<meta>` tags in `index.html`, 
 covers scripts, styles, connections, objects, forms and base URLs. Not available via
 `<meta>`: `frame-ancestors` (the site could be framed by another site; low risk here,
 as there is nothing to submit or steal) and response headers like `X-Content-Type-Options`.
-Pages caches files for about 10 minutes; `data/bank.json` is fetched with
-`cache: no-cache`, so a new deploy is picked up as soon as the CDN cache expires.
+Pages caches files for about 10 minutes. Returning visitors are served by the offline
+copy (`sw.js`); browsers check `sw.js` itself for changes on every visit, so a new
+deploy is downloaded in the background once the CDN cache expires, and open pages are
+offered a reload.
 Should stricter headers be needed later, put a CDN (e.g. Cloudflare) in front, or move
 to a host with header configuration, and use:
 

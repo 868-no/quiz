@@ -21,8 +21,11 @@ Figures are drawn from **parameters**, never stored as images or HTML. A questio
   the static drawing is the complete figure.
 * Invalid parameters never draw a possibly-wrong figure: the page shows "Figuren kan ikke vises".
 
-All four templates are **`needs_review`** – a person must check the drawings
-(`python3 -m tools preview`) and approve each version before questions using them can be published.
+There are nine templates, all **approved** at version 1. A new template or version
+starts as `needs_review`: a person checks the drawings (`python3 -m tools preview`) and
+approves it (`python3 -m tools visuals approve id@version`) before questions using it
+can be published. Changing an approved template's code or schema calls for a new
+approval.
 
 ## `dc-circuit@1` – likestrømskrets
 
@@ -85,6 +88,88 @@ feeding into a chain block, and short edge labels.
 
 Hidden blocks show `?` with a dashed border; highlighted blocks have a thick border
 and bold text and are named "(fremhevet)" in the description.
+
+## `rlc-circuit@1` – krets med R, C og L
+
+1–3 ideal components (R, C, L; named R1, C1 … per kind) in series or parallel,
+between two terminals or with a source. Totals, reactances, impedance, time constant
+and resonance frequency are **computed**.
+
+| Param | Type |
+|---|---|
+| `source` | `{kind: none\|dc\|ac = none, voltage_v?, frequency_hz? (required for ac), show_voltage=true, show_frequency=true}` – a hidden frequency is left out of the drawing |
+| `topology` | `series` \| `parallel` |
+| `components` | 1–3 × `{kind: R\|C\|L, value? (SI), show_value=true, reactance_ohms?}` – each needs a value or (for C/L) a reactance, drawn as `X_C = 40 Ω` |
+| `switch` | open switch in the loop (series circuit with a source only) |
+| `total_label` | `none` \| `unknown` (drawn as `?`) \| `value` – the total R/C/L, or for mixed series components with known reactances the impedance `Z` |
+| `label_style` | `values` (default) \| `names` (names only, also the source) \| `source` (component names, source value shown) |
+
+Quantities: component names (`R1`, `C1` …), `R_total`/`C_total`/`L_total`, `U`, `f`,
+`X_C`/`X_L`, `Z`, `tau`, `f0` (computed ones are never shown before answering).
+
+## `rectifier@1` – likeretter
+
+Half-wave (one diode) or bridge (four diodes) rectifier from an AC source, with an
+optional reservoir capacitor and load; also used for a simple diode detector. The
+output's plus side is always at the top.
+
+| Param | Type |
+|---|---|
+| `kind` | `half` \| `bridge` |
+| `source` | `{u_rms? \| u_peak? (not both), name?, show_value=true}` |
+| `capacitor`, `load` | booleans (at least one) |
+| `load_name` | `R_L` \| `R` |
+| `output_label` | `none` \| `unknown` (`U_ut = ?`) |
+
+Quantities: `U_rms`, `U_p` (peak computed from RMS).
+
+## `transformer@1` – transformator
+
+Ideal transformer with an AC source on the primary and an optional load. Secondary
+voltage and input impedance are **computed** from the turns.
+
+| Param | Type |
+|---|---|
+| `turns_primary`, `turns_secondary` | numbers |
+| `turns_display` | `numbers` \| `ratio` (reduced, e.g. `10 : 1`) \| `none` |
+| `primary_voltage_v`, `show_primary_voltage` | optional voltage |
+| `load_ohms`, `show_load` | optional load |
+| `secondary_label` | `none` \| `unknown` \| `value` (computed) – needs a primary voltage |
+| `input_label` | `none` \| `unknown` (`Z_inn = ?`) – needs a load |
+
+Quantities: `N_p`, `N_s`, `ratio`, `U_p`, `U_s`, `R_L`, `Z_p`.
+
+## `transistor-stage@1` – transistortrinn
+
+NPN common-emitter stage: collector resistor to the supply, optional emitter resistor
+(with bypass capacitor), base voltage divider and coupling capacitors. Node voltages
+and the collector current are author-given labels.
+
+| Param | Type |
+|---|---|
+| `vcc_v`, `show_vcc` | supply voltage |
+| `rc_ohms` (required), `re_ohms?`, `show_resistor_values` | resistors |
+| `bypass_capacitor` | needs `re_ohms` |
+| `divider`, `coupling` | booleans |
+| `labels` | up to 4 × `{node: B\|E\|C\|IC, value?}` – no value draws `?` |
+
+Quantities: `U_CC`, `R_C`, `R_E`, `U_B`, `U_E`, `U_C`, `I_C` (labelled ones).
+
+## `series-regulator@1` – spenningsregulator med serietransistor
+
+Linear series regulator: NPN pass transistor between input and output, base fed
+through a resistor and held by a zener diode, load at the output, optional input
+capacitor. The voltage across and the power in the pass transistor are **computed**,
+never typed in.
+
+| Param | Type |
+|---|---|
+| `u_in_v`, `u_out_v` | input and output voltage (output lower than input) |
+| `i_load_a` | load current |
+| `unknown` | subset of `U_in`, `U_out`, `I_L`, `U_pass`, `P_pass`, drawn as `?` |
+| `input_capacitor` | boolean |
+
+Quantities: `U_in`, `U_out`, `I_L`, `U_pass`, `P_pass` (the last two are never shown).
 
 ## Adding or changing a template
 

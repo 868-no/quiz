@@ -1,6 +1,7 @@
 # Editorial workflow
 
-Four separate offline stages. None of them runs on the public site.
+Four separate offline stages. None of them runs on the public site; GitHub Actions only
+rebuilds and deploys what has already been approved.
 
 ```text
 import ──▶ A: new / generate ──▶ B: verify ──▶ C: human review ──▶ D: publish ──▶ push (CI deploys)
@@ -106,6 +107,13 @@ python3 -m tools chapters verify-section s2-11 --title "Heading exactly as print
 python3 -m tools chapters verify-chapter 2
 ```
 
+**Glossary links.** `python3 -m tools glossary suggest` lists words in the questions
+that match a glossary term but are not linked; `glossary autolink [ids] --apply` links
+them as new draft revisions (once before answering – never in the answer options – and
+once after; never inside math). Forms that are also ordinary words (e.g. the verb
+"sender") are listed in the term's `no_autolink` and are never linked automatically.
+The new revisions go through `verify` and approval like any other change.
+
 ## Stage D – publish
 
 ```sh
@@ -133,7 +141,8 @@ a full `publish` locally before pushing.
    registry; questions citing changed chunks are flagged.
 3. `python3 -m tools chapters list` – check proposed headings and `ocr_issues`.
 4. Author/generate, verify, review and approve questions for the new chapter.
-5. `python3 -m tools publish`. The chapter becomes selectable once it has approved questions.
+5. `python3 -m tools publish` locally, then commit and push; GitHub Actions deploys it. The
+   chapter becomes selectable once it has approved questions.
 
 ## Deployment
 
@@ -155,4 +164,4 @@ design.
 Learners report problems as GitHub issues; the title starts with the question id and
 version, e.g. `[q-0012 v1]`. To act on one: `python3 -m tools review show q-0012`, then
 `review edit q-0012` (creates a new draft revision), `verify`, `review approve`,
-`publish`, commit and push. The old revision stays published until the new one is approved.
+`publish` (local check), commit and push. The old revision stays published until the new one is approved.

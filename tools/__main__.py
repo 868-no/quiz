@@ -7,12 +7,12 @@ Pipeline (all offline):
   generate    Stage A  generate LLM draft candidates (provider-configured, off by default)
   verify      Stage B  automated checks; draft -> needs_review when they pass
   review      Stage C  show / approve / reject / request-changes / edit / retire / resolve-flag
-  glossary    Stage C  approve glossary terms
+  glossary    Stage C  approve glossary terms; suggest/autolink glossary links
   visuals     Stage C  approve visual template versions
   chapters    Stage C  verify chapter and section headings
   preview     private preview site with drafts (private/preview/, never deploy)
-  publish     Stage D  build dist/ from approved content only (fail closed)
-  deploy      push dist/ to a static-hosting branch (GitHub Pages)
+  publish     Stage D  build dist/ from approved content only (fail closed; CI deploys it)
+  deploy      push dist/ to a separate static-hosting repository (unused; see docs)
   release-check        scan a build directory for private material
   serve                serve dist/ (or the preview) on localhost
   status               overview of the bank
