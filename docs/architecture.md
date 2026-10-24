@@ -96,6 +96,10 @@ dist/                     build output = the deployable site (not committed; CI 
   linked figure, missing link, practice exam and its result), on a phone in dark mode
   and a desktop in light mode, as part of the GitHub test job. Automated checks find
   only some problems; testing with screen readers is still needed.
+* `tests/a11y/figures.test.mjs` draws every figure in the bank, before and after
+  answering, on a desktop and a phone (where figure text is 15 % larger), and fails if a
+  label overlaps another label or crosses a straight line. Letters inside a circle
+  (meters, atoms) are left out, and an animation's frames are not measured.
 * Math uses real sub/superscripts and fractions with a spoken Norwegian `aria-label`.
 * Figures: `role="img"` + title + description, visible text description, idealisation
   note; animations play by themselves with a stop button, and not at all with

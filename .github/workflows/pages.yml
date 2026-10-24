@@ -43,11 +43,11 @@ jobs:
         run: npx playwright install --with-deps chromium
       - name: Build the site for the accessibility check
         run: python3 -m tools publish --without-source
-      - name: Tool and site tests, accessibility check
+      - name: Tool and site tests, accessibility check, figure layout check
         run: ./run-tests.sh
         env:
           RADIOQUIZ_REQUIRE_JSDOM: "1"     # fail instead of skipping the UI tests
-          RADIOQUIZ_REQUIRE_BROWSER: "1"   # ... or the accessibility check
+          RADIOQUIZ_REQUIRE_BROWSER: "1"   # ... or the browser checks
 
   deploy:
     needs: test

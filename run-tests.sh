@@ -10,7 +10,7 @@ python3 -m unittest discover -s tests/python -t . "$@"
 if command -v node >/dev/null 2>&1; then
   echo "== JavaScript tests"
   node --test tests/js/*.test.mjs
-  echo "== Accessibility check"
+  echo "== Accessibility check and figure layout check"
   node --test tests/a11y/*.test.mjs
 else
   echo "== JavaScript tests SKIPPED (node not found)"

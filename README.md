@@ -128,7 +128,8 @@ learning objectives or unapproved items; `release-check` enforces this.
    name the section; until then references show chapter and printed page only.
 4. **Testing on real devices and screen readers** (VoiceOver, NVDA, TalkBack). UI
    behaviour is tested in a simulated DOM (jsdom), every screen passes an automated
-   axe-core check in Chromium on each push, and the screens, figures and offline mode
+   axe-core check in Chromium on each push, a layout check keeps figure labels from
+   overlapping, and the screens, figures and offline mode
    were inspected in headless Chromium, but not on phones or with assistive technology.
 
 Errors can be reported as [GitHub issues](https://github.com/868-no/quiz/issues); each question
