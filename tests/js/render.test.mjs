@@ -32,6 +32,8 @@ test('text content is escaped, never interpreted as markup', () => {
   assert.throws(() => toString(h('a', { href: 'javascript:alert(1)' }, 'x')), /link not allowed/);
   assert.throws(() => toString(h('a', { href: 'https://evil.example/' }, 'x')), /link not allowed/);
   assert.ok(toString(h('a', { href: 'https://github.com/868-no/quiz/issues' }, 'x')).includes('href'));
+  assert.ok(toString(h('a', { href: '#q-0045' }, 'x')).includes('href'));
+  assert.throws(() => toString(h('a', { href: '#top' }, 'x')), /link not allowed/);
 });
 
 test('glossary terms render as buttons, and can be held back until answered', () => {

@@ -216,6 +216,8 @@ select {
 details summary { cursor: pointer; padding: 6px 0; font-weight: 700; }
 .ref { border-left: 4px solid var(--action); padding: 4px 0 4px 14px; margin: 16px 0 8px; }
 .report { font-size: 0.92rem; color: var(--muted); margin: 6px 0 0; }
+.share { font-size: 0.92rem; color: var(--muted); margin: 14px 0 0; display: flex; flex-wrap: wrap; align-items: center; gap: 4px 10px; }
+.copy-status { overflow-wrap: anywhere; }
 .steps { padding-left: 1.4em; }
 .steps li { margin: 0.3em 0; }
 .note { color: var(--muted); font-style: italic; }

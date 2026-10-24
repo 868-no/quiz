@@ -33,8 +33,9 @@ function flatten(children) {
   return out;
 }
 
-// Links may only point to the project's GitHub pages (issue reporting).
-const HREF_OK = /^https:\/\/github\.com\/[^\s"<>]*$/;
+// Links may only point to the project's GitHub pages (issue reporting) or to a
+// question on this page (#q-0045).
+const HREF_OK = /^(https:\/\/github\.com\/[^\s"<>]*|#q-\d+)$/;
 
 function checkNode(node) {
   if (!HTML_TAGS.has(node.t) && !SVG_TAGS.has(node.t)) throw new Error(`tag not allowed: ${node.t}`);

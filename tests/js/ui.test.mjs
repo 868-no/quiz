@@ -16,11 +16,12 @@ try {
 }
 const skip = JSDOM ? false : 'jsdom not installed';
 
-function setupDom() {
-  const dom = new JSDOM('<!doctype html><html lang="nb"><body><main id="app"></main></body></html>', { url: 'http://localhost/' });
+function setupDom(url = 'http://localhost/') {
+  const dom = new JSDOM('<!doctype html><html lang="nb"><body><main id="app"></main></body></html>', { url });
   const w = dom.window;
   Object.assign(globalThis, {
     window: w, document: w.document, Element: w.Element, Node: w.Node, localStorage: w.localStorage,
+    location: w.location, history: w.history,
     confirm: () => true, matchMedia: () => ({ matches: false }),
     addEventListener: w.addEventListener.bind(w), removeEventListener: w.removeEventListener.bind(w),
   });
@@ -38,9 +39,9 @@ function bankWithTerms() {
   return bank;
 }
 
-async function app(bank) {
+async function app(bank, url) {
   const { createApp } = await import('../../web/js/ui/app.js');
-  const env = setupDom();
+  const env = setupDom(url);
   const instance = createApp(env.root, bank);
   return { ...env, instance };
 }
@@ -344,4 +345,51 @@ test('the list of mistakes can be cleared and ignores questions no longer publis
   $(env.root, '[data-action=clear-missed]').click();
   assert.equal($(env.root, '.notice-missed'), null);
   assert.equal(env.w.localStorage.getItem('radioquiz.missed.v1'), null);
+});
+
+test('a link to a question opens just that question without touching a saved round', { skip }, async () => {
+  const bank = makeBank({ perChapter: { 2: 4 } });
+  bank.site = { issues_url: 'https://github.com/868-no/quiz/issues' };
+  const first = await app(bank);
+  start(first.root, [2]);
+  answer(first.root, true);
+  const saved = first.w.localStorage.getItem('radioquiz.session.v1');
+  // open a new page with a link to q-2003
+  first.w.history.replaceState(null, '', '/#q-2003');
+  first.root.replaceChildren(); // one app per page, so element ids stay unique
+  const { createApp } = await import('../../web/js/ui/app.js');
+  const root = first.w.document.createElement('main');
+  first.w.document.body.appendChild(root);
+  createApp(root, bank);
+  assert.equal($(root, '#q-progress').textContent, 'Spørsmål q-2003');
+  assert.ok($(root, '.q-stem').textContent.includes('q-2003'));
+  assert.equal($(root, '.dial-wrap'), null);
+  answer(root, false);
+  assert.equal(first.w.localStorage.getItem('radioquiz.session.v1'), saved, 'the saved round is unchanged');
+  assert.ok(JSON.parse(first.w.localStorage.getItem('radioquiz.missed.v1'))['q-2003'], 'the mistake is remembered');
+  const body = new URL($(root, '.report a').getAttribute('href')).searchParams.get('body');
+  assert.ok(body.includes('http://localhost/#q-2003'));
+  // copying falls back to showing the address when the clipboard is unavailable
+  $(root, '[data-action=copy-link]').click();
+  await new Promise((r) => setTimeout(r, 0));
+  assert.equal($(root, '.copy-status a').getAttribute('href'), '#q-2003');
+  assert.equal($(root, '.copy-status a').textContent, 'http://localhost/#q-2003');
+  $(root, '[data-action=leave]').click();
+  assert.equal(first.w.location.hash, '');
+  assert.ok(root.textContent.includes('påbegynt runde'), 'the saved round can still be resumed');
+});
+
+test('a link to an unknown question explains itself on the setup screen', { skip }, async () => {
+  const { root, w } = await app(makeBank({ perChapter: { 2: 2 } }), 'http://localhost/#q-9999');
+  assert.ok($(root, '.link-notice').textContent.includes('Fant ikke spørsmål q-9999'));
+  assert.ok($(root, '#setup-form'));
+  assert.equal(w.location.hash, '');
+});
+
+test('pasting a question link into an open tab opens that question', { skip }, async () => {
+  const { root, w } = await app(makeBank({ perChapter: { 2: 2 } }));
+  w.location.hash = '#q-2001';
+  await new Promise((r) => w.addEventListener('hashchange', r, { once: true }));
+  await new Promise((r) => setTimeout(r, 0));
+  assert.equal($(root, '#q-progress').textContent, 'Spørsmål q-2001');
 });
