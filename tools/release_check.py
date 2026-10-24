@@ -8,10 +8,12 @@ Checks
 * no symlinks;
 * no private markers (chunk ids/uids, private paths, OCR annotations, review data);
 * bank.json uses exactly the public allowlisted fields and is a production bank;
+* sw.js (offline copy) lists exactly the files of this build, with a matching version;
 * no 8-word passage shared with the imported textbook text (when an import exists).
 """
 from __future__ import annotations
 
+import hashlib
 import json
 import re
 from pathlib import Path
@@ -39,6 +41,44 @@ BANK_TOP = {"schema", "mode", "built_at", "bank_id", "book", "site", "chapters",
 QUESTION_KEYS = {"id", "rev", "chapter", "sections", "topics", "difficulty", "style", "priority", "context",
                  "stem", "options", "correct", "explanation", "visual", "glossary_after_answer", "ref"}
 SHINGLE = 8
+SW_FILE = "sw.js"
+SW_PLACEHOLDER = "const PRECACHE = null; // filled in by `python3 -m tools publish`"
+SW_LINE = re.compile(r"^const PRECACHE = (.*?);(?: //.*)?$", re.M)
+
+
+def precache(root: Path) -> dict[str, Any]:
+    """The offline copy of a build: every site file except the host files and sw.js itself,
+    and a version that changes whenever any of them does."""
+    files = sorted(str(f.relative_to(root).as_posix()) for f in root.rglob("*")
+                   if f.is_file() and str(f.relative_to(root)) not in HOST_FILES | {SW_FILE})
+    h = hashlib.sha256()
+    for rel in files:
+        h.update(rel.encode() + b"\0" + hashlib.sha256((root / rel).read_bytes()).digest())
+    return {"version": h.hexdigest()[:16], "files": files}
+
+
+def _check_sw(root: Path, expect_mode: str) -> list[str]:
+    sw = root / SW_FILE
+    if not sw.exists():
+        return [f"{SW_FILE} is missing (offline copy)"] if expect_mode == "production" else []
+    m = SW_LINE.search(sw.read_text(encoding="utf-8"))
+    if not m:
+        return [f"{SW_FILE}: no PRECACHE line"]
+    try:
+        listed = json.loads(m.group(1))
+    except json.JSONDecodeError:
+        return [f"{SW_FILE}: PRECACHE is not valid JSON"]
+    if listed is None:
+        return [f"{SW_FILE}: PRECACHE was not filled in by publish"] if expect_mode == "production" else []
+    want = precache(root)
+    errors = []
+    if not isinstance(listed, dict) or sorted(listed.get("files") or []) != want["files"]:
+        missing = sorted(set(want["files"]) - set((listed or {}).get("files") or []))
+        extra = sorted(set((listed or {}).get("files") or []) - set(want["files"]))
+        errors.append(f"{SW_FILE}: file list does not match the build (missing {missing}, extra {extra})")
+    elif listed.get("version") != want["version"]:
+        errors.append(f"{SW_FILE}: version does not match the files (stale offline copy)")
+    return errors
 
 
 def _source_shingles(paths: Paths) -> set[tuple[str, ...]] | None:
@@ -128,5 +168,6 @@ def release_check(root: Path, paths: Paths, *, expect_mode: str = "production") 
                 ids = [o.get("id") for o in q.get("options", [])]
                 if len(q.get("correct", [])) != 1 or q["correct"][0] not in ids:
                     errors.append(f"data/bank.json: question {q.get('id')} has an invalid correct key")
+    errors += _check_sw(root, expect_mode)
     notes.append(f"{files} file(s) scanned")
     return {"errors": errors, "notes": notes}

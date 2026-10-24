@@ -81,7 +81,8 @@ content/ (original, version-controlled)
   allowlisted renderer (`web/js/render/`).
 * **No backend, accounts, cookies, analytics or LLM calls** on the public site. An
   in-progress quiz and the list of questions answered wrong are stored only in the
-  visitor's browser (`localStorage`).
+  visitor's browser (`localStorage`). After the first visit the site also works
+  offline (service worker, `web/sw.js`).
 
 More: [docs/architecture.md](docs/architecture.md).
 

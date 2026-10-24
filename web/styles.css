@@ -166,6 +166,8 @@ select {
 .notice p { margin: 0.3em 0; }
 .notice-error { border-left-color: var(--bad); }
 .notice-missed { border-left-color: var(--action); }
+.notice-update { border-left-color: var(--action); margin-bottom: 0; }
+.notice-update .btn-small { margin-left: 6px; }
 
 /* ---- question ---- */
 .q-head { display: grid; grid-template-columns: 1fr auto; gap: 0 12px; align-items: center; }

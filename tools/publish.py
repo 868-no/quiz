@@ -9,6 +9,7 @@ anything else are left behind by construction.
 """
 from __future__ import annotations
 
+import json
 import re
 import shutil
 from pathlib import Path
@@ -18,7 +19,7 @@ from . import checks, richtext, visuals
 from .common import Paths, ToolError, canonical_hash, now_iso, read_json, write_json
 from .context import Context, load_context, validate_glossary
 from .questions import content_hash, latest, open_flags, publishable_revision
-from .release_check import release_check
+from .release_check import SW_FILE, SW_PLACEHOLDER, precache, release_check
 
 BANK_SCHEMA = 1
 PUBLIC_QUESTION_KEYS = ("id", "rev", "chapter", "sections", "topics", "difficulty", "style", "priority",
@@ -230,6 +231,16 @@ def _write_host_files(paths: Paths, out: Path) -> None:
     (out / ".nojekyll").write_text("", encoding="utf-8")
 
 
+def _write_precache(out: Path) -> None:
+    """Fill in the service worker's file list and version (last step: it covers every file)."""
+    sw = out / SW_FILE
+    text = sw.read_text(encoding="utf-8")
+    if text.count(SW_PLACEHOLDER) != 1:
+        raise PublishError(f"web/{SW_FILE}: PRECACHE placeholder line not found")
+    line = f"const PRECACHE = {json.dumps(precache(out), separators=(',', ':'))};"
+    sw.write_text(text.replace(SW_PLACEHOLDER, line), encoding="utf-8")
+
+
 def publish(paths: Paths, *, skip_flagged: bool = False, require_source: bool = True,
             out: Path | None = None) -> dict[str, Any]:
     bank, problems, notes = build_bank(paths, mode="production", skip_flagged=skip_flagged,
@@ -241,6 +252,7 @@ def publish(paths: Paths, *, skip_flagged: bool = False, require_source: bool = 
     _copy_web(paths, staging)
     write_json(staging / "data" / "bank.json", bank)
     _write_host_files(paths, staging)
+    _write_precache(staging)
     report = release_check(staging, paths, expect_mode="production")
     if report["errors"]:
         shutil.rmtree(staging)

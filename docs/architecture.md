@@ -48,6 +48,11 @@ dist/                     build output = the deployable site
   scripts/styles, `form-action 'none'`, `base-uri 'none'`).
 * `localStorage` stores only question ids, revisions, option order and chosen ids,
   plus the ids of questions answered wrong (with a timestamp); every access is wrapped so the quiz works when storage is blocked.
+* `sw.js` (service worker) keeps an offline copy of the whole build. `publish` fills in
+  its file list and a version hash of every file; the release check fails if the list
+  or version does not match the build. A new publish installs the new copy, drops the
+  old one, and offers open pages a reload. Unpublished copies (`web/`, previews) cache
+  nothing.
 
 ## Accessibility
 

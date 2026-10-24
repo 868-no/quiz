@@ -1,6 +1,7 @@
 """Stages B–D end to end on a temporary repository: verify, review, publish, release check."""
 import copy
 import json
+import re
 import unittest
 
 from tools import publish, review
@@ -196,6 +197,38 @@ class PipelineTest(unittest.TestCase):
         (self.paths.dist / "about.txt").write_text("Spørsmålene er laget fra skannede sider.")
         errs = "\n".join(release_check(self.paths.dist, self.paths)["errors"])
         self.assertIn("mention of scanning/OCR", errs)
+
+    def test_offline_copy_lists_every_file_and_detects_stale_copies(self):
+        self.repo.approve_templates()
+        publish.publish(self.paths)
+        sw = (self.paths.dist / "sw.js").read_text(encoding="utf-8")
+        self.assertNotIn("PRECACHE = null", sw)
+        listed = json.loads(re.search(r"^const PRECACHE = (.*?);$", sw, re.M).group(1))
+        self.assertIn("data/bank.json", listed["files"])
+        self.assertIn("index.html", listed["files"])
+        self.assertNotIn("sw.js", listed["files"])
+        self.assertNotIn("CNAME", listed["files"])
+        self.assertEqual(release_check(self.paths.dist, self.paths)["errors"], [])
+        # a file changed after publish makes the copy stale; a new file is missing from it
+        (self.paths.dist / "styles.css").write_text("body{}", encoding="utf-8")
+        self.assertIn("stale offline copy", "\n".join(release_check(self.paths.dist, self.paths)["errors"]))
+        (self.paths.dist / "extra.js").write_text("", encoding="utf-8")
+        self.assertIn("missing ['extra.js']", "\n".join(release_check(self.paths.dist, self.paths)["errors"]))
+        # a change to the site gives a new version
+        old = listed["version"]
+        css = self.paths.web / "styles.css"
+        css.write_text(css.read_text(encoding="utf-8") + "\n/* changed */\n", encoding="utf-8")
+        publish.publish(self.paths)
+        sw2 = (self.paths.dist / "sw.js").read_text(encoding="utf-8")
+        self.assertNotEqual(json.loads(re.search(r"^const PRECACHE = (.*?);$", sw2, re.M).group(1))["version"], old)
+
+    def test_unpublished_service_worker_caches_nothing(self):
+        sw = (self.paths.web / "sw.js").read_text(encoding="utf-8")
+        self.assertIn("const PRECACHE = null;", sw)
+        publish.preview(self.paths)
+        self.assertIn("const PRECACHE = null;", (self.paths.preview / "sw.js").read_text(encoding="utf-8"))
+        self.assertIn("PRECACHE was not filled in",
+                      "\n".join(release_check(self.paths.preview, self.paths, expect_mode="production")["errors"]))
 
     def test_release_check_rejects_non_public_bank_fields(self):
         self.repo.approve_templates()
