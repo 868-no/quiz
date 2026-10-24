@@ -35,7 +35,7 @@ Figures are drawn from **parameters**, never stored as images or HTML. A questio
   shapes exports `fixedTextSize: true`; `minScale` (default 0.6) is the smallest scale a
   figure is shown at before it scrolls sideways.
 
-There are seventeen templates, all at version 1. A new template or version
+There are eighteen templates, all at version 1. A new template or version
 starts as `needs_review`: a person checks the drawings (`python3 -m tools preview`) and
 approves it (`python3 -m tools visuals approve id@version`) before questions using it
 can be published. Changing an approved template's code or schema calls for a new
@@ -97,7 +97,7 @@ feeding into a chain block, and short edge labels.
 | Param | Type |
 |---|---|
 | `chain` | `{kind, label?, hidden=false, highlight=false}` – `kind` from `kind_labels` (Norwegian labels), or `custom` with a `label` |
-| `side` | `{kind, label?, into: chain index, hidden, highlight}` |
+| `side` | `{kind, label?, into: chain index, hidden, highlight}` – at most one side block per chain block (two would be drawn on top of each other) |
 | `edge_labels` | `{after: index, text (≤10 chars)}` on the arrow after block `index` |
 
 Hidden blocks show `?` with a dashed border; highlighted blocks have a thick border
@@ -236,6 +236,19 @@ coil L in series and variable capacitor C2 across the output.
 
 No quantities: the drawing has no component values.
 
+## `ratio-detector@1` – forholdsdetektor
+
+A simplified ratio detector: tuned MF transformer with a centre-tapped secondary, two
+diodes the same way round the loop charging C3 and C4 (U1, U2), a large capacitor Cs,
+R1/R2 with their middle to ground, and the LF output between the C3/C4 junction and
+ground. The tertiary winding is left out (said in the assumption under the figure).
+
+| Param | Type |
+|---|---|
+| `input_label` | text at the input (default "fra MF-forsterkeren") |
+| `show_curve` | boolean – adds the S-curve (output against frequency, through zero at f0); usually only in `params_after` |
+| `marker_u` | a point on the S-curve (−2,8 to 2,8), for animating the frequency swing |
+
 ## `time-signal@1` – signal over tid
 
 Stacked panels against time, computed: `kind` `conduction` (collector current for classes
@@ -277,8 +290,8 @@ right angles), `supply` (`reveal`: a separate regulator for the oscillator),
 `fet_transfer` (MOSFET curves), `phasing` (SSB by the phasing method), `transfer` (an
 amplifier compressing), `air_coil` and `range` (a receiver's dynamic range).
 
-Also: `ratio-detector@1` takes `marker_u` (a point on the S-curve) and `rlc-circuit@1`
-`current_arrow` (0–1, the current as an arrow), both for animations.
+Also: `rlc-circuit@1` takes `current_arrow` (0–1, the current drawn as an arrow whose
+length follows it; series circuit with a source), for animations.
 
 ## Adding or changing a template
 
