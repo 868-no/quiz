@@ -322,7 +322,7 @@ test('wrong answers are remembered and can be practised until answered right', {
   $(root, '[data-action=new]').click();
   assert.ok($(root, '.notice-missed').textContent.includes('2 spørsmål'));
   $(root, '[data-action=practice-missed]').click();
-  assert.ok($(root, '#q-progress').textContent.includes('Feil fra før'));
+  assert.ok($(root, '.q-meta .tag').textContent.includes('Feil fra før'));
   assert.ok($(root, '#q-progress').textContent.endsWith('av 2'));
   // right on q-2000, wrong again on q-2001
   finishRound(root, (stem) => stem.includes('q-2000'));

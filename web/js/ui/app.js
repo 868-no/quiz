@@ -44,6 +44,7 @@ export function createApp(root, bank) {
   };
 
   const chapterOf = (n) => bank.chapters.find((c) => c.number === n);
+  const narrow = () => (root.clientWidth || globalThis.innerWidth || 640) < 480;
   const chapterName = (n) => {
     const c = chapterOf(n);
     return c && c.title ? `Kapittel ${n} – ${c.title}` : `Kapittel ${n}`;
@@ -369,9 +370,12 @@ export function createApp(root, bank) {
     const view = h('section', { class: 'question', 'aria-labelledby': 'q-progress' },
       h('div', { class: 'q-head' },
         h('h2', { id: 'q-progress', class: 'q-progress', tabindex: '-1' },
-          isSingle() ? `Spørsmål ${q.id}` : `${s.kind === 'missed' ? 'Feil fra før: spørsmål' : 'Spørsmål'} ${s.index + 1} av ${total}`),
-        isSingle() ? null : h('div', { class: 'dial-wrap' }, roundDial(marksOf(s), s.index)),
-        h('p', { class: 'q-meta' }, h('span', { class: 'q-chapter' }, chapterName(q.chapter)),
+          isSingle() ? `Spørsmål ${q.id}` : `Spørsmål ${s.index + 1} av ${total}`),
+        isSingle() ? null : h('div', { class: 'dial-wrap' }, roundDial(marksOf(s), s.index, { compact: narrow() })),
+        h('p', { class: 'q-meta' },
+          s.kind === 'missed' ? h('span', { class: 'tag' }, 'Feil fra før') : null,
+          h('span', { class: 'q-chapter' }, `Kapittel ${q.chapter}`,
+            chapterOf(q.chapter) && chapterOf(q.chapter).title ? h('span', { class: 'q-chapter-title' }, ` – ${chapterOf(q.chapter).title}`) : null),
           q.topics.filter((t) => bank.topics[t]).map((t) => h('span', { class: 'q-topic' }, bank.topics[t].title)),
           q.priority === 'exam_important' ? h('span', { class: 'badge', title: 'Markert med ! i læreboka: forvent dette til eksamen' }, '! Eksamensrelevant') : null,
           bank.mode === 'preview' ? h('span', { class: 'badge badge-preview' }, `Status: ${q.preview_status}`) : null),

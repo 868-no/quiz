@@ -70,27 +70,29 @@ export function chapterDial(chapters, selected) {
  * Progress scale for a round. marks: array of 'correct' | 'wrong' | null per question;
  * current: index of the question being shown, or null on the results screen.
  * Correct answers leave a dot and wrong answers a cross, so the marks differ by
- * shape and not only by colour.
+ * shape and not only by colour. `compact` (phones, during a round) draws a slimmer
+ * scale without numbers; the heading above it says which question this is.
  */
-export function roundDial(marks, current) {
+export function roundDial(marks, current, { compact = false } = {}) {
   const n = marks.length;
-  const H = 70;
-  const base = 40;
+  const H = compact ? 40 : 70;
+  const base = compact ? 22 : 40;
   const svg = glass(H, { class: 'dial dial-round' });
   const els = [h('line', { x1: PAD - 10, y1: base, x2: W - PAD + 10, y2: base, class: 'dial-base' })];
   const every = n <= 12 ? 1 : n <= 30 ? 5 : 10;
   marks.forEach((m, i) => {
     const x = scaleX(i + 1, n);
     const major = (i + 1) % every === 0 || i === 0;
-    els.push(h('line', { x1: x, y1: base, x2: x, y2: base + (major ? 10 : 5), class: major ? 'dial-tick' : 'dial-tick dial-tick-minor' }));
-    if (major) els.push(h('text', { x, y: base + 23, class: 'dial-num', 'text-anchor': 'middle' }, String(i + 1)));
-    const r = n <= 30 ? 4.5 : 3;
+    const tick = compact ? (major ? 7 : 4) : (major ? 10 : 5);
+    els.push(h('line', { x1: x, y1: base, x2: x, y2: base + tick, class: major ? 'dial-tick' : 'dial-tick dial-tick-minor' }));
+    if (major && !compact) els.push(h('text', { x, y: base + 23, class: 'dial-num', 'text-anchor': 'middle' }, String(i + 1)));
+    const r = n <= 30 ? (compact ? 4 : 4.5) : 3;
     if (m === 'correct') els.push(h('circle', { cx: x, cy: base - 11, r, class: 'dial-mark-ok' }));
     if (m === 'wrong') {
       els.push(h('path', { d: `M ${x - r} ${base - 11 - r} L ${x + r} ${base - 11 + r} M ${x + r} ${base - 11 - r} L ${x - r} ${base - 11 + r}`, class: 'dial-mark-bad' }));
     }
   });
-  if (current !== null && current !== undefined) els.push(needle(scaleX(current + 1, n), 6, H - 6));
+  if (current !== null && current !== undefined) els.push(needle(scaleX(current + 1, n), compact ? 4 : 6, H - (compact ? 4 : 6)));
   svg.c.push(...els);
   return svg;
 }

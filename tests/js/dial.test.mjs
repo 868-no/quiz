@@ -37,3 +37,10 @@ test('long rounds label only every 5th or 10th tick', () => {
   assert.deepEqual(nums(20), ['1', '5', '10', '15', '20']);
   assert.deepEqual(nums(121).slice(0, 3), ['1', '10', '20']);
 });
+
+test('the compact round scale is slimmer and has no numbers', () => {
+  const svg = roundDial(['correct', 'wrong', null], 1, { compact: true });
+  assert.equal(cls(svg, 'dial-num').length, 0);
+  assert.equal(cls(svg, 'dial-needle').length, 1);
+  assert.ok(svg.a.viewBox.endsWith(' 40'));
+});
