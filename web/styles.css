@@ -45,6 +45,11 @@
   --accent: var(--action);
   --note-bg: #e6ebe4;
   --radius: 4px;
+  --frame: #24302b;          /* header and footer: the equipment's dark cabinet */
+  --frame-ink: #e3e9e4;
+  --frame-muted: #b4c0b9;
+  --frame-link: #9fd6d9;
+  --frame-edge: #3d4c46;
   color-scheme: light;
 }
 
@@ -55,11 +60,12 @@
     --ok: #7fd39c; --ok-bg: #1d3a28; --bad: #ff9b90; --bad-bg: #3d211d; --exam: #efc56a;
     --dial-glass: #2b2617; --dial-scale: #efc56a; --dial-faint: #6f6446; --dial-needle: #f06a3f;
     --note-bg: #243029; color-scheme: dark;
+    --frame: #141b18;
   }
 }
 
 *, *::before, *::after { box-sizing: border-box; }
-html { -webkit-text-size-adjust: 100%; }
+html { -webkit-text-size-adjust: 100%; background: var(--frame); } /* a short page ends in the footer colour */
 
 body {
   margin: 0;
@@ -85,11 +91,19 @@ a { color: var(--action); text-underline-offset: 3px; }
 }
 
 /* ---- page frame ---- */
-.site-header { border-bottom: 2px solid var(--line); }
-.site-title { font-size: 1.25rem; font-weight: 700; margin: 0; padding: 16px 0 12px; letter-spacing: 0.01em; }
-.site-sub { font-weight: 400; color: var(--muted); }
-.site-footer { margin-top: 56px; border-top: 1px solid var(--line-soft); color: var(--muted); font-size: 0.9rem; padding: 12px 0 40px; }
+.site-header, .site-footer {
+  background: var(--frame); color: var(--frame-ink);
+  --focus: #ffb27a;           /* the light-mode focus colour is too dark on the frame */
+}
+.site-header { border-bottom: 1px solid var(--frame-edge); }
+.site-header .wrap { display: flex; align-items: center; gap: 12px; padding-top: 12px; padding-bottom: 12px; }
+.site-logo { width: 36px; height: 36px; flex: none; display: block; }
+.site-title { font-size: 1.25rem; font-weight: 700; margin: 0; line-height: 1.25; letter-spacing: 0.01em; }
+.site-sub { font-weight: 400; color: var(--frame-muted); }
+.site-footer { margin-top: 56px; border-top: 1px solid var(--frame-edge); color: var(--frame-muted); font-size: 0.9rem; padding: 20px 0 40px; }
 .site-footer p { max-width: 38rem; }
+.site-footer a { color: var(--frame-link); }
+.site-footer .footer-report { color: var(--frame-ink); }
 .preview-banner { background: var(--bad); color: #fff; text-align: center; padding: 8px 16px; font-weight: 700; }
 
 /* main is also .wrap, whose padding shorthand would otherwise win */
