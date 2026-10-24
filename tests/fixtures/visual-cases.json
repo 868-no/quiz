@@ -1561,6 +1561,379 @@
         "R": true,
         "U_R": false
       }
+    },
+    {
+      "name": "filter curve, −60 dB width asked",
+      "valid": true,
+      "visual": {
+        "template": "frequency-response",
+        "version": 1,
+        "params": {
+          "kind": "filter",
+          "filters": [
+            {
+              "bw6_hz": 2400,
+              "bw60_hz": 4320,
+              "bw60_label": "unknown"
+            }
+          ]
+        }
+      },
+      "quantities": {
+        "B6": 2400,
+        "B60": 4320,
+        "SF": 1.8
+      },
+      "shown": {
+        "B6": true,
+        "B60": false,
+        "SF": false
+      }
+    },
+    {
+      "name": "two filters compared",
+      "valid": true,
+      "visual": {
+        "template": "frequency-response",
+        "version": 1,
+        "params": {
+          "kind": "filter",
+          "filters": [
+            {
+              "name": "A",
+              "bw6_hz": 2400,
+              "bw60_hz": 3840
+            },
+            {
+              "name": "B",
+              "bw6_hz": 2400,
+              "bw60_hz": 7200
+            }
+          ]
+        }
+      },
+      "quantities": {
+        "SF_A": 1.6,
+        "SF_B": 3.0,
+        "B60_B": 7200
+      },
+      "shown": {
+        "B60_A": true,
+        "B6_B": true
+      }
+    },
+    {
+      "name": "two filters need different names",
+      "valid": false,
+      "error": "different names",
+      "visual": {
+        "template": "frequency-response",
+        "version": 1,
+        "params": {
+          "kind": "filter",
+          "filters": [
+            {
+              "bw6_hz": 2400,
+              "bw60_hz": 3840
+            },
+            {
+              "bw6_hz": 2400,
+              "bw60_hz": 7200
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "filter −60 dB width must exceed the −6 dB width",
+      "valid": false,
+      "error": "must be larger",
+      "visual": {
+        "template": "frequency-response",
+        "version": 1,
+        "params": {
+          "kind": "filter",
+          "filters": [
+            {
+              "bw6_hz": 2400,
+              "bw60_hz": 2000
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "resonance curve with Q asked",
+      "valid": true,
+      "visual": {
+        "template": "frequency-response",
+        "version": 1,
+        "params": {
+          "kind": "resonance",
+          "center_hz": 3600000.0,
+          "center_label": "value",
+          "resonance": {
+            "f_low_hz": 3570000.0,
+            "f_high_hz": 3630000.0,
+            "q_label": "unknown"
+          }
+        }
+      },
+      "quantities": {
+        "f0": 3600000.0,
+        "B": 60000,
+        "Q": 60
+      },
+      "shown": {
+        "f0": true,
+        "f1": true,
+        "Q": false
+      }
+    },
+    {
+      "name": "resonance points must straddle the centre",
+      "valid": false,
+      "error": "each side",
+      "visual": {
+        "template": "frequency-response",
+        "version": 1,
+        "params": {
+          "kind": "resonance",
+          "center_hz": 3600000.0,
+          "resonance": {
+            "f_low_hz": 3610000.0,
+            "f_high_hz": 3630000.0
+          }
+        }
+      }
+    },
+    {
+      "name": "band only with a resonance curve",
+      "valid": false,
+      "error": "band: not used",
+      "visual": {
+        "template": "frequency-response",
+        "version": 1,
+        "params": {
+          "kind": "filter",
+          "filters": [
+            {
+              "bw6_hz": 2400,
+              "bw60_hz": 4000
+            }
+          ],
+          "band": {
+            "center_hz": 1,
+            "half_width_hz": 1
+          }
+        }
+      }
+    },
+    {
+      "name": "slope detection band on the flank",
+      "valid": true,
+      "visual": {
+        "template": "frequency-response",
+        "version": 1,
+        "params": {
+          "kind": "resonance",
+          "center_hz": 10750000.0,
+          "center_label": "name",
+          "resonance": {
+            "f_low_hz": 10740000.0,
+            "f_high_hz": 10760000.0,
+            "points_label": "none"
+          },
+          "band": {
+            "center_hz": 10730000.0,
+            "half_width_hz": 5000,
+            "label": "MF ± deviasjon",
+            "project": true
+          }
+        }
+      },
+      "quantities": {
+        "Q": 537.5
+      },
+      "shown": {
+        "f1": false,
+        "Q": false
+      }
+    },
+    {
+      "name": "AM spectrum",
+      "valid": true,
+      "visual": {
+        "template": "frequency-response",
+        "version": 1,
+        "params": {
+          "kind": "spectrum",
+          "center_hz": 7100000.0,
+          "spectrum": {
+            "mode": "am",
+            "mod_hz": 2000,
+            "index": 0.8
+          }
+        }
+      },
+      "quantities": {
+        "f_lsb": 7098000.0,
+        "f_usb": 7102000.0,
+        "f_c": 7100000.0
+      },
+      "shown": {
+        "f_lsb": true,
+        "f_m": false
+      }
+    },
+    {
+      "name": "blank AM spectrum shows no sidebands",
+      "valid": true,
+      "visual": {
+        "template": "frequency-response",
+        "version": 1,
+        "params": {
+          "kind": "spectrum",
+          "blank": true,
+          "note": "Spekteret vises når du har svart",
+          "center_hz": 7100000.0,
+          "spectrum": {
+            "mode": "am",
+            "mod_hz": 2000,
+            "index": 0.8
+          }
+        }
+      },
+      "quantities": {
+        "f_usb": 7102000.0
+      },
+      "shown": {
+        "f_usb": false,
+        "f_c": false
+      }
+    },
+    {
+      "name": "AM index above 1 is invalid",
+      "valid": false,
+      "error": "overmodulation",
+      "visual": {
+        "template": "frequency-response",
+        "version": 1,
+        "params": {
+          "kind": "spectrum",
+          "center_hz": 7100000.0,
+          "spectrum": {
+            "mode": "am",
+            "mod_hz": 2000,
+            "index": 1.5
+          }
+        }
+      }
+    },
+    {
+      "name": "FM spectrum with line spacing",
+      "valid": true,
+      "visual": {
+        "template": "frequency-response",
+        "version": 1,
+        "params": {
+          "kind": "spectrum",
+          "center_hz": 145500000.0,
+          "spectrum": {
+            "mode": "fm",
+            "mod_hz": 1500,
+            "index": 5,
+            "freq_labels": "none",
+            "spacing_label": true
+          }
+        }
+      },
+      "quantities": {
+        "f_m": 1500,
+        "deviation": 7500
+      },
+      "shown": {
+        "f_m": true,
+        "f_c": false,
+        "deviation": false
+      }
+    },
+    {
+      "name": "FM spectrum cannot label every line",
+      "valid": false,
+      "error": "only for AM",
+      "visual": {
+        "template": "frequency-response",
+        "version": 1,
+        "params": {
+          "kind": "spectrum",
+          "center_hz": 145500000.0,
+          "spectrum": {
+            "mode": "fm",
+            "mod_hz": 1500,
+            "index": 5
+          }
+        }
+      }
+    },
+    {
+      "name": "coupled tuned circuits",
+      "valid": true,
+      "visual": {
+        "template": "frequency-response",
+        "version": 1,
+        "params": {
+          "kind": "coupled",
+          "coupled": {
+            "kq": [
+              0.5,
+              1,
+              2
+            ]
+          }
+        }
+      },
+      "quantities": {},
+      "shown": {}
+    },
+    {
+      "name": "coupled needs its couplings",
+      "valid": false,
+      "error": "coupled: required",
+      "visual": {
+        "template": "frequency-response",
+        "version": 1,
+        "params": {
+          "kind": "coupled"
+        }
+      }
+    },
+    {
+      "name": "pi-filter fed from a valve anode, C1 marked",
+      "valid": true,
+      "visual": {
+        "template": "pi-network",
+        "version": 1,
+        "params": {
+          "feed": "anode",
+          "coil_tap": true,
+          "mark": "c1"
+        }
+      },
+      "quantities": {},
+      "shown": {}
+    },
+    {
+      "name": "pi-filter marks only its own parts",
+      "valid": false,
+      "error": "mark",
+      "visual": {
+        "template": "pi-network",
+        "version": 1,
+        "params": {
+          "mark": "r1"
+        }
+      }
     }
   ]
 }

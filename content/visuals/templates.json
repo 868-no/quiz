@@ -1083,6 +1083,304 @@
           }
         }
       }
+    },
+    {
+      "id": "frequency-response",
+      "version": 1,
+      "title": "Frekvensrespons og spektrum",
+      "description": "Curves against frequency, computed from their definition: filter curves in dB with their −6 dB and −60 dB widths, a resonance curve with its half-power points (and optionally a frequency band on the curve), the spectrum of an AM or FM signal modulated with one tone, or the response of two coupled tuned circuits at different coupling. 'blank' draws only the axes with a note, for figures that are filled in after answering.",
+      "idealised": "Kurvene er regnet ut fra en forenklet modell og viser formen, ikke et bestemt filter eller apparat.",
+      "status": "approved",
+      "params": {
+        "type": "object",
+        "required": [
+          "kind"
+        ],
+        "properties": {
+          "kind": {
+            "type": "string",
+            "enum": [
+              "filter",
+              "resonance",
+              "spectrum",
+              "coupled"
+            ]
+          },
+          "blank": {
+            "type": "boolean",
+            "default": false
+          },
+          "note": {
+            "type": "string",
+            "maxLength": 48,
+            "default": ""
+          },
+          "center_hz": {
+            "type": "number",
+            "minimum": 1,
+            "maximum": 3000000000.0,
+            "unit": "Hz",
+            "nullable": true
+          },
+          "center_label": {
+            "type": "string",
+            "enum": [
+              "value",
+              "name",
+              "none"
+            ],
+            "default": "name"
+          },
+          "filters": {
+            "type": "array",
+            "maxItems": 2,
+            "default": [],
+            "items": {
+              "type": "object",
+              "required": [
+                "bw6_hz",
+                "bw60_hz"
+              ],
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "maxLength": 10,
+                  "default": ""
+                },
+                "bw6_hz": {
+                  "type": "number",
+                  "minimum": 1,
+                  "maximum": 100000000.0,
+                  "unit": "Hz"
+                },
+                "bw60_hz": {
+                  "type": "number",
+                  "minimum": 1,
+                  "maximum": 100000000.0,
+                  "unit": "Hz"
+                },
+                "bw6_label": {
+                  "type": "string",
+                  "enum": [
+                    "value",
+                    "name",
+                    "unknown",
+                    "none"
+                  ],
+                  "default": "value"
+                },
+                "bw60_label": {
+                  "type": "string",
+                  "enum": [
+                    "value",
+                    "name",
+                    "unknown",
+                    "none"
+                  ],
+                  "default": "value"
+                }
+              }
+            }
+          },
+          "resonance": {
+            "type": "object",
+            "nullable": true,
+            "required": [
+              "f_low_hz",
+              "f_high_hz"
+            ],
+            "properties": {
+              "f_low_hz": {
+                "type": "number",
+                "minimum": 1,
+                "maximum": 3000000000.0,
+                "unit": "Hz"
+              },
+              "f_high_hz": {
+                "type": "number",
+                "minimum": 1,
+                "maximum": 3000000000.0,
+                "unit": "Hz"
+              },
+              "points_label": {
+                "type": "string",
+                "enum": [
+                  "value",
+                  "name",
+                  "none"
+                ],
+                "default": "value"
+              },
+              "q_label": {
+                "type": "string",
+                "enum": [
+                  "value",
+                  "unknown",
+                  "none"
+                ],
+                "default": "none"
+              }
+            }
+          },
+          "band": {
+            "type": "object",
+            "nullable": true,
+            "required": [
+              "center_hz",
+              "half_width_hz"
+            ],
+            "properties": {
+              "center_hz": {
+                "type": "number",
+                "minimum": 1,
+                "maximum": 3000000000.0,
+                "unit": "Hz"
+              },
+              "half_width_hz": {
+                "type": "number",
+                "minimum": 1,
+                "maximum": 100000000.0,
+                "unit": "Hz"
+              },
+              "label": {
+                "type": "string",
+                "maxLength": 16,
+                "default": ""
+              },
+              "project": {
+                "type": "boolean",
+                "default": false
+              }
+            }
+          },
+          "spectrum": {
+            "type": "object",
+            "nullable": true,
+            "required": [
+              "mode",
+              "mod_hz",
+              "index"
+            ],
+            "properties": {
+              "mode": {
+                "type": "string",
+                "enum": [
+                  "am",
+                  "fm"
+                ]
+              },
+              "mod_hz": {
+                "type": "number",
+                "minimum": 1,
+                "maximum": 10000000.0,
+                "unit": "Hz"
+              },
+              "index": {
+                "type": "number",
+                "minimum": 0.01,
+                "maximum": 12
+              },
+              "freq_labels": {
+                "type": "string",
+                "enum": [
+                  "all",
+                  "carrier",
+                  "none"
+                ],
+                "default": "all"
+              },
+              "spacing_label": {
+                "type": "boolean",
+                "default": false
+              }
+            }
+          },
+          "coupled": {
+            "type": "object",
+            "nullable": true,
+            "required": [
+              "kq"
+            ],
+            "properties": {
+              "kq": {
+                "type": "array",
+                "minItems": 1,
+                "maxItems": 3,
+                "items": {
+                  "type": "number",
+                  "minimum": 0.1,
+                  "maximum": 5
+                }
+              }
+            }
+          }
+        }
+      },
+      "review_log": [
+        {
+          "at": "2026-10-24T14:18:29+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Reviewed rendered figures for q-0115, q-0053, q-0051, q-0213, q-0021, q-0197, q-0114"
+        }
+      ]
+    },
+    {
+      "id": "pi-network",
+      "version": 1,
+      "title": "Pi-filter",
+      "description": "Pi-filter (low-pass) at a transmitter output: variable capacitor C1 across the input, coil L in series (optionally with a band tap), variable capacitor C2 across the output. Optionally fed from a valve anode through a blocking capacitor with the anode voltage brought in through an RF choke. One part can be marked with a dashed frame, and the knob names TUNE/LOAD can be shown (typically only after answering).",
+      "idealised": "Forenklet koblingsskjema uten komponentverdier.",
+      "status": "approved",
+      "params": {
+        "type": "object",
+        "properties": {
+          "feed": {
+            "type": "string",
+            "enum": [
+              "terminals",
+              "anode"
+            ],
+            "default": "terminals"
+          },
+          "input_label": {
+            "type": "string",
+            "maxLength": 20,
+            "default": ""
+          },
+          "output_label": {
+            "type": "string",
+            "maxLength": 20,
+            "default": "til antennen"
+          },
+          "coil_tap": {
+            "type": "boolean",
+            "default": false
+          },
+          "knob_names": {
+            "type": "boolean",
+            "default": false
+          },
+          "mark": {
+            "type": "string",
+            "enum": [
+              "none",
+              "c1",
+              "l",
+              "c2"
+            ],
+            "default": "none"
+          }
+        }
+      },
+      "review_log": [
+        {
+          "at": "2026-10-24T14:18:29+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Reviewed rendered figure for q-0171"
+        }
+      ]
     }
   ]
 }

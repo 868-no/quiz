@@ -470,12 +470,92 @@ def _zen_quantities(p: dict[str, Any]) -> dict[str, dict[str, Any]]:
     return q
 
 
+# --- frequency-response -----------------------------------------------------------
+
+_FR_PARTS = ("filters", "resonance", "band", "spectrum", "coupled")
+_FR_NEEDS = {"filter": "filters", "resonance": "resonance", "spectrum": "spectrum", "coupled": "coupled"}
+
+
+def _fr_rules(p: dict[str, Any], errors: list[str]) -> None:
+    kind = p["kind"]
+    allowed = {_FR_NEEDS[kind]} | ({"band"} if kind == "resonance" else set())
+    for part in _FR_PARTS:
+        if part not in allowed and p.get(part):
+            errors.append(f"{part}: not used with kind '{kind}'")
+    if not p.get(_FR_NEEDS[kind]):
+        errors.append(f"{_FR_NEEDS[kind]}: required for kind '{kind}'")
+        return
+    if kind in ("resonance", "spectrum") and p.get("center_hz") is None:
+        errors.append(f"center_hz: required for kind '{kind}'")
+        return
+    if p["center_label"] == "value" and p.get("center_hz") is None:
+        errors.append("center_label: 'value' needs center_hz")
+    if kind == "filter":
+        fs = p["filters"]
+        for i, f in enumerate(fs):
+            if f["bw60_hz"] <= f["bw6_hz"]:
+                errors.append(f"filters[{i}]: the −60 dB width must be larger than the −6 dB width")
+        if len(fs) == 2 and (not fs[0]["name"] or not fs[1]["name"] or fs[0]["name"] == fs[1]["name"]):
+            errors.append("filters: two filters need different names")
+    elif kind == "resonance":
+        r = p["resonance"]
+        if not r["f_low_hz"] < p["center_hz"] < r["f_high_hz"]:
+            errors.append("resonance: the half-power points must lie on each side of center_hz")
+    elif kind == "spectrum":
+        s = p["spectrum"]
+        if s["mode"] == "am" and s["index"] > 1:
+            errors.append("spectrum.index: an AM modulation index above 1 is overmodulation")
+        if p["center_hz"] <= 15 * s["mod_hz"]:
+            errors.append("spectrum: the carrier must be far above the tone frequency")
+        if s["mode"] == "fm" and s["freq_labels"] == "all":
+            errors.append("spectrum.freq_labels: 'all' is only for AM (FM has too many lines)")
+
+
+def _fr_quantities(p: dict[str, Any]) -> dict[str, dict[str, Any]]:
+    q: dict[str, dict[str, Any]] = {}
+    vis = not p["blank"]
+    kind = p["kind"]
+    if kind == "filter":
+        fs = p["filters"]
+        for i, f in enumerate(fs):
+            suf = "" if len(fs) == 1 else f"_{f['name']}"
+            q[f"B6{suf}"] = {"value": f["bw6_hz"], "unit": "Hz", "shown": vis and f["bw6_label"] == "value"}
+            q[f"B60{suf}"] = {"value": f["bw60_hz"], "unit": "Hz", "shown": vis and f["bw60_label"] == "value"}
+            q[f"SF{suf}"] = {"value": f["bw60_hz"] / f["bw6_hz"], "unit": "", "shown": False}
+    elif kind == "resonance":
+        r, f0 = p["resonance"], p["center_hz"]
+        b = r["f_high_hz"] - r["f_low_hz"]
+        q["f0"] = {"value": f0, "unit": "Hz", "shown": vis and p["center_label"] == "value"}
+        q["f1"] = {"value": r["f_low_hz"], "unit": "Hz", "shown": vis and r["points_label"] == "value"}
+        q["f2"] = {"value": r["f_high_hz"], "unit": "Hz", "shown": vis and r["points_label"] == "value"}
+        q["B"] = {"value": b, "unit": "Hz", "shown": False}
+        q["Q"] = {"value": f0 / b, "unit": "", "shown": vis and r["q_label"] == "value"}
+    elif kind == "spectrum":
+        s, fc = p["spectrum"], p["center_hz"]
+        q["f_c"] = {"value": fc, "unit": "Hz", "shown": vis and s["freq_labels"] != "none"}
+        q["f_m"] = {"value": s["mod_hz"], "unit": "Hz", "shown": vis and s["spacing_label"]}
+        if s["mode"] == "am":
+            q["f_lsb"] = {"value": fc - s["mod_hz"], "unit": "Hz", "shown": vis and s["freq_labels"] == "all"}
+            q["f_usb"] = {"value": fc + s["mod_hz"], "unit": "Hz", "shown": vis and s["freq_labels"] == "all"}
+        else:
+            q["deviation"] = {"value": s["index"] * s["mod_hz"], "unit": "Hz", "shown": False}
+    return q
+
+
+# --- pi-network -------------------------------------------------------------------
+
+def _pi_rules(p: dict[str, Any], errors: list[str]) -> None:
+    pass  # every combination of the parameters can be drawn
+
+
 RULES = {"dc-circuit": _dc_rules, "ac-circuit": _ac_rules, "waveform": _wave_rules, "block-diagram": _block_rules,
          "rlc-circuit": _rlc_rules, "rectifier": _rect_rules, "transformer": _tr_rules, "transistor-stage": _ts_rules,
-         "series-regulator": _reg_rules, "zener-regulator": _zen_rules}
+         "series-regulator": _reg_rules, "zener-regulator": _zen_rules,
+         "frequency-response": _fr_rules, "pi-network": _pi_rules}
 QUANTITIES = {"dc-circuit": _dc_quantities, "ac-circuit": _ac_quantities, "waveform": _wave_quantities,
               "rlc-circuit": _rlc_quantities, "rectifier": _rect_quantities, "transformer": _tr_quantities,
-              "transistor-stage": _ts_quantities, "series-regulator": _reg_quantities, "zener-regulator": _zen_quantities}
+              "transistor-stage": _ts_quantities, "series-regulator": _reg_quantities, "zener-regulator": _zen_quantities,
+              "frequency-response": _fr_quantities}
 
 
 def validate_visual(templates: dict[str, dict[str, Any]], visual: Any, where: str = "visual"

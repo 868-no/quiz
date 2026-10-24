@@ -14,9 +14,11 @@ import transformer from './transformer.js';
 import transistorStage from './transistor-stage.js';
 import seriesRegulator from './series-regulator.js';
 import zenerRegulator from './zener-regulator.js';
+import frequencyResponse from './frequency-response.js';
+import piNetwork from './pi-network.js';
 
 export const IMPLEMENTATIONS = new Map(
-  [dcCircuit, acCircuit, waveform, blockDiagram, rlcCircuit, rectifier, transformer, transistorStage, seriesRegulator, zenerRegulator]
+  [dcCircuit, acCircuit, waveform, blockDiagram, rlcCircuit, rectifier, transformer, transistorStage, seriesRegulator, zenerRegulator, frequencyResponse, piNetwork]
     .map((m) => [`${m.id}@${m.version}`, m]),
 );
 

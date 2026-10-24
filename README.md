@@ -99,7 +99,7 @@ More: [docs/architecture.md](docs/architecture.md).
 * [docs/source-import.md](docs/source-import.md) – the observed export schema, import contract, re-import and change detection, page numbering.
 * [docs/content-format.md](docs/content-format.md) – question, rich text, math, glossary and calculation formats.
 * [docs/editorial-workflow.md](docs/editorial-workflow.md) – generate → verify → review → publish, adding chapters, re-review after new scans, glossary and headings, deployment.
-* [docs/visual-templates.md](docs/visual-templates.md) – the nine original figure templates and how to configure or add them.
+* [docs/visual-templates.md](docs/visual-templates.md) – the original figure templates and how to configure or add them.
 * [docs/architecture.md](docs/architecture.md) – stack, quiz engine, session policies, accessibility, security and privacy.
 
 ## Public vs private

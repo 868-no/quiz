@@ -25,7 +25,7 @@ Figures are drawn from **parameters**, never stored as images or HTML. A questio
   shapes exports `fixedTextSize: true`; `minScale` (default 0.6) is the smallest scale a
   figure is shown at before it scrolls sideways.
 
-There are ten templates, all **approved** at version 1. A new template or version
+There are twelve templates, all **approved** at version 1. A new template or version
 starts as `needs_review`: a person checks the drawings (`python3 -m tools preview`) and
 approves it (`python3 -m tools visuals approve id@version`) before questions using it
 can be published. Changing an approved template's code or schema calls for a new
@@ -191,6 +191,40 @@ is taken out at the output terminals. The voltage across R and the value of R ar
 | `output_label` | short text at the output, e.g. "til basis" |
 
 Quantities: `U_in`, `U_Z`, `I`, `U_R` (never shown), `R` (shown with its value unless unknown).
+
+## `frequency-response@1` – frekvensrespons og spektrum
+
+Curves against frequency, **computed** from their definition. `kind` picks one of four
+drawings:
+
+| `kind` | Draws | Params |
+|---|---|---|
+| `filter` | attenuation in dB (0 at the top, −80 at the bottom) of one or two band-pass filters | `filters`: 1–2 × `{name?, bw6_hz, bw60_hz, bw6_label?, bw60_label?}`; the shape between the two widths follows from the shape factor. Labels: `value`, `name` (B6/B60), `unknown` (?), `none`. Two filters need different names. |
+| `resonance` | resonance curve through its half-power points | `center_hz`, `resonance: {f_low_hz, f_high_hz, points_label?, q_label?}`; optional `band: {center_hz, half_width_hz, label?, project?}` shades a frequency range on the curve, and `project` adds the resulting amplitude change |
+| `spectrum` | spectrum lines of an AM or FM signal modulated with one tone | `center_hz` (carrier), `spectrum: {mode: am\|fm, mod_hz, index, freq_labels?: all\|carrier\|none, spacing_label?}`; FM line heights are Bessel functions of the modulation index, and `all` is only for AM |
+| `coupled` | two identical coupled tuned circuits | `coupled: {kq: [1–3 values of k·Q]}`, labelled under-critical / critical / over-critical in a legend |
+
+Common: `center_label` (`name` = f0, `value`, `none`) and `blank` + `note`, which draw only
+the axes with a short note. Use `blank` in `params` and `blank: false` in `params_after`
+when the curve itself would give the answer away.
+
+Quantities: `B6`, `B60`, `SF` (suffixed `_A`, `_B` with two filters); `f0`, `f1`, `f2`,
+`B`, `Q`; `f_c`, `f_m`, `f_lsb`, `f_usb`, `deviation`. None are shown while `blank`.
+
+## `pi-network@1` – pi-filter
+
+π-filter (low-pass) at a transmitter output: variable capacitor C1 across the input,
+coil L in series and variable capacitor C2 across the output.
+
+| Param | Type |
+|---|---|
+| `feed` | `terminals` (default) or `anode`: fed from a valve anode through a blocking capacitor, with the anode voltage through an RF choke |
+| `input_label`, `output_label` | short texts at the input and output (default output: "til antennen") |
+| `coil_tap` | boolean – a tap on the coil for the bands |
+| `knob_names` | boolean – adds TUNE (C1) and LOAD (C2); usually only in `params_after` |
+| `mark` | `none`, `c1`, `l` or `c2` – a dashed frame around one part |
+
+No quantities: the drawing has no component values.
 
 ## Adding or changing a template
 
