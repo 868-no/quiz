@@ -13,8 +13,8 @@
       "sections": [
         {
           "id": "s1-01",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Amatørradio",
+          "title_status": "verified",
           "heading_key": "f6f9a55c895a15cf",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -25,12 +25,13 @@
             "96806c82488cc9e0",
             "87a6c2a17e447ef4"
           ],
-          "marked_important": false
+          "marked_important": false,
+          "title_source": "book-pdf"
         },
         {
           "id": "s1-02",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Trenger man lisenskurs?",
+          "title_status": "verified",
           "heading_key": "d517abd748dfb921",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -40,12 +41,13 @@
           "chunk_uids": [
             "0518cdfae75a2c8f"
           ],
-          "marked_important": false
+          "marked_important": false,
+          "title_source": "book-pdf"
         },
         {
           "id": "s1-03",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Hvordan bruke boken?",
+          "title_status": "verified",
           "heading_key": "642fea72c0c48247",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -55,12 +57,13 @@
           "chunk_uids": [
             "27cec471711f5684"
           ],
-          "marked_important": false
+          "marked_important": false,
+          "title_source": "book-pdf"
         },
         {
           "id": "s1-04",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Oppgaveløsning",
+          "title_status": "verified",
           "heading_key": "71b1c35780276006",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -70,12 +73,13 @@
           "chunk_uids": [
             "409ed6e44ab370ef"
           ],
-          "marked_important": false
+          "marked_important": false,
+          "title_source": "book-pdf"
         },
         {
           "id": "s1-05",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Repetisjoner og utropstegnet",
+          "title_status": "verified",
           "heading_key": "3205aa6d2a78d21c",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -88,7 +92,8 @@
             "618f5c2ee6ebcdc7",
             "3e399032ce84e97c"
           ],
-          "marked_important": true
+          "marked_important": true,
+          "title_source": "book-pdf"
         }
       ],
       "title_key": "5b2704d50dc6ed81",
@@ -122,8 +127,8 @@
         },
         {
           "id": "s2-02",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Enheter og prefikser",
+          "title_status": "verified",
           "heading_key": "bf42d8331e5115cb",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -133,12 +138,13 @@
           "chunk_uids": [
             "5c68621816fb2b18"
           ],
-          "marked_important": false
+          "marked_important": false,
+          "title_source": "book-pdf"
         },
         {
           "id": "s2-03",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Strøm",
+          "title_status": "verified",
           "heading_key": "9aa11790d5d58882",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -148,12 +154,13 @@
           "chunk_uids": [
             "a56ba0e2385fe381"
           ],
-          "marked_important": false
+          "marked_important": false,
+          "title_source": "book-pdf"
         },
         {
           "id": "s2-04",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Elektrisk ladning",
+          "title_status": "verified",
           "heading_key": "52bf60fbabdafcbb",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -163,12 +170,13 @@
           "chunk_uids": [
             "144d222bb3d4546b"
           ],
-          "marked_important": false
+          "marked_important": false,
+          "title_source": "book-pdf"
         },
         {
           "id": "s2-05",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Energi",
+          "title_status": "verified",
           "heading_key": "4d90aea574c4f726",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -179,12 +187,13 @@
           "chunk_uids": [
             "01fb9a25c475b0b6"
           ],
-          "marked_important": false
+          "marked_important": false,
+          "title_source": "book-pdf"
         },
         {
           "id": "s2-06",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Spenning eller potensialdifferanse",
+          "title_status": "verified",
           "heading_key": "f3ef9b923b71efb1",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -195,12 +204,13 @@
             "1820f3b0f65fc1cc",
             "c317859c6c00078b"
           ],
-          "marked_important": false
+          "marked_important": false,
+          "title_source": "book-pdf"
         },
         {
           "id": "s2-07",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Effekt – effektloven",
+          "title_status": "verified",
           "heading_key": "b375335c422ad492",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -210,12 +220,13 @@
           "chunk_uids": [
             "d04da2bcd20d29ce"
           ],
-          "marked_important": false
+          "marked_important": false,
+          "title_source": "book-pdf"
         },
         {
           "id": "s2-08",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Effektloven",
+          "title_status": "verified",
           "heading_key": "7400f655c1b30689",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -225,12 +236,13 @@
           "chunk_uids": [
             "4377776bb5b97f98"
           ],
-          "marked_important": true
+          "marked_important": true,
+          "title_source": "book-pdf"
         },
         {
           "id": "s2-09",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Motstand - Ohms lov",
+          "title_status": "verified",
           "heading_key": "5bdb96de45b53129",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -242,12 +254,13 @@
             "de95a442eb1e7dc2",
             "f624dcaabd631f06"
           ],
-          "marked_important": true
+          "marked_important": true,
+          "title_source": "book-pdf"
         },
         {
           "id": "s2-10",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Motstander",
+          "title_status": "verified",
           "heading_key": "5a846e8042284878",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -257,12 +270,13 @@
           "chunk_uids": [
             "e37f6f8c76891feb"
           ],
-          "marked_important": false
+          "marked_important": false,
+          "title_source": "book-pdf"
         },
         {
           "id": "s2-11",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Motstander i serie",
+          "title_status": "verified",
           "heading_key": "cd645411a86e15dd",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -273,12 +287,13 @@
           "chunk_uids": [
             "22399f4a29f37e2e"
           ],
-          "marked_important": false
+          "marked_important": false,
+          "title_source": "book-pdf"
         },
         {
           "id": "s2-12",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Motstander i parallell",
+          "title_status": "verified",
           "heading_key": "78373c6b951f8e82",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -289,12 +304,13 @@
             "beb55384805a14c0",
             "7349c9c3e2bac78f"
           ],
-          "marked_important": true
+          "marked_important": true,
+          "title_source": "book-pdf"
         },
         {
           "id": "s2-13",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Serie- og parallellkretser",
+          "title_status": "verified",
           "heading_key": "79022f2261a39ec6",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -305,12 +321,13 @@
           "chunk_uids": [
             "8ae1c81bb652ab74"
           ],
-          "marked_important": false
+          "marked_important": false,
+          "title_source": "book-pdf"
         },
         {
           "id": "s2-14",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Potensialdeler (spenningsdeler)",
+          "title_status": "verified",
           "heading_key": "2c7b13716ecba554",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -320,12 +337,13 @@
           "chunk_uids": [
             "8728cc1500cd2c2d"
           ],
-          "marked_important": true
+          "marked_important": true,
+          "title_source": "book-pdf"
         },
         {
           "id": "s2-15",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Elektromotorisk kraft (EMK), potensialdifferanse og kildemotstand",
+          "title_status": "verified",
           "heading_key": "3e6877092b271f1d",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -337,12 +355,13 @@
             "8217b92eafdb6c13",
             "4b09af4a46d73090"
           ],
-          "marked_important": false
+          "marked_important": false,
+          "title_source": "book-pdf (matched by content)"
         },
         {
           "id": "s2-16",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Maksimal effektoverføring",
+          "title_status": "verified",
           "heading_key": "469a8f2ac6e456e2",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -352,12 +371,13 @@
           "chunk_uids": [
             "3d47cf23d37f8bc4"
           ],
-          "marked_important": false
+          "marked_important": false,
+          "title_source": "book-pdf"
         },
         {
           "id": "s2-17",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Kapasitans",
+          "title_status": "verified",
           "heading_key": "ad35d23dd7cce674",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -369,12 +389,13 @@
             "43e2aee52002c38d",
             "e0cb4ecee216bb6a"
           ],
-          "marked_important": true
+          "marked_important": true,
+          "title_source": "book-pdf"
         },
         {
           "id": "s2-18",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Kondensatorer",
+          "title_status": "verified",
           "heading_key": "47b0138c7e58500a",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -384,12 +405,13 @@
           "chunk_uids": [
             "193515f2f358076f"
           ],
-          "marked_important": true
+          "marked_important": true,
+          "title_source": "book-pdf"
         },
         {
           "id": "s2-19",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Kondensatorers oppbygning",
+          "title_status": "verified",
           "heading_key": "fe541b5d2f7dc717",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -401,12 +423,13 @@
             "4d744e4826453ddc",
             "3925a1a81220026d"
           ],
-          "marked_important": false
+          "marked_important": false,
+          "title_source": "book-pdf"
         },
         {
           "id": "s2-20",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Lading og utlading av kondensatorer",
+          "title_status": "verified",
           "heading_key": "187acc53212bf527",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -417,12 +440,13 @@
             "fe9c6b3763b81a79",
             "1d41613b789a2b76"
           ],
-          "marked_important": true
+          "marked_important": true,
+          "title_source": "book-pdf"
         },
         {
           "id": "s2-21",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Kondensatorer i parallell",
+          "title_status": "verified",
           "heading_key": "dda0ac3674a8b3d1",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -432,12 +456,13 @@
           "chunk_uids": [
             "7402c252c2e75611"
           ],
-          "marked_important": true
+          "marked_important": true,
+          "title_source": "book-pdf"
         },
         {
           "id": "s2-22",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Kondensatorer i serie",
+          "title_status": "verified",
           "heading_key": "d9a751525e8406f1",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -447,12 +472,13 @@
           "chunk_uids": [
             "d3c1ef147590cb11"
           ],
-          "marked_important": true
+          "marked_important": true,
+          "title_source": "book-pdf"
         },
         {
           "id": "s2-23",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Spoler",
+          "title_status": "verified",
           "heading_key": "d0d5f5e24496fea4",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -463,12 +489,13 @@
             "6dc080d9a5d9d229",
             "5ec4bd360fc74c8b"
           ],
-          "marked_important": true
+          "marked_important": true,
+          "title_source": "book-pdf"
         },
         {
           "id": "s2-24",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Induktans",
+          "title_status": "verified",
           "heading_key": "43769cfeede718fe",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -479,12 +506,13 @@
           "chunk_uids": [
             "6eaaeb4fb134515e"
           ],
-          "marked_important": false
+          "marked_important": false,
+          "title_source": "book-pdf"
         },
         {
           "id": "s2-25",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Ulike spoletyper",
+          "title_status": "verified",
           "heading_key": "0bd28f77282393c2",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -495,12 +523,13 @@
             "4eaf51c30a8d2651",
             "c87aec3fafeafafc"
           ],
-          "marked_important": true
+          "marked_important": true,
+          "title_source": "book-pdf"
         },
         {
           "id": "s2-26",
-          "title": null,
-          "title_status": "proposed",
+          "title": "LR-krets",
+          "title_status": "verified",
           "heading_key": "5bef9c60fee38285",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -511,12 +540,13 @@
           "chunk_uids": [
             "cb4ece6c64d33fea"
           ],
-          "marked_important": false
+          "marked_important": false,
+          "title_source": "book-pdf"
         },
         {
           "id": "s2-27",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Spoler i serie og parallell",
+          "title_status": "verified",
           "heading_key": "8829277ed1a30786",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -527,12 +557,13 @@
             "956a12192cffc79c",
             "c38f172ca16cbcce"
           ],
-          "marked_important": true
+          "marked_important": true,
+          "title_source": "book-pdf"
         },
         {
           "id": "s2-28",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Effektiv verdi (RMS)",
+          "title_status": "verified",
           "heading_key": "4d1fcf2d4f55de81",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -542,12 +573,13 @@
           "chunk_uids": [
             "ed08ac76c205165b"
           ],
-          "marked_important": true
+          "marked_important": true,
+          "title_source": "book-pdf"
         },
         {
           "id": "s2-29",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Vekselstrøm og vekselspenning",
+          "title_status": "verified",
           "heading_key": "4af3cfa5a3de0848",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -558,12 +590,13 @@
           "chunk_uids": [
             "32965b71d6f17903"
           ],
-          "marked_important": true
+          "marked_important": true,
+          "title_source": "book-pdf"
         },
         {
           "id": "s2-30",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Frekvens og fase",
+          "title_status": "verified",
           "heading_key": "fef81941527e1a8d",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -573,12 +606,13 @@
           "chunk_uids": [
             "634230010fa4ff38"
           ],
-          "marked_important": true
+          "marked_important": true,
+          "title_source": "book-pdf"
         },
         {
           "id": "s2-31",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Harmoniske (frekvenser)",
+          "title_status": "verified",
           "heading_key": "2a64734a85363635",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -588,12 +622,13 @@
           "chunk_uids": [
             "ee651ef3ba0565da"
           ],
-          "marked_important": false
+          "marked_important": false,
+          "title_source": "book-pdf"
         },
         {
           "id": "s2-32",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Motstander og vekselstrøm",
+          "title_status": "verified",
           "heading_key": "6c9440f1b4e424a8",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -603,12 +638,13 @@
           "chunk_uids": [
             "2e244dcd623d1003"
           ],
-          "marked_important": false
+          "marked_important": false,
+          "title_source": "book-pdf"
         },
         {
           "id": "s2-33",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Kondensatorer og vekselstrøm",
+          "title_status": "verified",
           "heading_key": "cfd06933fe7247b5",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -619,12 +655,13 @@
           "chunk_uids": [
             "4150a0886a325a3c"
           ],
-          "marked_important": true
+          "marked_important": true,
+          "title_source": "book-pdf"
         },
         {
           "id": "s2-34",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Reaktans",
+          "title_status": "verified",
           "heading_key": "f68a045c031134ca",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -635,12 +672,13 @@
             "d7ed6bb58f925e09",
             "0a13e3b24de39dd5"
           ],
-          "marked_important": true
+          "marked_important": true,
+          "title_source": "book-pdf"
         },
         {
           "id": "s2-35",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Induktiv reaktans",
+          "title_status": "verified",
           "heading_key": "cbf9ee340ff9fdbb",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -651,12 +689,13 @@
           "chunk_uids": [
             "9cc9a1c52884914f"
           ],
-          "marked_important": true
+          "marked_important": true,
+          "title_source": "book-pdf"
         },
         {
           "id": "s2-36",
-          "title": null,
-          "title_status": "proposed",
+          "title": "L og C – en oppsummering",
+          "title_status": "verified",
           "heading_key": "79a639ffb70630bc",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -666,12 +705,13 @@
           "chunk_uids": [
             "e5a65382abfb03a0"
           ],
-          "marked_important": false
+          "marked_important": false,
+          "title_source": "book-pdf"
         },
         {
           "id": "s2-37",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Fasevektordiagram",
+          "title_status": "verified",
           "heading_key": "5c45e627fd4caf98",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -682,12 +722,13 @@
           "chunk_uids": [
             "5ae900d46a85fd28"
           ],
-          "marked_important": false
+          "marked_important": false,
+          "title_source": "book-pdf"
         },
         {
           "id": "s2-38",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Motstand og kondensator i serie",
+          "title_status": "verified",
           "heading_key": "161bd66378192d54",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -698,12 +739,13 @@
             "e1aa6b2ae9c20025",
             "892418821331ab05"
           ],
-          "marked_important": true
+          "marked_important": true,
+          "title_source": "book-pdf"
         },
         {
           "id": "s2-39",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Kobling, avkobling og blokkering",
+          "title_status": "verified",
           "heading_key": "a0aeca808fb339ac",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -714,12 +756,13 @@
           "chunk_uids": [
             "fa5ddb51771d8527"
           ],
-          "marked_important": true
+          "marked_important": true,
+          "title_source": "book-pdf"
         },
         {
           "id": "s2-40",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Motstand og spole i serie",
+          "title_status": "verified",
           "heading_key": "649ade632f774a8a",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -729,12 +772,13 @@
           "chunk_uids": [
             "bd3f73fe404c860e"
           ],
-          "marked_important": true
+          "marked_important": true,
+          "title_source": "book-pdf"
         },
         {
           "id": "s2-41",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Serieresonans",
+          "title_status": "verified",
           "heading_key": "46c6d717b8cb5b7c",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -744,7 +788,8 @@
           "chunk_uids": [
             "27a8f5b76d9a6360"
           ],
-          "marked_important": true
+          "marked_important": true,
+          "title_source": "book-pdf"
         },
         {
           "id": "s2-42",
@@ -785,8 +830,8 @@
         },
         {
           "id": "s2-44",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Parallellresonans",
+          "title_status": "verified",
           "heading_key": "1438476fcfaf9869",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -796,12 +841,13 @@
           "chunk_uids": [
             "51019c41cfccd9d0"
           ],
-          "marked_important": true
+          "marked_important": true,
+          "title_source": "book-pdf"
         },
         {
           "id": "s2-45",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Dynamisk resistans",
+          "title_status": "verified",
           "heading_key": "6d9b866709603de3",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -812,12 +858,13 @@
           "chunk_uids": [
             "de954bba80308ceb"
           ],
-          "marked_important": true
+          "marked_important": true,
+          "title_source": "book-pdf"
         },
         {
           "id": "s2-46",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Godhetsfaktoren Q",
+          "title_status": "verified",
           "heading_key": "6b8bd4c6ed50ec19",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -828,12 +875,13 @@
             "aaef8985734acd38",
             "2ad82b20e6f3669a"
           ],
-          "marked_important": true
+          "marked_important": true,
+          "title_source": "book-pdf"
         },
         {
           "id": "s2-47",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Sirkulerende strømmer",
+          "title_status": "verified",
           "heading_key": "bd9420ffab6d35e4",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -843,12 +891,13 @@
           "chunk_uids": [
             "1df188b24e3b2078"
           ],
-          "marked_important": true
+          "marked_important": true,
+          "title_source": "book-pdf"
         },
         {
           "id": "s2-48",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Formfaktor",
+          "title_status": "verified",
           "heading_key": "d7d8b8d28a79ee82",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -858,12 +907,13 @@
           "chunk_uids": [
             "b1b529d313bc1079"
           ],
-          "marked_important": true
+          "marked_important": true,
+          "title_source": "book-pdf"
         },
         {
           "id": "s2-49",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Transformatorer",
+          "title_status": "verified",
           "heading_key": "786bf282e5334c69",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -873,12 +923,13 @@
           "chunk_uids": [
             "4e06f5ebd7a6892d"
           ],
-          "marked_important": false
+          "marked_important": false,
+          "title_source": "book-pdf"
         },
         {
           "id": "s2-50",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Transformatorer",
+          "title_status": "verified",
           "heading_key": "eb9c0c554701565c",
           "ocr_quality": "suspect",
           "ocr_issues": [
@@ -893,12 +944,13 @@
             "6255d35e8e3267a0",
             "fba01cc9833dbb8c"
           ],
-          "marked_important": true
+          "marked_important": true,
+          "title_source": "book-pdf (matched by content)"
         },
         {
           "id": "s2-51",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Krystaller",
+          "title_status": "verified",
           "heading_key": "463308010c48f902",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -910,12 +962,13 @@
             "f42ae5c8d9beb579",
             "1ac6a3d47ddfbaf0"
           ],
-          "marked_important": true
+          "marked_important": true,
+          "title_source": "book-pdf"
         },
         {
           "id": "s2-52",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Temperaturvirkninger",
+          "title_status": "verified",
           "heading_key": "c014ae144f669901",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -925,12 +978,13 @@
           "chunk_uids": [
             "986e8de193ca5a9d"
           ],
-          "marked_important": true
+          "marked_important": true,
+          "title_source": "book-pdf"
         },
         {
           "id": "s2-53",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Skjerming",
+          "title_status": "verified",
           "heading_key": "075c445607237fce",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -940,7 +994,8 @@
           "chunk_uids": [
             "de518583ced3a441"
           ],
-          "marked_important": true
+          "marked_important": true,
+          "title_source": "book-pdf"
         }
       ],
       "title_key": "72b4b68e8657607c",
@@ -974,8 +1029,8 @@
         },
         {
           "id": "s3-02",
-          "title": null,
-          "title_status": "proposed",
+          "title": "N-type materiale",
+          "title_status": "verified",
           "heading_key": "67d6de16a04fff03",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -985,12 +1040,13 @@
           "chunk_uids": [
             "5460a02dfffc7e6f"
           ],
-          "marked_important": true
+          "marked_important": true,
+          "title_source": "book-pdf"
         },
         {
           "id": "s3-03",
-          "title": null,
-          "title_status": "proposed",
+          "title": "P-type materiale",
+          "title_status": "verified",
           "heading_key": "1be107d0526a3835",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -1000,12 +1056,13 @@
           "chunk_uids": [
             "ac16d094631090f9"
           ],
-          "marked_important": false
+          "marked_important": false,
+          "title_source": "book-pdf"
         },
         {
           "id": "s3-04",
-          "title": null,
-          "title_status": "proposed",
+          "title": "P-type materiale",
+          "title_status": "verified",
           "heading_key": "68ad2ff26fc8926f",
           "ocr_quality": "suspect",
           "ocr_issues": [
@@ -1019,12 +1076,13 @@
           "chunk_uids": [
             "df904e59f417becd"
           ],
-          "marked_important": false
+          "marked_important": false,
+          "title_source": "book-pdf (matched by content)"
         },
         {
           "id": "s3-05",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Halvlederovergangsdioden",
+          "title_status": "verified",
           "heading_key": "fc663a3bfdc4fd96",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -1038,12 +1096,13 @@
             "f4e450814fed8ffc",
             "e4d97158f629ffd0"
           ],
-          "marked_important": true
+          "marked_important": true,
+          "title_source": "book-pdf"
         },
         {
           "id": "s3-06",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Halvbølgelikeretter",
+          "title_status": "verified",
           "heading_key": "dbb4744bfe850c62",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -1055,12 +1114,13 @@
             "971ad1d5600f99e0",
             "fa34825deefefe45"
           ],
-          "marked_important": true
+          "marked_important": true,
+          "title_source": "book-pdf"
         },
         {
           "id": "s3-07",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Fullbølgelikeretter",
+          "title_status": "verified",
           "heading_key": "c73128bea5107a00",
           "ocr_quality": "suspect",
           "ocr_issues": [
@@ -1072,12 +1132,13 @@
           "chunk_uids": [
             "7fb9a1b48ca9e949"
           ],
-          "marked_important": false
+          "marked_important": false,
+          "title_source": "book-pdf"
         },
         {
           "id": "s3-08",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Brolikeretter",
+          "title_status": "verified",
           "heading_key": "cba9e0af4e52ca9c",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -1087,7 +1148,8 @@
           "chunk_uids": [
             "7884d382a5bf86f5"
           ],
-          "marked_important": false
+          "marked_important": false,
+          "title_source": "book-pdf"
         },
         {
           "id": "s3-09",
@@ -1125,8 +1187,8 @@
         },
         {
           "id": "s3-11",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Zenerdioden",
+          "title_status": "verified",
           "heading_key": "dca7427b2edbd4b3",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -1138,12 +1200,13 @@
             "22a58c3cfab163a7",
             "df45d6a6687f07f1"
           ],
-          "marked_important": true
+          "marked_important": true,
+          "title_source": "book-pdf"
         },
         {
           "id": "s3-12",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Varicap-dioden",
+          "title_status": "verified",
           "heading_key": "e6f62e00453f7e04",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -1153,12 +1216,13 @@
           "chunk_uids": [
             "4fdf547d8e0ffd1b"
           ],
-          "marked_important": true
+          "marked_important": true,
+          "title_source": "book-pdf"
         },
         {
           "id": "s3-13",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Bipolare transistorer",
+          "title_status": "verified",
           "heading_key": "87fcd454cf422ab0",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -1170,12 +1234,13 @@
             "08b52c6c96556bd5",
             "8f6bf76bb4113ba0"
           ],
-          "marked_important": true
+          "marked_important": true,
+          "title_source": "book-pdf"
         },
         {
           "id": "s3-14",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Transistorkarakteristikker",
+          "title_status": "verified",
           "heading_key": "c3facf0f5e45565b",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -1185,12 +1250,13 @@
           "chunk_uids": [
             "0cf7ab01028d046d"
           ],
-          "marked_important": false
+          "marked_important": false,
+          "title_source": "book-pdf"
         },
         {
           "id": "s3-15",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Forspenning av transistoren",
+          "title_status": "verified",
           "heading_key": "c06fd0cc3491b726",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -1202,12 +1268,13 @@
             "d7dd0bb3df117f8c",
             "306700e7fea6ff1d"
           ],
-          "marked_important": false
+          "marked_important": false,
+          "title_source": "book-pdf"
         },
         {
           "id": "s3-16",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Forspenningsstabilitet",
+          "title_status": "verified",
           "heading_key": "f057848c41802ecc",
           "ocr_quality": "suspect",
           "ocr_issues": [
@@ -1223,12 +1290,13 @@
             "c7613788ae29b22c",
             "72446c539c5c6b83"
           ],
-          "marked_important": true
+          "marked_important": true,
+          "title_source": "book-pdf"
         },
         {
           "id": "s3-17",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Forsterkning av et signal",
+          "title_status": "verified",
           "heading_key": "efe0cce17774a5d7",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -1239,12 +1307,13 @@
           "chunk_uids": [
             "e80ad8b9290514f0"
           ],
-          "marked_important": false
+          "marked_important": false,
+          "title_source": "book-pdf"
         },
         {
           "id": "s3-18",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Oppbygging av transistorkretser",
+          "title_status": "verified",
           "heading_key": "80a62aaeea32b43f",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -1254,12 +1323,13 @@
           "chunk_uids": [
             "23abf0ee3ed26b69"
           ],
-          "marked_important": false
+          "marked_important": false,
+          "title_source": "book-pdf (matched by content)"
         },
         {
           "id": "s3-19",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Felles emitterkrets",
+          "title_status": "verified",
           "heading_key": "7f0e435102afb409",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -1269,12 +1339,13 @@
           "chunk_uids": [
             "7fa3060530175252"
           ],
-          "marked_important": true
+          "marked_important": true,
+          "title_source": "book-pdf"
         },
         {
           "id": "s3-20",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Felles basiskrets",
+          "title_status": "verified",
           "heading_key": "3b180d8ca0efa935",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -1284,12 +1355,13 @@
           "chunk_uids": [
             "5b964122103e1b01"
           ],
-          "marked_important": true
+          "marked_important": true,
+          "title_source": "book-pdf"
         },
         {
           "id": "s3-21",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Felles kollektor- eller emitterfølgerkrets",
+          "title_status": "verified",
           "heading_key": "168e839298dfa15d",
           "ocr_quality": "suspect",
           "ocr_issues": [
@@ -1301,12 +1373,13 @@
           "chunk_uids": [
             "ade827189ae616b2"
           ],
-          "marked_important": false
+          "marked_important": false,
+          "title_source": "book-pdf (matched by content)"
         },
         {
           "id": "s3-22",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Felles kollektor- eller emitterfølgerkrets",
+          "title_status": "verified",
           "heading_key": "62ea48e563d55c5f",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -1316,12 +1389,13 @@
           "chunk_uids": [
             "e80686c8923b571e"
           ],
-          "marked_important": true
+          "marked_important": true,
+          "title_source": "book-pdf (matched by content)"
         },
         {
           "id": "s3-23",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Forspenningsklasser",
+          "title_status": "verified",
           "heading_key": "3362a3b5d167a80c",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -1334,12 +1408,13 @@
             "d436b71f0d40e2ae",
             "fecb3a149448ff58"
           ],
-          "marked_important": true
+          "marked_important": true,
+          "title_source": "book-pdf"
         },
         {
           "id": "s3-24",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Forspenning i klasse A",
+          "title_status": "verified",
           "heading_key": "7d03e7656a7784f1",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -1349,12 +1424,14 @@
           "chunk_uids": [
             "9a65d0ddc187e8d4"
           ],
-          "marked_important": false
+          "marked_important": false,
+          "title_source": "book-pdf",
+          "title_note": "casing of names and symbols corrected by hand"
         },
         {
           "id": "s3-25",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Forspenning i klasse B",
+          "title_status": "verified",
           "heading_key": "47c21e19c769d036",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -1364,12 +1441,13 @@
           "chunk_uids": [
             "04d629562ebaf01b"
           ],
-          "marked_important": false
+          "marked_important": false,
+          "title_source": "book-pdf"
         },
         {
           "id": "s3-26",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Forspenning i klasse AB",
+          "title_status": "verified",
           "heading_key": "63e48df07b5b5e0b",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -1379,12 +1457,13 @@
           "chunk_uids": [
             "371572868171b1ed"
           ],
-          "marked_important": false
+          "marked_important": false,
+          "title_source": "book-pdf"
         },
         {
           "id": "s3-27",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Forspenning i klasse C",
+          "title_status": "verified",
           "heading_key": "6c026508f07215a3",
           "ocr_quality": "suspect",
           "ocr_issues": [
@@ -1397,12 +1476,13 @@
           "chunk_uids": [
             "67329d25f18f89fc"
           ],
-          "marked_important": false
+          "marked_important": false,
+          "title_source": "book-pdf"
         },
         {
           "id": "s3-28",
-          "title": null,
-          "title_status": "proposed",
+          "title": "En push-pull-forsterker",
+          "title_status": "verified",
           "heading_key": "1c042354ad9c953f",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -1412,12 +1492,13 @@
           "chunk_uids": [
             "79040ac5dcac68cc"
           ],
-          "marked_important": false
+          "marked_important": false,
+          "title_source": "book-pdf"
         },
         {
           "id": "s3-29",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Felteffekttransistoren (FET)",
+          "title_status": "verified",
           "heading_key": "846dbd32075d72ee",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -1430,12 +1511,13 @@
             "448d78eddb48dd6e",
             "2b5f526f60a53b97"
           ],
-          "marked_important": true
+          "marked_important": true,
+          "title_source": "book-pdf"
         },
         {
           "id": "s3-30",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Dobbelport-FET (dual gate FET)",
+          "title_status": "verified",
           "heading_key": "ca326b65a2a3b437",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -1445,12 +1527,13 @@
           "chunk_uids": [
             "00c891a2f84b5d79"
           ],
-          "marked_important": true
+          "marked_important": true,
+          "title_source": "book-pdf"
         },
         {
           "id": "s3-31",
-          "title": null,
-          "title_status": "proposed",
+          "title": "FET-transistoren som forsterker",
+          "title_status": "verified",
           "heading_key": "23d44d496b16c8d9",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -1462,12 +1545,13 @@
             "1b1672b94ca9429f",
             "cc96f50ed3fae8e4"
           ],
-          "marked_important": false
+          "marked_important": false,
+          "title_source": "book-pdf"
         },
         {
           "id": "s3-32",
-          "title": null,
-          "title_status": "proposed",
+          "title": "En regulert strømforsyning",
+          "title_status": "verified",
           "heading_key": "abd66da09b8ce716",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -1480,12 +1564,13 @@
             "c9e2b205485892a1",
             "3d6505714c5f689a"
           ],
-          "marked_important": true
+          "marked_important": true,
+          "title_source": "book-pdf"
         },
         {
           "id": "s3-33",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Integrert krets som spenningsregulator",
+          "title_status": "verified",
           "heading_key": "ddc85291e768755d",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -1495,12 +1580,13 @@
           "chunk_uids": [
             "8dc5d983d56fd77c"
           ],
-          "marked_important": false
+          "marked_important": false,
+          "title_source": "book-pdf (matched by content)"
         },
         {
           "id": "s3-34",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Radiorør",
+          "title_status": "verified",
           "heading_key": "97e6c49d63b13ba1",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -1514,12 +1600,13 @@
             "cbd201517d2f8d7e",
             "4023b145119fa438"
           ],
-          "marked_important": true
+          "marked_important": true,
+          "title_source": "book-pdf"
         },
         {
           "id": "s3-35",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Fordeler og ulemper med radiorør",
+          "title_status": "verified",
           "heading_key": "f44c881f77df0e12",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -1529,7 +1616,8 @@
           "chunk_uids": [
             "414ad86d0afc8a47"
           ],
-          "marked_important": true
+          "marked_important": true,
+          "title_source": "book-pdf"
         }
       ],
       "title_key": "0df320c180e77ce2",
@@ -1563,8 +1651,8 @@
         },
         {
           "id": "s4-02",
-          "title": null,
-          "title_status": "proposed",
+          "title": "SSB-senderen",
+          "title_status": "verified",
           "heading_key": "6b063c1730a813ac",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -1574,12 +1662,13 @@
           "chunk_uids": [
             "0a1ed6e342a13043"
           ],
-          "marked_important": false
+          "marked_important": false,
+          "title_source": "book-pdf"
         },
         {
           "id": "s4-03",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Enkel VHF-sender for FM",
+          "title_status": "verified",
           "heading_key": "b069c22f97a3e89b",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -1590,12 +1679,13 @@
           "chunk_uids": [
             "d65f539f9c53dc13"
           ],
-          "marked_important": true
+          "marked_important": true,
+          "title_source": "book-pdf"
         },
         {
           "id": "s4-04",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Enkelt sidebånd (SSB)",
+          "title_status": "verified",
           "heading_key": "af16f8dd543a77b5",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -1605,12 +1695,13 @@
           "chunk_uids": [
             "cd7ef82985172734"
           ],
-          "marked_important": false
+          "marked_important": false,
+          "title_source": "book-pdf"
         },
         {
           "id": "s4-05",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Amplitudemodulasjon (AM)",
+          "title_status": "verified",
           "heading_key": "f8c2b680778cfb45",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -1621,12 +1712,13 @@
             "dd05277f16a87567",
             "1fd398c68cf8fd77"
           ],
-          "marked_important": true
+          "marked_important": true,
+          "title_source": "book-pdf"
         },
         {
           "id": "s4-06",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Frekvensmodulasjon (FM)",
+          "title_status": "verified",
           "heading_key": "d28ebb5cc0309170",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -1636,12 +1728,13 @@
           "chunk_uids": [
             "bdd0657a26c2d984"
           ],
-          "marked_important": false
+          "marked_important": false,
+          "title_source": "book-pdf"
         },
         {
           "id": "s4-07",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Spissdeviasjon og modulasjonsindeks",
+          "title_status": "verified",
           "heading_key": "b6d85e6d09c8d0a2",
           "ocr_quality": "suspect",
           "ocr_issues": [
@@ -1654,12 +1747,13 @@
             "e811322bd724a668",
             "7635bec2e582a9b7"
           ],
-          "marked_important": true
+          "marked_important": true,
+          "title_source": "book-pdf"
         },
         {
           "id": "s4-08",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Båndbredde",
+          "title_status": "verified",
           "heading_key": "f46a9128754e31d1",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -1670,12 +1764,13 @@
           "chunk_uids": [
             "3a86074c633c8871"
           ],
-          "marked_important": false
+          "marked_important": false,
+          "title_source": "book-pdf"
         },
         {
           "id": "s4-09",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Oscillatoren",
+          "title_status": "verified",
           "heading_key": "b403adc9235f6063",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -1685,12 +1780,13 @@
           "chunk_uids": [
             "12cc14ec7906846c"
           ],
-          "marked_important": false
+          "marked_important": false,
+          "title_source": "book-pdf"
         },
         {
           "id": "s4-10",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Oscillator med avstemt LC-krets",
+          "title_status": "verified",
           "heading_key": "5909a9e82aa0b8fb",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -1701,12 +1797,13 @@
           "chunk_uids": [
             "cd97d03db7e252d9"
           ],
-          "marked_important": false
+          "marked_important": false,
+          "title_source": "book-pdf"
         },
         {
           "id": "s4-11",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Krystalloscillator",
+          "title_status": "verified",
           "heading_key": "3591f30ebf2bc8e2",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -1717,12 +1814,13 @@
             "7de21de341cbe50a",
             "d295ba7204b9e2c8"
           ],
-          "marked_important": false
+          "marked_important": false,
+          "title_source": "book-pdf"
         },
         {
           "id": "s4-12",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Frekvenssyntetisator",
+          "title_status": "verified",
           "heading_key": "d559cd6f85ec286a",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -1732,12 +1830,13 @@
           "chunk_uids": [
             "e713ceb0a98959bf"
           ],
-          "marked_important": false
+          "marked_important": false,
+          "title_source": "book-pdf"
         },
         {
           "id": "s4-13",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Syntetiserte lokaloscillatorer",
+          "title_status": "verified",
           "heading_key": "6c0959cd1a914f7c",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -1747,12 +1846,13 @@
           "chunk_uids": [
             "9da6068ce756a26c"
           ],
-          "marked_important": false
+          "marked_important": false,
+          "title_source": "book-pdf"
         },
         {
           "id": "s4-14",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Faselåst sløyfe",
+          "title_status": "verified",
           "heading_key": "59ad32c69d3dd3ae",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -1767,12 +1867,13 @@
             "81620fa8210fe703",
             "7f36d1db693541c5"
           ],
-          "marked_important": true
+          "marked_important": true,
+          "title_source": "book-pdf"
         },
         {
           "id": "s4-15",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Direkte digitalsyntese",
+          "title_status": "verified",
           "heading_key": "bd722292a08de45a",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -1782,12 +1883,13 @@
           "chunk_uids": [
             "c74c8d7639160316"
           ],
-          "marked_important": true
+          "marked_important": true,
+          "title_source": "book-pdf"
         },
         {
           "id": "s4-16",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Behovet for renhet",
+          "title_status": "verified",
           "heading_key": "7f51653aef1e4a79",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -1797,12 +1899,13 @@
           "chunk_uids": [
             "87a19c9811b4597d"
           ],
-          "marked_important": false
+          "marked_important": false,
+          "title_source": "book-pdf"
         },
         {
           "id": "s4-17",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Bufferforsterkeren",
+          "title_status": "verified",
           "heading_key": "ff37d3ca1352c3f5",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -1812,12 +1915,13 @@
           "chunk_uids": [
             "0e0babb1eca4a391"
           ],
-          "marked_important": false
+          "marked_important": false,
+          "title_source": "book-pdf"
         },
         {
           "id": "s4-18",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Frekvensmultiplikator",
+          "title_status": "verified",
           "heading_key": "5328ff2b00bbaebd",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -1829,12 +1933,13 @@
             "c953d39298dad443",
             "125fc57d6eb02532"
           ],
-          "marked_important": true
+          "marked_important": true,
+          "title_source": "book-pdf"
         },
         {
           "id": "s4-19",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Oscillator for frekvensmodulasjon",
+          "title_status": "verified",
           "heading_key": "321dc2bcac71bfab",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -1844,12 +1949,13 @@
           "chunk_uids": [
             "edec7b2a8e4519f7"
           ],
-          "marked_important": false
+          "marked_important": false,
+          "title_source": "book-pdf"
         },
         {
           "id": "s4-20",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Fasemodulasjon",
+          "title_status": "verified",
           "heading_key": "fd47d4974bda494b",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -1859,12 +1965,13 @@
           "chunk_uids": [
             "f7ade5d63265ed4b"
           ],
-          "marked_important": false
+          "marked_important": false,
+          "title_source": "book-pdf"
         },
         {
           "id": "s4-21",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Modulasjon av SSB-signaler",
+          "title_status": "verified",
           "heading_key": "412e055c1bde9a27",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -1876,12 +1983,13 @@
             "65199b0639ca3120",
             "758f6e00b9c6cc3f"
           ],
-          "marked_important": true
+          "marked_important": true,
+          "title_source": "book-pdf"
         },
         {
           "id": "s4-22",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Modulasjon av AM-signaler",
+          "title_status": "verified",
           "heading_key": "b505197efb1582b7",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -1891,12 +1999,13 @@
           "chunk_uids": [
             "c378b14f807f70d8"
           ],
-          "marked_important": true
+          "marked_important": true,
+          "title_source": "book-pdf"
         },
         {
           "id": "s4-23",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Modulasjon av CW – morse",
+          "title_status": "verified",
           "heading_key": "c5ff89013e8fd859",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -1908,12 +2017,13 @@
             "504a3a4836d7a292",
             "37086e2bfcd50e43"
           ],
-          "marked_important": false
+          "marked_important": false,
+          "title_source": "book-pdf"
         },
         {
           "id": "s4-24",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Modulasjon av datasignaler",
+          "title_status": "verified",
           "heading_key": "999d64b90870ec05",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -1923,12 +2033,13 @@
           "chunk_uids": [
             "86ab135711970474"
           ],
-          "marked_important": true
+          "marked_important": true,
+          "title_source": "book-pdf"
         },
         {
           "id": "s4-25",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Omdanning av data til radiofrekvenser",
+          "title_status": "verified",
           "heading_key": "c06b4e46173df82c",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -1940,12 +2051,13 @@
             "49f4b2e17eb8399e",
             "07f17f139df818af"
           ],
-          "marked_important": false
+          "marked_important": false,
+          "title_source": "book-pdf (matched by content)"
         },
         {
           "id": "s4-26",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Blanding til utgangsfrekvensen",
+          "title_status": "verified",
           "heading_key": "499c64b4180364f3",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -1958,12 +2070,13 @@
             "72db73c6bbecf691",
             "a753750976d378bf"
           ],
-          "marked_important": true
+          "marked_important": true,
+          "title_source": "book-pdf"
         },
         {
           "id": "s4-27",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Sluttforsterkere for FM og SSB",
+          "title_status": "verified",
           "heading_key": "5f5ffa57c1c4d230",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -1973,12 +2086,13 @@
           "chunk_uids": [
             "2848f0ff4a5e2382"
           ],
-          "marked_important": true
+          "marked_important": true,
+          "title_source": "book-pdf"
         },
         {
           "id": "s4-28",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Sluttforsterkerkretser, utgangstilpasning og filtrering",
+          "title_status": "verified",
           "heading_key": "e7f7d748e21c706b",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -1990,12 +2104,13 @@
             "f623d2a372736b64",
             "22452184a5f54926"
           ],
-          "marked_important": true
+          "marked_important": true,
+          "title_source": "book-pdf (matched by content)"
         },
         {
           "id": "s4-29",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Effektiviteten til et sluttforsterkertrinn",
+          "title_status": "verified",
           "heading_key": "5dc917becd2748e2",
           "ocr_quality": "suspect",
           "ocr_issues": [
@@ -2007,12 +2122,13 @@
           "chunk_uids": [
             "fa415aee5adf4d11"
           ],
-          "marked_important": true
+          "marked_important": true,
+          "title_source": "book-pdf (matched by content)"
         },
         {
           "id": "s4-30",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Effektiviteten til et sluttforsterkertrinn",
+          "title_status": "verified",
           "heading_key": "551a1cf617ae7090",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -2023,12 +2139,13 @@
           "chunk_uids": [
             "7939f52ee16e7a09"
           ],
-          "marked_important": true
+          "marked_important": true,
+          "title_source": "book-pdf (matched by content)"
         },
         {
           "id": "s4-31",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Utgangseffekten til en SSB-sender",
+          "title_status": "verified",
           "heading_key": "c1a29ea265bfb0b1",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -2038,12 +2155,13 @@
           "chunk_uids": [
             "796b29602a90d584"
           ],
-          "marked_important": true
+          "marked_important": true,
+          "title_source": "book-pdf (matched by content)"
         },
         {
           "id": "s4-32",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Datamodus",
+          "title_status": "verified",
           "heading_key": "202b4011c41cccba",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -2053,12 +2171,13 @@
           "chunk_uids": [
             "1c62c6a17e24d5f6"
           ],
-          "marked_important": false
+          "marked_important": false,
+          "title_source": "book-pdf"
         },
         {
           "id": "s4-33",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Taleprosessorer",
+          "title_status": "verified",
           "heading_key": "86d26da49eddc293",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -2068,12 +2187,13 @@
           "chunk_uids": [
             "fc74c0e9ea527692"
           ],
-          "marked_important": true
+          "marked_important": true,
+          "title_source": "book-pdf"
         },
         {
           "id": "s4-34",
-          "title": null,
-          "title_status": "proposed",
+          "title": "ALC: automatisk nivåkontroll",
+          "title_status": "verified",
           "heading_key": "db1eeaaeac7d6ee3",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -2083,12 +2203,13 @@
           "chunk_uids": [
             "bc94d055681e7061"
           ],
-          "marked_important": false
+          "marked_important": false,
+          "title_source": "book-pdf"
         },
         {
           "id": "s4-35",
-          "title": null,
-          "title_status": "proposed",
+          "title": "SWR-beskyttelse",
+          "title_status": "verified",
           "heading_key": "7a39b44c73d7dfa8",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -2100,7 +2221,8 @@
             "293e12ad93262f57",
             "197532597ac79fc4"
           ],
-          "marked_important": true
+          "marked_important": true,
+          "title_source": "book-pdf"
         }
       ],
       "title_key": "c5ecc59047235cf5",
@@ -2134,8 +2256,8 @@
         },
         {
           "id": "s5-02",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Frekvensstabilitet og -drift",
+          "title_status": "verified",
           "heading_key": "fbfab1fea80e1429",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -2145,12 +2267,13 @@
           "chunk_uids": [
             "7708a47a52c5b85b"
           ],
-          "marked_important": true
+          "marked_important": true,
+          "title_source": "book-pdf"
         },
         {
           "id": "s5-03",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Temperaturendringer",
+          "title_status": "verified",
           "heading_key": "fb23ec9da5d70aaf",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -2160,12 +2283,13 @@
           "chunk_uids": [
             "59d8a7b849bac5ef"
           ],
-          "marked_important": false
+          "marked_important": false,
+          "title_source": "book-pdf"
         },
         {
           "id": "s5-04",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Endringer/variasjoner i spenningsforsyning",
+          "title_status": "verified",
           "heading_key": "ceacbc7dafd1c2d7",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -2176,12 +2300,13 @@
           "chunk_uids": [
             "c8b389ee1f73f7ee"
           ],
-          "marked_important": false
+          "marked_important": false,
+          "title_source": "book-pdf (matched by content)"
         },
         {
           "id": "s5-05",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Endringer i utgangsbelastning og strøkapasitanser",
+          "title_status": "verified",
           "heading_key": "b599284fca49bdcc",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -2191,12 +2316,13 @@
           "chunk_uids": [
             "040dcd28252ac2f4"
           ],
-          "marked_important": false
+          "marked_important": false,
+          "title_source": "book-pdf (matched by content)"
         },
         {
           "id": "s5-06",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Mekanisk støt/påvirkning",
+          "title_status": "verified",
           "heading_key": "f857328e5a57b036",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -2206,12 +2332,13 @@
           "chunk_uids": [
             "79270c4016840f5f"
           ],
-          "marked_important": false
+          "marked_important": false,
+          "title_source": "book-pdf"
         },
         {
           "id": "s5-07",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Aldring",
+          "title_status": "verified",
           "heading_key": "d61bde1ac2630fd9",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -2221,12 +2348,13 @@
           "chunk_uids": [
             "d3d409c953d7c856"
           ],
-          "marked_important": false
+          "marked_important": false,
+          "title_source": "book-pdf"
         },
         {
           "id": "s5-08",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Kvitter (chirp)",
+          "title_status": "verified",
           "heading_key": "c028fd5b44f23adf",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -2236,12 +2364,13 @@
           "chunk_uids": [
             "b1b1bc833142e4d0"
           ],
-          "marked_important": true
+          "marked_important": true,
+          "title_source": "book-pdf"
         },
         {
           "id": "s5-09",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Harmoniske",
+          "title_status": "verified",
           "heading_key": "1d63920bffd5ee15",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -2251,12 +2380,13 @@
           "chunk_uids": [
             "22bac5b85015a5a1"
           ],
-          "marked_important": true
+          "marked_important": true,
+          "title_source": "book-pdf"
         },
         {
           "id": "s5-10",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Harmoniske i lineære forsterkere",
+          "title_status": "verified",
           "heading_key": "a67be41ff9239a14",
           "ocr_quality": "suspect",
           "ocr_issues": [
@@ -2268,12 +2398,13 @@
           "chunk_uids": [
             "c1276fd63d35dd6f"
           ],
-          "marked_important": true
+          "marked_important": true,
+          "title_source": "book-pdf"
         },
         {
           "id": "s5-11",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Uønskede blandingsprodukter og intermodulasjon",
+          "title_status": "verified",
           "heading_key": "ab9a195e1059b995",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -2284,12 +2415,13 @@
           "chunk_uids": [
             "fa7f48d6a8c066a1"
           ],
-          "marked_important": false
+          "marked_important": false,
+          "title_source": "book-pdf (matched by content)"
         },
         {
           "id": "s5-12",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Filtre",
+          "title_status": "verified",
           "heading_key": "084fddef071edf35",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -2301,12 +2433,13 @@
             "5aab7c4278fc0f84",
             "1979e24cac0fd041"
           ],
-          "marked_important": false
+          "marked_important": false,
+          "title_source": "book-pdf"
         },
         {
           "id": "s5-13",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Falske svingninger",
+          "title_status": "verified",
           "heading_key": "8a58e13c79f174b4",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -2320,12 +2453,13 @@
             "80bc1ce2465ae419",
             "e5ca3b17cbd3c585"
           ],
-          "marked_important": true
+          "marked_important": true,
+          "title_source": "book-pdf"
         },
         {
           "id": "s5-14",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Falske signaler fra frekvenssyntetisatorer",
+          "title_status": "verified",
           "heading_key": "fa483bf3a441a273",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -2335,7 +2469,8 @@
           "chunk_uids": [
             "46caa98903406bbd"
           ],
-          "marked_important": true
+          "marked_important": true,
+          "title_source": "book-pdf (matched by content)"
         },
         {
           "id": "s5-15",
@@ -2358,8 +2493,8 @@
         },
         {
           "id": "s5-16",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Overdreven båndbredde",
+          "title_status": "verified",
           "heading_key": "ad19a0a9b878e0cf",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -2369,12 +2504,13 @@
           "chunk_uids": [
             "a3dc0b3ecc0e9b9b"
           ],
-          "marked_important": true
+          "marked_important": true,
+          "title_source": "book-pdf"
         },
         {
           "id": "s5-17",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Direkte stråling",
+          "title_status": "verified",
           "heading_key": "2d4353494308303f",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -2384,12 +2520,13 @@
           "chunk_uids": [
             "dcc7dbf333789226"
           ],
-          "marked_important": false
+          "marked_important": false,
+          "title_source": "book-pdf"
         },
         {
           "id": "s5-18",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Nøklingsklikk (ved telegrafi)",
+          "title_status": "verified",
           "heading_key": "dc94791e571b6e27",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -2401,12 +2538,13 @@
             "411677446b4c75f4",
             "76b1e2e4ec50f5bb"
           ],
-          "marked_important": true
+          "marked_important": true,
+          "title_source": "book-pdf"
         },
         {
           "id": "s5-19",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Overmodulering, AM og SSB",
+          "title_status": "verified",
           "heading_key": "e50e3f8e73d92ae0",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -2418,12 +2556,13 @@
             "c11146f234b29566",
             "87a4b05e7b657405"
           ],
-          "marked_important": true
+          "marked_important": true,
+          "title_source": "book-pdf"
         },
         {
           "id": "s5-20",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Overdeviasjon på FM",
+          "title_status": "verified",
           "heading_key": "6c87ff8905fef70a",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -2433,12 +2572,13 @@
           "chunk_uids": [
             "a8878d1c89eb855e"
           ],
-          "marked_important": false
+          "marked_important": false,
+          "title_source": "book-pdf"
         },
         {
           "id": "s5-21",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Overstyring av sluttforsterker",
+          "title_status": "verified",
           "heading_key": "c990a9b9c42830b0",
           "ocr_quality": "suspect",
           "ocr_issues": [
@@ -2453,12 +2593,13 @@
             "3f85cffa107654f1",
             "2f7a5bd9f503a553"
           ],
-          "marked_important": false
+          "marked_important": false,
+          "title_source": "book-pdf"
         },
         {
           "id": "s5-22",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Identifisering av signal utenfor bånd og falske signal",
+          "title_status": "verified",
           "heading_key": "b73c342e2f01b0e1",
           "ocr_quality": "suspect",
           "ocr_issues": [
@@ -2470,12 +2611,13 @@
           "chunk_uids": [
             "f7abbc6844547460"
           ],
-          "marked_important": false
+          "marked_important": false,
+          "title_source": "book-pdf (matched by content)"
         },
         {
           "id": "s5-23",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Identifisering av signal utenfor bånd og falske signal",
+          "title_status": "verified",
           "heading_key": "78d3d3976b3f51f5",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -2485,7 +2627,8 @@
           "chunk_uids": [
             "610287b031e964d3"
           ],
-          "marked_important": false
+          "marked_important": false,
+          "title_source": "book-pdf (matched by content)"
         }
       ],
       "title_key": "f307ff2dd2bb3141",
@@ -2502,8 +2645,8 @@
       "sections": [
         {
           "id": "s6-01",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Grunnleggende mottakeregenskaper",
+          "title_status": "verified",
           "heading_key": "1fb2bff21495288b",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -2513,12 +2656,13 @@
           "chunk_uids": [
             "1760767d10d81031"
           ],
-          "marked_important": false
+          "marked_important": false,
+          "title_source": "book-pdf (matched by content)"
         },
         {
           "id": "s6-02",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Sensitivitet - følsomhet",
+          "title_status": "verified",
           "heading_key": "e7c88308ead18521",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -2528,12 +2672,13 @@
           "chunk_uids": [
             "f054709a8c172c44"
           ],
-          "marked_important": false
+          "marked_important": false,
+          "title_source": "book-pdf"
         },
         {
           "id": "s6-03",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Selektivitet",
+          "title_status": "verified",
           "heading_key": "04d77661b072b4fc",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -2543,12 +2688,13 @@
           "chunk_uids": [
             "121576d2a500fe1c"
           ],
-          "marked_important": true
+          "marked_important": true,
+          "title_source": "book-pdf"
         },
         {
           "id": "s6-04",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Båndbredde",
+          "title_status": "verified",
           "heading_key": "f46a9128754e31d1",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -2559,12 +2705,13 @@
           "chunk_uids": [
             "ee9c6008753ad14e"
           ],
-          "marked_important": true
+          "marked_important": true,
+          "title_source": "book-pdf"
         },
         {
           "id": "s6-05",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Frekvensstabilitet",
+          "title_status": "verified",
           "heading_key": "35fc27764a128722",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -2574,12 +2721,13 @@
           "chunk_uids": [
             "e56410dfdf58e200"
           ],
-          "marked_important": true
+          "marked_important": true,
+          "title_source": "book-pdf"
         },
         {
           "id": "s6-06",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Dynamisk område",
+          "title_status": "verified",
           "heading_key": "ddee3914af9aa0f3",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -2591,12 +2739,13 @@
             "370eef8583f649a8",
             "8e52af36d970b663"
           ],
-          "marked_important": true
+          "marked_important": true,
+          "title_source": "book-pdf"
         },
         {
           "id": "s6-07",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Superheterodynmottakeren",
+          "title_status": "verified",
           "heading_key": "b48a03f0411c51ff",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -2608,12 +2757,13 @@
             "84fc3490161549d2",
             "190c892325da5972"
           ],
-          "marked_important": false
+          "marked_important": false,
+          "title_source": "book-pdf"
         },
         {
           "id": "s6-08",
-          "title": null,
-          "title_status": "proposed",
+          "title": "RF-forsterkeren",
+          "title_status": "verified",
           "heading_key": "7b08bf83577b6d0b",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -2623,12 +2773,13 @@
           "chunk_uids": [
             "e7fa6d8e4dfb476d"
           ],
-          "marked_important": true
+          "marked_important": true,
+          "title_source": "book-pdf"
         },
         {
           "id": "s6-09",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Blanderen",
+          "title_status": "verified",
           "heading_key": "4e015dfe91ed8c7e",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -2638,12 +2789,13 @@
           "chunk_uids": [
             "1eeb2a5ab810c263"
           ],
-          "marked_important": true
+          "marked_important": true,
+          "title_source": "book-pdf"
         },
         {
           "id": "s6-10",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Lokaloscillatoren",
+          "title_status": "verified",
           "heading_key": "a73baffdceb5c1af",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -2655,12 +2807,13 @@
             "f0e5fcf6f528bf33",
             "18c4a40fdc2de427"
           ],
-          "marked_important": true
+          "marked_important": true,
+          "title_source": "book-pdf"
         },
         {
           "id": "s6-11",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Valg av mellomfrekvens",
+          "title_status": "verified",
           "heading_key": "db724d844bf5e99a",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -2672,12 +2825,13 @@
             "92798468b18c6fe5",
             "3f23dbc48489366a"
           ],
-          "marked_important": true
+          "marked_important": true,
+          "title_source": "book-pdf"
         },
         {
           "id": "s6-12",
-          "title": null,
-          "title_status": "proposed",
+          "title": "En blanderkrets",
+          "title_status": "verified",
           "heading_key": "9a78cd9a8e1fa722",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -2687,12 +2841,13 @@
           "chunk_uids": [
             "674a7e5e1667c065"
           ],
-          "marked_important": false
+          "marked_important": false,
+          "title_source": "book-pdf"
         },
         {
           "id": "s6-13",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Lokaloscillatoren",
+          "title_status": "verified",
           "heading_key": "f327026a9fe3a31c",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -2704,12 +2859,13 @@
             "cce882440c2cb17b",
             "04f40bb96a9e499f"
           ],
-          "marked_important": false
+          "marked_important": false,
+          "title_source": "book-pdf"
         },
         {
           "id": "s6-14",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Mellomfrekvensforsterkeren",
+          "title_status": "verified",
           "heading_key": "e0f6ea266b4a59dc",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -2720,12 +2876,13 @@
             "b88d94e955bc5438",
             "4cc2b8194bb11f1b"
           ],
-          "marked_important": true
+          "marked_important": true,
+          "title_source": "book-pdf"
         },
         {
           "id": "s6-15",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Signalstyrkemåler",
+          "title_status": "verified",
           "heading_key": "fbf9ac000871e712",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -2735,12 +2892,13 @@
           "chunk_uids": [
             "5e4ce7d56d6ba8da"
           ],
-          "marked_important": true
+          "marked_important": true,
+          "title_source": "book-pdf"
         },
         {
           "id": "s6-16",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Avstemte transformatorer",
+          "title_status": "verified",
           "heading_key": "85dec058533d4b38",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -2750,12 +2908,13 @@
           "chunk_uids": [
             "17a42596ad54bc8a"
           ],
-          "marked_important": true
+          "marked_important": true,
+          "title_source": "book-pdf"
         },
         {
           "id": "s6-17",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Formfaktor",
+          "title_status": "verified",
           "heading_key": "d7d8b8d28a79ee82",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -2766,12 +2925,13 @@
           "chunk_uids": [
             "be2407c65acc1907"
           ],
-          "marked_important": true
+          "marked_important": true,
+          "title_source": "book-pdf"
         },
         {
           "id": "s6-18",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Demodulering",
+          "title_status": "verified",
           "heading_key": "73882da3315c598a",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -2784,12 +2944,13 @@
             "52a23fd493ddfb5f",
             "e3cd74c5546fc99b"
           ],
-          "marked_important": true
+          "marked_important": true,
+          "title_source": "book-pdf"
         },
         {
           "id": "s6-19",
-          "title": null,
-          "title_status": "proposed",
+          "title": "FM-deteksjon",
+          "title_status": "verified",
           "heading_key": "6413409a308312e0",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -2799,12 +2960,13 @@
           "chunk_uids": [
             "69f923c0729dc7e6"
           ],
-          "marked_important": false
+          "marked_important": false,
+          "title_source": "book-pdf"
         },
         {
           "id": "s6-20",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Flankedetektering",
+          "title_status": "verified",
           "heading_key": "6cd5489463256e4d",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -2814,12 +2976,13 @@
           "chunk_uids": [
             "36fb5b2d6fb96234"
           ],
-          "marked_important": false
+          "marked_important": false,
+          "title_source": "book-pdf"
         },
         {
           "id": "s6-21",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Forholdsdetektoren",
+          "title_status": "verified",
           "heading_key": "72cb09d4e8de707c",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -2831,12 +2994,13 @@
             "230c6ad7684f7a08",
             "1b6882b719159f1d"
           ],
-          "marked_important": true
+          "marked_important": true,
+          "title_source": "book-pdf"
         },
         {
           "id": "s6-22",
-          "title": null,
-          "title_status": "proposed",
+          "title": "SSB-deteksjon",
+          "title_status": "verified",
           "heading_key": "ee060e96b7796ffc",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -2849,12 +3013,13 @@
             "f6343bfb795c8b14",
             "13373c7b88964306"
           ],
-          "marked_important": true
+          "marked_important": true,
+          "title_source": "book-pdf"
         },
         {
           "id": "s6-23",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Morsemottaking",
+          "title_status": "verified",
           "heading_key": "3b3d7c0b35ea3699",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -2865,12 +3030,13 @@
           "chunk_uids": [
             "8ade9205483bf4a9"
           ],
-          "marked_important": true
+          "marked_important": true,
+          "title_source": "book-pdf"
         },
         {
           "id": "s6-24",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Støybegrensning og brussperre",
+          "title_status": "verified",
           "heading_key": "285da9eddbcc8908",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -2882,12 +3048,13 @@
             "9c7bb7b84f4203f2",
             "1e40c5c072b2e29d"
           ],
-          "marked_important": false
+          "marked_important": false,
+          "title_source": "book-pdf"
         },
         {
           "id": "s6-25",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Eksterne forforsterkere for RF",
+          "title_status": "verified",
           "heading_key": "b616e95451743ed3",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -2900,12 +3067,13 @@
             "974174d055515c42",
             "88a8963f0dc38b67"
           ],
-          "marked_important": true
+          "marked_important": true,
+          "title_source": "book-pdf"
         },
         {
           "id": "s6-26",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Forforsterker i masten",
+          "title_status": "verified",
           "heading_key": "efb67b68d1afa6a1",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -2915,12 +3083,13 @@
           "chunk_uids": [
             "a1bb6a5fd3af6229"
           ],
-          "marked_important": false
+          "marked_important": false,
+          "title_source": "book-pdf"
         },
         {
           "id": "s6-27",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Oppsummering",
+          "title_status": "verified",
           "heading_key": "12df0ebf6a7b734c",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -2930,12 +3099,13 @@
           "chunk_uids": [
             "881570e01b06e518"
           ],
-          "marked_important": true
+          "marked_important": true,
+          "title_source": "book-pdf"
         },
         {
           "id": "s6-28",
-          "title": null,
-          "title_status": "proposed",
+          "title": "Nedkonvertere og transvertere",
+          "title_status": "verified",
           "heading_key": "88a945e17e4846d6",
           "ocr_quality": "ok",
           "ocr_issues": [],
@@ -2947,7 +3117,8 @@
             "a2fe480f3b131c26",
             "eaaefbf85d45a6c6"
           ],
-          "marked_important": true
+          "marked_important": true,
+          "title_source": "book-pdf"
         }
       ],
       "title_key": "17d8f45266360826",
@@ -2955,6 +3126,2441 @@
         "6-1",
         "6-17"
       ]
+    },
+    {
+      "number": 7,
+      "title": "Digital signalbehandling",
+      "title_status": "verified",
+      "scanned": true,
+      "sections": [
+        {
+          "id": "s7-01",
+          "title": null,
+          "title_status": "proposed",
+          "heading_key": null,
+          "ocr_quality": "suspect",
+          "ocr_issues": [
+            "no_heading"
+          ],
+          "printed_pages": [],
+          "chunk_uids": [
+            "bd5be295acc3f670"
+          ],
+          "marked_important": false
+        },
+        {
+          "id": "s7-02",
+          "title": "Bruk av digital signalbehandling",
+          "title_status": "verified",
+          "heading_key": "13a35c63dc0545fb",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "70a0b7b8ec4bcfad"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s7-03",
+          "title": "Diskrete verdier",
+          "title_status": "verified",
+          "heading_key": "a8c9998a6f9889d8",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "510443f7aa4e801d"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s7-04",
+          "title": "Kvantisering – digitalisering av amplitude",
+          "title_status": "verified",
+          "heading_key": "dfbedbb6c9e64d58",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "870eda9d68906909",
+            "9741cd74c9908911"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s7-05",
+          "title": "Sampling - digitalisering av tid",
+          "title_status": "verified",
+          "heading_key": "f770779cd77d84ed",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "fb1160c055b2b9e6",
+            "9495dd464dc863bf",
+            "2d06a92a29d8e927",
+            "c8324d418bb226c2"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s7-06",
+          "title": "Digitale filtre",
+          "title_status": "verified",
+          "heading_key": "3cb9fb443927ac8f",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "c25878adf978a36b",
+            "77d5ada6beb501e2",
+            "44cee9878c973d77",
+            "6e2d55328e97687b"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s7-07",
+          "title": "Eksempel på en programvaredefinert mottaker (SDR) med spektralvisning",
+          "title_status": "verified",
+          "heading_key": "1bdffa8c013d2eb8",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "3315503c54f6bafc",
+            "3d39a61f1c5276f2",
+            "e006fa1301e73602"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        }
+      ],
+      "title_key": "1f4cb1b74f550728",
+      "source": "book",
+      "printed_pages_known": false
+    },
+    {
+      "number": 8,
+      "title": "Fødekabler og antenner",
+      "title_status": "verified",
+      "scanned": true,
+      "sections": [
+        {
+          "id": "s8-01",
+          "title": "Fødekabler",
+          "title_status": "verified",
+          "heading_key": "7da7bab67f1ade18",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "17051c20e46f7e76",
+            "39f790b628789517"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s8-02",
+          "title": "Balansert og ubalansert kabel",
+          "title_status": "verified",
+          "heading_key": "e95811d510e2b4b5",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "fd84f8b5047b1405",
+            "33c39909adba17f6",
+            "0901bd234a901d9e"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s8-03",
+          "title": "Stående bølger",
+          "title_status": "verified",
+          "heading_key": "c0fe100fe8811d40",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "499f02b266e65efb",
+            "0a5f2cb98f30d2ed"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s8-04",
+          "title": "Impedanstransformering",
+          "title_status": "verified",
+          "heading_key": "0a504b1c29298112",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "337272941f079113",
+            "2c0205e953fe900c"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s8-05",
+          "title": "Standbølgeforhold (SWR)",
+          "title_status": "verified",
+          "heading_key": "208a43509c43f2e9",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "4c86f1e01dac4fde",
+            "ed4e1b84eb26ff36"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s8-06",
+          "title": "Returtap",
+          "title_status": "verified",
+          "heading_key": "5e6d66bce676f78e",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "54a723ccd1c464f4",
+            "a6e33aeb8933d765"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s8-07",
+          "title": "Kabeltap",
+          "title_status": "verified",
+          "heading_key": "d5edcdb3238d2a36",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "9c3e48403abaf43a",
+            "9c8cd03a22ce7871",
+            "a2c9c35ea5784a6e"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s8-08",
+          "title": "Hastighetsfaktor",
+          "title_status": "verified",
+          "heading_key": "cf9e8fc0097fa46a",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "1df5d3a635681825"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s8-09",
+          "title": "Effektbegrensninger i fødekabelen",
+          "title_status": "verified",
+          "heading_key": "1bc6262c023cedf4",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "64284e5d7e24a372"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s8-10",
+          "title": "Bølgeledere",
+          "title_status": "verified",
+          "heading_key": "7a29960a095e2a7a",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "3c2eb8b6ef560c63",
+            "17eb4d009386fb94"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s8-11",
+          "title": "Dipolantennen",
+          "title_status": "verified",
+          "heading_key": "de01a57e132a6004",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "acc9a2bd416e618d",
+            "37de649b2e10dfdd",
+            "ccc85b8735433231"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s8-12",
+          "title": "Strålingsmønster",
+          "title_status": "verified",
+          "heading_key": "0690340fa671defb",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "13a97c06eb9180ff"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s8-13",
+          "title": "Kvartbølge jordplanantenne",
+          "title_status": "verified",
+          "heading_key": "35ff8d1f41a975fb",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "a22447ead1bd9fb5",
+            "7165365096b097c0"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s8-14",
+          "title": "5/8 λ vertikalantenne",
+          "title_status": "verified",
+          "heading_key": "00861bb6275c2808",
+          "ocr_quality": "suspect",
+          "ocr_issues": [
+            "mostly_fragments",
+            "unexpected_characters"
+          ],
+          "printed_pages": [],
+          "chunk_uids": [
+            "4126b24a14b1aae9"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf",
+          "title_note": "casing of names and symbols corrected by hand"
+        },
+        {
+          "id": "s8-15",
+          "title": "Foldet dipol",
+          "title_status": "verified",
+          "heading_key": "f70193bd7effdddd",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "5163b32b12630a7d"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s8-16",
+          "title": "Yagi-Uda-antenne",
+          "title_status": "verified",
+          "heading_key": "84999b69a8a880b8",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "4808a405caf5aa73",
+            "d1b734f89501bb21"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s8-17",
+          "title": "Quad-antenne",
+          "title_status": "verified",
+          "heading_key": "70c1fd574df82858",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "87fd2c0832c538c1"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s8-18",
+          "title": "HF-antenner",
+          "title_status": "verified",
+          "heading_key": "172738adc5f071e5",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "8941b11444ea1733"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s8-19",
+          "title": "Bølgefelledipol for HF (trap-dipol)",
+          "title_status": "verified",
+          "heading_key": "53e5630a1d694f52",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "cf2e559a7c5ea90b",
+            "ac40d119a9f4477f"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s8-20",
+          "title": "Retningsantenner for HF",
+          "title_status": "verified",
+          "heading_key": "f225984c7de207a8",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "b2263258e2784877"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s8-21",
+          "title": "Longwire-antenner",
+          "title_status": "verified",
+          "heading_key": "1aea778c4ec2d6b4",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "79e83efef172fd8f",
+            "4abbaedf6e93823c"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s8-22",
+          "title": "Lastspoler (loading coils) og antenneeffektivitet",
+          "title_status": "verified",
+          "heading_key": "17f4350f239385fe",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "ce068c3d42694161"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s8-23",
+          "title": "Utstrålingsvinkler",
+          "title_status": "verified",
+          "heading_key": "a1a5544f8de5a37f",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "53ec11e456d46d34"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s8-24",
+          "title": "Antenne-tuneren (ATU)",
+          "title_status": "verified",
+          "heading_key": "73c24dedaf598753",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "f098043741021880",
+            "71907c5229cfe88e",
+            "772505f9d32c4689"
+          ],
+          "marked_important": true,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s8-25",
+          "title": "Ende-til-ende-forbedring (system gain) - et praktisk eksempel",
+          "title_status": "verified",
+          "heading_key": "3123785345d0c2ba",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "0dbe49000797e1fa",
+            "0c0611455816d652"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        }
+      ],
+      "title_key": "c1852d41851100a5",
+      "source": "book",
+      "printed_pages_known": false
+    },
+    {
+      "number": 9,
+      "title": "Bølgeutbredelse",
+      "title_status": "verified",
+      "scanned": true,
+      "sections": [
+        {
+          "id": "s9-01",
+          "title": null,
+          "title_status": "proposed",
+          "heading_key": null,
+          "ocr_quality": "suspect",
+          "ocr_issues": [
+            "no_heading"
+          ],
+          "printed_pages": [],
+          "chunk_uids": [
+            "56f86feee00bdabc",
+            "ccbc9e9a7c21852f"
+          ],
+          "marked_important": false
+        },
+        {
+          "id": "s9-02",
+          "title": "Polarisasjon",
+          "title_status": "verified",
+          "heading_key": "13a6697961a23386",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "4d4257484d6aec9c",
+            "f7b9e86ce73ef649"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s9-03",
+          "title": "Ionosfæren",
+          "title_status": "verified",
+          "heading_key": "4221647d939d01d3",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "c8732a7858d7f0d7",
+            "a395cbd7c12ef08c"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s9-04",
+          "title": "Refraksjonsprinsippet",
+          "title_status": "verified",
+          "heading_key": "b843ee77e0aca044",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "eeb95aa9eaa3717b",
+            "6032a4181de9b75a",
+            "a34e8fd8547d5334",
+            "27ebadf8d1b63d1c"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s9-05",
+          "title": "Fading",
+          "title_status": "verified",
+          "heading_key": "3096ea53ee000aae",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "110db192f5ac8587"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s9-06",
+          "title": "Skip-sone eller dødsone",
+          "title_status": "verified",
+          "heading_key": "71ce870df50bdc5f",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "3012e20b27d9a117"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s9-07",
+          "title": "Solstorm",
+          "title_status": "verified",
+          "heading_key": "f6603bf288785ed8",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "e1999a822a489a02",
+            "1de217ac868e9535"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s9-08",
+          "title": "Bølgetyper",
+          "title_status": "verified",
+          "heading_key": "15f90c962b417645",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "13f96904df6d3748",
+            "83e4d41fae04cc3e"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s9-09",
+          "title": "Andre VHF/UHF-bølgetyper",
+          "title_status": "verified",
+          "heading_key": "07f3235cc0f8a8b0",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "a017420771e8cbe5"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        }
+      ],
+      "title_key": "32caf1738bffa08f",
+      "source": "book",
+      "printed_pages_known": false
+    },
+    {
+      "number": 10,
+      "title": "EMC – elektromagnetisk kompatibilitet",
+      "title_status": "verified",
+      "scanned": true,
+      "sections": [
+        {
+          "id": "s10-01",
+          "title": null,
+          "title_status": "proposed",
+          "heading_key": null,
+          "ocr_quality": "suspect",
+          "ocr_issues": [
+            "no_heading"
+          ],
+          "printed_pages": [],
+          "chunk_uids": [
+            "82d30bfd04ed3fb0"
+          ],
+          "marked_important": false
+        },
+        {
+          "id": "s10-02",
+          "title": "Hva er EMC?",
+          "title_status": "verified",
+          "heading_key": "28260d57786807b7",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "321e6b08df72a901"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s10-03",
+          "title": "Norske EMC-regler",
+          "title_status": "verified",
+          "heading_key": "6e077f33a498cdb1",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "ea9e8e2e3fcb4f91",
+            "d868ec02c5c68637"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s10-04",
+          "title": "Hvordan påvirker dette amatøren?",
+          "title_status": "verified",
+          "heading_key": "3007ed74e195fd76",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "9dfae6400cae06ca"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s10-05",
+          "title": "Falsk (spurious) utstråling",
+          "title_status": "verified",
+          "heading_key": "2ae4c4e0d7447736",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "c639eb0abd9f70c2"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s10-06",
+          "title": "Utilsiktet utstråling",
+          "title_status": "verified",
+          "heading_key": "5f487778fbdea62f",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "65bec3e3d7e7689c"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s10-07",
+          "title": "RF-jord",
+          "title_status": "verified",
+          "heading_key": "891ee4457bbb429e",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "07574f89c5e901f0",
+            "c544a829babcd036"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s10-08",
+          "title": "Strømnettet, strømkabler og andre tilkoblinger",
+          "title_status": "verified",
+          "heading_key": "d7548fa6cb50fa43",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "f2e8d4741586c0ac"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s10-09",
+          "title": "Flerpunktsjording",
+          "title_status": "verified",
+          "heading_key": "7d317020336f9bc0",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "0f4ceeaa9cc63a7f"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s10-10",
+          "title": "Koaksialkabler",
+          "title_status": "verified",
+          "heading_key": "dafe81d9ebdb761b",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "f410faf7551fd01d"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s10-11",
+          "title": "Regelmessige tester",
+          "title_status": "verified",
+          "heading_key": "a7bcfb69d2fb6877",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "89048cd1b3721bd1"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s10-12",
+          "title": "Utstrålt feltstyrke",
+          "title_status": "verified",
+          "heading_key": "3b6c40d9cec2a7f7",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "25d0567f4e716da9",
+            "8c8de8fb582a2e5e"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s10-13",
+          "title": "Sendermodus",
+          "title_status": "verified",
+          "heading_key": "f98fe59cc44f8c6d",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "f3e8a55defd1184f"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s10-14",
+          "title": "Valg av antennetype, lokalisering og føding",
+          "title_status": "verified",
+          "heading_key": "ffdd2307478f8df3",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "827af8643826cd72",
+            "8654a44a38d7d57b",
+            "79c548eb8daecaec"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s10-15",
+          "title": "Koblingsmekanismer",
+          "title_status": "verified",
+          "heading_key": "7501715196afe782",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "2383b0358c217227",
+            "e05b6d8c1895a788",
+            "192176052c1135f1",
+            "1196ee29ef7f1aa2",
+            "81e012c3e7843529",
+            "8f179b156d53fe69",
+            "738a5ea9b98eb38a",
+            "a25fa21a977f2100",
+            "1f3f6313e4be50a3",
+            "679c18f4dbb48422",
+            "6c6bd9f2dd0f505c",
+            "3b3bba782e2f336d",
+            "080c16909bcf4330"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s10-16",
+          "title": "Filtre",
+          "title_status": "verified",
+          "heading_key": "084fddef071edf35",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "49cb52605fa5b71e",
+            "067d4e0eb6dde498",
+            "3b0058d850a40c5c"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s10-17",
+          "title": "Filter mot strømnettforstyrrelser",
+          "title_status": "verified",
+          "heading_key": "98eed5456e633c30",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "30d33a9154d24182",
+            "cfbe6fb74b3949a0"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s10-18",
+          "title": "Skjermbruddfilter",
+          "title_status": "verified",
+          "heading_key": "1aa401771c5fb574",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "4c37c28f062479e4",
+            "330d62982f833edf"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s10-19",
+          "title": "Utilstrekkelig immunitet i det forstyrrede utstyret",
+          "title_status": "verified",
+          "heading_key": "adff64af55c69500",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "6cb6c886b755c987",
+            "d527fbcfbfde9290"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s10-20",
+          "title": "Hvis du får klage",
+          "title_status": "verified",
+          "heading_key": "ae225fa2508ab5db",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "08038459fe9d57f0",
+            "c474a5f82258b2d5",
+            "71708e39878ce588",
+            "ffb0756eeab07457",
+            "4ffd8126b8485150",
+            "6fe3b8258d514e45"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        }
+      ],
+      "title_key": "dc297bb723e8dd5b",
+      "source": "book",
+      "printed_pages_known": false
+    },
+    {
+      "number": 11,
+      "title": "Måleteknikk",
+      "title_status": "verified",
+      "scanned": true,
+      "sections": [
+        {
+          "id": "s11-01",
+          "title": null,
+          "title_status": "proposed",
+          "heading_key": null,
+          "ocr_quality": "suspect",
+          "ocr_issues": [
+            "no_heading"
+          ],
+          "printed_pages": [],
+          "chunk_uids": [
+            "3defee9975e215a7",
+            "a1f3a392f9933d34"
+          ],
+          "marked_important": false
+        },
+        {
+          "id": "s11-02",
+          "title": "Voltmeteret",
+          "title_status": "verified",
+          "heading_key": "6a6ca6ca429f421a",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "9a7b25e02253a757"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s11-03",
+          "title": "Amperemeter - måling av store strømmer",
+          "title_status": "verified",
+          "heading_key": "9957219ebb7b2017",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "a31655167d0d20c2"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s11-04",
+          "title": "Vekselstrøm og -spenning",
+          "title_status": "verified",
+          "heading_key": "872378a1062f1326",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "8cb0ad2e9b7a6c26"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s11-05",
+          "title": "Instrumentets påvirkning på kretsene",
+          "title_status": "verified",
+          "heading_key": "b933685cc5e11bae",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "77cce1d3c9ef5440"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s11-06",
+          "title": "Måling av radiofrekvenser (RF) - diodeprobe",
+          "title_status": "verified",
+          "heading_key": "6cddee40ed2ed16f",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "a22dd5bea3efe10d"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s11-07",
+          "title": "Stående bølger – standbølgemeter (SWR-meter)",
+          "title_status": "verified",
+          "heading_key": "6d731d7c0eb389b8",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "2bca00e29384b9b4",
+            "60207f2d88e4c0ba",
+            "00c94041973ba9ec"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf",
+          "title_note": "casing of names and symbols corrected by hand"
+        },
+        {
+          "id": "s11-08",
+          "title": "Måling av RF-effekt",
+          "title_status": "verified",
+          "heading_key": "dba2fa6014bbf47c",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "d594b11fd0ec691d",
+            "eccbb03ad035aa74",
+            "8e11a5d190189115"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s11-09",
+          "title": "Absorpsjonsbølgemeter",
+          "title_status": "verified",
+          "heading_key": "5ea0a605b6bd39a9",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "d3352e18d928b1f2"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s11-10",
+          "title": "Kalibrering av VFO i en sender",
+          "title_status": "verified",
+          "heading_key": "567ed0c768cc32ae",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "421defbacc01dfd4"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s11-11",
+          "title": "Oscilloskopet",
+          "title_status": "verified",
+          "heading_key": "63071e7f5bedb931",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "169534e9396e206c",
+            "bbb692ff885ffff8",
+            "b5361f281009b962"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s11-12",
+          "title": "Frekvensteller",
+          "title_status": "verified",
+          "heading_key": "a53d10f2f8070115",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "0af47fac40d3f415"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s11-13",
+          "title": "Mottakeren som måleinstrument",
+          "title_status": "verified",
+          "heading_key": "6579d6ff4654c088",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "5a1dd6fd9f159e48",
+            "5bd5d695603fb587"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s11-14",
+          "title": "Samlet frekvensavvik",
+          "title_status": "verified",
+          "heading_key": "0c3ae973b78cc6ce",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "c1c17f7a15244073"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s11-15",
+          "title": "Dempeledd (attenuator)",
+          "title_status": "verified",
+          "heading_key": "c6f0f69b11a46fa4",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "3d978d0db2b1222c"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s11-16",
+          "title": "Desibel (dB)",
+          "title_status": "verified",
+          "heading_key": "8a28b412c2271e12",
+          "ocr_quality": "suspect",
+          "ocr_issues": [
+            "implausible_word"
+          ],
+          "printed_pages": [],
+          "chunk_uids": [
+            "f924392ee733e807",
+            "dafa89d8e365795c",
+            "a3b900e180be4f69",
+            "8d36ef8dac57f231"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s11-17",
+          "title": "Beregning med dBV",
+          "title_status": "verified",
+          "heading_key": "38ab78fcd0f4aff2",
+          "ocr_quality": "suspect",
+          "ocr_issues": [
+            "implausible_word"
+          ],
+          "printed_pages": [],
+          "chunk_uids": [
+            "0d186f441322d9e5",
+            "74e72474d2624cba"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s11-18",
+          "title": "Multimeter og målinger",
+          "title_status": "verified",
+          "heading_key": "3f41cc50a827bdaf",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "375b3bef44d8f47e",
+            "886ad8b45f2f9f38",
+            "36adffb6da9c0c5a",
+            "a5c1e85fea25c8bb",
+            "5cb0ea187f5d8503"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        }
+      ],
+      "title_key": "86c86843b467b09c",
+      "source": "book",
+      "printed_pages_known": false
+    },
+    {
+      "number": 12,
+      "title": "Operasjon, prosedyrer og lisensregler",
+      "title_status": "verified",
+      "scanned": true,
+      "sections": [
+        {
+          "id": "s12-01",
+          "title": null,
+          "title_status": "proposed",
+          "heading_key": null,
+          "ocr_quality": "suspect",
+          "ocr_issues": [
+            "no_heading"
+          ],
+          "printed_pages": [],
+          "chunk_uids": [
+            "d5416813a421c39e",
+            "76b86faed1b6a6d5"
+          ],
+          "marked_important": false
+        },
+        {
+          "id": "s12-02",
+          "title": "Operasjonsteknikk og prosedyrer",
+          "title_status": "verified",
+          "heading_key": "9c351e99d0a52e3c",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "4fb695e1b367a36b",
+            "f795902c4fedf34a"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s12-03",
+          "title": "Operasjonstyper",
+          "title_status": "verified",
+          "heading_key": "8dc1c553f3711279",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "b4edc3c0573229e4",
+            "7dabc04fcc274780"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s12-04",
+          "title": "Hva er en kontakt?",
+          "title_status": "verified",
+          "heading_key": "fca1578296bbbcb7",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "19998dfa05871016",
+            "5f4a102d538a9c83"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s12-05",
+          "title": "Opprettelse av kontakt",
+          "title_status": "verified",
+          "heading_key": "260576f16ca67dd2",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "1027660c0c867f13",
+            "fa9e56b4bc92f926",
+            "e4343263b06775be",
+            "b3a3b970d8132fab",
+            "231e658c6d8e330a"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s12-06",
+          "title": "Kontaktens innhold",
+          "title_status": "verified",
+          "heading_key": "433df601f94829bc",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "7cc00f6710f52e7c"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s12-07",
+          "title": "Avslutte kontakten",
+          "title_status": "verified",
+          "heading_key": "e6986bb426dc9168",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "d1192a8b82851316",
+            "8c51939f694ec601"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s12-08",
+          "title": "Anrop i konkurranse (contest)",
+          "title_status": "verified",
+          "heading_key": "7c4476a03958a443",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "f561f31e273baa2f"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s12-09",
+          "title": "Liste- og nettoperasjoner",
+          "title_status": "verified",
+          "heading_key": "ad01f06af01e0be4",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "fc8be73ccab1d708",
+            "07735f8be6f65d6a"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s12-10",
+          "title": "FM og operasjon gjennom reléstasjoner",
+          "title_status": "verified",
+          "heading_key": "8ed9eb79ea630a08",
+          "ocr_quality": "suspect",
+          "ocr_issues": [
+            "unexpected_characters"
+          ],
+          "printed_pages": [],
+          "chunk_uids": [
+            "2f1128e5427d3248",
+            "d8853025cf1db0f7"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s12-11",
+          "title": "Operasjon på bånd og segmenter som ikke er kanalseparert",
+          "title_status": "verified",
+          "heading_key": "03c4ee34399174ef",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "bee82eba9219271b"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s12-12",
+          "title": "QSL-kort",
+          "title_status": "verified",
+          "heading_key": "e69b0a5b70104498",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "cfee4b1738c3a312",
+            "a86d179173f79636"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s12-13",
+          "title": "Tekniske og andre hensyn",
+          "title_status": "verified",
+          "heading_key": "5e0ede3014c463bf",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "0591cf1e96150c1e",
+            "71bc9fbe37e7e77e"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s12-14",
+          "title": "Amatørtjenesten og din lisens",
+          "title_status": "verified",
+          "heading_key": "17b6ee9e7488cc62",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "8a8191e2fcac45e5",
+            "c785f249db27aecb",
+            "fd84d6c25ccd4a73"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s12-15",
+          "title": "International Telecommunication Union (ITU)",
+          "title_status": "verified",
+          "heading_key": "dd0edd08be8154b8",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "9d34b4b96e40d324",
+            "2e2eb78990e04bcb"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf",
+          "title_note": "casing of names and symbols corrected by hand"
+        },
+        {
+          "id": "s12-16",
+          "title": "Definisjoner",
+          "title_status": "verified",
+          "heading_key": "0398ddee2bd7e9b4",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "6372a8334a716e14"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s12-17",
+          "title": "Kallesignaler",
+          "title_status": "verified",
+          "heading_key": "2db5b716a9fd1b4d",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "7ccd2de2870173f7",
+            "0c32cb0119085f13"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s12-18",
+          "title": "Betegnelse av signaltyper",
+          "title_status": "verified",
+          "heading_key": "7466ea16ebfc9206",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "0681047b2ac5f892"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s12-19",
+          "title": "Frekvensallokeringer",
+          "title_status": "verified",
+          "heading_key": "390c718dd03f8408",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "2ab7a249c9f5615f",
+            "c681197cc7a01f7c",
+            "403ed9a4ad550ecb"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s12-20",
+          "title": "Klassifisering av signaltyper",
+          "title_status": "verified",
+          "heading_key": "dd5972898e32be6b",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "e482a56df79b1a1e",
+            "3faeed9f7786e45f"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s12-21",
+          "title": "Nasjonal administrasjon av telekommunikasjon",
+          "title_status": "verified",
+          "heading_key": "692994e9d5a14a16",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "09770206facbd2f4",
+            "6d3665a743a40988",
+            "b25706c1acb2e5e9"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s12-22",
+          "title": "Operasjon i utlandet",
+          "title_status": "verified",
+          "heading_key": "206cc37e66b30b22",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "be93aaffef72711b",
+            "f1cfdd025b2e94a2",
+            "c3f52ee3cdc1c80c",
+            "196c743a9f7e770e",
+            "fdddb6e4eddea164",
+            "fcacfe93a0fa3718",
+            "070abb361cef55ef"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s12-23",
+          "title": "Den internasjonale amatørradiounion (IARU)",
+          "title_status": "verified",
+          "heading_key": "6d1925c7d5105548",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "f48f784ef98b1219",
+            "cb2638234c7efc73"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s12-24",
+          "title": "Norsk Radio Relæ Liga",
+          "title_status": "verified",
+          "heading_key": "5b42c6765b694d80",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "5cad4c5d54dbe108"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf",
+          "title_note": "casing of names and symbols corrected by hand"
+        }
+      ],
+      "title_key": "dcb7e90a59b84f0c",
+      "source": "book",
+      "printed_pages_known": false
+    },
+    {
+      "number": 13,
+      "title": "Sikkerhet for radioamatøren",
+      "title_status": "verified",
+      "scanned": true,
+      "sections": [
+        {
+          "id": "s13-01",
+          "title": null,
+          "title_status": "proposed",
+          "heading_key": null,
+          "ocr_quality": "suspect",
+          "ocr_issues": [
+            "no_heading"
+          ],
+          "printed_pages": [],
+          "chunk_uids": [
+            "5d6599b48ef941c3"
+          ],
+          "marked_important": false
+        },
+        {
+          "id": "s13-02",
+          "title": "Sikker bruk av elektrisitet",
+          "title_status": "verified",
+          "heading_key": "926b7f499950ab60",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "4a80de49102fd224"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s13-03",
+          "title": "Elektrisk sjokk",
+          "title_status": "verified",
+          "heading_key": "77968f12678049d2",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "d66cc5a634d57257",
+            "ebec1e3ac781da48"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s13-04",
+          "title": "Sikkerhetsjording",
+          "title_status": "verified",
+          "heading_key": "f056b90c811ffa92",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "bfae33b0f4c6f489",
+            "c2bdc3f172122adf",
+            "4b1fdb166cb40966"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s13-05",
+          "title": "Slå av utstyret",
+          "title_status": "verified",
+          "heading_key": "7c30681ca015b2f2",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "6cc26db27b48fc02"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s13-06",
+          "title": "Andre forholdsregler",
+          "title_status": "verified",
+          "heading_key": "74655fd90f11db0e",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "c814140966582694"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s13-07",
+          "title": "Ta sikkerheten med deg",
+          "title_status": "verified",
+          "heading_key": "d18b92740900124d",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "49f2ce9e3b8574a9",
+            "a47975848022b262"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s13-08",
+          "title": "Sikkerhet i kjøretøyer",
+          "title_status": "verified",
+          "heading_key": "c06a334300ade863",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "eb4be9eb3fb5043c",
+            "6a8df0e78478eca2"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s13-09",
+          "title": "Eksponering fra RF-energi",
+          "title_status": "verified",
+          "heading_key": "7186b37ae8a64669",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "0bcfa8b2a4c69f39",
+            "784866d8e9684393"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s13-10",
+          "title": "Lyn og torden",
+          "title_status": "verified",
+          "heading_key": "ec04096e9332dff9",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "92c79eae6b8e34b3",
+            "c68109893689751f"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s13-11",
+          "title": "Sikkerhet ved bruk av verktøy",
+          "title_status": "verified",
+          "heading_key": "9e01c1d0962d7e0f",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "32a91364c24ce127"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s13-12",
+          "title": "Sikkerhet først! Bruken av håndverktøy",
+          "title_status": "verified",
+          "heading_key": "2a10f6c76cad6e80",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "299f12beca300de6"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf",
+          "title_note": "casing of names and symbols corrected by hand"
+        },
+        {
+          "id": "s13-13",
+          "title": "Verktøykofferten din",
+          "title_status": "verified",
+          "heading_key": "67415adebcec8776",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "5e8a7995f27c4fc8"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s13-14",
+          "title": "Håndtering av verktøy",
+          "title_status": "verified",
+          "heading_key": "1db2842492c0114a",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "35fce3063c395681"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s13-15",
+          "title": "Bruk av skrustikke",
+          "title_status": "verified",
+          "heading_key": "cd0bea7ce7066dca",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "f40d3d662d9aba39"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s13-16",
+          "title": "Farer ved bruk av drill",
+          "title_status": "verified",
+          "heading_key": "da31247ca3e294ab",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "11f0af4d9c88dcaa"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s13-17",
+          "title": "Annen informasjon",
+          "title_status": "verified",
+          "heading_key": "4a46595f72a2a0b6",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "99124bb7ca046c52"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s13-18",
+          "title": "Loddeferdigheter og sikkerhet",
+          "title_status": "verified",
+          "heading_key": "19d17117e759a8ec",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "85999b2e7e7ff28b"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s13-19",
+          "title": "Hva er lodding?",
+          "title_status": "verified",
+          "heading_key": "292f2d2a0a47cd97",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "9f11f85561607db3"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s13-20",
+          "title": "Hva er loddetinn laget av?",
+          "title_status": "verified",
+          "heading_key": "dad0e76600b149e2",
+          "ocr_quality": "suspect",
+          "ocr_issues": [
+            "possibly_split_heading"
+          ],
+          "printed_pages": [],
+          "chunk_uids": [
+            "e8bfe88c0836782f"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s13-21",
+          "title": "Hva er flussmiddel?",
+          "title_status": "verified",
+          "heading_key": "f9b0d1bb795eade7",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "d3c40775e5e71b6f"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s13-22",
+          "title": "Lodding av ulike metaller",
+          "title_status": "verified",
+          "heading_key": "a7d2cb3ac71d06b1",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "31e3d9f86a761ad6"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s13-23",
+          "title": "Fortinning av loddebolten",
+          "title_status": "verified",
+          "heading_key": "5ea33f193ff24aad",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "3998e33bd997ddbc"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s13-24",
+          "title": "Raske loddinger, men ikke for raske",
+          "title_status": "verified",
+          "heading_key": "b9a332cfbc245bdb",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "7b28846a83a17bb7"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s13-25",
+          "title": "Gode loddeskjøter",
+          "title_status": "verified",
+          "heading_key": "2ee62237f3c8166c",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "bf0e49db6e3573a7"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s13-26",
+          "title": "Bruk av loddestativ",
+          "title_status": "verified",
+          "heading_key": "54e1d754d0b62379",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "2a7ca34d49e50f92"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s13-27",
+          "title": "Lufting",
+          "title_status": "verified",
+          "heading_key": "32d02fc1e7c84aba",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "b4fdfdb293bc0834"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s13-28",
+          "title": "Øyebeskyttelse",
+          "title_status": "verified",
+          "heading_key": "82593e38a6ee9b85",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "84986d9d8a22ab0f"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s13-29",
+          "title": "Og til slutt…",
+          "title_status": "verified",
+          "heading_key": "2d21a57c5b0990be",
+          "ocr_quality": "suspect",
+          "ocr_issues": [
+            "unexpected_characters"
+          ],
+          "printed_pages": [],
+          "chunk_uids": [
+            "4f474aa54e97c794"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        }
+      ],
+      "title_key": "63c9f6d4e6d74bca",
+      "source": "book",
+      "printed_pages_known": false
+    },
+    {
+      "number": 14,
+      "title": "CEPT rekommandasjon T/R 61-02 – vedlegg 6, første del",
+      "title_status": "verified",
+      "scanned": true,
+      "sections": [
+        {
+          "id": "s14-01",
+          "title": null,
+          "title_status": "proposed",
+          "heading_key": null,
+          "ocr_quality": "suspect",
+          "ocr_issues": [
+            "no_heading"
+          ],
+          "printed_pages": [],
+          "chunk_uids": [
+            "b5720100febf1f2e"
+          ],
+          "marked_important": false
+        },
+        {
+          "id": "s14-02",
+          "title": "Sertifikat for harmonisert amatørradioeksamen (SHARE)",
+          "title_status": "verified",
+          "heading_key": "6868f38847a3739b",
+          "ocr_quality": "suspect",
+          "ocr_issues": [
+            "leading_punctuation",
+            "unexpected_characters"
+          ],
+          "printed_pages": [],
+          "chunk_uids": [
+            "cbfbdba5563f45f8"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf",
+          "title_note": "casing of names and symbols corrected by hand"
+        },
+        {
+          "id": "s14-03",
+          "title": "Innledning",
+          "title_status": "verified",
+          "heading_key": "5b2704d50dc6ed81",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "2a9cd651b740ea87"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s14-04",
+          "title": "A – Teknisk innhold",
+          "title_status": "verified",
+          "heading_key": "d2f2d0ac9b08d33a",
+          "ocr_quality": "suspect",
+          "ocr_issues": [
+            "unexpected_characters"
+          ],
+          "printed_pages": [],
+          "chunk_uids": [
+            "f8c3f66e1021f7ac"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf",
+          "title_note": "casing of names and symbols corrected by hand"
+        },
+        {
+          "id": "s14-05",
+          "title": "B – Nasjonale og internasjonale operasjonsregler og prosedyrer (kapittel 12 og 16)",
+          "title_status": "verified",
+          "heading_key": "dfde8e41d8d549f7",
+          "ocr_quality": "suspect",
+          "ocr_issues": [
+            "unexpected_characters"
+          ],
+          "printed_pages": [],
+          "chunk_uids": [
+            "cc87c51665d48c46"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf",
+          "title_note": "casing of names and symbols corrected by hand"
+        },
+        {
+          "id": "s14-06",
+          "title": "Nasjonale og internasjonale regler som er relevante for amatørtjenesten og amatørsatellittjenesten (kapittel 5, 9, 12 & 14)",
+          "title_status": "verified",
+          "heading_key": "103c59354dba7348",
+          "ocr_quality": "suspect",
+          "ocr_issues": [
+            "unexpected_characters"
+          ],
+          "printed_pages": [],
+          "chunk_uids": [
+            "dc008808fd428e88"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        }
+      ],
+      "title_key": "80405e9987647a9d",
+      "source": "book",
+      "printed_pages_known": false
+    },
+    {
+      "number": 15,
+      "title": "Nyttige nettsider",
+      "title_status": "verified",
+      "scanned": true,
+      "sections": [
+        {
+          "id": "s15-01",
+          "title": null,
+          "title_status": "proposed",
+          "heading_key": null,
+          "ocr_quality": "suspect",
+          "ocr_issues": [
+            "no_heading"
+          ],
+          "printed_pages": [],
+          "chunk_uids": [
+            "bb4c4676f1d628d4"
+          ],
+          "marked_important": false
+        },
+        {
+          "id": "s15-02",
+          "title": "Norsk Radio Relæ Liga (NRRL)",
+          "title_status": "verified",
+          "heading_key": "ac8fbe255b79bfc5",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "256512c81ed41f9e"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf",
+          "title_note": "casing of names and symbols corrected by hand"
+        },
+        {
+          "id": "s15-03",
+          "title": "Radio Society of Great Britain (RSGB)",
+          "title_status": "verified",
+          "heading_key": "d8790a7ed6a0fca7",
+          "ocr_quality": "suspect",
+          "ocr_issues": [
+            "implausible_word"
+          ],
+          "printed_pages": [],
+          "chunk_uids": [
+            "641bf849aa79fc77"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf",
+          "title_note": "casing of names and symbols corrected by hand"
+        },
+        {
+          "id": "s15-04",
+          "title": "American Radio Relay League (ARRL)",
+          "title_status": "verified",
+          "heading_key": "c96cafcebfea0cee",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "a32a2cb623201ccd"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf",
+          "title_note": "casing of names and symbols corrected by hand"
+        },
+        {
+          "id": "s15-05",
+          "title": "International Amateur Radio Union (IARU)",
+          "title_status": "verified",
+          "heading_key": "ef4298b925871402",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "4fdb5d23d5717d90"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf",
+          "title_note": "casing of names and symbols corrected by hand"
+        },
+        {
+          "id": "s15-06",
+          "title": "European Communications Office (ECO)",
+          "title_status": "verified",
+          "heading_key": "ef862e0ac668c079",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "be0cc8c4e84a025e"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf",
+          "title_note": "casing of names and symbols corrected by hand"
+        },
+        {
+          "id": "s15-07",
+          "title": "Radioamatørorganisasjoner i andre land",
+          "title_status": "verified",
+          "heading_key": "06362a156c761889",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "87baf9b9d803c6a9"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s15-08",
+          "title": "Frivillige og kommersielle",
+          "title_status": "verified",
+          "heading_key": "ec4ffe88535e92ba",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "ed578a9351dfd875",
+            "ee1e65ef4d03084b",
+            "074328382a14a7a8"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        }
+      ],
+      "title_key": "15caca0275c680a5",
+      "source": "book",
+      "printed_pages_known": false
+    },
+    {
+      "number": 16,
+      "title": "Nyttige opplysninger",
+      "title_status": "verified",
+      "scanned": true,
+      "sections": [
+        {
+          "id": "s16-01",
+          "title": null,
+          "title_status": "proposed",
+          "heading_key": null,
+          "ocr_quality": "suspect",
+          "ocr_issues": [
+            "no_heading"
+          ],
+          "printed_pages": [],
+          "chunk_uids": [
+            "9d3cde3ea51a1cb3"
+          ],
+          "marked_important": false
+        },
+        {
+          "id": "s16-02",
+          "title": "Båndplaner",
+          "title_status": "verified",
+          "heading_key": "522f71c918262dd0",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "d7ec3e35cd639e6b"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s16-03",
+          "title": "Q-koder",
+          "title_status": "verified",
+          "heading_key": "6312ea22ae83f030",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "5d5888ddb7691083"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s16-04",
+          "title": "Eksempel på båndplan – IARU Region 1 – båndplan for 80-meterbåndet",
+          "title_status": "verified",
+          "heading_key": "511356654511a58c",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "a9fb49ffb01ed930"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf",
+          "title_note": "casing of names and symbols corrected by hand"
+        },
+        {
+          "id": "s16-05",
+          "title": "Liste over Q-koder",
+          "title_status": "verified",
+          "heading_key": "7d043959b53bc7d7",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "4d81240dfd110bd5",
+            "37128ae7caa02b79"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s16-06",
+          "title": "Vanlige forkortelser",
+          "title_status": "verified",
+          "heading_key": "9ac09d080f349c80",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "f7850594e1a25e57",
+            "52dcc48cf28a4d1e",
+            "a07e6b55202ca775"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s16-07",
+          "title": "RST-skalaen",
+          "title_status": "verified",
+          "heading_key": "c59e161a65f1eec7",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "ec4dfcdb22f030fd",
+            "b4cbd2465d9a05d3"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        },
+        {
+          "id": "s16-08",
+          "title": "Det fonetiske alfabet",
+          "title_status": "verified",
+          "heading_key": "7d0a7c9353102235",
+          "ocr_quality": "ok",
+          "ocr_issues": [],
+          "printed_pages": [],
+          "chunk_uids": [
+            "6f5b2a99ded64548",
+            "df15a247010a3bd8"
+          ],
+          "marked_important": false,
+          "title_source": "book-pdf"
+        }
+      ],
+      "title_key": "49ec71b0223ea5d0",
+      "source": "book",
+      "printed_pages_known": false
     }
   ]
 }
