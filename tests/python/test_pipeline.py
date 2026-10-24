@@ -186,10 +186,26 @@ class PipelineTest(unittest.TestCase):
         (self.paths.dist / "notes.txt").write_text("see chunk-000123 and private/imported")
         (self.paths.dist / "copy.txt").write_text(SYNTH_TEXT["c4"])
         errs = "\n".join(release_check(self.paths.dist, self.paths)["errors"])
-        self.assertIn("scan.png: file type .png", errs)
+        self.assertIn("scan.png: PNG files are only allowed", errs)
         self.assertIn("source chunk id", errs)
         self.assertIn("private path", errs)
         self.assertIn("8-word passage", errs)
+
+    def test_release_check_allows_png_only_as_small_brand_icons(self):
+        self.repo.approve_templates()
+        publish.publish(self.paths)
+        png = b"\x89PNG\r\n\x1a\n" + b"\0" * 100
+        (self.paths.dist / "brand").mkdir(exist_ok=True)
+        (self.paths.dist / "brand" / "ok.png").write_bytes(png)
+        (self.paths.dist / "brand" / "big.png").write_bytes(png + b"\0" * 300_000)
+        (self.paths.dist / "brand" / "fake.png").write_bytes(b"not a png")
+        (self.paths.dist / "data" / "page.png").write_bytes(png)
+        errors = release_check(self.paths.dist, self.paths)["errors"]
+        errs = "\n".join(errors)
+        self.assertFalse([e for e in errors if e.startswith("brand/ok.png")])
+        self.assertIn("brand/big.png: ", errs)
+        self.assertIn("brand/fake.png: not a PNG", errs)
+        self.assertIn("data/page.png: PNG files are only allowed", errs)
 
     def test_release_check_rejects_mentions_of_scanning(self):
         self.repo.approve_templates()

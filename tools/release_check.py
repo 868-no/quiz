@@ -4,6 +4,7 @@
 
 Checks
 * only web file types (no images from the source, PDFs, JSONL, Markdown, archives);
+  PNG only for the site's own icons and preview image in brand/ (small files);
 * no oversized files;
 * no symlinks;
 * no private markers (chunk ids/uids, private paths, OCR annotations, review data);
@@ -24,6 +25,8 @@ from .common import Paths, words
 ALLOWED_SUFFIXES = {".html", ".css", ".js", ".mjs", ".json", ".svg", ".txt", ".ico", ".webmanifest", ".woff2"}
 HOST_FILES = {"CNAME", ".nojekyll"}  # GitHub Pages control files, checked separately
 MAX_BYTES = 1_500_000
+BRAND_PNG_DIR = "brand"         # the only place PNG files may be: app icons, link preview image
+BRAND_PNG_MAX_BYTES = 300_000
 FORBIDDEN_PATTERNS = [
     (re.compile(r"chunk-\d{6}"), "source chunk id"),
     (re.compile(r"\"(uid|chunk_uids|source_files|pdf_pages?|review_log|provenance|approval|sources|"
@@ -123,6 +126,14 @@ def release_check(root: Path, paths: Paths, *, expect_mode: str = "production") 
                 errors.append("CNAME: must contain a single host name")
             elif f.name == ".nojekyll" and f.stat().st_size:
                 errors.append(".nojekyll: must be empty")
+            continue
+        if f.suffix.lower() == ".png":
+            if rel.parts[0] != BRAND_PNG_DIR or len(rel.parts) != 2:
+                errors.append(f"{rel}: PNG files are only allowed directly in {BRAND_PNG_DIR}/ (site icons)")
+            elif f.stat().st_size > BRAND_PNG_MAX_BYTES:
+                errors.append(f"{rel}: {f.stat().st_size} bytes is larger than {BRAND_PNG_MAX_BYTES} for an icon")
+            elif not f.read_bytes().startswith(b"\x89PNG\r\n\x1a\n"):
+                errors.append(f"{rel}: not a PNG file")
             continue
         if f.suffix.lower() not in ALLOWED_SUFFIXES:
             errors.append(f"{rel}: file type {f.suffix or '(none)'} is not allowed in the public build")

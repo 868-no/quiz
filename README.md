@@ -5,7 +5,8 @@ Visitors pick chapters, answer one question at a time and get immediate feedback
 whether they were right, the correct answer, an explanation, why their choice was
 wrong, and where to read more in the textbook (chapter, section, printed page).
 Questions answered wrong can be practised again, each question has its own link
-(`#q-0045`), and after the first visit the site works offline.
+(`#q-0045`), and after the first visit the site works offline and can be installed
+on a phone's home screen.
 
 The repository also contains the **offline editorial pipeline** that turns the
 private textbook digitization exports into reviewed, original, publishable questions.
@@ -106,7 +107,7 @@ The repository itself is public, so everything committed can be read by anyone.
 | Path | On the site? | Committed (public repo)? | Contents |
 |---|---|---|---|
 | `private/` | **never** | **no** (`.gitignore`) | imported exports and figure crops, LLM prompts/outputs, check reports, audit log, preview build |
-| `dist/` | **yes – this is the deployed site** | no (`.gitignore`; built and deployed by `.github/workflows/pages.yml`) | only `index.html`, `styles.css`, `sw.js`, `js/`, `fonts/`, `data/bank.json`, `CNAME`, `.nojekyll` |
+| `dist/` | **yes – this is the deployed site** | no (`.gitignore`; built and deployed by `.github/workflows/pages.yml`) | only `index.html`, `styles.css`, `sw.js`, `manifest.webmanifest`, `js/`, `fonts/`, `brand/` (icons), `data/bank.json`, `CNAME`, `.nojekyll` |
 | `web/` | yes (copied into `dist/`) | yes | site source code |
 | `content/` | only the allowlisted projection in `data/bank.json` | yes | original questions (incl. review history), glossary, chapter registry, template schemas |
 | `tools/`, `tests/`, `config/`, `docs/` | no | yes | pipeline, tests, configuration, documentation |
