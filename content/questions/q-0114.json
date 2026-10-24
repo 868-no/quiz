@@ -727,6 +727,197 @@
         },
         "verifier": "deterministic-v1"
       }
+    },
+    {
+      "revision": 5,
+      "status": "needs_review",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "hard",
+      "chapter": 6,
+      "section_ids": [
+        "s6-16"
+      ],
+      "topic_ids": [
+        "mellomfrekvens"
+      ],
+      "learning_objective": "Kjenne virkningen av under-, kritisk og overkobling i en MF-transformator.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En ",
+          {
+            "term": "mf-transformator",
+            "text": "MF-transformator"
+          },
+          " har to ",
+          {
+            "term": "avstemt-krets",
+            "text": "avstemte kretser"
+          },
+          " som er avstemt til samme ",
+          {
+            "term": "frekvens",
+            "text": "frekvens"
+          },
+          ". Koblingen mellom ",
+          {
+            "term": "spole",
+            "text": "spolene"
+          },
+          " økes gradvis."
+        ]
+      ],
+      "stem": "Hva skjer med frekvensresponsen når koblingen blir større enn kritisk kobling?",
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Kurven får to topper med et søkk i midten og blir bredere"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Kurven blir lik responsen til én enkelt avstemt krets"
+          ],
+          "feedback": [
+            "Det skjer ved løs kobling (underkobling), når spolene står langt fra hverandre."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Kurven blir stadig smalere og spissere jo tettere koblingen blir"
+          ],
+          "feedback": [
+            "Flankene blir brattere bare fram til kritisk kobling. Etter det blir kurven bredere og får et søkk."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Kurven blir lavere og flatere, uten noen tydelig topp"
+          ],
+          "feedback": [
+            [
+              "Kurven blir ikke lavere og toppløs. Den får to topper med et søkk mellom dem, og ",
+              {
+                "term": "passband",
+                "text": "passbåndet"
+              },
+              " blir bredere."
+            ]
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Ved løs kobling ligner kurven på den for én avstemt krets. Når koblingen øker, blir kurven høyere og flankene brattere. Ved kritisk kobling er flankene brattest uten at toppen får noe søkk.",
+        "Overkobles kretsene, får kurven to topper med et søkk mellom dem. Litt overkobling kan likevel være nyttig, fordi kurven da får nokså flat topp og bratte flanker."
+      ],
+      "visual": {
+        "template": "frequency-response",
+        "version": 1,
+        "params": {
+          "kind": "coupled",
+          "blank": true,
+          "note": "Kurvene vises når du har svart",
+          "coupled": {
+            "kq": [
+              0.5,
+              1,
+              2
+            ]
+          }
+        },
+        "params_after": {
+          "blank": false
+        },
+        "animation": {
+          "param": "coupled.kq.0",
+          "from": 0.4,
+          "to": 2.4,
+          "phase": "after",
+          "params": {
+            "coupled": {
+              "kq": [
+                1
+              ]
+            }
+          },
+          "text": "Animasjonen viser koblingen som økes og minkes: under kritisk kobling én lav topp, ved kritisk kobling en flat topp, og over kritisk kobling to topper med et søkk i midten."
+        }
+      },
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 6,
+        "section_id": "s6-16",
+        "printed_pages": [
+          "6-9"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "17a42596ad54bc8a"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "Jim C K Flaten",
+        "based_on": 4,
+        "at": "2026-10-24T16:51:17+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T16:51:17+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "352bc9e50913bde4ac00eb577e2232c742a96ceaf7cce9419ba2f4e575fcde69",
+          "note": "Add an animation to the figure"
+        },
+        {
+          "at": "2026-10-24T16:51:18+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "99850ddef5aa3ce8a653d729a841561a8620b70b7e339210b4c3a73f3bc1f5b1",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T16:52:13+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "99850ddef5aa3ce8a653d729a841561a8620b70b7e339210b4c3a73f3bc1f5b1",
+          "note": "automated checks passed"
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "99850ddef5aa3ce8a653d729a841561a8620b70b7e339210b4c3a73f3bc1f5b1",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T16:51:18+00:00"
+      }
     }
   ]
 }

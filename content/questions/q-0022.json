@@ -741,6 +741,24 @@
           "to_status": "needs_review",
           "content_sha256": "34f1765e21201c6a8d35761ce4d2bc0ddb1c6c685aa660042a51eea88d5eb891",
           "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T16:51:18+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "a5915c1b966e7ba4b82167636fd9eb6bbb4bf63d22e547ddb03b176480b9b04b",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T16:52:13+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "ec98ad9dd1d014d7594256c33d6536656866b24fa9363e61e2571342e32a7c12",
+          "note": "automated checks passed"
         }
       ],
       "visual": {
@@ -757,11 +775,18 @@
             "spacing_label": true
           }
         },
-        "caption": "Spekteret til signalet, regnet ut fra tonen og deviasjonen i oppgaven."
+        "caption": "Spekteret til signalet, regnet ut fra tonen og deviasjonen i oppgaven.",
+        "animation": {
+          "param": "spectrum.index",
+          "from": 0.3,
+          "to": 5,
+          "phase": "both",
+          "text": "Animasjonen viser spekteret når deviasjonen (modulasjonsindeksen) øker og minker: flere sidebånd kommer til, og høydene endrer seg. Avstanden mellom linjene er den samme hele tiden."
+        }
       },
       "checks": {
         "verifier": "deterministic-v1",
-        "content_sha256": "34f1765e21201c6a8d35761ce4d2bc0ddb1c6c685aa660042a51eea88d5eb891",
+        "content_sha256": "ec98ad9dd1d014d7594256c33d6536656866b24fa9363e61e2571342e32a7c12",
         "errors": [],
         "warnings": [],
         "hazards": [
@@ -775,7 +800,7 @@
           }
         ],
         "passed": true,
-        "at": "2026-10-24T16:14:02+00:00"
+        "at": "2026-10-24T16:52:13+00:00"
       }
     }
   ]

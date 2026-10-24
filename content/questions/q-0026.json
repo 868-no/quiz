@@ -1138,6 +1138,24 @@
           "to_status": "needs_review",
           "content_sha256": "86be69a973589404fd9ef27e842f7392bf1852b391dcfca24c12fdcce98874fe",
           "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T16:51:18+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "d8362f953f288b650562e354a3215cfd77826c12f74e0e1975d710d8177c3cc4",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T16:52:13+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "d8362f953f288b650562e354a3215cfd77826c12f74e0e1975d710d8177c3cc4",
+          "note": "automated checks passed"
         }
       ],
       "visual": {
@@ -1154,11 +1172,19 @@
         },
         "params_after": {
           "blank": false
+        },
+        "animation": {
+          "param": "cursor",
+          "from": 0,
+          "to": 1,
+          "mode": "loop",
+          "phase": "after",
+          "text": "Animasjonen lar en tidsmarkør gå langs tidsaksen, så du kan følge frekvensen hver gang nøkkelen trykkes ned."
         }
       },
       "checks": {
         "verifier": "deterministic-v1",
-        "content_sha256": "86be69a973589404fd9ef27e842f7392bf1852b391dcfca24c12fdcce98874fe",
+        "content_sha256": "d8362f953f288b650562e354a3215cfd77826c12f74e0e1975d710d8177c3cc4",
         "errors": [],
         "warnings": [],
         "hazards": [
@@ -1168,7 +1194,7 @@
           }
         ],
         "passed": true,
-        "at": "2026-10-24T16:17:20+00:00"
+        "at": "2026-10-24T16:51:18+00:00"
       }
     }
   ]

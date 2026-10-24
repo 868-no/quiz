@@ -937,6 +937,230 @@
         },
         "verifier": "deterministic-v1"
       }
+    },
+    {
+      "revision": 5,
+      "status": "needs_review",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 6,
+      "section_ids": [
+        "s6-20"
+      ],
+      "topic_ids": [
+        "demodulering"
+      ],
+      "learning_objective": "Forklare prinsippet for flankedetektering av FM og hvorfor metoden sjelden brukes.",
+      "priority": "normal",
+      "context": [
+        [
+          "Et ",
+          {
+            "term": "frekvensmodulasjon",
+            "text": "FM"
+          },
+          "-signal sendes gjennom en ",
+          {
+            "term": "avstemt-krets",
+            "text": "avstemt krets"
+          },
+          " der ",
+          {
+            "term": "resonans",
+            "text": "resonansfrekvensen"
+          },
+          " ligger litt ved siden av ",
+          {
+            "term": "mellomfrekvens",
+            "text": "mellomfrekvensen"
+          },
+          ". Deretter følger en vanlig ",
+          {
+            "term": "amplitudemodulasjon",
+            "text": "AM"
+          },
+          "-detektor. Dette kalles flankedetektering."
+        ]
+      ],
+      "stem": "Hvorfor kommer det lyd ut av denne koblingen?",
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Signalet ligger på den skrå delen av kurven, så frekvensendring gir amplitudeendring"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Signalet ligger på toppen av resonanskurven, så frekvensendringer gir størst mulig utslag"
+          ],
+          "feedback": [
+            "På toppen er kurven nesten flat. Små frekvensendringer gir da nesten ingen endring i amplituden."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "AM-detektoren likeretter signalet og gir en spenning som er proporsjonal med frekvensen"
+          ],
+          "feedback": [
+            "En AM-detektor reagerer på amplituden, ikke på frekvensen. Det er den avstemte kretsen som gjør om frekvens til amplitude."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Den avstemte kretsen fjerner bærebølgen, så detektoren bare får med seg sidebåndene"
+          ],
+          "feedback": [
+            [
+              "Kretsen er ikke laget for å fjerne ",
+              {
+                "term": "baerebolge",
+                "text": "bærebølgen"
+              },
+              ". Hele FM-signalet ligger på flanken og blir bare dempet mer eller mindre."
+            ]
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Et stykke unna ",
+          {
+            "term": "resonans",
+            "text": "resonansen"
+          },
+          " ligger kretsen på flanken, der dempingen endres raskt med ",
+          {
+            "term": "frekvens",
+            "text": "frekvensen"
+          },
+          ". Når FM-signalet svinger fram og tilbake i frekvens, varierer derfor amplituden etter kretsen i takt med lyden, og en vanlig AM-detektor kan hente den ut."
+        ],
+        [
+          "Metoden er enkel, men brukes sjelden. Flanken er ikke rett, så lyden blir forvrengt, og ",
+          {
+            "term": "demodulator",
+            "text": "detektoren"
+          },
+          " reagerer også på amplitudestøy og fading. Derfor brukes heller ",
+          {
+            "term": "diskriminator",
+            "text": "diskriminatorer"
+          },
+          ", forholdsdetektorer eller ",
+          {
+            "term": "faselaast-sloyfe",
+            "text": "PLL"
+          },
+          "-detektorer."
+        ]
+      ],
+      "visual": {
+        "template": "frequency-response",
+        "version": 1,
+        "params": {
+          "kind": "resonance",
+          "center_hz": 10715000.0,
+          "resonance": {
+            "f_low_hz": 10705000.0,
+            "f_high_hz": 10725000.0,
+            "points_label": "none"
+          }
+        },
+        "params_after": {
+          "band": {
+            "center_hz": 10700000.0,
+            "half_width_hz": 4000,
+            "label": "FM-signalet",
+            "project": true
+          }
+        },
+        "animation": {
+          "param": "band.center_hz",
+          "from": 10696000.0,
+          "to": 10704000.0,
+          "phase": "after",
+          "text": "Animasjonen viser FM-signalet som svinger fram og tilbake i frekvens langs flanken. Amplituden etter kretsen stiger og synker i takt."
+        }
+      },
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 6,
+        "section_id": "s6-20",
+        "printed_pages": [
+          "6-11"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "36fb5b2d6fb96234"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "Jim C K Flaten",
+        "based_on": 4,
+        "at": "2026-10-24T16:51:17+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T16:51:17+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "e0ee644dab1f5afbbe2fac71c6a52731caaa580e8f560856bd4b71e5180eb5cb",
+          "note": "Add an animation to the figure"
+        },
+        {
+          "at": "2026-10-24T16:51:18+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "683be941d9540aba8d5bf6a3bd2b4dbd9ccabc8e0c0c259e0bc0f4a0c4869812",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T16:52:13+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "847e1a463213c96325d1d3433c6f16bcf69a04f5f1760f1528bf310649f106c8",
+          "note": "automated checks passed"
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "847e1a463213c96325d1d3433c6f16bcf69a04f5f1760f1528bf310649f106c8",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: equation, table. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T16:52:13+00:00"
+      }
     }
   ]
 }

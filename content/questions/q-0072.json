@@ -1289,6 +1289,24 @@
           "to_status": "needs_review",
           "content_sha256": "641e43eda9335e0a85b474d231aef104d7ffc9d0498862ca574d11d2a34aa052",
           "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T16:51:18+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "6f7b13fadc754fd2761bc94a6c228088a1637ab7e637e3d41b9e698bd78843f3",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T16:52:13+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "6f7b13fadc754fd2761bc94a6c228088a1637ab7e637e3d41b9e698bd78843f3",
+          "note": "automated checks passed"
         }
       ],
       "visual": {
@@ -1307,11 +1325,23 @@
         },
         "params_after": {
           "blank": false
+        },
+        "animation": {
+          "param": "bias",
+          "from": 1.25,
+          "to": -0.6,
+          "phase": "after",
+          "params": {
+            "traces": [
+              "A"
+            ]
+          },
+          "text": "Animasjonen viser forspenningen som senkes fra klasse A til klasse C: den delen av perioden der transistoren leder, blir stadig kortere."
         }
       },
       "checks": {
         "verifier": "deterministic-v1",
-        "content_sha256": "641e43eda9335e0a85b474d231aef104d7ffc9d0498862ca574d11d2a34aa052",
+        "content_sha256": "6f7b13fadc754fd2761bc94a6c228088a1637ab7e637e3d41b9e698bd78843f3",
         "errors": [],
         "warnings": [],
         "hazards": [
@@ -1321,7 +1351,7 @@
           }
         ],
         "passed": true,
-        "at": "2026-10-24T16:17:20+00:00"
+        "at": "2026-10-24T16:51:18+00:00"
       }
     }
   ]

@@ -523,6 +523,24 @@
           "to_status": "needs_review",
           "content_sha256": "f62e2131ab585ade50feb816a54b2149ab14d02a2ad1ecea881672eab1f474de",
           "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T16:51:18+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "2a8f65e14a0b457be75d0f5a7e9760597e9f7bb158364d3958ff5fb28525ec0f",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T16:52:13+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "437d67190054248bbfdeda746d9d107c7f4a46e51c90237f0d4ae2ea15485e90",
+          "note": "automated checks passed"
         }
       ],
       "visual": {
@@ -539,16 +557,23 @@
             "spacing_label": true
           }
         },
-        "caption": "Spekteret til signalet, regnet ut fra tonen og deviasjonen i oppgaven."
+        "caption": "Spekteret til signalet, regnet ut fra tonen og deviasjonen i oppgaven.",
+        "animation": {
+          "param": "spectrum.index",
+          "from": 0.3,
+          "to": 5,
+          "phase": "both",
+          "text": "Animasjonen viser spekteret når deviasjonen (modulasjonsindeksen) øker og minker: flere sidebånd kommer til, og høydene endrer seg. Avstanden mellom linjene er den samme hele tiden."
+        }
       },
       "checks": {
         "verifier": "deterministic-v1",
-        "content_sha256": "f62e2131ab585ade50feb816a54b2149ab14d02a2ad1ecea881672eab1f474de",
+        "content_sha256": "437d67190054248bbfdeda746d9d107c7f4a46e51c90237f0d4ae2ea15485e90",
         "errors": [],
         "warnings": [],
         "hazards": [],
         "passed": true,
-        "at": "2026-10-24T16:14:02+00:00"
+        "at": "2026-10-24T16:52:13+00:00"
       }
     }
   ]

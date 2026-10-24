@@ -994,6 +994,24 @@
           "to_status": "needs_review",
           "content_sha256": "b2305605b961c52c4caef5668892fa3635927dbf334c005dc3a1d8598f667f41",
           "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T16:51:18+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "ef68eb76113a5c8ce5af2d2025273eb148291d5ed731f192ed092bd54e02da93",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T16:52:13+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "ef68eb76113a5c8ce5af2d2025273eb148291d5ed731f192ed092bd54e02da93",
+          "note": "automated checks passed"
         }
       ],
       "visual": {
@@ -1008,11 +1026,24 @@
           "compare": true,
           "terminals": false,
           "bias": "none"
+        },
+        "animation": {
+          "param": "depletion_width",
+          "from": 25,
+          "to": 130,
+          "phase": "after",
+          "params": {
+            "compare": false,
+            "depletion": "normal",
+            "terminals": true,
+            "bias": "reverse"
+          },
+          "text": "Animasjonen viser sperrespenningen som øker og minker: sperresjiktet blir bredere og smalere, og et bredere sjikt gir mindre kapasitans."
         }
       },
       "checks": {
         "verifier": "deterministic-v1",
-        "content_sha256": "b2305605b961c52c4caef5668892fa3635927dbf334c005dc3a1d8598f667f41",
+        "content_sha256": "ef68eb76113a5c8ce5af2d2025273eb148291d5ed731f192ed092bd54e02da93",
         "errors": [],
         "warnings": [],
         "hazards": [
@@ -1026,7 +1057,7 @@
           }
         ],
         "passed": true,
-        "at": "2026-10-24T16:25:26+00:00"
+        "at": "2026-10-24T16:51:18+00:00"
       }
     }
   ]

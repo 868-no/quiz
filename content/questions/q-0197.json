@@ -411,6 +411,204 @@
         },
         "verifier": "deterministic-v1"
       }
+    },
+    {
+      "revision": 3,
+      "status": "needs_review",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "hard",
+      "chapter": 5,
+      "section_ids": [
+        "s5-20"
+      ],
+      "topic_ids": [
+        "senderfeil"
+      ],
+      "learning_objective": "Vite at sidebåndene i et FM-signal ligger med avstand lik modulasjonsfrekvensen, og at for stor deviasjon gjør flere sidebånd kraftige.",
+      "priority": "normal",
+      "context": [
+        [
+          "Du kontrollerer en ",
+          {
+            "term": "frekvensmodulasjon",
+            "text": "FM"
+          },
+          "-sender med en spektrumanalysator. ",
+          {
+            "term": "sender",
+            "text": "Senderen"
+          },
+          " moduleres med en ren sinustone på ",
+          {
+            "q": 1.5,
+            "u": "kHz"
+          },
+          ", og ",
+          {
+            "term": "deviasjon",
+            "text": "spissdeviasjonen"
+          },
+          " er stilt altfor høyt. Skjermen viser ",
+          {
+            "term": "baerebolge",
+            "text": "bærebølgen"
+          },
+          " og mange ",
+          {
+            "term": "sidebaand",
+            "text": "sidebånd"
+          },
+          " som smale linjer på hver side av den."
+        ]
+      ],
+      "stem": [
+        "Hvor stor er avstanden mellom to linjer som ligger ved siden av hverandre i spekteret?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "3 kHz, det dobbelte av frekvensen til tonen"
+          ],
+          "feedback": [
+            "Ett par sidebånd spenner over to ganger tonefrekvensen, men avstanden fra én linje til den neste er bare én tonefrekvens."
+          ]
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Like stor som deviasjonen, uansett hvilken tone som brukes"
+          ],
+          "feedback": [
+            "Deviasjonen bestemmer hvor mange sidebånd som blir kraftige, og hvor sterke de er, men ikke avstanden mellom dem."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "1,5 kHz, det samme som frekvensen til tonen"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o4",
+          "content": [
+            "0,75 kHz, halvparten av frekvensen til tonen"
+          ],
+          "feedback": [
+            "Sidebåndene ligger på hele multipler av tonefrekvensen ut fra bærebølgen, ikke på halve."
+          ]
+        }
+      ],
+      "correct": [
+        "o3"
+      ],
+      "explanation": [
+        [
+          "Et FM-signal som moduleres med én tone, har sidebånd på bærebølgefrekvensen pluss og minus 1, 2, 3 … ganger tonefrekvensen. Avstanden mellom nabolinjene er derfor alltid lik tonefrekvensen, her 1,5 kHz."
+        ],
+        [
+          "Med liten deviasjon er bare det første sidebåndsparet merkbart, og spekteret kan likne på ",
+          {
+            "term": "amplitudemodulasjon",
+            "text": "AM"
+          },
+          ". Når deviasjonen øker, blir stadig flere sidebånd kraftige. Med for stor deviasjon blir signalet derfor mye bredere enn tiltenkt og forstyrrer nabokanalene."
+        ]
+      ],
+      "visual": {
+        "template": "frequency-response",
+        "version": 1,
+        "params": {
+          "kind": "spectrum",
+          "center_hz": 145500000.0,
+          "spectrum": {
+            "mode": "fm",
+            "mod_hz": 1500,
+            "index": 5,
+            "freq_labels": "none"
+          }
+        },
+        "params_after": {
+          "spectrum": {
+            "spacing_label": true
+          }
+        },
+        "animation": {
+          "param": "spectrum.index",
+          "from": 0.3,
+          "to": 5,
+          "phase": "both",
+          "text": "Animasjonen viser spekteret når deviasjonen (modulasjonsindeksen) øker og minker: flere sidebånd kommer til, og høydene endrer seg. Avstanden mellom linjene er den samme hele tiden."
+        }
+      },
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 5,
+        "section_id": "s5-20",
+        "printed_pages": [
+          "5-9"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "a8878d1c89eb855e"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "Jim C K Flaten",
+        "based_on": 2,
+        "at": "2026-10-24T16:51:17+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T16:51:17+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "88fc9d6b3daa7706c6b3d5155edced58d6d0975ba1750da0017b036a9414f76e",
+          "note": "Add an animation to the figure"
+        },
+        {
+          "at": "2026-10-24T16:51:18+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "f3fef2fb02c65ef69ab79e3714a9ac4cba14165875b28297c7a201b2f1d276d4",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T16:52:13+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "06b79df8d22b0857eacb67f330e3f797957b1460920a561aacc2ed33061f272d",
+          "note": "automated checks passed"
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "06b79df8d22b0857eacb67f330e3f797957b1460920a561aacc2ed33061f272d",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T16:52:13+00:00"
+      }
     }
   ]
 }

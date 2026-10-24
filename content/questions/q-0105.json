@@ -1255,6 +1255,24 @@
           "to_status": "needs_review",
           "content_sha256": "c43a2395d36ee446f93c79be22bdce7cb945db50dce0b0f68554bc372d0b55c0",
           "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T16:51:18+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "fbd9d22d634e6dbbc96335e2915af573fab539eab0f48ec7355f5de3d1d9beef",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T16:52:13+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "fbd9d22d634e6dbbc96335e2915af573fab539eab0f48ec7355f5de3d1d9beef",
+          "note": "automated checks passed"
         }
       ],
       "visual": {
@@ -1271,11 +1289,19 @@
             "hard",
             "soft"
           ]
+        },
+        "animation": {
+          "param": "cursor",
+          "from": 0,
+          "to": 1,
+          "mode": "loop",
+          "phase": "both",
+          "text": "Animasjonen lar en tidsmarkør gå langs tidsaksen og følger bærebølgen når den slås på og av."
         }
       },
       "checks": {
         "verifier": "deterministic-v1",
-        "content_sha256": "c43a2395d36ee446f93c79be22bdce7cb945db50dce0b0f68554bc372d0b55c0",
+        "content_sha256": "fbd9d22d634e6dbbc96335e2915af573fab539eab0f48ec7355f5de3d1d9beef",
         "errors": [],
         "warnings": [],
         "hazards": [
@@ -1289,7 +1315,7 @@
           }
         ],
         "passed": true,
-        "at": "2026-10-24T16:17:20+00:00"
+        "at": "2026-10-24T16:51:18+00:00"
       }
     }
   ]

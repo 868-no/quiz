@@ -1099,6 +1099,228 @@
         },
         "verifier": "deterministic-v1"
       }
+    },
+    {
+      "revision": 6,
+      "status": "needs_review",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 6,
+      "section_ids": [
+        "s6-21"
+      ],
+      "topic_ids": [
+        "demodulering"
+      ],
+      "learning_objective": "Forstå hvordan utgangen fra en FM-diskriminator varierer med frekvensen.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En ",
+          {
+            "term": "forholdsdetektor",
+            "text": "forholdsdetektor"
+          },
+          " brukes som ",
+          {
+            "term": "frekvensmodulasjon",
+            "text": "FM"
+          },
+          "-",
+          {
+            "term": "demodulator",
+            "text": "demodulator"
+          },
+          ". Detektorens ",
+          {
+            "term": "avstemt-krets",
+            "text": "avstemte krets"
+          },
+          " er stilt inn på midten av ",
+          {
+            "term": "mellomfrekvens",
+            "text": "MF"
+          },
+          "-kanalen."
+        ]
+      ],
+      "stem": "Hva er utgangsspenningen når et umodulert MF-signal ligger nøyaktig på senterfrekvensen?",
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Null, fordi de to likerettede spenningene opphever hverandre"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Størst mulig positiv spenning, fordi kretsen er i resonans"
+          ],
+          "feedback": [
+            [
+              "Ved ",
+              {
+                "term": "resonans",
+                "text": "resonans"
+              },
+              " balanserer de to halvdelene hverandre. Utgangen blir positiv eller negativ først når ",
+              {
+                "term": "frekvens",
+                "text": "frekvensen"
+              },
+              " avviker."
+            ]
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "En vekselspenning med samme frekvens som mellomfrekvensen"
+          ],
+          "feedback": [
+            [
+              "Diodene og ",
+              {
+                "term": "kondensator",
+                "text": "kondensatorene"
+              },
+              " ",
+              {
+                "term": "likeretter",
+                "text": "likeretter"
+              },
+              " MF-signalet. Utgangen følger frekvensavviket, ikke selve mellomfrekvensen."
+            ]
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "En likespenning som er proporsjonal med signalstyrken"
+          ],
+          "feedback": [
+            [
+              {
+                "term": "forholdsdetektor",
+                "text": "Forholdsdetektoren"
+              },
+              " er lite følsom for amplitudeendringer. Utgangen avhenger av frekvensavviket."
+            ]
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "En avstemt krets gir 90° ",
+          {
+            "term": "faseforskyvning",
+            "text": "faseforskyvning"
+          },
+          " ved senterfrekvensen, slik at de to ",
+          {
+            "term": "diode",
+            "text": "diodene"
+          },
+          " får like store spenninger. De likerettede ",
+          {
+            "term": "spenning",
+            "text": "spenningene"
+          },
+          " opphever hverandre, og utgangen blir null."
+        ],
+        "Over senterfrekvensen blir den ene spenningen størst, under blir den andre størst. Nær senterfrekvensen varierer utgangen tilnærmet lineært med frekvensavviket, og det er lyden. Utgangen kan også brukes som avstemmingsindikator."
+      ],
+      "visual": {
+        "template": "ratio-detector",
+        "version": 1,
+        "params": {},
+        "params_after": {
+          "show_curve": true
+        },
+        "animation": {
+          "param": "marker_u",
+          "from": -1.6,
+          "to": 1.6,
+          "phase": "after",
+          "text": "Animasjonen viser frekvensen som svinger rundt f0. Prikken på kurven viser utgangsspenningen: null ved f0, og positiv eller negativ når frekvensen ligger over eller under."
+        }
+      },
+      "glossary_after_answer": [
+        "forholdsdetektor"
+      ],
+      "study_reference": {
+        "chapter": 6,
+        "section_id": "s6-21",
+        "printed_pages": [
+          "6-11",
+          "6-12"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "230c6ad7684f7a08",
+          "1b6882b719159f1d"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "Jim C K Flaten",
+        "based_on": 5,
+        "at": "2026-10-24T16:51:17+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T16:51:17+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "7cb62d949d8d24f38d51d3e6292fae0eb1d8a18cc45cb123ece363fec46435a7",
+          "note": "Add an animation to the figure"
+        },
+        {
+          "at": "2026-10-24T16:51:18+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "07075e6e3f66c05fdefa66bcc1eadc5df0e9bb6c4f6f61a12a6cbacec0edb24d",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T16:52:13+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "07075e6e3f66c05fdefa66bcc1eadc5df0e9bb6c4f6f61a12a6cbacec0edb24d",
+          "note": "automated checks passed"
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "07075e6e3f66c05fdefa66bcc1eadc5df0e9bb6c4f6f61a12a6cbacec0edb24d",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T16:51:18+00:00"
+      }
     }
   ]
 }

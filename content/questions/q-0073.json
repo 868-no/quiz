@@ -926,6 +926,24 @@
           "to_status": "needs_review",
           "content_sha256": "ce37f03b92fd7e15ab6a592013d8e20249b3aa7843a3e0586d44e1aae77571ea",
           "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T16:51:18+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "17bba5084c26cd3f3f6a847100d5992765a30a3354b1e45bc3b72b0fbc53a920",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T16:52:13+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "17bba5084c26cd3f3f6a847100d5992765a30a3354b1e45bc3b72b0fbc53a920",
+          "note": "automated checks passed"
         }
       ],
       "visual": {
@@ -936,11 +954,21 @@
         },
         "params_after": {
           "compare": true
+        },
+        "animation": {
+          "param": "gate_bias",
+          "from": 0,
+          "to": 1,
+          "phase": "after",
+          "params": {
+            "compare": false
+          },
+          "text": "Animasjonen viser gate som blir mer og mer negativ: sperresjiktene vokser, kanalen blir smalere og strømmen (pilen) mindre."
         }
       },
       "checks": {
         "verifier": "deterministic-v1",
-        "content_sha256": "ce37f03b92fd7e15ab6a592013d8e20249b3aa7843a3e0586d44e1aae77571ea",
+        "content_sha256": "17bba5084c26cd3f3f6a847100d5992765a30a3354b1e45bc3b72b0fbc53a920",
         "errors": [],
         "warnings": [],
         "hazards": [
@@ -950,7 +978,7 @@
           }
         ],
         "passed": true,
-        "at": "2026-10-24T16:25:26+00:00"
+        "at": "2026-10-24T16:51:18+00:00"
       }
     }
   ]
