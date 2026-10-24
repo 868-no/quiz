@@ -145,7 +145,7 @@
     },
     {
       "revision": 2,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "recall",
@@ -289,6 +289,15 @@
           "content_sha256": "0c78c4d0579e261a172664bdb7b121128a48aa9c31ef33b3f981299e1fa42687",
           "note": "Godkjent av redaktør: kun nye ordforklaringslenker (automatisk lenking, kontrollert for svarlekkasje), teksten er uendret fra forrige godkjente versjon. Sidehenvisninger er fortsatt ikke kontrollert mot trykt bok.",
           "acknowledged": []
+        },
+        {
+          "at": "2026-10-24T09:32:14+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "0c78c4d0579e261a172664bdb7b121128a48aa9c31ef33b3f981299e1fa42687",
+          "note": "superseded by r3"
         }
       ],
       "checks": {
@@ -304,6 +313,184 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-23T20:43:49+00:00",
         "content_sha256": "0c78c4d0579e261a172664bdb7b121128a48aa9c31ef33b3f981299e1fa42687",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 3,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "recall",
+      "difficulty": "easy",
+      "chapter": 3,
+      "section_ids": [
+        "s3-35"
+      ],
+      "topic_ids": [
+        "radiorør"
+      ],
+      "learning_objective": "Kjenne de viktigste fordelene og ulempene ved rørforsterkere sammenlignet med transistorer.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En radioamatør vurderer et rørsluttrinn i stedet for et transistorsluttrinn for høy ",
+          {
+            "term": "effekt",
+            "text": "effekt"
+          },
+          "."
+        ]
+      ],
+      "stem": [
+        "Hva er en typisk fordel med rørforsterkeren?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Den tåler feiltilpasning mot antennen bedre."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Den trenger bare lav forsyningsspenning."
+          ],
+          "feedback": [
+            [
+              "Det er omvendt. Rør trenger høy anodespenning, ofte flere tusen volt i store ",
+              {
+                "term": "sluttforsterker",
+                "text": "sluttrinn"
+              },
+              "."
+            ]
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Den blir ikke dårligere med alderen."
+          ],
+          "feedback": [
+            "Rør slites, blant annet fordi katoden etter hvert avgir færre elektroner."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Den er mekanisk robust og tåler støt godt."
+          ],
+          "feedback": [
+            "Rør har glass- eller keramikkhus og tynne elektroder, og er fysisk mer ømtålige enn transistorer."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Rør tåler kortvarig overbelastning og dårlig ",
+          {
+            "term": "tilpasning",
+            "text": "tilpasning"
+          },
+          " mot ",
+          {
+            "term": "antenne",
+            "text": "antennen"
+          },
+          " bedre enn ",
+          {
+            "term": "transistor",
+            "text": "transistorer"
+          },
+          ", som kan bli ødelagt på et øyeblikk. Kretsene kan også være enkle, og rør håndterer høye ",
+          {
+            "term": "spenning",
+            "text": "spenninger"
+          },
+          " og effekter godt, også på VHF."
+        ],
+        "Ulempene er høye og farlige spenninger, at rørene slites og må byttes, at de er ømtålige, og at de ofte trenger støyende viftekjøling."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 3,
+        "section_id": "s3-35",
+        "printed_pages": [
+          "3-17"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "414ad86d0afc8a47"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "autolink",
+        "author": "AI-assistent (Claude), autolenking",
+        "based_on": 2,
+        "at": "2026-10-24T09:31:46+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T09:31:46+00:00",
+          "actor": "AI-assistent (Claude), autolenking",
+          "action": "autolink",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "c17b3347627c48085fa3cdf184108d87736d413fec033dd1decf392911208b12",
+          "note": "glossary links added (1); based on r2"
+        },
+        {
+          "at": "2026-10-24T09:31:51+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "c17b3347627c48085fa3cdf184108d87736d413fec033dd1decf392911208b12",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:32:14+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "c17b3347627c48085fa3cdf184108d87736d413fec033dd1decf392911208b12",
+          "note": "Nye ordlistelenker (runde 2); teksten er uendret.",
+          "acknowledged": []
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "c17b3347627c48085fa3cdf184108d87736d413fec033dd1decf392911208b12",
+        "errors": [],
+        "warnings": [],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T09:32:14+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T09:32:14+00:00",
+        "content_sha256": "c17b3347627c48085fa3cdf184108d87736d413fec033dd1decf392911208b12",
         "acknowledged_hazards": [],
         "checklist": {
           "one_correct": true,

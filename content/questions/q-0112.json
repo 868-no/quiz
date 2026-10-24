@@ -217,7 +217,7 @@
     },
     {
       "revision": 2,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "concept",
@@ -436,6 +436,15 @@
           "acknowledged": [
             "figures"
           ]
+        },
+        {
+          "at": "2026-10-24T09:32:23+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "526a6c5942d12ad4bcf660483ab92a969fac0fae7f0d4228baa7cd540c9dcc1a",
+          "note": "superseded by r3"
         }
       ],
       "checks": {
@@ -456,6 +465,285 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-23T20:43:51+00:00",
         "content_sha256": "526a6c5942d12ad4bcf660483ab92a969fac0fae7f0d4228baa7cd540c9dcc1a",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 3,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "easy",
+      "chapter": 6,
+      "section_ids": [
+        "s6-14",
+        "s6-18"
+      ],
+      "topic_ids": [
+        "agc"
+      ],
+      "learning_objective": "Forstå hensikten med automatisk forsterkningskontroll.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "Blokkskjemaet viser en ",
+          {
+            "term": "superheterodyn",
+            "text": "superheterodynmottaker"
+          },
+          ". Blokken med spørsmålstegn får en ",
+          {
+            "term": "likespenning",
+            "text": "likespenning"
+          },
+          " fra ",
+          {
+            "term": "demodulator",
+            "text": "detektoren"
+          },
+          " som øker med styrken på det mottatte signalet."
+        ]
+      ],
+      "stem": "Hva er hensikten med denne blokken?",
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Å redusere forsterkningen ved sterke signaler, slik at lydnivået holdes jevnere"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Å stille mottakeren automatisk inn på den sterkeste stasjonen"
+          ],
+          "feedback": [
+            [
+              "Blokken endrer forsterkningen, ikke ",
+              {
+                "term": "frekvens",
+                "text": "frekvensen"
+              },
+              " ",
+              {
+                "term": "mottaker",
+                "text": "mottakeren"
+              },
+              " er innstilt på."
+            ]
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Å kutte lyden helt når det ikke finnes noe signal"
+          ],
+          "feedback": [
+            [
+              "Det er oppgaven til ",
+              {
+                "term": "brussperre",
+                "text": "brussperren"
+              },
+              " (squelch)."
+            ]
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Å holde frekvensen til lokaloscillatoren stabil"
+          ],
+          "feedback": [
+            [
+              "Blokken styrer MF-",
+              {
+                "term": "forsterker",
+                "text": "forsterkeren"
+              },
+              ", ikke ",
+              {
+                "term": "lokaloscillator",
+                "text": "lokaloscillatoren"
+              },
+              "."
+            ]
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Blokken er ",
+          {
+            "term": "agc",
+            "text": "AGC"
+          },
+          " (automatisk forsterkningskontroll). Et sterkere signal gir en større styrespenning, som senker ",
+          {
+            "term": "forspenning",
+            "text": "forspenningen"
+          },
+          " på ",
+          {
+            "term": "mellomfrekvens",
+            "text": "MF"
+          },
+          "-transistorene og dermed forsterkningen."
+        ],
+        [
+          "Signaler i ",
+          {
+            "term": "antenne",
+            "text": "antennen"
+          },
+          " kan variere fra brøkdeler av en mikrovolt til flere volt, og styrken endrer seg også ved fading. AGC gjør at lydstyrken likevel holder seg nokså jevn."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "visual": {
+        "template": "block-diagram",
+        "version": 1,
+        "params": {
+          "chain": [
+            {
+              "kind": "antenna"
+            },
+            {
+              "kind": "rf_amp"
+            },
+            {
+              "kind": "mixer"
+            },
+            {
+              "kind": "if_filter"
+            },
+            {
+              "kind": "if_amp"
+            },
+            {
+              "kind": "demodulator"
+            },
+            {
+              "kind": "af_amp"
+            },
+            {
+              "kind": "speaker"
+            }
+          ],
+          "side": [
+            {
+              "kind": "local_osc",
+              "into": 2
+            },
+            {
+              "kind": "agc",
+              "into": 4,
+              "hidden": true
+            }
+          ]
+        },
+        "params_after": {
+          "side": [
+            {
+              "kind": "local_osc",
+              "into": 2
+            },
+            {
+              "kind": "agc",
+              "into": 4,
+              "highlight": true
+            }
+          ]
+        }
+      },
+      "study_reference": {
+        "chapter": 6,
+        "section_id": "s6-14",
+        "printed_pages": [
+          "6-8"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "b88d94e955bc5438",
+          "cab19c11b655f84a"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "autolink",
+        "author": "AI-assistent (Claude), autolenking",
+        "based_on": 2,
+        "at": "2026-10-24T09:31:49+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T09:31:49+00:00",
+          "actor": "AI-assistent (Claude), autolenking",
+          "action": "autolink",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "4df9f6832b06a81fe1a30c29ade98c572923992f779abe1df7fdfad11a179c54",
+          "note": "glossary links added (4); based on r2"
+        },
+        {
+          "at": "2026-10-24T09:31:52+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "4df9f6832b06a81fe1a30c29ade98c572923992f779abe1df7fdfad11a179c54",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:32:23+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "4df9f6832b06a81fe1a30c29ade98c572923992f779abe1df7fdfad11a179c54",
+          "note": "Nye ordlistelenker (runde 2); teksten er uendret.",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "4df9f6832b06a81fe1a30c29ade98c572923992f779abe1df7fdfad11a179c54",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T09:32:23+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T09:32:23+00:00",
+        "content_sha256": "4df9f6832b06a81fe1a30c29ade98c572923992f779abe1df7fdfad11a179c54",
         "acknowledged_hazards": [
           "figures"
         ],

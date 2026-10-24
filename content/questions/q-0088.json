@@ -170,7 +170,7 @@
     },
     {
       "revision": 2,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "scenario",
@@ -337,6 +337,15 @@
             "figures",
             "ocr"
           ]
+        },
+        {
+          "at": "2026-10-24T09:32:17+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "39021e6ebd9b76c364f8c7d0514080f35a7b0d7eb98a55579e47ae6d6b594f62",
+          "note": "superseded by r3"
         }
       ],
       "checks": {
@@ -361,6 +370,228 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-23T20:43:50+00:00",
         "content_sha256": "39021e6ebd9b76c364f8c7d0514080f35a7b0d7eb98a55579e47ae6d6b594f62",
+        "acknowledged_hazards": [
+          "figures",
+          "ocr"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 3,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "medium",
+      "chapter": 4,
+      "section_ids": [
+        "s4-28"
+      ],
+      "topic_ids": [
+        "sluttforsterker"
+      ],
+      "learning_objective": "Kjenne igjen klasse C-drift ut fra forspenningen og forstå behovet for filtrering av harmoniske.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "I et lite ",
+          {
+            "term": "sluttforsterker",
+            "text": "sluttrinn"
+          },
+          " for 2 m er basis på en NPN-silisiumtransistor koblet til 0 V gjennom en ",
+          {
+            "term": "rf-drossel",
+            "text": "RF-drossel"
+          },
+          ", og emitteren ligger også på 0 V. Det finnes ingen annen ",
+          {
+            "term": "forspenning",
+            "text": "forspenning"
+          },
+          ", og ",
+          {
+            "term": "transistor",
+            "text": "transistoren"
+          },
+          " drives av et RF-signal fra forrige trinn."
+        ]
+      ],
+      "stem": [
+        "I hvilken klasse arbeider trinnet?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Klasse C"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Klasse A"
+          ],
+          "feedback": [
+            [
+              "I ",
+              {
+                "term": "forsterkerklasse",
+                "text": "klasse A"
+              },
+              " er transistoren forspent slik at den leder hele ",
+              {
+                "term": "periode",
+                "text": "perioden"
+              },
+              ". Her er det ingen forspenning i det hele tatt."
+            ]
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Klasse AB"
+          ],
+          "feedback": [
+            [
+              "Klasse AB krever en liten forspenning i ",
+              {
+                "term": "lederetning",
+                "text": "lederetningen"
+              },
+              ", slik at transistoren leder litt mer enn en halv periode."
+            ]
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Klasse B"
+          ],
+          "feedback": [
+            "I klasse B er transistoren forspent akkurat til terskelen og leder i en halv periode. Med 0 V må drivsignalet først komme over cirka 0,6 V."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "En silisiumtransistor begynner ikke å lede før basis–emitter-",
+          {
+            "term": "spenning",
+            "text": "spenningen"
+          },
+          " er omtrent 0,6 V. Med 0 V forspenning leder den bare på toppene av drivsignalet, altså i mindre enn en halv periode. Det er klasse C."
+        ],
+        [
+          {
+            "term": "strom",
+            "text": "Strømmen"
+          },
+          " blir korte pulser med mye ",
+          {
+            "term": "harmoniske",
+            "text": "harmoniske"
+          },
+          ". Utgangskretsen må derfor både tilpasse ",
+          {
+            "term": "impedans",
+            "text": "impedansen"
+          },
+          " og filtrere bort harmoniske effektivt."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 4,
+        "section_id": "s4-28",
+        "printed_pages": [
+          "4-14",
+          "4-15"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "f623d2a372736b64"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "autolink",
+        "author": "AI-assistent (Claude), autolenking",
+        "based_on": 2,
+        "at": "2026-10-24T09:31:47+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T09:31:47+00:00",
+          "actor": "AI-assistent (Claude), autolenking",
+          "action": "autolink",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "07e068ea243311f0473bbc903fadaca62fdfc02a9e9953a77913976de208b658",
+          "note": "glossary links added (3); based on r2"
+        },
+        {
+          "at": "2026-10-24T09:31:51+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "07e068ea243311f0473bbc903fadaca62fdfc02a9e9953a77913976de208b658",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:32:17+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "07e068ea243311f0473bbc903fadaca62fdfc02a9e9953a77913976de208b658",
+          "note": "Nye ordlistelenker (runde 2); teksten er uendret.",
+          "acknowledged": [
+            "figures",
+            "ocr"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "07e068ea243311f0473bbc903fadaca62fdfc02a9e9953a77913976de208b658",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: equation. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T09:32:17+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T09:32:17+00:00",
+        "content_sha256": "07e068ea243311f0473bbc903fadaca62fdfc02a9e9953a77913976de208b658",
         "acknowledged_hazards": [
           "figures",
           "ocr"

@@ -169,7 +169,7 @@
     },
     {
       "revision": 2,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "concept",
@@ -324,6 +324,15 @@
             "figures",
             "ocr"
           ]
+        },
+        {
+          "at": "2026-10-24T09:32:22+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "c505ff3739f47b8dd85c03765cd31e5221edc0a66d47a8d7c5a0224139558faf",
+          "note": "superseded by r3"
         }
       ],
       "checks": {
@@ -348,6 +357,224 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-23T20:43:51+00:00",
         "content_sha256": "c505ff3739f47b8dd85c03765cd31e5221edc0a66d47a8d7c5a0224139558faf",
+        "acknowledged_hazards": [
+          "figures",
+          "ocr"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 3,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 5,
+      "section_ids": [
+        "s5-18"
+      ],
+      "topic_ids": [
+        "senderfeil"
+      ],
+      "learning_objective": "Vite at nøkkelklikk skyldes for brå av- og påslag av CW-signalet, og at et klikkfilter gir mykere flanker.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En CW-sender gir harde ",
+          {
+            "term": "nokkelklikk",
+            "text": "nøkkelklikk"
+          },
+          " som høres et godt stykke på begge sider av signalet, i takt med nøklingen. ",
+          {
+            "term": "frekvens",
+            "text": "Frekvensen"
+          },
+          " er ellers stabil."
+        ]
+      ],
+      "stem": [
+        "Hva er det beste tiltaket?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Gi signalet mykere stige- og falltid, for eksempel med et klikkfilter i nøklingskretsen."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Gjør stige- og falltiden kortere, slik at morsetegnene blir skarpere."
+          ],
+          "feedback": [
+            "Det er motsatt. Jo brattere av- og påslag, desto bredere sidebånd og kraftigere klikk."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Monter et lavpassfilter mellom senderen og antennen."
+          ],
+          "feedback": [
+            [
+              {
+                "term": "lavpassfilter",
+                "text": "Lavpassfilteret"
+              },
+              " demper ",
+              {
+                "term": "harmoniske",
+                "text": "harmoniske"
+              },
+              " langt over sendefrekvensen. Klikkene ligger like ved signalet og slipper gjennom ",
+              {
+                "term": "filter",
+                "text": "filteret"
+              },
+              "."
+            ]
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Gi oscillatoren en egen, stabilisert spenningsforsyning."
+          ],
+          "feedback": [
+            [
+              "Det er et tiltak mot ",
+              {
+                "term": "kvitter",
+                "text": "kvitter"
+              },
+              " (frekvensen glir ved nøkling). Her er frekvensen stabil."
+            ]
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Når RF-signalet slås av og på med svært bratte flanker, dannes ",
+          {
+            "term": "sidebaand",
+            "text": "sidebånd"
+          },
+          " langt ut til sidene for signalet. De høres som klikk hos stasjoner på nabofrekvensene."
+        ],
+        [
+          "Et klikkfilter i nøklingskretsen gjør flankene mykere: en ",
+          {
+            "term": "spole",
+            "text": "spole"
+          },
+          " bremser økningen i strømmen når nøkkelen lukkes, og en ",
+          {
+            "term": "kondensator",
+            "text": "kondensator"
+          },
+          " som lades via en motstand holder strømmen litt oppe etter at nøkkelen åpnes. Gnister i nøkkelkontaktene kan i tillegg gi bredbåndet støy på kort avstand. Det dempes med en motstand og en kondensator ",
+          {
+            "term": "seriekobling",
+            "text": "i serie"
+          },
+          " over kontaktene, og ved at det bare går liten strøm og lav spenning gjennom nøkkelen."
+        ]
+      ],
+      "glossary_after_answer": [
+        "nokkelklikk"
+      ],
+      "study_reference": {
+        "chapter": 5,
+        "section_id": "s5-18",
+        "printed_pages": [
+          "5-7"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "411677446b4c75f4"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "autolink",
+        "author": "AI-assistent (Claude), autolenking",
+        "based_on": 2,
+        "at": "2026-10-24T09:31:49+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T09:31:49+00:00",
+          "actor": "AI-assistent (Claude), autolenking",
+          "action": "autolink",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "440c88984407bd641ecc90a28ab85ffaa5c3b5b6f65404f9f5a36e55c6fb9100",
+          "note": "glossary links added (4); based on r2"
+        },
+        {
+          "at": "2026-10-24T09:31:52+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "440c88984407bd641ecc90a28ab85ffaa5c3b5b6f65404f9f5a36e55c6fb9100",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:32:22+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "440c88984407bd641ecc90a28ab85ffaa5c3b5b6f65404f9f5a36e55c6fb9100",
+          "note": "Nye ordlistelenker (runde 2); teksten er uendret.",
+          "acknowledged": [
+            "figures",
+            "ocr"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "440c88984407bd641ecc90a28ab85ffaa5c3b5b6f65404f9f5a36e55c6fb9100",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: equation, numeric_low_conf. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T09:32:22+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T09:32:22+00:00",
+        "content_sha256": "440c88984407bd641ecc90a28ab85ffaa5c3b5b6f65404f9f5a36e55c6fb9100",
         "acknowledged_hazards": [
           "figures",
           "ocr"

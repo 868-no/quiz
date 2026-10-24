@@ -360,7 +360,7 @@
     },
     {
       "revision": 3,
-      "status": "approved",
+      "status": "retired",
       "type": "single_choice",
       "style": "scenario",
       "difficulty": "medium",
@@ -535,6 +535,15 @@
           "content_sha256": "9f54a1cec73b9adf14a3d2c50168a61e6cab24e3e733c5b81ca2e1c4bd134256",
           "note": "Godkjent av redaktør: figur lagt til, teksten uendret fra forrige godkjente versjon. Sidehenvisninger er fortsatt ikke kontrollert mot trykt bok.",
           "acknowledged": []
+        },
+        {
+          "at": "2026-10-24T09:32:24+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "9f54a1cec73b9adf14a3d2c50168a61e6cab24e3e733c5b81ca2e1c4bd134256",
+          "note": "superseded by r4"
         }
       ],
       "checks": {
@@ -550,6 +559,222 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-23T20:58:40+00:00",
         "content_sha256": "9f54a1cec73b9adf14a3d2c50168a61e6cab24e3e733c5b81ca2e1c4bd134256",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 4,
+      "status": "approved",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "medium",
+      "chapter": 6,
+      "section_ids": [
+        "s6-27",
+        "s6-25"
+      ],
+      "topic_ids": [
+        "forforsterkere"
+      ],
+      "learning_objective": "Forstå når en forforsterker hjelper og hvordan den påvirker det dynamiske området.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En operatør har en moderne mottaker med lavt ",
+          {
+            "term": "stoytall",
+            "text": "støytall"
+          },
+          ". Hun vil koble en ",
+          {
+            "term": "forforsterker",
+            "text": "forforsterker"
+          },
+          " med omtrent samme støytall og 20 dB forsterkning rett foran ",
+          {
+            "term": "mottaker",
+            "text": "mottakeren"
+          },
+          ". Kabelen mellom dem er kort."
+        ]
+      ],
+      "stem": "Hva er det mest sannsynlige resultatet?",
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Svake signaler blir ikke tydeligere, og mottakeren blir lettere overstyrt"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Signal/støy-forholdet blir 20 dB bedre"
+          ],
+          "feedback": [
+            [
+              "Forforsterkeren ",
+              {
+                "term": "forsterker",
+                "text": "forsterker"
+              },
+              " signal og støy like mye og legger til litt egen støy. ",
+              {
+                "term": "signal-stoy-forhold",
+                "text": "Signal/støy-forholdet"
+              },
+              " kan ikke bli bedre enn ved inngangen."
+            ]
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Det dynamiske området øker med 20 dB"
+          ],
+          "feedback": [
+            [
+              "Det dynamiske området blir mindre, ikke større: sterke signaler kommer 20 dB sterkere inn til ",
+              {
+                "term": "blander",
+                "text": "blanderen"
+              },
+              " og gir lettere intermodulasjon."
+            ]
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Dempingen av speilfrekvensen blir mye bedre"
+          ],
+          "feedback": [
+            [
+              "Speilfrekvensdemping avhenger av ",
+              {
+                "term": "filter",
+                "text": "filtrene"
+              },
+              " foran blanderen, ikke av ekstra forsterkning."
+            ]
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "En forforsterker hjelper bare hvis den har klart bedre støytall enn mottakeren. Er de like gode, blir den samlede støyen litt større enn uten forforsterker.",
+        [
+          "Den ekstra forsterkningen trekkes dessuten fra det sterkeste signalet systemet tåler. ",
+          {
+            "term": "dynamisk-omraade",
+            "text": "Det dynamiske området"
+          },
+          " blir mindre, og sterke signaler gir lettere ",
+          {
+            "term": "intermodulasjon",
+            "text": "intermodulasjon"
+          },
+          ". Trengs en forforsterker, er moderat forsterkning, gjerne rundt 10 dB, vanligvis nok."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 6,
+        "section_id": "s6-27",
+        "printed_pages": [
+          "6-16"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "881570e01b06e518",
+          "88a8963f0dc38b67"
+        ]
+      },
+      "tags": [],
+      "visual": {
+        "template": "block-diagram",
+        "version": 1,
+        "params": {
+          "chain": [
+            {
+              "kind": "antenna"
+            },
+            {
+              "kind": "custom",
+              "label": "Forforsterker 20 dB"
+            },
+            {
+              "kind": "custom",
+              "label": "Mottaker"
+            }
+          ]
+        }
+      },
+      "language": "nb-NO",
+      "provenance": {
+        "method": "autolink",
+        "author": "AI-assistent (Claude), autolenking",
+        "based_on": 3,
+        "at": "2026-10-24T09:31:50+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T09:31:50+00:00",
+          "actor": "AI-assistent (Claude), autolenking",
+          "action": "autolink",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "bc505f66e64c3fa7812c18787f848e41278174358dbdabf7b8756fe98dbf7c6e",
+          "note": "glossary links added (2); based on r3"
+        },
+        {
+          "at": "2026-10-24T09:31:52+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "bc505f66e64c3fa7812c18787f848e41278174358dbdabf7b8756fe98dbf7c6e",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:32:24+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "bc505f66e64c3fa7812c18787f848e41278174358dbdabf7b8756fe98dbf7c6e",
+          "note": "Nye ordlistelenker (runde 2); teksten er uendret.",
+          "acknowledged": []
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "bc505f66e64c3fa7812c18787f848e41278174358dbdabf7b8756fe98dbf7c6e",
+        "errors": [],
+        "warnings": [],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T09:32:24+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T09:32:24+00:00",
+        "content_sha256": "bc505f66e64c3fa7812c18787f848e41278174358dbdabf7b8756fe98dbf7c6e",
         "acknowledged_hazards": [],
         "checklist": {
           "one_correct": true,

@@ -161,7 +161,7 @@
     },
     {
       "revision": 2,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "concept",
@@ -295,6 +295,15 @@
           "acknowledged": [
             "figures"
           ]
+        },
+        {
+          "at": "2026-10-24T09:32:11+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "b77aa8788e9d49792bbd3fd92116339d14ccbd1cbfcc45e6be062b1339062919",
+          "note": "superseded by r3"
         }
       ],
       "checks": {
@@ -315,6 +324,191 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-23T20:43:48+00:00",
         "content_sha256": "b77aa8788e9d49792bbd3fd92116339d14ccbd1cbfcc45e6be062b1339062919",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 3,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "easy",
+      "chapter": 3,
+      "section_ids": [
+        "s3-01"
+      ],
+      "topic_ids": [
+        "halvledermaterialer"
+      ],
+      "learning_objective": "Forstå hvorfor rent krystallinsk silisium leder dårlig, og at doping trengs for å lage en halvleder.",
+      "priority": "exam_important",
+      "context": [
+        "Silisium har fire elektroner i det ytterste skallet. I et rent silisiumkrystall er hvert atom bundet til fire naboatomer."
+      ],
+      "stem": [
+        "Hvorfor leder et helt rent silisiumkrystall svært dårlig ved romtemperatur?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Nesten alle ytterelektronene er låst i bindinger mellom atomene, så det finnes få frie ladningsbærere."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Silisium har for få elektroner i det ytterste skallet til å danne et krystall."
+          ],
+          "feedback": [
+            "Fire ytterelektroner er nettopp det som gjør at silisium danner et regelmessig krystall, der hvert atom binder seg til fire naboer."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Krystallet inneholder så mange frie hull at elektronene fanges opp med en gang."
+          ],
+          "feedback": [
+            "Mange hull får man først når krystallet dopes med et stoff som har tre ytterelektroner. Det rene krystallet har svært få av både frie elektroner og hull."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Silisium er et metall, men overflaten er dekket av et isolerende oksidlag."
+          ],
+          "feedback": [
+            "Silisium er ikke et metall. Den dårlige ledningsevnen skyldes at elektronene er bundet i krystallet, ikke et belegg på overflaten."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "De fire ytterelektronene i hvert silisiumatom deles med naboatomene i ",
+          {
+            "term": "kvartskrystall",
+            "text": "krystallet"
+          },
+          ". Når alle disse elektronene er brukt i bindinger, er det nesten ingen frie elektroner igjen som kan føre ",
+          {
+            "term": "strom",
+            "text": "strøm"
+          },
+          ", og rent silisium oppfører seg nærmest som en isolator."
+        ],
+        [
+          "For å få en brukbar ",
+          {
+            "term": "halvleder",
+            "text": "halvleder"
+          },
+          " tilsetter man små, nøye kontrollerte mengder av et annet grunnstoff. Dette kalles ",
+          {
+            "term": "doping",
+            "text": "doping"
+          },
+          ", og det gir enten ",
+          {
+            "term": "n-type",
+            "text": "N-type"
+          },
+          " eller ",
+          {
+            "term": "p-type",
+            "text": "P-type"
+          },
+          " materiale."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 3,
+        "section_id": "s3-01",
+        "printed_pages": [
+          "3-1"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "aec5047a5e78450e"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "autolink",
+        "author": "AI-assistent (Claude), autolenking",
+        "based_on": 2,
+        "at": "2026-10-24T09:31:44+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T09:31:44+00:00",
+          "actor": "AI-assistent (Claude), autolenking",
+          "action": "autolink",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "b3fb3de2e741db5d2ad354ad836857c4ef04b48a3ccd4c3e3971d0b2bf612e10",
+          "note": "glossary links added (3); based on r2"
+        },
+        {
+          "at": "2026-10-24T09:31:51+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "b3fb3de2e741db5d2ad354ad836857c4ef04b48a3ccd4c3e3971d0b2bf612e10",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:32:11+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "b3fb3de2e741db5d2ad354ad836857c4ef04b48a3ccd4c3e3971d0b2bf612e10",
+          "note": "Nye ordlistelenker (runde 2); teksten er uendret.",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "b3fb3de2e741db5d2ad354ad836857c4ef04b48a3ccd4c3e3971d0b2bf612e10",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T09:32:11+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T09:32:11+00:00",
+        "content_sha256": "b3fb3de2e741db5d2ad354ad836857c4ef04b48a3ccd4c3e3971d0b2bf612e10",
         "acknowledged_hazards": [
           "figures"
         ],

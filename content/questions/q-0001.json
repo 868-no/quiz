@@ -298,7 +298,7 @@
     },
     {
       "revision": 2,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "calculation",
@@ -567,6 +567,15 @@
             "figures",
             "ocr"
           ]
+        },
+        {
+          "at": "2026-10-24T09:32:02+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "75af3381b2ffffff056be3dfc8a651ece4f6b8026275ab229242b97117fe82c9",
+          "note": "superseded by r3"
         }
       ],
       "checks": {
@@ -591,6 +600,321 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-23T20:43:45+00:00",
         "content_sha256": "75af3381b2ffffff056be3dfc8a651ece4f6b8026275ab229242b97117fe82c9",
+        "acknowledged_hazards": [
+          "figures",
+          "ocr"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 3,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "calculation",
+      "difficulty": "easy",
+      "chapter": 2,
+      "section_ids": [
+        "s2-09"
+      ],
+      "topic_ids": [
+        "ohms-lov"
+      ],
+      "learning_objective": "Bruke Ohms lov til å finne strømmen når spenning og resistans er kjent, med riktig prefiks.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En ",
+          {
+            "term": "motstand",
+            "text": "motstand"
+          },
+          " på ",
+          {
+            "q": 470,
+            "u": "Ω"
+          },
+          " er koblet direkte til en likespenningskilde på ",
+          {
+            "q": 12,
+            "u": "V"
+          },
+          ". Se bort fra ",
+          {
+            "term": "resistans",
+            "text": "resistansen"
+          },
+          " i ledningene og kildens ",
+          {
+            "term": "indre-resistans",
+            "text": "indre resistans"
+          },
+          "."
+        ]
+      ],
+      "stem": [
+        [
+          "Hvor stor ",
+          {
+            "term": "strom",
+            "text": "strøm"
+          },
+          " viser amperemeteret?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 25.5,
+              "u": "mA"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 2.55,
+              "u": "mA"
+            }
+          ],
+          "feedback": [
+            "Kommaet har havnet ett sted feil. 12 V delt på 470 Ω er omtrent 0,0255 A, altså 25,5 mA."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 39.2,
+              "u": "mA"
+            }
+          ],
+          "feedback": [
+            "Her er resistansen delt på spenningen (470 / 12). Strømmen er spenningen delt på resistansen."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 255,
+              "u": "mA"
+            }
+          ],
+          "feedback": [
+            "Dette er ti ganger for mye. Sjekk omregningen: 0,0255 A tilsvarer 25,5 mA."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Etter ",
+          {
+            "term": "ohms-lov",
+            "text": "Ohms lov"
+          },
+          " er strømmen lik ",
+          {
+            "term": "spenning",
+            "text": "spenningen"
+          },
+          " delt på resistansen:"
+        ],
+        {
+          "steps": [
+            [
+              {
+                "math": [
+                  "I",
+                  "=",
+                  {
+                    "frac": [
+                      [
+                        "U"
+                      ],
+                      [
+                        "R"
+                      ]
+                    ]
+                  },
+                  "=",
+                  {
+                    "frac": [
+                      [
+                        {
+                          "q": 12,
+                          "u": "V"
+                        }
+                      ],
+                      [
+                        {
+                          "q": 470,
+                          "u": "Ω"
+                        }
+                      ]
+                    ]
+                  },
+                  "≈",
+                  {
+                    "q": 0.02553,
+                    "u": "A"
+                  }
+                ]
+              }
+            ],
+            [
+              "Omregnet til milliampere og avrundet blir det ",
+              {
+                "q": 25.5,
+                "u": "mA"
+              },
+              "."
+            ]
+          ]
+        }
+      ],
+      "glossary_after_answer": [],
+      "visual": {
+        "template": "dc-circuit",
+        "version": 1,
+        "params": {
+          "topology": "series",
+          "source": {
+            "voltage_v": 12
+          },
+          "resistors": [
+            {
+              "ohms": 470
+            }
+          ],
+          "ammeter": {
+            "branch": "main",
+            "show_reading": false
+          },
+          "show_current_direction": true,
+          "animate_current": true
+        },
+        "params_after": {
+          "ammeter": {
+            "show_reading": true
+          }
+        }
+      },
+      "calculation": {
+        "formula": "ohms_law_current",
+        "inputs": {
+          "U": [
+            12,
+            "V"
+          ],
+          "R": [
+            470,
+            "Ω"
+          ]
+        },
+        "answer": [
+          25.5,
+          "mA"
+        ],
+        "answer_symbol": "I",
+        "sig_figs": 3,
+        "visual_bindings": {
+          "R": "R1"
+        }
+      },
+      "study_reference": {
+        "chapter": 2,
+        "section_id": "s2-09",
+        "printed_pages": [
+          "2-2",
+          "2-3"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "de95a442eb1e7dc2"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "autolink",
+        "author": "AI-assistent (Claude), autolenking",
+        "based_on": 2,
+        "at": "2026-10-24T09:31:38+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T09:31:38+00:00",
+          "actor": "AI-assistent (Claude), autolenking",
+          "action": "autolink",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "922795bf3aa0bc3d4ce49d4c52b75150872576fa7921a52de89d8eb869581cf8",
+          "note": "glossary links added (1); based on r2"
+        },
+        {
+          "at": "2026-10-24T09:31:51+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "922795bf3aa0bc3d4ce49d4c52b75150872576fa7921a52de89d8eb869581cf8",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:32:02+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "922795bf3aa0bc3d4ce49d4c52b75150872576fa7921a52de89d8eb869581cf8",
+          "note": "Nye ordlistelenker (runde 2); teksten er uendret.",
+          "acknowledged": [
+            "figures",
+            "ocr"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "922795bf3aa0bc3d4ce49d4c52b75150872576fa7921a52de89d8eb869581cf8",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: equation, low_ocr_confidence, numeric_low_conf, table. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T09:32:02+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T09:32:02+00:00",
+        "content_sha256": "922795bf3aa0bc3d4ce49d4c52b75150872576fa7921a52de89d8eb869581cf8",
         "acknowledged_hazards": [
           "figures",
           "ocr"

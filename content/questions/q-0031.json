@@ -160,7 +160,7 @@
     },
     {
       "revision": 2,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "concept",
@@ -313,6 +313,15 @@
             "figures",
             "ocr"
           ]
+        },
+        {
+          "at": "2026-10-24T09:32:05+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "6beb65c5bcd367de5108e407ace42e498cabcb86729c8a0077414f973f670f91",
+          "note": "superseded by r3"
         }
       ],
       "checks": {
@@ -337,6 +346,210 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-23T20:43:46+00:00",
         "content_sha256": "6beb65c5bcd367de5108e407ace42e498cabcb86729c8a0077414f973f670f91",
+        "acknowledged_hazards": [
+          "figures",
+          "ocr"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 3,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "hard",
+      "chapter": 6,
+      "section_ids": [
+        "s6-11"
+      ],
+      "topic_ids": [
+        "mellomfrekvens",
+        "mottakeregenskaper"
+      ],
+      "learning_objective": "Forstå hvorfor en dobbel superheterodynmottaker bruker en høy og en lav mellomfrekvens.",
+      "priority": "exam_important",
+      "context": [],
+      "stem": [
+        [
+          "Bedre ",
+          {
+            "term": "mottaker",
+            "text": "mottakere"
+          },
+          " bruker ofte to ",
+          {
+            "term": "mellomfrekvens",
+            "text": "mellomfrekvenser"
+          },
+          ": en høy første og en lav andre. Hva er hovedgrunnen?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Høy første MF gjør speilfrekvensen lett å dempe, og lav andre MF gir god selektivitet."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Høy første MF gir god selektivitet, og lav andre MF gjør speilfrekvensen lett å dempe."
+          ],
+          "feedback": [
+            "Her er rollene byttet om. Speilfrekvensen ligger to mellomfrekvenser unna, så en høy MF flytter den langt bort."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "To mellomfrekvenser dobler følsomheten uten å endre selektiviteten."
+          ],
+          "feedback": [
+            "Formålet er nettopp å oppnå både god speildemping og god selektivitet."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Med to mellomfrekvenser trengs det ingen lokaloscillator."
+          ],
+          "feedback": [
+            [
+              "Hver omforming til en ny mellomfrekvens krever en blander med egen ",
+              {
+                "term": "lokaloscillator",
+                "text": "lokaloscillator"
+              },
+              "."
+            ]
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          {
+            "term": "speilfrekvens",
+            "text": "Speilfrekvensen"
+          },
+          " ligger to mellomfrekvenser fra signalet. Med høy første mellomfrekvens havner den langt unna og kan dempes med enkle ",
+          {
+            "term": "filter",
+            "text": "filtre"
+          },
+          " foran ",
+          {
+            "term": "blander",
+            "text": "blanderen"
+          },
+          "."
+        ],
+        [
+          "Smale filtre som skiller signaler som ligger tett, er lettere å lage på lav ",
+          {
+            "term": "frekvens",
+            "text": "frekvens"
+          },
+          ". Den lave andre mellomfrekvensen gir derfor god ",
+          {
+            "term": "selektivitet",
+            "text": "selektivitet"
+          },
+          "."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 6,
+        "section_id": "s6-11",
+        "printed_pages": [
+          "6-6"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "3f23dbc48489366a",
+          "92798468b18c6fe5"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "autolink",
+        "author": "AI-assistent (Claude), autolenking",
+        "based_on": 2,
+        "at": "2026-10-24T09:31:41+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T09:31:41+00:00",
+          "actor": "AI-assistent (Claude), autolenking",
+          "action": "autolink",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "8b39033f05f147ab340318c72bc678b049ce7e96f7d9a9136ac65c99082014f2",
+          "note": "glossary links added (2); based on r2"
+        },
+        {
+          "at": "2026-10-24T09:31:51+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "8b39033f05f147ab340318c72bc678b049ce7e96f7d9a9136ac65c99082014f2",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:32:05+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "8b39033f05f147ab340318c72bc678b049ce7e96f7d9a9136ac65c99082014f2",
+          "note": "Nye ordlistelenker (runde 2); teksten er uendret.",
+          "acknowledged": [
+            "figures",
+            "ocr"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "8b39033f05f147ab340318c72bc678b049ce7e96f7d9a9136ac65c99082014f2",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: equation, numeric_low_conf, sign_ambiguous, table. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T09:32:05+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T09:32:05+00:00",
+        "content_sha256": "8b39033f05f147ab340318c72bc678b049ce7e96f7d9a9136ac65c99082014f2",
         "acknowledged_hazards": [
           "figures",
           "ocr"

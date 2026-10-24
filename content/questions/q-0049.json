@@ -200,7 +200,7 @@
     },
     {
       "revision": 2,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "concept",
@@ -398,6 +398,15 @@
             "figures",
             "ocr"
           ]
+        },
+        {
+          "at": "2026-10-24T09:32:08+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "67aef8e6b24922794a5bcfede4d363318a271b11f2da3ffde5d078b11efbca1c",
+          "note": "superseded by r3"
         }
       ],
       "checks": {
@@ -422,6 +431,252 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-23T20:43:48+00:00",
         "content_sha256": "67aef8e6b24922794a5bcfede4d363318a271b11f2da3ffde5d078b11efbca1c",
+        "acknowledged_hazards": [
+          "figures",
+          "ocr"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 3,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "hard",
+      "chapter": 2,
+      "section_ids": [
+        "s2-45",
+        "s2-46"
+      ],
+      "topic_ids": [
+        "resonans",
+        "q-faktor"
+      ],
+      "learning_objective": "Forstå hvordan tapsresistansen i spolen påvirker dynamisk resistans og Q-faktor i en parallellkrets.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "I en parallellavstemt krets er nesten alle tap samlet i en liten serieresistans R i spoletråden. L og C holdes uendret, og ",
+          {
+            "term": "resonans",
+            "text": "resonansfrekvensen"
+          },
+          " er den samme."
+        ]
+      ],
+      "stem": [
+        [
+          {
+            "term": "spole",
+            "text": "Spolen"
+          },
+          " byttes ut med en av samme ",
+          {
+            "term": "induktans",
+            "text": "induktans"
+          },
+          ", men laget av tykkere tråd, slik at R blir halvparten så stor. Hva skjer?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Den dynamiske resistansen og Q-faktoren øker."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Den dynamiske resistansen og Q-faktoren minker."
+          ],
+          "feedback": [
+            [
+              "Mindre tap gir mer fullstendig oppheving av ",
+              {
+                "term": "strom",
+                "text": "strømmene"
+              },
+              " i L og C. Da øker impedansen ved resonans, ikke omvendt."
+            ]
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Den dynamiske resistansen minker, mens Q-faktoren øker."
+          ],
+          "feedback": [
+            [
+              "Den dynamiske ",
+              {
+                "term": "resistans",
+                "text": "resistansen"
+              },
+              " er omvendt proporsjonal med R. Med halvert R dobles den."
+            ]
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Ingenting endres, fordi L og C er de samme."
+          ],
+          "feedback": [
+            [
+              "Både impedansen ved resonans og ",
+              {
+                "term": "q-faktor",
+                "text": "Q-faktoren"
+              },
+              " avhenger av tapene, ikke bare av L og C."
+            ]
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Den resistive ",
+          {
+            "term": "impedans",
+            "text": "impedansen"
+          },
+          " til en parallellkrets ved resonans kalles ",
+          {
+            "term": "dynamisk-resistans",
+            "text": "dynamisk resistans"
+          },
+          ":"
+        ],
+        {
+          "steps": [
+            [
+              {
+                "math": [
+                  "R_D",
+                  "=",
+                  {
+                    "frac": [
+                      [
+                        "L"
+                      ],
+                      [
+                        "C",
+                        "·",
+                        "R"
+                      ]
+                    ]
+                  }
+                ]
+              }
+            ],
+            [
+              "Halvert R gir dobbel R_D. Samtidig er Q = X_L / R, så også Q dobles."
+            ]
+          ]
+        },
+        [
+          "Lave tap gir altså både høyere impedans ved resonans og en skarpere ",
+          {
+            "term": "resonanskurve",
+            "text": "resonanskurve"
+          },
+          "."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 2,
+        "section_id": "s2-45",
+        "printed_pages": [
+          "2-17",
+          "2-18"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "de954bba80308ceb",
+          "aaef8985734acd38"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "autolink",
+        "author": "AI-assistent (Claude), autolenking",
+        "based_on": 2,
+        "at": "2026-10-24T09:31:43+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T09:31:43+00:00",
+          "actor": "AI-assistent (Claude), autolenking",
+          "action": "autolink",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "fde124c8c9e592731fe3e8f49f33be93d9d0486123c25488a6d73bb613efa962",
+          "note": "glossary links added (1); based on r2"
+        },
+        {
+          "at": "2026-10-24T09:31:51+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "fde124c8c9e592731fe3e8f49f33be93d9d0486123c25488a6d73bb613efa962",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:32:08+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "fde124c8c9e592731fe3e8f49f33be93d9d0486123c25488a6d73bb613efa962",
+          "note": "Nye ordlistelenker (runde 2); teksten er uendret.",
+          "acknowledged": [
+            "figures",
+            "ocr"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "fde124c8c9e592731fe3e8f49f33be93d9d0486123c25488a6d73bb613efa962",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: equation, numeric_low_conf. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T09:32:08+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T09:32:08+00:00",
+        "content_sha256": "fde124c8c9e592731fe3e8f49f33be93d9d0486123c25488a6d73bb613efa962",
         "acknowledged_hazards": [
           "figures",
           "ocr"

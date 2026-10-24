@@ -152,7 +152,7 @@
     },
     {
       "revision": 2,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "concept",
@@ -302,6 +302,15 @@
           "content_sha256": "eae66bf9afa9615d630a9c0837699afc45b80ce2c2e38f8edc896e64c32e1172",
           "note": "Godkjent av redaktør: kun nye ordforklaringslenker (automatisk lenking, kontrollert for svarlekkasje), teksten er uendret fra forrige godkjente versjon. Sidehenvisninger er fortsatt ikke kontrollert mot trykt bok.",
           "acknowledged": []
+        },
+        {
+          "at": "2026-10-24T09:32:18+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "eae66bf9afa9615d630a9c0837699afc45b80ce2c2e38f8edc896e64c32e1172",
+          "note": "superseded by r3"
         }
       ],
       "checks": {
@@ -317,6 +326,201 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-23T20:43:50+00:00",
         "content_sha256": "eae66bf9afa9615d630a9c0837699afc45b80ce2c2e38f8edc896e64c32e1172",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 3,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "easy",
+      "chapter": 4,
+      "section_ids": [
+        "s4-33"
+      ],
+      "topic_ids": [
+        "spisseffekt"
+      ],
+      "learning_objective": "Vite hva en taleprosessor gjør med forholdet mellom gjennomsnitts- og spisseffekt.",
+      "priority": "exam_important",
+      "context": [],
+      "stem": [
+        [
+          "Hva er den viktigste virkningen av å slå på ",
+          {
+            "term": "taleprosessor",
+            "text": "taleprosessoren"
+          },
+          " i en ",
+          {
+            "term": "ssb",
+            "text": "SSB"
+          },
+          "-sender?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Gjennomsnittseffekten øker i forhold til spisseffekten."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Spisseffekten øker ut over senderens største effekt."
+          ],
+          "feedback": [
+            [
+              {
+                "term": "sender",
+                "text": "Senderens"
+              },
+              " spisseffekt endres ikke. Prosessoren begrenser toppene slik at de svakere delene av talen kan løftes."
+            ]
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Båndbredden til signalet blir halvert."
+          ],
+          "feedback": [
+            [
+              {
+                "term": "baandbredde",
+                "text": "Båndbredden"
+              },
+              " bestemmes av lydens frekvensområde og ",
+              {
+                "term": "filter",
+                "text": "filtrene"
+              },
+              ", ikke av ",
+              {
+                "term": "taleprosessor",
+                "text": "taleprosessoren"
+              },
+              "."
+            ]
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Gjennomsnittseffekten går ned, så sluttrinnet blir kaldere."
+          ],
+          "feedback": [
+            "Det er motsatt. Høyere gjennomsnittseffekt gir mer varme i sluttrinnet."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "En taleprosessor begrenser eller komprimerer taletoppene, slik at de svakere delene av talen kan forsterkes mer. ",
+          {
+            "term": "spisseffekt",
+            "text": "Spisseffekten"
+          },
+          " er den samme, men gjennomsnittseffekten blir høyere, og signalet høres kraftigere ut hos ",
+          {
+            "term": "mottaker",
+            "text": "mottakeren"
+          },
+          "."
+        ],
+        [
+          "Det kan hjelpe ved svake forbindelser, men ",
+          {
+            "term": "sluttforsterker",
+            "text": "sluttrinnet"
+          },
+          " og strømforsyningen belastes mer. For mye prosessering gir dessuten forvrengt lyd."
+        ]
+      ],
+      "glossary_after_answer": [
+        "taleprosessor"
+      ],
+      "study_reference": {
+        "chapter": 4,
+        "section_id": "s4-33",
+        "printed_pages": [
+          "4-16"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "fc74c0e9ea527692"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "autolink",
+        "author": "AI-assistent (Claude), autolenking",
+        "based_on": 2,
+        "at": "2026-10-24T09:31:47+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T09:31:47+00:00",
+          "actor": "AI-assistent (Claude), autolenking",
+          "action": "autolink",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "8a4c4b51e7756396e5afe066774864d138e9138af106505b0e1f07b5a67a0129",
+          "note": "glossary links added (3); based on r2"
+        },
+        {
+          "at": "2026-10-24T09:31:51+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "8a4c4b51e7756396e5afe066774864d138e9138af106505b0e1f07b5a67a0129",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:32:18+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "8a4c4b51e7756396e5afe066774864d138e9138af106505b0e1f07b5a67a0129",
+          "note": "Nye ordlistelenker (runde 2); teksten er uendret.",
+          "acknowledged": []
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "8a4c4b51e7756396e5afe066774864d138e9138af106505b0e1f07b5a67a0129",
+        "errors": [],
+        "warnings": [],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T09:32:18+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T09:32:18+00:00",
+        "content_sha256": "8a4c4b51e7756396e5afe066774864d138e9138af106505b0e1f07b5a67a0129",
         "acknowledged_hazards": [],
         "checklist": {
           "one_correct": true,

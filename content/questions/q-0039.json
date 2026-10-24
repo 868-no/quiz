@@ -190,7 +190,7 @@
     },
     {
       "revision": 2,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "concept",
@@ -361,6 +361,15 @@
             "figures",
             "ocr"
           ]
+        },
+        {
+          "at": "2026-10-24T09:32:07+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "bf86327ea39535954ce3e67104a1f21ce3d468d3201a1866a971a17aac536b90",
+          "note": "superseded by r3"
         }
       ],
       "checks": {
@@ -385,6 +394,237 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-23T20:43:47+00:00",
         "content_sha256": "bf86327ea39535954ce3e67104a1f21ce3d468d3201a1866a971a17aac536b90",
+        "acknowledged_hazards": [
+          "figures",
+          "ocr"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 3,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "easy",
+      "chapter": 2,
+      "section_ids": [
+        "s2-20"
+      ],
+      "topic_ids": [
+        "tidskonstant",
+        "kondensatorer"
+      ],
+      "learning_objective": "Forstå hvorfor høyspente filterkondensatorer skal ha en permanent utladningsmotstand.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En strømforsyning til en rørsender har filterkondensatorer som lades til over ",
+          {
+            "q": 2,
+            "u": "kV"
+          },
+          ". Over ",
+          {
+            "term": "kondensator",
+            "text": "kondensatorene"
+          },
+          " er det koblet en ",
+          {
+            "term": "motstand",
+            "text": "motstand"
+          },
+          " med høy ",
+          {
+            "term": "resistans",
+            "text": "resistans"
+          },
+          " som alltid sitter der."
+        ]
+      ],
+      "stem": [
+        "Hva er hovedhensikten med denne motstanden?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Å lade ut kondensatorene etter at forsyningen er slått av, så de ikke er livsfarlige."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Å begrense ladestrømmen når forsyningen slås på."
+          ],
+          "feedback": [
+            [
+              "En motstand ",
+              {
+                "term": "parallellkobling",
+                "text": "i parallell"
+              },
+              " med kondensatoren begrenser ikke ladestrømmen. Det gjør en motstand ",
+              {
+                "term": "seriekobling",
+                "text": "i serie"
+              },
+              "."
+            ]
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Å øke kapasitansen slik at rippelen blir mindre."
+          ],
+          "feedback": [
+            [
+              "En motstand endrer ikke ",
+              {
+                "term": "kapasitans",
+                "text": "kapasitansen"
+              },
+              ". Den gir bare en utladningsvei for ladningen."
+            ]
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Å beskytte kondensatorene mot for høy strøm under sending."
+          ],
+          "feedback": [
+            [
+              "Motstanden har høy resistans og trekker bare en liten strøm; den hindrer ikke store ",
+              {
+                "term": "strom",
+                "text": "strømmer"
+              },
+              " i kondensatorene."
+            ]
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "En ladet kondensator kan holde på ",
+          {
+            "term": "spenning",
+            "text": "spenningen"
+          },
+          " lenge etter at apparatet er slått av. En permanent ",
+          {
+            "term": "utladningsmotstand",
+            "text": "utladningsmotstand"
+          },
+          " gir ",
+          {
+            "term": "ladning",
+            "text": "ladningen"
+          },
+          " en vei å gå, slik at spenningen faller til et ufarlig nivå i løpet av noen tidskonstanter."
+        ],
+        [
+          "Motstanden må tåle ",
+          {
+            "term": "effekt",
+            "text": "effekten"
+          },
+          " som omsettes i den under drift. Selv med en permanent utladningsmotstand må man aldri anta at kondensatorene er utladet. Kontroller spenningen med egnet høyspenningsmåleutstyr, og bruk utstyr og fremgangsmåter som er laget for å lade ut høyspenningskondensatorer. Direkte kortslutning er ingen sikker generell fremgangsmåte."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 2,
+        "section_id": "s2-20",
+        "printed_pages": [
+          "2-8"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "1d41613b789a2b76",
+          "fe9c6b3763b81a79"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "autolink",
+        "author": "AI-assistent (Claude), autolenking",
+        "based_on": 2,
+        "at": "2026-10-24T09:31:42+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T09:31:42+00:00",
+          "actor": "AI-assistent (Claude), autolenking",
+          "action": "autolink",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "9671421ac8b3ed5c4335c12294cbafb44483977cfd4783d691b4e74631337102",
+          "note": "glossary links added (3); based on r2"
+        },
+        {
+          "at": "2026-10-24T09:31:51+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "9671421ac8b3ed5c4335c12294cbafb44483977cfd4783d691b4e74631337102",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:32:07+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "9671421ac8b3ed5c4335c12294cbafb44483977cfd4783d691b4e74631337102",
+          "note": "Nye ordlistelenker (runde 2); teksten er uendret.",
+          "acknowledged": [
+            "figures",
+            "ocr"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "9671421ac8b3ed5c4335c12294cbafb44483977cfd4783d691b4e74631337102",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: equation. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T09:32:07+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T09:32:07+00:00",
+        "content_sha256": "9671421ac8b3ed5c4335c12294cbafb44483977cfd4783d691b4e74631337102",
         "acknowledged_hazards": [
           "figures",
           "ocr"

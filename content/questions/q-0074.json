@@ -166,7 +166,7 @@
     },
     {
       "revision": 2,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "recall",
@@ -322,6 +322,15 @@
           "acknowledged": [
             "figures"
           ]
+        },
+        {
+          "at": "2026-10-24T09:32:14+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "b89be5d2e9bf7704b24456cf6481dee8caaa4cf0eb6c319429117f988180c91e",
+          "note": "superseded by r3"
         }
       ],
       "checks": {
@@ -342,6 +351,215 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-23T20:43:49+00:00",
         "content_sha256": "b89be5d2e9bf7704b24456cf6481dee8caaa4cf0eb6c319429117f988180c91e",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 3,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "recall",
+      "difficulty": "hard",
+      "chapter": 3,
+      "section_ids": [
+        "s3-30",
+        "s3-31"
+      ],
+      "topic_ids": [
+        "felteffekttransistorer"
+      ],
+      "learning_objective": "Vite hvordan gate 2 i en dual-gate MOSFET normalt kobles.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En ",
+          {
+            "term": "forsterker",
+            "text": "forsterker"
+          },
+          " bruker en FET med to isolerte porter (dual-gate ",
+          {
+            "term": "felteffekttransistor",
+            "text": "MOSFET"
+          },
+          "). Signalet føres inn på gate 1, som ligger nærmest source."
+        ]
+      ],
+      "stem": [
+        "Hvordan er gate 2 vanligvis koblet?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Til en liten positiv likespenning, avkoblet til jord med en kondensator"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Direkte til drain, slik at den følger utgangssignalet"
+          ],
+          "feedback": [
+            "Da ville utgangssignalet bli ført tilbake til styreelektroden. Gate 2 skal ha en fast likespenning og ligge på jord for signalet."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Til en stor negativ spenning, slik at kanalen alltid er knepet av"
+          ],
+          "feedback": [
+            [
+              "Med kanalen knepet av leder ",
+              {
+                "term": "transistor",
+                "text": "transistoren"
+              },
+              " ikke, og forsterkeren virker ikke."
+            ]
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Ikke koblet til noe, fordi den bare trengs når FET-en brukes som blander"
+          ],
+          "feedback": [
+            [
+              "En isolert port som henger løst, kan få en tilfeldig ",
+              {
+                "term": "ladning",
+                "text": "ladning"
+              },
+              " og i verste fall ødelegges av statisk elektrisitet. Den skal ha en definert ",
+              {
+                "term": "spenning",
+                "text": "spenning"
+              },
+              "."
+            ]
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Gate 1 brukes på samme måte som porten i en vanlig FET. Gate 2 får en passende liten positiv likespenning og avkobles med en ",
+          {
+            "term": "kondensator",
+            "text": "kondensator"
+          },
+          ", slik at den ligger på jord for signalet."
+        ],
+        [
+          "Ved å endre ",
+          {
+            "term": "likespenning",
+            "text": "likespenningen"
+          },
+          " på gate 2 kan man regulere forsterkningen, for eksempel med automatisk forsterkningsregulering. Gate 2 kan også brukes som en ekstra signalinngang, for eksempel for ",
+          {
+            "term": "lokaloscillator",
+            "text": "lokaloscillatoren"
+          },
+          " i et ",
+          {
+            "term": "blander",
+            "text": "blandetrinn"
+          },
+          "."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 3,
+        "section_id": "s3-30",
+        "printed_pages": [
+          "3-13",
+          "3-14"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "00c891a2f84b5d79",
+          "cc96f50ed3fae8e4"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "autolink",
+        "author": "AI-assistent (Claude), autolenking",
+        "based_on": 2,
+        "at": "2026-10-24T09:31:46+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T09:31:46+00:00",
+          "actor": "AI-assistent (Claude), autolenking",
+          "action": "autolink",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "04ce749ca5b3be7a9db47327d98f17166c228f51fe1f48d10fec1dd4d15d38b4",
+          "note": "glossary links added (3); based on r2"
+        },
+        {
+          "at": "2026-10-24T09:31:51+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "04ce749ca5b3be7a9db47327d98f17166c228f51fe1f48d10fec1dd4d15d38b4",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:32:14+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "04ce749ca5b3be7a9db47327d98f17166c228f51fe1f48d10fec1dd4d15d38b4",
+          "note": "Nye ordlistelenker (runde 2); teksten er uendret.",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "04ce749ca5b3be7a9db47327d98f17166c228f51fe1f48d10fec1dd4d15d38b4",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T09:32:14+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T09:32:14+00:00",
+        "content_sha256": "04ce749ca5b3be7a9db47327d98f17166c228f51fe1f48d10fec1dd4d15d38b4",
         "acknowledged_hazards": [
           "figures"
         ],

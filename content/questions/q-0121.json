@@ -367,7 +367,7 @@
     },
     {
       "revision": 3,
-      "status": "approved",
+      "status": "retired",
       "type": "single_choice",
       "style": "concept",
       "difficulty": "medium",
@@ -540,6 +540,15 @@
           "acknowledged": [
             "ocr"
           ]
+        },
+        {
+          "at": "2026-10-24T09:32:24+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "1ed1920b35324510c929147c59e868d9de5a5faea10d750167481037b444c886",
+          "note": "superseded by r4"
         }
       ],
       "checks": {
@@ -560,6 +569,222 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-23T20:58:40+00:00",
         "content_sha256": "1ed1920b35324510c929147c59e868d9de5a5faea10d750167481037b444c886",
+        "acknowledged_hazards": [
+          "ocr"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 4,
+      "status": "approved",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 6,
+      "section_ids": [
+        "s6-26",
+        "s6-27"
+      ],
+      "topic_ids": [
+        "forforsterkere"
+      ],
+      "learning_objective": "Forstå hvorfor en forforsterker bør stå i mastetoppen når fødekabelen har tap.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En UHF-stasjon har en lang koaksialkabel med merkbart tap mellom ",
+          {
+            "term": "antenne",
+            "text": "antennen"
+          },
+          " og ",
+          {
+            "term": "mottaker",
+            "text": "mottakeren"
+          },
+          "."
+        ]
+      ],
+      "stem": [
+        [
+          "Hvorfor er det bedre å plassere en ",
+          {
+            "term": "forforsterker",
+            "text": "forforsterker"
+          },
+          " i mastetoppen enn ved mottakeren?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Signalet forsterkes før kabeltapet, så tapet betyr mindre for signal/støy-forholdet"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Tapet i kabelen blir mindre når kabelen fører et sterkere signal"
+          ],
+          "feedback": [
+            "Kabeltapet i dB er det samme uansett signalnivå."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Forforsterkeren får lavere egenstøy fordi den kjøles bedre ute"
+          ],
+          "feedback": [
+            "Plasseringen i masten handler ikke om kjøling, men om hvor i signalveien forsterkningen skjer."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "En forforsterker i masten øker det dynamiske området til anlegget"
+          ],
+          "feedback": [
+            [
+              "En forforsterker gjør normalt ",
+              {
+                "term": "dynamisk-omraade",
+                "text": "det dynamiske området"
+              },
+              " mindre, fordi sterke signaler også forsterkes. Derfor bør forsterkningen ikke være større enn nødvendig."
+            ]
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Kabeltapet svekker signalet før det når mottakeren, mens mottakerens egenstøy er den samme. ",
+          {
+            "term": "signal-stoy-forhold",
+            "text": "Signal/støy-forholdet"
+          },
+          " blir dermed dårligere."
+        ],
+        [
+          "Med forforsterkeren i masten løftes signalet før tapet, og det er da forforsterkerens lave egenstøy som bestemmer følsomheten. Forsterkningen bør bare være litt større enn kabeltapet, for å ikke miste unødig dynamisk område, og ",
+          {
+            "term": "filter",
+            "text": "filtre"
+          },
+          " i forforsterkeren bør bare slippe gjennom ønsket bånd."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 6,
+        "section_id": "s6-26",
+        "printed_pages": [
+          "6-16"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "a1bb6a5fd3af6229",
+          "881570e01b06e518"
+        ]
+      },
+      "tags": [],
+      "visual": {
+        "template": "block-diagram",
+        "version": 1,
+        "params": {
+          "chain": [
+            {
+              "kind": "antenna"
+            },
+            {
+              "kind": "custom",
+              "label": "Forforsterker i masten"
+            },
+            {
+              "kind": "custom",
+              "label": "Lang kabel med tap"
+            },
+            {
+              "kind": "custom",
+              "label": "Mottaker"
+            }
+          ]
+        }
+      },
+      "language": "nb-NO",
+      "provenance": {
+        "method": "autolink",
+        "author": "AI-assistent (Claude), autolenking",
+        "based_on": 3,
+        "at": "2026-10-24T09:31:50+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T09:31:50+00:00",
+          "actor": "AI-assistent (Claude), autolenking",
+          "action": "autolink",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "ead2554cb2599beb1e5d67190f0cd625125e5a2dd018f47a7a56cfd54dbbb6ab",
+          "note": "glossary links added (1); based on r3"
+        },
+        {
+          "at": "2026-10-24T09:31:52+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "ead2554cb2599beb1e5d67190f0cd625125e5a2dd018f47a7a56cfd54dbbb6ab",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:32:24+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "ead2554cb2599beb1e5d67190f0cd625125e5a2dd018f47a7a56cfd54dbbb6ab",
+          "note": "Nye ordlistelenker (runde 2); teksten er uendret.",
+          "acknowledged": [
+            "ocr"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "ead2554cb2599beb1e5d67190f0cd625125e5a2dd018f47a7a56cfd54dbbb6ab",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: low_ocr_confidence. Check every number, unit and formula against the printed book."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T09:32:24+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T09:32:24+00:00",
+        "content_sha256": "ead2554cb2599beb1e5d67190f0cd625125e5a2dd018f47a7a56cfd54dbbb6ab",
         "acknowledged_hazards": [
           "ocr"
         ],

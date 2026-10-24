@@ -181,7 +181,7 @@
     },
     {
       "revision": 2,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "concept",
@@ -350,6 +350,15 @@
           "acknowledged": [
             "figures"
           ]
+        },
+        {
+          "at": "2026-10-24T09:32:24+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "984ce58f9750c6939a8884ab4a2a79abe47fc0cc37416b337c886fac3b8b17c2",
+          "note": "superseded by r3"
         }
       ],
       "checks": {
@@ -370,6 +379,233 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-23T20:43:51+00:00",
         "content_sha256": "984ce58f9750c6939a8884ab4a2a79abe47fc0cc37416b337c886fac3b8b17c2",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 3,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 6,
+      "section_ids": [
+        "s6-21"
+      ],
+      "topic_ids": [
+        "demodulering"
+      ],
+      "learning_objective": "Forstå hvordan utgangen fra en FM-diskriminator varierer med frekvensen.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En ",
+          {
+            "term": "forholdsdetektor",
+            "text": "forholdsdetektor"
+          },
+          " brukes som ",
+          {
+            "term": "frekvensmodulasjon",
+            "text": "FM"
+          },
+          "-",
+          {
+            "term": "demodulator",
+            "text": "demodulator"
+          },
+          ". Detektorens ",
+          {
+            "term": "avstemt-krets",
+            "text": "avstemte krets"
+          },
+          " er stilt inn på midten av ",
+          {
+            "term": "mellomfrekvens",
+            "text": "MF"
+          },
+          "-kanalen."
+        ]
+      ],
+      "stem": "Hva er utgangsspenningen når et umodulert MF-signal ligger nøyaktig på senterfrekvensen?",
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Null, fordi de to likerettede spenningene er like store med motsatt polaritet"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Størst mulig positiv spenning, fordi kretsen er i resonans"
+          ],
+          "feedback": [
+            [
+              "Ved ",
+              {
+                "term": "resonans",
+                "text": "resonans"
+              },
+              " balanserer de to halvdelene hverandre. Utgangen blir positiv eller negativ først når ",
+              {
+                "term": "frekvens",
+                "text": "frekvensen"
+              },
+              " avviker."
+            ]
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "En vekselspenning med samme frekvens som mellomfrekvensen"
+          ],
+          "feedback": [
+            [
+              "Diodene og ",
+              {
+                "term": "kondensator",
+                "text": "kondensatorene"
+              },
+              " ",
+              {
+                "term": "likeretter",
+                "text": "likeretter"
+              },
+              " MF-signalet. Utgangen følger frekvensavviket, ikke selve mellomfrekvensen."
+            ]
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "En likespenning som er proporsjonal med signalstyrken"
+          ],
+          "feedback": [
+            [
+              {
+                "term": "forholdsdetektor",
+                "text": "Forholdsdetektoren"
+              },
+              " er lite følsom for amplitudeendringer. Utgangen avhenger av frekvensavviket."
+            ]
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "En avstemt krets gir 90° ",
+          {
+            "term": "faseforskyvning",
+            "text": "faseforskyvning"
+          },
+          " ved senterfrekvensen, slik at de to ",
+          {
+            "term": "diode",
+            "text": "diodene"
+          },
+          " får like store spenninger. De likerettede ",
+          {
+            "term": "spenning",
+            "text": "spenningene"
+          },
+          " opphever hverandre, og utgangen blir null."
+        ],
+        "Over senterfrekvensen blir den ene spenningen størst, under blir den andre størst. Nær senterfrekvensen varierer utgangen tilnærmet lineært med frekvensavviket, og det er lyden. Utgangen kan også brukes som avstemmingsindikator."
+      ],
+      "glossary_after_answer": [
+        "forholdsdetektor"
+      ],
+      "study_reference": {
+        "chapter": 6,
+        "section_id": "s6-21",
+        "printed_pages": [
+          "6-11",
+          "6-12"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "230c6ad7684f7a08",
+          "1b6882b719159f1d"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "autolink",
+        "author": "AI-assistent (Claude), autolenking",
+        "based_on": 2,
+        "at": "2026-10-24T09:31:50+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T09:31:50+00:00",
+          "actor": "AI-assistent (Claude), autolenking",
+          "action": "autolink",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "43eaef1547ee9212faaaeb921839c72c70d3546f87ade94d295634142b164046",
+          "note": "glossary links added (4); based on r2"
+        },
+        {
+          "at": "2026-10-24T09:31:52+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "43eaef1547ee9212faaaeb921839c72c70d3546f87ade94d295634142b164046",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:32:24+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "43eaef1547ee9212faaaeb921839c72c70d3546f87ade94d295634142b164046",
+          "note": "Nye ordlistelenker (runde 2); teksten er uendret.",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "43eaef1547ee9212faaaeb921839c72c70d3546f87ade94d295634142b164046",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T09:32:24+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T09:32:24+00:00",
+        "content_sha256": "43eaef1547ee9212faaaeb921839c72c70d3546f87ade94d295634142b164046",
         "acknowledged_hazards": [
           "figures"
         ],

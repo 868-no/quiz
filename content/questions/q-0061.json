@@ -3,7 +3,7 @@
   "revisions": [
     {
       "revision": 1,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "recall",
@@ -127,6 +127,15 @@
           "acknowledged": [
             "figures"
           ]
+        },
+        {
+          "at": "2026-10-24T09:32:11+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "181f2bf7f5df27c10d6ab95a3b120cf9786f6f243c2b0a30b6ec2eeb6c1c4342",
+          "note": "superseded by r2"
         }
       ],
       "checks": {
@@ -147,6 +156,179 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-23T19:12:52+00:00",
         "content_sha256": "181f2bf7f5df27c10d6ab95a3b120cf9786f6f243c2b0a30b6ec2eeb6c1c4342",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 2,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "recall",
+      "difficulty": "easy",
+      "chapter": 3,
+      "section_ids": [
+        "s3-02"
+      ],
+      "topic_ids": [
+        "halvledermaterialer"
+      ],
+      "learning_objective": "Vite hva slags tilsetningsstoff som gir N-type silisium.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "Et silisiumkrystall skal gjøres til ",
+          {
+            "term": "n-type",
+            "text": "N-type"
+          },
+          " materiale ved ",
+          {
+            "term": "doping",
+            "text": "doping"
+          },
+          "."
+        ]
+      ],
+      "stem": [
+        "Hvilket tilsetningsstoff gir N-type silisium?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Fosfor, som har fem elektroner i det ytterste skallet"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Bor, som har tre elektroner i det ytterste skallet"
+          ],
+          "feedback": [
+            [
+              "Et stoff med tre ytterelektroner etterlater et hull i bindingene og gir ",
+              {
+                "term": "p-type",
+                "text": "P-type"
+              },
+              " materiale."
+            ]
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Germanium, som har fire elektroner i det ytterste skallet"
+          ],
+          "feedback": [
+            "Germanium har like mange ytterelektroner som silisium. Det gir verken overskudd av elektroner eller hull."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Kobber, som leder strøm svært godt i seg selv"
+          ],
+          "feedback": [
+            "Ledningsevnen til tilsetningsstoffet er ikke poenget. Det som teller, er antall ytterelektroner: fem gir N-type, tre gir P-type."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Når et atom med fem ytterelektroner (for eksempel fosfor, arsen eller antimon) sitter i silisiumkrystallet, går fire av elektronene inn i bindinger med naboene. Det femte elektronet blir til overs og kan bevege seg nokså fritt.",
+        "Materialet får dermed et overskudd av frie elektroner, altså negative ladningsbærere. Derav navnet N-type."
+      ],
+      "glossary_after_answer": [
+        "doping",
+        "n-type"
+      ],
+      "study_reference": {
+        "chapter": 3,
+        "section_id": "s3-02",
+        "printed_pages": [
+          "3-1"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "5460a02dfffc7e6f"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "autolink",
+        "author": "AI-assistent (Claude), autolenking",
+        "based_on": 1,
+        "at": "2026-10-24T09:31:44+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T09:31:44+00:00",
+          "actor": "AI-assistent (Claude), autolenking",
+          "action": "autolink",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "25ce505b371c869da307415b43bf052094f492786672d43e7ee0b9159ec026f2",
+          "note": "glossary links added (2); based on r1"
+        },
+        {
+          "at": "2026-10-24T09:31:51+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "25ce505b371c869da307415b43bf052094f492786672d43e7ee0b9159ec026f2",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:32:11+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "25ce505b371c869da307415b43bf052094f492786672d43e7ee0b9159ec026f2",
+          "note": "Nye ordlistelenker (runde 2); teksten er uendret.",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "25ce505b371c869da307415b43bf052094f492786672d43e7ee0b9159ec026f2",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T09:32:11+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T09:32:11+00:00",
+        "content_sha256": "25ce505b371c869da307415b43bf052094f492786672d43e7ee0b9159ec026f2",
         "acknowledged_hazards": [
           "figures"
         ],

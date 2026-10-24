@@ -232,7 +232,7 @@
     },
     {
       "revision": 2,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "concept",
@@ -456,6 +456,15 @@
             "figures",
             "ocr"
           ]
+        },
+        {
+          "at": "2026-10-24T09:32:15+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "8a318787590c865bc28ee68a9c2c86d4689d304fdbebe17d8dbbb076e45218ca",
+          "note": "superseded by r3"
         }
       ],
       "checks": {
@@ -480,6 +489,295 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-23T20:43:49+00:00",
         "content_sha256": "8a318787590c865bc28ee68a9c2c86d4689d304fdbebe17d8dbbb076e45218ca",
+        "acknowledged_hazards": [
+          "figures",
+          "ocr"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 3,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "easy",
+      "chapter": 4,
+      "section_ids": [
+        "s4-03"
+      ],
+      "topic_ids": [
+        "senderoppbygging",
+        "frekvensmultiplikasjon",
+        "fm"
+      ],
+      "learning_objective": "Kjenne igjen trinnene i en FM-sender som når sendefrekvensen ved frekvensmultiplikasjon.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "Blokkskjemaet viser en enkel ",
+          {
+            "term": "frekvensmodulasjon",
+            "text": "FM"
+          },
+          "-sender for 2 m. ",
+          {
+            "term": "oscillator",
+            "text": "Oscillatoren"
+          },
+          " svinger på en ",
+          {
+            "term": "frekvens",
+            "text": "frekvens"
+          },
+          " som er mye lavere enn sendefrekvensen, og lydsignalet styrer oscillatorfrekvensen direkte. Ett trinn er erstattet med et spørsmålstegn."
+        ]
+      ],
+      "stem": [
+        "Hvilket trinn mangler?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Frekvensmultiplikator"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Blander"
+          ],
+          "feedback": [
+            [
+              "Et blandetrinn trenger et signal fra en egen ",
+              {
+                "term": "lokaloscillator",
+                "text": "lokaloscillator"
+              },
+              " i tillegg. Her finnes bare én oscillator, og frekvensen må likevel opp mange ganger."
+            ]
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Balansert modulator"
+          ],
+          "feedback": [
+            [
+              "En ",
+              {
+                "term": "balansert-modulator",
+                "text": "balansert modulator"
+              },
+              " brukes til å lage SSB. Her skjer FM-moduleringen allerede i oscillatoren."
+            ]
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Sidebåndsfilter"
+          ],
+          "feedback": [
+            [
+              "Et sidebåndsfilter fjerner det ene ",
+              {
+                "term": "sidebaand",
+                "text": "sidebåndet"
+              },
+              " i en SSB-sender. Det hjelper ikke på å få frekvensen opp til 2 m."
+            ]
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Når oscillatoren svinger langt under sendefrekvensen og det ikke finnes noe ",
+          {
+            "term": "blander",
+            "text": "blandetrinn"
+          },
+          ", må frekvensen ganges opp. Det gjør en ",
+          {
+            "term": "frekvensmultiplikator",
+            "text": "frekvensmultiplikator"
+          },
+          ": et ulineært trinn som lager ",
+          {
+            "term": "harmoniske",
+            "text": "harmoniske"
+          },
+          ", med en ",
+          {
+            "term": "avstemt-krets",
+            "text": "avstemt krets"
+          },
+          " som plukker ut ønsket multiplum."
+        ],
+        [
+          "Et eksempel: en oscillator på 12 MHz etterfulgt av multiplikasjon med til sammen 12 gir 144 MHz. Slike ",
+          {
+            "term": "sender",
+            "text": "sendere"
+          },
+          " er i dag stort sett erstattet av syntetisatorer og blandetrinn på HF og VHF, men multiplikatorer er fortsatt vanlige i mikrobølgeområdet."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "visual": {
+        "template": "block-diagram",
+        "version": 1,
+        "params": {
+          "chain": [
+            {
+              "kind": "oscillator"
+            },
+            {
+              "kind": "buffer"
+            },
+            {
+              "kind": "multiplier",
+              "hidden": true
+            },
+            {
+              "kind": "driver"
+            },
+            {
+              "kind": "power_amp"
+            },
+            {
+              "kind": "lowpass_filter"
+            },
+            {
+              "kind": "antenna"
+            }
+          ],
+          "side": [
+            {
+              "kind": "mic_amp",
+              "into": 0
+            }
+          ]
+        },
+        "params_after": {
+          "chain": [
+            {
+              "kind": "oscillator"
+            },
+            {
+              "kind": "buffer"
+            },
+            {
+              "kind": "multiplier",
+              "highlight": true
+            },
+            {
+              "kind": "driver"
+            },
+            {
+              "kind": "power_amp"
+            },
+            {
+              "kind": "lowpass_filter"
+            },
+            {
+              "kind": "antenna"
+            }
+          ]
+        }
+      },
+      "study_reference": {
+        "chapter": 4,
+        "section_id": "s4-03",
+        "printed_pages": [
+          "4-1",
+          "4-2"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "d65f539f9c53dc13"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "autolink",
+        "author": "AI-assistent (Claude), autolenking",
+        "based_on": 2,
+        "at": "2026-10-24T09:31:46+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T09:31:46+00:00",
+          "actor": "AI-assistent (Claude), autolenking",
+          "action": "autolink",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "9c4ec324789b0538e5fe3acfd3f9e9084180c869c3eac535d58f6a4ebb8a7853",
+          "note": "glossary links added (4); based on r2"
+        },
+        {
+          "at": "2026-10-24T09:31:51+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "9c4ec324789b0538e5fe3acfd3f9e9084180c869c3eac535d58f6a4ebb8a7853",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:32:15+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "9c4ec324789b0538e5fe3acfd3f9e9084180c869c3eac535d58f6a4ebb8a7853",
+          "note": "Nye ordlistelenker (runde 2); teksten er uendret.",
+          "acknowledged": [
+            "figures",
+            "ocr"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "9c4ec324789b0538e5fe3acfd3f9e9084180c869c3eac535d58f6a4ebb8a7853",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: numeric_low_conf. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T09:32:15+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T09:32:15+00:00",
+        "content_sha256": "9c4ec324789b0538e5fe3acfd3f9e9084180c869c3eac535d58f6a4ebb8a7853",
         "acknowledged_hazards": [
           "figures",
           "ocr"

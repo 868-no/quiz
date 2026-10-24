@@ -199,7 +199,7 @@
     },
     {
       "revision": 2,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "scenario",
@@ -389,6 +389,15 @@
           "acknowledged": [
             "figures"
           ]
+        },
+        {
+          "at": "2026-10-24T09:32:13+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "5274571d6e75ecc84517657018a5cc6a472753e17277dcf605e758da107f8e47",
+          "note": "superseded by r3"
         }
       ],
       "checks": {
@@ -409,6 +418,242 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-23T20:43:49+00:00",
         "content_sha256": "5274571d6e75ecc84517657018a5cc6a472753e17277dcf605e758da107f8e47",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 3,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "medium",
+      "chapter": 3,
+      "section_ids": [
+        "s3-22"
+      ],
+      "topic_ids": [
+        "transistorkoblinger"
+      ],
+      "learning_objective": "Vite hvorfor en emitterfølger brukes som buffer etter en oscillator.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En ",
+          {
+            "term": "vfo",
+            "text": "VFO"
+          },
+          " skal drive ",
+          {
+            "term": "sender",
+            "text": "senderens"
+          },
+          " neste trinn. Belastningen fra neste trinn varierer litt, og det kan trekke ",
+          {
+            "term": "frekvens",
+            "text": "frekvensen"
+          },
+          " til ",
+          {
+            "term": "oscillator",
+            "text": "oscillatoren"
+          },
+          ". Mellom dem settes derfor inn et trinn (vist med spørsmålstegn) som skal skjerme oscillatoren."
+        ]
+      ],
+      "stem": [
+        "Hvilken transistorkobling passer best i dette trinnet, og hvorfor?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "term": "emitterfolger",
+              "text": "Felles kollektor"
+            },
+            " (emitterfølger), fordi den har høy inngangsimpedans og lav utgangsimpedans"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Felles basis, fordi den har lav inngangsimpedans og høy spenningsforsterkning"
+          ],
+          "feedback": [
+            "Lav inngangsimpedans er det motsatte av det man vil ha her. Den ville belaste oscillatoren tungt."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Felles emitter uten avkoblet emittermotstand, fordi den har stor effektforsterkning"
+          ],
+          "feedback": [
+            "Effektforsterkning er ikke poenget. Et buffertrinn skal først og fremst belaste oscillatoren lite og tåle variabel last på utgangen."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Felles kollektor, fordi den har høy spenningsforsterkning og snur fasen"
+          ],
+          "feedback": [
+            [
+              {
+                "term": "emitterfolger",
+                "text": "Emitterfølgeren"
+              },
+              " har spenningsforsterkning litt under 1 og snur ikke fasen."
+            ]
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "I en emitterfølger tas signalet ut fra emitteren, og utgangsspenningen følger inngangsspenningen nesten nøyaktig (forsterkning litt under 1, og ingen fasevending).",
+        [
+          "Inngangsimpedansen er høy, så oscillatoren blir lite belastet. Utgangsimpedansen er lav, så trinnet kan levere ",
+          {
+            "term": "strom",
+            "text": "strøm"
+          },
+          " til en last som varierer, uten at oscillatoren merker det. Et slikt trinn kalles en ",
+          {
+            "term": "bufferforsterker",
+            "text": "bufferforsterker"
+          },
+          "."
+        ]
+      ],
+      "glossary_after_answer": [
+        "emitterfolger"
+      ],
+      "visual": {
+        "template": "block-diagram",
+        "version": 1,
+        "params": {
+          "chain": [
+            {
+              "kind": "vfo"
+            },
+            {
+              "kind": "buffer",
+              "hidden": true
+            },
+            {
+              "kind": "driver"
+            },
+            {
+              "kind": "power_amp"
+            }
+          ]
+        },
+        "params_after": {
+          "chain": [
+            {
+              "kind": "vfo"
+            },
+            {
+              "kind": "buffer",
+              "highlight": true
+            },
+            {
+              "kind": "driver"
+            },
+            {
+              "kind": "power_amp"
+            }
+          ]
+        }
+      },
+      "study_reference": {
+        "chapter": 3,
+        "section_id": "s3-22",
+        "printed_pages": [
+          "3-10"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "e80686c8923b571e",
+          "d436b71f0d40e2ae"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "autolink",
+        "author": "AI-assistent (Claude), autolenking",
+        "based_on": 2,
+        "at": "2026-10-24T09:31:45+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T09:31:45+00:00",
+          "actor": "AI-assistent (Claude), autolenking",
+          "action": "autolink",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "e924b4b3c9de313426d1c25eef2f737839d6ed844416b6893430d9ed5c70b155",
+          "note": "glossary links added (2); based on r2"
+        },
+        {
+          "at": "2026-10-24T09:31:51+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "e924b4b3c9de313426d1c25eef2f737839d6ed844416b6893430d9ed5c70b155",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:32:13+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "e924b4b3c9de313426d1c25eef2f737839d6ed844416b6893430d9ed5c70b155",
+          "note": "Nye ordlistelenker (runde 2); teksten er uendret.",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "e924b4b3c9de313426d1c25eef2f737839d6ed844416b6893430d9ed5c70b155",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T09:32:13+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T09:32:13+00:00",
+        "content_sha256": "e924b4b3c9de313426d1c25eef2f737839d6ed844416b6893430d9ed5c70b155",
         "acknowledged_hazards": [
           "figures"
         ],

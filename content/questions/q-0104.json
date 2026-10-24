@@ -187,7 +187,7 @@
     },
     {
       "revision": 2,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "concept",
@@ -360,6 +360,15 @@
           "acknowledged": [
             "figures"
           ]
+        },
+        {
+          "at": "2026-10-24T09:32:21+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "031609120b24d4c52592d51c0764e2a2fa675b97b691a098fec55f85ab5c846b",
+          "note": "superseded by r3"
         }
       ],
       "checks": {
@@ -380,6 +389,225 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-23T20:43:51+00:00",
         "content_sha256": "031609120b24d4c52592d51c0764e2a2fa675b97b691a098fec55f85ab5c846b",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 3,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "easy",
+      "chapter": 5,
+      "section_ids": [
+        "s5-16"
+      ],
+      "topic_ids": [
+        "senderfeil"
+      ],
+      "learning_objective": "Forstå at båndbredden til et SSB-signal følger båndbredden til lydsignalet, og at lyden bør begrenses til ca. 3 kHz.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "I en ",
+          {
+            "term": "ssb",
+            "text": "SSB"
+          },
+          "-sender lages ",
+          {
+            "term": "sidebaand",
+            "text": "sidebåndet"
+          },
+          " med fasemetoden (uten eget sidebåndsfilter), så det er lydfilteret etter mikrofonforsterkeren som begrenser ",
+          {
+            "term": "baandbredde",
+            "text": "båndbredden"
+          },
+          ". Dette lydfilteret er defekt. Lydfrekvenser helt opp til rundt ",
+          {
+            "q": 6,
+            "u": "kHz"
+          },
+          " slipper nå gjennom til modulatoren, mot normalt rundt ",
+          {
+            "q": 3,
+            "u": "kHz"
+          },
+          "."
+        ]
+      ],
+      "stem": [
+        "Hvordan påvirker dette signalet som sendes ut?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Det utsendte signalet blir omtrent dobbelt så bredt som normalt."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Båndbredden blir den samme, fordi SSB bare sender ett sidebånd."
+          ],
+          "feedback": [
+            "Selv om bare ett sidebånd sendes, er sidebåndet like bredt som lydsignalet. Bredere lyd gir bredere sidebånd."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Signalet blir smalere, fordi bærebølgen er undertrykt."
+          ],
+          "feedback": [
+            [
+              {
+                "term": "baerebolge",
+                "text": "Bærebølgen"
+              },
+              " er alltid undertrykt i SSB. Det endrer ikke bredden på sidebåndet."
+            ]
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Bare lydkvaliteten endres, fordi sluttrinnet bestemmer båndbredden."
+          ],
+          "feedback": [
+            [
+              {
+                "term": "sluttforsterker",
+                "text": "Sluttrinnet"
+              },
+              " ",
+              {
+                "term": "forsterker",
+                "text": "forsterker"
+              },
+              " det signalet det får. Båndbredden bestemmes av lydsignalet som moduleres inn."
+            ]
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Et SSB-signal er en frekvensforskjøvet kopi av lydsignalet, så ",
+          {
+            "term": "baandbredde",
+            "text": "båndbredden"
+          },
+          " på det utsendte signalet blir omtrent lik båndbredden på lyden. Med lyd opp til 6 kHz i stedet for 3 kHz blir signalet omtrent dobbelt så bredt, og det tar plass fra nabostasjonene."
+        ],
+        [
+          "For at flest mulig skal få plass i amatørbåndene, bør lydsignalet begrenses til rundt 3 kHz, helst med filtre både i mikrofonforsterkeren og i modulatoren, slik at én feil ikke gir et bredt signal. Forvrengning av lyden etter ",
+          {
+            "term": "filter",
+            "text": "filteret"
+          },
+          ", for eksempel ved ",
+          {
+            "term": "overmodulering",
+            "text": "overmodulering"
+          },
+          ", gir også ",
+          {
+            "term": "harmoniske",
+            "text": "harmoniske"
+          },
+          " av lyden som gjør signalet bredere."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 5,
+        "section_id": "s5-16",
+        "printed_pages": [
+          "5-7"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "a3dc0b3ecc0e9b9b"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "autolink",
+        "author": "AI-assistent (Claude), autolenking",
+        "based_on": 2,
+        "at": "2026-10-24T09:31:49+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T09:31:49+00:00",
+          "actor": "AI-assistent (Claude), autolenking",
+          "action": "autolink",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "c60d639919a53761198acac63c5676cc5bd51af7fbf96b5a6aeef0c1e7d2a6fb",
+          "note": "glossary links added (2); based on r2"
+        },
+        {
+          "at": "2026-10-24T09:31:52+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "c60d639919a53761198acac63c5676cc5bd51af7fbf96b5a6aeef0c1e7d2a6fb",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:32:21+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "c60d639919a53761198acac63c5676cc5bd51af7fbf96b5a6aeef0c1e7d2a6fb",
+          "note": "Nye ordlistelenker (runde 2); teksten er uendret.",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "c60d639919a53761198acac63c5676cc5bd51af7fbf96b5a6aeef0c1e7d2a6fb",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T09:32:21+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T09:32:21+00:00",
+        "content_sha256": "c60d639919a53761198acac63c5676cc5bd51af7fbf96b5a6aeef0c1e7d2a6fb",
         "acknowledged_hazards": [
           "figures"
         ],

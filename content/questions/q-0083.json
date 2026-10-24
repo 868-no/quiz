@@ -228,7 +228,7 @@
     },
     {
       "revision": 2,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "concept",
@@ -431,6 +431,15 @@
             "figures",
             "ocr"
           ]
+        },
+        {
+          "at": "2026-10-24T09:32:16+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "06fd52ad10de04ae0edab76427cd0fc6ce23b9c36733350dd9f560abac97264f",
+          "note": "superseded by r3"
         }
       ],
       "checks": {
@@ -455,6 +464,262 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-23T20:43:49+00:00",
         "content_sha256": "06fd52ad10de04ae0edab76427cd0fc6ce23b9c36733350dd9f560abac97264f",
+        "acknowledged_hazards": [
+          "figures",
+          "ocr"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 3,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 4,
+      "section_ids": [
+        "s4-14",
+        "s4-15"
+      ],
+      "topic_ids": [
+        "frekvenssyntese"
+      ],
+      "learning_objective": "Kjenne prinsippet for direkte digital syntese og hvilke blokker den består av.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "Blokkskjemaet viser prinsippet for ",
+          {
+            "term": "dds",
+            "text": "direkte digital syntese"
+          },
+          ". Tallverdier for en sinuskurve hentes fra et minne i takt med en klokke, og ",
+          {
+            "term": "frekvens",
+            "text": "frekvensen"
+          },
+          " velges med hvor raskt man går gjennom tabellen. Ett trinn er erstattet med et spørsmålstegn."
+        ]
+      ],
+      "stem": [
+        "Hvilket trinn mangler?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Digital-til-analog-omformer"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Analog-til-digital-omformer"
+          ],
+          "feedback": [
+            "Den omformer motsatt vei, fra spenning til tall. Her skal tall bli til en spenning."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Fasekomparator"
+          ],
+          "feedback": [
+            [
+              "En fasekomparator hører til i en ",
+              {
+                "term": "faselaast-sloyfe",
+                "text": "faselåst sløyfe"
+              },
+              ". En ",
+              {
+                "term": "dds",
+                "text": "DDS"
+              },
+              " har ingen tilbakekobling som skal sammenligne faser."
+            ]
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Frekvensmultiplikator"
+          ],
+          "feedback": [
+            "En multiplikator lager harmoniske av et analogt signal. Tallene fra minnet må først bli til en spenning."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Tallene fra tabellen må gjøres om til en ",
+          {
+            "term": "spenning",
+            "text": "spenning"
+          },
+          ". Det gjør en digital-til-analog-omformer (DAC). Utgangen blir en trappetrinnsformet tilnærming til en sinus."
+        ],
+        [
+          {
+            "term": "lavpassfilter",
+            "text": "Lavpassfilteret"
+          },
+          " til slutt glatter trappetrinnene til en jevn sinus. Jo flere bit per verdi og jo flere verdier per ",
+          {
+            "term": "periode",
+            "text": "periode"
+          },
+          ", desto renere blir signalet, med mindre ",
+          {
+            "term": "harmoniske",
+            "text": "harmoniske"
+          },
+          " og andre uønskede signaler."
+        ]
+      ],
+      "glossary_after_answer": [
+        "dds"
+      ],
+      "visual": {
+        "template": "block-diagram",
+        "version": 1,
+        "params": {
+          "chain": [
+            {
+              "kind": "custom",
+              "label": "Sinustabell i minne"
+            },
+            {
+              "kind": "custom",
+              "label": "D/A-omformer",
+              "hidden": true
+            },
+            {
+              "kind": "lowpass_filter"
+            }
+          ],
+          "side": [
+            {
+              "kind": "custom",
+              "label": "Klokke",
+              "into": 0
+            },
+            {
+              "kind": "custom",
+              "label": "Frekvensvalg",
+              "into": 0
+            }
+          ]
+        },
+        "params_after": {
+          "chain": [
+            {
+              "kind": "custom",
+              "label": "Sinustabell i minne"
+            },
+            {
+              "kind": "custom",
+              "label": "D/A-omformer",
+              "highlight": true
+            },
+            {
+              "kind": "lowpass_filter"
+            }
+          ]
+        }
+      },
+      "study_reference": {
+        "chapter": 4,
+        "section_id": "s4-14",
+        "printed_pages": [
+          "4-8"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "81620fa8210fe703",
+          "c74c8d7639160316"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "autolink",
+        "author": "AI-assistent (Claude), autolenking",
+        "based_on": 2,
+        "at": "2026-10-24T09:31:46+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T09:31:46+00:00",
+          "actor": "AI-assistent (Claude), autolenking",
+          "action": "autolink",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "37f5c20f5d5c9d9cebd9cd28dd57110a704b7243a027c309692ff92e6821ef54",
+          "note": "glossary links added (2); based on r2"
+        },
+        {
+          "at": "2026-10-24T09:31:51+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "37f5c20f5d5c9d9cebd9cd28dd57110a704b7243a027c309692ff92e6821ef54",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:32:16+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "37f5c20f5d5c9d9cebd9cd28dd57110a704b7243a027c309692ff92e6821ef54",
+          "note": "Nye ordlistelenker (runde 2); teksten er uendret.",
+          "acknowledged": [
+            "figures",
+            "ocr"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "37f5c20f5d5c9d9cebd9cd28dd57110a704b7243a027c309692ff92e6821ef54",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: equation. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T09:32:16+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T09:32:16+00:00",
+        "content_sha256": "37f5c20f5d5c9d9cebd9cd28dd57110a704b7243a027c309692ff92e6821ef54",
         "acknowledged_hazards": [
           "figures",
           "ocr"

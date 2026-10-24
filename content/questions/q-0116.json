@@ -379,7 +379,7 @@
     },
     {
       "revision": 3,
-      "status": "approved",
+      "status": "retired",
       "type": "single_choice",
       "style": "concept",
       "difficulty": "medium",
@@ -561,6 +561,15 @@
           "acknowledged": [
             "figures"
           ]
+        },
+        {
+          "at": "2026-10-24T09:32:23+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "18b5eda8c71b5bfe25770401d09d98dd0674117873caefd9bed273af7257d1f9",
+          "note": "superseded by r4"
         }
       ],
       "checks": {
@@ -581,6 +590,244 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-23T20:58:40+00:00",
         "content_sha256": "18b5eda8c71b5bfe25770401d09d98dd0674117873caefd9bed273af7257d1f9",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 4,
+      "status": "approved",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 6,
+      "section_ids": [
+        "s6-18"
+      ],
+      "topic_ids": [
+        "demodulering"
+      ],
+      "learning_objective": "Forstå hvordan RC-leddet i en AM-diodedetektor skal dimensjoneres.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "I en enkel ",
+          {
+            "term": "amplitudemodulasjon",
+            "text": "AM"
+          },
+          "-detektor likeretter en ",
+          {
+            "term": "diode",
+            "text": "diode"
+          },
+          " MF-signalet. Etter dioden sitter en ",
+          {
+            "term": "kondensator",
+            "text": "kondensator"
+          },
+          " C ",
+          {
+            "term": "parallellkobling",
+            "text": "i parallell"
+          },
+          " med en motstand R."
+        ]
+      ],
+      "stem": [
+        [
+          "Hvordan bør ",
+          {
+            "term": "tidskonstant",
+            "text": "tidskonstanten"
+          },
+          " RC være?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Lang i forhold til en MF-periode, men kort i forhold til perioden til de høyeste lydfrekvensene"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Kort i forhold til en MF-periode, slik at hele MF-signalet slipper gjennom"
+          ],
+          "feedback": [
+            "Da glattes ikke MF-rippelen ut, og utgangen blir full av radiofrekvens."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Lang i forhold til lydperiodene, slik at spenningen blir helt jevn"
+          ],
+          "feedback": [
+            "Da klarer ikke spenningen å følge lydvariasjonene. Bare et gjennomsnitt blir igjen."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Lik én MF-periode, slik at kretsen går i resonans på mellomfrekvensen"
+          ],
+          "feedback": [
+            [
+              "En RC-krets har ingen ",
+              {
+                "term": "resonans",
+                "text": "resonans"
+              },
+              ". Resonans krever både ",
+              {
+                "term": "spole",
+                "text": "spole"
+              },
+              " og kondensator."
+            ]
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Dioden slipper bare gjennom den ene halvdelen av ",
+          {
+            "term": "mellomfrekvens",
+            "text": "MF"
+          },
+          "-signalet. Kondensatoren lades opp til ",
+          {
+            "term": "toppverdi",
+            "text": "toppverdien"
+          },
+          " og utlades litt gjennom R mellom toppene, slik at ",
+          {
+            "term": "spenning",
+            "text": "spenningen"
+          },
+          " følger omhyllingskurven, altså lyden."
+        ],
+        [
+          "Med 455 kHz MF varer én MF-",
+          {
+            "term": "periode",
+            "text": "periode"
+          },
+          " ca. 2,2 µs, mens én periode av en 3 kHz tone varer ca. 330 µs. En tidskonstant mellom disse, typisk noen titalls mikrosekunder, fjerner MF-",
+          {
+            "term": "rippel",
+            "text": "rippelen"
+          },
+          ", men slipper lyden gjennom. RC-leddet virker som et ",
+          {
+            "term": "lavpassfilter",
+            "text": "lavpassfilter"
+          },
+          "."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 6,
+        "section_id": "s6-18",
+        "printed_pages": [
+          "6-10"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "cab19c11b655f84a"
+        ]
+      },
+      "tags": [],
+      "visual": {
+        "template": "rectifier",
+        "version": 1,
+        "params": {
+          "kind": "half",
+          "source": {
+            "name": "MF-signal"
+          },
+          "capacitor": true,
+          "load_name": "R"
+        }
+      },
+      "language": "nb-NO",
+      "provenance": {
+        "method": "autolink",
+        "author": "AI-assistent (Claude), autolenking",
+        "based_on": 3,
+        "at": "2026-10-24T09:31:50+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T09:31:50+00:00",
+          "actor": "AI-assistent (Claude), autolenking",
+          "action": "autolink",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "06c84e8476a3b692140c02f3967713d0b4feccf8162e8fa950a9fd3ee7642b4a",
+          "note": "glossary links added (4); based on r3"
+        },
+        {
+          "at": "2026-10-24T09:31:52+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "06c84e8476a3b692140c02f3967713d0b4feccf8162e8fa950a9fd3ee7642b4a",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:32:23+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "06c84e8476a3b692140c02f3967713d0b4feccf8162e8fa950a9fd3ee7642b4a",
+          "note": "Nye ordlistelenker (runde 2); teksten er uendret.",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "06c84e8476a3b692140c02f3967713d0b4feccf8162e8fa950a9fd3ee7642b4a",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T09:32:23+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T09:32:23+00:00",
+        "content_sha256": "06c84e8476a3b692140c02f3967713d0b4feccf8162e8fa950a9fd3ee7642b4a",
         "acknowledged_hazards": [
           "figures"
         ],

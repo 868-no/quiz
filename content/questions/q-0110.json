@@ -346,7 +346,7 @@
     },
     {
       "revision": 3,
-      "status": "approved",
+      "status": "retired",
       "type": "single_choice",
       "style": "recall",
       "difficulty": "easy",
@@ -529,6 +529,15 @@
           "acknowledged": [
             "figures"
           ]
+        },
+        {
+          "at": "2026-10-24T09:32:22+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "a7d2032158c5f083b2752c46bb09d11672160312e968bc5a3812cd2ee14a07e6",
+          "note": "superseded by r4"
         }
       ],
       "checks": {
@@ -549,6 +558,232 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-23T20:58:40+00:00",
         "content_sha256": "a7d2032158c5f083b2752c46bb09d11672160312e968bc5a3812cd2ee14a07e6",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 4,
+      "status": "approved",
+      "type": "single_choice",
+      "style": "recall",
+      "difficulty": "easy",
+      "chapter": 6,
+      "section_ids": [
+        "s6-08"
+      ],
+      "topic_ids": [
+        "superheterodyn",
+        "mottakeregenskaper"
+      ],
+      "learning_objective": "Vite at lav egenstøy er hovedkravet til RF-forsterkeren.",
+      "priority": "exam_important",
+      "context": [],
+      "stem": [
+        [
+          "Hva er det viktigste kravet til RF-forsterkeren, det første ",
+          {
+            "term": "forsterker",
+            "text": "forsterkertrinnet"
+          },
+          " i en ",
+          {
+            "term": "mottaker",
+            "text": "mottaker"
+          },
+          "?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Lav egenstøy"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Høy utgangseffekt"
+          ],
+          "feedback": [
+            [
+              "Høy utgangseffekt trengs i en ",
+              {
+                "term": "sluttforsterker",
+                "text": "sluttforsterker"
+              },
+              " i en sender. I mottakeren er signalene svært svake."
+            ]
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Størst mulig forsterkning"
+          ],
+          "feedback": [
+            [
+              "For mye forsterkning foran ",
+              {
+                "term": "blander",
+                "text": "blanderen"
+              },
+              " gjør mottakeren lettere å overstyre. Forsterkningen bør bare være passe stor."
+            ]
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Størst mulig båndbredde"
+          ],
+          "feedback": [
+            "En svært bredbåndet inngang slipper inn sterke signaler fra andre bånd og kan gi overstyring. Litt filtrering er en fordel."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Støy som legges til i det første trinnet, forsterkes av alle trinnene etter. Egenstøyen i RF-forsterkeren bestemmer derfor i stor grad følsomheten til hele mottakeren.",
+        [
+          "I tillegg bør RF-forsterkeren tåle sterke signaler uten å bli overstyrt (stort ",
+          {
+            "term": "dynamisk-omraade",
+            "text": "dynamisk område"
+          },
+          "), og ",
+          {
+            "term": "avstemt-krets",
+            "text": "avstemte kretser"
+          },
+          " eller båndfiltre foran den gir en viss ",
+          {
+            "term": "selektivitet",
+            "text": "selektivitet"
+          },
+          "."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 6,
+        "section_id": "s6-08",
+        "printed_pages": [
+          "6-4"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "e7fa6d8e4dfb476d"
+        ]
+      },
+      "tags": [],
+      "visual": {
+        "template": "block-diagram",
+        "version": 1,
+        "params": {
+          "chain": [
+            {
+              "kind": "antenna"
+            },
+            {
+              "kind": "rf_amp",
+              "highlight": true
+            },
+            {
+              "kind": "mixer"
+            },
+            {
+              "kind": "if_filter"
+            },
+            {
+              "kind": "if_amp"
+            },
+            {
+              "kind": "demodulator"
+            }
+          ],
+          "side": [
+            {
+              "kind": "local_osc",
+              "into": 2
+            }
+          ]
+        }
+      },
+      "language": "nb-NO",
+      "provenance": {
+        "method": "autolink",
+        "author": "AI-assistent (Claude), autolenking",
+        "based_on": 3,
+        "at": "2026-10-24T09:31:49+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T09:31:49+00:00",
+          "actor": "AI-assistent (Claude), autolenking",
+          "action": "autolink",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "bf0bd6be19361781c651b110c0d5587e5f37f41f3e639db2ff1223897e50dd80",
+          "note": "glossary links added (1); based on r3"
+        },
+        {
+          "at": "2026-10-24T09:31:52+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "bf0bd6be19361781c651b110c0d5587e5f37f41f3e639db2ff1223897e50dd80",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:32:22+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "bf0bd6be19361781c651b110c0d5587e5f37f41f3e639db2ff1223897e50dd80",
+          "note": "Nye ordlistelenker (runde 2); teksten er uendret.",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "bf0bd6be19361781c651b110c0d5587e5f37f41f3e639db2ff1223897e50dd80",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T09:32:22+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T09:32:22+00:00",
+        "content_sha256": "bf0bd6be19361781c651b110c0d5587e5f37f41f3e639db2ff1223897e50dd80",
         "acknowledged_hazards": [
           "figures"
         ],

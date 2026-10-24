@@ -166,7 +166,7 @@
     },
     {
       "revision": 2,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "scenario",
@@ -337,6 +337,15 @@
           "acknowledged": [
             "figures"
           ]
+        },
+        {
+          "at": "2026-10-24T09:32:09+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "cf46af30c58bc8ff9e0db82b4f52865bef2af2f623f2654e52c8f30d3fcbf9f0",
+          "note": "superseded by r3"
         }
       ],
       "checks": {
@@ -357,6 +366,218 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-23T20:43:48+00:00",
         "content_sha256": "cf46af30c58bc8ff9e0db82b4f52865bef2af2f623f2654e52c8f30d3fcbf9f0",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 3,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "hard",
+      "chapter": 2,
+      "section_ids": [
+        "s2-47"
+      ],
+      "topic_ids": [
+        "resonans",
+        "q-faktor"
+      ],
+      "learning_objective": "Forstå at det sirkulerer store strømmer i en parallellkrets med høy Q, og hva det betyr for komponentvalget.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En antennetilpasningsenhet inneholder en parallellavstemt krets med høy ",
+          {
+            "term": "q-faktor",
+            "text": "Q-faktor"
+          },
+          ". ",
+          {
+            "term": "sender",
+            "text": "Senderen"
+          },
+          " leverer full ",
+          {
+            "term": "effekt",
+            "text": "effekt"
+          },
+          " gjennom enheten."
+        ]
+      ],
+      "stem": [
+        [
+          "Hva må man ta særlig hensyn til ved valg av ",
+          {
+            "term": "spole",
+            "text": "spole"
+          },
+          " og ",
+          {
+            "term": "kondensator",
+            "text": "kondensator"
+          },
+          "?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "At strømmen som sirkulerer mellom L og C kan bli mange ganger større enn strømmen inn, så komponentene må tåle stor strøm."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "At strømmen i L og C er like liten som strømmen inn, så vanlige småkomponenter holder."
+          ],
+          "feedback": [
+            "Utenfor kretsen er strømmen liten, men i den lukkede sløyfen som L og C danner, går en stor sirkulerende strøm."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "At det ved resonans ikke går strøm i spolen, så den kan være av tynn tråd."
+          ],
+          "feedback": [
+            "Ved resonans går det tvert imot stor strøm i både spolen og kondensatoren. De opphever hverandre bare sett utenfra."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "At bare likespenningen fra senderen bestemmer kravene til komponentene."
+          ],
+          "feedback": [
+            [
+              "Det er den høyfrekvente strømmen og spenningen i kretsen som setter kravene, ikke noen ",
+              {
+                "term": "likespenning",
+                "text": "likespenning"
+              },
+              "."
+            ]
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "I en parallellkrets ved ",
+          {
+            "term": "resonans",
+            "text": "resonans"
+          },
+          " er ",
+          {
+            "term": "strom",
+            "text": "strømmen"
+          },
+          " fra kilden liten, men i den lukkede sløyfen som L og C danner, ser kretsen ut som en seriekrets der ",
+          {
+            "term": "energi",
+            "text": "energien"
+          },
+          " pendler fram og tilbake. Den sirkulerende strømmen er omtrent Q ganger strømmen inn."
+        ],
+        [
+          "Med full sendeeffekt kan dette gi store strømmer og høye spenninger. Komponentene må derfor tåle høy strøm (tykk tråd, kondensatorer med lave tap) og høy spenning. I en serieavstemt krets kan på tilsvarende måte ",
+          {
+            "term": "spenning",
+            "text": "spenningen"
+          },
+          " over L og C bli svært høy, gjerne i kilovoltområdet."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 2,
+        "section_id": "s2-47",
+        "printed_pages": [
+          "2-19"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "1df188b24e3b2078"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "autolink",
+        "author": "AI-assistent (Claude), autolenking",
+        "based_on": 2,
+        "at": "2026-10-24T09:31:43+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T09:31:43+00:00",
+          "actor": "AI-assistent (Claude), autolenking",
+          "action": "autolink",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "5a0df2e2917a0059cf10561048ab6f79bc9fe82c9f5073001583a2701b58db6d",
+          "note": "glossary links added (1); based on r2"
+        },
+        {
+          "at": "2026-10-24T09:31:51+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "5a0df2e2917a0059cf10561048ab6f79bc9fe82c9f5073001583a2701b58db6d",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:32:09+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "5a0df2e2917a0059cf10561048ab6f79bc9fe82c9f5073001583a2701b58db6d",
+          "note": "Nye ordlistelenker (runde 2); teksten er uendret.",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "5a0df2e2917a0059cf10561048ab6f79bc9fe82c9f5073001583a2701b58db6d",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T09:32:09+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T09:32:09+00:00",
+        "content_sha256": "5a0df2e2917a0059cf10561048ab6f79bc9fe82c9f5073001583a2701b58db6d",
         "acknowledged_hazards": [
           "figures"
         ],

@@ -185,7 +185,7 @@
     },
     {
       "revision": 2,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "concept",
@@ -333,6 +333,15 @@
             "figures",
             "ocr"
           ]
+        },
+        {
+          "at": "2026-10-24T09:32:07+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "077352a8b6b0a81cf567b5c9531d9a322759350343c2966548fadb319ce38331",
+          "note": "superseded by r3"
         }
       ],
       "checks": {
@@ -357,6 +366,200 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-23T20:43:47+00:00",
         "content_sha256": "077352a8b6b0a81cf567b5c9531d9a322759350343c2966548fadb319ce38331",
+        "acknowledged_hazards": [
+          "figures",
+          "ocr"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 3,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 2,
+      "section_ids": [
+        "s2-23"
+      ],
+      "topic_ids": [
+        "spoler"
+      ],
+      "learning_objective": "Forstå at den selvinduserte spenningen i en spole motvirker endringen i strømmen.",
+      "priority": "exam_important",
+      "context": [
+        [
+          {
+            "term": "strom",
+            "text": "Strømmen"
+          },
+          " gjennom en ",
+          {
+            "term": "spole",
+            "text": "spole"
+          },
+          " øker jevnt fordi den er koblet til en spenningskilde."
+        ]
+      ],
+      "stem": [
+        [
+          "Hva er riktig om ",
+          {
+            "term": "spenning",
+            "text": "spenningen"
+          },
+          " som induseres i spolen mens strømmen øker?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Den virker mot den tilførte spenningen og motvirker økningen i strøm."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Den har samme retning som den tilførte spenningen og gjør at strømmen øker raskere."
+          ],
+          "feedback": [
+            "Da ville strømmen forsterke seg selv uten grense. Den induserte spenningen virker alltid slik at den motvirker endringen."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Det induseres ingen spenning, fordi spolen selv lager feltet."
+          ],
+          "feedback": [
+            "Spolen påvirkes av sitt eget magnetfelt. Et felt i endring induserer spenning i spolen, også når den selv lager feltet."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Den induserte spenningen er størst når strømmen er konstant."
+          ],
+          "feedback": [
+            "Det er endringen i magnetfeltet som induserer spenning. Ved konstant strøm er feltet konstant, og den induserte spenningen er null."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "En strøm lager et magnetfelt rundt lederen, og en spole samler feltet. Når strømmen endres, endres feltet, og det induseres en spenning i ",
+          {
+            "term": "spole",
+            "text": "spolen"
+          },
+          " selv. Denne motspenningen (mot-ems) har motsatt polaritet av den spenningen som driver økningen, og bremser endringen. Dette er det vi kaller ",
+          {
+            "term": "selvinduksjon",
+            "text": "selvinduksjon"
+          },
+          ", og evnen til det måles som ",
+          {
+            "term": "induktans",
+            "text": "induktans"
+          },
+          "."
+        ],
+        "Øker strømmen jevnt, endres feltet jevnt, og da blir den induserte spenningen konstant."
+      ],
+      "glossary_after_answer": [
+        "spole"
+      ],
+      "study_reference": {
+        "chapter": 2,
+        "section_id": "s2-23",
+        "printed_pages": [
+          "2-9"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "6dc080d9a5d9d229"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "autolink",
+        "author": "AI-assistent (Claude), autolenking",
+        "based_on": 2,
+        "at": "2026-10-24T09:31:42+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T09:31:42+00:00",
+          "actor": "AI-assistent (Claude), autolenking",
+          "action": "autolink",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "5257e5ad1e37cb3541f494e9dd1b070aa3ef54b39d17a28cce60935bf62c891c",
+          "note": "glossary links added (1); based on r2"
+        },
+        {
+          "at": "2026-10-24T09:31:51+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "5257e5ad1e37cb3541f494e9dd1b070aa3ef54b39d17a28cce60935bf62c891c",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:32:07+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "5257e5ad1e37cb3541f494e9dd1b070aa3ef54b39d17a28cce60935bf62c891c",
+          "note": "Nye ordlistelenker (runde 2); teksten er uendret.",
+          "acknowledged": [
+            "figures",
+            "ocr"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "5257e5ad1e37cb3541f494e9dd1b070aa3ef54b39d17a28cce60935bf62c891c",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: numeric_low_conf. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T09:32:07+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T09:32:07+00:00",
+        "content_sha256": "5257e5ad1e37cb3541f494e9dd1b070aa3ef54b39d17a28cce60935bf62c891c",
         "acknowledged_hazards": [
           "figures",
           "ocr"

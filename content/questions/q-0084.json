@@ -212,7 +212,7 @@
     },
     {
       "revision": 2,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "concept",
@@ -412,6 +412,15 @@
             "figures",
             "ocr"
           ]
+        },
+        {
+          "at": "2026-10-24T09:32:16+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "2751997cdf18234616d19e6b32c9665938d10563fb4144881f4e049ad55fa80d",
+          "note": "superseded by r3"
         }
       ],
       "checks": {
@@ -436,6 +445,252 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-23T20:43:50+00:00",
         "content_sha256": "2751997cdf18234616d19e6b32c9665938d10563fb4144881f4e049ad55fa80d",
+        "acknowledged_hazards": [
+          "figures",
+          "ocr"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 3,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 4,
+      "section_ids": [
+        "s4-21"
+      ],
+      "topic_ids": [
+        "ssb"
+      ],
+      "learning_objective": "Vite hva som kommer ut av en balansert modulator, og hvorfor det trengs et sidebåndsfilter etterpå.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "Blokkskjemaet viser en ",
+          {
+            "term": "ssb",
+            "text": "SSB"
+          },
+          "-sender som bruker filtermetoden. ",
+          {
+            "term": "bfo",
+            "text": "Bærebølgeoscillatoren"
+          },
+          " mates inn i den fremhevede blokken sammen med lydsignalet."
+        ]
+      ],
+      "stem": [
+        "Hva består signalet ut av den fremhevede blokken hovedsakelig av?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Begge sidebåndene, men nesten ingen bærebølge"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Bare ett sidebånd og ingen bærebølge"
+          ],
+          "feedback": [
+            "Slik ser signalet ut først etter sidebåndsfilteret. Modulatoren selv lager begge sidebåndene."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Bærebølge og begge sidebånd, som ved vanlig AM"
+          ],
+          "feedback": [
+            "Poenget med en balansert modulator er at bærebølgen balanseres ut. Bare små rester av den slipper gjennom."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Bare bærebølgen, uten noen sidebånd"
+          ],
+          "feedback": [
+            "Det er tvert imot bærebølgen som fjernes. Sidebåndene inneholder lydinformasjonen og blir igjen."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "I en ",
+          {
+            "term": "balansert-modulator",
+            "text": "balansert modulator"
+          },
+          " (for eksempel en diodering med to ",
+          {
+            "term": "transformator",
+            "text": "transformatorer"
+          },
+          ") deler bærebølgestrømmen seg likt i to motsatte veier og opphever seg selv. Ut kommer to ",
+          {
+            "term": "sidebaand",
+            "text": "sidebånd"
+          },
+          " uten bærebølge, altså DSB med undertrykt bærebølge."
+        ],
+        [
+          "Deretter fjerner et ",
+          {
+            "term": "krystallfilter",
+            "text": "krystallfilter"
+          },
+          " med bratte filterkanter og en ",
+          {
+            "term": "baandbredde",
+            "text": "båndbredde"
+          },
+          " på noen få kilohertz det uønskede sidebåndet. Å filtrere bort ",
+          {
+            "term": "baerebolge",
+            "text": "bærebølgen"
+          },
+          " direkte fra et vanlig ",
+          {
+            "term": "amplitudemodulasjon",
+            "text": "AM"
+          },
+          "-signal ville vært vanskelig, fordi den er sterk og ligger svært nær sidebåndet."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "visual": {
+        "template": "block-diagram",
+        "version": 1,
+        "params": {
+          "chain": [
+            {
+              "kind": "microphone"
+            },
+            {
+              "kind": "mic_amp"
+            },
+            {
+              "kind": "balanced_modulator",
+              "highlight": true
+            },
+            {
+              "kind": "sideband_filter"
+            },
+            {
+              "kind": "mixer"
+            },
+            {
+              "kind": "power_amp"
+            }
+          ],
+          "side": [
+            {
+              "kind": "carrier_osc",
+              "into": 2
+            },
+            {
+              "kind": "local_osc",
+              "into": 4
+            }
+          ]
+        }
+      },
+      "study_reference": {
+        "chapter": 4,
+        "section_id": "s4-21",
+        "printed_pages": [
+          "4-10",
+          "4-11"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "65199b0639ca3120"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "autolink",
+        "author": "AI-assistent (Claude), autolenking",
+        "based_on": 2,
+        "at": "2026-10-24T09:31:47+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T09:31:47+00:00",
+          "actor": "AI-assistent (Claude), autolenking",
+          "action": "autolink",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "130b18829b2102247bbfd749dd37e9eed89708f682baeb1ce0f308babc76f039",
+          "note": "glossary links added (1); based on r2"
+        },
+        {
+          "at": "2026-10-24T09:31:51+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "130b18829b2102247bbfd749dd37e9eed89708f682baeb1ce0f308babc76f039",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:32:16+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "130b18829b2102247bbfd749dd37e9eed89708f682baeb1ce0f308babc76f039",
+          "note": "Nye ordlistelenker (runde 2); teksten er uendret.",
+          "acknowledged": [
+            "figures",
+            "ocr"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "130b18829b2102247bbfd749dd37e9eed89708f682baeb1ce0f308babc76f039",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: low_ocr_confidence, numeric_low_conf. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T09:32:16+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T09:32:16+00:00",
+        "content_sha256": "130b18829b2102247bbfd749dd37e9eed89708f682baeb1ce0f308babc76f039",
         "acknowledged_hazards": [
           "figures",
           "ocr"

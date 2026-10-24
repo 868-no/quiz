@@ -209,7 +209,7 @@
     },
     {
       "revision": 2,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "calculation",
@@ -403,6 +403,15 @@
           "content_sha256": "21f75f2409f3108db3db24881e0cbb5b4eb9beb5c8a59d7ba760362cebf5ff13",
           "note": "Godkjent av redaktør: kun nye ordforklaringslenker (automatisk lenking, kontrollert for svarlekkasje), teksten er uendret fra forrige godkjente versjon. Sidehenvisninger er fortsatt ikke kontrollert mot trykt bok.",
           "acknowledged": []
+        },
+        {
+          "at": "2026-10-24T09:32:19+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "21f75f2409f3108db3db24881e0cbb5b4eb9beb5c8a59d7ba760362cebf5ff13",
+          "note": "superseded by r3"
         }
       ],
       "checks": {
@@ -418,6 +427,236 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-23T20:43:50+00:00",
         "content_sha256": "21f75f2409f3108db3db24881e0cbb5b4eb9beb5c8a59d7ba760362cebf5ff13",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 3,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "calculation",
+      "difficulty": "medium",
+      "chapter": 5,
+      "section_ids": [
+        "s5-10"
+      ],
+      "topic_ids": [
+        "harmoniske"
+      ],
+      "learning_objective": "Vite at push-pull-sluttrinn undertrykker partallsharmoniske, og regne ut frekvensen til den sterkeste gjenværende harmoniske.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En sender på ",
+          {
+            "q": 3.6,
+            "u": "MHz"
+          },
+          " har et balansert sluttrinn i ",
+          {
+            "term": "push-pull",
+            "text": "push-pull"
+          },
+          "-kobling. Anta at de to halvdelene av trinnet er godt balansert."
+        ]
+      ],
+      "stem": [
+        [
+          "På hvilken ",
+          {
+            "term": "frekvens",
+            "text": "frekvens"
+          },
+          " vil du vente den sterkeste ",
+          {
+            "term": "harmoniske",
+            "text": "harmoniske"
+          },
+          " utstrålingen fra dette ",
+          {
+            "term": "sluttforsterker",
+            "text": "sluttrinnet"
+          },
+          "?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 10.8,
+              "u": "MHz"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 7.2,
+              "u": "MHz"
+            }
+          ],
+          "feedback": [
+            "Det er det dobbelte av grunnfrekvensen. Slike partallsharmoniske blir i stor grad kansellert i et balansert push-pull-trinn."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 14.4,
+              "u": "MHz"
+            }
+          ],
+          "feedback": [
+            "Det er fire ganger grunnfrekvensen. Den er også en partallsharmonisk, som push-pull-koblingen demper."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 1.8,
+              "u": "MHz"
+            }
+          ],
+          "feedback": [
+            "Harmoniske ligger på hele multipler over grunnfrekvensen, ikke under den."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "I et balansert push-pull-trinn kansellerer partallsharmoniske (2, 4, 6 … ganger grunnfrekvensen) hverandre i utgangen. Oddetallsharmoniske blir ikke kansellert, og den laveste av dem – tre ganger grunnfrekvensen – er normalt den sterkeste:",
+        [
+          {
+            "math": [
+              "f_3",
+              "=",
+              "3",
+              "·",
+              {
+                "q": 3.6,
+                "u": "MHz"
+              },
+              "=",
+              {
+                "q": 10.8,
+                "u": "MHz"
+              }
+            ]
+          }
+        ],
+        [
+          "Den gjenværende harmoniske utstrålingen må dempes med et ",
+          {
+            "term": "lavpassfilter",
+            "text": "lavpassfilter"
+          },
+          " på utgangen. Avstemte eller induktive koblinger mellom trinnene hjelper også."
+        ]
+      ],
+      "glossary_after_answer": [
+        "push-pull"
+      ],
+      "calculation": {
+        "formula": "harmonic_frequency",
+        "inputs": {
+          "f": [
+            3.6,
+            "MHz"
+          ],
+          "n": [
+            3,
+            ""
+          ]
+        },
+        "answer": [
+          10.8,
+          "MHz"
+        ],
+        "answer_symbol": "f_3",
+        "sig_figs": 3
+      },
+      "study_reference": {
+        "chapter": 5,
+        "section_id": "s5-10",
+        "printed_pages": [
+          "5-3"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "c1276fd63d35dd6f"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "autolink",
+        "author": "AI-assistent (Claude), autolenking",
+        "based_on": 2,
+        "at": "2026-10-24T09:31:48+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T09:31:48+00:00",
+          "actor": "AI-assistent (Claude), autolenking",
+          "action": "autolink",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "419c91a417cc7810b7b32e864ff3859c0cabb82666dffd4aef43aa1ee470f7fe",
+          "note": "glossary links added (1); based on r2"
+        },
+        {
+          "at": "2026-10-24T09:31:52+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "0c464f5d892607a40e4ea970d620f0da0a98d2774c63f21f800c65d472486d38",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:32:19+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "0c464f5d892607a40e4ea970d620f0da0a98d2774c63f21f800c65d472486d38",
+          "note": "Nye ordlistelenker (runde 2); teksten er uendret.",
+          "acknowledged": []
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "0c464f5d892607a40e4ea970d620f0da0a98d2774c63f21f800c65d472486d38",
+        "errors": [],
+        "warnings": [],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T09:32:19+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T09:32:19+00:00",
+        "content_sha256": "0c464f5d892607a40e4ea970d620f0da0a98d2774c63f21f800c65d472486d38",
         "acknowledged_hazards": [],
         "checklist": {
           "one_correct": true,

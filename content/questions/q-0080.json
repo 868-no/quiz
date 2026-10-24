@@ -230,7 +230,7 @@
     },
     {
       "revision": 2,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "concept",
@@ -443,6 +443,15 @@
           "acknowledged": [
             "figures"
           ]
+        },
+        {
+          "at": "2026-10-24T09:32:15+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "09b9ac840632b63476d28edee88c56d84bacd64387dd207e4d3f9c21387405d5",
+          "note": "superseded by r3"
         }
       ],
       "checks": {
@@ -463,6 +472,283 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-23T20:43:49+00:00",
         "content_sha256": "09b9ac840632b63476d28edee88c56d84bacd64387dd207e4d3f9c21387405d5",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 3,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 4,
+      "section_ids": [
+        "s4-14"
+      ],
+      "topic_ids": [
+        "frekvenssyntese"
+      ],
+      "learning_objective": "Kjenne igjen blokkene i en PLL-syntetisator og vite hvorfor sløyfen trenger et lavpassfilter.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "Blokkskjemaet viser en ",
+          {
+            "term": "frekvenssyntetisator",
+            "text": "frekvenssyntetisator"
+          },
+          " med ",
+          {
+            "term": "faselaast-sloyfe",
+            "text": "faselåst sløyfe"
+          },
+          ". Den programmerbare deleren får inngangssignalet sitt fra ",
+          {
+            "term": "vco",
+            "text": "VCO-en"
+          },
+          "; denne tilbakekoblingen er ikke tegnet. Ett trinn er erstattet med et spørsmålstegn."
+        ]
+      ],
+      "stem": [
+        "Hvilket trinn mangler mellom fasekomparatoren og VCO-en?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Lavpassfilter"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Høypassfilter"
+          ],
+          "feedback": [
+            [
+              "Et høypassfilter ville sperret nettopp ",
+              {
+                "term": "likespenning",
+                "text": "likespenningen"
+              },
+              " som skal styre VCO-en, og sluppet gjennom de raske pulsene."
+            ]
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Digital-til-analog-omformer"
+          ],
+          "feedback": [
+            [
+              "En slik omformer hører til i ",
+              {
+                "term": "dds",
+                "text": "direkte digital syntese"
+              },
+              ". Komparatoren i en ",
+              {
+                "term": "faselaast-sloyfe",
+                "text": "PLL"
+              },
+              " gir allerede et elektrisk signal som bare må glattes."
+            ]
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Bufferforsterker"
+          ],
+          "feedback": [
+            [
+              "En ",
+              {
+                "term": "bufferforsterker",
+                "text": "bufferforsterker"
+              },
+              " isolerer et trinn fra det neste, men den gjør ikke pulsene fra komparatoren om til en jevn styrespenning."
+            ]
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Fasekomparatoren gir pulser som er bredere eller smalere etter hvor stor ",
+          {
+            "term": "faseforskyvning",
+            "text": "faseforskjellen"
+          },
+          " er mellom referansen og det nedelte VCO-signalet. ",
+          {
+            "term": "lavpassfilter",
+            "text": "Lavpassfilteret"
+          },
+          " (sløyfefilteret) glatter pulsene til en likespenning som styrer kapasitansdioden i VCO-en."
+        ],
+        [
+          {
+            "term": "filter",
+            "text": "Filteret"
+          },
+          " er også viktig for signalrenheten: rester av pulsene på styrespenningen ville frekvensmodulert VCO-en og gitt uønskede ",
+          {
+            "term": "sidebaand",
+            "text": "sidebånd"
+          },
+          "."
+        ]
+      ],
+      "glossary_after_answer": [
+        "faselaast-sloyfe"
+      ],
+      "visual": {
+        "template": "block-diagram",
+        "version": 1,
+        "params": {
+          "chain": [
+            {
+              "kind": "crystal_osc"
+            },
+            {
+              "kind": "custom",
+              "label": "Fast deler"
+            },
+            {
+              "kind": "custom",
+              "label": "Fasekomparator"
+            },
+            {
+              "kind": "lowpass_filter",
+              "hidden": true
+            },
+            {
+              "kind": "custom",
+              "label": "VCO"
+            }
+          ],
+          "side": [
+            {
+              "kind": "custom",
+              "label": "Programmerbar deler ÷N",
+              "into": 2
+            }
+          ]
+        },
+        "params_after": {
+          "chain": [
+            {
+              "kind": "crystal_osc"
+            },
+            {
+              "kind": "custom",
+              "label": "Fast deler"
+            },
+            {
+              "kind": "custom",
+              "label": "Fasekomparator"
+            },
+            {
+              "kind": "lowpass_filter",
+              "highlight": true
+            },
+            {
+              "kind": "custom",
+              "label": "VCO"
+            }
+          ]
+        }
+      },
+      "study_reference": {
+        "chapter": 4,
+        "section_id": "s4-14",
+        "printed_pages": [
+          "4-6",
+          "4-7"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "1146241dcdb2838a"
+        ]
+      },
+      "tags": [],
+      "provenance": {
+        "method": "autolink",
+        "author": "AI-assistent (Claude), autolenking",
+        "based_on": 2,
+        "at": "2026-10-24T09:31:46+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T09:31:46+00:00",
+          "actor": "AI-assistent (Claude), autolenking",
+          "action": "autolink",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "dbbd14849f0903889bcdde7155bf7dfc04be3415d90d94db169180eb360fcf2e",
+          "note": "glossary links added (5); based on r2"
+        },
+        {
+          "at": "2026-10-24T09:31:51+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "dbbd14849f0903889bcdde7155bf7dfc04be3415d90d94db169180eb360fcf2e",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:32:15+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "dbbd14849f0903889bcdde7155bf7dfc04be3415d90d94db169180eb360fcf2e",
+          "note": "Nye ordlistelenker (runde 2); teksten er uendret.",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "dbbd14849f0903889bcdde7155bf7dfc04be3415d90d94db169180eb360fcf2e",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T09:32:15+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T09:32:15+00:00",
+        "content_sha256": "dbbd14849f0903889bcdde7155bf7dfc04be3415d90d94db169180eb360fcf2e",
         "acknowledged_hazards": [
           "figures"
         ],

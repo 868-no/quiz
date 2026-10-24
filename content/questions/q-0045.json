@@ -533,7 +533,7 @@
     },
     {
       "revision": 3,
-      "status": "approved",
+      "status": "retired",
       "type": "single_choice",
       "style": "scenario",
       "difficulty": "medium",
@@ -791,6 +791,15 @@
             "figures",
             "ocr"
           ]
+        },
+        {
+          "at": "2026-10-24T09:32:08+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "fe5b2fdb8f56e51acd5b591bf813d9a98e03a66daba93455bbf76df495e73380",
+          "note": "superseded by r4"
         }
       ],
       "checks": {
@@ -815,6 +824,310 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-24T00:26:29+00:00",
         "content_sha256": "fe5b2fdb8f56e51acd5b591bf813d9a98e03a66daba93455bbf76df495e73380",
+        "acknowledged_hazards": [
+          "figures",
+          "ocr"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 4,
+      "status": "approved",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "medium",
+      "chapter": 2,
+      "section_ids": [
+        "s2-38"
+      ],
+      "topic_ids": [
+        "impedans"
+      ],
+      "learning_objective": "Finne impedansen til en seriekobling av R og X ved hjelp av Pytagoras.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En motstand på ",
+          {
+            "q": 30,
+            "u": "Ω"
+          },
+          " er koblet ",
+          {
+            "term": "seriekobling",
+            "text": "i serie"
+          },
+          " med en ",
+          {
+            "term": "kondensator",
+            "text": "kondensator"
+          },
+          " som har en ",
+          {
+            "term": "reaktans",
+            "text": "reaktans"
+          },
+          " på ",
+          {
+            "q": 40,
+            "u": "Ω"
+          },
+          " ved den aktuelle ",
+          {
+            "term": "frekvens",
+            "text": "frekvensen"
+          },
+          "."
+        ]
+      ],
+      "stem": [
+        [
+          "Hva er ",
+          {
+            "term": "impedans",
+            "text": "impedansen"
+          },
+          " til seriekoblingen (absoluttverdien)?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 50,
+              "u": "Ω"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 70,
+              "u": "Ω"
+            }
+          ],
+          "feedback": [
+            [
+              "Resistans og reaktans kan ikke legges sammen direkte, fordi ",
+              {
+                "term": "spenning",
+                "text": "spenningene"
+              },
+              " over dem er 90° forskjøvet."
+            ]
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 10,
+              "u": "Ω"
+            }
+          ],
+          "feedback": [
+            "Differansen gir ikke impedansen. Resistans og reaktans står vinkelrett på hverandre og må kombineres med Pytagoras."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 17.1,
+              "u": "Ω"
+            }
+          ],
+          "feedback": [
+            [
+              "Dette er regnet som om R og X sto ",
+              {
+                "term": "parallellkobling",
+                "text": "i parallell"
+              },
+              " (produkt delt på sum), og uten å ta hensyn til fasen."
+            ]
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Spenningen over ",
+          {
+            "term": "motstand",
+            "text": "motstanden"
+          },
+          " er i fase med ",
+          {
+            "term": "strom",
+            "text": "strømmen"
+          },
+          ", mens spenningen over kondensatoren ligger 90° etter. ",
+          {
+            "term": "resistans",
+            "text": "Resistansen"
+          },
+          " og reaktansen kombineres derfor som katetene i en rettvinklet trekant, og absoluttverdien av impedansen finnes med Pytagoras:"
+        ],
+        {
+          "steps": [
+            [
+              {
+                "math": [
+                  "Z",
+                  "=",
+                  {
+                    "sqrt": [
+                      "R^2",
+                      "+",
+                      "X_C^2"
+                    ]
+                  },
+                  "=",
+                  {
+                    "sqrt": [
+                      "30^2",
+                      "+",
+                      "40^2"
+                    ]
+                  },
+                  {
+                    "unit": "Ω"
+                  },
+                  "=",
+                  {
+                    "sqrt": [
+                      "2500"
+                    ]
+                  },
+                  {
+                    "unit": "Ω"
+                  },
+                  "=",
+                  {
+                    "q": 50,
+                    "u": "Ω"
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        "Impedansen er alltid større enn både R og X alene, men mindre enn summen av dem."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 2,
+        "section_id": "s2-38",
+        "printed_pages": [
+          "2-15"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "e1aa6b2ae9c20025"
+        ]
+      },
+      "tags": [],
+      "visual": {
+        "template": "rlc-circuit",
+        "version": 1,
+        "params": {
+          "topology": "series",
+          "components": [
+            {
+              "kind": "R",
+              "value": 30
+            },
+            {
+              "kind": "C",
+              "reactance_ohms": 40
+            }
+          ],
+          "total_label": "unknown"
+        },
+        "params_after": {
+          "total_label": "value"
+        }
+      },
+      "language": "nb-NO",
+      "provenance": {
+        "method": "autolink",
+        "author": "AI-assistent (Claude), autolenking",
+        "based_on": 3,
+        "at": "2026-10-24T09:31:42+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T09:31:42+00:00",
+          "actor": "AI-assistent (Claude), autolenking",
+          "action": "autolink",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "fc92eccb9684f4851db981ee8c69516b9233d7771382070ad9ad6390d9fb9a6d",
+          "note": "glossary links added (1); based on r3"
+        },
+        {
+          "at": "2026-10-24T09:31:51+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "fc92eccb9684f4851db981ee8c69516b9233d7771382070ad9ad6390d9fb9a6d",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:32:08+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "fc92eccb9684f4851db981ee8c69516b9233d7771382070ad9ad6390d9fb9a6d",
+          "note": "Nye ordlistelenker (runde 2); teksten er uendret.",
+          "acknowledged": [
+            "figures",
+            "ocr"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "fc92eccb9684f4851db981ee8c69516b9233d7771382070ad9ad6390d9fb9a6d",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: equation. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T09:32:08+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T09:32:08+00:00",
+        "content_sha256": "fc92eccb9684f4851db981ee8c69516b9233d7771382070ad9ad6390d9fb9a6d",
         "acknowledged_hazards": [
           "figures",
           "ocr"

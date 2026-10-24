@@ -489,7 +489,7 @@
     },
     {
       "revision": 3,
-      "status": "approved",
+      "status": "retired",
       "type": "single_choice",
       "style": "scenario",
       "difficulty": "medium",
@@ -705,6 +705,15 @@
             "ocr",
             "pages"
           ]
+        },
+        {
+          "at": "2026-10-24T09:32:12+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "88b7692a0d8497449bf2a2a4d8342c464cf447e81073b074cd29c602d3a387e1",
+          "note": "superseded by r4"
         }
       ],
       "checks": {
@@ -733,6 +742,273 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-23T20:58:40+00:00",
         "content_sha256": "88b7692a0d8497449bf2a2a4d8342c464cf447e81073b074cd29c602d3a387e1",
+        "acknowledged_hazards": [
+          "figures",
+          "ocr",
+          "pages"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 4,
+      "status": "approved",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "medium",
+      "chapter": 3,
+      "section_ids": [
+        "s3-08",
+        "s3-10"
+      ],
+      "topic_ids": [
+        "likeretting"
+      ],
+      "learning_objective": "Ta hensyn til at to dioder leder samtidig i en brolikeretter.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En brolikeretter med fire silisiumdioder får en sinusspenning med ",
+          {
+            "term": "toppverdi",
+            "text": "toppverdi"
+          },
+          " ",
+          {
+            "q": 14,
+            "u": "V"
+          },
+          " fra en ",
+          {
+            "term": "transformator",
+            "text": "transformator"
+          },
+          ". Det er ingen ",
+          {
+            "term": "glattekondensator",
+            "text": "glattekondensator"
+          },
+          ". Regn med ",
+          {
+            "q": 0.6,
+            "u": "V"
+          },
+          " ",
+          {
+            "term": "spenning",
+            "text": "spenningsfall"
+          },
+          " over hver ",
+          {
+            "term": "diode",
+            "text": "diode"
+          },
+          " som leder."
+        ]
+      ],
+      "stem": [
+        "Omtrent hvor høy blir toppspenningen over lasten?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 12.8,
+              "u": "V"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 13.4,
+              "u": "V"
+            }
+          ],
+          "feedback": [
+            [
+              "Det ville vært riktig for en ",
+              {
+                "term": "likeretter",
+                "text": "likeretter"
+              },
+              " med bare én diode i strømveien. I en bro går strømmen gjennom to dioder i hver halvperiode."
+            ]
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 11.6,
+              "u": "V"
+            }
+          ],
+          "feedback": [
+            "Det er ikke alle fire diodene som leder samtidig. I hver halvperiode leder to av dem, mens de to andre sperrer."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 14,
+              "u": "V"
+            }
+          ],
+          "feedback": [
+            "Spenningsfallet over diodene som leder, må trekkes fra."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "I hver halvperiode går ",
+          {
+            "term": "strom",
+            "text": "strømmen"
+          },
+          " fra transformatoren gjennom én diode, videre gjennom lasten og tilbake gjennom en annen diode. De to andre diodene sperrer. Strømmen gjennom lasten får samme retning i begge halvperiodene."
+        ],
+        {
+          "steps": [
+            [
+              {
+                "math": [
+                  "U_{last}",
+                  "≈",
+                  {
+                    "q": 14,
+                    "u": "V"
+                  },
+                  "−",
+                  "2",
+                  "·",
+                  {
+                    "q": 0.6,
+                    "u": "V"
+                  },
+                  "=",
+                  {
+                    "q": 12.8,
+                    "u": "V"
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        "Fordelen med broen er at man får fullbølgelikeretting uten midtuttak på transformatoren. Prisen er to diodefall i stedet for ett."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 3,
+        "section_id": "s3-08",
+        "printed_pages": [
+          "3-4"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "23235ea1e6d8c6c8",
+          "7884d382a5bf86f5"
+        ]
+      },
+      "tags": [],
+      "visual": {
+        "template": "rectifier",
+        "version": 1,
+        "params": {
+          "kind": "bridge",
+          "source": {
+            "u_peak": 14
+          },
+          "output_label": "unknown"
+        }
+      },
+      "language": "nb-NO",
+      "provenance": {
+        "method": "autolink",
+        "author": "AI-assistent (Claude), autolenking",
+        "based_on": 3,
+        "at": "2026-10-24T09:31:44+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T09:31:44+00:00",
+          "actor": "AI-assistent (Claude), autolenking",
+          "action": "autolink",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "55fe6d58527c7cf7aacc2256eb93d463aa108b724107a7901f84b16bb18153bf",
+          "note": "glossary links added (1); based on r3"
+        },
+        {
+          "at": "2026-10-24T09:31:51+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "55fe6d58527c7cf7aacc2256eb93d463aa108b724107a7901f84b16bb18153bf",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:32:12+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "55fe6d58527c7cf7aacc2256eb93d463aa108b724107a7901f84b16bb18153bf",
+          "note": "Nye ordlistelenker (runde 2); teksten er uendret.",
+          "acknowledged": [
+            "figures",
+            "ocr",
+            "pages"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "55fe6d58527c7cf7aacc2256eb93d463aa108b724107a7901f84b16bb18153bf",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: equation. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "pages",
+            "detail": "cited printed page number is uncertain in the source (printed_page_status=inferred). Confirm the page in the book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T09:32:12+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T09:32:12+00:00",
+        "content_sha256": "55fe6d58527c7cf7aacc2256eb93d463aa108b724107a7901f84b16bb18153bf",
         "acknowledged_hazards": [
           "figures",
           "ocr",
