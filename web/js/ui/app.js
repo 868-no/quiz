@@ -13,6 +13,7 @@ import { clearMissed, clearSession, loadMissed, loadSession, saveMissed, saveSes
 import { missedIds, parseMissed, recordAnswer } from '../quiz/progress.js';
 import { createGlossary } from './glossary.js';
 import { chapterDial, roundDial, setDialWidth } from './dial.js';
+import { fitFigures } from './figures.js';
 
 const LETTERS = ['A', 'B', 'C', 'D', 'E', 'F'];
 const DIFFICULTY_LABEL = { easy: 'Lett', medium: 'Middels', hard: 'Vanskelig' };
@@ -64,6 +65,7 @@ export function createApp(root, bank) {
   function mount(vnode, focusSelector) {
     glossaryUi.close();
     root.replaceChildren(toDOM(vnode));
+    fitFigures(root);
     glideNeedle();
     if (reducedMotion()) root.querySelectorAll('.fig-anim-toggle').forEach((b) => b.remove());
     const target = focusSelector && root.querySelector(focusSelector);
@@ -616,6 +618,13 @@ export function createApp(root, bank) {
     const id = linkedId();
     if (id) openLinked(id, '#q-progress');
     else if (isSingle()) toSetup();
+  });
+
+  // Figures that become wider than the screen (rotation, resizing) get their hint.
+  let resizeTimer = null;
+  globalThis.addEventListener?.('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => fitFigures(root), 150);
   });
 
   const first = linkedId();

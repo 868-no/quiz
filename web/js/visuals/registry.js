@@ -37,6 +37,16 @@ let figureCounter = 0;
  * Render a question's visual as a <figure> vnode. Never throws: on invalid input it
  * renders an explicit "cannot be shown" message instead of a possibly wrong diagram.
  */
+// Mark each text element with its size (fs-13 …), so the stylesheet can enlarge
+// figure text on narrow screens without changing the drawing. Templates whose text
+// is fitted inside shapes (block diagrams) set fixedTextSize and are left alone.
+function tagFontSizes(node) {
+  if (!node || typeof node !== 'object') return;
+  const fs = Number(node.a['font-size']);
+  if (Number.isFinite(fs) && fs > 0) node.a.class = `${node.a.class ? `${node.a.class} ` : ''}fs-${Math.round(fs)}`;
+  node.c.forEach(tagFontSizes);
+}
+
 export function renderVisual(visual, templates, { phase = 'before', idPrefix = 'fig' } = {}) {
   const key = `${visual.template}@${visual.version}`;
   const tpl = templates && templates[key];
@@ -49,6 +59,7 @@ export function renderVisual(visual, templates, { phase = 'before', idPrefix = '
     };
   }
   const { svg, description, animatable } = impl.render(params, tpl);
+  if (!impl.fixedTextSize) tagFontSizes(svg);
   const captionBits = [];
   if (visual.caption) captionBits.push(h('span', { class: 'fig-caption-text' }, visual.caption));
   if (tpl.idealised) captionBits.push(h('span', { class: 'fig-ideal' }, `Forutsetning: ${tpl.idealised}`));
@@ -57,8 +68,9 @@ export function renderVisual(visual, templates, { phase = 'before', idPrefix = '
     errors: [],
     description,
     animatable,
-    node: h('figure', { class: 'fig', id, 'data-template': key, 'aria-describedby': `${id}-desc` },
+    node: h('figure', { class: 'fig', id, 'data-template': key, 'data-min-scale': String(impl.minScale || 0.6), 'aria-describedby': `${id}-desc` },
       h('div', { class: 'fig-canvas' }, svg),
+      h('p', { class: 'fig-pan-hint', hidden: true }, 'Figuren er bred: sveip sideveis for å se hele.'),
       captionBits.length ? h('figcaption', {}, captionBits) : null,
       animatable ? h('button', { type: 'button', class: 'fig-anim-toggle btn-small', 'aria-pressed': 'false', 'data-fig': id }, 'Spill av animasjon') : null,
       h('details', { class: 'fig-desc' },

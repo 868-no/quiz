@@ -284,6 +284,8 @@ sub, sup { line-height: 0; }
 .fig-desc summary { font-weight: 400; }
 .fig-anim-toggle { margin: 6px 4px; }
 .fig-error { color: var(--muted); }
+.fig-pan-hint { font-size: 0.88rem; color: var(--muted); margin: 4px 4px 0; }
+.fig-canvas:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
 .flow-path { stroke: transparent; }
 .fig.is-playing .flow-path { stroke: var(--action); animation: flow 1.4s linear infinite; }
 .fig.is-playing .trace-1 { stroke-dasharray: 1 1; animation: draw 4s linear infinite; }
@@ -298,8 +300,21 @@ sub, sup { line-height: 0; }
 
 @media (max-width: 480px) {
   body { font-size: 1rem; }
-  /* block diagrams keep a readable size and scroll inside their frame */
-  .fig[data-template^="block-diagram"] .fig-svg { min-width: 600px; max-height: none; }
+  /* Figures: use the full screen width, enlarge their text by 15 %, and never
+     shrink below the template's minimum scale (wider figures scroll sideways;
+     js/ui/figures.js sets --fig-min). */
+  .question > .fig { margin-left: -16px; margin-right: -16px; border-left: 0; border-right: 0; border-radius: 0; padding: 8px 6px; }
+  .fig-svg { min-width: var(--fig-min, 0); max-height: none; overflow: visible; }
+  .question > .fig .fig-canvas { padding: 0 10px; }
+  .fig-svg .fs-9 { font-size: 10.35px; }
+  .fig-svg .fs-10 { font-size: 11.5px; }
+  .fig-svg .fs-11 { font-size: 12.65px; }
+  .fig-svg .fs-12 { font-size: 13.8px; }
+  .fig-svg .fs-13 { font-size: 14.95px; }
+  .fig-svg .fs-14 { font-size: 16.1px; }
+  .fig-svg .fs-15 { font-size: 17.25px; }
+  .fig-svg .fs-16 { font-size: 18.4px; }
+  .fig-svg .fs-18 { font-size: 20.7px; }
   .q-stem { font-size: 1.08rem; }
   .btn { width: 100%; }
 }

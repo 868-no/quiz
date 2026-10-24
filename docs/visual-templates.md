@@ -20,6 +20,10 @@ Figures are drawn from **parameters**, never stored as images or HTML. A questio
   presses "Spill av animasjon"; with `prefers-reduced-motion` the control is removed and
   the static drawing is the complete figure.
 * Invalid parameters never draw a possibly-wrong figure: the page shows "Figuren kan ikke vises".
+* Phones: text in figures is enlarged by 15 % (each text gets a `fs-N` class from its
+  `font-size`), so leave some room around labels. A template whose text is fitted inside
+  shapes exports `fixedTextSize: true`; `minScale` (default 0.6) is the smallest scale a
+  figure is shown at before it scrolls sideways.
 
 There are nine templates, all **approved** at version 1. A new template or version
 starts as `needs_review`: a person checks the drawings (`python3 -m tools preview`) and

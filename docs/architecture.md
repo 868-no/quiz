@@ -12,7 +12,8 @@ web/                      site source (copied into dist/; publish fills in sw.js
   js/quiz/                engine.js (pure), policies.js, rng.js, progress.js (mistakes list), storage.js
   js/render/              vnode.js (allowlisted DOM builder), richtext.js, format.js
   js/visuals/             registry.js, schema.js, svg.js + one module per template
-  js/ui/                  app.js (screens), dial.js (tuning-dial graphic), glossary.js (popovers)
+  js/ui/                  app.js (screens), dial.js (tuning-dial graphic), figures.js (figure
+                          sizing on phones), glossary.js (popovers)
 tools/                    offline pipeline (python3 -m tools …)
 content/                  original content (questions, glossary, chapters, template schemas)
 config/generation.json    LLM provider configuration (off by default)
@@ -79,6 +80,10 @@ dist/                     build output = the deployable site (not committed; CI 
 * Math uses real sub/superscripts and fractions with a spoken Norwegian `aria-label`.
 * Figures: `role="img"` + title + description, visible text description, idealisation
   note, no forced animation, `prefers-reduced-motion` respected.
+* Figures on phones span the screen width with 15 % larger text, and never shrink
+  below their template's minimum scale (60 %, block diagrams 85 %); a wider figure
+  scrolls sideways inside its frame, with a hint, and its frame can be scrolled with
+  the keyboard.
 * The tuning dial (chapter selection and round progress) is decorative and hidden from
   assistive technology; the same information is in the text and form controls. Its
   needle animation is skipped with `prefers-reduced-motion`.

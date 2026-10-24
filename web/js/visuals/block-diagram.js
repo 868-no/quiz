@@ -122,4 +122,4 @@ function render(p, tpl) {
   return { svg: svgRoot(W, H, 'Blokkskjema', description, els), description, animatable: false };
 }
 
-export default { id: 'block-diagram', version: 1, rules, quantities: () => ({}), render };
+export default { id: 'block-diagram', version: 1, rules, quantities: () => ({}), render, fixedTextSize: true, minScale: 0.85 };
