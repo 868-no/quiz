@@ -84,6 +84,11 @@ dist/                     build output = the deployable site (not committed; CI 
   click/tap/Enter, closed with Escape (focus returns), the × button or a tap elsewhere.
   Clicks on a term or its popover cannot activate the answer label. Terms whose
   definition would reveal the answer are plain text until the question is answered.
+* `tests/a11y/` runs axe-core (WCAG 2.2 A/AA and best practices) in Chromium on every
+  screen (setup, question with a glossary popup, feedback, results, continue box,
+  linked figure, missing link, practice exam and its result), on a phone in dark mode
+  and a desktop in light mode, as part of the GitHub test job. Automated checks find
+  only some problems; testing with screen readers is still needed.
 * Math uses real sub/superscripts and fractions with a spoken Norwegian `aria-label`.
 * Figures: `role="img"` + title + description, visible text description, idealisation
   note, no forced animation, `prefers-reduced-motion` respected.

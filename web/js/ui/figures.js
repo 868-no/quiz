@@ -16,7 +16,7 @@ export function fitFigures(root) {
     if (hint) hint.hidden = !wide;
     if (wide) {
       canvas.setAttribute('tabindex', '0');
-      canvas.setAttribute('role', 'region');
+      canvas.setAttribute('role', 'group'); // not a landmark: a page can have many of these
       canvas.setAttribute('aria-label', 'Figur som kan rulles sideveis');
     } else {
       canvas.removeAttribute('tabindex');

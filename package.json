@@ -1,12 +1,14 @@
 {
   "name": "radioquiz",
   "private": true,
-  "description": "Optional JS test tooling. The site itself has no npm dependencies and no build step.",
+  "description": "Optional test tooling (jsdom for UI tests, Playwright + axe-core for the accessibility check). The site itself has no npm dependencies and no build step.",
   "type": "module",
   "scripts": {
     "test": "node --test tests/js/*.test.mjs"
   },
   "devDependencies": {
-    "jsdom": "24.1.3"
+    "axe-core": "4.14.0",
+    "jsdom": "24.1.3",
+    "playwright": "1.63.0"
   }
 }

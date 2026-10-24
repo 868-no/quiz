@@ -37,12 +37,17 @@ jobs:
       - uses: actions/setup-node@v7
         with:
           node-version: "22"
-      - name: Install jsdom for the UI tests (locked versions, no install scripts)
+      - name: Install test tools (jsdom, Playwright, axe-core; locked versions, no install scripts)
         run: npm ci --ignore-scripts --no-audit --no-fund
-      - name: Tool and site tests
+      - name: Install Chromium for the accessibility check
+        run: npx playwright install --with-deps chromium
+      - name: Build the site for the accessibility check
+        run: python3 -m tools publish --without-source
+      - name: Tool and site tests, accessibility check
         run: ./run-tests.sh
         env:
-          RADIOQUIZ_REQUIRE_JSDOM: "1"   # fail instead of skipping the UI tests
+          RADIOQUIZ_REQUIRE_JSDOM: "1"     # fail instead of skipping the UI tests
+          RADIOQUIZ_REQUIRE_BROWSER: "1"   # ... or the accessibility check
 
   deploy:
     needs: test

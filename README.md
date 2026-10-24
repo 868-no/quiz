@@ -127,9 +127,9 @@ learning objectives or unapproved items; `release-check` enforces this.
 3. **Section headings:** verify headings (`chapters verify-section`) so references can
    name the section; until then references show chapter and printed page only.
 4. **Testing on real devices and screen readers** (VoiceOver, NVDA, TalkBack). UI
-   behaviour is tested in a simulated DOM (jsdom), and the screens, figures and
-   offline mode were checked in headless Chromium, but not on phones or with
-   assistive technology.
+   behaviour is tested in a simulated DOM (jsdom), every screen passes an automated
+   axe-core check in Chromium on each push, and the screens, figures and offline mode
+   were inspected in headless Chromium, but not on phones or with assistive technology.
 
 Errors can be reported as [GitHub issues](https://github.com/868-no/quiz/issues); each question
 shows its id after answering, with a link to a pre-filled issue that includes a link to the question.
