@@ -3,7 +3,7 @@
   "revisions": [
     {
       "revision": 1,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "calculation",
@@ -229,6 +229,15 @@
           "content_sha256": "2202a4882935a67066694fa0974373702bfc7502c7eeddef0aa8be5fc20dbb72",
           "note": "Runde 2: faglig kontrollert av AI (ChatGPT), 11 spørsmål rettet.",
           "acknowledged": []
+        },
+        {
+          "at": "2026-10-24T17:02:59+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "2202a4882935a67066694fa0974373702bfc7502c7eeddef0aa8be5fc20dbb72",
+          "note": "superseded by r2"
         }
       ],
       "calculation": {
@@ -282,7 +291,7 @@
     },
     {
       "revision": 2,
-      "status": "needs_review",
+      "status": "approved",
       "type": "single_choice",
       "style": "calculation",
       "difficulty": "medium",
@@ -541,6 +550,16 @@
           "to_status": "needs_review",
           "content_sha256": "437d67190054248bbfdeda746d9d107c7f4a46e51c90237f0d4ae2ea15485e90",
           "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T17:02:59+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "437d67190054248bbfdeda746d9d107c7f4a46e51c90237f0d4ae2ea15485e90",
+          "note": "Figure/animation added",
+          "acknowledged": []
         }
       ],
       "visual": {
@@ -573,7 +592,22 @@
         "warnings": [],
         "hazards": [],
         "passed": true,
-        "at": "2026-10-24T16:52:13+00:00"
+        "at": "2026-10-24T17:02:59+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T17:02:59+00:00",
+        "content_sha256": "437d67190054248bbfdeda746d9d107c7f4a46e51c90237f0d4ae2ea15485e90",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
       }
     }
   ]

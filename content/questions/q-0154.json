@@ -3,7 +3,7 @@
   "revisions": [
     {
       "revision": 1,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "recall",
@@ -169,6 +169,15 @@
           "content_sha256": "babf5304e73afb29d0b2839971bad6dd3648e025d89a1476cfd2ffa9da60be2f",
           "note": "Runde 2: faglig kontrollert av AI (ChatGPT), 11 spørsmål rettet.",
           "acknowledged": []
+        },
+        {
+          "at": "2026-10-24T17:02:56+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "babf5304e73afb29d0b2839971bad6dd3648e025d89a1476cfd2ffa9da60be2f",
+          "note": "superseded by r2"
         }
       ],
       "provenance": {
@@ -203,7 +212,7 @@
     },
     {
       "revision": 2,
-      "status": "needs_review",
+      "status": "approved",
       "type": "single_choice",
       "style": "recall",
       "difficulty": "medium",
@@ -383,6 +392,16 @@
           "to_status": "needs_review",
           "content_sha256": "c3e5f3d340176a3a9a32e7ba5b88fb94703162110550c87ba40d125f30de146f",
           "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T17:02:56+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "c3e5f3d340176a3a9a32e7ba5b88fb94703162110550c87ba40d125f30de146f",
+          "note": "Figure/animation added",
+          "acknowledged": []
         }
       ],
       "visual": {
@@ -422,7 +441,22 @@
         "warnings": [],
         "hazards": [],
         "passed": true,
-        "at": "2026-10-24T16:51:18+00:00"
+        "at": "2026-10-24T17:02:56+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T17:02:56+00:00",
+        "content_sha256": "c3e5f3d340176a3a9a32e7ba5b88fb94703162110550c87ba40d125f30de146f",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
       }
     }
   ]

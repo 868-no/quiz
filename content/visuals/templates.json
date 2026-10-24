@@ -1454,7 +1454,7 @@
       "title": "Signal over tid",
       "description": "Signals against time, computed from their definition and drawn as stacked panels: collector current in classes A/AB/B/C for a sine drive (conduction), a CW carrier keyed hard or softly (keying), the envelope of SSB speech, processed speech or RTTY with optional peak and average levels (envelope), an AM signal correctly modulated or overdriven with clipped peaks (am), a data signal with the carrier shifting between two frequencies (fsk), and the frequency of a keyed CW transmitter with or without chirp (chirp). 'blank' shows only a note, for figures shown after answering. bias sets the conduction drive's bias directly (the class label follows), and cursor draws a time cursor; both are for animations.",
       "idealised": "Forenklede kurver som viser formen, ikke målinger fra et bestemt apparat.",
-      "status": "needs_review",
+      "status": "approved",
       "params": {
         "type": "object",
         "required": [
@@ -1535,7 +1535,15 @@
             "nullable": true
           }
         }
-      }
+      },
+      "review_log": [
+        {
+          "at": "2026-10-24T17:02:37+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Reviewed rendered figures and animations in the preview (phone and desktop, before and after answering)"
+        }
+      ]
     },
     {
       "id": "spectrum",
@@ -1543,7 +1551,7 @@
       "title": "Frekvensspekter",
       "description": "A frequency axis with discrete spectrum lines (harmonics, mixing products), sidebands as bands, a noise skirt around a carrier (phase noise) and an optional filter passband drawn over it. One or two panels share the axis. Levels are relative (0–1). 'blank' shows only a note, for spectra shown after answering.",
       "idealised": "Forenklet spekter som viser hvor signalene ligger, ikke en måling.",
-      "status": "needs_review",
+      "status": "approved",
       "params": {
         "type": "object",
         "required": [
@@ -1723,7 +1731,15 @@
             }
           }
         }
-      }
+      },
+      "review_log": [
+        {
+          "at": "2026-10-24T17:02:37+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Reviewed rendered figures and animations in the preview (phone and desktop, before and after answering)"
+        }
+      ]
     },
     {
       "id": "semiconductor",
@@ -1731,7 +1747,7 @@
       "title": "Halvleder",
       "description": "Simplified drawings of the inside of a semiconductor: a silicon lattice with electron-pair bonds, optionally with a phosphorus atom (free electron) or boron atom (hole); a PN junction as a bar with holes, free electrons and the depletion layer with its fixed charges, optionally with anode/cathode, bias polarity, or a narrow and a wide layer compared (varicap); an N-channel JFET with gate regions and depletion layers, optionally at two gate voltages. 'blank' shows only a note, for drawings shown after answering. depletion_width (junction) and gate_bias (JFET, 0–1) set the layer width continuously, for animations.",
       "idealised": "Forenklet tegning av prinsippet, ikke i riktig målestokk.",
-      "status": "needs_review",
+      "status": "approved",
       "params": {
         "type": "object",
         "required": [
@@ -1804,7 +1820,15 @@
             "nullable": true
           }
         }
-      }
+      },
+      "review_log": [
+        {
+          "at": "2026-10-24T17:02:37+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Reviewed rendered figures and animations in the preview (phone and desktop, before and after answering)"
+        }
+      ]
     },
     {
       "id": "stage",
@@ -1812,7 +1836,7 @@
       "title": "Trinn og komponenter",
       "description": "Small circuit diagrams with IEC-style symbols: class C stage with an RF choke to the base, push-pull stage with centre-tapped transformers, 7812 regulator (reveal: decoupling capacitors at its pins), single-transistor mixer (collector load '?', reveal: tuned to the MF), dual-gate MOSFET (gate 2 '?', reveal: small positive voltage, decoupled), triode (reveal: grid slightly negative, anode high positive, electron flow), PNP transistor (reveal: base about 0,6 V below the emitter) and a quartz crystal.",
       "idealised": "Forenklet koblingsskjema uten komponentverdier.",
-      "status": "needs_review",
+      "status": "approved",
       "params": {
         "type": "object",
         "required": [
@@ -1837,7 +1861,15 @@
             "default": false
           }
         }
-      }
+      },
+      "review_log": [
+        {
+          "at": "2026-10-24T17:02:38+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Reviewed rendered figures and animations in the preview (phone and desktop, before and after answering)"
+        }
+      ]
     },
     {
       "id": "illustration",
@@ -1845,7 +1877,7 @@
       "title": "Illustrasjon",
       "description": "Small explanatory drawings: the SI prefix ladder with a step marked (prefixes), a tolerance range on a number line (tolerance), an S-meter scale with two readings and optionally the dB per S-unit (s_meter), a plate capacitor with area and distance and optionally half the distance (plates), a variable capacitor's rotor and stator with the overlap shaded (variable_capacitor), two coils with parallel and optionally perpendicular axes (coils), and an oscillator and final stage on one supply line, optionally with a separate regulator (supply). 'blank' shows only a note. angle (−90 to 90°) turns the variable capacitor's rotor (for animations).",
       "idealised": "Forenklet illustrasjon av prinsippet.",
-      "status": "needs_review",
+      "status": "approved",
       "params": {
         "type": "object",
         "required": [
@@ -1954,7 +1986,15 @@
             "default": 30
           }
         }
-      }
+      },
+      "review_log": [
+        {
+          "at": "2026-10-24T17:02:38+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Reviewed rendered figures and animations in the preview (phone and desktop, before and after answering)"
+        }
+      ]
     }
   ]
 }

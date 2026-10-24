@@ -334,7 +334,7 @@
     },
     {
       "revision": 3,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "concept",
@@ -490,6 +490,15 @@
           "content_sha256": "ad1ddfc297862e01bb40b0621d9f847838dadbe4a0250f17c1e1cd5984324a40",
           "note": "Nye ordlistelenker (runde 2); teksten er uendret.",
           "acknowledged": []
+        },
+        {
+          "at": "2026-10-24T17:02:47+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "ad1ddfc297862e01bb40b0621d9f847838dadbe4a0250f17c1e1cd5984324a40",
+          "note": "superseded by r4"
         }
       ],
       "checks": {
@@ -519,7 +528,7 @@
     },
     {
       "revision": 4,
-      "status": "needs_review",
+      "status": "approved",
       "type": "single_choice",
       "style": "concept",
       "difficulty": "medium",
@@ -665,6 +674,16 @@
           "to_status": "needs_review",
           "content_sha256": "c146b15be998a4d6d7422a51c26e5d64e80d7b80776941098a46911a456f73a9",
           "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T17:02:47+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "c146b15be998a4d6d7422a51c26e5d64e80d7b80776941098a46911a456f73a9",
+          "note": "Figure/animation added",
+          "acknowledged": []
         }
       ],
       "visual": {
@@ -684,7 +703,22 @@
         "warnings": [],
         "hazards": [],
         "passed": true,
-        "at": "2026-10-24T16:28:52+00:00"
+        "at": "2026-10-24T17:02:47+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T17:02:47+00:00",
+        "content_sha256": "c146b15be998a4d6d7422a51c26e5d64e80d7b80776941098a46911a456f73a9",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
       }
     }
   ]

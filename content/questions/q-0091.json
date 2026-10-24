@@ -544,7 +544,7 @@
     },
     {
       "revision": 4,
-      "status": "approved",
+      "status": "retired",
       "type": "single_choice",
       "style": "concept",
       "difficulty": "easy",
@@ -719,6 +719,15 @@
           "content_sha256": "cc49a123e063d4855a0b337c6f66149980da9cd5d4345c257438fa46edb6032f",
           "note": "Book terminology: sluttforsterker, gate, kunstlast, knekkfrekvens, avstemt krets, glattekondensator, harmoniske signaler, variabel kondensator",
           "acknowledged": []
+        },
+        {
+          "at": "2026-10-24T17:02:51+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "cc49a123e063d4855a0b337c6f66149980da9cd5d4345c257438fa46edb6032f",
+          "note": "superseded by r5"
         }
       ],
       "checks": {
@@ -748,7 +757,7 @@
     },
     {
       "revision": 5,
-      "status": "needs_review",
+      "status": "approved",
       "type": "single_choice",
       "style": "concept",
       "difficulty": "easy",
@@ -904,6 +913,16 @@
           "to_status": "needs_review",
           "content_sha256": "2feef1658134cc754c7e0d9c10115d136e89056242c75d4414b06c93f51a6696",
           "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T17:02:51+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "2feef1658134cc754c7e0d9c10115d136e89056242c75d4414b06c93f51a6696",
+          "note": "Figure/animation added",
+          "acknowledged": []
         }
       ],
       "visual": {
@@ -933,7 +952,22 @@
         "warnings": [],
         "hazards": [],
         "passed": true,
-        "at": "2026-10-24T16:17:20+00:00"
+        "at": "2026-10-24T17:02:51+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T17:02:51+00:00",
+        "content_sha256": "2feef1658134cc754c7e0d9c10115d136e89056242c75d4414b06c93f51a6696",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
       }
     }
   ]
