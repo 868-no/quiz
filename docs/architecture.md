@@ -98,7 +98,8 @@ dist/                     build output = the deployable site (not committed; CI 
   only some problems; testing with screen readers is still needed.
 * Math uses real sub/superscripts and fractions with a spoken Norwegian `aria-label`.
 * Figures: `role="img"` + title + description, visible text description, idealisation
-  note, no forced animation, `prefers-reduced-motion` respected.
+  note; animations play by themselves with a stop button, and not at all with
+  `prefers-reduced-motion`.
 * Figures on phones span the screen width with 15 % larger text, and never shrink
   below their template's minimum scale (60 %, block diagrams 85 %); a wider figure
   scrolls sideways inside its frame, with a hint, and its frame can be scrolled with

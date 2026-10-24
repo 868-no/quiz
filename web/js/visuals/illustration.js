@@ -126,27 +126,29 @@ function plates(els, p) {
   return { height: 190, desc };
 }
 
-function variableCapacitor(els) {
+function variableCapacitor(els, p) {
   const cx = 280;
   const cy = 130;
   const r = 95;
-  // stator: a fixed half-disc to the left; rotor: a half-disc turned 60° on the shaft
-  const half = (deg, extra) => {
-    const a0 = (deg * Math.PI) / 180;
-    const a1 = a0 + Math.PI;
-    const p0 = [cx + r * Math.cos(a0), cy - r * Math.sin(a0)];
-    const p1 = [cx + r * Math.cos(a1), cy - r * Math.sin(a1)];
-    // sweep 0: counter-clockwise on screen, so 90° → 270° is the left half
-    return h('path', { d: `M ${cx} ${cy} L ${p0[0]} ${p0[1]} A ${r} ${r} 0 0 0 ${p1[0]} ${p1[1]} Z`, ...extra });
+  const pt = (deg) => [cx + r * Math.cos((deg * Math.PI) / 180), cy - r * Math.sin((deg * Math.PI) / 180)];
+  // a sector from angle a to b (degrees, counter-clockwise on screen: sweep flag 0)
+  const sector = (a, b, extra) => {
+    const [x0, y0] = pt(a);
+    const [x1, y1] = pt(b);
+    return h('path', { d: `M ${cx} ${cy} L ${x0} ${y0} A ${r} ${r} 0 ${b - a > 180 ? 1 : 0} 0 ${x1} ${y1} Z`, ...extra });
   };
-  els.push(half(90, { fill: 'none', stroke: STROKE, 'stroke-width': 2 }), half(30, { fill: 'none', stroke: STROKE, 'stroke-width': 2, 'stroke-dasharray': '6 4' }));
-  // the overlap is the sector the two halves share: 90° to 210°
-  const a0 = (90 * Math.PI) / 180;
-  const a1 = (210 * Math.PI) / 180;
-  els.push(h('path', { d: `M ${cx} ${cy} L ${cx + r * Math.cos(a0)} ${cy - r * Math.sin(a0)} A ${r} ${r} 0 0 0 ${cx + r * Math.cos(a1)} ${cy - r * Math.sin(a1)} Z`, fill: STROKE, opacity: 0.25 }));
+  // stator: the left half (90°–270°); rotor: the half from 'angle' to 'angle' + 180°
+  const rot = p.angle;
+  els.push(sector(90, 270, { fill: 'none', stroke: STROKE, 'stroke-width': 2 }), sector(rot, rot + 180, { fill: 'none', stroke: STROKE, 'stroke-width': 2, 'stroke-dasharray': '6 4' }));
+  const from = Math.max(90, rot);
+  const to = Math.min(270, rot + 180);
+  if (to - from > 0.5) els.push(sector(from, to, { fill: STROKE, opacity: 0.25 }));
   els.push(h('circle', { cx, cy, r: 6, fill: STROKE }), lbl(cx + 12, cy + 16, 'aksel', 'start', 11));
-  els.push(lbl(cx - r - 10, cy + 50, 'faste plater', 'end'), lbl(cx + r * 0.75, cy - r * 0.85, 'dreibare plater (stiplet)', 'start'));
-  els.push(lbl(cx - 38, cy - 36, 'overlapp', 'middle', 12, { 'font-weight': 'bold' }));
+  els.push(lbl(cx - r - 10, cy + 50, 'faste plater', 'end'), lbl(cx + r + 10, cy - r * 0.6, 'dreibare plater (stiplet)', 'start'));
+  if (to - from > 30) {
+    const [lx, ly] = [cx + 0.55 * r * Math.cos((((from + to) / 2) * Math.PI) / 180), cy - 0.55 * r * Math.sin((((from + to) / 2) * Math.PI) / 180)];
+    els.push(lbl(lx, ly, 'overlapp', 'middle', 12, { 'font-weight': 'bold' }));
+  }
   return { height: 250, desc: 'Variabel kondensator sett fra enden: de faste platene er en halvsirkel, og de dreibare platene (stiplet) er en halvsirkel på akselen. Når akselen dreies, endres hvor stor del av platene som ligger overfor hverandre (skyggelagt).' };
 }
 

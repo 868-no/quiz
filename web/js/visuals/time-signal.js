@@ -35,7 +35,6 @@ function rules(p) {
 // --- the signals (t runs from 0 to 1 across a panel) --------------------------------
 
 const BIAS = { A: 1.25, AB: 0.25, B: 0, C: -0.5 }; // drive is sin, conduction where bias + sin > 0
-const conduction = (cls) => (t) => Math.max(0, BIAS[cls] + Math.sin(2 * Math.PI * 2 * t));
 
 function keyEnvelope(soft) {
   // key down from 0,1 to 0,45 and from 0,6 to 0,9
@@ -106,8 +105,12 @@ function timeAxis(els, y) {
 const N = 600;
 const sample = (fn) => Array.from({ length: N + 1 }, (_, j) => fn(j / N));
 
+// the class that a bias gives (used when the bias is set directly, as in an animation)
+const classOf = (b) => (b >= 1 ? 'A' : b > 0.04 ? 'AB' : b > -0.04 ? 'B' : 'C');
+
 function drawPanel(els, p, trace, top) {
-  const name = TRACES[p.kind][trace];
+  const bias = p.kind === 'conduction' && p.bias != null ? p.bias : BIAS[trace];
+  const name = p.kind === 'conduction' && p.bias != null ? TRACES.conduction[classOf(p.bias)] : TRACES[p.kind][trace];
   if (name) els.push(label(X0, top + 10, name, { 'font-size': 13, 'font-weight': 'bold', 'text-anchor': 'start' }));
   const mid = top + PANEL / 2 + 8;
   const amp = PANEL / 2 - 16;
@@ -116,9 +119,9 @@ function drawPanel(els, p, trace, top) {
     const zero = top + 50;
     const scale = 14;
     timeAxis(els, zero);
-    const drive = (t) => BIAS[trace] + Math.sin(2 * Math.PI * 2 * t);
+    const drive = (t) => bias + Math.sin(2 * Math.PI * 2 * t);
     els.push(polyline(sample((t) => [xOf(t), zero - scale * drive(t)]), { 'stroke-width': 1.2, 'stroke-dasharray': '4 4', opacity: 0.75 }));
-    els.push(polyline(sample((t) => [xOf(t), zero - scale * conduction(trace)(t)]), { 'stroke-width': 2.5 }));
+    els.push(polyline(sample((t) => [xOf(t), zero - scale * Math.max(0, drive(t))]), { 'stroke-width': 2.5 }));
     return;
   }
   if (p.kind === 'keying' || p.kind === 'am') {
@@ -217,6 +220,8 @@ function render(p) {
     const ph = panelHeight(p.kind) + 24;
     p.traces.forEach((tr, i) => drawPanel(els, p, tr, 10 + i * ph));
     height = 10 + p.traces.length * ph;
+    // a cursor running along the time axis (used by animations to show time passing)
+    if (p.cursor != null) els.push(line(xOf(p.cursor), 14, xOf(p.cursor), height - 8, { 'stroke-width': 2, opacity: 0.6 }));
     if (p.kind === 'conduction') parts.push('Kollektorstrømmen (heltrukket) for en sinusformet styrespenning (stiplet). Den delen av den stiplede kurven som ligger under null, gir ingen strøm.');
     if (p.kind === 'keying') parts.push('Bærebølgen to ganger slått på og av, med omhyllingskurven stiplet.');
     if (p.kind === 'am') parts.push('Bærebølgen med omhyllingskurven stiplet.');

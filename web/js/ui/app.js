@@ -78,9 +78,18 @@ export function createApp(root, bank) {
     if (startObserver) startObserver.disconnect();
     startObserver = null;
     root.replaceChildren(toDOM(vnode));
+    // Animations play by themselves (with a button to stop them), unless the visitor
+    // has asked the system for reduced motion: then they are left out entirely.
+    if (reducedMotion()) root.querySelectorAll('.fig-anim-toggle').forEach((b) => b.remove());
+    else {
+      root.querySelectorAll('.fig-anim-toggle').forEach((b) => {
+        root.querySelector(`#${b.dataset.fig}`)?.classList.add('is-playing');
+        b.setAttribute('aria-pressed', 'true');
+        b.textContent = 'Stopp animasjon';
+      });
+    }
     fitFigures(root);
     glideNeedle();
-    if (reducedMotion()) root.querySelectorAll('.fig-anim-toggle').forEach((b) => b.remove());
     const target = focusSelector && root.querySelector(focusSelector);
     if (target) target.focus({ preventScroll: false });
   }
@@ -714,6 +723,7 @@ export function createApp(root, bank) {
       const playing = fig.classList.toggle('is-playing');
       el.setAttribute('aria-pressed', String(playing));
       el.textContent = playing ? 'Stopp animasjon' : 'Spill av animasjon';
+      fitFigures(root); // the still and the animated drawing can differ in size
       return;
     }
     switch (el.dataset.action) {

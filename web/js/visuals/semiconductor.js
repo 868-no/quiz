@@ -87,7 +87,8 @@ function junctionBar(els, p, top, depletion, title) {
   const X1 = 470;
   const H = 96;
   const mid = (X0 + X1) / 2;
-  const w = WIDTH[depletion];
+  // depletion_width (px) overrides the named widths; the animation sweeps it
+  const w = p.depletion_width != null && depletion === p.depletion ? p.depletion_width : WIDTH[depletion];
   if (title) els.push(label(X0, top - 12, title, { 'font-size': 13, 'font-weight': 'bold', 'text-anchor': 'start' }));
   els.push(h('rect', { x: X0, y: top, width: X1 - X0, height: H, fill: 'var(--fig-bg)', stroke: STROKE, 'stroke-width': 2 }));
   if (w) els.push(h('rect', { x: mid - w / 2, y: top, width: w, height: H, fill: STROKE, opacity: 0.15 }));
@@ -140,12 +141,13 @@ function junction(els, p) {
 }
 
 // --- JFET ------------------------------------------------------------------------------
-function jfetBar(els, top, depletion, title) {
+function jfetBar(els, top, depletion, title, gateBias = null) {
   const X0 = 110;
   const X1 = 450;
   const H = 120;
   const g = 26; // gate region height
-  const w = { normal: 16, wide: 38 }[depletion] || 16;
+  // gate_bias 0 … 1: from slightly negative to nearly pinched off (overrides the named widths)
+  const w = gateBias != null ? 10 + 34 * gateBias : { normal: 16, wide: 38 }[depletion] || 16;
   if (title) els.push(label(X0, top - 12, title, { 'font-size': 13, 'font-weight': 'bold', 'text-anchor': 'start' }));
   els.push(h('rect', { x: X0, y: top, width: X1 - X0, height: H, fill: 'var(--fig-bg)', stroke: STROKE, 'stroke-width': 2 }));
   const gx0 = X0 + 90;
@@ -178,7 +180,7 @@ function jfet(els, p) {
     desc.push('Øverst er gate litt negativ: smalt sperresjikt og bred kanal. Nederst er gate mer negativ: sperresjiktene er bredere, kanalen smalere og strømmen mindre (tynnere pil).');
     return { height: 380, desc };
   }
-  jfetBar(els, 50, p.depletion === 'wide' ? 'wide' : 'normal', '');
+  jfetBar(els, 50, p.depletion === 'wide' ? 'wide' : 'normal', '', p.gate_bias);
   return { height: 190, desc };
 }
 

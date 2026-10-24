@@ -288,6 +288,8 @@ def _rlc_rules(p: dict[str, Any], errors: list[str]) -> None:
         errors.append("source.voltage_v: a circuit without a source has no voltage")
     if p["switch"] and (p["topology"] != "series" or src["kind"] == "none"):
         errors.append("switch: only for a series circuit with a source")
+    if p.get("current_arrow") is not None and (p["topology"] != "series" or src["kind"] == "none"):
+        errors.append("current_arrow: only for a series circuit with a source")
     kinds = {c["kind"] for c in p["components"]}
     if p["label_style"] != "values" and p["total_label"] != "none":
         errors.append("total_label: only used with label_style 'values'")
@@ -633,7 +635,7 @@ def validate_visual(templates: dict[str, dict[str, Any]], visual: Any, where: st
     errors: list[str] = []
     if not isinstance(visual, dict):
         return [f"{where}: expected an object"], None, None
-    unknown = set(visual) - {"template", "version", "params", "params_after", "caption"}
+    unknown = set(visual) - {"template", "version", "params", "params_after", "caption", "animation"}
     if unknown:
         errors.append(f"{where}: unknown keys {sorted(unknown)}")
     key = f"{visual.get('template')}@{visual.get('version')}"
@@ -654,7 +656,79 @@ def validate_visual(templates: dict[str, dict[str, Any]], visual: Any, where: st
             after = _validate(tpl["params"], merged, f"{where}.params_after", errors, tpl)
             if not errors:
                 RULES[tpl["id"]](after, errors)
+    if "animation" in visual and not errors:
+        _validate_animation(tpl, visual, errors, where)
     return errors, (params if not errors else None), (after if not errors else None)
+
+
+ANIMATION_FRAMES = 24
+_ANIM_KEYS = {"param", "from", "to", "phase", "mode", "params", "text"}
+
+
+def _animation_value(anim: dict[str, Any], k: int) -> float:
+    n = ANIMATION_FRAMES
+    share = k / (n - 1) if anim.get("mode") == "loop" else (k if k <= n / 2 else n - k) / (n / 2)
+    return anim["from"] + (anim["to"] - anim["from"]) * share
+
+
+def _set_path(obj: Any, path: str, value: float) -> None:
+    keys = path.split(".")
+    for k in keys[:-1]:
+        obj = obj[int(k)] if k.isdigit() else obj[k]
+    last = keys[-1]
+    if last.isdigit():
+        obj[int(last)] = value
+    elif isinstance(obj, dict):
+        obj[last] = value
+    else:
+        raise KeyError(last)
+
+
+def _validate_animation(tpl: dict[str, Any], visual: dict[str, Any], errors: list[str], where: str) -> None:
+    """A parameter animation: every one of the 24 frames must be a valid figure."""
+    anim = visual["animation"]
+    w = f"{where}.animation"
+    if not isinstance(anim, dict):
+        errors.append(f"{w}: expected an object")
+        return
+    if set(anim) - _ANIM_KEYS:
+        errors.append(f"{w}: unknown keys {sorted(set(anim) - _ANIM_KEYS)}")
+    if not isinstance(anim.get("param"), str) or not re.fullmatch(r"[a-z_0-9]+(\.[a-z_0-9]+)*", anim.get("param", "")):
+        errors.append(f"{w}.param: a dotted parameter path, e.g. band.center_hz")
+    for key in ("from", "to"):
+        if not isinstance(anim.get(key), (int, float)) or isinstance(anim.get(key), bool):
+            errors.append(f"{w}.{key}: a number")
+    if anim.get("phase", "both") not in ("before", "after", "both"):
+        errors.append(f"{w}.phase: before, after or both")
+    if anim.get("mode", "bounce") not in ("bounce", "loop"):
+        errors.append(f"{w}.mode: bounce or loop")
+    text = anim.get("text")
+    if not isinstance(text, str) or not 10 <= len(text) <= 240:
+        errors.append(f"{w}.text: say in a sentence what the animation shows (10–240 characters)")
+    if "params" in anim and not isinstance(anim["params"], dict):
+        errors.append(f"{w}.params: an object of overrides")
+    if errors:
+        return
+    anim = {"phase": "both", "mode": "bounce", **anim}
+    phases = ["before", "after"] if anim["phase"] == "both" else [anim["phase"]]
+    for phase in phases:
+        base = visual.get("params") or {}
+        if phase == "after" and "params_after" in visual:
+            base = deep_merge(base, visual["params_after"])
+        for k in range(ANIMATION_FRAMES):
+            raw = copy.deepcopy(deep_merge(base, anim.get("params", {})))  # never touch the figure's own params
+            try:
+                _set_path(raw, anim["param"], _animation_value(anim, k))
+            except (KeyError, IndexError, TypeError):
+                errors.append(f"{w}.param: {anim['param']!r} is not a parameter of this figure")
+                return
+            frame_errors: list[str] = []
+            params = _validate(tpl["params"], raw, f"{w} frame {k}", frame_errors, tpl)
+            if not frame_errors:
+                RULES[tpl["id"]](params, frame_errors)
+            if frame_errors:
+                errors.append(f"{w}: frame {k} ({phase}) is not a valid figure: {frame_errors[0]}")
+                return
 
 
 def deep_merge(base: Any, over: Any) -> Any:

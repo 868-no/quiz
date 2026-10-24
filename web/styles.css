@@ -339,12 +339,45 @@ sub, sup { line-height: 0; }
 .fig-canvas:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
 .flow-path { stroke: transparent; }
 .fig.is-playing .flow-path { stroke: var(--action); animation: flow 1.4s linear infinite; }
-.fig.is-playing .trace-1 { stroke-dasharray: 1 1; animation: draw 4s linear infinite; }
+.fig[data-template^="waveform@"].is-playing .trace-1 { stroke-dasharray: 1 1; animation: draw 4s linear infinite; }
+/* parameter animations: 24 frames, each visible for 1/24 of a 4,8 s cycle */
+.fig .anim-play { display: none; }
+.fig.is-playing .anim-play { display: block; }
+.fig.is-playing .anim-static { display: none; }
+.fig .anim-frame { visibility: hidden; }
+.fig.is-playing .anim-frame { animation: anim-frame 4.8s linear infinite; }
+@keyframes anim-frame { 0% { visibility: visible; } 4.1666% { visibility: hidden; } 100% { visibility: hidden; } }
+.fig.is-playing .anim-frame.f0 { animation-delay: 0.0s; }
+.fig.is-playing .anim-frame.f1 { animation-delay: 0.2s; }
+.fig.is-playing .anim-frame.f2 { animation-delay: 0.4s; }
+.fig.is-playing .anim-frame.f3 { animation-delay: 0.6s; }
+.fig.is-playing .anim-frame.f4 { animation-delay: 0.8s; }
+.fig.is-playing .anim-frame.f5 { animation-delay: 1.0s; }
+.fig.is-playing .anim-frame.f6 { animation-delay: 1.2s; }
+.fig.is-playing .anim-frame.f7 { animation-delay: 1.4s; }
+.fig.is-playing .anim-frame.f8 { animation-delay: 1.6s; }
+.fig.is-playing .anim-frame.f9 { animation-delay: 1.8s; }
+.fig.is-playing .anim-frame.f10 { animation-delay: 2.0s; }
+.fig.is-playing .anim-frame.f11 { animation-delay: 2.2s; }
+.fig.is-playing .anim-frame.f12 { animation-delay: 2.4s; }
+.fig.is-playing .anim-frame.f13 { animation-delay: 2.6s; }
+.fig.is-playing .anim-frame.f14 { animation-delay: 2.8s; }
+.fig.is-playing .anim-frame.f15 { animation-delay: 3.0s; }
+.fig.is-playing .anim-frame.f16 { animation-delay: 3.2s; }
+.fig.is-playing .anim-frame.f17 { animation-delay: 3.4s; }
+.fig.is-playing .anim-frame.f18 { animation-delay: 3.6s; }
+.fig.is-playing .anim-frame.f19 { animation-delay: 3.8s; }
+.fig.is-playing .anim-frame.f20 { animation-delay: 4.0s; }
+.fig.is-playing .anim-frame.f21 { animation-delay: 4.2s; }
+.fig.is-playing .anim-frame.f22 { animation-delay: 4.4s; }
+.fig.is-playing .anim-frame.f23 { animation-delay: 4.6s; }
 @keyframes flow { to { stroke-dashoffset: -20; } }
 @keyframes draw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
 
 @media (prefers-reduced-motion: reduce) {
-  .fig .flow-path, .fig .trace-1 { animation: none !important; }
+  .fig .flow-path, .fig .trace-1, .fig .anim-frame { animation: none !important; }
+  .fig .anim-play { display: none !important; }
+  .fig .anim-static { display: block !important; }
   .fig.is-playing .trace-1 { stroke-dasharray: none; }
   .fig-anim-toggle { display: none; }
 }

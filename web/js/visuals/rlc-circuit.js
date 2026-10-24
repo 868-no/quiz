@@ -3,7 +3,7 @@
 // impedance, time constant and resonance frequency are computed, never typed in.
 
 import { formatSI } from '../render/format.js';
-import { acSource, battery, component, dot, svgRoot, switchOpen, symLabel, terminal, wire } from './svg.js';
+import { acSource, arrowHead, battery, component, dot, label, line, svgRoot, switchOpen, symLabel, terminal, wire } from './svg.js';
 
 const UNIT = { R: 'Ω', C: 'F', L: 'H' };
 const LIMITS = { R: [0.1, 1e8], C: [1e-15, 1], L: [1e-12, 100] };
@@ -43,6 +43,7 @@ function rules(p) {
   if (src.kind === 'ac' && src.frequency_hz == null) errors.push('source.frequency_hz: required for an AC source');
   if (src.kind === 'none' && src.voltage_v != null) errors.push('source.voltage_v: a circuit without a source has no voltage');
   if (p.switch && (p.topology !== 'series' || src.kind === 'none')) errors.push('switch: only for a series circuit with a source');
+  if (p.current_arrow != null && (p.topology !== 'series' || src.kind === 'none')) errors.push('current_arrow: only for a series circuit with a source');
   const kinds = new Set(p.components.map((c) => c.kind));
   if (p.label_style !== 'values' && p.total_label !== 'none') errors.push("total_label: only used with label_style 'values'");
   if (p.total_label !== 'none') {
@@ -188,6 +189,12 @@ function render(p) {
     els.push(src === 'dc' ? battery(L, SY) : acSource(L, SY));
     els.push(...sourceLabels(p, L - 40, SY, 'end'));
     els.push(totalLabel(p, q, (L + R) / 2, B + 28));
+    // current_arrow (0 … 1): an arrow on the bottom wire, as long as the current is large
+    if (p.current_arrow != null) {
+      const len = 230 * p.current_arrow;
+      if (len > 12) els.push(line(L + 40, B - 16, L + 40 + len - 8, B - 16, { 'stroke-width': 3 }), arrowHead(L + 40 + len, B - 16, 1, 0, 10));
+      els.push(label(L + 40, B - 34, 'I', { 'font-size': 14, 'font-style': 'italic', 'text-anchor': 'start' }));
+    }
     W = 500;
     H = 270;
   } else {

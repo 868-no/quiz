@@ -175,3 +175,25 @@ test('the rlc assumption only mentions coupling between coils when there are two
   assert.ok(!fig([{ kind: 'L', value: 0.01 }, { kind: 'R', value: 100 }]).includes('kobling mellom spolene'));
   assert.ok(fig([{ kind: 'L', value: 0.01 }, { kind: 'L', value: 0.02 }]).includes('kobling mellom spolene'));
 });
+
+test('an animated figure has a still image and 24 frames, and never changes its own parameters', () => {
+  const visual = {
+    template: 'frequency-response', version: 1,
+    params: { kind: 'spectrum', center_hz: 145.5e6, spectrum: { mode: 'fm', mod_hz: 1500, index: 5, freq_labels: 'none' } },
+    animation: { param: 'spectrum.index', from: 0.3, to: 5, text: 'Sidebåndene endrer seg når indeksen øker.' },
+  };
+  const before = JSON.stringify(visual);
+  const res = renderVisual(visual, TEMPLATES);
+  assert.ok(res.ok && res.animatable);
+  assert.equal(findAll(res.node, (n) => /anim-frame/.test(n.a.class || '')).length, 24);
+  assert.equal(findAll(res.node, (n) => /anim-static/.test(n.a.class || '')).length, 1);
+  assert.equal(findAll(res.node, (n) => /anim-play/.test(n.a.class || '')).length, 1);
+  assert.ok(res.description.endsWith('Sidebåndene endrer seg når indeksen øker.'));
+  assert.equal(JSON.stringify(visual), before, 'the figure parameters were changed while rendering the frames');
+  // an animation shown only after answering is left out before
+  const afterOnly = { ...visual, animation: { ...visual.animation, phase: 'after' } };
+  assert.equal(findAll(renderVisual(afterOnly, TEMPLATES, { phase: 'before' }).node, (n) => /anim-frame/.test(n.a.class || '')).length, 0);
+  // frames that would not be valid figures make the figure invalid, as in the Python verifier
+  const bad = { ...visual, animation: { ...visual.animation, to: 20 } };
+  assert.ok(!renderVisual(bad, TEMPLATES).ok);
+});

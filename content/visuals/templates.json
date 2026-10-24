@@ -514,7 +514,7 @@
       "id": "rlc-circuit",
       "version": 1,
       "title": "Krets med R, C og L",
-      "description": "One to three resistors, capacitors and/or inductors in series or parallel, alone between two terminals or connected to a DC or AC source (optionally with an open switch). Totals, reactances, impedance, time constant and resonance frequency are computed; a capacitor or coil can instead be labelled by a given reactance (reactance_ohms). label_style: 'values' (default), 'names' (component names only, for concept questions) or 'source' (source values shown, components by name).",
+      "description": "One to three resistors, capacitors and/or inductors in series or parallel, alone between two terminals or connected to a DC or AC source (optionally with an open switch). Totals, reactances, impedance, time constant and resonance frequency are computed; a capacitor or coil can instead be labelled by a given reactance (reactance_ohms). label_style: 'values' (default), 'names' (component names only, for concept questions) or 'source' (source values shown, components by name). current_arrow (0–1) draws the current as an arrow whose length follows it (series circuit with a source; for animations).",
       "idealised": "Ideelle komponenter og ledninger uten motstand; ingen kobling mellom spolene.",
       "status": "approved",
       "review_log": [
@@ -547,6 +547,12 @@
           "actor": "Jim C K Flaten",
           "action": "approve",
           "note": "Assumption text drops coil coupling when there is only one coil; drawing unchanged"
+        },
+        {
+          "at": "2026-10-24T16:57:57+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Optional current_arrow added for animations; all published figures render identically (checked)"
         }
       ],
       "params": {
@@ -663,6 +669,12 @@
               "source"
             ],
             "default": "values"
+          },
+          "current_arrow": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1,
+            "nullable": true
           }
         }
       }
@@ -1398,7 +1410,7 @@
       "id": "ratio-detector",
       "version": 1,
       "title": "Forholdsdetektor",
-      "description": "Simplified ratio detector (FM demodulator): tuned MF transformer with a centre-tapped secondary, two diodes the same way round the loop charging C3 and C4 (U1, U2), a large capacitor Cs across both, R1/R2 with their middle to ground, LF output between the C3/C4 junction and ground. show_curve adds the S-curve (output against frequency, through zero at f0), typically only after answering.",
+      "description": "Simplified ratio detector (FM demodulator): tuned MF transformer with a centre-tapped secondary, two diodes the same way round the loop charging C3 and C4 (U1, U2), a large capacitor Cs across both, R1/R2 with their middle to ground, LF output between the C3/C4 junction and ground. show_curve adds the S-curve (output against frequency, through zero at f0), typically only after answering. marker_u marks an operating point on the S-curve (for animating the frequency swing).",
       "idealised": "Forenklet koblingsskjema uten komponentverdier. Tertiærviklingen som mange forholdsdetektorer har, er utelatt.",
       "status": "approved",
       "params": {
@@ -1412,6 +1424,12 @@
           "show_curve": {
             "type": "boolean",
             "default": false
+          },
+          "marker_u": {
+            "type": "number",
+            "minimum": -2.8,
+            "maximum": 2.8,
+            "nullable": true
           }
         }
       },
@@ -1421,6 +1439,12 @@
           "actor": "Jim C K Flaten",
           "action": "approve",
           "note": "Reviewed rendered figure for q-0117 (before and after answering)"
+        },
+        {
+          "at": "2026-10-24T16:57:58+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Optional marker_u added for animations; the published figure renders identically (checked)"
         }
       ]
     },
@@ -1428,7 +1452,7 @@
       "id": "time-signal",
       "version": 1,
       "title": "Signal over tid",
-      "description": "Signals against time, computed from their definition and drawn as stacked panels: collector current in classes A/AB/B/C for a sine drive (conduction), a CW carrier keyed hard or softly (keying), the envelope of SSB speech, processed speech or RTTY with optional peak and average levels (envelope), an AM signal correctly modulated or overdriven with clipped peaks (am), a data signal with the carrier shifting between two frequencies (fsk), and the frequency of a keyed CW transmitter with or without chirp (chirp). 'blank' shows only a note, for figures shown after answering.",
+      "description": "Signals against time, computed from their definition and drawn as stacked panels: collector current in classes A/AB/B/C for a sine drive (conduction), a CW carrier keyed hard or softly (keying), the envelope of SSB speech, processed speech or RTTY with optional peak and average levels (envelope), an AM signal correctly modulated or overdriven with clipped peaks (am), a data signal with the carrier shifting between two frequencies (fsk), and the frequency of a keyed CW transmitter with or without chirp (chirp). 'blank' shows only a note, for figures shown after answering. bias sets the conduction drive's bias directly (the class label follows), and cursor draws a time cursor; both are for animations.",
       "idealised": "Forenklede kurver som viser formen, ikke målinger fra et bestemt apparat.",
       "status": "needs_review",
       "params": {
@@ -1497,6 +1521,18 @@
             "type": "string",
             "maxLength": 48,
             "default": ""
+          },
+          "bias": {
+            "type": "number",
+            "minimum": -0.9,
+            "maximum": 1.3,
+            "nullable": true
+          },
+          "cursor": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1,
+            "nullable": true
           }
         }
       }
@@ -1693,7 +1729,7 @@
       "id": "semiconductor",
       "version": 1,
       "title": "Halvleder",
-      "description": "Simplified drawings of the inside of a semiconductor: a silicon lattice with electron-pair bonds, optionally with a phosphorus atom (free electron) or boron atom (hole); a PN junction as a bar with holes, free electrons and the depletion layer with its fixed charges, optionally with anode/cathode, bias polarity, or a narrow and a wide layer compared (varicap); an N-channel JFET with gate regions and depletion layers, optionally at two gate voltages. 'blank' shows only a note, for drawings shown after answering.",
+      "description": "Simplified drawings of the inside of a semiconductor: a silicon lattice with electron-pair bonds, optionally with a phosphorus atom (free electron) or boron atom (hole); a PN junction as a bar with holes, free electrons and the depletion layer with its fixed charges, optionally with anode/cathode, bias polarity, or a narrow and a wide layer compared (varicap); an N-channel JFET with gate regions and depletion layers, optionally at two gate voltages. 'blank' shows only a note, for drawings shown after answering. depletion_width (junction) and gate_bias (JFET, 0–1) set the layer width continuously, for animations.",
       "idealised": "Forenklet tegning av prinsippet, ikke i riktig målestokk.",
       "status": "needs_review",
       "params": {
@@ -1754,6 +1790,18 @@
             "type": "string",
             "maxLength": 48,
             "default": ""
+          },
+          "depletion_width": {
+            "type": "number",
+            "minimum": 10,
+            "maximum": 150,
+            "nullable": true
+          },
+          "gate_bias": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1,
+            "nullable": true
           }
         }
       }
@@ -1795,7 +1843,7 @@
       "id": "illustration",
       "version": 1,
       "title": "Illustrasjon",
-      "description": "Small explanatory drawings: the SI prefix ladder with a step marked (prefixes), a tolerance range on a number line (tolerance), an S-meter scale with two readings and optionally the dB per S-unit (s_meter), a plate capacitor with area and distance and optionally half the distance (plates), a variable capacitor's rotor and stator with the overlap shaded (variable_capacitor), two coils with parallel and optionally perpendicular axes (coils), and an oscillator and final stage on one supply line, optionally with a separate regulator (supply). 'blank' shows only a note.",
+      "description": "Small explanatory drawings: the SI prefix ladder with a step marked (prefixes), a tolerance range on a number line (tolerance), an S-meter scale with two readings and optionally the dB per S-unit (s_meter), a plate capacitor with area and distance and optionally half the distance (plates), a variable capacitor's rotor and stator with the overlap shaded (variable_capacitor), two coils with parallel and optionally perpendicular axes (coils), and an oscillator and final stage on one supply line, optionally with a separate regulator (supply). 'blank' shows only a note. angle (−90 to 90°) turns the variable capacitor's rotor (for animations).",
       "idealised": "Forenklet illustrasjon av prinsippet.",
       "status": "needs_review",
       "params": {
@@ -1898,6 +1946,12 @@
             "minimum": 1,
             "maximum": 10,
             "default": 6
+          },
+          "angle": {
+            "type": "number",
+            "minimum": -90,
+            "maximum": 90,
+            "default": 30
           }
         }
       }

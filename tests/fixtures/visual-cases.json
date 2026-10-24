@@ -2544,6 +2544,106 @@
           "kind": "tolerance"
         }
       }
+    },
+    {
+      "name": "animation: FM index swept",
+      "valid": true,
+      "visual": {
+        "template": "frequency-response",
+        "version": 1,
+        "params": {
+          "kind": "spectrum",
+          "center_hz": 145500000.0,
+          "spectrum": {
+            "mode": "fm",
+            "mod_hz": 1500,
+            "index": 5,
+            "freq_labels": "none"
+          }
+        },
+        "animation": {
+          "param": "spectrum.index",
+          "from": 0.3,
+          "to": 5,
+          "text": "Sidebåndene endrer seg når indeksen øker."
+        }
+      },
+      "quantities": {},
+      "shown": {}
+    },
+    {
+      "name": "animation: a path the figure does not have",
+      "valid": false,
+      "error": "animation",
+      "visual": {
+        "template": "frequency-response",
+        "version": 1,
+        "params": {
+          "kind": "spectrum",
+          "center_hz": 145500000.0,
+          "spectrum": {
+            "mode": "fm",
+            "mod_hz": 1500,
+            "index": 5,
+            "freq_labels": "none"
+          }
+        },
+        "animation": {
+          "param": "spectrum.nothing.deeper",
+          "from": 0,
+          "to": 1,
+          "text": "Dette skal ikke gå gjennom."
+        }
+      }
+    },
+    {
+      "name": "animation: frames outside the allowed range",
+      "valid": false,
+      "error": "frame",
+      "visual": {
+        "template": "frequency-response",
+        "version": 1,
+        "params": {
+          "kind": "spectrum",
+          "center_hz": 145500000.0,
+          "spectrum": {
+            "mode": "fm",
+            "mod_hz": 1500,
+            "index": 5,
+            "freq_labels": "none"
+          }
+        },
+        "animation": {
+          "param": "spectrum.index",
+          "from": 0.3,
+          "to": 20,
+          "text": "Indeksen går for høyt her."
+        }
+      }
+    },
+    {
+      "name": "animation: needs a text",
+      "valid": false,
+      "error": "text",
+      "visual": {
+        "template": "frequency-response",
+        "version": 1,
+        "params": {
+          "kind": "spectrum",
+          "center_hz": 145500000.0,
+          "spectrum": {
+            "mode": "fm",
+            "mod_hz": 1500,
+            "index": 5,
+            "freq_labels": "none"
+          }
+        },
+        "animation": {
+          "param": "spectrum.index",
+          "from": 0.3,
+          "to": 5
+        }
+      }
     }
   ]
 }

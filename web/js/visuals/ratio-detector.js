@@ -3,7 +3,8 @@
 // round the loop, so they charge C3 and C4 to the voltages U1 and U2. A large capacitor
 // Cs lies across both, R1 and R2 have their middle to ground, and the centre tap goes to
 // the point between C3 and C4, where the LF output is taken. Optionally (after
-// answering) the detector's S-curve: output voltage against frequency, through zero at f0.
+// answering) the detector's S-curve: output voltage against frequency, through zero at f0,
+// with marker_u marking an operating point on it (used by the animation).
 
 import { h } from '../render/vnode.js';
 import { arrowHead, capacitor, diode, dot, ground, inductor, label, line, resistor, rotated, svgRoot, symLabel, terminal, wire, STROKE } from './svg.js';
@@ -60,7 +61,7 @@ function schematic(els, p) {
   return B + 40;
 }
 
-function sCurve(els, top) {
+function sCurve(els, top, marker) {
   const X0 = 120;
   const X1 = 500;
   const Y0 = top + 90; // zero line
@@ -80,6 +81,13 @@ function sCurve(els, top) {
   els.push(label(X0 - 8, Y0, '0', { 'text-anchor': 'end', 'font-size': 11 }));
   els.push(h('path', { d, fill: 'none', stroke: STROKE, 'stroke-width': 2.5, class: 'trace trace-1' }));
   els.push(h('circle', { cx: xOf(0), cy: Y0, r: 4, fill: STROKE }), symLabel(xOf(0) + 8, Y0 + 18, 'f', '0', null, { 'text-anchor': 'start', 'font-size': 12 }));
+  // the operating point: where the signal's frequency is just now, and the output it gives
+  if (marker != null) {
+    const mx = xOf(marker);
+    const my = yOf(fn(marker));
+    els.push(line(mx, Y0, mx, my, { 'stroke-width': 1.2, 'stroke-dasharray': '4 3' }), line(X0, my, mx, my, { 'stroke-width': 1.2, 'stroke-dasharray': '4 3' }));
+    els.push(h('circle', { cx: mx, cy: my, r: 7, fill: STROKE }));
+  }
   return Y0 + A + 24;
 }
 
@@ -90,7 +98,7 @@ function render(p) {
     'Fra hver ende av sekundærviklingen går en diode, D1 og D2, koblet i samme retning rundt sløyfen. De lader kondensatorene C3 og C4 til spenningene U1 og U2. ' +
     'En stor kondensator Cs ligger over begge, og to like motstander R1 og R2 har midtpunktet til jord. Midtuttaket på L2 er koblet til punktet mellom C3 og C4, og LF-utgangen tas mellom dette punktet og jord.';
   if (p.show_curve) {
-    height = sCurve(els, height);
+    height = sCurve(els, height, p.marker_u);
     description += ' Under skjemaet: utgangsspenningen mot frekvensen, en S-formet kurve. Den går gjennom null ved senterfrekvensen f0, blir positiv på den ene siden og negativ på den andre, og flater ut og går tilbake mot null langt fra senterfrekvensen.';
   }
   return { svg: svgRoot(620, height - 50, 'Forholdsdetektor', description, els, {}, 0, 50), description, animatable: false };

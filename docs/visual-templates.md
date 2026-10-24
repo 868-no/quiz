@@ -16,16 +16,24 @@ Figures are drawn from **parameters**, never stored as images or HTML. A questio
   replaced), e.g. to reveal a meter reading or highlight a block.
 * Each figure gets: `role="img"` with a title, an SVG `<desc>`, a visible "Tekstbeskrivelse
   av figuren" with the same description, the template's idealisation note
-  ("Forutsetning: …"), and no colour-only meaning. Animations are off until the learner
-  presses "Spill av animasjon"; with `prefers-reduced-motion` the control is removed and
-  the static drawing is the complete figure.
+  ("Forutsetning: …"), and no colour-only meaning. Animations start by themselves when
+  the figure is shown, with a "Stopp animasjon" button; with `prefers-reduced-motion`
+  nothing moves, the button is removed and the still drawing is the complete figure.
+* `animation` (optional) animates one parameter: `{param, from, to, phase?, mode?,
+  params?, text}`. The figure is drawn at 24 values of `param` (a dotted path such as
+  `band.center_hz` or `coupled.kq.0`), there and back (`mode: "bounce"`, default) or one
+  way (`"loop"`), and CSS shows the frames in turn. `params` overrides other parameters
+  in the frames only (e.g. one panel instead of a comparison), `phase` is `before`,
+  `after` or `both` (default), and `text` is appended to the description to say what the
+  animation shows. Every frame must be a valid figure; verify checks all 24. Use
+  `phase: "after"` when the movement itself would give the answer away.
 * Invalid parameters never draw a possibly-wrong figure: the page shows "Figuren kan ikke vises".
 * Phones: text in figures is enlarged by 15 % (each text gets a `fs-N` class from its
   `font-size`), so leave some room around labels. A template whose text is fitted inside
   shapes exports `fixedTextSize: true`; `minScale` (default 0.6) is the smallest scale a
   figure is shown at before it scrolls sideways.
 
-There are twelve templates, all **approved** at version 1. A new template or version
+There are seventeen templates, all at version 1. A new template or version
 starts as `needs_review`: a person checks the drawings (`python3 -m tools preview`) and
 approves it (`python3 -m tools visuals approve id@version`) before questions using it
 can be published. Changing an approved template's code or schema calls for a new
@@ -225,6 +233,47 @@ coil L in series and variable capacitor C2 across the output.
 | `mark` | `none`, `c1`, `l` or `c2` – a dashed frame around one part |
 
 No quantities: the drawing has no component values.
+
+## `time-signal@1` – signal over tid
+
+Stacked panels against time, computed: `kind` `conduction` (collector current for classes
+`A`, `AB`, `B`, `C`; `bias` sets the bias directly and the class label follows), `keying`
+(`hard`, `soft`), `envelope` (`speech`, `processed`, `rtty`, with `markers` `peak` and
+`average`), `am` (`normal`, `overdriven`), `fsk` (`bits`, e.g. "1011001") and `chirp`
+(`chirp`, `stable`). `traces` lists the panels; `cursor` (0–1) draws a time cursor;
+`blank` + `note` for figures shown after answering.
+
+## `spectrum@1` – frekvensspekter
+
+A frequency axis `x_min_hz`–`x_max_hz` with up to two `panels`, each with `lines`
+(`f_hz`, `level` 0–1, `label`, `mark`), `bands` (sidebands, falling off away from the
+strongest line), a `skirt` (phase noise around a carrier) and a `filter` passband drawn
+dashed. `freq_labels` writes each line's frequency with the decimals needed to tell them
+apart.
+
+## `semiconductor@1` – halvleder
+
+`kind` `lattice` (silicon, `dopant` `P` or `B`), `junction` (PN junction with
+`depletion` `narrow`/`normal`/`wide` or `depletion_width` in px, `bias`, `terminals`,
+`compare` for a narrow and a wide layer) and `jfet` (`gate_bias` 0–1 or `compare` for two
+gate voltages).
+
+## `stage@1` – trinn og komponenter
+
+`kind` `class_c`, `push_pull`, `regulator_ic`, `transistor_mixer`, `dual_gate`, `triode`,
+`pnp` or `crystal`. `reveal` adds the part that would give the answer away (decoupling
+capacitors, the tuned MF load, the gate 2 bias, the grid and anode voltages, the PNP base
+bias), usually in `params_after`.
+
+## `illustration@1` – illustrasjon
+
+`kind` `prefixes` (`from`, `to`), `tolerance` (`nominal`, `unit`, `percent`), `s_meter`
+(`from_s`, `to_s`, `db_per_s`, `reveal` writes the dB per S-unit), `plates` (`reveal`:
+half the distance), `variable_capacitor` (`angle` −90–90°), `coils` (`reveal`: axes at
+right angles) and `supply` (`reveal`: a separate regulator for the oscillator).
+
+Also: `ratio-detector@1` takes `marker_u` (a point on the S-curve) and `rlc-circuit@1`
+`current_arrow` (0–1, the current as an arrow), both for animations.
 
 ## Adding or changing a template
 

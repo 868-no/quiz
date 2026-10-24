@@ -268,7 +268,7 @@ test('empty bank shows an explicit message', { skip }, async () => {
   assert.equal($(root, '#setup-form button[type=submit]').disabled, true);
 });
 
-test('figures render with a text description and an animation toggle', { skip }, async () => {
+test('figures render with a text description, and animations play until stopped', { skip }, async () => {
   const bank = makeBank({ perChapter: { 2: 1 } });
   bank.questions[0].visual = {
     template: 'dc-circuit', version: 1,
@@ -282,9 +282,13 @@ test('figures render with a text description and an animation toggle', { skip },
   assert.ok(fig.querySelector('.fig-desc').textContent.includes('amperemeter'));
   assert.ok(!fig.textContent.includes('25,5'));
   const toggle = fig.querySelector('.fig-anim-toggle');
-  toggle.click();
-  assert.ok($(root, 'figure.fig').classList.contains('is-playing'));
+  assert.ok(fig.classList.contains('is-playing'), 'an animation starts by itself');
   assert.equal(toggle.getAttribute('aria-pressed'), 'true');
+  assert.equal(toggle.textContent, 'Stopp animasjon');
+  toggle.click();
+  assert.ok(!$(root, 'figure.fig').classList.contains('is-playing'));
+  assert.equal(toggle.getAttribute('aria-pressed'), 'false');
+  assert.equal(toggle.textContent, 'Spill av animasjon');
   choose(root, 0);
   $(root, '#answer-form button[type=submit]').click();
   assert.ok($(root, 'figure.fig').textContent.includes('25,5'), 'after answering, the figure shows the reading');
@@ -299,6 +303,7 @@ test('reduced motion removes the animation control', { skip }, async () => {
   createApp(root, bank);
   start(root, [2]);
   assert.equal($(root, '.fig-anim-toggle'), null);
+  assert.ok(!$(root, 'figure.fig').classList.contains('is-playing'), 'nothing plays with reduced motion');
   assert.ok($(root, 'figure.fig svg'));
 });
 
