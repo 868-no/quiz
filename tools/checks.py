@@ -26,6 +26,8 @@ OPTION_ID = re.compile(r"^[a-z0-9][a-z0-9-]{0,11}$")
 EN_STOP = {"the", "is", "what", "which", "of", "and", "when", "with", "does", "how", "a", "an", "are", "this", "that"}
 NB_HINTS = {"og", "er", "en", "et", "som", "på", "av", "det", "hva", "hvilken", "hvilke", "når", "med", "til",
             "for", "ikke", "den", "de", "blir", "har", "skal", "kan", "i"}
+OPENING_POINTER = re.compile(r"(Her|Dette|Denne|Disse|Slik|Som nevnt|Samme|Den samme|Det samme|Ovenfor|Nedenfor)\b")
+FIGURE_REF = re.compile(r"\b(figuren|tegningen|skjemaet|bildet ovenfor|tabellen nedenfor|tabellen ovenfor|ovenfor|nedenfor)\b", re.I)
 GIVEAWAY = re.compile(r"\b(alle (de )?ovennevnte|ingen av (de )?ovennevnte|begge deler)\b", re.I)
 COPY_ERROR_N = 8
 COPY_WARN_N = 6
@@ -151,6 +153,20 @@ def check_revision(ctx: Context, qid: str, rev: dict[str, Any]) -> dict[str, Any
             m = rx.search(s)
             if m:
                 errors.append(f"public text: contains {what} ({m.group(0)!r}); the release check would refuse it – reword")
+
+    # --- the question stands on its own -----------------------------------------
+    # The question is shown alone, so its opening can't point back at earlier text
+    # ("Her er …", "Denne kretsen …"), and only a question with a figure can refer to one.
+    opening = richtext.plain_text(rev.get("context") or rev.get("stem") or []).strip()
+    m = OPENING_POINTER.match(opening)
+    if m:
+        warnings.append(f"standalone: the question opens with {m.group(0)!r}, which points at text the learner "
+                        "never sees – say what it refers to")
+    if not rev.get("visual"):
+        for key in ("context", "stem"):
+            m = FIGURE_REF.search(richtext.plain_text(rev.get(key) or []))
+            if m:
+                warnings.append(f"standalone: {key} mentions {m.group(0)!r}, but the question has no figure")
 
     # --- glossary use ---------------------------------------------------------
     pre_answer_terms: list[str] = []

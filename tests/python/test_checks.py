@@ -49,6 +49,18 @@ class ChecksTest(unittest.TestCase):
             r["options"][1]["content"] = ["Tale gjøres om til digitale data"]
         self.assertTrue(self.mutate(fine)["passed"])
 
+    def test_question_must_stand_on_its_own(self):
+        def opens_with_her(r):
+            r["context"] = [["Her er motstanden ", {"q": 470, "u": "Ω"}, "."]]
+        self.assertWarning(self.mutate(opens_with_her), "standalone: the question opens with 'Her'")
+        def figure_without_visual(r):
+            r.pop("visual")
+            r["context"] = [["Figuren viser en motstand på ", {"q": 470, "u": "Ω"}, "."]]
+        self.assertWarning(self.mutate(figure_without_visual), "mentions 'Figuren', but the question has no figure")
+        def word_inside(r):
+            r["context"] = [["Herdet stål ", {"q": 470, "u": "Ω"}, "."]]
+        self.assertFalse(any("standalone" in w for w in self.mutate(word_inside)["warnings"]))
+
     def test_option_count_and_unique_correct_key(self):
         self.assertError(self.mutate(lambda r: r["options"].pop()), "exactly 4 options")
         self.assertError(self.run_checks(correct=["o1", "o2"]), "exactly one correct")
