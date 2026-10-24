@@ -502,3 +502,45 @@ test('the chapter list shows progress, explains it, and can be reset', { skip },
   assert.equal(w.localStorage.getItem('radioquiz.solved.v1'), null);
   assert.ok(w.localStorage.getItem('radioquiz.missed.v1'), 'the list of mistakes is kept');
 });
+
+function examAnswer(root, correct) {
+  const idx = $$(root, '.opt input').findIndex((i) => (i.value === 'o1') === correct);
+  $$(root, '.opt label')[idx].click();
+  $(root, '#answer-form button[type=submit]').click();
+}
+
+test('a practice exam gives no feedback until the end and then a pass or fail', { skip }, async () => {
+  const { root } = await app(makeBank({ perChapter: { 2: 4, 3: 4 } }));
+  const exam = $(root, '.exam');
+  assert.ok(exam.textContent.includes('8 spørsmål fra alle kapitlene'));
+  assert.ok(exam.textContent.includes('Du består med 6 riktige (75 %'), '75 % of 8, rounded up');
+  assert.ok(exam.textContent.includes('kapittel 2–3'));
+  $(root, '[data-action=start-exam]').click();
+  assert.equal($(root, '.q-meta .tag').textContent, 'Prøveeksamen');
+  assert.equal($(root, '[data-action=quit]').textContent, 'Avslutt prøven');
+  examAnswer(root, true);
+  assert.equal($(root, '.feedback'), null, 'no feedback during the exam');
+  assert.equal($(root, '#q-progress').textContent, 'Spørsmål 2 av 8');
+  assert.equal($$(root, '.dial-mark-answered').length, 1);
+  assert.equal($$(root, '.dial-mark-ok').length + $$(root, '.dial-mark-bad').length, 0, 'right and wrong are not shown');
+  $(root, '[data-action=skip]').click();
+  assert.equal($(root, '#q-progress').textContent, 'Spørsmål 3 av 8');
+  for (let i = 0; i < 6; i++) examAnswer(root, true);
+  assert.ok($(root, '.exam-verdict.is-pass'));
+  assert.ok($(root, '.exam-verdict').textContent.includes('Bestått'));
+  assert.ok($(root, '.exam-verdict').textContent.includes('1 spørsmål ble hoppet over'));
+  assert.ok($(root, '.score').textContent.startsWith('7 av 8'));
+  assert.ok($(root, '.review').textContent.includes('Ikke besvart'));
+  $(root, '[data-action=start-exam]').click();
+  assert.equal($(root, '#q-progress').textContent, 'Spørsmål 1 av 8', 'a new exam starts from the results');
+});
+
+test('a failed practice exam says how many were missing', { skip }, async () => {
+  const { root } = await app(makeBank({ perChapter: { 2: 4 } }));
+  $(root, '[data-action=start-exam]').click();
+  examAnswer(root, true);
+  for (let i = 0; i < 3; i++) examAnswer(root, false);
+  const v = $(root, '.exam-verdict.is-fail');
+  assert.ok(v.textContent.includes('Ikke bestått'));
+  assert.ok(v.textContent.includes('Du trengte 3 riktige for å bestå, og manglet 2'));
+});

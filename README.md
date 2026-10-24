@@ -4,7 +4,8 @@ A Norwegian (bokmål) learning and quiz site for the amateur radio licence exam.
 Visitors pick chapters, answer one question at a time and get immediate feedback:
 whether they were right, the correct answer, an explanation, why their choice was
 wrong, and where to read more in the textbook (chapter, section, printed page).
-Questions answered wrong can be practised again, the chapter list shows how many
+A practice exam (100 questions, 75 right to pass, feedback at the end) mirrors the
+licence exam. Questions answered wrong can be practised again, the chapter list shows how many
 questions you have answered right, each question has its own link
 (`#q-0045`), and after the first visit the site works offline and can be installed
 on a phone's home screen.

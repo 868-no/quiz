@@ -168,3 +168,15 @@ test('pool and sessions can be limited to a list of question ids', () => {
   assert.equal(res.session.kind, 'missed');
   assert.equal(createSession(bank, { chapters: [2, 3], ids, count: 3, seed: 7 }).error, 'insufficient');
 });
+
+test('the exam policy defers feedback and lets a question be skipped', () => {
+  const res = createSession(bank, { chapters: [2, 3, 6], count: 5, policy: 'exam', seed: 3 });
+  assert.ok(res.ok);
+  let s = res.session;
+  assert.equal(feedbackVisible(submitAnswer(s, byId, 'o1'), 0), false);
+  s = advance(s); // skipped without an answer
+  assert.equal(s.index, 1);
+  while (!s.finished) s = advance(s);
+  assert.equal(summary(s, byId).unanswered, 5);
+  assert.equal(feedbackVisible(s, 0), false, 'nothing to show for a skipped question');
+});

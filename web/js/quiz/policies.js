@@ -1,6 +1,6 @@
 // Session policies: how a quiz presents the same question records.
-// Only `learning` is offered in the MVP. `exam` is defined so that adding it later
-// is a presentation change, not a content change.
+// `learning`: feedback after each answer. `exam` (prøveeksamen): no feedback until
+// the end, questions can be skipped, and the result is pass/fail.
 
 export const POLICIES = {
   learning: {
@@ -17,7 +17,7 @@ export const POLICIES = {
     feedback: 'deferred', // all feedback after the final submission
     allowAdvanceBeforeFeedback: true,
     showReferences: true,
-    enabled: false, // not part of the MVP
+    enabled: true,
   },
 };
 

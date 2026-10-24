@@ -50,8 +50,10 @@ dist/                     build output = the deployable site (not committed; CI 
 * **Links**: `#q-0045` opens that question on its own (also on `hashchange`); the
   feedback offers a button that copies the link.
 * **Policies** (`policies.js`): `learning` (immediate feedback, cannot advance before
-  feedback) is the MVP. `exam` (deferred feedback) is defined but disabled; adding it is
-  a UI change, not a content change. Future multiple-answer/numeric types are reserved
+  feedback) and `exam`, the practice exam ("Prøveeksamen"): 100 questions from all
+  available chapters (fewer if the bank is smaller), no feedback until the end,
+  questions can be skipped (counted as wrong), and the result is pass/fail at 75 % –
+  75 of 100, as in the licence exam. No time limit is applied. Future multiple-answer/numeric types are reserved
   in `TYPES` (`tools/questions.py`); spaced repetition would build on the stable
   `qid`/`rev` identifiers.
 

@@ -8,6 +8,7 @@ import { renderVisual } from '../visuals/registry.js';
 import {
   advance, createSession, currentItem, indexBank, pool, restoreSession, submitAnswer, summary,
 } from '../quiz/engine.js';
+import { getPolicy } from '../quiz/policies.js';
 import { randomSeed } from '../quiz/rng.js';
 import {
   clearMissed, clearSession, clearSolved, loadMissed, loadSession, loadSolved, saveMissed, saveSession, saveSolved,
@@ -22,6 +23,10 @@ const DIFFICULTY_LABEL = { easy: 'Lett', medium: 'Middels', hard: 'Vanskelig' };
 const STYLE_LABEL = { recall: 'Faktakunnskap', concept: 'Forståelse', scenario: 'Praktiske situasjoner', calculation: 'Regneoppgaver' };
 const COUNT_CHOICES = [5, 10, 20, 30, 50];
 const MISSED_ROUND = 20; // most questions in one round of practising earlier mistakes
+// The licence exam: 100 questions, 75 right to pass. No time limit is applied here.
+const EXAM_QUESTIONS = 100;
+const EXAM_PASS_SHARE = 0.75;
+const examPassMark = (total) => Math.ceil(total * EXAM_PASS_SHARE);
 const LINK_RE = /^#(q-\d+)$/;
 
 const reducedMotion = () => Boolean(globalThis.matchMedia && globalThis.matchMedia('(prefers-reduced-motion: reduce)').matches);
@@ -138,6 +143,44 @@ export function createApp(root, bank) {
     }
     const chapters = [...new Set(ids.map((id) => byId.get(id).chapter))].sort((a, b) => a - b);
     start({ chapters, ids, count: Math.min(ids.length, MISSED_ROUND), kind: 'missed' });
+  }
+
+  // ----------------------------------------------------------------- exam
+  const isExam = () => Boolean(state.session && state.session.policy === 'exam');
+  const availableChapters = () => bank.chapters.filter((c) => c.status === 'available').map((c) => c.number);
+
+  function chapterSpan(nums) {
+    const consecutive = nums.every((n, i) => i === 0 || n === nums[i - 1] + 1);
+    if (nums.length === 1) return `kapittel ${nums[0]}`;
+    if (consecutive) return `kapittel ${nums[0]}–${nums[nums.length - 1]}`;
+    return `kapittel ${nums.slice(0, -1).join(', ')} og ${nums[nums.length - 1]}`;
+  }
+
+  function examSize() {
+    return Math.min(EXAM_QUESTIONS, pool(bank, { chapters: availableChapters() }).length);
+  }
+
+  function examSection(resume) {
+    const n = examSize();
+    if (!n) return null;
+    const pass = examPassMark(n);
+    const rule = n === EXAM_QUESTIONS
+      ? `Du består med ${pass} riktige, som på eksamen.`
+      : `Du består med ${pass} riktige (75 %, som på eksamen).`;
+    return h('section', { class: 'exam', 'aria-labelledby': 'exam-title' },
+      h('h2', { id: 'exam-title' }, 'Prøveeksamen'),
+      h('p', {}, `${n} spørsmål fra alle kapitlene, uten fasit underveis. ${rule} Du ser svarene og forklaringene til slutt.`),
+      h('p', { class: 'hint' }, `Spørsmålene kommer foreløpig fra ${chapterSpan(availableChapters())}. Prøveeksamenen har ingen tidsfrist.`),
+      h('button', { type: 'button', class: 'btn', 'data-action': 'start-exam' }, 'Start prøveeksamen'),
+      resume ? h('p', { class: 'hint' }, 'Den påbegynte runden din blir forkastet.') : null);
+  }
+
+  function startExam() {
+    const resumable = state.resumable && !state.resumable.finished && !state.session;
+    if (resumable && !globalThis.confirm('Du har en påbegynt runde. Vil du forkaste den og starte en prøveeksamen?')) return;
+    state.session = null;
+    clearSession();
+    start({ chapters: availableChapters(), count: examSize(), policy: 'exam', kind: 'exam' });
   }
 
   // Explains "riktig besvart" in the chapter list once there is any progress, with a reset.
@@ -258,6 +301,7 @@ export function createApp(root, bank) {
             : `${avail} spørsmål er tilgjengelige i valget ditt.`),
         state.message ? h('p', { class: 'error', role: 'alert' }, state.message) : null,
         h('button', { type: 'submit', class: 'btn btn-primary', disabled: avail === 0 }, resume ? 'Start ny runde' : 'Start')),
+      examSection(resume),
       startBar(avail, resume));
     mount(view, focus);
     watchStart();
@@ -304,7 +348,12 @@ export function createApp(root, bank) {
 
   // ------------------------------------------------------------- question
   function marksOf(session) {
-    return session.items.map((it) => (it.answer ? (it.answer.correct ? 'correct' : 'wrong') : null));
+    const hidden = getPolicy(session.policy).feedback !== 'immediate' && !session.finished;
+    return session.items.map((it) => {
+      if (!it.answer) return null;
+      if (hidden) return 'answered';
+      return it.answer.correct ? 'correct' : 'wrong';
+    });
   }
 
   function refText(q) {
@@ -422,8 +471,10 @@ export function createApp(root, bank) {
     const s = state.session;
     const it = currentItem(s);
     const q = byId.get(it.qid);
-    const answered = Boolean(it.answer);
+    const exam = isExam();
+    const answered = Boolean(it.answer) && !exam; // an exam never shows feedback before the end
     const total = s.items.length;
+    const last = s.index + 1 === total;
     const visual = q.visual ? renderVisual(q.visual, bank.templates, { phase: answered ? 'after' : 'before' }) : null;
     const opts = richOpts(q, answered);
     const view = h('section', { class: 'question', 'aria-labelledby': 'q-progress' },
@@ -433,6 +484,7 @@ export function createApp(root, bank) {
         isSingle() ? null : h('div', { class: 'dial-wrap' }, roundDial(marksOf(s), s.index, { compact: narrow() })),
         h('p', { class: 'q-meta' },
           s.kind === 'missed' ? h('span', { class: 'tag' }, 'Feil fra før') : null,
+          exam ? h('span', { class: 'tag' }, 'Prøveeksamen') : null,
           h('span', { class: 'q-chapter' }, `Kapittel ${q.chapter}`,
             chapterOf(q.chapter) && chapterOf(q.chapter).title ? h('span', { class: 'q-chapter-title' }, ` – ${chapterOf(q.chapter).title}`) : null),
           q.topics.filter((t) => bank.topics[t]).map((t) => h('span', { class: 'q-topic' }, bank.topics[t].title)),
@@ -440,7 +492,7 @@ export function createApp(root, bank) {
           bank.mode === 'preview' ? h('span', { class: 'badge badge-preview' }, `Status: ${q.preview_status}`) : null),
         isSingle()
           ? h('button', { type: 'button', class: 'btn-small btn-quit', 'data-action': 'leave' }, 'Til forsiden')
-          : h('button', { type: 'button', class: 'btn-small btn-quit', 'data-action': 'quit' }, 'Avslutt runden')),
+          : h('button', { type: 'button', class: 'btn-small btn-quit', 'data-action': 'quit' }, exam ? 'Avslutt prøven' : 'Avslutt runden')),
       q.context && q.context.length ? h('div', { class: 'q-context' }, renderRich(q.context, opts)) : null,
       visual ? visual.node : null,
       h('form', { id: 'answer-form', class: 'answer-form', novalidate: true },
@@ -448,14 +500,22 @@ export function createApp(root, bank) {
           h('div', { class: 'q-stem', id: 'q-stem' }, renderRich(q.stem, opts)),
           h('div', { class: 'opts' }, it.order.map((id, i) => optionView(q, it, id, i, answered)))),
         !answered ? h('div', { class: 'actions' },
-          h('button', { type: 'submit', class: 'btn btn-primary', disabled: !state.choice }, 'Svar'),
+          h('button', { type: 'submit', class: 'btn btn-primary', disabled: !state.choice },
+            exam ? (last ? 'Svar og se resultatet' : 'Svar og gå videre') : 'Svar'),
+          exam ? h('button', { type: 'button', class: 'btn-link', 'data-action': 'skip' }, last ? 'Hopp over og se resultatet' : 'Hopp over') : null,
           !state.choice ? h('span', { class: 'hint', id: 'choose-hint' }, 'Velg et alternativ først.') : null) : null),
-      h('div', { class: 'fb-live', 'aria-live': 'polite' }, answered ? feedbackView(q, it, s.index + 1 === total) : null));
+      h('div', { class: 'fb-live', 'aria-live': 'polite' }, answered ? feedbackView(q, it, last) : null));
     mount(view, focus || (answered ? '#fb-title' : '#q-progress'));
   }
 
   // -------------------------------------------------------------- results
   function resultActions() {
+    if (state.session.kind === 'exam') {
+      return [
+        h('button', { type: 'button', class: 'btn btn-primary', 'data-action': 'start-exam' }, 'Ny prøveeksamen'),
+        h('button', { type: 'button', class: 'btn btn-secondary', 'data-action': 'new' }, 'Til forsiden'),
+      ];
+    }
     if (state.session.kind === 'missed') {
       const left = missedNow().length;
       return [
@@ -469,6 +529,15 @@ export function createApp(root, bank) {
     ];
   }
 
+  function examVerdict(sum) {
+    const pass = examPassMark(sum.total);
+    const ok = sum.correct >= pass;
+    return h('div', { class: `exam-verdict ${ok ? 'is-pass' : 'is-fail'}` },
+      h('p', { class: 'exam-verdict-title' }, h('span', { 'aria-hidden': 'true' }, ok ? '✓ ' : '✗ '), ok ? 'Bestått' : 'Ikke bestått'),
+      h('p', {}, `Du trengte ${pass} riktige for å bestå${ok ? '' : `, og manglet ${pass - sum.correct}`}.`),
+      sum.unanswered ? h('p', {}, `${sum.unanswered} spørsmål ble hoppet over og teller som feil.`) : null);
+  }
+
   function renderResults() {
     fitDial();
     const sum = summary(state.session, byId);
@@ -478,6 +547,7 @@ export function createApp(root, bank) {
       h('h2', { id: 'res-title', tabindex: '-1' }, 'Resultat'),
       h('div', { class: 'dial-wrap' }, roundDial(marksOf(state.session), null)),
       h('p', { class: 'score' }, h('strong', {}, `${sum.correct} av ${sum.total}`), ` riktige (${pct} %)`),
+      isExam() ? examVerdict(sum) : null,
       sum.byChapter.length > 1 ? h('table', { class: 'by-chapter' },
         h('caption', {}, 'Resultat per kapittel'),
         h('thead', {}, h('tr', {}, h('th', { scope: 'col' }, 'Kapittel'), h('th', { scope: 'col' }, 'Riktige'))),
@@ -497,7 +567,8 @@ export function createApp(root, bank) {
         return h('li', { value: String(x.index + 1) },
           h('details', { open: !x.correct },
             h('summary', {},
-              h('span', { class: x.correct ? 'mark-correct' : 'mark-wrong' }, h('span', { 'aria-hidden': 'true' }, x.correct ? '✓ ' : '✗ '), x.correct ? 'Riktig: ' : 'Feil: '),
+              h('span', { class: x.correct ? 'mark-correct' : 'mark-wrong' }, h('span', { 'aria-hidden': 'true' }, x.correct ? '✓ ' : '✗ '),
+                x.correct ? 'Riktig: ' : x.item.answer ? 'Feil: ' : 'Ikke besvart: '),
               plainText(q.stem).slice(0, 140)),
             h('div', { class: 'review-body' },
               q.context && q.context.length ? renderRich(q.context, opts) : null,
@@ -570,6 +641,12 @@ export function createApp(root, bank) {
         saveSolved(solved);
       }
       state.choice = null;
+      if (isExam()) {
+        state.session = advance(state.session);
+        persist();
+        render('#q-progress');
+        return;
+      }
       persist();
       renderQuestion('#fb-title');
     }
@@ -668,8 +745,17 @@ export function createApp(root, bank) {
         persist();
         render();
         break;
+      case 'start-exam':
+        startExam();
+        break;
+      case 'skip':
+        state.choice = null;
+        state.session = advance(state.session);
+        persist();
+        render('#q-progress');
+        break;
       case 'quit':
-        if (globalThis.confirm('Vil du avslutte runden? Du kan ikke fortsette den senere.')) {
+        if (globalThis.confirm(isExam() ? 'Vil du avslutte prøveeksamenen? Du kan ikke fortsette den senere.' : 'Vil du avslutte runden? Du kan ikke fortsette den senere.')) {
           state.session = null;
           clearSession();
           renderSetup();

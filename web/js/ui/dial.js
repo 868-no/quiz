@@ -67,7 +67,8 @@ export function chapterDial(chapters, selected) {
 }
 
 /**
- * Progress scale for a round. marks: array of 'correct' | 'wrong' | null per question;
+ * Progress scale for a round. marks: array of 'correct' | 'wrong' | 'answered' | null
+ * per question ('answered': during a practice exam, where right and wrong are not shown);
  * current: index of the question being shown, or null on the results screen.
  * Correct answers leave a dot and wrong answers a cross, so the marks differ by
  * shape and not only by colour. `compact` (phones, during a round) draws a slimmer
@@ -88,6 +89,7 @@ export function roundDial(marks, current, { compact = false } = {}) {
     if (major && !compact) els.push(h('text', { x, y: base + 23, class: 'dial-num', 'text-anchor': 'middle' }, String(i + 1)));
     const r = n <= 30 ? (compact ? 4 : 4.5) : 3;
     if (m === 'correct') els.push(h('circle', { cx: x, cy: base - 11, r, class: 'dial-mark-ok' }));
+    if (m === 'answered') els.push(h('circle', { cx: x, cy: base - 11, r: r * 0.8, class: 'dial-mark-answered' }));
     if (m === 'wrong') {
       els.push(h('path', { d: `M ${x - r} ${base - 11 - r} L ${x + r} ${base - 11 + r} M ${x + r} ${base - 11 - r} L ${x - r} ${base - 11 + r}`, class: 'dial-mark-bad' }));
     }

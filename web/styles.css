@@ -119,6 +119,7 @@ h2:focus, h3:focus { outline: none; }
 .dial-needle line { stroke: var(--dial-needle); stroke-width: 2.5; }
 .dial-needle polygon { fill: var(--dial-needle); }
 .dial-mark-ok { fill: var(--ok); }
+.dial-mark-answered { fill: var(--dial-scale); }
 .dial-mark-bad { stroke: var(--bad); stroke-width: 2; fill: none; stroke-linecap: round; }
 
 /* ---- buttons and inputs ---- */
@@ -176,6 +177,18 @@ select {
 .continue-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 18px; margin: 8px 0 6px; }
 .notice .hint { color: var(--muted); font-size: 0.92rem; }
 .progress-note { color: var(--muted); font-size: 0.92rem; margin: 8px 0 0; }
+
+/* practice exam: its own section below the round form, and a pass/fail verdict */
+.exam { margin-top: 36px; padding-top: 8px; border-top: 2px solid var(--line); }
+.exam h2 { font-size: 1.25rem; }
+.exam .btn { margin: 6px 0 4px; }
+.exam-verdict { border-left: 4px solid var(--line); padding: 4px 0 4px 14px; margin: 4px 0 16px; }
+.exam-verdict p { margin: 0.2em 0; }
+.exam-verdict-title { font-size: 1.3rem; font-weight: 700; }
+.exam-verdict.is-pass { border-left-color: var(--ok); }
+.exam-verdict.is-pass .exam-verdict-title { color: var(--ok); }
+.exam-verdict.is-fail { border-left-color: var(--bad); }
+.exam-verdict.is-fail .exam-verdict-title { color: var(--bad); }
 .progress-note .btn-link { min-height: 32px; }
 /* a button that reads as a link: secondary actions next to a primary button */
 .btn-link { font: inherit; color: var(--action); background: none; border: 0; padding: 0 2px; min-height: 44px; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
@@ -245,7 +258,7 @@ details summary { cursor: pointer; padding: 6px 0; font-weight: 700; }
 .by-chapter { border-collapse: collapse; margin: 12px 0; width: 100%; }
 .by-chapter caption { text-align: left; font-weight: 700; padding-bottom: 4px; }
 .by-chapter th, .by-chapter td { text-align: left; padding: 6px 8px 6px 0; border-bottom: 1px solid var(--line-soft); }
-.by-chapter td { font-variant-numeric: tabular-nums; }
+.by-chapter td { font-variant-numeric: tabular-nums; white-space: nowrap; }
 .toggle { display: flex; align-items: center; gap: 8px; margin: 8px 0; }
 .toggle input { width: 20px; height: 20px; accent-color: var(--action); }
 .review { padding-left: 1.6em; }
