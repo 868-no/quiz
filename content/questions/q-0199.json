@@ -3,7 +3,7 @@
   "revisions": [
     {
       "revision": 1,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "concept",
@@ -178,6 +178,15 @@
           "acknowledged": [
             "figures"
           ]
+        },
+        {
+          "at": "2026-10-24T09:42:18+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "bc8da70ad06f0044c57c75753a2840a25100615c8de0b10e39eac2e20c813ca1",
+          "note": "superseded by r2"
         }
       ],
       "provenance": {
@@ -205,6 +214,222 @@
         "content_sha256": "bc8da70ad06f0044c57c75753a2840a25100615c8de0b10e39eac2e20c813ca1",
         "acknowledged_hazards": [
           "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 2,
+      "status": "approved",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 5,
+      "section_ids": [
+        "s5-12"
+      ],
+      "topic_ids": [
+        "blandingsprodukter"
+      ],
+      "learning_objective": "Vite at et balansert blandetrinn undertrykker noen av blandingsproduktene (særlig inngangssignalene), men at filtrering og godt frekvensvalg fortsatt trengs.",
+      "priority": "normal",
+      "context": [
+        [
+          "I en sender blandes signalet fra en ",
+          {
+            "term": "oscillator",
+            "text": "oscillator"
+          },
+          " med et modulert signal på en lavere, fast ",
+          {
+            "term": "frekvens",
+            "text": "frekvens"
+          },
+          " for å komme opp på sendefrekvensen. Konstruktøren velger et dobbeltbalansert ",
+          {
+            "term": "blander",
+            "text": "blandetrinn"
+          },
+          " i stedet for en enkel, ubalansert blander."
+        ]
+      ],
+      "stem": [
+        "Hvilken fordel gir det dobbeltbalanserte blandetrinnet?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Det lager bare sumfrekvensen, så det trengs ikke noe filter etter blanderen."
+          ],
+          "feedback": [
+            [
+              "Også et balansert blandetrinn gir både sum- og differansefrekvensen, i tillegg til produkter av høyere orden. Det trengs fortsatt et ",
+              {
+                "term": "filter",
+                "text": "filter"
+              },
+              " som velger ut det ønskede produktet."
+            ]
+          ]
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Det gjør oscillatorfrekvensen mer stabil når temperaturen i senderen endrer seg."
+          ],
+          "feedback": [
+            "Balanseringen i blanderen påvirker hvilke frekvenser som kommer ut, ikke hvor stabil oscillatoren er."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Det fjerner alle tredjeordens produkter helt, uansett hvilke frekvenser som velges."
+          ],
+          "feedback": [
+            "Balanseringen undertrykker flere typer blandingsprodukter, men ikke alle. Blant annet kan produkter fra odde harmoniske av inngangsfrekvensene bli igjen, og flere signaler på samme inngang kan gi intermodulasjon. Derfor trengs fortsatt filtrering."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Begge inngangssignalene undertrykkes på utgangen, så filteret får mindre å fjerne."
+          ],
+          "feedback": []
+        }
+      ],
+      "correct": [
+        "o4"
+      ],
+      "explanation": [
+        [
+          "Et blandetrinn er bevisst ulineært og gir sum- og differansefrekvensen av de to inngangssignalene, men også ",
+          {
+            "term": "intermodulasjon",
+            "text": "blandingsprodukter"
+          },
+          " av typen m·f1 ± n·f2 og selve inngangssignalene."
+        ],
+        [
+          "Et dobbeltbalansert blandetrinn er konstruert symmetrisk, slik at begge inngangssignalene blir sterkt undertrykt på utgangen – på samme måte som en ",
+          {
+            "term": "balansert-modulator",
+            "text": "balansert modulator"
+          },
+          " undertrykker ",
+          {
+            "term": "baerebolge",
+            "text": "bærebølgen"
+          },
+          ". Ideelt undertrykkes også blandingsprodukter der én av inngangsfrekvensene inngår med et partall som multiplikator."
+        ],
+        [
+          "Den ønskede sum- eller differansefrekvensen slipper gjennom, men også enkelte andre blandingsprodukter, for eksempel kombinasjoner med odde ",
+          {
+            "term": "harmoniske",
+            "text": "harmoniske"
+          },
+          "."
+        ],
+        [
+          "I virkelige blandere er undertrykkingen ikke perfekt. Derfor brukes fortsatt ",
+          {
+            "term": "filter",
+            "text": "filtre"
+          },
+          " etter blanderen, og frekvensene må velges slik at uønskede produkter ikke havner nær det ønskede signalet."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 5,
+        "section_id": "s5-12",
+        "printed_pages": [
+          "5-4"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "5aab7c4278fc0f84"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "Jim C K Flaten",
+        "based_on": 1,
+        "at": "2026-10-24T09:42:09+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T09:42:09+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "bc8da70ad06f0044c57c75753a2840a25100615c8de0b10e39eac2e20c813ca1",
+          "note": "Legger til sidehenvisning 5-4"
+        },
+        {
+          "at": "2026-10-24T09:42:09+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "1798c593429e287449a718cc05c72ccc973ac7155ffefe46c192b5babf254479",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:42:18+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "1798c593429e287449a718cc05c72ccc973ac7155ffefe46c192b5babf254479",
+          "note": "Side 5-4 bekreftet mot skannet side (img61.jpg, nederst til venstre).",
+          "acknowledged": [
+            "figures",
+            "pages"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "1798c593429e287449a718cc05c72ccc973ac7155ffefe46c192b5babf254479",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "pages",
+            "detail": "cited printed page number is uncertain in the source (printed_page_status=inferred). Confirm the page in the book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T09:42:18+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T09:42:18+00:00",
+        "content_sha256": "1798c593429e287449a718cc05c72ccc973ac7155ffefe46c192b5babf254479",
+        "acknowledged_hazards": [
+          "figures",
+          "pages"
         ],
         "checklist": {
           "one_correct": true,
