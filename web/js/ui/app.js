@@ -295,21 +295,16 @@ export function createApp(root, bank) {
     const issues = bank.site && bank.site.issues_url;
     let report = null;
     if (issues) {
-      const title = `[${q.id} v${q.rev}] `;
-      const body = [
-        `Spørsmål: ${q.id} (versjon ${q.rev}), kapittel ${q.chapter}: ${questionUrl(q.id)}`,
-        `> ${plainText(q.stem).replace(/\n/g, ' ')}`,
-        '',
-        '**Hva er feil eller uklart?**',
-        '',
-        '',
-        '**Forslag til retting:**',
-        '',
-        '',
-        '**Sidehenvisning i boka (hvis du har den):**',
-        '',
-      ].join('\n');
-      const href = `${issues}/new?title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}`;
+      // the "Feil i et spørsmål" issue form (.github/ISSUE_TEMPLATE/sporsmal.yml), pre-filled
+      const fields = {
+        template: 'sporsmal.yml',
+        title: `[${q.id} v${q.rev}] `,
+        sporsmal: `${q.id} (versjon ${q.rev})`,
+        kapittel: String(q.chapter),
+        lenke: questionUrl(q.id),
+        tekst: plainText(q.stem),
+      };
+      const href = `${issues}/new?${Object.entries(fields).map(([k, v]) => `${k}=${encodeURIComponent(v)}`).join('&')}`;
       report = h('p', {},
         h('a', { href, target: '_blank', rel: 'noopener noreferrer' }, 'Fant du en feil? Rapporter den på GitHub'),
         h('span', { class: 'visually-hidden' }, ' (åpnes i ny fane)'));

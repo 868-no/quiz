@@ -1,0 +1,31 @@
+# Adds a "kapittel N" label to question reports (the "Feil i et spørsmål" issue
+# form), so reports can be sorted by chapter. The issue text is untrusted: it is
+# only read from an environment variable, and only a chapter number 1–99 is used.
+name: Label question reports
+
+on:
+  issues:
+    types: [opened, edited]
+
+permissions:
+  issues: write
+
+jobs:
+  label:
+    if: contains(github.event.issue.body, '### Kapittel')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Add the chapter label
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          NUMBER: ${{ github.event.issue.number }}
+          BODY: ${{ github.event.issue.body }}
+        run: |
+          ch=$(printf '%s\n' "$BODY" | awk '/^### Kapittel[[:space:]]*$/ {f=1; next} f && NF {print; exit}' | grep -oE '[0-9]{1,2}' | head -n1 || true)
+          if [ -z "$ch" ] || [ "$ch" -lt 1 ]; then
+            echo "No chapter number in the report"
+            exit 0
+          fi
+          gh label create "kapittel $ch" --repo "$REPO" --color c2e0c6 --description "Spørsmål fra kapittel $ch" 2>/dev/null || true
+          gh issue edit "$NUMBER" --repo "$REPO" --add-label "kapittel $ch"

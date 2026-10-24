@@ -161,7 +161,9 @@ design.
 
 ## Error reports from learners
 
-Learners report problems as GitHub issues; the title starts with the question id and
-version, e.g. `[q-0012 v1]`. To act on one: `python3 -m tools review show q-0012`, then
+Learners report problems as GitHub issues through the "Feil i et spørsmål" issue form
+(`.github/ISSUE_TEMPLATE/sporsmal.yml`). The link under each question pre-fills the id
+and version (also in the title, e.g. `[q-0012 v1]`), chapter, link and question text,
+and `.github/workflows/issue-labels.yml` labels the report `kapittel N`. To act on one: `python3 -m tools review show q-0012`, then
 `review edit q-0012` (creates a new draft revision), `verify`, `review approve`,
 `publish` (local check), commit and push. The old revision stays published until the new one is approved.

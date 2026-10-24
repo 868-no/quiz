@@ -124,7 +124,11 @@ test('feedback has a pre-filled GitHub issue link identifying the question', { s
   const url = new URL(a.getAttribute('href'));
   assert.equal(url.origin + url.pathname, 'https://github.com/868-no/quiz/issues/new');
   assert.match(url.searchParams.get('title'), /^\[q-\d+ v1\] $/);
-  assert.ok(url.searchParams.get('body').includes('Hva er feil eller uklart?'));
+  assert.equal(url.searchParams.get('template'), 'sporsmal.yml');
+  assert.match(url.searchParams.get('sporsmal'), /^q-\d+ \(versjon 1\)$/);
+  assert.equal(url.searchParams.get('kapittel'), '2');
+  assert.match(url.searchParams.get('lenke'), /^http:\/\/localhost\/#q-\d+$/);
+  assert.match(url.searchParams.get('tekst'), /\?$/, 'the question text is included');
   assert.equal(a.getAttribute('rel'), 'noopener noreferrer');
 });
 
@@ -370,8 +374,8 @@ test('a link to a question opens just that question without touching a saved rou
   answer(root, false);
   assert.equal(first.w.localStorage.getItem('radioquiz.session.v1'), saved, 'the saved round is unchanged');
   assert.ok(JSON.parse(first.w.localStorage.getItem('radioquiz.missed.v1'))['q-2003'], 'the mistake is remembered');
-  const body = new URL($(root, '.report a').getAttribute('href')).searchParams.get('body');
-  assert.ok(body.includes('http://localhost/#q-2003'));
+  const link = new URL($(root, '.report a').getAttribute('href')).searchParams.get('lenke');
+  assert.equal(link, 'http://localhost/#q-2003');
   // copying falls back to showing the address when the clipboard is unavailable
   $(root, '[data-action=copy-link]').click();
   await new Promise((r) => setTimeout(r, 0));

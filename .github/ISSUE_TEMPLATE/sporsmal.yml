@@ -1,0 +1,48 @@
+name: Feil i et spørsmål
+description: Meld fra om en feil eller noe uklart i et spørsmål, en forklaring eller en figur.
+title: "[q-NNNN vN] "
+labels: ["spørsmål"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Takk for at du hjelper til! Bruker du lenken «Rapporter den på GitHub» under et spørsmål på quiz.868.no, er de øverste feltene allerede fylt ut.
+  - type: input
+    id: sporsmal
+    attributes:
+      label: Spørsmål
+      description: Id og versjon, slik de står under spørsmålet etter at du har svart.
+      placeholder: q-0012 (versjon 1)
+    validations:
+      required: true
+  - type: input
+    id: kapittel
+    attributes:
+      label: Kapittel
+      description: Kapittelnummeret spørsmålet hører til.
+      placeholder: "2"
+  - type: input
+    id: lenke
+    attributes:
+      label: Lenke til spørsmålet
+      placeholder: https://quiz.868.no/#q-0012
+  - type: textarea
+    id: tekst
+    attributes:
+      label: Spørsmålsteksten
+  - type: textarea
+    id: feil
+    attributes:
+      label: Hva er feil eller uklart?
+      description: Gjelder det spørsmålet, et svaralternativ, forklaringen eller figuren?
+    validations:
+      required: true
+  - type: textarea
+    id: forslag
+    attributes:
+      label: Forslag til retting
+  - type: input
+    id: side
+    attributes:
+      label: Sidehenvisning i boka (hvis du har den)
+      placeholder: side 2-5
