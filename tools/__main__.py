@@ -14,6 +14,7 @@ Pipeline (all offline):
   publish     Stage D  build dist/ from approved content only (fail closed; CI deploys it)
   release-check        scan a build directory for private material
   serve                serve dist/ (or the preview) on localhost
+  flashcards           printable cut-and-fold flashcard PDF (private/flashcards.pdf)
   status               overview of the bank
 """
 from __future__ import annotations
@@ -223,6 +224,11 @@ def cmd_serve(paths, a) -> int:
     return 0
 
 
+def cmd_flashcards(paths, a) -> int:
+    from .flashcards import cmd_flashcards as run
+    return run(paths, a)
+
+
 def cmd_status(paths, a) -> int:
     from .context import load_context
     from .questions import latest, open_flags, publishable_revision
@@ -342,6 +348,12 @@ def main(argv: list[str] | None = None) -> int:
     s.add_argument("--port", type=int, default=8000)
     s.add_argument("--preview", action="store_true")
     s.set_defaults(fn=cmd_serve)
+
+    s = sub.add_parser("flashcards", help="PDF with cut-and-fold flashcards (12 per A4)")
+    s.add_argument("--out", help="output file (default: private/flashcards.pdf)")
+    s.add_argument("--chapter", type=int, help="only this chapter")
+    s.add_argument("--approved-only", action="store_true", help="only approved revisions (default: latest non-retired)")
+    s.set_defaults(fn=cmd_flashcards)
 
     s = sub.add_parser("status", help="overview")
     s.add_argument("-v", "--verbose", action="store_true")
