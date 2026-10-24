@@ -970,6 +970,173 @@
         },
         "verifier": "deterministic-v1"
       }
+    },
+    {
+      "revision": 6,
+      "status": "needs_review",
+      "type": "single_choice",
+      "style": "recall",
+      "difficulty": "easy",
+      "chapter": 2,
+      "section_ids": [
+        "s2-51"
+      ],
+      "topic_ids": [
+        "krystaller"
+      ],
+      "learning_objective": "Kjenne den piezoelektriske effekten som grunnlaget for kvartskrystaller.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "Et ",
+          {
+            "term": "kvartskrystall",
+            "text": "kvartskrystall"
+          },
+          " gir en elektrisk ",
+          {
+            "term": "spenning",
+            "text": "spenning"
+          },
+          " mellom sideflatene når det bøyes eller trykkes sammen. Omvendt endrer det form litt når det påtrykkes en spenning."
+        ]
+      ],
+      "stem": [
+        [
+          "Hva kalles denne ",
+          {
+            "term": "effekt",
+            "text": "effekten"
+          },
+          "?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Den piezoelektriske effekten"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Den termoelektriske effekten"
+          ],
+          "feedback": [
+            "Termoelektrisk effekt gir spenning ut fra temperaturforskjeller, ikke mekanisk påkjenning."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Den fotoelektriske effekten"
+          ],
+          "feedback": [
+            "Fotoelektrisk effekt handler om lys som frigjør elektroner, ikke om mekanisk deformasjon."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Den magnetostriktive effekten"
+          ],
+          "feedback": [
+            "Magnetostriksjon er formendring i magnetiske materialer når de utsettes for et magnetfelt. Kvarts er ikke magnetisk; her er det mekanisk påkjenning og elektrisk spenning som henger sammen."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Kvarts er ",
+          {
+            "term": "piezoelektrisk-effekt",
+            "text": "piezoelektrisk"
+          },
+          ": mekanisk påkjenning gir elektrisk spenning, og elektrisk spenning gir mekanisk formendring."
+        ],
+        [
+          "Påtrykkes en ",
+          {
+            "term": "vekselspenning",
+            "text": "vekselspenning"
+          },
+          " med ",
+          {
+            "term": "frekvens",
+            "text": "frekvens"
+          },
+          " lik krystallets mekaniske egenfrekvens, svinger krystallet kraftig, og det oppfører seg elektrisk som en avstemt krets. Effekten brukes også i for eksempel gasstennere."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 2,
+        "section_id": "s2-51",
+        "printed_pages": [
+          "2-20"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "f42ae5c8d9beb579"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "Jim C K Flaten",
+        "based_on": 5,
+        "at": "2026-10-24T16:28:52+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T16:28:52+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "fafef3c312198d201562a71649d9d21aa3e4d3973841a2cdb8d4e7ff6be48123",
+          "note": "Add a figure"
+        },
+        {
+          "at": "2026-10-24T16:28:52+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "2483e90e7020a82a897c6f4df12891647b0f27f62797ad3b4705c59c85757870",
+          "note": "automated checks passed"
+        }
+      ],
+      "visual": {
+        "template": "stage",
+        "version": 1,
+        "params": {
+          "kind": "crystal"
+        }
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "2483e90e7020a82a897c6f4df12891647b0f27f62797ad3b4705c59c85757870",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T16:28:52+00:00"
+      }
     }
   ]
 }

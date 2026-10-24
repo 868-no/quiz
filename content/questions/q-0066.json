@@ -516,6 +516,176 @@
         },
         "verifier": "deterministic-v1"
       }
+    },
+    {
+      "revision": 4,
+      "status": "needs_review",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 3,
+      "section_ids": [
+        "s3-13"
+      ],
+      "topic_ids": [
+        "transistorer"
+      ],
+      "learning_objective": "Vite hvordan en PNP-transistor må forspennes for å lede.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En PNP-",
+          {
+            "term": "transistor",
+            "text": "transistor"
+          },
+          " av silisium skal brukes som ",
+          {
+            "term": "forsterker",
+            "text": "forsterker"
+          },
+          " i det lineære området."
+        ]
+      ],
+      "stem": [
+        [
+          "Hvordan må basis være ",
+          {
+            "term": "forspenning",
+            "text": "forspent"
+          },
+          " i forhold til emitteren?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Basis må være omtrent 0,6 V mer negativ enn emitteren."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Basis må være omtrent 0,6 V mer positiv enn emitteren."
+          ],
+          "feedback": [
+            "Det gjelder for en NPN-transistor. I en PNP-transistor er alle polariteter snudd."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Basis og emitter må ha nøyaktig samme spenning."
+          ],
+          "feedback": [
+            "Da er basis-emitterovergangen ikke forspent i lederetningen, og transistoren leder ikke."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Basis må være omtrent 6 V mer negativ enn emitteren."
+          ],
+          "feedback": [
+            [
+              "Basis-emitterovergangen oppfører seg som en ",
+              {
+                "term": "diode",
+                "text": "diode"
+              },
+              ". Med flere volt i lederetningen ville ",
+              {
+                "term": "strom",
+                "text": "strømmen"
+              },
+              " bli altfor stor."
+            ]
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "I en PNP-transistor er emitteren av ",
+          {
+            "term": "p-type",
+            "text": "P-type"
+          },
+          ", og det er hull som er de viktigste ladningsbærerne. Basis-emitterovergangen må være ",
+          {
+            "term": "lederetning",
+            "text": "forspent i lederetningen"
+          },
+          ", det vil si at P-siden (emitteren) skal være mer positiv enn N-siden (basis)."
+        ],
+        "Kollektoren ligger enda mer negativt enn basis, slik at basis-kollektorovergangen sperrer. Alt er altså som for en NPN-transistor, bare med motsatte polariteter og strømretninger."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 3,
+        "section_id": "s3-13",
+        "printed_pages": [
+          "3-6"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "8f6bf76bb4113ba0"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "Jim C K Flaten",
+        "based_on": 3,
+        "at": "2026-10-24T16:28:52+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T16:28:52+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "ad1ddfc297862e01bb40b0621d9f847838dadbe4a0250f17c1e1cd5984324a40",
+          "note": "Add a figure"
+        },
+        {
+          "at": "2026-10-24T16:28:52+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "c146b15be998a4d6d7422a51c26e5d64e80d7b80776941098a46911a456f73a9",
+          "note": "automated checks passed"
+        }
+      ],
+      "visual": {
+        "template": "stage",
+        "version": 1,
+        "params": {
+          "kind": "pnp"
+        },
+        "params_after": {
+          "reveal": true
+        }
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "c146b15be998a4d6d7422a51c26e5d64e80d7b80776941098a46911a456f73a9",
+        "errors": [],
+        "warnings": [],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T16:28:52+00:00"
+      }
     }
   ]
 }

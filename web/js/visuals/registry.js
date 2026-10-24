@@ -20,9 +20,10 @@ import ratioDetector from './ratio-detector.js';
 import timeSignal from './time-signal.js';
 import spectrum from './spectrum.js';
 import semiconductor from './semiconductor.js';
+import stage from './stage.js';
 
 export const IMPLEMENTATIONS = new Map(
-  [dcCircuit, acCircuit, waveform, blockDiagram, rlcCircuit, rectifier, transformer, transistorStage, seriesRegulator, zenerRegulator, frequencyResponse, piNetwork, ratioDetector, timeSignal, spectrum, semiconductor]
+  [dcCircuit, acCircuit, waveform, blockDiagram, rlcCircuit, rectifier, transformer, transistorStage, seriesRegulator, zenerRegulator, frequencyResponse, piNetwork, ratioDetector, timeSignal, spectrum, semiconductor, stage]
     .map((m) => [`${m.id}@${m.version}`, m]),
 );
 

@@ -748,6 +748,171 @@
         },
         "verifier": "deterministic-v1"
       }
+    },
+    {
+      "revision": 5,
+      "status": "needs_review",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "easy",
+      "chapter": 3,
+      "section_ids": [
+        "s3-34"
+      ],
+      "topic_ids": [
+        "radiorør"
+      ],
+      "learning_objective": "Forstå hvordan gitteret styrer anodestrømmen i en triode, og hva det tilsvarer i en FET.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "I en ",
+          {
+            "term": "triode",
+            "text": "triode"
+          },
+          " sender en oppvarmet katode ut elektroner, og anoden har høy positiv ",
+          {
+            "term": "spenning",
+            "text": "spenning"
+          },
+          ". Mellom dem, nær katoden, sitter et gitter."
+        ]
+      ],
+      "stem": [
+        "Hvordan styrer gitteret anodestrømmen i vanlig forsterkerdrift?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Gitteret er litt negativt sammenlignet med katoden og frastøter dermed elektroner. Det tilsvarer gate i en FET."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Gitteret er sterkt positivt og samler opp elektronene. Det tilsvarer kollektoren i en transistor."
+          ],
+          "feedback": [
+            "Det er anoden som samler opp elektronene. Et positivt gitter ville trekke strøm og gi lav inngangsimpedans."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Gitteret er litt positivt sammenlignet med katoden og trekker elektronene mot anoden. Det tilsvarer gate i en FET."
+          ],
+          "feedback": [
+            "Et positivt gitter ville fange opp en del av elektronene og trekke gitterstrøm. I vanlig forsterkerdrift er gitteret negativt, frastøter elektroner og trekker nesten ingen strøm."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Gitteret er litt negativt sammenlignet med katoden og frastøter dermed elektroner. Det tilsvarer drain i en FET."
+          ],
+          "feedback": [
+            "Den negative gitterspenningen er riktig, men gitteret tilsvarer gate. Det er anoden som tilsvarer drain."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Den negative gitterspenningen frastøter en del av elektronene fra katoden. Små endringer i gitterspenningen gir store endringer i hvor mange elektroner som når anoden. Gitteret trekker nesten ingen ",
+          {
+            "term": "strom",
+            "text": "strøm"
+          },
+          ", så inngangsimpedansen blir høy."
+        ],
+        [
+          "Dette ligner en ",
+          {
+            "term": "felteffekttransistor",
+            "text": "FET"
+          },
+          ": katoden tilsvarer source, gitteret gate og anoden drain. Husk at anodespenningen i ",
+          {
+            "term": "sender",
+            "text": "sendere"
+          },
+          " kan være på flere tusen volt og er livsfarlig."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 3,
+        "section_id": "s3-34",
+        "printed_pages": [
+          "3-15",
+          "3-16"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "8ddc07ce89b80b31",
+          "cbd201517d2f8d7e"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "Jim C K Flaten",
+        "based_on": 4,
+        "at": "2026-10-24T16:28:51+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T16:28:51+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "90e3fa863a78c39b9041497b8ad2eaa523fa941a188c3203e2e1f773521cd306",
+          "note": "Add a figure"
+        },
+        {
+          "at": "2026-10-24T16:28:52+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "f03e12a3685d427067a6289c25313364aad38a1e5ea18ed73b59e3d11fcc5ddc",
+          "note": "automated checks passed"
+        }
+      ],
+      "visual": {
+        "template": "stage",
+        "version": 1,
+        "params": {
+          "kind": "triode"
+        },
+        "params_after": {
+          "reveal": true
+        }
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "f03e12a3685d427067a6289c25313364aad38a1e5ea18ed73b59e3d11fcc5ddc",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T16:28:52+00:00"
+      }
     }
   ]
 }

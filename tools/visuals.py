@@ -597,7 +597,7 @@ def _semi_rules(p: dict[str, Any], errors: list[str]) -> None:
         errors.append("depletion: forward bias narrows the layer, it cannot be wide")
 
 
-# --- pi-network, ratio-detector ----------------------------------------------------
+# --- pi-network, ratio-detector, stage --------------------------------------------
 
 def _no_rules(p: dict[str, Any], errors: list[str]) -> None:
     pass  # every combination of the parameters can be drawn
@@ -608,7 +608,8 @@ RULES = {"dc-circuit": _dc_rules, "ac-circuit": _ac_rules, "waveform": _wave_rul
          "series-regulator": _reg_rules, "zener-regulator": _zen_rules,
          "frequency-response": _fr_rules, "pi-network": _no_rules,
          "ratio-detector": _no_rules, "time-signal": _ts_rules_time,
-         "spectrum": _spectrum_rules, "semiconductor": _semi_rules}
+         "spectrum": _spectrum_rules, "semiconductor": _semi_rules,
+         "stage": _no_rules}
 QUANTITIES = {"dc-circuit": _dc_quantities, "ac-circuit": _ac_quantities, "waveform": _wave_quantities,
               "rlc-circuit": _rlc_quantities, "rectifier": _rect_quantities, "transformer": _tr_quantities,
               "transistor-stage": _ts_quantities, "series-regulator": _reg_quantities, "zener-regulator": _zen_quantities,

@@ -1757,6 +1757,39 @@
           }
         }
       }
+    },
+    {
+      "id": "stage",
+      "version": 1,
+      "title": "Trinn og komponenter",
+      "description": "Small circuit diagrams with IEC-style symbols: class C stage with an RF choke to the base, push-pull stage with centre-tapped transformers, 7812 regulator (reveal: decoupling capacitors at its pins), single-transistor mixer (collector load '?', reveal: tuned to the MF), dual-gate MOSFET (gate 2 '?', reveal: small positive voltage, decoupled), triode (reveal: grid slightly negative, anode high positive, electron flow), PNP transistor (reveal: base about 0,6 V below the emitter) and a quartz crystal.",
+      "idealised": "Forenklet koblingsskjema uten komponentverdier.",
+      "status": "needs_review",
+      "params": {
+        "type": "object",
+        "required": [
+          "kind"
+        ],
+        "properties": {
+          "kind": {
+            "type": "string",
+            "enum": [
+              "class_c",
+              "push_pull",
+              "regulator_ic",
+              "transistor_mixer",
+              "dual_gate",
+              "triode",
+              "pnp",
+              "crystal"
+            ]
+          },
+          "reveal": {
+            "type": "boolean",
+            "default": false
+          }
+        }
+      }
     }
   ]
 }

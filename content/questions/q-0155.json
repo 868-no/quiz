@@ -218,6 +218,203 @@
         },
         "verifier": "deterministic-v1"
       }
+    },
+    {
+      "revision": 2,
+      "status": "needs_review",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 3,
+      "section_ids": [
+        "s3-28"
+      ],
+      "topic_ids": [
+        "forspenningsklasser"
+      ],
+      "learning_objective": "Forstå hvorfor et push-pull-trinn forspent nær klasse B sparer strøm og varme.",
+      "priority": "normal",
+      "context": [
+        [
+          "En ",
+          {
+            "term": "lineaer-forsterker",
+            "text": "lineær forsterker"
+          },
+          " har to ",
+          {
+            "term": "transistor",
+            "text": "transistorer"
+          },
+          " i ",
+          {
+            "term": "push-pull",
+            "text": "push-pull"
+          },
+          ". De er ",
+          {
+            "term": "forspenning",
+            "text": "forspent"
+          },
+          " slik at de så vidt leder uten signal. Den ene tar seg av de positive halvperiodene, den andre av de negative, og begge arbeider mot den samme lasten."
+        ]
+      ],
+      "stem": [
+        [
+          "Hva er den viktigste fordelen sammenlignet med én transistor i ",
+          {
+            "term": "forsterkerklasse",
+            "text": "klasse A"
+          },
+          "?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Hvilestrømmen er liten, så det blir mindre varme og lavere strømforbruk."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Hver transistor leder hele perioden, så forvrengningen forsvinner helt."
+          ],
+          "feedback": [
+            [
+              "Hver transistor leder bare omtrent den ene halvperioden. Det er nettopp derfor ",
+              {
+                "term": "hvilestrom",
+                "text": "hvilestrømmen"
+              },
+              " kan være så liten."
+            ]
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Utgangssignalet får dobbelt så høy frekvens som inngangssignalet."
+          ],
+          "feedback": [
+            "De to halvperiodene settes sammen igjen til et signal med samme frekvens som inngangen. Trinnet er ingen frekvensdobler."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Trinnet trenger ingen forspenning og kan derfor bygges uten motstander."
+          ],
+          "feedback": [
+            "Transistorene er forspent slik at de så vidt leder. Uten forspenning ville signalet bli forvrengt rundt nullgjennomgangen."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "En klasse A-transistor må lede hele ",
+          {
+            "term": "periode",
+            "text": "perioden"
+          },
+          ", også på de dypeste bunnene i signalet. Den må derfor ha en hvilestrøm som er minst like stor som halve toppstrømmen, og den ",
+          {
+            "term": "strom",
+            "text": "strømmen"
+          },
+          " går hele tiden – også uten signal. Mye av ",
+          {
+            "term": "effekt",
+            "text": "effekten"
+          },
+          " fra strømforsyningen blir da varme."
+        ],
+        [
+          "I push-pull deler to transistorer jobben: Hver ",
+          {
+            "term": "forsterker",
+            "text": "forsterker"
+          },
+          " sin halvperiode, og lasten får begge. Uten signal går det bare en liten hvilestrøm. Det gir bedre ",
+          {
+            "term": "virkningsgrad",
+            "text": "virkningsgrad"
+          },
+          ", mindre varme og lengre batteritid i bærbart utstyr."
+        ]
+      ],
+      "glossary_after_answer": [
+        "push-pull",
+        "forsterkerklasse"
+      ],
+      "study_reference": {
+        "chapter": 3,
+        "section_id": "s3-28",
+        "printed_pages": [
+          "3-11"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "79040ac5dcac68cc"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "Jim C K Flaten",
+        "based_on": 1,
+        "at": "2026-10-24T16:28:51+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T16:28:51+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "faf41c46f2fce47ca8da71bae3aa854f49ad122f73ccd913c9f0b4b9c6509533",
+          "note": "Add a figure"
+        },
+        {
+          "at": "2026-10-24T16:28:52+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "80f7dd07787d50255f70666542a0e9acd4bd277945684e44df4187acb0de2319",
+          "note": "automated checks passed"
+        }
+      ],
+      "visual": {
+        "template": "stage",
+        "version": 1,
+        "params": {
+          "kind": "push_pull"
+        }
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "80f7dd07787d50255f70666542a0e9acd4bd277945684e44df4187acb0de2319",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T16:28:52+00:00"
+      }
     }
   ]
 }

@@ -2293,6 +2293,130 @@
           "depletion": "wide"
         }
       }
+    },
+    {
+      "name": "stage: class_c, revealed",
+      "valid": true,
+      "visual": {
+        "template": "stage",
+        "version": 1,
+        "params": {
+          "kind": "class_c",
+          "reveal": true
+        }
+      },
+      "quantities": {},
+      "shown": {}
+    },
+    {
+      "name": "stage: push_pull, revealed",
+      "valid": true,
+      "visual": {
+        "template": "stage",
+        "version": 1,
+        "params": {
+          "kind": "push_pull",
+          "reveal": true
+        }
+      },
+      "quantities": {},
+      "shown": {}
+    },
+    {
+      "name": "stage: regulator_ic, revealed",
+      "valid": true,
+      "visual": {
+        "template": "stage",
+        "version": 1,
+        "params": {
+          "kind": "regulator_ic",
+          "reveal": true
+        }
+      },
+      "quantities": {},
+      "shown": {}
+    },
+    {
+      "name": "stage: transistor_mixer, revealed",
+      "valid": true,
+      "visual": {
+        "template": "stage",
+        "version": 1,
+        "params": {
+          "kind": "transistor_mixer",
+          "reveal": true
+        }
+      },
+      "quantities": {},
+      "shown": {}
+    },
+    {
+      "name": "stage: dual_gate, revealed",
+      "valid": true,
+      "visual": {
+        "template": "stage",
+        "version": 1,
+        "params": {
+          "kind": "dual_gate",
+          "reveal": true
+        }
+      },
+      "quantities": {},
+      "shown": {}
+    },
+    {
+      "name": "stage: triode, revealed",
+      "valid": true,
+      "visual": {
+        "template": "stage",
+        "version": 1,
+        "params": {
+          "kind": "triode",
+          "reveal": true
+        }
+      },
+      "quantities": {},
+      "shown": {}
+    },
+    {
+      "name": "stage: pnp, revealed",
+      "valid": true,
+      "visual": {
+        "template": "stage",
+        "version": 1,
+        "params": {
+          "kind": "pnp",
+          "reveal": true
+        }
+      },
+      "quantities": {},
+      "shown": {}
+    },
+    {
+      "name": "stage: crystal, revealed",
+      "valid": true,
+      "visual": {
+        "template": "stage",
+        "version": 1,
+        "params": {
+          "kind": "crystal",
+          "reveal": true
+        }
+      },
+      "quantities": {},
+      "shown": {}
+    },
+    {
+      "name": "stage: unknown kind",
+      "valid": false,
+      "error": "kind",
+      "visual": {
+        "template": "stage",
+        "version": 1,
+        "params": {
+          "kind": "tetrode"
+        }
+      }
     }
   ]
 }

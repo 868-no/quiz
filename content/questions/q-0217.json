@@ -459,6 +459,215 @@
         },
         "verifier": "deterministic-v1"
       }
+    },
+    {
+      "revision": 3,
+      "status": "needs_review",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "easy",
+      "chapter": 6,
+      "section_ids": [
+        "s6-12"
+      ],
+      "topic_ids": [
+        "superheterodyn"
+      ],
+      "learning_objective": "Forstå at den avstemte lasten i et blandetrinn plukker ut mellomfrekvensen blant blandingsproduktene.",
+      "priority": "normal",
+      "context": [
+        [
+          "I en ",
+          {
+            "term": "blander",
+            "text": "blander"
+          },
+          " med én ",
+          {
+            "term": "transistor",
+            "text": "transistor"
+          },
+          " føres RF-signalet til basis og signalet fra ",
+          {
+            "term": "lokaloscillator",
+            "text": "lokaloscillatoren"
+          },
+          " til emitteren. Transistoren arbeider ikke-lineært og lager mange nye ",
+          {
+            "term": "frekvens",
+            "text": "frekvenser"
+          },
+          "."
+        ]
+      ],
+      "stem": [
+        [
+          "Hva sørger for at det i hovedsak bare er ",
+          {
+            "term": "mellomfrekvens",
+            "text": "mellomfrekvensen"
+          },
+          " som går videre fra blanderen?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Kollektorlasten er en krets som er avstemt til mellomfrekvensen"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Lokaloscillatoren ligger nøyaktig én mellomfrekvens unna RF-signalet"
+          ],
+          "feedback": [
+            "Frekvensavstanden bestemmer hvor differanseproduktet havner, men blanderen lager fortsatt sumfrekvensen og mange andre produkter. Noe må velge ut mellomfrekvensen etter blanderen."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Transistoren er forspent i klasse A, slik at den er helt lineær"
+          ],
+          "feedback": [
+            [
+              "En lineær transistor ville ikke blandet signalene i det hele tatt. Blanderen må være ikke-lineær, ofte ",
+              {
+                "term": "forspenning",
+                "text": "forspent"
+              },
+              " nær ",
+              {
+                "term": "forsterkerklasse",
+                "text": "klasse B"
+              },
+              "."
+            ]
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "RF-signalet filtreres før basis, slik at bare én frekvens kommer inn"
+          ],
+          "feedback": [
+            [
+              "Et ",
+              {
+                "term": "filter",
+                "text": "filter"
+              },
+              " foran blanderen begrenser hva som kommer inn, men blandingsproduktene oppstår i transistoren og må skilles ut etter den."
+            ]
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Blanderen lager blant annet sum- og differansefrekvenser av RF-signalet og lokaloscillatoren. Kollektorlasten er en ",
+          {
+            "term": "avstemt-krets",
+            "text": "avstemt krets"
+          },
+          " for ",
+          {
+            "term": "mellomfrekvens",
+            "text": "mellomfrekvensen"
+          },
+          ". Den gir stor ",
+          {
+            "term": "spenning",
+            "text": "spenning"
+          },
+          " bare nær denne frekvensen og demper de andre ",
+          {
+            "term": "intermodulasjon",
+            "text": "blandingsproduktene"
+          },
+          "."
+        ],
+        [
+          "Modulasjonen i RF-signalet følger med uendret over på mellomfrekvensen. Blandere med en ",
+          {
+            "term": "felteffekttransistor",
+            "text": "FET"
+          },
+          " som har to styreelektroder (dual gate) virker etter samme prinsipp: RF-signalet og oscillatorsignalet går inn på hver sin gate, og lasten er avstemt til mellomfrekvensen."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 6,
+        "section_id": "s6-12",
+        "printed_pages": [
+          "6-7"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "674a7e5e1667c065"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "Jim C K Flaten",
+        "based_on": 2,
+        "at": "2026-10-24T16:28:51+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T16:28:51+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "004ee4ceffa4ae262282869a73ec1b64834d22adbde85697b806746594649d97",
+          "note": "Add a figure"
+        },
+        {
+          "at": "2026-10-24T16:28:52+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "9d2d2f35dc2b035213e52ff04dfb0291cdea23715e16dae4edc41fdc6d8f11d5",
+          "note": "automated checks passed"
+        }
+      ],
+      "visual": {
+        "template": "stage",
+        "version": 1,
+        "params": {
+          "kind": "transistor_mixer"
+        },
+        "params_after": {
+          "reveal": true
+        }
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "9d2d2f35dc2b035213e52ff04dfb0291cdea23715e16dae4edc41fdc6d8f11d5",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T16:28:52+00:00"
+      }
     }
   ]
 }
