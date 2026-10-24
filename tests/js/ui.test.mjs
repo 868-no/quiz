@@ -482,3 +482,23 @@ test('with a round in progress the bar offers a new round only once the continue
     delete globalThis.IntersectionObserver;
   }
 });
+
+test('the chapter list shows progress, explains it, and can be reset', { skip }, async () => {
+  const bank = makeBank({ perChapter: { 2: 3, 3: 2 } });
+  const { root, w } = await app(bank);
+  assert.ok($(root, '#ch-2-st').textContent.includes('(3 spørsmål)'));
+  assert.equal($(root, '.progress-note'), null, 'no note before any progress');
+  start(root, [2]);
+  answer(root, true);
+  $(root, '[data-action=next]').click();
+  answer(root, false);
+  $(root, '[data-action=quit]').click();
+  assert.ok($(root, '#ch-2-st').textContent.includes('1 av 3 riktig besvart'));
+  assert.ok($(root, '#ch-3-st').textContent.includes('(2 spørsmål)'));
+  assert.ok($(root, '.progress-note').textContent.includes('minst én gang'));
+  assert.equal(Object.keys(JSON.parse(w.localStorage.getItem('radioquiz.solved.v1'))).length, 1);
+  $(root, '[data-action=clear-solved]').click();
+  assert.ok($(root, '#ch-2-st').textContent.includes('(3 spørsmål)'));
+  assert.equal(w.localStorage.getItem('radioquiz.solved.v1'), null);
+  assert.ok(w.localStorage.getItem('radioquiz.missed.v1'), 'the list of mistakes is kept');
+});

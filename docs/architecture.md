@@ -45,7 +45,8 @@ dist/                     build output = the deployable site (not committed; CI 
   any question or revision is no longer published.
 * **Mistakes** (`progress.js`): a question answered wrong is added to a list in
   `localStorage` and removed the next time it is answered right; the start screen
-  offers a round of up to 20 of them.
+  offers a round of up to 20 of them. Questions answered right at least once are
+  kept too; the chapter list shows them as "12 av 41 riktig besvart" (resettable).
 * **Links**: `#q-0045` opens that question on its own (also on `hashchange`); the
   feedback offers a button that copies the link.
 * **Policies** (`policies.js`): `learning` (immediate feedback, cannot advance before
@@ -61,7 +62,8 @@ dist/                     build output = the deployable site (not committed; CI 
 * `index.html` sets a strict Content-Security-Policy (`default-src 'self'`, no inline
   scripts/styles, `form-action 'none'`, `base-uri 'none'`).
 * `localStorage` stores only question ids, revisions, option order and chosen ids,
-  plus the ids of questions answered wrong (with a timestamp); every access is wrapped so the quiz works when storage is blocked.
+  plus the ids of questions answered wrong and of those answered right at least once
+  (with a timestamp); every access is wrapped so the quiz works when storage is blocked.
 * `sw.js` (service worker) keeps an offline copy of the whole build. `publish` fills in
   its file list and a version hash of every file; the release check fails if the list
   or version does not match the build. A new publish installs the new copy, drops the

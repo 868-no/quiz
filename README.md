@@ -4,7 +4,8 @@ A Norwegian (bokmål) learning and quiz site for the amateur radio licence exam.
 Visitors pick chapters, answer one question at a time and get immediate feedback:
 whether they were right, the correct answer, an explanation, why their choice was
 wrong, and where to read more in the textbook (chapter, section, printed page).
-Questions answered wrong can be practised again, each question has its own link
+Questions answered wrong can be practised again, the chapter list shows how many
+questions you have answered right, each question has its own link
 (`#q-0045`), and after the first visit the site works offline and can be installed
 on a phone's home screen.
 
@@ -86,8 +87,8 @@ content/ (original, version-controlled)
   glossary references, quantities and figures are typed structures rendered by an
   allowlisted renderer (`web/js/render/`).
 * **No backend, accounts, cookies, analytics or LLM calls** on the public site. An
-  in-progress quiz and the list of questions answered wrong are stored only in the
-  visitor's browser (`localStorage`). After the first visit the site also works
+  in-progress quiz, progress per chapter and the list of questions answered wrong
+  are stored only in the visitor's browser (`localStorage`). After the first visit the site also works
   offline (service worker, `web/sw.js`).
 
 More: [docs/architecture.md](docs/architecture.md).

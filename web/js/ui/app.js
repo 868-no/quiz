@@ -9,8 +9,10 @@ import {
   advance, createSession, currentItem, indexBank, pool, restoreSession, submitAnswer, summary,
 } from '../quiz/engine.js';
 import { randomSeed } from '../quiz/rng.js';
-import { clearMissed, clearSession, loadMissed, loadSession, saveMissed, saveSession } from '../quiz/storage.js';
-import { missedIds, parseMissed, recordAnswer } from '../quiz/progress.js';
+import {
+  clearMissed, clearSession, clearSolved, loadMissed, loadSession, loadSolved, saveMissed, saveSession, saveSolved,
+} from '../quiz/storage.js';
+import { missedIds, parseMissed, recordAnswer, recordSolved, solvedByChapter } from '../quiz/progress.js';
 import { createGlossary } from './glossary.js';
 import { chapterDial, roundDial, setDialWidth } from './dial.js';
 import { fitFigures } from './figures.js';
@@ -39,6 +41,7 @@ export function createApp(root, bank) {
     },
     resumable: restoreSession(loadSession(), bank),
     missed: parseMissed(loadMissed()),
+    solved: parseMissed(loadSolved()),
     message: '',
     linkNotice: '',
   };
@@ -137,6 +140,15 @@ export function createApp(root, bank) {
     start({ chapters, ids, count: Math.min(ids.length, MISSED_ROUND), kind: 'missed' });
   }
 
+  // Explains "riktig besvart" in the chapter list once there is any progress, with a reset.
+  function progressNote() {
+    const n = Object.keys(solvedByChapter(state.solved, bank)).length;
+    if (!n) return null;
+    return h('p', { class: 'hint progress-note' },
+      'Riktig besvart betyr at du har svart riktig på spørsmålet minst én gang, i denne nettleseren. ',
+      h('button', { type: 'button', class: 'btn-link', 'data-action': 'clear-solved' }, 'Nullstill fremgangen'));
+  }
+
   // One box for picking up where you left off: a round in progress and/or earlier mistakes.
   function continueNotice(resume) {
     const n = missedNow().length;
@@ -184,6 +196,7 @@ export function createApp(root, bank) {
   // One row per chapter; runs of upcoming chapters (no content yet) collapse into one line.
   function chapterRows() {
     const rows = [];
+    const solved = solvedByChapter(state.solved, bank);
     const cs = bank.chapters;
     for (let i = 0; i < cs.length; i++) {
       const c = cs[i];
@@ -197,7 +210,10 @@ export function createApp(root, bank) {
         continue;
       }
       const ok = c.status === 'available';
-      const status = ok ? `${c.questions} spørsmål` : 'ingen godkjente spørsmål ennå';
+      const done = solved[c.number] || 0;
+      const status = !ok ? 'ingen godkjente spørsmål ennå'
+        : done === 0 ? `${c.questions} spørsmål`
+          : done >= c.questions ? `alle ${c.questions} riktig besvart` : `${done} av ${c.questions} riktig besvart`;
       rows.push(h('li', { class: ok ? '' : 'is-unavailable' },
         h('input', { type: 'checkbox', id: `ch-${c.number}`, name: 'chapter', value: String(c.number), checked: ok && state.selection.chapters.has(c.number), disabled: !ok, 'aria-describedby': `ch-${c.number}-st` }),
         h('label', { for: `ch-${c.number}` }, chapterName(c.number)),
@@ -228,7 +244,8 @@ export function createApp(root, bank) {
           h('div', { class: 'actions actions-compact' },
             h('button', { type: 'button', class: 'btn-small', 'data-action': 'select-all', disabled: !anyAvailable }, 'Velg alle'),
             h('button', { type: 'button', class: 'btn-small', 'data-action': 'select-none', disabled: !anyAvailable }, 'Fjern alle')),
-          h('ul', { class: 'check-list' }, chapterRows())),
+          h('ul', { class: 'check-list' }, chapterRows()),
+          progressNote()),
         filterFieldset('difficulty', DIFFICULTY_LABEL, 'Vanskelighetsgrad', state.selection.difficulties),
         filterFieldset('style', STYLE_LABEL, 'Spørsmålstyper', state.selection.styles),
         h('div', { class: 'count-row' },
@@ -547,6 +564,11 @@ export function createApp(root, bank) {
       const it = currentItem(state.session);
       state.missed = recordAnswer(state.missed, it.qid, it.answer.correct);
       saveMissed(state.missed);
+      const solved = recordSolved(state.solved, it.qid, it.answer.correct);
+      if (solved !== state.solved) {
+        state.solved = solved;
+        saveSolved(solved);
+      }
       state.choice = null;
       persist();
       renderQuestion('#fb-title');
@@ -605,6 +627,13 @@ export function createApp(root, bank) {
           clearSession();
         }
         startMissed();
+        break;
+      case 'clear-solved':
+        if (globalThis.confirm('Vil du nullstille fremgangen? Lista over spørsmål du har svart feil på beholdes.')) {
+          state.solved = {};
+          clearSolved();
+          renderSetup('#setup-title');
+        }
         break;
       case 'clear-missed':
         if (globalThis.confirm('Vil du tømme lista over spørsmål du har svart feil på?')) {

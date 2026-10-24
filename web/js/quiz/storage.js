@@ -1,10 +1,11 @@
 // Optional persistence in this browser only: an in-progress quiz (question ids,
-// option order and answers) and the list of questions answered wrong. Nothing
-// else is stored. Every access is wrapped, because storage can be unavailable
+// option order and answers), the list of questions answered wrong, and the
+// questions answered right at least once (progress). Nothing else is stored. Every access is wrapped, because storage can be unavailable
 // (private mode, blocked cookies).
 
 const SESSION_KEY = 'radioquiz.session.v1';
 const MISSED_KEY = 'radioquiz.missed.v1';
+const SOLVED_KEY = 'radioquiz.solved.v1';
 
 function store() {
   try {
@@ -48,3 +49,7 @@ export const clearSession = () => remove(SESSION_KEY);
 export const saveMissed = (missed) => write(MISSED_KEY, JSON.stringify(missed));
 export const loadMissed = () => read(MISSED_KEY);
 export const clearMissed = () => remove(MISSED_KEY);
+
+export const saveSolved = (solved) => write(SOLVED_KEY, JSON.stringify(solved));
+export const loadSolved = () => read(SOLVED_KEY);
+export const clearSolved = () => remove(SOLVED_KEY);
