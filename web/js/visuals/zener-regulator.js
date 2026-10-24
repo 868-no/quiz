@@ -44,7 +44,7 @@ function render(p) {
   // series resistor on the top rail
   els.push(component('R', RX, T, true));
   const rText = unk.has('R') ? ' = ?' : p.i_a != null ? ` = ${formatSI((p.u_in_v - p.u_z_v) / p.i_a, 'Ω')}` : null;
-  els.push(symLabel(RX, T - 28, 'R', null, rText, { 'font-size': 13 }));
+  els.push(symLabel(RX + 18, T - 28, 'R', null, rText, { 'font-size': 13, 'text-anchor': 'end' }));
   if (unk.has('U_R')) els.push(symLabel(RX, T + 30, 'U', 'R', ' = ?', { 'font-size': 13 }));
   // zener from the node to ground, cathode up
   els.push(dot(ZX, T), dot(ZX, B), wire([[ZX, T], [ZX, B]]), diode(ZX, (T + B) / 2, -90, 12, true));

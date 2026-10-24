@@ -69,7 +69,7 @@ function lattice(els, p) {
   const [cx, cy] = at(...centre);
   // the free electron sits in the open space up and to the right of the phosphorus atom
   if (p.dopant === 'P') {
-    els.push(electron(cx + dx / 2, cy - 24), label(cx + dx / 2, cy - 58, 'fritt', { 'font-size': 12 }), label(cx + dx / 2, cy - 44, 'elektron', { 'font-size': 12 }));
+    els.push(electron(cx + dx / 2, cy - 24), label(cx + dx / 2, cy - 62, 'fritt', { 'font-size': 12 }), label(cx + dx / 2, cy - 45, 'elektron', { 'font-size': 12 }));
   }
   if (p.dopant === 'B') els.push(label(cx + dx / 2 + 10, cy + 22, 'hull', { 'font-size': 12, 'text-anchor': 'start' }));
   const desc = ['Forenklet tegning av et silisiumkrystall: atomene ligger i et gitter, og hvert atom deler et elektronpar med hver av de fire naboene.'];

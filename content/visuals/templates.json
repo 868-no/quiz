@@ -1057,6 +1057,12 @@
           "actor": "Jim C K Flaten",
           "action": "approve",
           "note": "Reviewed rendered figure for q-0158"
+        },
+        {
+          "at": "2026-10-24T17:29:48+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Labels moved so none overlap on phones (found by the new figure layout test); otherwise unchanged"
         }
       ],
       "params": {
@@ -1752,6 +1758,12 @@
           "actor": "Jim C K Flaten",
           "action": "approve",
           "note": "Reviewed rendered figures and animations in the preview (phone and desktop, before and after answering)"
+        },
+        {
+          "at": "2026-10-24T17:29:47+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Labels moved so none overlap on phones (found by the new figure layout test); otherwise unchanged"
         }
       ]
     },
@@ -1841,6 +1853,12 @@
           "actor": "Jim C K Flaten",
           "action": "approve",
           "note": "Reviewed rendered figures and animations in the preview (phone and desktop, before and after answering)"
+        },
+        {
+          "at": "2026-10-24T17:29:47+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Labels moved so none overlap on phones (found by the new figure layout test); otherwise unchanged"
         }
       ]
     },
@@ -1897,6 +1915,12 @@
           "actor": "Jim C K Flaten",
           "action": "approve",
           "note": "Dual-gate and push-pull layouts fixed (no overlapping labels); other figures unchanged"
+        },
+        {
+          "at": "2026-10-24T17:29:47+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Labels moved so none overlap on phones (found by the new figure layout test); otherwise unchanged"
         }
       ]
     },

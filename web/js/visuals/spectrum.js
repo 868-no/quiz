@@ -48,9 +48,13 @@ function drawPanel(els, p, pa, top, desc) {
     // a wide passband has its label at its left end, a narrow one beside it, clear of the line labels
     if (f.label) {
       const wide = xOf(clamp(f.to_hz)) - xOf(clamp(f.from_hz)) > (X1 - X0) * 0.4;
+      const tallInside = pa.lines.some((l) => l.f_hz >= f.from_hz && l.f_hz <= f.to_hz && l.level > 0.8);
+      const mid = (xOf(clamp(f.from_hz)) + xOf(clamp(f.to_hz))) / 2;
       els.push(wide
         ? label(xOf(clamp(f.from_hz)) + 6, yOf(0.95) - 10, f.label, { 'font-size': 12, 'text-anchor': 'start' })
-        : label(xOf(clamp(f.to_hz)) + 6, yOf(0.95) + 14, f.label, { 'font-size': 12, 'text-anchor': 'start' }));
+        : tallInside
+          ? label(xOf(clamp(f.to_hz)) + 6, yOf(0.95) + 14, f.label, { 'font-size': 12, 'text-anchor': 'start' })
+          : label(mid, yOf(0.95) - 10, f.label, { 'font-size': 12 }));
     }
     desc.push(`Stiplet: ${f.label || 'et filter'}, som slipper gjennom fra ${formatFreq(f.from_hz, step)} til ${formatFreq(f.to_hz, step)}.`);
   }

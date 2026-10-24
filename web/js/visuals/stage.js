@@ -70,7 +70,7 @@ function pushPull(els) {
   els.push(terminal(140, 110), terminal(140, 230), wire([[140, 110], [200, 110], [200, 230], [140, 230]]), inductor(200, 170, 110), lbl(130, 170, 'inn', 'end'));
   els.push(line(226, 106, 226, 234, { 'stroke-width': 1.5 }), line(232, 106, 232, 234, { 'stroke-width': 1.5 }));
   els.push(wire([[262, 100], [262, 240]]), rotated(inductor(262, 170, 120), 262, 170, 180));
-  els.push(wire([[262, 100], t1.b]), wire([[262, 240], t2.b]), dot(262, 170), wire([[262, 170], [286, 170]]), terminal(290, 170), lbl(296, 152, 'forspenning'));
+  els.push(wire([[262, 100], t1.b]), wire([[262, 240], t2.b]), dot(262, 170), wire([[262, 170], [286, 170]]), terminal(290, 170), lbl(300, 152, 'forspenning', 'middle', 11));
   // emitters together to ground
   els.push(wire([t1.e, t2.e]), dot(t1.e[0], 170), wire([[t1.e[0], 170], [372, 170]]), ground(372, 170));
   // output transformer, centre tap to +U_CC
@@ -246,7 +246,7 @@ function tankLoss(els) {
   els.push(terminal(100, T), terminal(100, B), wire([[100, T], [xC, T]]), wire([[100, B], [xC, B]]), dot(xL, T), dot(xL, B));
   els.push(wire([[xL, T], [xL, B]]), inductor(xL, 115, 60), resistor(xL, 190, true, 40, 16));
   els.push(wire([[xC, T], [xC, B]]), capacitor(xC, (T + B) / 2));
-  els.push(symLabel(xL + 22, 115, 'L', null, null, { 'font-size': 14, 'text-anchor': 'start' }), symLabel(xL + 16, 190, 'R', null, null, { 'font-size': 14, 'text-anchor': 'start' }), lbl(xL + 30, 206, 'tap i spoletråden', 'start', 11));
+  els.push(symLabel(xL + 22, 115, 'L', null, null, { 'font-size': 14, 'text-anchor': 'start' }), symLabel(xL + 16, 190, 'R', null, null, { 'font-size': 14, 'text-anchor': 'start' }), lbl(xL - 14, 196, 'tap i', 'end', 11), lbl(xL - 14, 210, 'spoletråden', 'end', 11));
   els.push(symLabel(xC + 26, (T + B) / 2, 'C', null, null, { 'font-size': 14, 'text-anchor': 'start' }));
   return { height: 270, desc: 'Parallellavstemt krets: en spole L med en liten serieresistans R (tapet i spoletråden) i parallell med en kondensator C.' };
 }
