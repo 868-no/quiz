@@ -383,6 +383,15 @@ class GenerationTest(unittest.TestCase):
         self.assertEqual(review.verify(self.paths, [qid], quiet=True), 1)
         self.assertTrue(any("TODO" in e for e in load_question(self.paths.questions / f"{qid}.json")["revisions"][0]["checks"]["errors"]))
 
+    def test_manual_skeleton_can_take_a_chosen_id(self):
+        from tools.generate import new_manual
+        self.assertEqual(new_manual(self.paths, ["chunk-000002"], style="recall", author="T", qid="q-0150"), "q-0150")
+        self.assertTrue((self.paths.questions / "q-0150.json").exists())
+        with self.assertRaises(ToolError):
+            new_manual(self.paths, ["chunk-000002"], style="recall", author="T", qid="q-0150")
+        with self.assertRaises(ToolError):
+            new_manual(self.paths, ["chunk-000002"], style="recall", author="T", qid="150")
+
     def test_generation_is_off_by_default(self):
         from tools.generate import generate
         with self.assertRaises(ToolError) as cm:

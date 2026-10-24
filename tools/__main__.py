@@ -67,7 +67,7 @@ def cmd_sources(paths, a) -> int:
 
 def cmd_new(paths, a) -> int:
     from .generate import new_manual
-    qid = new_manual(paths, a.chunk, style=a.style, author=a.author)
+    qid = new_manual(paths, a.chunk, style=a.style, author=a.author, qid=a.id)
     print(f"created content/questions/{qid}.json (draft). Fill in the TODOs, then: python3 -m tools verify {qid}")
     return 0
 
@@ -284,6 +284,7 @@ def main(argv: list[str] | None = None) -> int:
     s.add_argument("--chunk", action="append", required=True, help="source chunk uid/id (repeatable)")
     s.add_argument("--style", default="concept", choices=["recall", "concept", "scenario", "calculation"])
     s.add_argument("--author")
+    s.add_argument("--id", help="question id to create (e.g. q-0150); default: the next free id")
     s.set_defaults(fn=cmd_new)
 
     s = sub.add_parser("generate", help="generate draft candidates with the configured LLM provider")

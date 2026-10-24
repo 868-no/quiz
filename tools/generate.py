@@ -123,10 +123,18 @@ def _skeleton(ctx: Context, chunks: list[dict[str, Any]], style: str) -> dict[st
     return rev
 
 
-def new_manual(paths: Paths, chunk_refs: list[str], *, style: str, author: str | None) -> str:
+def new_manual(paths: Paths, chunk_refs: list[str], *, style: str, author: str | None,
+               qid: str | None = None) -> str:
+    """Create a draft skeleton. `qid` picks the id (so several authors can work in
+    separate id ranges at once); by default the next free id is used."""
     ctx = load_context(paths, need_source=True)
     chunks = resolve_chunks(ctx, chunk_refs)
-    qid = next_question_id(paths)
+    if qid is not None:
+        if not re.fullmatch(r"q-\d{4}", qid):
+            raise ToolError(f"--id must look like q-0150, not {qid!r}")
+        if question_path(paths, qid).exists():
+            raise ToolError(f"{qid} already exists")
+    qid = qid or next_question_id(paths)
     rev = _skeleton(ctx, chunks, style)
     rev["provenance"] = {"method": "manual", "author": author or os.environ.get("RADIOQUIZ_REVIEWER") or "unknown",
                          "at": now_iso()}
