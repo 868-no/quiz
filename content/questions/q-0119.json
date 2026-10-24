@@ -167,7 +167,7 @@
     },
     {
       "revision": 2,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "recall",
@@ -325,6 +325,15 @@
             "figures",
             "ocr"
           ]
+        },
+        {
+          "at": "2026-10-24T10:04:09+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "ced7f132d3e707cd2323b4a354c36109debca27ff895ad42267df4dd4479c5c3",
+          "note": "superseded by r3"
         }
       ],
       "checks": {
@@ -349,6 +358,205 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-23T20:43:52+00:00",
         "content_sha256": "ced7f132d3e707cd2323b4a354c36109debca27ff895ad42267df4dd4479c5c3",
+        "acknowledged_hazards": [
+          "figures",
+          "ocr"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 3,
+      "status": "approved",
+      "type": "single_choice",
+      "style": "recall",
+      "difficulty": "easy",
+      "chapter": 6,
+      "section_ids": [
+        "s6-24"
+      ],
+      "topic_ids": [
+        "brussperre"
+      ],
+      "learning_objective": "Kjenne funksjonen til brussperren (squelch).",
+      "priority": "normal",
+      "context": [],
+      "stem": [
+        [
+          "Hva gjør ",
+          {
+            "term": "brussperre",
+            "text": "brussperren"
+          },
+          " i en ",
+          {
+            "term": "frekvensmodulasjon",
+            "text": "FM"
+          },
+          "-",
+          {
+            "term": "mottaker",
+            "text": "mottaker"
+          },
+          "?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Demper lyden når det ikke finnes noe brukbart signal"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Klipper korte støypulser, for eksempel fra tenningsanlegg"
+          ],
+          "feedback": [
+            "Det er oppgaven til en støybegrenser."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Reduserer forsterkningen når signalet blir sterkt"
+          ],
+          "feedback": [
+            [
+              "Det er ",
+              {
+                "term": "agc",
+                "text": "automatisk forsterkningskontroll"
+              },
+              " (AGC)."
+            ]
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Fjerner bakgrunnsstøyen fra et svakt signal, slik at det blir tydelig"
+          ],
+          "feedback": [
+            "Brussperren slår bare lyden av eller på. Den kan ikke fjerne støy som ligger oppå et signal."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Uten signal står forsterkningen på maks, og en FM-",
+          {
+            "term": "demodulator",
+            "text": "demodulator"
+          },
+          " gir da kraftig brus, nesten på full lydstyrke. Det er ubehagelig og kan være skadelig i hodetelefoner."
+        ],
+        [
+          {
+            "term": "brussperre",
+            "text": "Brussperren"
+          },
+          " oppdager at det ikke finnes noe gyldig signal og kutter lyden. Det kan for eksempel gjøres ved å måle signalnivået eller ved å se etter støy på ",
+          {
+            "term": "frekvens",
+            "text": "frekvenser"
+          },
+          " langt over taleområdet i det demodulerte signalet."
+        ]
+      ],
+      "glossary_after_answer": [
+        "brussperre"
+      ],
+      "study_reference": {
+        "chapter": 6,
+        "section_id": "s6-24",
+        "printed_pages": [
+          "6-14"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "9c7bb7b84f4203f2"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "AI-assistent (Claude), svaralternativer",
+        "based_on": 2,
+        "at": "2026-10-24T09:55:30+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T09:55:30+00:00",
+          "actor": "AI-assistent (Claude), svaralternativer",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "ced7f132d3e707cd2323b4a354c36109debca27ff895ad42267df4dd4479c5c3",
+          "note": "Jevnere svaralternativer"
+        },
+        {
+          "at": "2026-10-24T09:55:36+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "c4297cd452c408ca07fa0e6f16b693569d415135de342e07f76595652847c40c",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T10:04:09+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "c4297cd452c408ca07fa0e6f16b693569d415135de342e07f76595652847c40c",
+          "note": "Jevnere svaralternativer og nye figurer (gjennomgått av AI).",
+          "acknowledged": [
+            "figures",
+            "ocr"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "c4297cd452c408ca07fa0e6f16b693569d415135de342e07f76595652847c40c",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: equation, low_ocr_confidence. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T10:04:09+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T10:04:09+00:00",
+        "content_sha256": "c4297cd452c408ca07fa0e6f16b693569d415135de342e07f76595652847c40c",
         "acknowledged_hazards": [
           "figures",
           "ocr"

@@ -190,7 +190,7 @@
     },
     {
       "revision": 2,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "scenario",
@@ -332,6 +332,15 @@
             "figures",
             "ocr"
           ]
+        },
+        {
+          "at": "2026-10-24T10:04:07+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "125deae80127059fefecb8bdb53984af384eef71fabb9e5d3d634ae7788d0fb7",
+          "note": "superseded by r3"
         }
       ],
       "checks": {
@@ -356,6 +365,189 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-23T20:43:51+00:00",
         "content_sha256": "125deae80127059fefecb8bdb53984af384eef71fabb9e5d3d634ae7788d0fb7",
+        "acknowledged_hazards": [
+          "figures",
+          "ocr"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 3,
+      "status": "approved",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "medium",
+      "chapter": 6,
+      "section_ids": [
+        "s6-05"
+      ],
+      "topic_ids": [
+        "mottakeregenskaper"
+      ],
+      "learning_objective": "Tolke en følsomhetsspesifikasjon oppgitt i µV ved 12 dB SINAD.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "To VHF-",
+          {
+            "term": "mottaker",
+            "text": "mottakere"
+          },
+          " er like bortsett fra følsomheten. Databladene oppgir:"
+        ],
+        [
+          "Mottaker A: ",
+          {
+            "q": 0.18,
+            "u": "µV"
+          },
+          " for 12 dB ",
+          {
+            "term": "sinad",
+            "text": "SINAD"
+          },
+          "."
+        ],
+        [
+          "Mottaker B: ",
+          {
+            "q": 0.35,
+            "u": "µV"
+          },
+          " for 12 dB SINAD."
+        ]
+      ],
+      "stem": "Hvilken påstand er riktig?",
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "A er mest følsom, fordi den trenger svakere signal for samme kvalitet"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "B er mest følsom, fordi den tåler en større signalspenning på inngangen"
+          ],
+          "feedback": [
+            "Tallet er det svakeste signalet som gir den oppgitte kvaliteten. Et lavere tall er bedre."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "De er like følsomme, fordi begge er oppgitt ved 12 dB SINAD"
+          ],
+          "feedback": [
+            "12 dB SINAD er bare referansekvaliteten. Signalspenningen som trengs for å nå den, er forskjellig."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "A er mest følsom, fordi den forsterker lyden 12 dB mer enn B"
+          ],
+          "feedback": [
+            "12 dB er forholdet mellom signal og støy pluss forvrengning i lyden, ikke en forsterkning. Begge måles ved samme forhold."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Følsomheten oppgis som den signalspenningen på antenneinngangen som gir en bestemt lydkvalitet, her 12 dB SINAD, der signal + støy + forvrengning er 12 dB sterkere enn støy + forvrengning alene.",
+        "Mottaker A når denne kvaliteten med et svakere signal enn B, og er derfor mest følsom. Det skyldes lavere egenstøy, særlig i de første trinnene."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 6,
+        "section_id": "s6-05",
+        "printed_pages": [
+          "6-2"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "e56410dfdf58e200"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "AI-assistent (Claude), svaralternativer",
+        "based_on": 2,
+        "at": "2026-10-24T09:55:29+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T09:55:29+00:00",
+          "actor": "AI-assistent (Claude), svaralternativer",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "125deae80127059fefecb8bdb53984af384eef71fabb9e5d3d634ae7788d0fb7",
+          "note": "Jevnere svaralternativer"
+        },
+        {
+          "at": "2026-10-24T09:55:36+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "95976152e03b74e227f08304a3f636d7ef295a8090430fc3411464f868fa9258",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T10:04:07+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "95976152e03b74e227f08304a3f636d7ef295a8090430fc3411464f868fa9258",
+          "note": "Jevnere svaralternativer og nye figurer (gjennomgått av AI).",
+          "acknowledged": [
+            "figures",
+            "ocr"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "95976152e03b74e227f08304a3f636d7ef295a8090430fc3411464f868fa9258",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: equation. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T10:04:07+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T10:04:07+00:00",
+        "content_sha256": "95976152e03b74e227f08304a3f636d7ef295a8090430fc3411464f868fa9258",
         "acknowledged_hazards": [
           "figures",
           "ocr"

@@ -585,7 +585,7 @@
     },
     {
       "revision": 4,
-      "status": "approved",
+      "status": "retired",
       "type": "single_choice",
       "style": "concept",
       "difficulty": "medium",
@@ -763,6 +763,15 @@
           "acknowledged": [
             "figures"
           ]
+        },
+        {
+          "at": "2026-10-24T10:04:02+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "246231ed6206daa86e406200ee9305119f12d9a341c5f4731c44a3249f2e2bd5",
+          "note": "superseded by r5"
         }
       ],
       "checks": {
@@ -783,6 +792,220 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-24T09:32:13+00:00",
         "content_sha256": "246231ed6206daa86e406200ee9305119f12d9a341c5f4731c44a3249f2e2bd5",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 5,
+      "status": "approved",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 3,
+      "section_ids": [
+        "s3-16"
+      ],
+      "topic_ids": [
+        "transistorforspenning"
+      ],
+      "learning_objective": "Forstå hvorfor emittermotstanden avkobles med en kondensator i en felles emitter-forsterker.",
+      "priority": "normal",
+      "context": [
+        [
+          "En ",
+          {
+            "term": "felles-emitter",
+            "text": "felles emitter"
+          },
+          "-",
+          {
+            "term": "forsterker",
+            "text": "forsterker"
+          },
+          " har en emittermotstand for å stabilisere arbeidspunktet. Parallelt med emittermotstanden er det koblet en stor kondensator."
+        ]
+      ],
+      "stem": [
+        [
+          "Hva er hensikten med ",
+          {
+            "term": "kondensator",
+            "text": "kondensatoren"
+          },
+          "?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Den leder signalet forbi emittermotstanden og gir høyere forsterkning uten å endre arbeidspunktet."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Den sperrer for likestrømmen gjennom emittermotstanden, slik at transistoren ikke blir varm."
+          ],
+          "feedback": [
+            [
+              "En kondensator ",
+              {
+                "term": "parallellkobling",
+                "text": "i parallell"
+              },
+              " med ",
+              {
+                "term": "motstand",
+                "text": "motstanden"
+              },
+              " hindrer ikke likestrømmen i å gå gjennom motstanden. Arbeidspunktet blir det samme."
+            ]
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Den glatter ut forsyningsspenningen på samme måte som glattekondensatoren i en likeretter."
+          ],
+          "feedback": [
+            [
+              "Den sitter mellom emitteren og jord, ikke over forsyningen. Oppgaven er å påvirke signalet, ikke å fjerne ",
+              {
+                "term": "rippel",
+                "text": "rippel"
+              },
+              "."
+            ]
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Den gjør forsterkeren mer stabil ved å øke den negative tilbakekoblingen for signalet."
+          ],
+          "feedback": [
+            "Det er omvendt. Kondensatoren fjerner tilbakekoblingen for signalet, og da øker forsterkningen."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Uten kondensatoren ville en del av signalspenningen havne over emittermotstanden i stedet for mellom basis og emitter. Det gir negativ tilbakekobling og lavere forsterkning.",
+        [
+          {
+            "term": "avkoblingskondensator",
+            "text": "Avkoblingskondensatoren"
+          },
+          " har lav ",
+          {
+            "term": "reaktans",
+            "text": "reaktans"
+          },
+          " ved signalfrekvensen og legger emitteren til jord for signalet. For likestrøm er den et brudd, så stabiliseringen av arbeidspunktet virker fortsatt."
+        ]
+      ],
+      "visual": {
+        "template": "transistor-stage",
+        "version": 1,
+        "params": {
+          "vcc_v": 12,
+          "show_vcc": false,
+          "rc_ohms": 2200,
+          "re_ohms": 1000,
+          "show_resistor_values": false,
+          "bypass_capacitor": true,
+          "divider": true,
+          "coupling": true
+        }
+      },
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 3,
+        "section_id": "s3-16",
+        "printed_pages": [
+          "3-8"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "72446c539c5c6b83"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "AI-assistent (Claude), svaralternativer",
+        "based_on": 4,
+        "at": "2026-10-24T09:55:27+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T09:55:27+00:00",
+          "actor": "AI-assistent (Claude), svaralternativer",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "246231ed6206daa86e406200ee9305119f12d9a341c5f4731c44a3249f2e2bd5",
+          "note": "Jevnere svaralternativer"
+        },
+        {
+          "at": "2026-10-24T09:55:35+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "65354aa8519b629d49d8a780172b04d91122c0deac0160d6fca4970d584d0991",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T10:04:02+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "65354aa8519b629d49d8a780172b04d91122c0deac0160d6fca4970d584d0991",
+          "note": "Jevnere svaralternativer og nye figurer (gjennomgått av AI).",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "65354aa8519b629d49d8a780172b04d91122c0deac0160d6fca4970d584d0991",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T10:04:02+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T10:04:02+00:00",
+        "content_sha256": "65354aa8519b629d49d8a780172b04d91122c0deac0160d6fca4970d584d0991",
         "acknowledged_hazards": [
           "figures"
         ],

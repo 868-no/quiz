@@ -377,7 +377,7 @@
     },
     {
       "revision": 3,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "recall",
@@ -541,6 +541,15 @@
           "acknowledged": [
             "figures"
           ]
+        },
+        {
+          "at": "2026-10-24T10:04:01+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "4d8f4cdc03271dd093aa1bee9170064efacf8fdbe001b753283c88c6198c8e21",
+          "note": "superseded by r4"
         }
       ],
       "checks": {
@@ -561,6 +570,195 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-24T09:32:10+00:00",
         "content_sha256": "4d8f4cdc03271dd093aa1bee9170064efacf8fdbe001b753283c88c6198c8e21",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 4,
+      "status": "approved",
+      "type": "single_choice",
+      "style": "recall",
+      "difficulty": "easy",
+      "chapter": 2,
+      "section_ids": [
+        "s2-51"
+      ],
+      "topic_ids": [
+        "krystaller"
+      ],
+      "learning_objective": "Kjenne den piezoelektriske effekten som grunnlaget for kvartskrystaller.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "Et ",
+          {
+            "term": "kvartskrystall",
+            "text": "kvartskrystall"
+          },
+          " gir en elektrisk ",
+          {
+            "term": "spenning",
+            "text": "spenning"
+          },
+          " mellom sideflatene når det bøyes eller trykkes sammen. Omvendt endrer det form litt når det påtrykkes en spenning."
+        ]
+      ],
+      "stem": [
+        [
+          "Hva kalles denne ",
+          {
+            "term": "effekt",
+            "text": "effekten"
+          },
+          "?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Den piezoelektriske effekten"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Den termoelektriske effekten"
+          ],
+          "feedback": [
+            "Termoelektrisk effekt gir spenning ut fra temperaturforskjeller, ikke mekanisk påkjenning."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Den fotoelektriske effekten"
+          ],
+          "feedback": [
+            "Fotoelektrisk effekt handler om lys som frigjør elektroner, ikke om mekanisk deformasjon."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Den magnetostriktive effekten"
+          ],
+          "feedback": [
+            "Magnetostriksjon er formendring i magnetiske materialer når de utsettes for et magnetfelt. Kvarts er ikke magnetisk; her er det mekanisk påkjenning og elektrisk spenning som henger sammen."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Kvarts er ",
+          {
+            "term": "piezoelektrisk-effekt",
+            "text": "piezoelektrisk"
+          },
+          ": mekanisk påkjenning gir elektrisk spenning, og elektrisk spenning gir mekanisk formendring."
+        ],
+        [
+          "Påtrykkes en ",
+          {
+            "term": "vekselspenning",
+            "text": "vekselspenning"
+          },
+          " med ",
+          {
+            "term": "frekvens",
+            "text": "frekvens"
+          },
+          " lik krystallets mekaniske egenfrekvens, svinger krystallet kraftig, og det oppfører seg elektrisk som en resonanskrets. Effekten brukes også i for eksempel gasstennere."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 2,
+        "section_id": "s2-51",
+        "printed_pages": [
+          "2-20"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "f42ae5c8d9beb579"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "AI-assistent (Claude), svaralternativer",
+        "based_on": 3,
+        "at": "2026-10-24T09:55:26+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T09:55:26+00:00",
+          "actor": "AI-assistent (Claude), svaralternativer",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "4d8f4cdc03271dd093aa1bee9170064efacf8fdbe001b753283c88c6198c8e21",
+          "note": "Jevnere svaralternativer"
+        },
+        {
+          "at": "2026-10-24T09:55:35+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "12230415983de05fedfa4681006084f157b8af581328604a0083fad5cce5c98a",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T10:04:01+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "12230415983de05fedfa4681006084f157b8af581328604a0083fad5cce5c98a",
+          "note": "Jevnere svaralternativer og nye figurer (gjennomgått av AI).",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "12230415983de05fedfa4681006084f157b8af581328604a0083fad5cce5c98a",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T10:04:01+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T10:04:01+00:00",
+        "content_sha256": "12230415983de05fedfa4681006084f157b8af581328604a0083fad5cce5c98a",
         "acknowledged_hazards": [
           "figures"
         ],

@@ -334,7 +334,7 @@
     },
     {
       "revision": 3,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "scenario",
@@ -507,6 +507,15 @@
           "content_sha256": "2279b1a1aee1afd1f57d112a6f2f895685e57adbd563897663b569dd63aa51f0",
           "note": "Nye ordlistelenker (runde 2); teksten er uendret.",
           "acknowledged": []
+        },
+        {
+          "at": "2026-10-24T10:04:05+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "2279b1a1aee1afd1f57d112a6f2f895685e57adbd563897663b569dd63aa51f0",
+          "note": "superseded by r4"
         }
       ],
       "checks": {
@@ -522,6 +531,218 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-24T09:32:20+00:00",
         "content_sha256": "2279b1a1aee1afd1f57d112a6f2f895685e57adbd563897663b569dd63aa51f0",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 4,
+      "status": "approved",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "medium",
+      "chapter": 5,
+      "section_ids": [
+        "s5-13"
+      ],
+      "topic_ids": [
+        "parasittsvingninger"
+      ],
+      "learning_objective": "Kjenne igjen selvsving nær arbeidsfrekvensen og vite at løsningen er å fjerne kilden til tilbakekoblingen.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En hjemmebygget ",
+          {
+            "term": "ssb",
+            "text": "SSB"
+          },
+          "-sender viser fortsatt utgangseffekt på wattmeteret i pausene mellom ordene, selv om det ikke kommer noe lydsignal inn. I en ",
+          {
+            "term": "mottaker",
+            "text": "mottaker"
+          },
+          " høres et ustabilt signal like ved sendefrekvensen."
+        ]
+      ],
+      "stem": [
+        "Hva er den mest sannsynlige feilen, og hvordan bør den rettes?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Et trinn selvsvinger på grunn av tilbakekobling. Skjerm og avkoble trinnet."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Senderen er overmodulert. Skru ned mikrofonforsterkningen til signalet blir rent."
+          ],
+          "feedback": [
+            [
+              {
+                "term": "overmodulering",
+                "text": "Overmodulering"
+              },
+              " krever et lydsignal. Her kommer det ",
+              {
+                "term": "effekt",
+                "text": "effekt"
+              },
+              " ut selv når det ikke er noe lyd på inngangen."
+            ]
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Oscillatoren driver på grunn av varme. La senderen varme seg opp lenger før bruk."
+          ],
+          "feedback": [
+            [
+              {
+                "term": "frekvensdrift",
+                "text": "Frekvensdrift"
+              },
+              " flytter signalet, men gir ikke utgangseffekt når det ikke er noe signal inn."
+            ]
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Lavpassfilteret på utgangen er defekt. Bytt det ut med et filter med lavere knekkfrekvens."
+          ],
+          "feedback": [
+            [
+              "Et ",
+              {
+                "term": "filter",
+                "text": "filter"
+              },
+              " lager ikke signaler selv. Det demper bare ",
+              {
+                "term": "harmoniske",
+                "text": "harmoniske"
+              },
+              " som allerede finnes."
+            ]
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Et ",
+          {
+            "term": "forsterker",
+            "text": "forsterkertrinn"
+          },
+          " som får nok utilsiktet tilbakekobling fra utgang til inngang, blir en ",
+          {
+            "term": "oscillator",
+            "text": "oscillator"
+          },
+          ". Slik selvsving skjer gjerne på eller nær arbeidsfrekvensen, særlig når inngang og utgang er avstemt til samme ",
+          {
+            "term": "frekvens",
+            "text": "frekvens"
+          },
+          ". Det viser seg ofte når det ikke er noe signal inn, for eksempel i talepausene på SSB eller mellom tegnene på CW."
+        ],
+        [
+          "Tilbakekoblingen kan gå via ledninger som ligger for nær hverandre, eller via felles tilførselsledninger og jordskinne, der ",
+          {
+            "term": "strom",
+            "text": "strømmen"
+          },
+          " fra ett trinn gir spenningsvariasjoner i et annet. Tiltak er bedre ",
+          {
+            "term": "skjerming",
+            "text": "skjerming"
+          },
+          ", større avstand mellom inngangs- og utgangsledninger og god avkobling. I rørforsterkere kan nøytralisering være nødvendig."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 5,
+        "section_id": "s5-13",
+        "printed_pages": [
+          "5-5"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "1eb6eddeab2b7d4e"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "AI-assistent (Claude), svaralternativer",
+        "based_on": 3,
+        "at": "2026-10-24T09:55:29+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T09:55:29+00:00",
+          "actor": "AI-assistent (Claude), svaralternativer",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "2279b1a1aee1afd1f57d112a6f2f895685e57adbd563897663b569dd63aa51f0",
+          "note": "Jevnere svaralternativer"
+        },
+        {
+          "at": "2026-10-24T09:55:36+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "817ae546ade5e371b046f242ce641a48936fcf04f55bba51abdf6333f3105fdc",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T10:04:05+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "817ae546ade5e371b046f242ce641a48936fcf04f55bba51abdf6333f3105fdc",
+          "note": "Jevnere svaralternativer og nye figurer (gjennomgått av AI).",
+          "acknowledged": []
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "817ae546ade5e371b046f242ce641a48936fcf04f55bba51abdf6333f3105fdc",
+        "errors": [],
+        "warnings": [],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T10:04:05+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T10:04:05+00:00",
+        "content_sha256": "817ae546ade5e371b046f242ce641a48936fcf04f55bba51abdf6333f3105fdc",
         "acknowledged_hazards": [],
         "checklist": {
           "one_correct": true,

@@ -364,7 +364,7 @@
     },
     {
       "revision": 3,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "recall",
@@ -543,6 +543,15 @@
           "acknowledged": [
             "figures"
           ]
+        },
+        {
+          "at": "2026-10-24T10:04:06+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "f975594256b6e3e375c3905c6e62f88b39dc35242c57a5045156e501eacfc238",
+          "note": "superseded by r4"
         }
       ],
       "checks": {
@@ -563,6 +572,233 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-24T09:32:21+00:00",
         "content_sha256": "f975594256b6e3e375c3905c6e62f88b39dc35242c57a5045156e501eacfc238",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 4,
+      "status": "approved",
+      "type": "single_choice",
+      "style": "recall",
+      "difficulty": "medium",
+      "chapter": 5,
+      "section_ids": [
+        "s5-13"
+      ],
+      "topic_ids": [
+        "parasittsvingninger"
+      ],
+      "learning_objective": "Vite at parasittsvingninger dempes ved å øke tapene (senke Q), for eksempel med ferrittperler eller små seriemotstander.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "Et transistorisert HF-",
+          {
+            "term": "sluttforsterker",
+            "text": "sluttrinn"
+          },
+          " viser seg å ha ",
+          {
+            "term": "parasittsvingning",
+            "text": "parasittsvingninger"
+          },
+          " på en ",
+          {
+            "term": "frekvens",
+            "text": "frekvens"
+          },
+          " i VHF-området."
+        ]
+      ],
+      "stem": [
+        "Hvilket tiltak er vanlig for å dempe slike svingninger?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Sette en ferrittperle eller seriemotstand i basis- eller kollektorledningen"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Øke Q-faktoren i kretsen slik at de uønskede resonansene blir skarpere"
+          ],
+          "feedback": [
+            "Det er motsatt. En skarpere resonans med høy Q gjør det lettere for kretsen å svinge."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Gjøre ledningene i trinnet lengre slik at induktansen i dem øker"
+          ],
+          "feedback": [
+            [
+              "Lange ledninger gir mer ",
+              {
+                "term": "induktans",
+                "text": "induktans"
+              },
+              " og mer kapasitiv kobling, og dermed flere tilfeldige resonanser."
+            ]
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Øke forsyningsspenningen slik at transistoren arbeider mer lineært"
+          ],
+          "feedback": [
+            [
+              "Høyere forsyningsspenning fjerner ikke den uønskede resonansen. ",
+              {
+                "term": "transistor",
+                "text": "Transistoren"
+              },
+              " kan heller få mer forsterkning, og svingningene kan bli kraftigere."
+            ]
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Parasittsvingninger skyldes tilfeldige resonanser i ledninger, ",
+          {
+            "term": "spole",
+            "text": "spoler"
+          },
+          " og ",
+          {
+            "term": "kondensator",
+            "text": "kondensatorer"
+          },
+          ", og i HF-",
+          {
+            "term": "forsterker",
+            "text": "forsterkere"
+          },
+          " ligger de typisk på VHF, der kapasitiv tilbakekobling virker godt."
+        ],
+        [
+          "Det vanlige botemiddelet er å gjøre den uønskede ",
+          {
+            "term": "resonans",
+            "text": "resonansen"
+          },
+          " mer tapsbeheftet, altså senke ",
+          {
+            "term": "q-faktor",
+            "text": "Q-faktoren"
+          },
+          ". En ferrittperle eller en liten ",
+          {
+            "term": "motstand",
+            "text": "motstand"
+          },
+          " ",
+          {
+            "term": "seriekobling",
+            "text": "i serie"
+          },
+          " med basis eller kollektor demper VHF-",
+          {
+            "term": "energi",
+            "text": "energien"
+          },
+          ", men påvirker nesten ikke HF-signalet. I tillegg bør ledningene være korte og direkte, og avkoblingskondensatorene bør ha lav egeninduktans, for eksempel keramiske kondensatorer med korte ben."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 5,
+        "section_id": "s5-13",
+        "printed_pages": [
+          "5-6"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "e5ca3b17cbd3c585",
+          "44b1f050e014a3c6"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "AI-assistent (Claude), svaralternativer",
+        "based_on": 3,
+        "at": "2026-10-24T09:55:29+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T09:55:29+00:00",
+          "actor": "AI-assistent (Claude), svaralternativer",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "f975594256b6e3e375c3905c6e62f88b39dc35242c57a5045156e501eacfc238",
+          "note": "Jevnere svaralternativer"
+        },
+        {
+          "at": "2026-10-24T09:55:36+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "e164262c83c06a4d7957622eae408eda2db91abc03a1d0f1d0da208957d44f8a",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T10:04:06+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "e164262c83c06a4d7957622eae408eda2db91abc03a1d0f1d0da208957d44f8a",
+          "note": "Jevnere svaralternativer og nye figurer (gjennomgått av AI).",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "e164262c83c06a4d7957622eae408eda2db91abc03a1d0f1d0da208957d44f8a",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T10:04:06+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T10:04:06+00:00",
+        "content_sha256": "e164262c83c06a4d7957622eae408eda2db91abc03a1d0f1d0da208957d44f8a",
         "acknowledged_hazards": [
           "figures"
         ],

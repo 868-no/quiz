@@ -412,7 +412,7 @@
     },
     {
       "revision": 3,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "concept",
@@ -596,6 +596,15 @@
           "acknowledged": [
             "figures"
           ]
+        },
+        {
+          "at": "2026-10-24T10:04:07+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "1873bb6493ca0a3af8805682e574a2fd929ae1dc17c6cbadbc08f8303ea01dd4",
+          "note": "superseded by r4"
         }
       ],
       "checks": {
@@ -616,6 +625,231 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-24T09:32:22+00:00",
         "content_sha256": "1873bb6493ca0a3af8805682e574a2fd929ae1dc17c6cbadbc08f8303ea01dd4",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 4,
+      "status": "approved",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "hard",
+      "chapter": 6,
+      "section_ids": [
+        "s6-14"
+      ],
+      "topic_ids": [
+        "mellomfrekvens"
+      ],
+      "learning_objective": "Forklare hvorfor harmoniske som dannes i et ulineært MF-trinn, dempes av MF-filtrene, og skille dette fra intermodulasjonsprodukter som kan oppstå innenfor passbåndet.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "Ved et sterkt signal senker den automatiske forsterkningskontrollen ",
+          {
+            "term": "forspenning",
+            "text": "forspenningen"
+          },
+          " på ",
+          {
+            "term": "transistor",
+            "text": "transistoren"
+          },
+          " i ",
+          {
+            "term": "mellomfrekvens",
+            "text": "MF"
+          },
+          "-forsterkeren så mye at transistoren arbeider ulineært og lager ",
+          {
+            "term": "harmoniske",
+            "text": "harmoniske"
+          },
+          "."
+        ]
+      ],
+      "stem": [
+        [
+          "Etter trinnet sitter smale MF-kretser som bare slipper gjennom frekvenser nær mellomfrekvensen. Hvorfor når de harmoniske normalt ikke ",
+          {
+            "term": "demodulator",
+            "text": "demodulatoren"
+          },
+          "?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "De ligger på multipler av mellomfrekvensen og dempes av MF-kretsene"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "AGC-kretsen filtrerer bort de harmoniske før demodulatoren"
+          ],
+          "feedback": [
+            [
+              {
+                "term": "agc",
+                "text": "AGC"
+              },
+              " styrer bare forsterkningen. Det er den som gir lav forspenning her, ikke den som fjerner de harmoniske."
+            ]
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Detektordioden likeretter bare signaler på mellomfrekvensen"
+          ],
+          "feedback": [
+            [
+              "En diodedetektor ",
+              {
+                "term": "likeretter",
+                "text": "likeretter"
+              },
+              " alle ",
+              {
+                "term": "frekvens",
+                "text": "frekvenser"
+              },
+              " den får inn. Det er MF-kretsene foran den som skiller ut mellomfrekvensen."
+            ]
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "De harmoniske ligger på lydfrekvenser over det hørbare området"
+          ],
+          "feedback": [
+            "Harmoniske av mellomfrekvensen ligger på radiofrekvenser, ikke lydfrekvenser."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Alle signalene i MF-",
+          {
+            "term": "forsterker",
+            "text": "forsterkeren"
+          },
+          " ligger i et smalt bånd rundt mellomfrekvensen. Ulineariteten lager ",
+          {
+            "term": "harmoniske",
+            "text": "harmoniske"
+          },
+          " på 2, 3, 4 … ganger mellomfrekvensen. Med for eksempel 455 kHz MF havner de på 910 kHz, 1365 kHz osv."
+        ],
+        [
+          "De avstemte MF-kretsene slipper bare gjennom et smalt bånd rundt 455 kHz, så de harmoniske blir dempet bort før detektoren. Det betyr ikke at ulinearitet er ufarlig: med flere signaler til stede kan det oppstå ",
+          {
+            "term": "intermodulasjon",
+            "text": "intermodulasjonsprodukter"
+          },
+          " inne i ",
+          {
+            "term": "passband",
+            "text": "passbåndet"
+          },
+          ", og de kan gi hørbare forstyrrelser."
+        ]
+      ],
+      "glossary_after_answer": [
+        "harmoniske"
+      ],
+      "study_reference": {
+        "chapter": 6,
+        "section_id": "s6-14",
+        "printed_pages": [
+          "6-8"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "4cc2b8194bb11f1b",
+          "b88d94e955bc5438"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "AI-assistent (Claude), svaralternativer",
+        "based_on": 3,
+        "at": "2026-10-24T09:55:30+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T09:55:30+00:00",
+          "actor": "AI-assistent (Claude), svaralternativer",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "1873bb6493ca0a3af8805682e574a2fd929ae1dc17c6cbadbc08f8303ea01dd4",
+          "note": "Jevnere svaralternativer"
+        },
+        {
+          "at": "2026-10-24T09:55:36+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "93712b4d82aff13af6671715febd4bdffd0b19cefb9e2c9618cdc5f8fe02c9a3",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T10:04:07+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "93712b4d82aff13af6671715febd4bdffd0b19cefb9e2c9618cdc5f8fe02c9a3",
+          "note": "Jevnere svaralternativer og nye figurer (gjennomgått av AI).",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "93712b4d82aff13af6671715febd4bdffd0b19cefb9e2c9618cdc5f8fe02c9a3",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T10:04:07+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T10:04:07+00:00",
+        "content_sha256": "93712b4d82aff13af6671715febd4bdffd0b19cefb9e2c9618cdc5f8fe02c9a3",
         "acknowledged_hazards": [
           "figures"
         ],

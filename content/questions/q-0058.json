@@ -358,7 +358,7 @@
     },
     {
       "revision": 3,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "concept",
@@ -541,6 +541,15 @@
           "content_sha256": "07b584b05a6b34e6089f767a7fcd5c0cf62a3e1802454ccde0e826e8c3779276",
           "note": "Nye ordlistelenker (runde 2); teksten er uendret.",
           "acknowledged": []
+        },
+        {
+          "at": "2026-10-24T10:04:01+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "07b584b05a6b34e6089f767a7fcd5c0cf62a3e1802454ccde0e826e8c3779276",
+          "note": "superseded by r4"
         }
       ],
       "checks": {
@@ -556,6 +565,218 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-24T09:32:10+00:00",
         "content_sha256": "07b584b05a6b34e6089f767a7fcd5c0cf62a3e1802454ccde0e826e8c3779276",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 4,
+      "status": "approved",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 2,
+      "section_ids": [
+        "s2-52"
+      ],
+      "topic_ids": [
+        "komponentstabilitet"
+      ],
+      "learning_objective": "Forstå hvordan kondensatorer med ulik temperaturkoeffisient kan kombineres for å stabilisere en avstemt krets.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En ",
+          {
+            "term": "oscillator",
+            "text": "oscillator"
+          },
+          " med en LC-krets driver i ",
+          {
+            "term": "frekvens",
+            "text": "frekvens"
+          },
+          " når apparatet blir varmt. ",
+          {
+            "term": "spole",
+            "text": "Spolen"
+          },
+          " har positiv ",
+          {
+            "term": "temperaturkoeffisient",
+            "text": "temperaturkoeffisient"
+          },
+          "."
+        ]
+      ],
+      "stem": [
+        [
+          "Hvilket tiltak vil best redusere ",
+          {
+            "term": "frekvensdrift",
+            "text": "frekvensdriften"
+          },
+          "?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Kombinere kondensatorer med positiv og negativ temperaturkoeffisient til nær null samlet drift."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Bruke bare kondensatorer med positiv temperaturkoeffisient, slik at de endrer seg i takt med spolen."
+          ],
+          "feedback": [
+            "Da øker både L og C med temperaturen, og frekvensen faller enda mer. Driften blir større, ikke mindre."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Plassere oscillatoren tett inntil sluttforsterkeren, så temperaturen blir jevnere."
+          ],
+          "feedback": [
+            [
+              {
+                "term": "sluttforsterker",
+                "text": "Sluttforsterkeren"
+              },
+              " er en stor varmekilde. Frekvensbestemmende kretser bør tvert imot plasseres langt unna varme."
+            ]
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Bytte til kondensatorer med høyere spenningsangivelse og større fysisk størrelse."
+          ],
+          "feedback": [
+            [
+              "Spenningsangivelsen sier noe om hvor mye ",
+              {
+                "term": "spenning",
+                "text": "spenning"
+              },
+              " ",
+              {
+                "term": "kondensator",
+                "text": "kondensatoren"
+              },
+              " tåler, ikke om hvordan ",
+              {
+                "term": "kapasitans",
+                "text": "kapasitansen"
+              },
+              " endres med temperaturen."
+            ]
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          {
+            "term": "resonans",
+            "text": "Resonansfrekvensen"
+          },
+          " avhenger av både L og C. Når spolen øker ",
+          {
+            "term": "induktans",
+            "text": "induktansen"
+          },
+          " med temperaturen, kan dette kompenseres med en kondensator som får mindre kapasitans når den blir varm (negativ temperaturkoeffisient)."
+        ],
+        [
+          "Ved å kombinere kondensatorer med passende positive og negative koeffisienter kan den samlede temperaturkoeffisienten for kretsen bli nær null. I tillegg bør frekvenskritiske kretser holdes unna varmekilder, og for svært høy stabilitet kan et ",
+          {
+            "term": "kvartskrystall",
+            "text": "krystall"
+          },
+          " i en temperaturstyrt ovn brukes."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 2,
+        "section_id": "s2-52",
+        "printed_pages": [
+          "2-21"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "986e8de193ca5a9d"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "AI-assistent (Claude), svaralternativer",
+        "based_on": 3,
+        "at": "2026-10-24T09:55:26+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T09:55:26+00:00",
+          "actor": "AI-assistent (Claude), svaralternativer",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "07b584b05a6b34e6089f767a7fcd5c0cf62a3e1802454ccde0e826e8c3779276",
+          "note": "Jevnere svaralternativer"
+        },
+        {
+          "at": "2026-10-24T09:55:35+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "183271f207f7bfa21873583242b4559cdf837b08417255de30a6936921fdfb6b",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T10:04:01+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "183271f207f7bfa21873583242b4559cdf837b08417255de30a6936921fdfb6b",
+          "note": "Jevnere svaralternativer og nye figurer (gjennomgått av AI).",
+          "acknowledged": []
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "183271f207f7bfa21873583242b4559cdf837b08417255de30a6936921fdfb6b",
+        "errors": [],
+        "warnings": [],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T10:04:01+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T10:04:01+00:00",
+        "content_sha256": "183271f207f7bfa21873583242b4559cdf837b08417255de30a6936921fdfb6b",
         "acknowledged_hazards": [],
         "checklist": {
           "one_correct": true,

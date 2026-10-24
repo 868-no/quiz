@@ -378,7 +378,7 @@
     },
     {
       "revision": 3,
-      "status": "approved",
+      "status": "retired",
       "type": "single_choice",
       "style": "concept",
       "difficulty": "medium",
@@ -561,6 +561,15 @@
           "acknowledged": [
             "figures"
           ]
+        },
+        {
+          "at": "2026-10-24T10:04:00+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "bf859ababed059b326b6180148d585654710607127dc4ce2144119a8ee3f4a14",
+          "note": "superseded by r4"
         }
       ],
       "checks": {
@@ -581,6 +590,225 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-23T20:58:39+00:00",
         "content_sha256": "bf859ababed059b326b6180148d585654710607127dc4ce2144119a8ee3f4a14",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 4,
+      "status": "approved",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 2,
+      "section_ids": [
+        "s2-44"
+      ],
+      "topic_ids": [
+        "resonans"
+      ],
+      "learning_objective": "Vite at en parallellresonanskrets har høy impedans ved resonans og fungerer som sperrekrets.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En ",
+          {
+            "term": "spole",
+            "text": "spole"
+          },
+          " og en ",
+          {
+            "term": "kondensator",
+            "text": "kondensator"
+          },
+          " er koblet ",
+          {
+            "term": "parallellkobling",
+            "text": "i parallell"
+          },
+          " og drives fra en signalkilde. ",
+          {
+            "term": "frekvens",
+            "text": "Frekvensen"
+          },
+          " stilles inn på kretsens ",
+          {
+            "term": "resonans",
+            "text": "resonansfrekvens"
+          },
+          ". Tapene i kretsen er små."
+        ]
+      ],
+      "stem": [
+        "Hva kjennetegner kretsen sett fra kilden ved denne frekvensen?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Impedansen er svært høy, og strømmen fra kilden er svært liten."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Impedansen er svært lav, og strømmen fra kilden er stor."
+          ],
+          "feedback": [
+            "Det beskriver en seriekrets ved resonans. I en parallellkrets opphever strømmene i L og C hverandre."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Strømmen fra kilden er liten og ligger 90° foran spenningen."
+          ],
+          "feedback": [
+            "Strømmen er riktignok liten, men ved resonans opphever de reaktive strømmene hverandre, og den lille strømmen som går, er i fase med spenningen."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Strømmene i både spolen og kondensatoren er null ved resonans."
+          ],
+          "feedback": [
+            "Strømmene i L og C kan være store; de er bare like store og motsatt rettet, slik at de opphever hverandre utenfor kretsen."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Begge komponentene har samme spenning over seg. I kondensatoren leder strømmen ",
+          {
+            "term": "spenning",
+            "text": "spenningen"
+          },
+          " med 90°, mens strømmen i spolen henger 90° etter. Dermed er de to ",
+          {
+            "term": "strom",
+            "text": "strømmene"
+          },
+          " 180° forskjøvet."
+        ],
+        [
+          "Ved resonans er X_L = X_C, og strømmene blir like store og opphever hverandre. Kilden leverer da bare en liten strøm som dekker tapene, og ",
+          {
+            "term": "impedans",
+            "text": "impedansen"
+          },
+          " er høy og resistiv. Derfor brukes en parallellresonanskrets ofte som sperrekrets."
+        ]
+      ],
+      "visual": {
+        "template": "rlc-circuit",
+        "version": 1,
+        "params": {
+          "source": {
+            "kind": "ac",
+            "frequency_hz": 50
+          },
+          "topology": "parallel",
+          "components": [
+            {
+              "kind": "L",
+              "value": 0.001
+            },
+            {
+              "kind": "C",
+              "value": 1e-06
+            }
+          ],
+          "label_style": "names"
+        }
+      },
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 2,
+        "section_id": "s2-44",
+        "printed_pages": [
+          "2-17"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "51019c41cfccd9d0"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "AI-assistent (Claude), svaralternativer",
+        "based_on": 3,
+        "at": "2026-10-24T09:55:26+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T09:55:26+00:00",
+          "actor": "AI-assistent (Claude), svaralternativer",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "bf859ababed059b326b6180148d585654710607127dc4ce2144119a8ee3f4a14",
+          "note": "Jevnere svaralternativer"
+        },
+        {
+          "at": "2026-10-24T09:55:35+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "40d2f8620170ab628748ca8487eace4d08e112df751d3ba53c0465679e5345fd",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T10:04:00+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "40d2f8620170ab628748ca8487eace4d08e112df751d3ba53c0465679e5345fd",
+          "note": "Jevnere svaralternativer og nye figurer (gjennomgått av AI).",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "40d2f8620170ab628748ca8487eace4d08e112df751d3ba53c0465679e5345fd",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T10:04:00+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T10:04:00+00:00",
+        "content_sha256": "40d2f8620170ab628748ca8487eace4d08e112df751d3ba53c0465679e5345fd",
         "acknowledged_hazards": [
           "figures"
         ],

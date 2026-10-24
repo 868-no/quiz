@@ -363,7 +363,7 @@
     },
     {
       "revision": 3,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "scenario",
@@ -517,6 +517,15 @@
           "acknowledged": [
             "figures"
           ]
+        },
+        {
+          "at": "2026-10-24T10:04:02+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "1148578a918bec33e24a9a7d12247c320e4fe6a5dc7cb0d98f3b8659b80f274c",
+          "note": "superseded by r4"
         }
       ],
       "checks": {
@@ -537,6 +546,196 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-24T09:32:11+00:00",
         "content_sha256": "1148578a918bec33e24a9a7d12247c320e4fe6a5dc7cb0d98f3b8659b80f274c",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 4,
+      "status": "approved",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "medium",
+      "chapter": 2,
+      "section_ids": [
+        "s2-53"
+      ],
+      "topic_ids": [
+        "komponentstabilitet",
+        "spoler"
+      ],
+      "learning_objective": "Vite hvordan uønsket magnetisk kobling mellom spoler kan reduseres.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "To ",
+          {
+            "term": "spole",
+            "text": "spoler"
+          },
+          " i hver sin ",
+          {
+            "term": "avstemt-krets",
+            "text": "avstemte krets"
+          },
+          " står nær hverandre på samme kretskort, og det oppstår uønsket kobling mellom kretsene."
+        ]
+      ],
+      "stem": [
+        "Hvilket tiltak reduserer den magnetiske koblingen mellom spolene uten å svekke kretsene?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Montere spolene slik at aksene står vinkelrett på hverandre."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Montere spolene parallelt med hverandre og så tett sammen som mulig."
+          ],
+          "feedback": [
+            "Parallelle akser og liten avstand gir sterkest kobling, fordi feltet fra den ene spolen går rett gjennom den andre."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Sette en ekstra spole i serie med den ene, slik at feltene opphever hverandre."
+          ],
+          "feedback": [
+            [
+              "En ekstra spole endrer ",
+              {
+                "term": "induktans",
+                "text": "induktansen"
+              },
+              " og lager sitt eget felt, men demper ikke koblingen mellom de opprinnelige spolene."
+            ]
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Sette spolene i hver sin skjermboks som ligger helt inntil viklingene."
+          ],
+          "feedback": [
+            [
+              "En skjerm for tett på spolen tar opp ",
+              {
+                "term": "energi",
+                "text": "energi"
+              },
+              " fra feltet, slik at Q-faktoren og induktansen reduseres. Det må være god avstand til veggene."
+            ]
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Magnetfeltet fra en spole følger spoleaksen. Står aksene vinkelrett på hverandre, går lite av feltet fra den ene spolen gjennom den andre, og koblingen blir liten.",
+        [
+          "Alternativt kan spolen plasseres i en jordet metallboks. På radiofrekvenser brukes tynn aluminium eller kobber. Veggene må ha god avstand fra spolen, ellers induseres ",
+          {
+            "term": "strom",
+            "text": "strømmer"
+          },
+          " i skjermen som senker ",
+          {
+            "term": "q-faktor",
+            "text": "Q-faktoren"
+          },
+          "."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 2,
+        "section_id": "s2-53",
+        "printed_pages": [
+          "2-21"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "de518583ced3a441"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "AI-assistent (Claude), svaralternativer",
+        "based_on": 3,
+        "at": "2026-10-24T09:55:26+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T09:55:26+00:00",
+          "actor": "AI-assistent (Claude), svaralternativer",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "1148578a918bec33e24a9a7d12247c320e4fe6a5dc7cb0d98f3b8659b80f274c",
+          "note": "Jevnere svaralternativer"
+        },
+        {
+          "at": "2026-10-24T09:55:35+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "c290e7a070e2f71b710d7726708c6177d60ad7228c995822b20c2a7d2db04440",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T10:04:02+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "c290e7a070e2f71b710d7726708c6177d60ad7228c995822b20c2a7d2db04440",
+          "note": "Jevnere svaralternativer og nye figurer (gjennomgått av AI).",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "c290e7a070e2f71b710d7726708c6177d60ad7228c995822b20c2a7d2db04440",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T10:04:02+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T10:04:02+00:00",
+        "content_sha256": "c290e7a070e2f71b710d7726708c6177d60ad7228c995822b20c2a7d2db04440",
         "acknowledged_hazards": [
           "figures"
         ],

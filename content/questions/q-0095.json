@@ -378,7 +378,7 @@
     },
     {
       "revision": 3,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "scenario",
@@ -561,6 +561,15 @@
           "acknowledged": [
             "figures"
           ]
+        },
+        {
+          "at": "2026-10-24T10:04:05+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "baa750e07ca733c93c23f4930e79a8eac09f359ccc0d908afeb38fee69e473f4",
+          "note": "superseded by r4"
         }
       ],
       "checks": {
@@ -581,6 +590,246 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-24T09:32:19+00:00",
         "content_sha256": "baa750e07ca733c93c23f4930e79a8eac09f359ccc0d908afeb38fee69e473f4",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 4,
+      "status": "approved",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "easy",
+      "chapter": 5,
+      "section_ids": [
+        "s5-02",
+        "s5-03"
+      ],
+      "topic_ids": [
+        "frekvensstabilitet"
+      ],
+      "learning_objective": "Kjenne igjen frekvensdrift etter oppstart og forstå at temperaturendringer i oscillatoren er årsaken.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "Du har nettopp slått på en eldre, hjemmebygget ",
+          {
+            "term": "ssb",
+            "text": "SSB"
+          },
+          "-sender med LC-",
+          {
+            "term": "oscillator",
+            "text": "oscillator"
+          },
+          ". Stasjonen du snakker med, forteller at tonehøyden på stemmen din endrer seg langsomt i løpet av de første minuttene."
+        ]
+      ],
+      "stem": [
+        "Hva er den mest sannsynlige årsaken?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Oscillatoren varmes opp, og verdiene i den avstemte kretsen endrer seg."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Sluttrinnet blir overstyrt, slik at det dannes harmoniske av signalet."
+          ],
+          "feedback": [
+            [
+              {
+                "term": "harmoniske",
+                "text": "Harmoniske"
+              },
+              " havner på multipler av sendefrekvensen. De gir ikke en langsom endring av tonehøyden."
+            ]
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Mikrofonforsterkningen er så høy at signalet blir overmodulert."
+          ],
+          "feedback": [
+            [
+              {
+                "term": "overmodulering",
+                "text": "Overmodulering"
+              },
+              " gir forvrengt og bredt signal, men ikke en gradvis endring av frekvensen."
+            ]
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Nøklingen har for bratte flanker, slik at signalet blir for bredt."
+          ],
+          "feedback": [
+            [
+              "Det beskriver ",
+              {
+                "term": "nokkelklikk",
+                "text": "nøkkelklikk"
+              },
+              " på CW. Her er det en langsom endring over flere minutter."
+            ]
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          {
+            "term": "frekvensdrift",
+            "text": "Frekvensdrift"
+          },
+          " betyr at sendefrekvensen sakte flytter seg. På SSB og CW høres det som at tonehøyden glir over tid."
+        ],
+        [
+          "Temperaturen påvirker både ",
+          {
+            "term": "induktans",
+            "text": "induktansen"
+          },
+          " og ",
+          {
+            "term": "kapasitans",
+            "text": "kapasitansen"
+          },
+          " i oscillatorens ",
+          {
+            "term": "avstemt-krets",
+            "text": "avstemte krets"
+          },
+          ", og dermed ",
+          {
+            "term": "resonans",
+            "text": "resonansfrekvensen"
+          },
+          ". Den største endringen kommer like etter påslag, mens ",
+          {
+            "term": "sender",
+            "text": "senderen"
+          },
+          " varmes opp. Etter en stund stabiliserer ",
+          {
+            "term": "frekvens",
+            "text": "frekvensen"
+          },
+          " seg."
+        ],
+        [
+          "Tiltak er å plassere oscillatoren unna varme komponenter, for eksempel ",
+          {
+            "term": "sluttforsterker",
+            "text": "sluttrinnet"
+          },
+          ", og å kombinere komponenter med motsatt ",
+          {
+            "term": "temperaturkoeffisient",
+            "text": "temperaturkoeffisient"
+          },
+          ". Hvis noen sier at du driver, kan det lønne seg å spørre en tredje stasjon – det kan også være ",
+          {
+            "term": "mottaker",
+            "text": "mottakeren"
+          },
+          " hos motparten som driver."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 5,
+        "section_id": "s5-02",
+        "printed_pages": [
+          "5-1"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "7708a47a52c5b85b",
+          "59d8a7b849bac5ef"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "AI-assistent (Claude), svaralternativer",
+        "based_on": 3,
+        "at": "2026-10-24T09:55:29+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T09:55:29+00:00",
+          "actor": "AI-assistent (Claude), svaralternativer",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "baa750e07ca733c93c23f4930e79a8eac09f359ccc0d908afeb38fee69e473f4",
+          "note": "Jevnere svaralternativer"
+        },
+        {
+          "at": "2026-10-24T09:55:36+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "ac243d2debabce37a61245364ad491f0925485a1f9595f994a83d9cf5954cf17",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T10:04:05+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "ac243d2debabce37a61245364ad491f0925485a1f9595f994a83d9cf5954cf17",
+          "note": "Jevnere svaralternativer og nye figurer (gjennomgått av AI).",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "ac243d2debabce37a61245364ad491f0925485a1f9595f994a83d9cf5954cf17",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T10:04:05+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T10:04:05+00:00",
+        "content_sha256": "ac243d2debabce37a61245364ad491f0925485a1f9595f994a83d9cf5954cf17",
         "acknowledged_hazards": [
           "figures"
         ],
