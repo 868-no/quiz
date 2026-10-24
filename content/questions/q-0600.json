@@ -1,0 +1,152 @@
+{
+  "id": "q-0600",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 13,
+      "section_ids": [
+        "s13-10"
+      ],
+      "topic_ids": [
+        "lyn-statisk"
+      ],
+      "learning_objective": "Forstå hvorfor en høy mast kan bli et nedslagspunkt, og hva jording og lynvern skal gjøre.",
+      "priority": "normal",
+      "context": [],
+      "stem": [
+        "Hvorfor kan en høy mast som er jordet, øke faren for at lynet slår ned nettopp der?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Fra toppen av en høy mast starter det lett en lynleder oppover, som kan møte lynet på vei ned."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Fordi metall tiltrekker seg lyn magnetisk."
+          ],
+          "feedback": [
+            "Lynet tiltrekkes ikke av metall magnetisk. Det er høyden og formen på masten som gjør at lynet lett finner fram til den."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Fordi sendersignalet fra antennen utløser lynet."
+          ],
+          "feedback": [
+            "Sendersignalet har ingenting med lynet å gjøre. Det er høyden og forbindelsen til jord som betyr noe."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Den øker ikke faren; jordede master er helt beskyttet mot lyn."
+          ],
+          "feedback": [
+            "Man kan ikke beskytte seg helt mot et direkte nedslag. Jordingen skal føre strømmen trygt ned, men masten kan samtidig bli et nedslagspunkt."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Når et lyn nærmer seg bakken, er det elektriske feltet sterkest rundt høye, spisse ting. Fra toppen av en mast kan det da starte en lynleder oppover, som kobles sammen med lynkanalen på vei ned. Masten kan derfor bli nedslagspunktet.",
+        "Et riktig utformet jordings- og lynvernsystem skal føre lynstrømmen langs tilsiktede veier og redusere skader og farlige spenningsforskjeller. Mot et direkte nedslag finnes ingen helt sikker beskyttelse."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 13,
+        "section_id": "s13-10",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "92c79eae6b8e34b3"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:11:20+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "4c9b5ec32962f9b3f8cd5535ab72da4a7ffae82cf1daba97d55cd3f2f4607a32",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:39:03+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "fd558ad58e3daf3862a974e4beaf56009153f65eb4f1d672b45725f4c9d57c36",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:50:48+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "fd558ad58e3daf3862a974e4beaf56009153f65eb4f1d672b45725f4c9d57c36",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:11:18+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "fd558ad58e3daf3862a974e4beaf56009153f65eb4f1d672b45725f4c9d57c36",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:50:48+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:50:48+00:00",
+        "content_sha256": "fd558ad58e3daf3862a974e4beaf56009153f65eb4f1d672b45725f4c9d57c36",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

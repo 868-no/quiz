@@ -1,0 +1,248 @@
+{
+  "id": "q-0417",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "calculation",
+      "difficulty": "medium",
+      "chapter": 10,
+      "section_ids": [
+        "s10-15"
+      ],
+      "topic_ids": [
+        "emc-kobling"
+      ],
+      "learning_objective": "Se hvordan en harmonisk frekvens av en amatørsending kan havne i mellomfrekvensen til et fjernsyn.",
+      "priority": "normal",
+      "context": [
+        [
+          "Mellomfrekvensen i et analogt fjernsyn ligger mellom ",
+          {
+            "q": 33.5,
+            "u": "MHz"
+          },
+          " og ",
+          {
+            "q": 39.5,
+            "u": "MHz"
+          },
+          ". En radioamatør i nærheten sender på ",
+          {
+            "q": 18.1,
+            "u": "MHz"
+          },
+          ", og signalet blir doblet et sted i fjernsynet der kretsene ikke er lineære."
+        ]
+      ],
+      "stem": [
+        "Hvilken frekvens får det doblede signalet?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 36.2,
+              "u": "MHz"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 9.05,
+              "u": "MHz"
+            }
+          ],
+          "feedback": [
+            "Her er frekvensen halvert. Dobling gir den andre harmoniske frekvensen, to ganger grunnfrekvensen."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 54.3,
+              "u": "MHz"
+            }
+          ],
+          "feedback": [
+            "Dette er tre ganger frekvensen, altså den tredje harmoniske frekvensen."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 18.1,
+              "u": "MHz"
+            }
+          ],
+          "feedback": [
+            "Det er selve sendefrekvensen. Når signalet dobles, får det dobbelt så høy frekvens."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Dobling gir den andre ",
+          {
+            "term": "harmoniske",
+            "text": "harmoniske frekvensen"
+          },
+          ": 2 · ",
+          {
+            "q": 18.1,
+            "u": "MHz"
+          },
+          " = ",
+          {
+            "q": 36.2,
+            "u": "MHz"
+          },
+          ". Det ligger midt i mellomfrekvensområdet til fjernsynet, og forstyrrelsen kan gi mønstre, fargefeil eller et bilde som ruller."
+        ],
+        [
+          "Tilsvarende kan en FM-radio med mellomfrekvens ",
+          {
+            "q": 10.7,
+            "u": "MHz"
+          },
+          " forstyrres av sendinger på 30 m, eller av harmoniske frekvenser fra 80 m-båndet. Sjekk også at senderen selv ikke sender ut harmoniske signaler."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 10,
+        "section_id": "s10-15",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "1f3f6313e4be50a3"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:12:39+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "5c2ebe7267f012419adff8b9db795454f908254bc72f9473fcc01fc3cf9908c6",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:49:11+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "cf42e2450965660573f4cc464e63e481826ca1cc5449aced05629c1ca668763d",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:12:38+00:00"
+      },
+      "calculation": {
+        "formula": "harmonic_frequency",
+        "inputs": {
+          "f": [
+            18.1,
+            "MHz"
+          ],
+          "n": [
+            2,
+            ""
+          ]
+        },
+        "answer": [
+          36.2,
+          "MHz"
+        ],
+        "answer_symbol": "f_2",
+        "sig_figs": 3
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "cf42e2450965660573f4cc464e63e481826ca1cc5449aced05629c1ca668763d",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:49:11+00:00"
+      },
+      "visual": {
+        "template": "spectrum",
+        "version": 1,
+        "after_only": true,
+        "params": {
+          "x_min_hz": 0,
+          "x_max_hz": 45000000.0,
+          "panels": [
+            {
+              "lines": [
+                {
+                  "f_hz": 18100000.0,
+                  "level": 0.9,
+                  "label": "Sender"
+                },
+                {
+                  "f_hz": 36200000.0,
+                  "level": 0.45,
+                  "label": "2 · f",
+                  "mark": true
+                }
+              ],
+              "filter": {
+                "from_hz": 33500000.0,
+                "to_hz": 39500000.0,
+                "label": "MF i TV"
+              }
+            }
+          ]
+        }
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:49:11+00:00",
+        "content_sha256": "cf42e2450965660573f4cc464e63e481826ca1cc5449aced05629c1ca668763d",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

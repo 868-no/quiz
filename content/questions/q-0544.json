@@ -1,0 +1,175 @@
+{
+  "id": "q-0544",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "recall",
+      "difficulty": "medium",
+      "chapter": 12,
+      "section_ids": [
+        "s12-20"
+      ],
+      "topic_ids": [
+        "signaltyper"
+      ],
+      "learning_objective": "Kjenne signalbetegnelsen J3E.",
+      "priority": "exam_important",
+      "context": [],
+      "stem": [
+        "Hva betyr signalbetegnelsen J3E?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Telefoni på enkelt sidebånd med undertrykt bærebølge (SSB)."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Telefoni med frekvensmodulasjon (FM)."
+          ],
+          "feedback": [
+            "Det er F3E. J står for enkelt sidebånd med undertrykt bærebølge."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Morse med på/av-nøkling av bærebølgen."
+          ],
+          "feedback": [
+            "Det er A1A. Den siste bokstaven E i J3E står for telefoni."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Telefoni med amplitudemodulasjon og full bærebølge (AM)."
+          ],
+          "feedback": [
+            "Det er A3E. J betyr at bærebølgen er undertrykt."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Betegnelsen har tre tegn. Det første sier hvordan bærebølgen moduleres: J betyr enkelt ",
+          {
+            "term": "sidebaand",
+            "text": "sidebånd"
+          },
+          " med undertrykt bærebølge. Det andre sier hva som modulerer: 3 er én kanal med analog informasjon. Det tredje sier hva som sendes: E er telefoni."
+        ],
+        "J3E er altså vanlig SSB-tale. Til sammenligning er F3E tale på FM og A3E tale på AM."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 12,
+        "section_id": "s12-20",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "e482a56df79b1a1e",
+          "3faeed9f7786e45f"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:13:44+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "b8355bc53a55475db3988ff8d3e1b2fd7a0b7842f6e94ff555ddd5bd6d774029",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:50:20+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "c654d567af46216db03c3a906d1e93b27f352a3518590ccd0b5efb6049fdb6e7",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:13:43+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "c654d567af46216db03c3a906d1e93b27f352a3518590ccd0b5efb6049fdb6e7",
+        "errors": [],
+        "warnings": [
+          "priority: 'exam_important' set by judgement; the book's '!' markers are not known for this chapter yet (no scan)"
+        ],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:50:20+00:00"
+      },
+      "visual": {
+        "template": "code-breakdown",
+        "version": 1,
+        "params": {
+          "parts": [
+            {
+              "text": "J",
+              "label": "Enkelt sidebånd, undertrykt bærebølge",
+              "highlight": true
+            },
+            {
+              "text": "3",
+              "label": "Én kanal med analog informasjon"
+            },
+            {
+              "text": "E",
+              "label": "Telefoni (tale)"
+            }
+          ]
+        },
+        "after_only": true
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:50:20+00:00",
+        "content_sha256": "c654d567af46216db03c3a906d1e93b27f352a3518590ccd0b5efb6049fdb6e7",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

@@ -1,0 +1,177 @@
+{
+  "id": "q-0345",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 8,
+      "section_ids": [
+        "s8-03"
+      ],
+      "topic_ids": [
+        "staende-bolger"
+      ],
+      "learning_objective": "Forklare at stående bølger oppstår når lasten ikke har samme impedans som kabelen.",
+      "priority": "exam_important",
+      "context": [],
+      "stem": [
+        [
+          "Når oppstår det ",
+          {
+            "term": "staende-bolger",
+            "text": "stående bølger"
+          },
+          " på en fødekabel?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Når antennen ikke er tilpasset kabelens impedans."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Når kabelen er lengre enn en bølgelengde."
+          ],
+          "feedback": [
+            "Lengden alene gir ikke refleksjon. En riktig tilpasset kabel har ingen stående bølger, uansett hvor lang den er."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Når sendereffekten er høyere enn kabelen tåler."
+          ],
+          "feedback": [
+            "For høy effekt kan skade kabelen, men stående bølger skyldes feiltilpasning i enden."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Når kabelen er balansert."
+          ],
+          "feedback": [
+            "Både balanserte og ubalanserte kabler kan få stående bølger. Det avgjørende er om lasten passer til kabelen."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Er antennen tilpasset kabelen – samme impedans som Z₀ – tar den imot all effekten. Er den ikke det, sendes en del av effekten tilbake mot senderen.",
+        "Den fremadgående og den reflekterte bølgen har samme frekvens og går hver sin vei. Sammen gir de topper og bunner i spenning og strøm som står stille langs kabelen. Jo større feiltilpasning, desto mer reflekteres."
+      ],
+      "glossary_after_answer": [
+        "staende-bolger"
+      ],
+      "study_reference": {
+        "chapter": 8,
+        "section_id": "s8-03",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "499f02b266e65efb"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:13:25+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "48a3ba47142a718fa7c4f955d28560f1cb5956bfbeb23f21686bbc2600d0e6b1",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:48:28+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "be04d3df034a17eaa60f59881185327724b048710ceb7297fe10659ae39e5c5d",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:13:24+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "be04d3df034a17eaa60f59881185327724b048710ceb7297fe10659ae39e5c5d",
+        "errors": [],
+        "warnings": [
+          "priority: 'exam_important' set by judgement; the book's '!' markers are not known for this chapter yet (no scan)"
+        ],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:48:28+00:00"
+      },
+      "visual": {
+        "template": "feedline",
+        "version": 1,
+        "params": {
+          "kind": "standing_wave",
+          "load": "resistive",
+          "load_ratio": 3,
+          "show_minmax": true,
+          "phase_deg": 60
+        },
+        "after_only": true,
+        "animation": {
+          "param": "load_ratio",
+          "from": 1,
+          "to": 4,
+          "phase": "after",
+          "params": {
+            "show_minmax": false,
+            "show_wave": false
+          },
+          "text": "Animasjonen endrer lasten fra 50 Ω, like stor som kabelens impedans, til 200 Ω: jo større feiltilpasningen er, desto kraftigere blir de stående bølgene."
+        }
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:48:28+00:00",
+        "content_sha256": "be04d3df034a17eaa60f59881185327724b048710ceb7297fe10659ae39e5c5d",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

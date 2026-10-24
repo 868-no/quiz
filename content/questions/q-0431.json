@@ -1,0 +1,155 @@
+{
+  "id": "q-0431",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 10,
+      "section_ids": [
+        "s10-09",
+        "s10-08"
+      ],
+      "topic_ids": [
+        "emc-stasjon",
+        "emc-filtre"
+      ],
+      "learning_objective": "Forstå at ferritt rundt hele kabler demper fellesmodus-RF uten å røre beskyttelsesjorden.",
+      "priority": "normal",
+      "context": [
+        "Du har satt filter på strømledningen til radioen, men RF finner likevel veien ut i huset, via kablene mellom radioen og datamaskinen."
+      ],
+      "stem": [
+        "Hva kan hjelpe?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Å vikle hele kablene, med alle lederne samlet, flere ganger gjennom ferrittringer."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Å koble fra jordlederen i strømkabelen til datamaskinen."
+          ],
+          "feedback": [
+            "Det er farlig og løser ikke problemet trygt. Beskyttelsesjorden skal aldri brytes for å dempe RF."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Å bytte nettfilteret mot et med høyere strømgrense."
+          ],
+          "feedback": [
+            "Strømgrensen er ikke problemet. RF går rundt filteret via de andre kablene."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Å fjerne utjevningsforbindelsene i huset."
+          ],
+          "feedback": [
+            "Utjevningsforbindelsene er der av sikkerhetshensyn og skal ikke fjernes."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "RF som følger en kabel, går ofte samme vei i alle lederne samtidig – det kalles fellesmodus. Vikles hele kabelen flere ganger gjennom en ",
+          {
+            "term": "ferrittring",
+            "text": "ferrittring"
+          },
+          ", får denne strømmen høy impedans og dempes."
+        ],
+        "Signalene i kabelen og strømmen i strømforsyningen går fram og tilbake i lederne og påvirkes nesten ikke. Siden alle lederne går gjennom ringen, er også jordforbindelsen urørt. Beskyttelsesjord og utjevningsforbindelser skal aldri kobles fra for å løse et RF-problem."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 10,
+        "section_id": "s10-09",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "0f4ceeaa9cc63a7f",
+          "f2e8d4741586c0ac"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:12:39+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "f746d0f7ae4dd219e3e34918759eb125170e0c0708726ca680032b9403ce60b4",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:39:01+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "cabb200bcb5b9acc44e94622603c47f380f8eabc31a3bce3753ead1f31ca02db",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:49:23+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "cabb200bcb5b9acc44e94622603c47f380f8eabc31a3bce3753ead1f31ca02db",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": []
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:12:38+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "cabb200bcb5b9acc44e94622603c47f380f8eabc31a3bce3753ead1f31ca02db",
+        "errors": [],
+        "warnings": [],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T22:49:23+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:49:23+00:00",
+        "content_sha256": "cabb200bcb5b9acc44e94622603c47f380f8eabc31a3bce3753ead1f31ca02db",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

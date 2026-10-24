@@ -1,0 +1,171 @@
+{
+  "id": "q-0305",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 7,
+      "section_ids": [
+        "s7-04"
+      ],
+      "topic_ids": [
+        "analog-til-digital"
+      ],
+      "learning_objective": "Forstå at kvantisering gjør at en DDS ikke gir en helt ren sinus, og at en PLL ofte brukes etter den.",
+      "priority": "normal",
+      "context": [
+        [
+          "En oscillator med ",
+          {
+            "term": "dds",
+            "text": "DDS"
+          },
+          " lager sinusen sin ved å sende en rekke tall gjennom en D/A-omformer."
+        ]
+      ],
+      "stem": [
+        "Hvorfor blir ikke utgangssignalet en helt ren sinusbølge?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Avrundingen til faste nivåer gir en regelmessig feil med uønskede toner."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "D/A-omformeren endrer frekvensen litt fra den ene perioden til den neste."
+          ],
+          "feedback": [
+            "Frekvensen styres av en svært stabil klokke. Det som forurenser signalet, er avrundingen av amplituden."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "En sinusbølge kan ikke lages digitalt i det hele tatt, bare en firkant."
+          ],
+          "feedback": [
+            "DDS lager nettopp sinusbølger digitalt, og ganske gode. De blir bare ikke helt rene."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Støy fra antennen lekker inn i oscillatoren og blander seg med signalet."
+          ],
+          "feedback": [
+            "Oscillatoren er ikke koblet til antennen. Urenhetene oppstår inne i DDS-en, når tall blir til spenning."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Når en ren sinus rundes av til et begrenset antall nivåer, gjentar feilen seg likt i hver periode. En slik regelmessig feil er ikke tilfeldig støy, men gir egne toner ved siden av den ønskede frekvensen.",
+        [
+          "Derfor gir en DDS aldri en helt ren sinus. Det er vanlig å la en ",
+          {
+            "term": "faselaast-sloyfe",
+            "text": "faselåst sløyfe"
+          },
+          " (PLL) følge etter DDS-en for å rense signalet."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 7,
+        "section_id": "s7-04",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "9741cd74c9908911"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:09:37+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "a6f668e0fa8c95d2ab5ee807b7d6ffbb16b7c90eddfbacbb2b8084cbcdf655b4",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:48:13+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "4bf89192bd2ca08236553eed34ed7b33ebc5904461141acaa0a5daa8a77f8db3",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:09:36+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "4bf89192bd2ca08236553eed34ed7b33ebc5904461141acaa0a5daa8a77f8db3",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:48:13+00:00"
+      },
+      "visual": {
+        "template": "sampling",
+        "version": 1,
+        "params": {
+          "kind": "quantize",
+          "bits": 3,
+          "samples_per_period": 16,
+          "show_values": false,
+          "show_error": true
+        },
+        "after_only": true
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:48:13+00:00",
+        "content_sha256": "4bf89192bd2ca08236553eed34ed7b33ebc5904461141acaa0a5daa8a77f8db3",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

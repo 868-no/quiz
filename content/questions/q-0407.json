@@ -1,0 +1,134 @@
+{
+  "id": "q-0407",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 10,
+      "section_ids": [
+        "s10-14"
+      ],
+      "topic_ids": [
+        "emc-stasjon"
+      ],
+      "learning_objective": "Forstå hvorfor horisontale antenner ofte gir færre EMC-problemer, og når en vertikal likevel kan være bedre.",
+      "priority": "normal",
+      "context": [],
+      "stem": [
+        "Hvorfor gir en horisontal HF-antenne ofte færre forstyrrelser i huset enn en vertikal antenne på samme sted?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Ledninger og nedføringer i hus går mest loddrett, så den kobler mindre til dem."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "En horisontal antenne stråler ut mindre effekt totalt."
+          ],
+          "feedback": [
+            "Utstrålt effekt avhenger av hva du sender inn og hvor effektiv antennen er, ikke av at den ligger vannrett. Forskjellen ligger i koblingen til ledningene i huset."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "En horisontal antenne trenger verken fødekabel eller jord."
+          ],
+          "feedback": [
+            "Alle antenner trenger en fødeledning. For en horisontal dipol bør den gå i rett vinkel ned fra midten."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Vertikale antenner er forbudt på HF i boligområder."
+          ],
+          "feedback": [
+            "Det finnes ikke noe slikt forbud. En vertikal antenne kan til og med være bedre dersom den kan plasseres lenger fra huset."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Elektriske ledninger, nedføringer fra TV-antenner og mye av ledningsnettet i et hus står loddrett. En horisontal antenne har feltet sitt på tvers av disse og kobler mindre inn i dem, og den fanger også opp mindre lokal støy.",
+        "Plassering betyr likevel mye: på en liten tomt kan en vertikal antenne være det beste valget fordi den får plass lenger unna huset."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 10,
+        "section_id": "s10-14",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "8654a44a38d7d57b"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:12:39+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "f4408ba380351f3f260994906bb937ba57e5f05a38b612a346df15775366a7c6",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:49:02+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "f4408ba380351f3f260994906bb937ba57e5f05a38b612a346df15775366a7c6",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": []
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:12:38+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "f4408ba380351f3f260994906bb937ba57e5f05a38b612a346df15775366a7c6",
+        "errors": [],
+        "warnings": [],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T22:49:02+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:49:02+00:00",
+        "content_sha256": "f4408ba380351f3f260994906bb937ba57e5f05a38b612a346df15775366a7c6",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

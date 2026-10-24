@@ -1,0 +1,134 @@
+{
+  "id": "q-0550",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 12,
+      "section_ids": [
+        "s12-14"
+      ],
+      "topic_ids": [
+        "regelverk-organisasjoner"
+      ],
+      "learning_objective": "Kjenne rettigheter amatørlisensen gir som lisensfrie radioer ikke har.",
+      "priority": "normal",
+      "context": [],
+      "stem": [
+        "Hva kan en radioamatør gjøre som en bruker av lisensfri PMR-radio ikke kan?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Bruke hjemmelaget eller ombygd sendeutstyr."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Sende krypterte meldinger."
+          ],
+          "feedback": [
+            "Krypterte meldinger er ikke tillatt for radioamatører heller."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Sende meldinger mot betaling."
+          ],
+          "feedback": [
+            "Betalte meldinger er forbudt i amatørtjenesten."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Sende uten å oppgi hvem man er."
+          ],
+          "feedback": [
+            "Radioamatører skal tvert imot identifisere seg med kallesignal med korte mellomrom."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Lisensfrie radioer som PMR krever ingen prøve, men brukerne må holde seg til ferdig godkjent utstyr på faste frekvenser.",
+        "Amatørlisensen krever bestått prøve, men gir til gjengjeld frekvenser over hele spekteret, høy effekt, mange moduser og rett til å bruke hjemmelaget eller ombygd utstyr. Derfor må radioamatører kunne nok til å unngå å forstyrre andre."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 12,
+        "section_id": "s12-14",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "8a8191e2fcac45e5"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:13:45+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "cfb4ad468751f4b259bd1efe32270cc23eb6ac172adcb800c4e309aa9382258c",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:50:25+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "cfb4ad468751f4b259bd1efe32270cc23eb6ac172adcb800c4e309aa9382258c",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": []
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:13:43+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "cfb4ad468751f4b259bd1efe32270cc23eb6ac172adcb800c4e309aa9382258c",
+        "errors": [],
+        "warnings": [],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T22:50:25+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:50:25+00:00",
+        "content_sha256": "cfb4ad468751f4b259bd1efe32270cc23eb6ac172adcb800c4e309aa9382258c",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

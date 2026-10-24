@@ -1,0 +1,159 @@
+{
+  "id": "q-0312",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 7,
+      "section_ids": [
+        "s7-06"
+      ],
+      "topic_ids": [
+        "digitale-filtre"
+      ],
+      "learning_objective": "Kjenne fordeler og ulemper med IIR-filtre.",
+      "priority": "normal",
+      "context": [],
+      "stem": [
+        [
+          "Hva er en ulempe ved et ",
+          {
+            "term": "iir-filter",
+            "text": "IIR-filter"
+          },
+          " sammenlignet med et FIR-filter?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Det kan ikke få lineær fase, og det kan bli ustabilt hvis tilbakekoblingen blir for sterk."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Det trenger mange flere multiplikasjoner for samme demping."
+          ],
+          "feedback": [
+            "Det er en fordel ved IIR-filteret at det trenger færre regneoperasjoner for samme demping."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Det kan bare lage høypassfiltre."
+          ],
+          "feedback": [
+            "IIR-filtre kan lage både lavpass og høypass. Det enkleste lavpassfilteret er den digitale utgaven av et RC-filter."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Det kan ikke brukes i en prosessor."
+          ],
+          "feedback": [
+            "IIR-filtre er digitale filtre og regnes nettopp ut i en prosessor."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Fordi en del av utgangen føres tilbake til inngangen, oppnår IIR-filteret mye demping med lite regning. Man får mer demping for pengene.",
+        "Til gjengjeld får det ikke lineær fase, så ulike frekvenser forsinkes ulikt. Og føres for mye tilbake, kan filteret bli ustabilt – omtrent som en forsterker som begynner å svinge. God konstruksjon hindrer det."
+      ],
+      "glossary_after_answer": [
+        "iir-filter"
+      ],
+      "study_reference": {
+        "chapter": 7,
+        "section_id": "s7-06",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "44cee9878c973d77"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:09:37+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "0b503a7c740ec84548a3d3eb4bf684acf971efb9d8b238f976c7123bd7332f82",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:48:20+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "2df868758e4a734ec0072bd462b7885415f6d4d1fc5874a4b0ff17b1ae940118",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:09:36+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "2df868758e4a734ec0072bd462b7885415f6d4d1fc5874a4b0ff17b1ae940118",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:48:20+00:00"
+      },
+      "visual": {
+        "template": "sampling",
+        "version": 1,
+        "params": {
+          "kind": "fir_iir"
+        }
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:48:20+00:00",
+        "content_sha256": "2df868758e4a734ec0072bd462b7885415f6d4d1fc5874a4b0ff17b1ae940118",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

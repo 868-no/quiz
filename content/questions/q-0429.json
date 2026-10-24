@@ -1,0 +1,134 @@
+{
+  "id": "q-0429",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 10,
+      "section_ids": [
+        "s10-20"
+      ],
+      "topic_ids": [
+        "emc-klage"
+      ],
+      "learning_objective": "Vite at de fleste klager skyldes høy feltstyrke fra en ellers ren sending.",
+      "priority": "normal",
+      "context": [],
+      "stem": [
+        "Hva er ifølge Nkoms erfaring den vanligste årsaken når en amatørsending forstyrrer naboens utstyr?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "For høy feltstyrke fra en ellers ren sending."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Falske signaler fra dårlige sendere."
+          ],
+          "feedback": [
+            "Falske signaler forekommer, men erfaringen er at det oftest er en ren sending med for mye effekt for utstyret i nærheten."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Ulovlig bruk av frekvenser utenfor amatørbåndene."
+          ],
+          "feedback": [
+            "Det er sjelden årsaken. De fleste forstyrrelser kommer fra lovlige sendinger der feltstyrken er for høy."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Feil i strømnettet som radioamatøren får skylden for."
+          ],
+          "feedback": [
+            "Det hender at amatøren urettmessig får skylden, men de fleste klager skyldes faktisk sterke felt fra sendingen."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Også når stasjonen er helt i orden, kan sterke felt nær antennen trenge inn i utstyr som ikke er laget for å tåle dem. Alt virker som det skal, men effekten er for høy for omgivelsene.",
+        "Derfor er rådet å bruke bare den effekten som trengs for forbindelsen."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 10,
+        "section_id": "s10-20",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "4ffd8126b8485150"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:12:39+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "bd6d0f50c4a255ddd436fbe65812da8658be3362178f4e4fd61710517f3cf843",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:49:22+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "bd6d0f50c4a255ddd436fbe65812da8658be3362178f4e4fd61710517f3cf843",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": []
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:12:38+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "bd6d0f50c4a255ddd436fbe65812da8658be3362178f4e4fd61710517f3cf843",
+        "errors": [],
+        "warnings": [],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T22:49:22+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:49:22+00:00",
+        "content_sha256": "bd6d0f50c4a255ddd436fbe65812da8658be3362178f4e4fd61710517f3cf843",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

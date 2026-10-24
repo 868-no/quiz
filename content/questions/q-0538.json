@@ -1,0 +1,178 @@
+{
+  "id": "q-0538",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "recall",
+      "difficulty": "easy",
+      "chapter": 12,
+      "section_ids": [
+        "s12-21"
+      ],
+      "topic_ids": [
+        "kallesignaler"
+      ],
+      "learning_objective": "Kjenne delene av et kallesignal: prefiks, siffer og suffiks.",
+      "priority": "exam_important",
+      "context": [],
+      "stem": [
+        [
+          "Hva er ",
+          {
+            "term": "prefiks",
+            "text": "prefikset"
+          },
+          " i kallesignalet LA1XYZ?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "LA"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "XYZ"
+          ],
+          "feedback": [
+            "XYZ står etter sifferet og kalles suffikset. Det er den delen som skiller den enkelte stasjonen fra andre."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "1"
+          ],
+          "feedback": [
+            "Sifferet står mellom prefikset og suffikset. Prefikset er tegnene foran sifferet."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "LA1XYZ"
+          ],
+          "feedback": [
+            "Det er hele kallesignalet. Prefikset er bare tegnene foran sifferet."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Et amatørkallesignal består av et prefiks, et siffer og et suffiks. Tegnene foran sifferet kalles prefikset og viser hvilket land stasjonen hører til – LA for Norge.",
+        "Bokstavene etter sifferet, suffikset, identifiserer den enkelte stasjonen."
+      ],
+      "glossary_after_answer": [
+        "prefiks"
+      ],
+      "study_reference": {
+        "chapter": 12,
+        "section_id": "s12-21",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "6d3665a743a40988",
+          "09770206facbd2f4",
+          "7ccd2de2870173f7"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:13:44+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "3c9afaf380cbc61bbc795a7b02af28e8484b3ca86829d74290cb610cf2723a29",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:50:14+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "0fa37319568829a535e4e6cd7c07840d04182c489de36b4e7bc05747b5fb1141",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:13:43+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "0fa37319568829a535e4e6cd7c07840d04182c489de36b4e7bc05747b5fb1141",
+        "errors": [],
+        "warnings": [
+          "priority: 'exam_important' set by judgement; the book's '!' markers are not known for this chapter yet (no scan)"
+        ],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:50:14+00:00"
+      },
+      "visual": {
+        "template": "code-breakdown",
+        "version": 1,
+        "params": {
+          "parts": [
+            {
+              "text": "LA",
+              "label": "Prefiks: landet (Norge)",
+              "highlight": true
+            },
+            {
+              "text": "1",
+              "label": "Tall"
+            },
+            {
+              "text": "XYZ",
+              "label": "Suffiks: personlig del"
+            }
+          ]
+        },
+        "after_only": true
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:50:14+00:00",
+        "content_sha256": "0fa37319568829a535e4e6cd7c07840d04182c489de36b4e7bc05747b5fb1141",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

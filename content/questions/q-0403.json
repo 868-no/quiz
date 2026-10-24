@@ -1,0 +1,174 @@
+{
+  "id": "q-0403",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "medium",
+      "chapter": 10,
+      "section_ids": [
+        "s10-03",
+        "s10-20"
+      ],
+      "topic_ids": [
+        "emc-regler",
+        "emc-klage"
+      ],
+      "learning_objective": "Vite at en radioamatør som forstyrrer, skal redusere utgangseffekten til 100 W.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "Du sender med ",
+          {
+            "q": 400,
+            "u": "W"
+          },
+          ", og naboen sier at sendingene dine forstyrrer fjernsynet hennes."
+        ]
+      ],
+      "stem": [
+        "Hva sier radioamatørforskriften at du skal gjøre?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Redusere utgangseffekten til ",
+            {
+              "q": 100,
+              "u": "W"
+            },
+            "."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Slutte helt å sende til Nkom har undersøkt saken."
+          ],
+          "feedback": [
+            "Forskriften krever ikke full stans, men at effekten settes ned til høyst 100 W. Å vente med å sende mens saken løses, kan likevel være lurt."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Redusere utgangseffekten til ",
+            {
+              "q": 5,
+              "u": "W"
+            },
+            "."
+          ],
+          "feedback": [
+            "Forskriften sier høyst 100 W. Du kan godt gå lavere for å bevare et godt naboforhold, men kravet er 100 W."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Ingenting før naboen har sendt en formell klage."
+          ],
+          "feedback": [
+            "Regelen gjelder så snart sendingen forårsaker forstyrrelser. Du har plikt til å gjøre noe med det uansett om det er en formell klage."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Forskriften om radioamatørvirksomhet sier at hvis sendingen forårsaker forstyrrelser, skal utgangseffekten settes ned til høyst ",
+          {
+            "q": 100,
+            "u": "W"
+          },
+          "."
+        ],
+        "Effektgrensen fritar ikke radioamatøren fra å undersøke årsaken til forstyrrelsen. Både senderanleggets tekniske tilstand, signalets kvalitet og immuniteten i det forstyrrede utstyret kan ha betydning."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 10,
+        "section_id": "s10-03",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "ea9e8e2e3fcb4f91",
+          "08038459fe9d57f0"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:12:39+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "7c8c239538715d9aa562165940ba3927ef2af195751dc29d31e2e10058d6d7f6",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:39:01+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "616249dc331b7b188f8e3fc374d51d4df50ada743be35b646f193f6a327158ae",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:48:58+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "616249dc331b7b188f8e3fc374d51d4df50ada743be35b646f193f6a327158ae",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": []
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:12:38+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "616249dc331b7b188f8e3fc374d51d4df50ada743be35b646f193f6a327158ae",
+        "errors": [],
+        "warnings": [
+          "priority: 'exam_important' set by judgement; the book's '!' markers are not known for this chapter yet (no scan)"
+        ],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T22:48:58+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:48:58+00:00",
+        "content_sha256": "616249dc331b7b188f8e3fc374d51d4df50ada743be35b646f193f6a327158ae",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

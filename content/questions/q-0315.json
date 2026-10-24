@@ -1,0 +1,152 @@
+{
+  "id": "q-0315",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "recall",
+      "difficulty": "easy",
+      "chapter": 7,
+      "section_ids": [
+        "s7-02"
+      ],
+      "topic_ids": [
+        "sdr",
+        "digitale-filtre"
+      ],
+      "learning_objective": "Kjenne noen fordeler med digital signalbehandling i en mottaker.",
+      "priority": "normal",
+      "context": [],
+      "stem": [
+        [
+          "Hva kan ",
+          {
+            "term": "dsp",
+            "text": "digital signalbehandling"
+          },
+          " gi i lavfrekvensdelen av en mottaker?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Brattere filtre, tilpasset støyreduksjon og automatisk fjerning av toner."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Høyere sendeeffekt fra den samme sluttforsterkeren."
+          ],
+          "feedback": [
+            "Lavfrekvensdelen i mottakeren har ingenting med sendeeffekten å gjøre. Gevinsten ligger i filtrering og støyreduksjon."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Lengre rekkevidde for jordbølgen på de lave båndene."
+          ],
+          "feedback": [
+            "Hvordan radiobølgene går, avhenger ikke av mottakeren. Digital behandling gjør bare mer ut av signalet som kommer inn."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "At man klarer seg med en mye dårligere antenne."
+          ],
+          "feedback": [
+            "Mottakeren trenger like god antenne som før. Digital behandling gjør filtrene og støyreduksjonen bedre."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Digital signalbehandling kom først inn i lavfrekvensdelen av mottakerne. Med den fikk man filtre som var smalere og brattere, og flere av dem. Støyreduksjonen kunne tilpasse seg den støyen som faktisk var der (adaptiv støyreduksjon), og man fikk filtre som finner og fjerner plagsomme toner automatisk (notch-filtre).",
+        "Disse filtrene beregner som regel koeffisientene sine på nytt for hvert sampel, slik at de hele tiden følger signalet."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 7,
+        "section_id": "s7-02",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "70a0b7b8ec4bcfad",
+          "44cee9878c973d77"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:09:37+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "a9cde087dea09c2a9e32f1391b7ebcc168fd2654ccfd74ce72cf56fcf0704f5a",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:48:22+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "a9cde087dea09c2a9e32f1391b7ebcc168fd2654ccfd74ce72cf56fcf0704f5a",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:09:36+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "a9cde087dea09c2a9e32f1391b7ebcc168fd2654ccfd74ce72cf56fcf0704f5a",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:48:22+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:48:22+00:00",
+        "content_sha256": "a9cde087dea09c2a9e32f1391b7ebcc168fd2654ccfd74ce72cf56fcf0704f5a",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

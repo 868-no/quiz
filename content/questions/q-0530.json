@@ -1,0 +1,138 @@
+{
+  "id": "q-0530",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "medium",
+      "chapter": 12,
+      "section_ids": [
+        "s12-13"
+      ],
+      "topic_ids": [
+        "god-operasjonsskikk"
+      ],
+      "learning_objective": "Vite at man bare skal bruke den effekten som trengs.",
+      "priority": "exam_important",
+      "context": [
+        "Du snakker med en stasjon i nærheten på 70 cm, og dere har svært sterke signaler begge veier."
+      ],
+      "stem": [
+        "Hva bør du gjøre?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Senke effekten til det som trengs for en god forbindelse."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Beholde full effekt, så forbindelsen er sikker om forholdene endrer seg."
+          ],
+          "feedback": [
+            "Unødvendig høy effekt gir større risiko for forstyrrelser hos andre og i elektronikk i nærheten. Du kan alltid skru opp igjen."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Øke effekten litt, så den andre slipper å skru opp volumet."
+          ],
+          "feedback": [
+            "Signalene er allerede sterke. Mer effekt gir bare større fare for forstyrrelser."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Flytte til HF for å spare effekt."
+          ],
+          "feedback": [
+            "Et lokalt samband på 70 cm fungerer fint. Poenget er å bruke lite effekt der du er."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Bruk aldri mer effekt enn det som trengs for god forbindelse. Da blir risikoen mindre for forstyrrelser hos andre som bruker båndet, og i elektroniske apparater rundt deg.",
+        "På HF, der forholdene skifter mye, er det vanskelig å treffe riktig effekt. Men med sterke signaler begge veier på VHF eller UHF er det naturlig å skru ned."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 12,
+        "section_id": "s12-13",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "0591cf1e96150c1e"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:13:44+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "005348ce73a6ebbca31b7c9159f5f75c7bbf81ace6f1815dec800ad9558b0a14",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:50:07+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "005348ce73a6ebbca31b7c9159f5f75c7bbf81ace6f1815dec800ad9558b0a14",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": []
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:13:43+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "005348ce73a6ebbca31b7c9159f5f75c7bbf81ace6f1815dec800ad9558b0a14",
+        "errors": [],
+        "warnings": [
+          "priority: 'exam_important' set by judgement; the book's '!' markers are not known for this chapter yet (no scan)"
+        ],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T22:50:07+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:50:07+00:00",
+        "content_sha256": "005348ce73a6ebbca31b7c9159f5f75c7bbf81ace6f1815dec800ad9558b0a14",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

@@ -1,0 +1,165 @@
+{
+  "id": "q-0540",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "medium",
+      "chapter": 12,
+      "section_ids": [
+        "s12-21"
+      ],
+      "topic_ids": [
+        "kallesignaler"
+      ],
+      "learning_objective": "Kjenne de vanlige tilleggene /M, /MM, /AM og /P.",
+      "priority": "exam_important",
+      "context": [
+        "Du kjører radio fra en seilbåt som seiler langs kysten."
+      ],
+      "stem": [
+        "Hvilket tillegg er vanlig å bruke etter kallesignalet?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "/MM"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "/P"
+          ],
+          "feedback": [
+            "/P betyr portabel: stasjonen bæres og drives uten strøm fra nettet. Fra et fartøy på sjøen er det vanlig å bruke /MM."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "/M"
+          ],
+          "feedback": [
+            "/M brukes vanligvis fra bil og andre kjøretøy på land. Fra et fartøy på sjøen er det vanlig å bruke /MM."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "/AM"
+          ],
+          "feedback": [
+            "/AM brukes fra luftfartøy. Fra et fartøy på sjøen bruker du /MM."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Tillegget skilles fra kallesignalet med en skråstrek, som på telefoni uttales «strek». Vanlig praksis er /M fra kjøretøy på land, /MM om bord i fartøy på sjøen, /AM i luftfartøy og /P for en båret, portabel stasjon.",
+        "Dette er innarbeidede konvensjoner. Den norske forskriften krever fullt kallesignal, men sier ikke noe om slike tillegg, så sjekk reglene som gjelder der du sender."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 12,
+        "section_id": "s12-21",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "6d3665a743a40988"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:13:44+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "bf90117804ab73044f73da5220b13414a71bb05164aef39c18193e39cfa613d8",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:39:02+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "630fefaffe64649d2ac2516f864fb60665aa862269be3788795735553abc632a",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:50:16+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "630fefaffe64649d2ac2516f864fb60665aa862269be3788795735553abc632a",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": []
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:13:43+00:00"
+      },
+      "visual": {
+        "template": "code-breakdown",
+        "version": 1,
+        "params": {
+          "parts": [
+            {
+              "text": "LA1XYZ",
+              "label": "Ditt kallesignal"
+            },
+            {
+              "text": "/MM",
+              "label": "Maritim mobil: fra båt",
+              "highlight": true
+            }
+          ]
+        },
+        "after_only": true
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "630fefaffe64649d2ac2516f864fb60665aa862269be3788795735553abc632a",
+        "errors": [],
+        "warnings": [
+          "priority: 'exam_important' set by judgement; the book's '!' markers are not known for this chapter yet (no scan)"
+        ],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T22:50:16+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:50:16+00:00",
+        "content_sha256": "630fefaffe64649d2ac2516f864fb60665aa862269be3788795735553abc632a",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

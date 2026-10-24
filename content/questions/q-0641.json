@@ -1,0 +1,171 @@
+{
+  "id": "q-0641",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "recall",
+      "difficulty": "easy",
+      "chapter": 16,
+      "section_ids": [
+        "s16-08"
+      ],
+      "topic_ids": [
+        "fonetisk-bokstavering"
+      ],
+      "learning_objective": "Bokstavere et kallesignal med det internasjonale fonetiske alfabetet.",
+      "priority": "exam_important",
+      "context": [],
+      "stem": [
+        "Hvordan bokstaveres kallesignalet LB2T med det fonetiske alfabetet radioamatører bruker?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Lima Bravo Two Tango"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Lima Baker Two Tare"
+          ],
+          "feedback": [
+            "Baker og Tare kommer fra et eldre alfabet. I dag brukes Bravo og Tango."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "London Bravo Two Tango"
+          ],
+          "feedback": [
+            "Steder og navn som London brukes ikke. L er Lima."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Lima Bravo Two Tommy"
+          ],
+          "feedback": [
+            "T er Tango i det internasjonale alfabetet."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Radioamatører bruker det engelskspråklige fonetiske alfabetet som ITU anbefaler, og som stort sett er det samme som i luftfarten og NATO: Alfa, Bravo, Charlie … Lima … Tango … Zulu.",
+        "Det brukes både nasjonalt og internasjonalt når kallesignaler og ord som lett misforstås, skal staves. Æ, Ø og Å bokstaveres med norske navn."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 16,
+        "section_id": "s16-08",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "6f5b2a99ded64548",
+          "df15a247010a3bd8"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:08:40+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "d006f708a6db8599fffb4acde46e0b89434f93fd0a0e31cefa7516efc60cfa45",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:51:04+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "f442ea530e72729b0e9fa19980cb5b5ec60848e995ef72fe7e825228450018b3",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:08:39+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "f442ea530e72729b0e9fa19980cb5b5ec60848e995ef72fe7e825228450018b3",
+        "errors": [],
+        "warnings": [
+          "priority: 'exam_important' set by judgement; the book's '!' markers are not known for this chapter yet (no scan)"
+        ],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:51:04+00:00"
+      },
+      "visual": {
+        "template": "code-breakdown",
+        "version": 1,
+        "params": {
+          "parts": [
+            {
+              "text": "L",
+              "label": "Lima"
+            },
+            {
+              "text": "B",
+              "label": "Bravo"
+            },
+            {
+              "text": "2",
+              "label": "Two"
+            },
+            {
+              "text": "T",
+              "label": "Tango"
+            }
+          ]
+        },
+        "after_only": true
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:51:04+00:00",
+        "content_sha256": "f442ea530e72729b0e9fa19980cb5b5ec60848e995ef72fe7e825228450018b3",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

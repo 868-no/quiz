@@ -1,0 +1,244 @@
+{
+  "id": "q-0302",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "calculation",
+      "difficulty": "medium",
+      "chapter": 7,
+      "section_ids": [
+        "s7-04"
+      ],
+      "topic_ids": [
+        "analog-til-digital"
+      ],
+      "learning_objective": "Regne ut størrelsen på et kvantiseringstrinn ut fra måleområdet og antall bit.",
+      "priority": "normal",
+      "context": [
+        [
+          "En ",
+          {
+            "term": "ad-omformer",
+            "text": "A/D-omformer"
+          },
+          " på ",
+          {
+            "q": 4,
+            "u": ""
+          },
+          " bit tar imot spenninger fra ",
+          {
+            "q": -1,
+            "u": "V"
+          },
+          " til ",
+          {
+            "q": 1,
+            "u": "V"
+          },
+          ", og området er delt i like store trinn."
+        ]
+      ],
+      "stem": [
+        "Hvor stort er hvert trinn?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 125,
+              "u": "mV"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 500,
+              "u": "mV"
+            }
+          ],
+          "feedback": [
+            "Her er området delt på antall bit. Det skal deles på antall nivåer, 2⁴ = 16."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 62.5,
+              "u": "mV"
+            }
+          ],
+          "feedback": [
+            "Her er bare halve området, 1 V, delt på 16. Området går fra −1 V til +1 V og er altså 2 V bredt."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 250,
+              "u": "mV"
+            }
+          ],
+          "feedback": [
+            "Dette ville vært trinnet med 3 bit (8 nivåer). Med 4 bit er det 16 nivåer."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        {
+          "steps": [
+            [
+              "Måleområdet: 1 V − (−1 V) = ",
+              {
+                "q": 2,
+                "u": "V"
+              }
+            ],
+            "Antall nivåer: 2⁴ = 16",
+            [
+              "Trinnet: 2 V / 16 = ",
+              {
+                "q": 0.125,
+                "u": "V"
+              },
+              " = ",
+              {
+                "q": 125,
+                "u": "mV"
+              }
+            ]
+          ]
+        },
+        [
+          "Så lenge signalet holder seg innenfor området, blir avrundingsfeilen aldri større enn et halvt trinn, her ",
+          {
+            "q": 62.5,
+            "u": "mV"
+          },
+          "."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 7,
+        "section_id": "s7-04",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "870eda9d68906909"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:09:36+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "4101a86256c26542a99f38126f17704543bf4808195c8422fa44a12713981458",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:48:10+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "0f681115fc0e654171a6522507758c4e5efe03ff51be8c2fc234ba79ca57e5e2",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:09:36+00:00"
+      },
+      "calculation": {
+        "formula": "quantization_step",
+        "inputs": {
+          "U_range": [
+            2,
+            "V"
+          ],
+          "n": [
+            4,
+            ""
+          ]
+        },
+        "answer": [
+          125,
+          "mV"
+        ],
+        "answer_symbol": "ΔU",
+        "sig_figs": 3
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "0f681115fc0e654171a6522507758c4e5efe03ff51be8c2fc234ba79ca57e5e2",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:48:10+00:00"
+      },
+      "visual": {
+        "template": "sampling",
+        "version": 1,
+        "params": {
+          "kind": "quantize",
+          "bits": 4,
+          "range_min_v": -1,
+          "range_max_v": 1,
+          "samples_per_period": 20,
+          "step_label": "symbol"
+        },
+        "params_after": {
+          "step_label": "value",
+          "levels_label": true
+        }
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:48:10+00:00",
+        "content_sha256": "0f681115fc0e654171a6522507758c4e5efe03ff51be8c2fc234ba79ca57e5e2",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

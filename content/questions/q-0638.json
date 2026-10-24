@@ -1,0 +1,196 @@
+{
+  "id": "q-0638",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 16,
+      "section_ids": [
+        "s16-07"
+      ],
+      "topic_ids": [
+        "rst-rapporter"
+      ],
+      "learning_objective": "Vite at én S-enhet er 6 dB, og at S9 på HF svarer til −73 dBm.",
+      "priority": "exam_important",
+      "context": [
+        "Et S-meter på en HF-mottaker er kalibrert etter IARU-anbefalingen. Et signal går fra S9 ned til S7."
+      ],
+      "stem": [
+        "Hvor mye svakere er signalet blitt?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 12,
+              "u": "dB"
+            },
+            ", altså en sekstendedel av effekten."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 2,
+              "u": "dB"
+            },
+            ", altså litt under to tredjedeler av effekten."
+          ],
+          "feedback": [
+            "Hver S-enhet er 6 dB, ikke 1 dB. To S-enheter er 12 dB."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 6,
+              "u": "dB"
+            },
+            ", altså en firedel av effekten."
+          ],
+          "feedback": [
+            "6 dB er én S-enhet. Fra S9 til S7 er det to enheter, altså 12 dB."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 20,
+              "u": "dB"
+            },
+            ", altså en hundredel av effekten."
+          ],
+          "feedback": [
+            "20 dB ville vært mer enn tre S-enheter. To enheter à 6 dB gir 12 dB."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Én S-enhet på ",
+          {
+            "term": "s-meter",
+            "text": "S-meteret"
+          },
+          " utgjør 6 dB, altså halv spenning og en firedel av effekten. To enheter gir 12 dB, eller 4 · 4 = 16 ganger mindre effekt."
+        ],
+        [
+          "På HF svarer S9 til ",
+          {
+            "q": -73,
+            "u": "dBm"
+          },
+          ", som er ",
+          {
+            "q": 50,
+            "u": "µV"
+          },
+          " over ",
+          {
+            "q": 50,
+            "u": "Ω"
+          },
+          ". På VHF er S9 satt til ",
+          {
+            "q": -93,
+            "u": "dBm"
+          },
+          ". Signaler sterkere enn S9 oppgis i dB over S9, for eksempel «59 + 20 dB»."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 16,
+        "section_id": "s16-07",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "ec4dfcdb22f030fd"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:08:40+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "a8937dee6a45ca7fb3e2cbb384af0df3813e8ac904566b2f2069564580624551",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:51:01+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "8e9d3622b6c822bb8351af51328b8228cee07f4d797e8f68438eba2964ac0f27",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": []
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:08:39+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "8e9d3622b6c822bb8351af51328b8228cee07f4d797e8f68438eba2964ac0f27",
+        "errors": [],
+        "warnings": [
+          "priority: 'exam_important' set by judgement; the book's '!' markers are not known for this chapter yet (no scan)"
+        ],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T22:51:01+00:00"
+      },
+      "visual": {
+        "template": "illustration",
+        "version": 1,
+        "params": {
+          "kind": "s_meter",
+          "from_s": 7,
+          "to_s": 9,
+          "db_per_s": 6
+        },
+        "params_after": {
+          "reveal": true
+        }
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:51:01+00:00",
+        "content_sha256": "8e9d3622b6c822bb8351af51328b8228cee07f4d797e8f68438eba2964ac0f27",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

@@ -1,0 +1,152 @@
+{
+  "id": "q-0478",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "hard",
+      "chapter": 11,
+      "section_ids": [
+        "s11-13"
+      ],
+      "topic_ids": [
+        "rf-maling"
+      ],
+      "learning_objective": "Forstå hvordan en mottaker brukes til å sjekke lineariteten til en SSB-sender med to toner.",
+      "priority": "normal",
+      "context": [
+        "Du modulerer SSB-senderen med to like sterke toner med ulik frekvens og lytter på signalet med et smalt CW-filter i mottakeren."
+      ],
+      "stem": [
+        "Hva tyder på at senderen ikke er lineær?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Du hører svake ekstra signaler ved siden av de to."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Du hører nøyaktig to signaler."
+          ],
+          "feedback": [
+            "To rene signaler er det en lineær sender skal gi. Det er ekstra signaler ved siden av som avslører problemer."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "De to signalene er like sterke."
+          ],
+          "feedback": [
+            "Like sterke toner inn skal gi like sterke signaler ut. Det er et godt tegn, ikke et dårlig."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Bærebølgen forsvinner."
+          ],
+          "feedback": [
+            "På SSB skal bærebølgen være undertrykt. Det sier ingenting om lineariteten."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "En lineær SSB-sender gjengir de to tonene som to rene RF-signaler. Er senderen ikke lineær, blandes tonene og gir ",
+          {
+            "term": "intermodulasjon",
+            "text": "intermodulasjonsprodukter"
+          },
+          "."
+        ],
+        "De nærmeste produktene ligger på hver side av de to signalene med samme avstand som mellom tonene. Er de hørbare, er senderen for lite lineær – kanskje overstyrt."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 11,
+        "section_id": "s11-13",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "5a1dd6fd9f159e48"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:11:20+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "3cb3c8e9e9ad7f4623db6b2e46224b5e348b99d66b8421efea2711d7fc54f365",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:49:41+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "3cb3c8e9e9ad7f4623db6b2e46224b5e348b99d66b8421efea2711d7fc54f365",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:11:19+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "3cb3c8e9e9ad7f4623db6b2e46224b5e348b99d66b8421efea2711d7fc54f365",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:49:41+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:49:41+00:00",
+        "content_sha256": "3cb3c8e9e9ad7f4623db6b2e46224b5e348b99d66b8421efea2711d7fc54f365",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

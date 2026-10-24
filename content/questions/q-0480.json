@@ -1,0 +1,176 @@
+{
+  "id": "q-0480",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "hard",
+      "chapter": 11,
+      "section_ids": [
+        "s11-15"
+      ],
+      "topic_ids": [
+        "rf-maling"
+      ],
+      "learning_objective": "Forstå at et 50 Ω dempeledd bare gir riktig demping når det er belastet med 50 Ω.",
+      "priority": "normal",
+      "context": [
+        [
+          "Du kobler et ",
+          {
+            "term": "dempeledd",
+            "text": "dempeledd"
+          },
+          " for 50 Ω-systemer direkte til et oscilloskop der inngangen har ",
+          {
+            "q": 1,
+            "u": "MΩ"
+          },
+          " impedans."
+        ]
+      ],
+      "stem": [
+        "Hva skjer med dempingen?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Den blir feil – opptil 6 dB mindre enn oppgitt – fordi leddet ikke er belastet med 50 Ω; en 50 Ω termineringsmotstand løser det."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Den blir nøyaktig som oppgitt, fordi dempingen bare avhenger av motstandene i leddet."
+          ],
+          "feedback": [
+            "Dempingen gjelder bare når leddet ligger mellom 50 Ω kilde og 50 Ω last. Uten riktig last blir spenningsdelingen en annen."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Signalet blir kortsluttet."
+          ],
+          "feedback": [
+            "Det skjer når en 50 Ω last kobles etter en 10:1-probe med høy impedans. 1 MΩ etter dempeleddet kortslutter ingenting."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Dempingen blir dobbelt så stor som oppgitt."
+          ],
+          "feedback": [
+            "Det er motsatt: med høy impedans på utgangen blir spenningen der høyere, og dempingen blir mindre enn oppgitt."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Et dempeledd er beregnet for å ligge mellom en kilde og en last på ",
+          {
+            "q": 50,
+            "u": "Ω"
+          },
+          ". Effekten som ikke slippes gjennom, blir til varme i leddet."
+        ],
+        [
+          "Med ",
+          {
+            "q": 1,
+            "u": "MΩ"
+          },
+          " på utgangen er leddet nesten ubelastet, og spenningen på utgangen blir høyere enn den skulle – dempingen kan bli opptil 6 dB mindre. Et T-stykke med en ",
+          {
+            "q": 50,
+            "u": "Ω"
+          },
+          " termineringsmotstand ved oscilloskopet gir riktig last."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 11,
+        "section_id": "s11-15",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "3d978d0db2b1222c"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:11:20+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "42ae45586b454733702716db31e5620c132da404a84af071b287fa6ff2c0bf27",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:49:43+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "42ae45586b454733702716db31e5620c132da404a84af071b287fa6ff2c0bf27",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:11:19+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "42ae45586b454733702716db31e5620c132da404a84af071b287fa6ff2c0bf27",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:49:43+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:49:43+00:00",
+        "content_sha256": "42ae45586b454733702716db31e5620c132da404a84af071b287fa6ff2c0bf27",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

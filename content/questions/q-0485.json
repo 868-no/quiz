@@ -1,0 +1,179 @@
+{
+  "id": "q-0485",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "recall",
+      "difficulty": "easy",
+      "chapter": 11,
+      "section_ids": [
+        "s11-18"
+      ],
+      "topic_ids": [
+        "maleinstrumenter"
+      ],
+      "learning_objective": "Vite at et voltmeter kobles parallelt og et amperemeter i serie.",
+      "priority": "exam_important",
+      "context": [],
+      "stem": [
+        [
+          "Hvordan kobler du et ",
+          {
+            "term": "multimeter",
+            "text": "multimeter"
+          },
+          " når du skal måle strømmen gjennom en lyspære og spenningen over den?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "For strøm i serie med pæra, for spenning parallelt med pæra."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "For strøm parallelt med pæra, for spenning i serie med pæra."
+          ],
+          "feedback": [
+            "Det er omvendt. Strømmen må gå gjennom instrumentet, så du må bryte kretsen og sette meteret inn i den. Spenning er en forskjell mellom to punkter og måles over pæra."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Begge i serie med pæra."
+          ],
+          "feedback": [
+            "Et voltmeter i serie ville nesten stoppe strømmen, fordi det har svært høy indre motstand."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Begge parallelt med pæra."
+          ],
+          "feedback": [
+            "Et amperemeter har svært lav motstand. Koblet parallelt med pæra blir det nesten en kortslutning, og instrumentet eller sikringen kan bli ødelagt."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Strøm er det som går gjennom kretsen i et punkt. For å måle den bryter du kretsen og lar strømmen gå gjennom instrumentet – i serie.",
+        "Spenning er forskjellen i potensial mellom to punkter. Da holder du probene på hver side av komponenten – parallelt. Velg alltid måleområde før du måler, og følg polariteten ved likespenning og likestrøm."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 11,
+        "section_id": "s11-18",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "36adffb6da9c0c5a",
+          "a5c1e85fea25c8bb"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:11:20+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "3fbfc9e295d63aca4816a0961c51ae2c503f8566a2f49329bfc81e9f9c72a48f",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:49:47+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "c6033834d406e7d85793075ea0af0ae43decd3521599c725caf00f6f283243a7",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:11:19+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "c6033834d406e7d85793075ea0af0ae43decd3521599c725caf00f6f283243a7",
+        "errors": [],
+        "warnings": [
+          "priority: 'exam_important' set by judgement; the book's '!' markers are not known for this chapter yet (no scan)"
+        ],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:49:47+00:00"
+      },
+      "visual": {
+        "template": "dc-circuit",
+        "version": 1,
+        "after_only": true,
+        "params": {
+          "topology": "series",
+          "source": {
+            "voltage_v": 12
+          },
+          "resistors": [
+            {
+              "ohms": 24,
+              "name_only": true
+            }
+          ],
+          "ammeter": {
+            "branch": "main",
+            "show_reading": true
+          },
+          "voltmeter": {
+            "across": "R1",
+            "show_reading": true
+          }
+        },
+        "caption": "Lyspæra er tegnet som motstanden R1."
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:49:47+00:00",
+        "content_sha256": "c6033834d406e7d85793075ea0af0ae43decd3521599c725caf00f6f283243a7",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

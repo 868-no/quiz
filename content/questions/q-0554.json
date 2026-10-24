@@ -1,0 +1,134 @@
+{
+  "id": "q-0554",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "recall",
+      "difficulty": "easy",
+      "chapter": 12,
+      "section_ids": [
+        "s12-02"
+      ],
+      "topic_ids": [
+        "anrop-kontakt"
+      ],
+      "learning_objective": "Skille halv og full dupleks.",
+      "priority": "normal",
+      "context": [],
+      "stem": [
+        "Hva menes med halv dupleks?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "At bare én kan sende om gangen, og at partene veksler på å sende."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "At begge kan snakke og høre samtidig, som i en telefon."
+          ],
+          "feedback": [
+            "Det er full dupleks, slik telefonen virker. Radio er som regel halv dupleks."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "At man sender med halv effekt for å spare strøm."
+          ],
+          "feedback": [
+            "Dupleks handler om hvem som kan sende når, ikke om effekt."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "At man bare bruker det ene sidebåndet."
+          ],
+          "feedback": [
+            "Det er SSB. Dupleks handler om at man ikke kan sende og høre samtidig."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Ved full dupleks kan begge høre hverandre mens de snakker, som i en telefon. Radio er som regel halv dupleks: kommunikasjonen går én vei om gangen.",
+        "Det er derfor det trengs gode prosedyrer, slik at man ikke mister kontakten eller begge sender samtidig."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 12,
+        "section_id": "s12-02",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "4fb695e1b367a36b"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:13:45+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "22b1f4eda8f081efbd155d2be07002e9b03b4118eb910b9113a01b8439e880d7",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:50:29+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "22b1f4eda8f081efbd155d2be07002e9b03b4118eb910b9113a01b8439e880d7",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": []
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:13:43+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "22b1f4eda8f081efbd155d2be07002e9b03b4118eb910b9113a01b8439e880d7",
+        "errors": [],
+        "warnings": [],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T22:50:29+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:50:29+00:00",
+        "content_sha256": "22b1f4eda8f081efbd155d2be07002e9b03b4118eb910b9113a01b8439e880d7",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

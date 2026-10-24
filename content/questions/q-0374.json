@@ -1,0 +1,174 @@
+{
+  "id": "q-0374",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "hard",
+      "chapter": 8,
+      "section_ids": [
+        "s8-25"
+      ],
+      "topic_ids": [
+        "antennetuner"
+      ],
+      "learning_objective": "Forstå at forbedringer i kabel og antenne teller både ved sending og mottak, i begge ender.",
+      "priority": "normal",
+      "context": [
+        [
+          "To stasjoner har forbindelse med hverandre. Begge bytter til en fødekabel som taper ",
+          {
+            "q": 2,
+            "u": "dB"
+          },
+          " mindre, og begge bytter til en antenne som gir ",
+          {
+            "q": 7,
+            "u": "dB"
+          },
+          " mer i ønsket retning."
+        ]
+      ],
+      "stem": [
+        "Hvor mye bedre blir signalet som den ene tar imot fra den andre?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 18,
+              "u": "dB"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 9,
+              "u": "dB"
+            }
+          ],
+          "feedback": [
+            "Det er forbedringen i én ende. Signalet går gjennom både senderens og mottakerens kabel og antenne, så forbedringene i begge endene teller."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 36,
+              "u": "dB"
+            }
+          ],
+          "feedback": [
+            "Her er alt telt to ganger for mye. Hver stasjon bidrar med 2 + 7 dB på signalveien: én gang som sender og én gang som mottaker."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 4,
+              "u": "dB"
+            }
+          ],
+          "feedback": [
+            "Her er bare kabelbyttet tatt med. Antennebyttet teller også, i begge ender."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        {
+          "steps": [
+            "Hos senderen: 2 dB + 7 dB = 9 dB",
+            "Hos mottakeren: 2 dB + 7 dB = 9 dB",
+            [
+              "Til sammen: ",
+              {
+                "q": 18,
+                "u": "dB"
+              },
+              ", om lag 64 ganger"
+            ]
+          ]
+        },
+        "Å oppnå det samme med en forsterker i den ene enden ville krevd 64 ganger effekten – fra 100 W til 6400 W, langt over det som er lov. Et godt antenneanlegg er ofte det tiltaket som gir mest for pengene."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 8,
+        "section_id": "s8-25",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "0dbe49000797e1fa",
+          "0c0611455816d652"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:13:26+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "7d9df0439888ffe147e80d0f73fe65ef98e6a678c4498e71a5df3a1f1c6a6424",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:48:54+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "7d9df0439888ffe147e80d0f73fe65ef98e6a678c4498e71a5df3a1f1c6a6424",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": []
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:13:24+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "7d9df0439888ffe147e80d0f73fe65ef98e6a678c4498e71a5df3a1f1c6a6424",
+        "errors": [],
+        "warnings": [],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T22:48:54+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:48:54+00:00",
+        "content_sha256": "7d9df0439888ffe147e80d0f73fe65ef98e6a678c4498e71a5df3a1f1c6a6424",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

@@ -1,0 +1,148 @@
+{
+  "id": "q-0419",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 10,
+      "section_ids": [
+        "s10-15"
+      ],
+      "topic_ids": [
+        "emc-kobling"
+      ],
+      "learning_objective": "Forklare at forstyrrelser i lydutstyr oftest skyldes at RF likerettes i en PN-overgang.",
+      "priority": "exam_important",
+      "context": [
+        "Når du sender på SSB eller CW, hører naboen sendingen din i høyttalerne på musikkanlegget, selv om det står på CD."
+      ],
+      "stem": [
+        "Hva skjer vanligvis inne i anlegget?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "RF likerettes i en PN-overgang i en diode eller transistor, slik at modulasjonen blir hørbar."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Anlegget har en innebygd kortbølgemottaker som er stilt inn på frekvensen din."
+          ],
+          "feedback": [
+            "Det skjer selv om anlegget ikke tar imot radio i det hele tatt. Det er utilsiktet likeretting av RF som gjør sendingen hørbar."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Høyttalerne virker som mikrofoner og tar opp lyden fra radiorommet."
+          ],
+          "feedback": [
+            "Det er radiosignalet, ikke lyden fra rommet, som kommer inn. Lange høyttalerledninger kan virke som antenner."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Sendingen din blander seg med CD-signalet i luften før det når anlegget."
+          ],
+          "feedback": [
+            "Lyd fra CD-en går i kabler og kretser, ikke i luften. Blandingen skjer når RF når en ikke-lineær komponent inne i anlegget."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "RF kan fanges opp av høyttalerledninger, strømledninger eller andre kabler, eller direkte inne i apparatet. Når den treffer en PN-overgang i en diode eller transistor, blir den likerettet – akkurat som i en enkel AM-mottaker. Har signalet varierende amplitude, som SSB, AM eller CW, blir modulasjonen hørbar.",
+        "Likerettingen kan også gi en likespenning som forskyver arbeidspunkter eller lurer styrekretser. Løsningen er filtre og ferrittringer der ledningene går inn i apparatet."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 10,
+        "section_id": "s10-15",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "6c6bd9f2dd0f505c",
+          "192176052c1135f1"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:12:39+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "c5f661ce5fd1b3c020d29d3792addf43227fd418750f795a48b6edbe259fdb6f",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:49:13+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "c5f661ce5fd1b3c020d29d3792addf43227fd418750f795a48b6edbe259fdb6f",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:12:38+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "c5f661ce5fd1b3c020d29d3792addf43227fd418750f795a48b6edbe259fdb6f",
+        "errors": [],
+        "warnings": [
+          "priority: 'exam_important' set by judgement; the book's '!' markers are not known for this chapter yet (no scan)"
+        ],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:49:13+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:49:13+00:00",
+        "content_sha256": "c5f661ce5fd1b3c020d29d3792addf43227fd418750f795a48b6edbe259fdb6f",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

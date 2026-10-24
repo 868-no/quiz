@@ -1,0 +1,172 @@
+{
+  "id": "q-0240",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "medium",
+      "chapter": 9,
+      "section_ids": [
+        "s9-03"
+      ],
+      "topic_ids": [
+        "ionosfaeren"
+      ],
+      "learning_objective": "Forklare at D-laget demper lave frekvenser på dagtid og nesten forsvinner om natten.",
+      "priority": "exam_important",
+      "context": [
+        "På 80 m hører du på dagtid bare stasjoner noen hundre kilometer unna. Utpå kvelden og natten hører du stasjoner som ligger over 1500 km unna."
+      ],
+      "stem": [
+        "Hva er hovedgrunnen til forskjellen?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "D-laget, som demper de lave frekvensene på dagtid, forsvinner nesten helt om natten."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "F-lagene forsvinner om dagen og kommer tilbake om natten."
+          ],
+          "feedback": [
+            "Det er motsatt: F-lagene mister ioniseringen langsomt og holder seg hele natten. Om natten slår F1 og F2 seg sammen til ett lag."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Om natten bøyer D-laget signalene tilbake mot jorda."
+          ],
+          "feedback": [
+            "D-laget er for svakt ionisert til å bøye radiobølger tilbake. Det demper dem bare, og om natten er det nesten borte."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Stasjonene sender med høyere effekt om natten."
+          ],
+          "feedback": [
+            [
+              "Effekten er den samme. Det er ",
+              {
+                "term": "ionosfaere",
+                "text": "ionosfæren"
+              },
+              " som endrer seg mellom dag og natt."
+            ]
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "D-laget er det laveste laget i ",
+          {
+            "term": "ionosfaere",
+            "text": "ionosfæren"
+          },
+          ", rundt 70–80 km over bakken. Det er for svakt ionisert til å sende bølgene tilbake, men det tar opp energi fra dem – mest på lave frekvenser og mest når sola står på."
+        ],
+        "På dagtid må et signal på 80 m gjennom D-laget både på vei opp og på vei ned, og mye blir borte. Om natten er D-laget så å si borte, og signalet når opp til F-laget og ned igjen med lite tap."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 9,
+        "section_id": "s9-03",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "c8732a7858d7f0d7",
+          "13f96904df6d3748"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:14:10+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "aba6550f235bf90cd6a740ae6c44365e043d1aedf30390b51bb0965759d9ed89",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:47:51+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "18e06ce5635c27a89d0a29ac935d4ba14e1452fadf9e000ba4c7cd17c818250c",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:04:28+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "18e06ce5635c27a89d0a29ac935d4ba14e1452fadf9e000ba4c7cd17c818250c",
+        "errors": [],
+        "warnings": [
+          "priority: 'exam_important' set by judgement; the book's '!' markers are not known for this chapter yet (no scan)"
+        ],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:47:51+00:00"
+      },
+      "visual": {
+        "template": "propagation",
+        "version": 1,
+        "params": {
+          "kind": "layers"
+        },
+        "params_after": {
+          "compare": true
+        }
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:47:51+00:00",
+        "content_sha256": "18e06ce5635c27a89d0a29ac935d4ba14e1452fadf9e000ba4c7cd17c818250c",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

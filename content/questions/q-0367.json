@@ -1,0 +1,180 @@
+{
+  "id": "q-0367",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "hard",
+      "chapter": 8,
+      "section_ids": [
+        "s8-19"
+      ],
+      "topic_ids": [
+        "hf-antenner"
+      ],
+      "learning_objective": "Forklare hvordan bølgefeller lar en dipol virke på flere bånd.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En dipol for 40 m og 20 m har en ",
+          {
+            "term": "bolgefelle",
+            "text": "bølgefelle"
+          },
+          " i hver halvdel, avstemt til ",
+          {
+            "q": 14,
+            "u": "MHz"
+          },
+          "."
+        ]
+      ],
+      "stem": [
+        [
+          "Hva gjør bølgefellene når du sender på ",
+          {
+            "q": 14,
+            "u": "MHz"
+          },
+          "?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "De har svært høy impedans og skiller av den ytre delen, så antennen virker som en dipol for 20 m."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "De kortslutter antennen til jord."
+          ],
+          "feedback": [
+            "En parallellkrets i resonans har høy impedans, ikke lav. Den sperrer i stedet for å kortslutte."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "De virker som spoler som forlenger antennen elektrisk."
+          ],
+          "feedback": [
+            "Det skjer på 7 MHz, under resonansfrekvensen. Da er fellene induktive, og hele antennen blir en halvbølgedipol for 40 m."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Ingenting – bølgefeller virker bare ved mottak."
+          ],
+          "feedback": [
+            "Bølgefellene virker likt ved sending og mottak. De bestemmer hvor stor del av antennen som er aktiv."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "En bølgefelle er en spole og en kondensator i parallell, avstemt til ett bånd. På resonansfrekvensen har den svært høy impedans og virker som en isolator, så antennen slutter ved fellene.",
+        "På lavere frekvenser oppfører fellene seg som spoler og forlenger antennen elektrisk. Dermed blir hele antennen en halvbølgedipol for det lavere båndet, og den er kortere enn en vanlig dipol for det båndet."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 8,
+        "section_id": "s8-19",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "cf2e559a7c5ea90b",
+          "ac40d119a9f4477f"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:13:26+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "761c8ae90f1a23ed54a79a4eb673983413cfa22b1be066e60c322d87d20e6680",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:48:48+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "6dcaeafb8fa724870529b2bc397aea77fb28e0d40bf91aa72cc7f15d2a71ae17",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:13:24+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "6dcaeafb8fa724870529b2bc397aea77fb28e0d40bf91aa72cc7f15d2a71ae17",
+        "errors": [],
+        "warnings": [
+          "priority: 'exam_important' set by judgement; the book's '!' markers are not known for this chapter yet (no scan)"
+        ],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:48:48+00:00"
+      },
+      "visual": {
+        "template": "antenna",
+        "version": 1,
+        "params": {
+          "kind": "trap_dipole",
+          "trap_label": "14 MHz",
+          "outer_label": "hele antennen: 7 MHz"
+        },
+        "params_after": {
+          "active": "inner",
+          "inner_label": "virker på 14 MHz"
+        }
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:48:48+00:00",
+        "content_sha256": "6dcaeafb8fa724870529b2bc397aea77fb28e0d40bf91aa72cc7f15d2a71ae17",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

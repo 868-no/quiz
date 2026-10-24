@@ -1,0 +1,134 @@
+{
+  "id": "q-0548",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 12,
+      "section_ids": [
+        "s12-23"
+      ],
+      "topic_ids": [
+        "regelverk-organisasjoner"
+      ],
+      "learning_objective": "Vite hva IARUs overvåkningssystem gjør.",
+      "priority": "normal",
+      "context": [],
+      "stem": [
+        "Hva gjør IARUs overvåkningssystem (IARU Monitoring System)?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Sporer opp sendinger fra andre tjenester som ulovlig bruker amatørbåndene."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Overvåker radioamatører og gir bøter for dårlig oppførsel."
+          ],
+          "feedback": [
+            "IARU har ingen slik myndighet. Tilsyn med radioamatører er en oppgave for de nasjonale myndighetene."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Måler solaktiviteten og varsler om radioforholdene."
+          ],
+          "feedback": [
+            "Det gjør andre. IARUs overvåkning gjelder uvedkommende sendinger i amatørbåndene."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Kontrollerer at alle radioamatører har gyldig lisens."
+          ],
+          "feedback": [
+            "Lisenser er myndighetenes ansvar. Overvåkningssystemet ser etter inntrengere fra andre tjenester."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Frivillige rundt om i verden tar opp sendinger fra andre tjenester som ikke hører hjemme i amatørbåndene, og prøver å finne ut hvilket land de kommer fra.",
+        "Myndighetene i landet blir så gjort oppmerksomme på forstyrrelsene, og det har ofte ført til at ulovlige sendinger har stanset."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 12,
+        "section_id": "s12-23",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "cb2638234c7efc73"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:13:45+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "29433e8d52d678cb0f1cd83b491d555a7ca385528e6af2f48a9e334390a8b2ab",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:50:23+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "29433e8d52d678cb0f1cd83b491d555a7ca385528e6af2f48a9e334390a8b2ab",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": []
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:13:43+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "29433e8d52d678cb0f1cd83b491d555a7ca385528e6af2f48a9e334390a8b2ab",
+        "errors": [],
+        "warnings": [],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T22:50:23+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:50:23+00:00",
+        "content_sha256": "29433e8d52d678cb0f1cd83b491d555a7ca385528e6af2f48a9e334390a8b2ab",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

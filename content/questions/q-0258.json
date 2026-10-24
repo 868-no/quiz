@@ -1,0 +1,162 @@
+{
+  "id": "q-0258",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 9,
+      "section_ids": [
+        "s9-07"
+      ],
+      "topic_ids": [
+        "muf-luf",
+        "ionosfaeren"
+      ],
+      "learning_objective": "Forstå at 10 m-båndet ofte er stengt for langdistanse når solaktiviteten er lav fordi MUF er for lav.",
+      "priority": "normal",
+      "context": [],
+      "stem": [
+        "Hvorfor gir 10 m-båndet sjelden langdistanseforbindelser når solflekktallet er lavt?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "MUF ligger da som regel under 28 MHz, så ionosfæren sender ikke signalene tilbake."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "D-laget demper 10 m kraftig når solflekktallet er lavt."
+          ],
+          "feedback": [
+            "D-laget demper mest på lave frekvenser og når sola gir sterk stråling. Når solaktiviteten er lav, er problemet at ioniseringen er for svak til å sende 10 m tilbake."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Jordbølgen tar over og stjeler effekten."
+          ],
+          "feedback": [
+            "Jordbølgen er viktig under om lag 2 MHz og har ingenting med dette å gjøre."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Båndet er da stengt ved lov for å beskytte andre tjenester."
+          ],
+          "feedback": [
+            "Båndet er åpent for amatører hele tiden. Det er ionosfæren som ikke sender signalene tilbake."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Med få solflekker er ioniseringen svakere og MUF lavere. Når MUF ligger under 28 MHz, går signaler på 10 m rett gjennom ionosfæren.",
+        "På toppen av solflekksyklusen, når MUF er høy, kan 10 m gi svært sterke signaler fra stasjoner tusenvis av kilometer unna, selv med lav effekt og enkle antenner."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 9,
+        "section_id": "s9-07",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "1de217ac868e9535",
+          "13f96904df6d3748"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:14:11+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "03bf36eba86b1308baff9e2da8283a487654f09e9ea73cfbba1e371a823b9668",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:48:08+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "c4e0b888ae0593a7aacd2434bbfb6a263aac37ae3ab9746ae2c0458f7144ec5e",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:04:28+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "c4e0b888ae0593a7aacd2434bbfb6a263aac37ae3ab9746ae2c0458f7144ec5e",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:48:08+00:00"
+      },
+      "visual": {
+        "template": "propagation",
+        "version": 1,
+        "params": {
+          "kind": "sky_wave",
+          "f_mhz": 28,
+          "fc_mhz": 4,
+          "angles": [
+            10,
+            20,
+            40,
+            70
+          ],
+          "ground_wave_km": 0
+        },
+        "after_only": true
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:48:08+00:00",
+        "content_sha256": "c4e0b888ae0593a7aacd2434bbfb6a263aac37ae3ab9746ae2c0458f7144ec5e",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

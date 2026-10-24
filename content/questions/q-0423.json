@@ -1,0 +1,174 @@
+{
+  "id": "q-0423",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "hard",
+      "chapter": 10,
+      "section_ids": [
+        "s10-16"
+      ],
+      "topic_ids": [
+        "emc-filtre"
+      ],
+      "learning_objective": "Forstå hvordan en kvartbølge koaksialstubb med åpen ende virker som båndstoppfilter.",
+      "priority": "normal",
+      "context": [
+        [
+          "En bit koaksialkabel, kuttet til en kvart bølgelengde på ",
+          {
+            "q": 145,
+            "u": "MHz"
+          },
+          " med hensyn til hastighetsfaktoren, kobles parallelt med antenneinngangen på en FM-radio. Den andre enden av kabelbiten står åpen."
+        ]
+      ],
+      "stem": [
+        "Hva gjør kabelbiten?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Den virker som en kortslutning på ",
+            {
+              "q": 145,
+              "u": "MHz"
+            },
+            " og demper signaler fra en 2 m-sender kraftig."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Den slipper bare gjennom ",
+            {
+              "q": 145,
+              "u": "MHz"
+            },
+            " og demper FM-kringkastingen."
+          ],
+          "feedback": [
+            "En åpen kvartbølgestubb gjør det motsatte: den kortslutter frekvensen den er kuttet for, og påvirker kringkastingsbåndet lite."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Ingenting, fordi kabelen er åpen i enden og ikke kobler til noe."
+          ],
+          "feedback": [
+            "Den åpne enden blir transformert gjennom kvartbølgen og ser ut som en kortslutning i den andre enden – men bare på frekvensen kabelen er kuttet for."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Den forsterker signalet på ",
+            {
+              "q": 145,
+              "u": "MHz"
+            },
+            " fordi kabelen er i resonans."
+          ],
+          "feedback": [
+            "En kabelbit kan ikke forsterke. I resonans virker den som en kortslutning der den er koblet til."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "En kvart bølgelengde kabel snur impedansen: åpen i den ene enden blir kortsluttet i den andre. Stubben kortslutter dermed signalveien på frekvensen der den er λ/4 lang, og danner et smalt båndstoppfilter – en ",
+          {
+            "term": "koaksialfelle",
+            "text": "koaksialfelle"
+          },
+          "."
+        ],
+        "Den virker også på oddetalls multipler av kvartbølgen, som 3/4 λ. Husk hastighetsfaktoren når kabelen kuttes; den fysiske lengden blir kortere enn kvartbølgen i fritt rom."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 10,
+        "section_id": "s10-16",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "3b0058d850a40c5c"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:12:39+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "72eb417a33bd305be8f56ea3df0fb6ddf3f8b27b72d5ad96b8e90bc917286d19",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:49:16+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "72eb417a33bd305be8f56ea3df0fb6ddf3f8b27b72d5ad96b8e90bc917286d19",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:12:38+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "72eb417a33bd305be8f56ea3df0fb6ddf3f8b27b72d5ad96b8e90bc917286d19",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:49:16+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:49:16+00:00",
+        "content_sha256": "72eb417a33bd305be8f56ea3df0fb6ddf3f8b27b72d5ad96b8e90bc917286d19",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

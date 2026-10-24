@@ -1,0 +1,161 @@
+{
+  "id": "q-0245",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 9,
+      "section_ids": [
+        "s9-04"
+      ],
+      "topic_ids": [
+        "muf-luf"
+      ],
+      "learning_objective": "Forstå at MUF blir høyere på lengre strekninger fordi bølgen treffer ionosfæren med flatere vinkel.",
+      "priority": "normal",
+      "context": [],
+      "stem": [
+        [
+          "Hvordan endrer ",
+          {
+            "term": "muf",
+            "text": "MUF"
+          },
+          " seg når strekningen blir lengre, med samme ionosfære?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Den blir høyere, fordi bølgen treffer laget med flatere vinkel og trenger mindre avbøying."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Den blir lavere, fordi bølgen må gå lenger gjennom ionosfæren."
+          ],
+          "feedback": [
+            "En lang strekning betyr at bølgen treffer ionosfæren med flatere vinkel. Da trengs mindre avbøying, så høyere frekvenser kommer tilbake."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Den er den samme; MUF bestemmes bare av tiden på døgnet."
+          ],
+          "feedback": [
+            "Tiden på døgnet påvirker ioniseringen og dermed MUF, men vinkelen teller også. Med samme ionosfære er MUF høyere på en lang strekning enn på en kort."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Den blir lavere, fordi jordbølgen tar over på lange strekninger."
+          ],
+          "feedback": [
+            "Jordbølgen når ikke langt, særlig ikke over land. På lange strekninger er det ionosfærebølgen som gjelder."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Jo høyere frekvensen er, desto kraftigere ionisering trengs for å bøye bølgen tilbake. En bølge som treffer laget bratt, må bøyes mye. En bølge som kommer inn med flat vinkel – slik den gjør på en lang strekning – trenger mindre avbøying.",
+        "Derfor er det en øvre grense for frekvensen som kommer tilbake, og den grensen blir lavere jo nærmere senderen bølgen skal ned. MUF er høyere på lange strekninger enn på korte."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 9,
+        "section_id": "s9-04",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "6032a4181de9b75a"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:14:10+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "b50fafbe8ee61e14003b6e73f8de99fb948e872b5312d62d21c7f1c982ca042f",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:47:56+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "be8cefad62e35eb49f906f0c2d7051cbba396ba77c6b80d537f3c1a75a539a63",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:04:28+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "be8cefad62e35eb49f906f0c2d7051cbba396ba77c6b80d537f3c1a75a539a63",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:47:56+00:00"
+      },
+      "visual": {
+        "template": "propagation",
+        "version": 1,
+        "params": {
+          "kind": "sky_wave",
+          "f_mhz": 14,
+          "fc_mhz": 7,
+          "ground_wave_km": 0
+        },
+        "after_only": true
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:47:56+00:00",
+        "content_sha256": "be8cefad62e35eb49f906f0c2d7051cbba396ba77c6b80d537f3c1a75a539a63",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

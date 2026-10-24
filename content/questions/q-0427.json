@@ -1,0 +1,136 @@
+{
+  "id": "q-0427",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 10,
+      "section_ids": [
+        "s10-20"
+      ],
+      "topic_ids": [
+        "emc-klage",
+        "emc-regler"
+      ],
+      "learning_objective": "Kjenne virkemidlene Nkom har overfor en radioamatør som ikke følger pålegg.",
+      "priority": "normal",
+      "context": [],
+      "stem": [
+        "Hva kan Nkom gjøre dersom en radioamatør ikke følger pålegg om å rette opp forstyrrelser?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Blant annet ilegge tvangsmulkt, stenge ned utstyret og trekke tilbake lisensen."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Ingenting; Nkom kan bare gi råd."
+          ],
+          "feedback": [
+            "Nkom prøver helst å få partene til å løse saken selv, men har et helt sanksjonsregister etter ekomloven."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Bare bøtelegge naboen som eier det forstyrrede utstyret."
+          ],
+          "feedback": [
+            "Sanksjonene kan rettes mot den som forårsaker forstyrrelsen. Er feilen hos naboens utstyr, får eieren beskjed om at det ikke er immunt nok."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Beslaglegge stasjonen allerede ved første klage."
+          ],
+          "feedback": [
+            "Nkom tar normalt en mild tilnærming og ber partene prøve selv først. Strenge tiltak kommer først hvis pålegg ikke følges."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Nkom starter vanligvis mildt: partene får noen uker på å løse saken, og Nkom kan komme på gratis inspeksjon og foreslå tiltak. Viser du vilje, holdes saken uformell.",
+        "Følges ikke pålegg, kan Nkom etter ekomloven bruke tvangsmulkt, stenge ned utstyr, eventuelt med hjelp fra politiet, og trekke tilbake tillatelser. Lisensen kan trekkes tilbake når amatøren har handlet i strid med radioamatørforskriften."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 10,
+        "section_id": "s10-20",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "ffb0756eeab07457",
+          "4ffd8126b8485150"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:12:39+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "81daf7fe72da40a758fc431b75a6f43f36ce59a0b3d1386d00ff301c67997d76",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:49:20+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "81daf7fe72da40a758fc431b75a6f43f36ce59a0b3d1386d00ff301c67997d76",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": []
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:12:38+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "81daf7fe72da40a758fc431b75a6f43f36ce59a0b3d1386d00ff301c67997d76",
+        "errors": [],
+        "warnings": [],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T22:49:20+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:49:20+00:00",
+        "content_sha256": "81daf7fe72da40a758fc431b75a6f43f36ce59a0b3d1386d00ff301c67997d76",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

@@ -1,0 +1,167 @@
+{
+  "id": "q-0243",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "recall",
+      "difficulty": "easy",
+      "chapter": 9,
+      "section_ids": [
+        "s9-03"
+      ],
+      "topic_ids": [
+        "ionosfaeren"
+      ],
+      "learning_objective": "Vite omtrent hvor langt ett hopp via F2-laget når.",
+      "priority": "normal",
+      "context": [],
+      "stem": [
+        "Omtrent hvor langt kan et signal nå med ett hopp via F2-laget?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Rundt ",
+            {
+              "q": 4000,
+              "u": "km"
+            },
+            "."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Rundt ",
+            {
+              "q": 100,
+              "u": "km"
+            },
+            "."
+          ],
+          "feedback": [
+            "Rundt 100 km er typisk rekkevidde for jordbølgen over land. F2-laget ligger 300–400 km opp og gir mye lengre hopp."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Rundt ",
+            {
+              "q": 400,
+              "u": "km"
+            },
+            "."
+          ],
+          "feedback": [
+            "400 km er omtrent høyden til F2-laget, ikke lengden på hoppet. Bølgen går skrått opp og skrått ned igjen, så hoppet blir mye lengre."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Rundt ",
+            {
+              "q": 40000,
+              "u": "km"
+            },
+            ", altså jorda rundt i ett hopp."
+          ],
+          "feedback": [
+            "Jordkrumningen begrenser hvor langt ett hopp kan nå. For å nå hele verden trengs flere hopp, der signalet sendes tilbake fra bakken og opp igjen."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "F2-laget ligger 300–400 km over bakken og gir de fleste langdistanseforbindelsene. Ett hopp kan nå rundt 4000 km, og med flere hopp – ned til bakken, opp igjen og ned – kan signalet nå over hele verden.",
+        "F-lagene holder seg dessuten hele natten, fordi den tynne lufta der oppe mister ioniseringen langsomt."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 9,
+        "section_id": "s9-03",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "a395cbd7c12ef08c"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:14:10+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "0d9caecd363d1e9df209e9bef96ee4eca7a4d5bbfe4411daab04415ed655a412",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:47:54+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "e1e5b279187303e0efd463ca58cb06ed8c8b34be10f6fd5bba3c566ace1088b7",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": []
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:04:28+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "e1e5b279187303e0efd463ca58cb06ed8c8b34be10f6fd5bba3c566ace1088b7",
+        "errors": [],
+        "warnings": [],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T22:47:54+00:00"
+      },
+      "visual": {
+        "template": "propagation",
+        "version": 1,
+        "params": {
+          "kind": "hops",
+          "layer": "F2",
+          "layer_km": 350,
+          "elevation_deg": 10
+        },
+        "params_after": {
+          "show_distance": true
+        }
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:47:54+00:00",
+        "content_sha256": "e1e5b279187303e0efd463ca58cb06ed8c8b34be10f6fd5bba3c566ace1088b7",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

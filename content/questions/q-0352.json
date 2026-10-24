@@ -1,0 +1,201 @@
+{
+  "id": "q-0352",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "calculation",
+      "difficulty": "medium",
+      "chapter": 8,
+      "section_ids": [
+        "s8-07"
+      ],
+      "topic_ids": [
+        "fodekabler"
+      ],
+      "learning_objective": "Regne ut hvor mye effekt som når antennen gjennom en kabel med tap oppgitt i dB.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En sender gir ",
+          {
+            "q": 100,
+            "u": "W"
+          },
+          " inn i en lang, tynn koaksialkabel til en antenne for 2 m. Kabelen taper ",
+          {
+            "q": 6,
+            "u": "dB"
+          },
+          " på denne frekvensen."
+        ]
+      ],
+      "stem": [
+        "Omtrent hvor stor effekt når antennen?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 25,
+              "u": "W"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 50,
+              "u": "W"
+            }
+          ],
+          "feedback": [
+            "En halvering er 3 dB. 6 dB er to halveringer, altså en firedel."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 94,
+              "u": "W"
+            }
+          ],
+          "feedback": [
+            "Her er 6 dB tolket som 6 %. Desibel er et logaritmisk mål: 6 dB er en faktor på om lag 4."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 75,
+              "u": "W"
+            }
+          ],
+          "feedback": [
+            "Her er tre firedeler beholdt. Det er motsatt: 6 dB tap betyr at bare om lag en firedel kommer fram."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        {
+          "steps": [
+            "6 dB er to halveringer på 3 dB hver",
+            [
+              "100 W → 50 W → ",
+              {
+                "q": 25,
+                "u": "W"
+              }
+            ]
+          ]
+        },
+        "Tapet i kabel øker både med lengden og med frekvensen. En kabel som er grei på 80 m, kan tape det meste av effekten på 2 m – og det samme tapet rammer signalene du tar imot. På høye frekvenser lønner det seg derfor med god kabel."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 8,
+        "section_id": "s8-07",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "9c3e48403abaf43a"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:13:25+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "6cf23ebb2a36f7b1849d3ed76b19bec84a993c269ab165a58c6986f8e42c8145",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:48:34+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "6cf23ebb2a36f7b1849d3ed76b19bec84a993c269ab165a58c6986f8e42c8145",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:13:24+00:00"
+      },
+      "calculation": {
+        "formula": "power_after_loss",
+        "inputs": {
+          "P": [
+            100,
+            "W"
+          ],
+          "L": [
+            6,
+            "dB"
+          ]
+        },
+        "answer": [
+          25,
+          "W"
+        ],
+        "answer_symbol": "P",
+        "sig_figs": 2
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "6cf23ebb2a36f7b1849d3ed76b19bec84a993c269ab165a58c6986f8e42c8145",
+        "errors": [],
+        "warnings": [
+          "priority: 'exam_important' set by judgement; the book's '!' markers are not known for this chapter yet (no scan)"
+        ],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:48:34+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:48:34+00:00",
+        "content_sha256": "6cf23ebb2a36f7b1849d3ed76b19bec84a993c269ab165a58c6986f8e42c8145",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

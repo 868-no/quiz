@@ -1,0 +1,179 @@
+{
+  "id": "q-0357",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 8,
+      "section_ids": [
+        "s8-11"
+      ],
+      "topic_ids": [
+        "dipol-vertikal"
+      ],
+      "learning_objective": "Kjenne fordelingen av strøm og spenning langs en halvbølgedipol.",
+      "priority": "exam_important",
+      "context": [],
+      "stem": [
+        [
+          "Hvordan er strøm og spenning fordelt langs en ",
+          {
+            "term": "dipol",
+            "text": "halvbølgedipol"
+          },
+          "?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Strømmen er størst på midten og null i endene; spenningen er størst i endene."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Spenningen er størst på midten og null i endene; strømmen er størst i endene."
+          ],
+          "feedback": [
+            "Det er omvendt. Ytterst i en åpen tråd kan ikke strømmen gå noe sted, så den er null der, mens spenningen er størst."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Både strøm og spenning er like store langs hele antennen."
+          ],
+          "feedback": [
+            "Langs en halvbølgeantenne varierer begge. Strømmen har et maksimum på midten, spenningen maksimum i endene."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Strømmen er størst i den enden fødekabelen er koblet til."
+          ],
+          "feedback": [
+            "Fordelingen er den samme uansett hvor en halvbølgeantenne mates. Fødepunktet bestemmer bare hvilken impedans kabelen ser."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "I endene av tråden har strømmen ingen vei videre, så den er null der, mens spenningen er størst. På midten er det motsatt: strømmen svinger med størst utslag og spenningen er lavest.",
+        [
+          "Mater man dipolen på midten, møter fødekabelen lav spenning og høy strøm – lav impedans, i teorien ",
+          {
+            "q": 73,
+            "u": "Ω"
+          },
+          ". Mater man den i enden, er impedansen svært høy."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 8,
+        "section_id": "s8-11",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "acc9a2bd416e618d",
+          "37de649b2e10dfdd"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:13:26+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "f6cb82931fce012f86267532636aa7c69a5828fc376385a9656ac77235ba4d32",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:48:39+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "198453a68a44adaf12cb159602015770addb0cb43070ea83bc3259918c3fbad8",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:13:24+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "198453a68a44adaf12cb159602015770addb0cb43070ea83bc3259918c3fbad8",
+        "errors": [],
+        "warnings": [
+          "priority: 'exam_important' set by judgement; the book's '!' markers are not known for this chapter yet (no scan)"
+        ],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:48:39+00:00"
+      },
+      "visual": {
+        "template": "antenna",
+        "version": 1,
+        "params": {
+          "kind": "dipole"
+        },
+        "params_after": {
+          "show_current": true,
+          "show_voltage": true
+        },
+        "animation": {
+          "param": "phase_deg",
+          "from": 0,
+          "to": 360,
+          "mode": "loop",
+          "phase": "after",
+          "text": "Animasjonen viser strøm og spenning gjennom én periode: strømmen svinger mest på midten, spenningen mest i endene, og de når toppen hver sin gang."
+        }
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:48:39+00:00",
+        "content_sha256": "198453a68a44adaf12cb159602015770addb0cb43070ea83bc3259918c3fbad8",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

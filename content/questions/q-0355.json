@@ -1,0 +1,136 @@
+{
+  "id": "q-0355",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "medium",
+      "chapter": 8,
+      "section_ids": [
+        "s8-09"
+      ],
+      "topic_ids": [
+        "fodekabler"
+      ],
+      "learning_objective": "Forstå at en fødekabel tåler langt mindre effekt når SWR er høyt.",
+      "priority": "normal",
+      "context": [
+        "Du har kjøpt en kraftig sluttforsterker og vil bruke den på en ny antenne som ikke er målt ennå."
+      ],
+      "stem": [
+        "Hvorfor bør du sjekke SWR med lav effekt før du sender med full effekt?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Ved høyt SWR tåler kabelen mye mindre effekt, og den kan bli ødelagt av overslag."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Ved høyt SWR tåler kabelen mer effekt, men det er god skikk å sjekke."
+          ],
+          "feedback": [
+            "Det er motsatt: stående bølger gir topper i spenning og strøm, og effektgrensen faller kraftig."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Fordi SWR-meteret bare virker ved lav effekt."
+          ],
+          "feedback": [
+            "Et SWR-meter kan vise ved mange effektnivåer. Grunnen er at både kabel og sender kan skades om tilpasningen er dårlig."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Fordi høyt SWR gjør at kabelen får høyere hastighetsfaktor."
+          ],
+          "feedback": [
+            "Hastighetsfaktoren er gitt av kabelens konstruksjon og påvirkes ikke av SWR."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Effektgrensene produsentene oppgir, gjelder uten stående bølger. Med høyt SWR får kabelen topper i spenning og strøm, og den tåler langt mindre – en produsent oppgir for eksempel at grensen faller til en tidel ved SWR 10.",
+        "Feil i antenne, balun eller fødepunkt kan gi slike verdier. Sjekk derfor at anlegget er godt tilpasset før du kobler på høy effekt. Tykke kabler tåler mer enn tynne, og effektgrensen er lavere på VHF og UHF enn på HF."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 8,
+        "section_id": "s8-09",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "64284e5d7e24a372"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:13:25+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "f6648ab15f1e0a401ba6f405e73f00710690f424776b287afa077ae2acee74d3",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:48:37+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "f6648ab15f1e0a401ba6f405e73f00710690f424776b287afa077ae2acee74d3",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": []
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:13:24+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "f6648ab15f1e0a401ba6f405e73f00710690f424776b287afa077ae2acee74d3",
+        "errors": [],
+        "warnings": [],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T22:48:37+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:48:37+00:00",
+        "content_sha256": "f6648ab15f1e0a401ba6f405e73f00710690f424776b287afa077ae2acee74d3",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

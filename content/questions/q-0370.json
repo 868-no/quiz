@@ -1,0 +1,169 @@
+{
+  "id": "q-0370",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 8,
+      "section_ids": [
+        "s8-22"
+      ],
+      "topic_ids": [
+        "hf-antenner"
+      ],
+      "learning_objective": "Vite at en lastspole gir best virkningsgrad når den sitter langt fra fødepunktet.",
+      "priority": "normal",
+      "context": [
+        [
+          "En vertikal antenne for 80 m på en båt er mye kortere enn en kvart bølgelengde og skal forlenges med en ",
+          {
+            "term": "lastspole",
+            "text": "lastspole"
+          },
+          "."
+        ]
+      ],
+      "stem": [
+        "Hvor gir lastspolen best virkningsgrad?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Langt ute på antennen, unna den delen som fører mest strøm."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Helt nede ved fødepunktet."
+          ],
+          "feedback": [
+            "Der kan den også tilpasse antennen, men da blir strømmen i selve den strålende delen lavere. Lenger ut gir mer stråling."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Inne i radioen, før fødekabelen."
+          ],
+          "feedback": [
+            "Da blir spolen en del av tilpasningen, men den forlenger ikke antennen. Strømfordelingen i den korte antennen blir den samme."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Hvor som helst – plasseringen betyr ingenting."
+          ],
+          "feedback": [
+            "Plasseringen påvirker strømfordelingen. Jo lenger ut spolen sitter, desto mer av antennen fører høy strøm."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "En antenne som er kortere enn en kvart bølgelengde, er kapasitiv i fødepunktet, og strømmen blir lav – virkningsgraden faller. En lastspole opphever den kapasitive reaktansen og forlenger antennen elektrisk.",
+        "Antennen stråler best når høy strøm går over en stor del av den. Sitter spolen langt ute, går den høye strømmen i hele delen under den. Teknikken er vanlig på antenner for bil og båt."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 8,
+        "section_id": "s8-22",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "ce068c3d42694161"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:13:26+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "a6d445253f156cc8b4eb39ad70e6f59c0358c918a1aff879e00fdf23e5bad10b",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:48:50+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "3a406a1df4d282b2332cea53fbd4deab7f455b961112c65654533a13c8fef486",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:13:24+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "3a406a1df4d282b2332cea53fbd4deab7f455b961112c65654533a13c8fef486",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:48:50+00:00"
+      },
+      "visual": {
+        "template": "antenna",
+        "version": 1,
+        "params": {
+          "kind": "loaded_vertical",
+          "coil_position": 0.6,
+          "show_current": true
+        },
+        "after_only": true,
+        "animation": {
+          "param": "coil_position",
+          "from": 0.05,
+          "to": 0.7,
+          "phase": "after",
+          "text": "Animasjonen flytter spolen oppover: jo høyere den sitter, desto større del av antennen fører høy strøm."
+        }
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:48:50+00:00",
+        "content_sha256": "3a406a1df4d282b2332cea53fbd4deab7f455b961112c65654533a13c8fef486",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

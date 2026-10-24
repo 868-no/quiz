@@ -1,0 +1,170 @@
+{
+  "id": "q-0424",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "hard",
+      "chapter": 10,
+      "section_ids": [
+        "s10-17",
+        "s10-18"
+      ],
+      "topic_ids": [
+        "emc-filtre"
+      ],
+      "learning_objective": "Forklare fellesmodus og differansemodus, og hvorfor en ferrittring på en kabel demper forstyrrelser men ikke det ønskede signalet.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "Du vikler en nettledning med to ledere noen ganger rundt en ",
+          {
+            "term": "ferrittring",
+            "text": "ferrittring"
+          },
+          "."
+        ]
+      ],
+      "stem": [
+        "Hvorfor demper ringen forstyrrelser, men ikke nettstrømmen?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Nettstrømmen går motsatt vei i lederne, mens forstyrrelsen går samme vei i begge."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Ferritten slipper gjennom 50 Hz men stopper alle høyere frekvenser uansett retning."
+          ],
+          "feedback": [
+            "Strøm som går samme vei i begge lederne, møter induktansen, men nettstrømmen går motsatt vei i de to og ser nesten ingen induktans. Det er retningen som avgjør."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Forstyrrelsen går bare i jordlederen, og ringen virker bare på den."
+          ],
+          "feedback": [
+            "Forstyrrelsen går gjerne i alle lederne samtidig, i samme retning. Ringen virker på alt som går samme vei."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Ferritten absorberer elektroner, men bare når spenningen er høy."
+          ],
+          "feedback": [
+            "Ferritten virker magnetisk ved å gi induktans, ikke ved å ta opp elektroner."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Nettstrømmen går i ",
+          {
+            "term": "differansemodus",
+            "text": "differansemodus"
+          },
+          ": like mye fram i den ene lederen som tilbake i den andre. De magnetiske feltene opphever hverandre, og strømmen merker nesten ingen induktans."
+        ],
+        [
+          "En forstyrrelse som kabelen har fanget opp, går i ",
+          {
+            "term": "fellesmodus",
+            "text": "fellesmodus"
+          },
+          " – samme vei i alle lederne. Da legger feltene seg sammen, induktansen virker, og forstyrrelsen dempes. Samme prinsipp brukes på koaksialkabler, der det kalles skjermbruddfilter."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 10,
+        "section_id": "s10-17",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "cfbe6fb74b3949a0",
+          "4c37c28f062479e4"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:12:39+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "5bef7901c84077054c001577314ef1021db12591c933ec2aec4daf22c054c55e",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:49:17+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "5bef7901c84077054c001577314ef1021db12591c933ec2aec4daf22c054c55e",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:12:38+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "5bef7901c84077054c001577314ef1021db12591c933ec2aec4daf22c054c55e",
+        "errors": [],
+        "warnings": [
+          "priority: 'exam_important' set by judgement; the book's '!' markers are not known for this chapter yet (no scan)"
+        ],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:49:17+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:49:17+00:00",
+        "content_sha256": "5bef7901c84077054c001577314ef1021db12591c933ec2aec4daf22c054c55e",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

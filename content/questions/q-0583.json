@@ -1,0 +1,152 @@
+{
+  "id": "q-0583",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "medium",
+      "chapter": 13,
+      "section_ids": [
+        "s13-03"
+      ],
+      "topic_ids": [
+        "elektrisk-sjokk"
+      ],
+      "learning_objective": "Forstå at fuktig hud senker kroppens motstand og gir større strøm ved samme spenning.",
+      "priority": "normal",
+      "context": [
+        "Du har nettopp vasket hendene og skal skru på en strømforsyning som står på arbeidsbenken."
+      ],
+      "stem": [
+        "Hvorfor er et eventuelt støt farligere nå enn med tørre hender?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Fuktig hud har mye lavere motstand, så den samme spenningen gir større strøm gjennom kroppen."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Vann øker spenningen i strømforsyningen."
+          ],
+          "feedback": [
+            "Spenningen bestemmes av strømforsyningen og nettet, ikke av vannet. Det er motstanden i huden som endres."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Fuktig hud gir høyere motstand, så det utvikles mer varme."
+          ],
+          "feedback": [
+            "Det er motsatt: fuktig hud leder bedre. Lavere motstand gir større strøm, og det er strømmen som gjør skaden."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Det er ikke farligere; kroppens motstand er den samme uansett."
+          ],
+          "feedback": [
+            "Kroppens motstand avhenger blant annet av huden, og den faller betydelig når huden er fuktig."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Kroppen leder i utgangspunktet nokså dårlig, og mye av motstanden sitter i huden. Er huden fuktig, faller motstanden betydelig.",
+        [
+          "Etter ",
+          {
+            "term": "ohms-lov",
+            "text": "Ohms lov"
+          },
+          " gir lavere motstand større strøm ved samme spenning. Siden det er strømmen som gjør skaden, blir et støt farligere med våte hender."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 13,
+        "section_id": "s13-03",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "d66cc5a634d57257"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:11:19+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "c7f3f783ee359befec8fe57397f3f1809b1af6a3fa02e2eb83c6cfdbe1e0e7b1",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:50:32+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "c7f3f783ee359befec8fe57397f3f1809b1af6a3fa02e2eb83c6cfdbe1e0e7b1",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:11:18+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "c7f3f783ee359befec8fe57397f3f1809b1af6a3fa02e2eb83c6cfdbe1e0e7b1",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:50:32+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:50:32+00:00",
+        "content_sha256": "c7f3f783ee359befec8fe57397f3f1809b1af6a3fa02e2eb83c6cfdbe1e0e7b1",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

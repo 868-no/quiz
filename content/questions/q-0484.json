@@ -1,0 +1,211 @@
+{
+  "id": "q-0484",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "calculation",
+      "difficulty": "medium",
+      "chapter": 11,
+      "section_ids": [
+        "s11-16",
+        "s11-17"
+      ],
+      "topic_ids": [
+        "desibel"
+      ],
+      "learning_objective": "Bruke desibel til å regne ut ERP med kabeltap og antenneforsterkning.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En sender gir ",
+          {
+            "q": 10,
+            "u": "W"
+          },
+          " inn i en fødekabel med ",
+          {
+            "q": 3,
+            "u": "dB"
+          },
+          " tap. Antennen har en forsterkning på ",
+          {
+            "q": 10,
+            "u": "dB"
+          },
+          "."
+        ]
+      ],
+      "stem": [
+        "Hva blir den effektivt utstrålte effekten (ERP)?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 50,
+              "u": "W"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 70,
+              "u": "W"
+            }
+          ],
+          "feedback": [
+            "Her er dB-tallene brukt som om de var ganger. 10 − 3 = 7 dB, og 7 dB er 5 ganger, ikke 7."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 130,
+              "u": "W"
+            }
+          ],
+          "feedback": [
+            "Kabeltapet skal trekkes fra, ikke legges til: −3 + 10 = 7 dB."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 200,
+              "u": "W"
+            }
+          ],
+          "feedback": [
+            "Her er tapet i kabelen lagt til i stedet for trukket fra. Kabelen halverer effekten før antennen ganger den med ti."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Med desibel legger du sammen forsterkninger og trekker fra tap:",
+        {
+          "steps": [
+            "−3 dB + 10 dB = 7 dB",
+            "7 dB er 3 dB under 10 dB, altså halvparten av ti ganger: 5 ganger",
+            [
+              "10 W · 5 = ",
+              {
+                "q": 50,
+                "u": "W"
+              }
+            ]
+          ]
+        },
+        "Lineært blir det det samme: 10 W · ½ · 10 = 50 W. Med mange ledd blir desibel enklest."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 11,
+        "section_id": "s11-16",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "dafa89d8e365795c",
+          "0d186f441322d9e5",
+          "74e72474d2624cba"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:11:20+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "4dae2bea3b0a1f71c1dc6e0dab01483e96c8e2b2fe73152adc609e6bcd591239",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:49:46+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "4dae2bea3b0a1f71c1dc6e0dab01483e96c8e2b2fe73152adc609e6bcd591239",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:11:19+00:00"
+      },
+      "calculation": {
+        "formula": "power_gain_db",
+        "inputs": {
+          "P": [
+            10,
+            "W"
+          ],
+          "G": [
+            7,
+            "dB"
+          ]
+        },
+        "answer": [
+          50,
+          "W"
+        ],
+        "answer_symbol": "P",
+        "sig_figs": 2
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "4dae2bea3b0a1f71c1dc6e0dab01483e96c8e2b2fe73152adc609e6bcd591239",
+        "errors": [],
+        "warnings": [
+          "priority: 'exam_important' set by judgement; the book's '!' markers are not known for this chapter yet (no scan)"
+        ],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:49:46+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:49:46+00:00",
+        "content_sha256": "4dae2bea3b0a1f71c1dc6e0dab01483e96c8e2b2fe73152adc609e6bcd591239",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

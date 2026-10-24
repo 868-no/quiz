@@ -1,0 +1,147 @@
+{
+  "id": "q-0401",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "recall",
+      "difficulty": "medium",
+      "chapter": 10,
+      "section_ids": [
+        "s10-03"
+      ],
+      "topic_ids": [
+        "emc-regler"
+      ],
+      "learning_objective": "Vite at uønsket utstråling utenfor amatørbåndene skal være i samsvar med ITU-R SM.329.",
+      "priority": "exam_important",
+      "context": [
+        "Du har bygget en sender selv og vil bruke den på amatørbåndene."
+      ],
+      "stem": [
+        "Hva sier radioamatørforskriften om uønsket utstråling utenfor amatørbåndene?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Den skal være i samsvar med den internasjonale anbefalingen ITU-R SM.329."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Den er tillatt så lenge ingen klager."
+          ],
+          "feedback": [
+            "Kravet gjelder uansett om noen klager. Uønsket utstråling kan forstyrre andre tjenester lenge før noen finner ut hvor den kommer fra."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Selvbygget utstyr har ingen grense, fordi det ikke er CE-merket."
+          ],
+          "feedback": [
+            "Forskriften lar radioamatører bruke selvbygget utstyr, men kravet til uønsket utstråling gjelder også for det."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Den skal være under 1 watt, uansett frekvens."
+          ],
+          "feedback": [
+            "Forskriften oppgir ikke ett fast tall. Den viser til ITU-R SM.329, der grensene avhenger av frekvensområdet og senderen."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Radioamatører kan bruke selvbygget og modifisert utstyr som ikke er CE-merket. Til gjengjeld må amatøren selv sørge for at utstyret er i orden.",
+        "Forskriften om radioamatørvirksomhet krever at uønsket utstrålt effekt utenfor de tillatte båndene er i samsvar med ITU-R SM.329, en internasjonal anbefaling om grenser for uønsket utstråling. De konkrete grensene avhenger av frekvensområdet og forholdene."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 10,
+        "section_id": "s10-03",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "ea9e8e2e3fcb4f91"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:12:39+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "d98bab03c779681eb9926c10c10032934c73cecf7b492b49bcc0a8d76c8d5276",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:39:01+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "71531177973daa29c89496c9db594d61661069a3e5d9302d81b5d1d4a60473f1",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:48:56+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "71531177973daa29c89496c9db594d61661069a3e5d9302d81b5d1d4a60473f1",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": []
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:12:38+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "71531177973daa29c89496c9db594d61661069a3e5d9302d81b5d1d4a60473f1",
+        "errors": [],
+        "warnings": [
+          "priority: 'exam_important' set by judgement; the book's '!' markers are not known for this chapter yet (no scan)"
+        ],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T22:48:56+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:48:56+00:00",
+        "content_sha256": "71531177973daa29c89496c9db594d61661069a3e5d9302d81b5d1d4a60473f1",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

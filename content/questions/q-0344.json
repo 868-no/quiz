@@ -1,0 +1,160 @@
+{
+  "id": "q-0344",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 8,
+      "section_ids": [
+        "s8-02"
+      ],
+      "topic_ids": [
+        "fodekabler"
+      ],
+      "learning_objective": "Forstå at ferritter tredd på koaksialkabelen virker som en bredbåndet sperrebalun mot strøm på skjermen.",
+      "priority": "normal",
+      "context": [
+        "Ved fødepunktet til en dipol er det tredd en rekke ferrittkjerner utenpå koaksialkabelen."
+      ],
+      "stem": [
+        "Hva gjør ferrittene?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "De stopper strøm på utsiden av skjermen."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "De gjør kabelen om til en 75 Ω kabel."
+          ],
+          "feedback": [
+            "Ferritt utenpå kabelen endrer ikke den karakteristiske impedansen, som er gitt av lederne inni."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "De gjør at antennen bare virker på ett bånd."
+          ],
+          "feedback": [
+            "Det er mansjettbalunen, med en mansjett som må være en kvart bølgelengde, som er begrenset til ett bånd. Ferritter virker over et bredt frekvensområde."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "De sperrer for likestrøm til antennen."
+          ],
+          "feedback": [
+            "Ferritt stopper ikke likestrøm. Den gir induktans for strøm på utsiden av kabelen, og induktansen sperrer for RF."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Ferritten gir høy induktiv reaktans for strøm som vil gå på utsiden av skjermen. Signalet inni kabelen merker ingenting. Dette kalles en sperrebalun, og den er svært bredbåndet.",
+        [
+          "Det er samme teknikk som brukes med ",
+          {
+            "term": "ferrittring",
+            "text": "ferrittringer"
+          },
+          " mot forstyrrelser. Den kan også kombineres med en vanlig balun for å stoppe strøm som strålingen fra antennen induserer i kabelen."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 8,
+        "section_id": "s8-02",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "0901bd234a901d9e"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:13:25+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "c6b1e64b279d02ea6ce02eb5b5ce02f32af8c68ff94e9931d6110463aa983671",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:48:27+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "f1f19089f38c70351f463417a4c9e728c081276dd432eee850e0fc493477f9d1",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:13:24+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "f1f19089f38c70351f463417a4c9e728c081276dd432eee850e0fc493477f9d1",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:48:27+00:00"
+      },
+      "visual": {
+        "template": "antenna",
+        "version": 1,
+        "params": {
+          "kind": "dipole",
+          "feed": "ferrite"
+        }
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:48:27+00:00",
+        "content_sha256": "f1f19089f38c70351f463417a4c9e728c081276dd432eee850e0fc493477f9d1",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

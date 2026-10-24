@@ -1,0 +1,174 @@
+{
+  "id": "q-0311",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "medium",
+      "chapter": 7,
+      "section_ids": [
+        "s7-06"
+      ],
+      "topic_ids": [
+        "digitale-filtre"
+      ],
+      "learning_objective": "Forstå hvordan lengden på et glidende middel-filter påvirker glatting og flanker.",
+      "priority": "normal",
+      "context": [
+        "Et signal med firkantpulser og litt støy sendes gjennom et filter som tar gjennomsnittet av de siste samplene. Du gjør filteret mye lengre, slik at det tar gjennomsnittet av mange flere sampler."
+      ],
+      "stem": [
+        "Hva skjer med utgangssignalet?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Mer støy forsvinner, men flankene på pulsene blir slakere."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Mindre støy forsvinner, men flankene blir skarpere."
+          ],
+          "feedback": [
+            "Gjennomsnitt over flere sampler glatter mer, ikke mindre. Det tar også lengre tid å følge et sprang."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Ingenting endres, fordi lengden bare påvirker forsinkelsen."
+          ],
+          "feedback": [
+            "Lengden avgjør hvor mye filteret glatter. Et lengre filter har lavere knekkfrekvens."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Pulsene blir høyere."
+          ],
+          "feedback": [
+            "Et gjennomsnitt kan aldri bli større enn de største verdiene det regnes av. Høyden på pulsene øker ikke."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Et filter som tar gjennomsnittet av de siste samplene, er det enkleste lavpassfilteret av typen ",
+          {
+            "term": "fir-filter",
+            "text": "FIR-filter"
+          },
+          ". Jo flere sampler det tar med, desto lavere blir knekkfrekvensen til ",
+          {
+            "term": "lavpassfilter",
+            "text": "lavpassfilteret"
+          },
+          ", og desto mer av den raske støyen jevnes ut."
+        ],
+        "Prisen er at også raske endringer i signalet jevnes ut. Et sprang i en firkantpuls blir en skråning som er like lang som filteret."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 7,
+        "section_id": "s7-06",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "c25878adf978a36b",
+          "77d5ada6beb501e2"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:09:37+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "a2cd72f9ddd83e4f2c4a3bad68de5e7838e621b44607ee60608b7497e5ac72cc",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:48:19+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "c541eda6eb2c46d0867b3c362fc302228194a08eb07afd95e32cc54c9eda831d",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:09:36+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "c541eda6eb2c46d0867b3c362fc302228194a08eb07afd95e32cc54c9eda831d",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:48:19+00:00"
+      },
+      "visual": {
+        "template": "sampling",
+        "version": 1,
+        "params": {
+          "kind": "moving_average",
+          "taps": 16
+        },
+        "after_only": true,
+        "animation": {
+          "param": "taps",
+          "from": 2,
+          "to": 20,
+          "phase": "after",
+          "text": "Animasjonen gjør filteret lengre og kortere: jo flere sampler gjennomsnittet tar med, desto mer støy forsvinner og desto slakere blir flankene."
+        }
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:48:19+00:00",
+        "content_sha256": "c541eda6eb2c46d0867b3c362fc302228194a08eb07afd95e32cc54c9eda831d",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

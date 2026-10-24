@@ -1,0 +1,144 @@
+{
+  "id": "q-0430",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "recall",
+      "difficulty": "easy",
+      "chapter": 10,
+      "section_ids": [
+        "s10-11"
+      ],
+      "topic_ids": [
+        "emc-stasjon"
+      ],
+      "learning_objective": "Vite at stasjonen bør testes for uønsket utstråling jevnlig og etter endringer.",
+      "priority": "normal",
+      "context": [],
+      "stem": [
+        "Når bør du sjekke stasjonen din for uønsket utstråling?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Jevnlig, og alltid etter endringer i stasjonen – særlig i antenner og fødekabler."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Bare når du kjøper en ny sender."
+          ],
+          "feedback": [
+            "Endringer i antenne, kabler og oppsett kan også gi nye problemer, så sjekk etter alle endringer og ellers jevnlig."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Bare hvis naboen klager."
+          ],
+          "feedback": [
+            "Da har skaden allerede skjedd. Det er bedre å forebygge med jevnlige tester."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Aldri, fordi CE-merket utstyr ikke kan lage falske signaler."
+          ],
+          "feedback": [
+            "Også CE-merket utstyr kan få feil, og antenner, kabler og flere sendere samtidig kan gi intermodulasjon."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "En radioamatør skal sørge for at stasjonen ikke forårsaker unødige forstyrrelser og er så fri for uønsket utstråling som rimelig mulig. Det betyr i praksis jevnlige tester, gjerne med notat i loggen.",
+        "Test spesielt etter endringer i stasjonen, antennene eller fødekablene, og sjekk om flere sendere i drift samtidig gir intermodulasjonsprodukter."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 10,
+        "section_id": "s10-11",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "89048cd1b3721bd1",
+          "65bec3e3d7e7689c"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:12:39+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "a3c461469349bc6e1c78cd4724eac13a309f5cddfe9671c902f54db9751fcade",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:49:23+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "a3c461469349bc6e1c78cd4724eac13a309f5cddfe9671c902f54db9751fcade",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:12:38+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "a3c461469349bc6e1c78cd4724eac13a309f5cddfe9671c902f54db9751fcade",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:49:23+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:49:23+00:00",
+        "content_sha256": "a3c461469349bc6e1c78cd4724eac13a309f5cddfe9671c902f54db9751fcade",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

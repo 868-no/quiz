@@ -1,0 +1,155 @@
+{
+  "id": "q-0634",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "recall",
+      "difficulty": "easy",
+      "chapter": 16,
+      "section_ids": [
+        "s16-05"
+      ],
+      "topic_ids": [
+        "q-koder-forkortelser"
+      ],
+      "learning_objective": "Kjenne betydningen av QSY og QTH.",
+      "priority": "exam_important",
+      "context": [
+        "Mot slutten av en forbindelse sier motparten: «Min QTH er Bergen. Jeg må QSY til 7,080.»"
+      ],
+      "stem": [
+        "Hva har motparten fortalt deg?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Hvor stasjonen står, og at den skal skifte frekvens."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Hvor stasjonen står, og at den skal stanse sendingen."
+          ],
+          "feedback": [
+            "Å stanse sendingen er QRT. QSY betyr å skifte frekvens."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Hva stasjonen heter, og at den skal sende langsommere."
+          ],
+          "feedback": [
+            "Navnet på stasjonen er QRA, og å sende langsommere er QRS. QTH er posisjonen."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Hvor mye klokka er, og at den skal øke effekten."
+          ],
+          "feedback": [
+            "Klokkeslett er QTR, og å øke effekten er QRO."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "QTH er posisjonen til stasjonen, og QSY betyr å skifte frekvens. Motparten står altså i Bergen og skal over på ",
+          {
+            "q": 7080,
+            "u": "kHz"
+          },
+          "."
+        ],
+        "Q-kodene ble laget for telegrafi, men brukes også mye på tale. Fordi de er like på alle språk, gjør de det lettere å ha forbindelse med radioamatører som snakker et annet språk."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 16,
+        "section_id": "s16-05",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "37128ae7caa02b79",
+          "f7850594e1a25e57"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:08:40+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "173a587f5bfdca15776d688227dcbcc2179c60ed8dd8b395ca5ed05ba6766001",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:50:59+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "173a587f5bfdca15776d688227dcbcc2179c60ed8dd8b395ca5ed05ba6766001",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:08:39+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "173a587f5bfdca15776d688227dcbcc2179c60ed8dd8b395ca5ed05ba6766001",
+        "errors": [],
+        "warnings": [
+          "priority: 'exam_important' set by judgement; the book's '!' markers are not known for this chapter yet (no scan)"
+        ],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:50:59+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:50:59+00:00",
+        "content_sha256": "173a587f5bfdca15776d688227dcbcc2179c60ed8dd8b395ca5ed05ba6766001",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

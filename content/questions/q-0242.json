@@ -1,0 +1,148 @@
+{
+  "id": "q-0242",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "medium",
+      "chapter": 9,
+      "section_ids": [
+        "s9-03"
+      ],
+      "topic_ids": [
+        "ionosfaeren"
+      ],
+      "learning_objective": "Kjenne igjen sporadisk E som årsak til plutselige sterke signaler på 10, 6 og 2 m om sommeren.",
+      "priority": "normal",
+      "context": [
+        "En sommerdag hører du plutselig svært sterke signaler på 6 m fra stasjoner 1500–2000 km unna. Ellers hører du bare stasjoner innenfor synsvidde på dette båndet."
+      ],
+      "stem": [
+        "Hva er den mest sannsynlige forklaringen?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Sporadisk E – flekker med svært sterk ionisering i E-laget som sender signalene tilbake."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "F2-laget, som om sommeren alltid bøyer 6 m tilbake."
+          ],
+          "feedback": [
+            "F2-laget gir de lengste hoppene på HF, men det sender sjelden tilbake så høye frekvenser som 50 MHz. Ett hopp via F2 er dessuten typisk rundt 4000 km."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Jordbølge, som går ekstra langt om sommeren."
+          ],
+          "feedback": [
+            "Jordbølge brukes under om lag 2 MHz og når over land bare rundt 100 km. Den kan ikke forklare signaler fra 2000 km unna på 6 m."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Aurora (nordlys)."
+          ],
+          "feedback": [
+            "Aurora-signaler høres skjelvende og susende ut, og antennen må rettes nordover. Sterke, rene signaler en sommerdag peker mot noe annet."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "E-laget, rundt 120 km opp, sender vanligvis bare tilbake frekvenser opp til om lag 15 MHz. Iblant oppstår det flekker med mye sterkere ionisering, oftest om sommeren. Dette kalles sporadisk E.",
+        "Da kan båndene fra 10 m og helt opp til 2 m få svært sterke signaler fra stasjoner opptil rundt 2000 km unna."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 9,
+        "section_id": "s9-03",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "a395cbd7c12ef08c"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:14:10+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "2fb7987b14f3717ec037768b9de183ab725b8b5ee59feec28a2152b6ab0a8c04",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:47:53+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "7cd16e56276fef71782d6c0528d01bac31fe81dd07800d72ae6ecad7a4401620",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": []
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:04:28+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "7cd16e56276fef71782d6c0528d01bac31fe81dd07800d72ae6ecad7a4401620",
+        "errors": [],
+        "warnings": [],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T22:47:53+00:00"
+      },
+      "visual": {
+        "template": "propagation",
+        "version": 1,
+        "params": {
+          "kind": "hops",
+          "layer": "Es",
+          "layer_km": 110,
+          "elevation_deg": 6.3,
+          "show_distance": true
+        },
+        "after_only": true
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:47:53+00:00",
+        "content_sha256": "7cd16e56276fef71782d6c0528d01bac31fe81dd07800d72ae6ecad7a4401620",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

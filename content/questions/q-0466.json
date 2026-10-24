@@ -1,0 +1,170 @@
+{
+  "id": "q-0466",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "easy",
+      "chapter": 11,
+      "section_ids": [
+        "s11-07"
+      ],
+      "topic_ids": [
+        "swr-meter"
+      ],
+      "learning_objective": "Vite hva SWR-meterets to avlesninger betyr, og at reflektert effekt er null når antennen er perfekt tilpasset.",
+      "priority": "exam_important",
+      "context": [],
+      "stem": [
+        "Et SWR-meter viser både tilført og reflektert effekt. Hva viser det når antennen er perfekt tilpasset fødekabelen?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Utslag for tilført effekt og ingen utslag for reflektert effekt."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Like stort utslag for tilført og reflektert effekt."
+          ],
+          "feedback": [
+            "Like store utslag ville bety at all effekten kommer tilbake, som når kabelen er åpen eller kortsluttet i enden."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Ingen utslag for tilført effekt og fullt utslag for reflektert effekt."
+          ],
+          "feedback": [
+            "Det er senderen som leverer effekt fremover, så tilført effekt gir alltid utslag når senderen er på."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Ingen utslag på noen av dem, fordi all effekten stråles ut."
+          ],
+          "feedback": [
+            "Instrumentet for tilført effekt måler effekten som går fremover i kabelen mot antennen. Den er der uansett hvor godt antennen er tilpasset."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "SWR-meteret bygger på en ",
+          {
+            "term": "retningskobler",
+            "text": "retningsbestemt kobler"
+          },
+          ", som henter ut et lite signal for effekten som går hver vei i kabelen."
+        ],
+        [
+          "Er antennen tilpasset kabelens impedans, tas all effekten opp der og ingenting reflekteres. Da gir bare instrumentet for tilført effekt utslag, og ",
+          {
+            "term": "swr",
+            "text": "SWR"
+          },
+          " er 1. Er tilpasningen dårlig, går noe tilbake mot senderen, og instrumentet for reflektert effekt gir også utslag."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 11,
+        "section_id": "s11-07",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "2bca00e29384b9b4"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:11:20+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "81f3b556237beeed03883a31d4037f71d017e9e187690d244bde230e3132495e",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:49:30+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "ae9d66917f9cb805029b7dab264ce6fdfec1b1de435de4fa1c58ade8702e09dc",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:11:19+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "ae9d66917f9cb805029b7dab264ce6fdfec1b1de435de4fa1c58ade8702e09dc",
+        "errors": [],
+        "warnings": [
+          "priority: 'exam_important' set by judgement; the book's '!' markers are not known for this chapter yet (no scan)"
+        ],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:49:30+00:00"
+      },
+      "visual": {
+        "template": "feedline",
+        "version": 1,
+        "params": {
+          "kind": "directional",
+          "forward": 100,
+          "reflected": 0,
+          "swr_label": "value"
+        },
+        "after_only": true
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:49:30+00:00",
+        "content_sha256": "ae9d66917f9cb805029b7dab264ce6fdfec1b1de435de4fa1c58ade8702e09dc",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

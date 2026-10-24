@@ -1,0 +1,154 @@
+{
+  "id": "q-0236",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "recall",
+      "difficulty": "easy",
+      "chapter": 9,
+      "section_ids": [
+        "s9-01",
+        "s9-02"
+      ],
+      "topic_ids": [
+        "radiobolger-polarisasjon"
+      ],
+      "learning_objective": "Vite at polarisasjonen til en radiobølge er gitt av retningen til E-feltet.",
+      "priority": "normal",
+      "context": [],
+      "stem": [
+        [
+          "Hva bestemmer ",
+          {
+            "term": "polarisasjon",
+            "text": "polarisasjonen"
+          },
+          " til en radiobølge?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Retningen til det elektriske feltet (E-feltet)."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Retningen til det magnetiske feltet (H-feltet)."
+          ],
+          "feedback": [
+            "H-feltet står vinkelrett på E-feltet. Polarisasjonen oppgis etter E-feltet, så en bølge med loddrett E-felt kalles vertikalt polarisert."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Retningen bølgen beveger seg i."
+          ],
+          "feedback": [
+            "Begge feltene står vinkelrett på bevegelsesretningen. Bevegelsesretningen sier hvor bølgen går, ikke hvordan den er polarisert."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Frekvensen til bølgen."
+          ],
+          "feedback": [
+            "Frekvensen sier hvor mange svingninger det er per sekund. En bølge på samme frekvens kan være både vertikalt og horisontalt polarisert."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "En radiobølge har to felt som hører sammen, et elektrisk (E) og et magnetisk (H). De står vinkelrett på hverandre og på retningen bølgen går i.",
+        "Det er retningen til E-feltet som gir polarisasjonen. For en dipol ligger E-feltet langs elementene, så en vannrett dipol gir horisontal polarisasjon og en loddrett gir vertikal."
+      ],
+      "glossary_after_answer": [
+        "polarisasjon"
+      ],
+      "study_reference": {
+        "chapter": 9,
+        "section_id": "s9-01",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "56f86feee00bdabc",
+          "4d4257484d6aec9c"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:14:10+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "ce7fd2ef53fe81ae10c8730bd83954bf51414d8cfb79cfa4312ff1b03eb30bc7",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:47:42+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "ce7fd2ef53fe81ae10c8730bd83954bf51414d8cfb79cfa4312ff1b03eb30bc7",
+          "note": "Runde 5 godkjent",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:04:28+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "ce7fd2ef53fe81ae10c8730bd83954bf51414d8cfb79cfa4312ff1b03eb30bc7",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:47:42+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:47:42+00:00",
+        "content_sha256": "ce7fd2ef53fe81ae10c8730bd83954bf51414d8cfb79cfa4312ff1b03eb30bc7",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

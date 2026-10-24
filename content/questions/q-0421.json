@@ -1,0 +1,144 @@
+{
+  "id": "q-0421",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 10,
+      "section_ids": [
+        "s10-15"
+      ],
+      "topic_ids": [
+        "emc-kobling"
+      ],
+      "learning_objective": "Forklare hvorfor bredbåndede forforsterkere i TV-masten lett overstyres av amatørsendere.",
+      "priority": "normal",
+      "context": [],
+      "stem": [
+        "Hvorfor blir en bredbåndet forforsterker i TV-masten så lett overstyrt av en amatørsender i nærheten?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Den slipper inn et bredt frekvensområde nesten uten filtrering, så sterke signaler overstyrer den."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Den er stilt inn på samme frekvens som amatørsenderen."
+          ],
+          "feedback": [
+            "Forforsterkeren er ikke stilt inn på amatørfrekvensen. Problemet er at den slipper inn nesten alt, også sendinger langt fra TV-båndene."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Den forsterker bare signaler med horisontal polarisasjon."
+          ],
+          "feedback": [
+            "Polarisasjonen er ikke grunnen. Det er mangelen på filtrering foran forsterkeren som gjør den sårbar."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Den mangler strømforsyning når TV-en er slått av."
+          ],
+          "feedback": [
+            "Det har ikke noe med overstyring å gjøre. Overstyringen kommer av sterke signaler utenfor TV-båndene som slipper inn."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "TV-antennen føder signalene rett inn i forforsterkeren, som ofte dekker alt fra under FM-båndet til langt opp i UHF, uten særlig filtrering. Et sterkt amatørsignal i dette området, eller utenfor, kan overstyre den, og da oppstår harmoniske frekvenser, intermodulasjonsprodukter og kryssmodulasjon.",
+        "Det første spørsmålet er om forforsterkeren i det hele tatt trengs. Ellers kan et båndstoppfilter på inngangen eller en bedre filtrert forsterker løse problemet."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 10,
+        "section_id": "s10-15",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "8f179b156d53fe69",
+          "738a5ea9b98eb38a"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:12:39+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "b63d9735d725f90c6b2f50813522917cdeecf28310472aaaa0e031d88d87fa9b",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:49:14+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "b63d9735d725f90c6b2f50813522917cdeecf28310472aaaa0e031d88d87fa9b",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:12:38+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "b63d9735d725f90c6b2f50813522917cdeecf28310472aaaa0e031d88d87fa9b",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:49:14+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:49:14+00:00",
+        "content_sha256": "b63d9735d725f90c6b2f50813522917cdeecf28310472aaaa0e031d88d87fa9b",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

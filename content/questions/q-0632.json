@@ -1,0 +1,184 @@
+{
+  "id": "q-0632",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "hard",
+      "chapter": 16,
+      "section_ids": [
+        "s16-04"
+      ],
+      "topic_ids": [
+        "baandplan-bruk"
+      ],
+      "learning_objective": "Forstå at et LSB-signal ligger under den innstilte frekvensen, og at man derfor må stille inn litt over grensen i båndplanen.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "I en båndplan begynner delen for alle moduser (der tale på SSB hører hjemme) på ",
+          {
+            "q": 3600,
+            "u": "kHz"
+          },
+          ". Under denne grensen er båndet satt av til CW og smalbåndsmoduser. På 80 m brukes nedre sidebånd (LSB) til tale."
+        ]
+      ],
+      "stem": [
+        [
+          "Hvorfor bør du ikke stille radioen på nøyaktig ",
+          {
+            "q": 3600,
+            "u": "kHz"
+          },
+          " når du skal snakke på LSB?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Talesignalet ligger da rett under 3600 kHz, i delen av båndet som er satt av til CW og smalbåndsmoduser."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Talesignalet ligger da rett over 3600 kHz, oppå neste stasjon."
+          ],
+          "feedback": [
+            "Det er øvre sidebånd (USB) som ligger over den innstilte frekvensen. Med LSB havner talen under den."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Radioen sender da en ren bærebølge uten tale."
+          ],
+          "feedback": [
+            "Med SSB undertrykkes bærebølgen uansett frekvens. Problemet er hvor sidebåndet havner, ikke at talen forsvinner."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Båndplanen forbyr SSB på runde frekvenser."
+          ],
+          "feedback": [
+            "Båndplanen har ingen regel om runde frekvenser. Poenget er at LSB-signalet brer seg nedover fra den innstilte frekvensen."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Radioen viser frekvensen til den undertrykte bærebølgen. Ved LSB ligger talen i et bånd på inntil om lag ",
+          {
+            "q": 2.7,
+            "u": "kHz"
+          },
+          " under denne frekvensen. Står radioen på ",
+          {
+            "q": 3600,
+            "u": "kHz"
+          },
+          ", havner hele talesignalet mellom omtrent ",
+          {
+            "q": 3597,
+            "u": "kHz"
+          },
+          " og ",
+          {
+            "q": 3600,
+            "u": "kHz"
+          },
+          " – i CW- og smalbåndsdelen."
+        ],
+        "Derfor må den innstilte frekvensen ligge noen kilohertz over grensen, slik at hele sidebåndet havner innenfor delen for alle moduser. Under eksamen kan du få utdelt en båndplan og bli spurt om slike vurderinger."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 16,
+        "section_id": "s16-04",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "a9fb49ffb01ed930",
+          "9d3cde3ea51a1cb3"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:08:40+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "18bcc67728c7db7507364511690a5823a10c3605c5bf2e0de64334fab4858a1a",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:50:57+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "18bcc67728c7db7507364511690a5823a10c3605c5bf2e0de64334fab4858a1a",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:08:39+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "18bcc67728c7db7507364511690a5823a10c3605c5bf2e0de64334fab4858a1a",
+        "errors": [],
+        "warnings": [
+          "priority: 'exam_important' set by judgement; the book's '!' markers are not known for this chapter yet (no scan)"
+        ],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:50:57+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:50:57+00:00",
+        "content_sha256": "18bcc67728c7db7507364511690a5823a10c3605c5bf2e0de64334fab4858a1a",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

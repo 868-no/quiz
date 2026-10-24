@@ -1,0 +1,146 @@
+{
+  "id": "q-0518",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 12,
+      "section_ids": [
+        "s12-06"
+      ],
+      "topic_ids": [
+        "god-operasjonsskikk",
+        "regelverk-organisasjoner"
+      ],
+      "learning_objective": "Vite at krypterte og betalte meldinger ikke er tillatt i amatørtjenesten.",
+      "priority": "exam_important",
+      "context": [],
+      "stem": [
+        "Hvilken av disse sendingene er normalt ikke tillatt for en norsk radioamatør utenfor organisert krise- og redningssamband?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "En kryptert melding som bare mottakeren kan lese."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "En samtale om været og hagearbeid."
+          ],
+          "feedback": [
+            "Innholdet i samtalene er i Norge overlatt til radioamatørenes eget skjønn og vanlig folkeskikk. Man kan snakke om mye mer enn radio."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "En digital sending med en åpen og allment kjent protokoll."
+          ],
+          "feedback": [
+            "Det er nettopp slik digitale sendinger skal være: med protokoller og programmer som alle har tilgang til."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "En samtale på engelsk med en stasjon i et annet land."
+          ],
+          "feedback": [
+            "Kontakt over landegrensene er en stor del av hobbyen, og språket er fritt."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Sendinger i amatørtjenesten skal kunne forstås av alle som lytter. Kryptert samband er ikke tillatt, og digitale sendinger skal bruke allment tilgjengelige protokoller som kan leses med vanlige programmer.",
+        "Forskriften har ett snevert unntak: ved organisert krise- og redningssamband, og trening til det, kan sensitive opplysninger krypteres. Betalte meldinger er heller ikke tillatt. Utover dette er temaet fritt, innenfor vanlig folkeskikk."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 12,
+        "section_id": "s12-06",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "7cc00f6710f52e7c"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:13:44+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "9c17c0462db46d09c192a4be8cc118e862ec053eebbc501ccb91737a760d13ec",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:39:02+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "1a19059104a5c0c250ef0a5aae164ce8e9d238fb5e9b061f2f3bdc62fb57639e",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:49:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "1a19059104a5c0c250ef0a5aae164ce8e9d238fb5e9b061f2f3bdc62fb57639e",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": []
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:13:43+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "1a19059104a5c0c250ef0a5aae164ce8e9d238fb5e9b061f2f3bdc62fb57639e",
+        "errors": [],
+        "warnings": [
+          "priority: 'exam_important' set by judgement; the book's '!' markers are not known for this chapter yet (no scan)"
+        ],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T22:49:55+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:49:55+00:00",
+        "content_sha256": "1a19059104a5c0c250ef0a5aae164ce8e9d238fb5e9b061f2f3bdc62fb57639e",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

@@ -1,0 +1,152 @@
+{
+  "id": "q-0467",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "medium",
+      "chapter": 11,
+      "section_ids": [
+        "s11-07"
+      ],
+      "topic_ids": [
+        "swr-meter"
+      ],
+      "learning_objective": "Kjenne fremgangsmåten for å måle SWR med et SWR-meter med ett instrument og en bryter.",
+      "priority": "normal",
+      "context": [
+        "SWR-meteret ditt har bare ett instrument, en bryter for tilført og reflektert effekt, og en knapp for følsomheten."
+      ],
+      "stem": [
+        "Hvordan måler du SWR?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Sett bryteren på tilført effekt, juster følsomheten til fullt utslag, og les så av SWR med bryteren på reflektert effekt."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Sett bryteren på reflektert effekt, juster følsomheten til fullt utslag, og les av med bryteren på tilført effekt."
+          ],
+          "feedback": [
+            "Det er tilført effekt som skal være referansen og settes til fullt utslag. Skalaen for SWR gjelder avlesningen av reflektert effekt."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Les av reflektert effekt uten å justere følsomheten; skalaen viser SWR direkte."
+          ],
+          "feedback": [
+            "Hvor mye som reflekteres, må sammenlignes med hvor mye som sendes ut. Uten å kalibrere mot tilført effekt sier utslaget lite."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Koble fra antennen og les av med kabelen åpen."
+          ],
+          "feedback": [
+            "Med åpen kabel reflekteres all effekten, så du måler ikke antennen. SWR måles med antennen tilkoblet."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "SWR finnes ved å sammenligne effekten som går mot antennen, med den som kommer tilbake. Med bare ett instrument gjør du det i to trinn.",
+        [
+          "Først settes bryteren på tilført effekt, senderen startes og følsomheten justeres til fullt utslag. Så vris bryteren over på reflektert effekt, og ",
+          {
+            "term": "swr",
+            "text": "SWR"
+          },
+          " kan leses direkte av skalaen."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 11,
+        "section_id": "s11-07",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "2bca00e29384b9b4"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:11:20+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "5677965be0eb301f0abdc9a9afe0bc5ce2cef2bc6168cfce2b61fd8c1f09ba34",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:49:31+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "5677965be0eb301f0abdc9a9afe0bc5ce2cef2bc6168cfce2b61fd8c1f09ba34",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:11:19+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "5677965be0eb301f0abdc9a9afe0bc5ce2cef2bc6168cfce2b61fd8c1f09ba34",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:49:31+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:49:31+00:00",
+        "content_sha256": "5677965be0eb301f0abdc9a9afe0bc5ce2cef2bc6168cfce2b61fd8c1f09ba34",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

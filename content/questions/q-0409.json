@@ -1,0 +1,212 @@
+{
+  "id": "q-0409",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "calculation",
+      "difficulty": "medium",
+      "chapter": 10,
+      "section_ids": [
+        "s10-12"
+      ],
+      "topic_ids": [
+        "emc-stasjon"
+      ],
+      "learning_objective": "Beregne ERP fra effekten til antennen og antennens forsterkning i dBd.",
+      "priority": "normal",
+      "context": [
+        [
+          "En sender leverer ",
+          {
+            "q": 25,
+            "u": "W"
+          },
+          " til en antenne med ",
+          {
+            "q": 10,
+            "u": "dB"
+          },
+          " forsterkning over en dipol (dBd). Se bort fra tap i kabelen."
+        ]
+      ],
+      "stem": [
+        [
+          "Hvor stor er den effektive utstrålte effekten (",
+          {
+            "term": "erp",
+            "text": "ERP"
+          },
+          ")?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 250,
+              "u": "W"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 35,
+              "u": "W"
+            }
+          ],
+          "feedback": [
+            "Her er desibel lagt til wattene: 25 + 10. Desibel er et forhold, og 10 dB betyr ti ganger."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 2.5,
+              "u": "W"
+            }
+          ],
+          "feedback": [
+            "Her er effekten delt på ti i stedet for ganget. En antenne med forsterkning øker ERP."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 50,
+              "u": "W"
+            }
+          ],
+          "feedback": [
+            "Dette tilsvarer bare 3 dB, altså en dobling. 10 dB er ti ganger."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "ERP er effekten inn til antennen ganget med antenneforsterkningen målt mot en dipol, regnet som et forhold og ikke i dB.",
+        {
+          "steps": [
+            [
+              {
+                "q": 10,
+                "u": "dB"
+              },
+              " tilsvarer et effektforhold på 10^(10/10) = 10"
+            ],
+            [
+              "ERP = 25 W · 10 = ",
+              {
+                "q": 250,
+                "u": "W"
+              }
+            ]
+          ]
+        }
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 10,
+        "section_id": "s10-12",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "25d0567f4e716da9"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:12:39+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "97b554a9f86d9bcb81cfb1ccca62e13577bdb7d76757f2c0fcdb24a586ae8778",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:49:03+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "97b554a9f86d9bcb81cfb1ccca62e13577bdb7d76757f2c0fcdb24a586ae8778",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:12:38+00:00"
+      },
+      "calculation": {
+        "formula": "erp_dbd",
+        "inputs": {
+          "P": [
+            25,
+            "W"
+          ],
+          "G": [
+            10,
+            "dB"
+          ]
+        },
+        "answer": [
+          250,
+          "W"
+        ],
+        "answer_symbol": "ERP",
+        "sig_figs": 2
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "97b554a9f86d9bcb81cfb1ccca62e13577bdb7d76757f2c0fcdb24a586ae8778",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:49:03+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:49:03+00:00",
+        "content_sha256": "97b554a9f86d9bcb81cfb1ccca62e13577bdb7d76757f2c0fcdb24a586ae8778",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

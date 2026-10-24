@@ -1,0 +1,188 @@
+{
+  "id": "q-0546",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "hard",
+      "chapter": 12,
+      "section_ids": [
+        "s12-18"
+      ],
+      "topic_ids": [
+        "signaltyper"
+      ],
+      "learning_objective": "Skrive nødvendig båndbredde i ITUs format.",
+      "priority": "normal",
+      "context": [],
+      "stem": [
+        [
+          "Hvordan skrives en nødvendig båndbredde på ",
+          {
+            "q": 2.7,
+            "u": "kHz"
+          },
+          " i ITUs betegnelse for signaltyper?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "2K70"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "2700H"
+          ],
+          "feedback": [
+            "H brukes bare for båndbredder under 1 kHz. Fra 1 kHz bruker man K som desimaltegn."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "2,7K"
+          ],
+          "feedback": [
+            "Bokstaven erstatter desimaltegnet, og betegnelsen har fire tegn: 2K70."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "K270"
+          ],
+          "feedback": [
+            "Bokstaven står der desimaltegnet ville stått, altså etter 2."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Båndbredden skrives med tre sifre og en bokstav som også gjør tjeneste som desimaltegn: H for hertz, K for kilohertz, M for megahertz og G for gigahertz.",
+        [
+          {
+            "q": 2.7,
+            "u": "kHz"
+          },
+          " blir derfor 2K70, på samme måte som ",
+          {
+            "q": 100,
+            "u": "Hz"
+          },
+          " blir 100H og ",
+          {
+            "q": 16,
+            "u": "kHz"
+          },
+          " blir 16K0."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 12,
+        "section_id": "s12-18",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "0681047b2ac5f892"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:13:45+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "c1c1433ec1aa5bed57602ce73c4184eca2af5a1562d8edaf14735ca9acee87ad",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:50:21+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "70e7c8bf90662f2005283aaa79e96157a4e4b388363435534cb4e289b2004490",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:13:43+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "70e7c8bf90662f2005283aaa79e96157a4e4b388363435534cb4e289b2004490",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:50:21+00:00"
+      },
+      "visual": {
+        "template": "code-breakdown",
+        "version": 1,
+        "params": {
+          "parts": [
+            {
+              "text": "2",
+              "label": "Hele kilohertz"
+            },
+            {
+              "text": "K",
+              "label": "Kilohertz – står der kommaet skulle vært",
+              "highlight": true
+            },
+            {
+              "text": "70",
+              "label": "Desimalene: 0,70"
+            }
+          ]
+        },
+        "after_only": true
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:50:21+00:00",
+        "content_sha256": "70e7c8bf90662f2005283aaa79e96157a4e4b388363435534cb4e289b2004490",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

@@ -1,0 +1,139 @@
+{
+  "id": "q-0520",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "medium",
+      "chapter": 12,
+      "section_ids": [
+        "s12-07"
+      ],
+      "topic_ids": [
+        "anrop-kontakt"
+      ],
+      "learning_objective": "Kjenne Q-koden QRT for å stoppe sendingen.",
+      "priority": "exam_important",
+      "context": [
+        "Du har hatt frekvensen en stund og skal nå slå av stasjonen. Du vil at andre skal vite at frekvensen blir ledig."
+      ],
+      "stem": [
+        "Hvilken Q-kode passer?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "QRT"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "QSY"
+          ],
+          "feedback": [
+            "QSY betyr at du skifter frekvens. Skal du slutte helt, er det QRT som passer."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "QRZ"
+          ],
+          "feedback": [
+            "Med QRZ? spør man hvem som kaller, når noen har kalt på en."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "QRL"
+          ],
+          "feedback": [
+            "QRL brukes for å spørre om frekvensen er opptatt, eller for å si at den er det."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "QRT betyr «stopp sendingen». Si for eksempel «LA1XYZ QRT, frekvensen er ledig», så vet de som lytter at de kan ta den i bruk.",
+        "Flytter du bare til en annen frekvens, sier du heller QSY og den nye frekvensen."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 12,
+        "section_id": "s12-07",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "8c51939f694ec601",
+          "767a2c9b8dfa0e14"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:13:44+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "0e3efae4b25dbb49c6c397a3a2bb582dd1e20bc0cfd7ade35139b5d05b19c9ae",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:49:57+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "0e3efae4b25dbb49c6c397a3a2bb582dd1e20bc0cfd7ade35139b5d05b19c9ae",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": []
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:13:43+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "0e3efae4b25dbb49c6c397a3a2bb582dd1e20bc0cfd7ade35139b5d05b19c9ae",
+        "errors": [],
+        "warnings": [
+          "priority: 'exam_important' set by judgement; the book's '!' markers are not known for this chapter yet (no scan)"
+        ],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T22:49:57+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:49:57+00:00",
+        "content_sha256": "0e3efae4b25dbb49c6c397a3a2bb582dd1e20bc0cfd7ade35139b5d05b19c9ae",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

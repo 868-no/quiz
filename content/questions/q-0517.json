@@ -1,0 +1,136 @@
+{
+  "id": "q-0517",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "medium",
+      "chapter": 12,
+      "section_ids": [
+        "s12-08"
+      ],
+      "topic_ids": [
+        "anrop-kontakt"
+      ],
+      "learning_objective": "Vite at man i en konkurranse svarer med eget kallesignal én gang.",
+      "priority": "normal",
+      "context": [
+        "En stasjon i en radiokonkurranse kaller «CQ contest», og du vil ha kontakt."
+      ],
+      "stem": [
+        "Hvordan svarer du?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Med ditt eget kallesignal, én gang."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Med stasjonens kallesignal og ditt eget, flere ganger."
+          ],
+          "feedback": [
+            "I en konkurranse skal det gå raskt. Stasjonen vet sitt eget kallesignal, så du gir bare ditt – og bare én gang."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Med kallesignal, navn, QTH og hvilket utstyr du bruker."
+          ],
+          "feedback": [
+            "Slike opplysninger hører hjemme i en vanlig samtale. I en konkurranse utveksles bare det som trengs for en gyldig kontakt."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Med «QRZ?», så stasjonen vet at noen vil ha kontakt."
+          ],
+          "feedback": [
+            "Med QRZ? spør man hvem som kaller. Her er det du som kaller."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "I en konkurranse er målet flest mulig gyldige kontakter, så alt overflødig kuttes. Du svarer med kallesignalet ditt én gang.",
+        "Den andre stasjonen svarer med ditt kallesignal, en signalrapport og konkurransemeldingen – for eksempel et løpenummer. Du svarer med din rapport og melding, og stasjonen takker og kaller videre. På to vekslinger er alt nødvendig utvekslet."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 12,
+        "section_id": "s12-08",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "f561f31e273baa2f"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:13:44+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "d1399833d9f4869819369577fa28e1b6771b4c4cbc2b4cf46567ec00383ee59c",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:49:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "d1399833d9f4869819369577fa28e1b6771b4c4cbc2b4cf46567ec00383ee59c",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": []
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:13:43+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "d1399833d9f4869819369577fa28e1b6771b4c4cbc2b4cf46567ec00383ee59c",
+        "errors": [],
+        "warnings": [],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T22:49:55+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:49:55+00:00",
+        "content_sha256": "d1399833d9f4869819369577fa28e1b6771b4c4cbc2b4cf46567ec00383ee59c",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

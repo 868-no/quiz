@@ -1,0 +1,190 @@
+{
+  "id": "q-0428",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "calculation",
+      "difficulty": "easy",
+      "chapter": 10,
+      "section_ids": [
+        "s10-20"
+      ],
+      "topic_ids": [
+        "emc-klage"
+      ],
+      "learning_objective": "Beregne endringen i dB når effekten settes ned fra 100 til 25 W.",
+      "priority": "normal",
+      "context": [
+        [
+          "For å bevare et godt naboforhold setter du ned effekten fra ",
+          {
+            "q": 100,
+            "u": "W"
+          },
+          " til ",
+          {
+            "q": 25,
+            "u": "W"
+          },
+          "."
+        ]
+      ],
+      "stem": [
+        "Hvor stor er endringen i desibel?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": -6,
+              "u": "dB"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": -3,
+              "u": "dB"
+            }
+          ],
+          "feedback": [
+            "3 dB tilsvarer en halvering. Fra 100 til 25 W er effekten halvert to ganger: 3 + 3 = 6 dB."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": -12,
+              "u": "dB"
+            }
+          ],
+          "feedback": [
+            "12 dB ville vært en sekstendedel av effekten. En firedel er 6 dB."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": -75,
+              "u": "dB"
+            }
+          ],
+          "feedback": [
+            "Effekten går ned med 75 prosent, men prosent og desibel er to forskjellige ting. En firedel tilsvarer 6 dB."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        {
+          "steps": [
+            "25 / 100 = 1/4",
+            [
+              "10 · log(1/4) ≈ ",
+              {
+                "q": -6,
+                "u": "dB"
+              }
+            ]
+          ]
+        },
+        "Det tilsvarer bare omtrent én S-enhet på S-meteret hos den du snakker med. Forbindelsen går som regel fint, mens faren for å forstyrre naboen blir mye mindre."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 10,
+        "section_id": "s10-20",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "08038459fe9d57f0"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:12:39+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "8847fc2badc2b92b1188ecb72253dbce451733213a9f619b4abae39a58b7a174",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:49:21+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "8847fc2badc2b92b1188ecb72253dbce451733213a9f619b4abae39a58b7a174",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": []
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:12:38+00:00"
+      },
+      "calculation": {
+        "formula": "db_power_ratio",
+        "inputs": {
+          "P1": [
+            100,
+            "W"
+          ],
+          "P2": [
+            25,
+            "W"
+          ]
+        },
+        "answer": [
+          -6,
+          "dB"
+        ],
+        "answer_symbol": "G",
+        "sig_figs": 1
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "8847fc2badc2b92b1188ecb72253dbce451733213a9f619b4abae39a58b7a174",
+        "errors": [],
+        "warnings": [],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T22:49:21+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:49:21+00:00",
+        "content_sha256": "8847fc2badc2b92b1188ecb72253dbce451733213a9f619b4abae39a58b7a174",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

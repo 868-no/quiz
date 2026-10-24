@@ -1,0 +1,214 @@
+{
+  "id": "q-0474",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "calculation",
+      "difficulty": "medium",
+      "chapter": 11,
+      "section_ids": [
+        "s11-11"
+      ],
+      "topic_ids": [
+        "oscilloskop"
+      ],
+      "learning_objective": "Finne frekvensen til et signal ut fra tidsbasen og antall ruter én periode dekker på oscilloskopet.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "På et ",
+          {
+            "term": "oscilloskop",
+            "text": "oscilloskop"
+          },
+          " er tidsbasen satt til ",
+          {
+            "q": 0.2,
+            "u": "ms"
+          },
+          " per rute. Én hel periode av signalet – opp, ned og tilbake – dekker 4 ruter."
+        ]
+      ],
+      "stem": [
+        "Hva er frekvensen til signalet?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 1.25,
+              "u": "kHz"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 5,
+              "u": "kHz"
+            }
+          ],
+          "feedback": [
+            "Her er bare én rute regnet som periode. Perioden er 4 ruter · 0,2 ms = 0,8 ms."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 800,
+              "u": "Hz"
+            }
+          ],
+          "feedback": [
+            "Her er perioden i millisekunder tatt som frekvensen. Frekvensen er 1 delt på perioden: 1 / 0,0008 s."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 2.5,
+              "u": "kHz"
+            }
+          ],
+          "feedback": [
+            "Her er 4 ruter tatt som to perioder. En hel periode er både den positive og den negative halvbølgen."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        {
+          "steps": [
+            "Periode: T = 4 · 0,2 ms = 0,8 ms",
+            [
+              "Frekvens: f = 1 / T = 1 / 0,0008 s = ",
+              {
+                "q": 1.25,
+                "u": "kHz"
+              }
+            ]
+          ]
+        },
+        "Tidsbasen sier hvor lang tid prikken bruker på én rute vannrett. Teller du rutene for én hel periode, finner du perioden, og frekvensen er 1 delt på perioden."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 11,
+        "section_id": "s11-11",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "169534e9396e206c",
+          "bbb692ff885ffff8"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:11:20+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "a858034f77275feaa66e382704219da197c20277aafe80c7f014c0e4d1ba2e53",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:49:37+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "6d056b7ab02d9e9c506d963ed49f28ce7d959c38603d738e8bac2f2a4519e920",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:11:19+00:00"
+      },
+      "calculation": {
+        "formula": "frequency_from_period",
+        "inputs": {
+          "T": [
+            0.8,
+            "ms"
+          ]
+        },
+        "answer": [
+          1.25,
+          "kHz"
+        ],
+        "answer_symbol": "f",
+        "sig_figs": 3
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "6d056b7ab02d9e9c506d963ed49f28ce7d959c38603d738e8bac2f2a4519e920",
+        "errors": [],
+        "warnings": [
+          "priority: 'exam_important' set by judgement; the book's '!' markers are not known for this chapter yet (no scan)"
+        ],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:49:37+00:00"
+      },
+      "visual": {
+        "template": "instrument",
+        "version": 1,
+        "params": {
+          "kind": "scope",
+          "time_per_div_s": 0.0002,
+          "volt_per_div_v": 1,
+          "traces": [
+            {
+              "shape": "sine",
+              "frequency_hz": 1250,
+              "amplitude_v": 3
+            }
+          ]
+        }
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:49:37+00:00",
+        "content_sha256": "6d056b7ab02d9e9c506d963ed49f28ce7d959c38603d738e8bac2f2a4519e920",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

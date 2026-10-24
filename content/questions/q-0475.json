@@ -1,0 +1,164 @@
+{
+  "id": "q-0475",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 11,
+      "section_ids": [
+        "s11-11"
+      ],
+      "topic_ids": [
+        "oscilloskop"
+      ],
+      "learning_objective": "Vite hvordan tidsbasen stilles for å se omhyllingskurven til et AM-signal på oscilloskopet.",
+      "priority": "normal",
+      "context": [],
+      "stem": [
+        "Du vil se moduleringen på et AM-signal fra senderen på et oscilloskop. Hvordan bør du stille tidsbasen?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Som for et lydsignal, slik at én eller to perioder av lyden fyller skjermen; da ser du omhyllingskurven."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Så raskt at én enkelt RF-periode fyller skjermen."
+          ],
+          "feedback": [
+            "Da ser du bare en bit av bæreren, og bildet blir ustabilt fordi amplituden varierer med modulasjonen."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Så langsomt som mulig, med flere sekunder per rute."
+          ],
+          "feedback": [
+            "Da blir lydsvingningene også presset sammen, og du ser bare et bredt bånd."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Det spiller ingen rolle, fordi AM ikke kan vises på et oscilloskop."
+          ],
+          "feedback": [
+            "AM endrer amplituden, og det er nettopp amplitude oscilloskopet viser. Med riktig tidsbase ser du moduleringen tydelig."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Med tidsbasen innstilt for et lydsignal går RF-periodene så tett at de flyter sammen til en fylt flate. Det du ser, er omrisset – omhyllingskurven – som følger lyden.",
+        "Et FM-signal har ingen amplitudeendring, og frekvenssvinget er for lite til å se. Derfor er oscilloskopet lite egnet til å vurdere FM-deviasjon."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 11,
+        "section_id": "s11-11",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "bbb692ff885ffff8",
+          "b5361f281009b962"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:11:20+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "2775f22010d3afbbaacd568f698cbdd7b8c982354ce73254ef961cf14e8bfeb1",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:49:38+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "2ee92807a0b004801fd239abe75f59fe42fae7b9522046dbd8fb2728887f5a52",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:11:19+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "2ee92807a0b004801fd239abe75f59fe42fae7b9522046dbd8fb2728887f5a52",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:49:38+00:00"
+      },
+      "visual": {
+        "template": "instrument",
+        "version": 1,
+        "after_only": true,
+        "params": {
+          "kind": "scope",
+          "time_per_div_s": 0.0002,
+          "volt_per_div_v": 1,
+          "traces": [
+            {
+              "shape": "am",
+              "frequency_hz": 1000,
+              "amplitude_v": 2,
+              "carrier_hz": 40000,
+              "depth": 0.6
+            }
+          ]
+        },
+        "caption": "Bærebølgen er tegnet med mye lavere frekvens enn i virkeligheten, så svingningene skal synes."
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:49:38+00:00",
+        "content_sha256": "2ee92807a0b004801fd239abe75f59fe42fae7b9522046dbd8fb2728887f5a52",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

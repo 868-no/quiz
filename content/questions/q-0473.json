@@ -1,0 +1,183 @@
+{
+  "id": "q-0473",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "medium",
+      "chapter": 11,
+      "section_ids": [
+        "s11-10"
+      ],
+      "topic_ids": [
+        "frekvensmaling"
+      ],
+      "learning_objective": "Forstå hvordan nulltone mot en krystalloscillator brukes til å kalibrere en VFO.",
+      "priority": "normal",
+      "context": [
+        [
+          "Du har en krystalloscillator på ",
+          {
+            "q": 1,
+            "u": "MHz"
+          },
+          " med et firkantsignal som gir mange harmoniske frekvenser, og vil kontrollere at VFO-en i senderen viser riktig ved ",
+          {
+            "q": 7.0,
+            "u": "MHz"
+          },
+          ". Du lytter i en mottaker mens du langsomt endrer senderfrekvensen."
+        ]
+      ],
+      "stem": [
+        [
+          "Når er senderen på nøyaktig ",
+          {
+            "q": 7.0,
+            "u": "MHz"
+          },
+          "?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Når tonen blir dypere og til slutt forsvinner."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Når tonen er så lys som mulig."
+          ],
+          "feedback": [
+            "Tonen er forskjellen mellom de to frekvensene. En lys tone betyr stor forskjell."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Når S-meteret viser S9."
+          ],
+          "feedback": [
+            "Signalstyrken sier ingenting om hvor nær frekvensene er hverandre. Det er differansetonen du må følge."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Når du hører to toner samtidig."
+          ],
+          "feedback": [
+            "Du hører én tone – forskjellen mellom de to signalene. Den skal bli så dyp at den forsvinner."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Krystalloscillatoren gir sterke signaler på hele multipler av ",
+          {
+            "q": 1,
+            "u": "MHz"
+          },
+          ", også på ",
+          {
+            "q": 7,
+            "u": "MHz"
+          },
+          ". Ligger senderen nær, hører du forskjellen mellom de to som en tone."
+        ],
+        [
+          "Jo nærmere frekvensene kommer hverandre, desto dypere blir tonen. Når den forsvinner helt, har du ",
+          {
+            "term": "nulltone",
+            "text": "nulltone"
+          },
+          ": frekvensene er like, og VFO-en er kalibrert der. Nøyaktigheten er aldri bedre enn krystalloscillatoren."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 11,
+        "section_id": "s11-10",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "421defbacc01dfd4"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:11:20+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "440031b750500e59fb5b29d428cc4368070d29410b61840cf02e925da6ba1129",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:49:36+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "440031b750500e59fb5b29d428cc4368070d29410b61840cf02e925da6ba1129",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:11:19+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "440031b750500e59fb5b29d428cc4368070d29410b61840cf02e925da6ba1129",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:49:36+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:49:36+00:00",
+        "content_sha256": "440031b750500e59fb5b29d428cc4368070d29410b61840cf02e925da6ba1129",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

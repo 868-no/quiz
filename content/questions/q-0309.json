@@ -1,0 +1,198 @@
+{
+  "id": "q-0309",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 7,
+      "section_ids": [
+        "s7-05"
+      ],
+      "topic_ids": [
+        "digitale-filtre"
+      ],
+      "learning_objective": "Forstå forskjellen på tidsdomenet og frekvensdomenet, og at FFT brukes til å gå fra det ene til det andre.",
+      "priority": "normal",
+      "context": [
+        "Mange stasjoner kaller samtidig på en sjelden stasjon på CW, og du vil se hvor hver av dem ligger på båndet."
+      ],
+      "stem": [
+        "Hvorfor er en visning i frekvensdomenet nyttigere enn en i tidsdomenet her?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Den viser hvor mye energi det er på hver frekvens, så signalene skilles fra hverandre."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Den viser hvordan spenningen varierer fra øyeblikk til øyeblikk."
+          ],
+          "feedback": [
+            "Det er nettopp det tidsdomenet viser. Der ligger alle signalene oppå hverandre og er vanskelige å skille."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Den fjerner all støy fra signalene."
+          ],
+          "feedback": [
+            "Visningen endrer ikke signalene, den viser dem bare på en annen måte."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Den krever ingen regning i prosessoren."
+          ],
+          "feedback": [
+            "For å komme til frekvensdomenet må prosessoren regne en Fourier-transformasjon, som er krevende. Derfor brukes den raske utgaven, FFT."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "I tidsdomenet ser man spenningen som funksjon av tid. Er det mange signaler samtidig, blir summen et rot. I frekvensdomenet ser man i stedet hvor mye energi som finnes på hver frekvens, og hver stasjon blir en egen topp.",
+        [
+          "Prosessoren kommer fra det ene til det andre med en Fourier-transformasjon, som deler signalet opp i sinussignaler på hver sin frekvens. ",
+          {
+            "term": "fft",
+            "text": "FFT"
+          },
+          " er en rask måte å regne den ut på, og den er særlig effektiv når antall sampler er 2 opphøyd i et heltall, for eksempel 1024."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 7,
+        "section_id": "s7-05",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "2d06a92a29d8e927",
+          "c8324d418bb226c2"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:09:37+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "edec73019be39d024849bffc5cd14f7d8053ecbded024085f138393d4143849a",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:48:17+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "94db4aa2227dae0c26956c67a27a1fef58695981b52aef9716a1213e20ba38da",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:09:36+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "94db4aa2227dae0c26956c67a27a1fef58695981b52aef9716a1213e20ba38da",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:48:17+00:00"
+      },
+      "visual": {
+        "template": "spectrum",
+        "version": 1,
+        "after_only": true,
+        "params": {
+          "x_min_hz": 7023000,
+          "x_max_hz": 7027000,
+          "freq_labels": false,
+          "panels": [
+            {
+              "title": "Frekvensdomenet: én topp per stasjon",
+              "lines": [
+                {
+                  "f_hz": 7023600,
+                  "level": 0.5
+                },
+                {
+                  "f_hz": 7024100,
+                  "level": 0.8
+                },
+                {
+                  "f_hz": 7024450,
+                  "level": 0.35
+                },
+                {
+                  "f_hz": 7025000,
+                  "level": 0.95
+                },
+                {
+                  "f_hz": 7025350,
+                  "level": 0.6
+                },
+                {
+                  "f_hz": 7025900,
+                  "level": 0.4
+                },
+                {
+                  "f_hz": 7026400,
+                  "level": 0.7
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:48:17+00:00",
+        "content_sha256": "94db4aa2227dae0c26956c67a27a1fef58695981b52aef9716a1213e20ba38da",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

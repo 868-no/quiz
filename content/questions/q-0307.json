@@ -1,0 +1,188 @@
+{
+  "id": "q-0307",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 7,
+      "section_ids": [
+        "s7-05"
+      ],
+      "topic_ids": [
+        "sampling-aliasing"
+      ],
+      "learning_objective": "Forklare aliasing og at et analogt lavpassfilter foran A/D-omformeren hindrer det.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "Et signal med høyere frekvens enn halve ",
+          {
+            "term": "sampling",
+            "text": "samplingsfrekvensen"
+          },
+          " slipper inn på en A/D-omformer."
+        ]
+      ],
+      "stem": [
+        "Hva skjer, og hvordan hindrer man det?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Signalet dukker opp på en lavere, feil frekvens; et lavpassfilter foran omformeren må fjerne det."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Signalet blir borte av seg selv, så ingenting trengs."
+          ],
+          "feedback": [
+            "Omformeren leser av signalet uansett frekvens. Er frekvensen for høy, gir avlesningene et falskt signal på en annen frekvens."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Signalet dukker opp på feil frekvens, men kan filtreres bort digitalt etterpå."
+          ],
+          "feedback": [
+            "Når signalet først er samplet, er det umulig å skille det fra et ekte signal på den lavere frekvensen. Det må fjernes før omformeren."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Signalet overstyrer omformeren; man må senke nivået."
+          ],
+          "feedback": [
+            "Overstyring handler om amplitude. Her er problemet frekvensen, og det løses med et filter, ikke med lavere nivå."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Er frekvensen for høy, gir avlesningene nøyaktig de samme verdiene som et signal på en lavere frekvens. Det høye signalet forkler seg som det lave. Dette kalles ",
+          {
+            "term": "aliasing",
+            "text": "aliasing"
+          },
+          " eller folding."
+        ],
+        [
+          "Etter samplingen er det ingen måte å se forskjell på, så falske signaler kan ikke fjernes i ettertid. Derfor står et analogt lavpassfilter – et anti-aliasingfilter – foran A/D-omformeren og fjerner alt over ",
+          {
+            "term": "nyquist-frekvens",
+            "text": "Nyquist-frekvensen"
+          },
+          "."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 7,
+        "section_id": "s7-05",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "fb1160c055b2b9e6",
+          "9495dd464dc863bf"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:09:37+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "e27eb2e36fd989798113d6c4255e9d50a98f28acd9060bb375cfbf62bfcf4975",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:48:15+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "7160b1c8275f1c844668b6a8832d73f3a710b5cfa66444c137c4c8a7bd0bb9f8",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:09:36+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "7160b1c8275f1c844668b6a8832d73f3a710b5cfa66444c137c4c8a7bd0bb9f8",
+        "errors": [],
+        "warnings": [
+          "priority: 'exam_important' set by judgement; the book's '!' markers are not known for this chapter yet (no scan)"
+        ],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:48:15+00:00"
+      },
+      "visual": {
+        "template": "sampling",
+        "version": 1,
+        "params": {
+          "kind": "samples",
+          "f_hz": 40000,
+          "fs_hz": 48000,
+          "samples_shown": 16,
+          "show_reconstruction": true
+        },
+        "after_only": true,
+        "animation": {
+          "param": "f_hz",
+          "from": 6000,
+          "to": 42000,
+          "phase": "after",
+          "text": "Animasjonen øker signalfrekvensen fra 6 kHz til 42 kHz. Under 24 kHz følger den stiplede kurven signalet; over 24 kHz viser samplene en lavere, falsk frekvens som synker igjen jo nærmere 48 kHz signalet kommer."
+        }
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:48:15+00:00",
+        "content_sha256": "7160b1c8275f1c844668b6a8832d73f3a710b5cfa66444c137c4c8a7bd0bb9f8",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

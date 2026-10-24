@@ -1,0 +1,143 @@
+{
+  "id": "q-0525",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "medium",
+      "chapter": 12,
+      "section_ids": [
+        "s12-10"
+      ],
+      "topic_ids": [
+        "relestasjoner-nett"
+      ],
+      "learning_objective": "Vite at man bør gå over til direkte kontakt og slippe til mobile brukere når man bruker en reléstasjon.",
+      "priority": "normal",
+      "context": [
+        [
+          "Du har en lang samtale via en ",
+          {
+            "term": "relestasjon",
+            "text": "reléstasjon"
+          },
+          " og oppdager at stasjonen du snakker med, er så nær at dere kunne nådd hverandre direkte."
+        ]
+      ],
+      "stem": [
+        "Hva bør dere gjøre?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Gå over til en direktekanal, så reléstasjonen blir ledig for andre."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Bli på reléstasjonen; den som bruker den, beholder den så lenge han vil."
+          ],
+          "feedback": [
+            "En reléstasjon har ofte bare én kanal som mange skal dele. Kan dere snakke direkte, bør dere gjøre det."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Øke effekten for å komme bedre inn på reléstasjonen."
+          ],
+          "feedback": [
+            "Problemet er ikke signalstyrken, men at dere opptar en kanal andre kan trenge."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Bytte til en annen reléstasjon og fortsette der."
+          ],
+          "feedback": [
+            "Da opptar dere bare en annen delt kanal. Når dere når hverandre direkte, trenger dere ingen reléstasjon."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "En reléstasjon har som regel én kanal som alle i området deler. Den ble satt opp for å gi mobile brukere lengre rekkevidde, og de bør derfor slippes til.",
+        "Kan dere nå hverandre direkte, flytter dere til en direktekanal. Blir dere likevel værende, tar dere jevnlige pauser så andre – for eksempel en bilist som prøver å nå noen – får komme til."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 12,
+        "section_id": "s12-10",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "d8853025cf1db0f7"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:13:44+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "fc9fbd169e920df137eccff32469085cb53bdec48855b55db630cfcb8fa6d610",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:50:02+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "fc9fbd169e920df137eccff32469085cb53bdec48855b55db630cfcb8fa6d610",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": []
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:13:43+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "fc9fbd169e920df137eccff32469085cb53bdec48855b55db630cfcb8fa6d610",
+        "errors": [],
+        "warnings": [],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T22:50:02+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:50:02+00:00",
+        "content_sha256": "fc9fbd169e920df137eccff32469085cb53bdec48855b55db630cfcb8fa6d610",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

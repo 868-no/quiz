@@ -1,0 +1,164 @@
+{
+  "id": "q-0300",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "recall",
+      "difficulty": "easy",
+      "chapter": 7,
+      "section_ids": [
+        "s7-01"
+      ],
+      "topic_ids": [
+        "analog-til-digital"
+      ],
+      "learning_objective": "Vite at en A/D-omformer gjør om både amplitude (kvantisering) og tid (sampling).",
+      "priority": "normal",
+      "context": [],
+      "stem": [
+        [
+          "En ",
+          {
+            "term": "ad-omformer",
+            "text": "A/D-omformer"
+          },
+          " gjør et analogt signal digitalt. Hvilke to omforminger må den gjøre?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Den runder av amplituden til faste nivåer (kvantisering) og leser av signalet på faste tidspunkter (sampling)."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Den forsterker signalet og filtrerer bort støyen."
+          ],
+          "feedback": [
+            "Forsterking og filtrering kan skje før eller etter omformeren, men det som gjør signalet digitalt, er at både amplitude og tid får faste, tellbare verdier."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Den blander signalet ned til mellomfrekvens og demodulerer det."
+          ],
+          "feedback": [
+            "Nedblanding og demodulering er oppgaver i mottakeren. I en SDR gjøres de digitalt, men først etter at A/D-omformeren har gjort signalet om til tall."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Den gjør om tall tilbake til en glidende spenning."
+          ],
+          "feedback": [
+            "Det er motsatt vei. Den jobben gjør en D/A-omformer, for eksempel når et filtrert signal skal ut til en høyttaler."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Et analogt signal kan ha hvilken som helst verdi, når som helst. En prosessor kan bare regne med et begrenset antall verdier på bestemte tidspunkter.",
+        [
+          "Omformeren gjør derfor to ting: den leser av signalet med faste mellomrom (",
+          {
+            "term": "sampling",
+            "text": "sampling"
+          },
+          "), og den runder av hver avlesning til nærmeste av et begrenset antall nivåer (",
+          {
+            "term": "kvantisering",
+            "text": "kvantisering"
+          },
+          "). Den motsatte veien, fra tall til analogt signal, går gjennom en D/A-omformer."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 7,
+        "section_id": "s7-01",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "bd5be295acc3f670"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:09:36+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "da57643573f5ceeafba93fcaa3fe2596bbf44951f6a734bb21bfa279a12eb0dc",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:48:09+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "cbbef847e2a5a18e8aee12255165cfa4efbe10dea17669d6d7a61388303b3c3a",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": []
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:09:36+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "cbbef847e2a5a18e8aee12255165cfa4efbe10dea17669d6d7a61388303b3c3a",
+        "errors": [],
+        "warnings": [],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T22:48:09+00:00"
+      },
+      "visual": {
+        "template": "sampling",
+        "version": 1,
+        "params": {
+          "kind": "quantize",
+          "bits": 3,
+          "samples_per_period": 16,
+          "show_values": false
+        },
+        "after_only": true
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:48:09+00:00",
+        "content_sha256": "cbbef847e2a5a18e8aee12255165cfa4efbe10dea17669d6d7a61388303b3c3a",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

@@ -1,0 +1,210 @@
+{
+  "id": "q-0481",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "calculation",
+      "difficulty": "medium",
+      "chapter": 11,
+      "section_ids": [
+        "s11-16"
+      ],
+      "topic_ids": [
+        "desibel"
+      ],
+      "learning_objective": "Beregne forsterkning i dB ut fra inn- og utgangseffekt.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En forsterker får ",
+          {
+            "q": 2,
+            "u": "W"
+          },
+          " inn og gir ",
+          {
+            "q": 40,
+            "u": "W"
+          },
+          " ut."
+        ]
+      ],
+      "stem": [
+        [
+          "Hva er forsterkningen i ",
+          {
+            "term": "desibel",
+            "text": "dB"
+          },
+          "?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 13,
+              "u": "dB"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 20,
+              "u": "dB"
+            }
+          ],
+          "feedback": [
+            "20 dB er hundre ganger. Her er forsterkningen 40 / 2 = 20 ganger."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 26,
+              "u": "dB"
+            }
+          ],
+          "feedback": [
+            "Her er formelen for spenningsforhold brukt (20 · log). For effekter er det 10 · log."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 38,
+              "u": "dB"
+            }
+          ],
+          "feedback": [
+            "Desibel er et forhold, ikke en differanse. Effektene skal deles, ikke trekkes fra hverandre."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Forsterkningen er 40 / 2 = 20 ganger. I desibel:",
+        {
+          "steps": [
+            [
+              "10 · log 20 ≈ ",
+              {
+                "q": 13,
+                "u": "dB"
+              }
+            ]
+          ]
+        },
+        "Uten kalkulator: 20 ganger er 10 ganger (10 dB) og så dobling (3 dB), til sammen 13 dB."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 11,
+        "section_id": "s11-16",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "f924392ee733e807",
+          "dafa89d8e365795c",
+          "a3b900e180be4f69"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:11:20+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "cafea959acf3b0abe97e5d8f9c902f0b0b16472df81077593416e4d805e65ddb",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:49:44+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "cafea959acf3b0abe97e5d8f9c902f0b0b16472df81077593416e4d805e65ddb",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:11:19+00:00"
+      },
+      "calculation": {
+        "formula": "db_power_ratio",
+        "inputs": {
+          "P1": [
+            2,
+            "W"
+          ],
+          "P2": [
+            40,
+            "W"
+          ]
+        },
+        "answer": [
+          13,
+          "dB"
+        ],
+        "answer_symbol": "G",
+        "sig_figs": 2
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "cafea959acf3b0abe97e5d8f9c902f0b0b16472df81077593416e4d805e65ddb",
+        "errors": [],
+        "warnings": [
+          "priority: 'exam_important' set by judgement; the book's '!' markers are not known for this chapter yet (no scan)"
+        ],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:49:44+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:49:44+00:00",
+        "content_sha256": "cafea959acf3b0abe97e5d8f9c902f0b0b16472df81077593416e4d805e65ddb",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

@@ -1,0 +1,174 @@
+{
+  "id": "q-0542",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "medium",
+      "chapter": 12,
+      "section_ids": [
+        "s12-22"
+      ],
+      "topic_ids": [
+        "operasjon-utlandet",
+        "kallesignaler"
+      ],
+      "learning_objective": "Vite hvordan kallesignalet skrives når man sender med CEPT-lisens i et annet land, og at landets regler gjelder.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "Du har norsk full radioamatørlisens (HAREC klasse A) med kallesignalet LA1XYZ og er på ferie i Tyskland, som følger ordningen med ",
+          {
+            "term": "cept-lisens",
+            "text": "CEPT-lisens"
+          },
+          "."
+        ]
+      ],
+      "stem": [
+        "Hvilket kallesignal bruker du der?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "DL/LA1XYZ"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "LA1XYZ/DL"
+          ],
+          "feedback": [
+            "Med CEPT-lisens står prefikset til landet du besøker, foran ditt eget kallesignal."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "LA1XYZ"
+          ],
+          "feedback": [
+            "Du må vise at du sender fra et annet land. Med CEPT-lisens setter du landets prefiks foran kallesignalet."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "DL1XYZ"
+          ],
+          "feedback": [
+            "Du får ikke et nytt kallesignal på et kort besøk. Du bruker ditt eget, med det tyske prefikset foran."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Med CEPT-lisens bruker du ditt eget kallesignal med prefikset for landet du besøker foran, adskilt med skråstrek: DL/LA1XYZ. På telefoni sier du «strek».",
+        "Husk at det er reglene i landet du besøker, som avgjør hvilke bånd og hvilken effekt du kan bruke – ikke reglene hjemme. Norsk begrenset lisens gjelder bare i Norge."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 12,
+        "section_id": "s12-22",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "be93aaffef72711b",
+          "f1cfdd025b2e94a2"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:13:44+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "098b7899182b01a2ab33a1ec2742ba95953eaecb6cbbf1196c7a5bf85f7a4576",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:39:02+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "a9b6c3591c7011689bc394f6dd624dd7666f683040b0fb7fef014169c7db12a8",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:50:18+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "a9b6c3591c7011689bc394f6dd624dd7666f683040b0fb7fef014169c7db12a8",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": []
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:13:43+00:00"
+      },
+      "visual": {
+        "template": "code-breakdown",
+        "version": 1,
+        "params": {
+          "parts": [
+            {
+              "text": "DL/",
+              "label": "Prefiks for landet du er i (Tyskland)",
+              "highlight": true
+            },
+            {
+              "text": "LA1XYZ",
+              "label": "Ditt norske kallesignal"
+            }
+          ]
+        },
+        "after_only": true
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "a9b6c3591c7011689bc394f6dd624dd7666f683040b0fb7fef014169c7db12a8",
+        "errors": [],
+        "warnings": [
+          "priority: 'exam_important' set by judgement; the book's '!' markers are not known for this chapter yet (no scan)"
+        ],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T22:50:18+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:50:18+00:00",
+        "content_sha256": "a9b6c3591c7011689bc394f6dd624dd7666f683040b0fb7fef014169c7db12a8",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

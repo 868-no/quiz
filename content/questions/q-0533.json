@@ -1,0 +1,143 @@
+{
+  "id": "q-0533",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 12,
+      "section_ids": [
+        "s12-16"
+      ],
+      "topic_ids": [
+        "regelverk-organisasjoner"
+      ],
+      "learning_objective": "Kjenne ITUs definisjon av formålet med amatørtjenesten.",
+      "priority": "exam_important",
+      "context": [],
+      "stem": [
+        [
+          "Hva er formålet med amatørtjenesten slik ",
+          {
+            "term": "itu",
+            "text": "ITU"
+          },
+          " definerer den?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Egentrening, samband og tekniske undersøkelser, uten økonomisk vinning."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Å være et reservesamband for bedrifter mot betaling."
+          ],
+          "feedback": [
+            "Amatørtjenesten skal drives uten økonomiske interesser. Betalte meldinger er heller ikke tillatt."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Å kringkaste nyheter og musikk til allmennheten."
+          ],
+          "feedback": [
+            "Kringkasting er en egen tjeneste. Amatørtjenesten handler om kommunikasjon mellom amatører og egen læring."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Å gi navigasjonshjelp til skip og fly."
+          ],
+          "feedback": [
+            "Navigasjon hører til andre radiotjenester. Amatørtjenesten er for personer med interesse for radioteknikk."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "ITUs radioreglement beskriver amatørtjenesten som en radiotjeneste for egentrening, samband og tekniske undersøkelser. Den drives av godkjente personer som er interessert i radioteknikk, av rent personlige grunner og uten økonomiske interesser.",
+        "Satellittaktivitetene regnes som en egen tjeneste, amatørsatellittjenesten, med de samme formålene."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 12,
+        "section_id": "s12-16",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "6372a8334a716e14"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:13:44+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "0b9853db974f88b82eff76c9b333f30b9d69dc7e2f024cec92b6c0efdcc04cac",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:50:09+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "0b9853db974f88b82eff76c9b333f30b9d69dc7e2f024cec92b6c0efdcc04cac",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": []
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:13:43+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "0b9853db974f88b82eff76c9b333f30b9d69dc7e2f024cec92b6c0efdcc04cac",
+        "errors": [],
+        "warnings": [
+          "priority: 'exam_important' set by judgement; the book's '!' markers are not known for this chapter yet (no scan)"
+        ],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T22:50:09+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:50:09+00:00",
+        "content_sha256": "0b9853db974f88b82eff76c9b333f30b9d69dc7e2f024cec92b6c0efdcc04cac",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

@@ -1,0 +1,185 @@
+{
+  "id": "q-0637",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 16,
+      "section_ids": [
+        "s16-07"
+      ],
+      "topic_ids": [
+        "rst-rapporter"
+      ],
+      "learning_objective": "Tolke en RST-rapport og vite at tonen (T) bare brukes for morse og digitale signaler.",
+      "priority": "exam_important",
+      "context": [
+        "Under en forbindelse på SSB får du rapporten «59»."
+      ],
+      "stem": [
+        "Hva forteller rapporten deg?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Signalet ditt er perfekt lesbart og svært sterkt."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Signalet ditt er lesbart med vanskelighet og har perfekt tone."
+          ],
+          "feedback": [
+            "Det første tallet er lesbarheten, der 5 er best. På tale gis bare to tall – det finnes ingen tone å vurdere."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Signalet ditt har styrke 5 og lesbarhet 9."
+          ],
+          "feedback": [
+            "Rekkefølgen er R, S, T: først lesbarhet (1–5), så styrke (1–9). 9 er ikke mulig for lesbarheten."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Signalet ditt er middels sterkt, med litt brum."
+          ],
+          "feedback": [
+            "Styrke 9 er svært sterkt. Brum hører til tonen, som bare oppgis for morse og digitale signaler."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "En ",
+          {
+            "term": "rst",
+            "text": "RST-rapport"
+          },
+          " gir lesbarhet (R) fra 1 til 5, styrke (S) fra 1 til 9 og tone (T) fra 1 til 9. «59» betyr perfekt lesbart (5) og svært sterkt (9)."
+        ],
+        "Tonen vurderes bare for morse og digitale signaler, så på tale gis rapporten med to tall. Et morsesignal i toppform får 599."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 16,
+        "section_id": "s16-07",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "ec4dfcdb22f030fd",
+          "b4cbd2465d9a05d3"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:08:40+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "71b0122a11cd497b9717712b38b2f3d59d707b45beff5a6abc17eebdffaf2135",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:51:01+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "9f26c2228e39647b33ebc0e1477c248eaa30ee8b42299b806ac3151ec4825503",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:08:39+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "9f26c2228e39647b33ebc0e1477c248eaa30ee8b42299b806ac3151ec4825503",
+        "errors": [],
+        "warnings": [
+          "priority: 'exam_important' set by judgement; the book's '!' markers are not known for this chapter yet (no scan)"
+        ],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:51:01+00:00"
+      },
+      "visual": {
+        "template": "code-breakdown",
+        "version": 1,
+        "params": {
+          "parts": [
+            {
+              "text": "5",
+              "label": "Lesbarhet (R): 5 av 5 – perfekt lesbar",
+              "hidden": true
+            },
+            {
+              "text": "9",
+              "label": "Signalstyrke (S): 9 av 9 – svært sterk",
+              "hidden": true
+            }
+          ]
+        },
+        "params_after": {
+          "parts": [
+            {
+              "text": "5",
+              "label": "Lesbarhet (R): 5 av 5 – perfekt lesbar"
+            },
+            {
+              "text": "9",
+              "label": "Signalstyrke (S): 9 av 9 – svært sterk"
+            }
+          ]
+        }
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:51:01+00:00",
+        "content_sha256": "9f26c2228e39647b33ebc0e1477c248eaa30ee8b42299b806ac3151ec4825503",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

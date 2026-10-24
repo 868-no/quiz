@@ -1,0 +1,145 @@
+{
+  "id": "q-0368",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "medium",
+      "chapter": 8,
+      "section_ids": [
+        "s8-21"
+      ],
+      "topic_ids": [
+        "hf-antenner"
+      ],
+      "learning_objective": "Kjenne problemet med høye HF-spenninger nær fødepunktet til en endematet halvbølgeantenne.",
+      "priority": "normal",
+      "context": [
+        "En endematet halvbølgeantenne er ført helt inn til radiobordet, der en antennetuner tilpasser den til senderen."
+      ],
+      "stem": [
+        "Hvilket problem er mest sannsynlig?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Høye HF-spenninger like ved radioen og annet utstyr."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Svært store strømmer i jordledningen til tuneren."
+          ],
+          "feedback": [
+            "Store jordstrømmer får man med en endematet kvartbølgeantenne, som har lav impedans. En halvbølgeantenne har høy impedans i enden og beskjedne jordstrømmer."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "At antennen bare virker på én frekvens."
+          ],
+          "feedback": [
+            "Med en tuner kan en endematet tråd brukes på mange frekvenser. Problemet er hvor den høye spenningen havner."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "At antennen stråler bare rett opp."
+          ],
+          "feedback": [
+            "Strålingsretningen avhenger av høyde og lengde. Det spesielle her er den høye spenningen i fødepunktet."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Enden av en halvbølgeantenne har høy spenning og lav strøm, altså høy impedans. Tas fødepunktet inn i huset, får man høye HF-spenninger nær annet utstyr, og det gir lett innslag.",
+        "Ved høy effekt bør tuneren derfor stå ute, så langt unna slikt utstyr som mulig, og mates med koaksialkabel fra senderen."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 8,
+        "section_id": "s8-21",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "79e83efef172fd8f"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:13:26+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "e469cdd280e06d51338537088d1b29538d10b90c35e70fb7590021607610b362",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:48:49+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "e469cdd280e06d51338537088d1b29538d10b90c35e70fb7590021607610b362",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:13:24+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "e469cdd280e06d51338537088d1b29538d10b90c35e70fb7590021607610b362",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:48:49+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:48:49+00:00",
+        "content_sha256": "e469cdd280e06d51338537088d1b29538d10b90c35e70fb7590021607610b362",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

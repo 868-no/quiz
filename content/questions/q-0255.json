@@ -1,0 +1,146 @@
+{
+  "id": "q-0255",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "medium",
+      "chapter": 9,
+      "section_ids": [
+        "s9-09"
+      ],
+      "topic_ids": [
+        "vhf-utbredelse"
+      ],
+      "learning_objective": "Forklare at knivseggdiffraksjon kan gi forbindelse forbi en skarp fjellkant på VHF.",
+      "priority": "normal",
+      "context": [
+        "To stasjoner på 2 m ligger på hver sin side av en skarp fjellrygg og ser ikke hverandre. Likevel får de forbindelse."
+      ],
+      "stem": [
+        "Hva kan forklare dette?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Diffraksjon over den skarpe fjellkanten."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Jordbølgen følger terrenget over fjellet."
+          ],
+          "feedback": [
+            "På 2 m dempes jordbølgen nesten med en gang. Den er nyttig under om lag 2 MHz."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Signalet går rett gjennom fjellet."
+          ],
+          "feedback": [
+            "Fjell slipper i praksis ikke VHF-signaler gjennom. Signalet går over kanten og bøyes ned på den andre siden."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Meteorspredning."
+          ],
+          "feedback": [
+            "Meteorspredning gir korte glimt av forbindelse over lange avstander når meteorer brenner opp. Det forklarer ikke en stabil forbindelse forbi en fjellrygg."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Når bølger passerer en skarp kant, spres de ut bak kanten, også inn i skyggen av den. Dette kalles diffraksjon, og over en fjelltopp gjerne knivseggdiffraksjon. Det gjelder også radiobølger over 70 MHz.",
+        "Slik kan stasjoner som terrenget skjuler for hverandre, likevel nå hverandre."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 9,
+        "section_id": "s9-09",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "a017420771e8cbe5"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:14:11+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "62da8926f9b49cee91ca02a4509fede8ee72c66145481472073dde1f330408aa",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:48:05+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "9f4ec4880d61f77f38941de05533aab0d4409e7a977004e96ab8ef7ab1340774",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": []
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:04:28+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "9f4ec4880d61f77f38941de05533aab0d4409e7a977004e96ab8ef7ab1340774",
+        "errors": [],
+        "warnings": [],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T22:48:05+00:00"
+      },
+      "visual": {
+        "template": "propagation",
+        "version": 1,
+        "params": {
+          "kind": "knife_edge"
+        },
+        "params_after": {
+          "show_diffraction": true
+        }
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:48:05+00:00",
+        "content_sha256": "9f4ec4880d61f77f38941de05533aab0d4409e7a977004e96ab8ef7ab1340774",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

@@ -1,0 +1,243 @@
+{
+  "id": "q-0461",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "calculation",
+      "difficulty": "medium",
+      "chapter": 11,
+      "section_ids": [
+        "s11-03"
+      ],
+      "topic_ids": [
+        "maleinstrumenter"
+      ],
+      "learning_objective": "Beregne shuntmotstanden som lar et milliamperemeter måle store strømmer.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "Et dreiespoleinstrument gir fullt utslag ved ",
+          {
+            "q": 1,
+            "u": "mA"
+          },
+          " og har en indre motstand på ",
+          {
+            "q": 50,
+            "u": "Ω"
+          },
+          ", så det ligger ",
+          {
+            "q": 50,
+            "u": "mV"
+          },
+          " over det ved fullt utslag. Du vil måle strømmer opp til ",
+          {
+            "q": 5,
+            "u": "A"
+          },
+          " med en ",
+          {
+            "term": "shunt",
+            "text": "shunt"
+          },
+          " parallelt med instrumentet."
+        ]
+      ],
+      "stem": [
+        "Hvor stor må shuntmotstanden være?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 10,
+              "u": "mΩ"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 10,
+              "u": "Ω"
+            }
+          ],
+          "feedback": [
+            "Her er millivolt regnet som volt. 0,05 V delt på 5 A gir 0,01 Ω."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 250,
+              "u": "mΩ"
+            }
+          ],
+          "feedback": [
+            "Dette er 50 Ω delt på 200. Shunten skal ha samme spenning over seg som instrumentet, 50 mV, med nesten hele strømmen på 5 A gjennom seg."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 50,
+              "u": "kΩ"
+            }
+          ],
+          "feedback": [
+            "En så stor motstand passer som seriemotstand i et voltmeter. En shunt skal ha svært lav motstand, så mesteparten av strømmen går gjennom den."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Shunten ligger parallelt med instrumentet og får derfor samme spenning, ",
+          {
+            "q": 50,
+            "u": "mV"
+          },
+          " ved fullt utslag. Nesten hele strømmen på ",
+          {
+            "q": 5,
+            "u": "A"
+          },
+          " går gjennom shunten; den ene milliamperen gjennom instrumentet betyr ingenting her."
+        ],
+        {
+          "steps": [
+            [
+              "R = U / I = 0,05 V / 5 A = ",
+              {
+                "q": 10,
+                "u": "mΩ"
+              }
+            ]
+          ]
+        },
+        "Det er en svært liten motstand – i praksis en kort, tykk kobbertråd eller en ferdig shunt med oppgitt spenningsfall ved merkestrømmen."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 11,
+        "section_id": "s11-03",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "a31655167d0d20c2"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:11:20+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "8bbd2bc85a907d2aee364e3a850486f11be73ceaf55d594e45f29b04cbfcd8c1",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:49:25+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "0951ef119a38a3655449840c98e6504b260e95d7550380b9bc665f1f870dad63",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:11:19+00:00"
+      },
+      "calculation": {
+        "formula": "ohms_law_resistance",
+        "inputs": {
+          "U": [
+            50,
+            "mV"
+          ],
+          "I": [
+            5,
+            "A"
+          ]
+        },
+        "answer": [
+          10,
+          "mΩ"
+        ],
+        "answer_symbol": "R",
+        "sig_figs": 2
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "0951ef119a38a3655449840c98e6504b260e95d7550380b9bc665f1f870dad63",
+        "errors": [],
+        "warnings": [
+          "priority: 'exam_important' set by judgement; the book's '!' markers are not known for this chapter yet (no scan)"
+        ],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:49:25+00:00"
+      },
+      "visual": {
+        "template": "instrument",
+        "version": 1,
+        "params": {
+          "kind": "meter_shunt",
+          "meter": {
+            "full_scale_a": 0.001,
+            "coil_ohms": 50
+          },
+          "range_a": 5
+        },
+        "params_after": {
+          "show_resistor": true
+        }
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:49:25+00:00",
+        "content_sha256": "0951ef119a38a3655449840c98e6504b260e95d7550380b9bc665f1f870dad63",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

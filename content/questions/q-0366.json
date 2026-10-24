@@ -1,0 +1,161 @@
+{
+  "id": "q-0366",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "recall",
+      "difficulty": "easy",
+      "chapter": 8,
+      "section_ids": [
+        "s8-17"
+      ],
+      "topic_ids": [
+        "retningsantenner"
+      ],
+      "learning_objective": "Vite at elementet i en quad-antenne er en sløyfe på om lag én bølgelengde.",
+      "priority": "normal",
+      "context": [],
+      "stem": [
+        "Hvor lang er sløyfen i et element i en quad-antenne, regnet rundt hele omkretsen?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Om lag én bølgelengde."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Om lag en halv bølgelengde."
+          ],
+          "feedback": [
+            "Det er lengden på en dipol. Quad-elementet er en lukket firkant med en kvart bølgelengde på hver av de fire sidene."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Om lag en kvart bølgelengde."
+          ],
+          "feedback": [
+            "En kvart bølgelengde er lengden på én side, ikke hele sløyfen."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Om lag to bølgelengder."
+          ],
+          "feedback": [
+            "Fire sider på en kvart bølgelengde hver blir én bølgelengde til sammen."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Hver side i quad-sløyfen er en kvart bølgelengde, så hele sløyfen blir om lag én bølgelengde. Matet midt på en vannrett side er den horisontalt polarisert, og med reflektor er impedansen om lag ",
+          {
+            "q": 75,
+            "u": "Ω"
+          },
+          "."
+        ],
+        "Den er balansert og mates gjerne via en 1:1-balun. Med reflektor og direktorer blir den en quad-utgave av Yagi-Uda-antennen."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 8,
+        "section_id": "s8-17",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "87fd2c0832c538c1"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:13:26+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "dfbd537e0be6556210fc4c50930439029ad35fbcba5bdf4abe493f991ee18323",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:48:47+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "f7fd4bbdf368cb742f84941007bc8b0b76311a8eb87d2e9bfee3d83ec0bcff51",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:13:24+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "f7fd4bbdf368cb742f84941007bc8b0b76311a8eb87d2e9bfee3d83ec0bcff51",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:48:47+00:00"
+      },
+      "visual": {
+        "template": "antenna",
+        "version": 1,
+        "params": {
+          "kind": "quad",
+          "length_label": "?"
+        },
+        "params_after": {
+          "length_label": "≈ 1 λ"
+        }
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:48:47+00:00",
+        "content_sha256": "f7fd4bbdf368cb742f84941007bc8b0b76311a8eb87d2e9bfee3d83ec0bcff51",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

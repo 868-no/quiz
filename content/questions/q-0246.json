@@ -1,0 +1,212 @@
+{
+  "id": "q-0246",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "medium",
+      "chapter": 9,
+      "section_ids": [
+        "s9-04"
+      ],
+      "topic_ids": [
+        "muf-luf"
+      ],
+      "learning_objective": "Velge en frekvens under MUF og godt over LUF for en forbindelse som skal holde hele døgnet.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En prognose for en strekning viser at MUF varierer mellom ",
+          {
+            "q": 12,
+            "u": "MHz"
+          },
+          " og ",
+          {
+            "q": 20,
+            "u": "MHz"
+          },
+          " i løpet av døgnet, mens LUF varierer mellom ",
+          {
+            "q": 3,
+            "u": "MHz"
+          },
+          " og ",
+          {
+            "q": 6,
+            "u": "MHz"
+          },
+          "."
+        ]
+      ],
+      "stem": [
+        "Hvilket bånd er det beste valget for å holde forbindelsen hele døgnet?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "30 m (",
+            {
+              "q": 10.1,
+              "u": "MHz"
+            },
+            ")."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "15 m (",
+            {
+              "q": 21,
+              "u": "MHz"
+            },
+            ")."
+          ],
+          "feedback": [
+            "21 MHz ligger over MUF hele døgnet. Bølgen går da gjennom ionosfæren og kommer ikke tilbake."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "17 m (",
+            {
+              "q": 18.1,
+              "u": "MHz"
+            },
+            ")."
+          ],
+          "feedback": [
+            "18 MHz ligger under MUF bare den delen av døgnet der MUF er på det høyeste. Når MUF faller mot 12 MHz, forsvinner forbindelsen."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "80 m (",
+            {
+              "q": 3.6,
+              "u": "MHz"
+            },
+            ")."
+          ],
+          "feedback": [
+            "3,6 MHz ligger under LUF store deler av døgnet. Da dempes signalet for mye i D-laget til å komme fram."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "En frekvens over ",
+          {
+            "term": "muf",
+            "text": "MUF"
+          },
+          " går gjennom ionosfæren og kommer ikke tilbake. En frekvens under ",
+          {
+            "term": "luf",
+            "text": "LUF"
+          },
+          " dempes for mye i D-laget. For å holde forbindelsen hele døgnet må frekvensen ligge under den laveste MUF-verdien og komfortabelt over den høyeste LUF-verdien – her mellom ",
+          {
+            "q": 6,
+            "u": "MHz"
+          },
+          " og ",
+          {
+            "q": 12,
+            "u": "MHz"
+          },
+          ". 30 m-båndet passer."
+        ],
+        "Innenfor dette området er det en fordel å gå så høyt som mulig. Lavere frekvenser kan komme fram langs flere veier og gi mer fading."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 9,
+        "section_id": "s9-04",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "6032a4181de9b75a",
+          "a34e8fd8547d5334"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:14:10+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "8401f2fc2387d3e49a74e95b8fa4236dbf8d4a7a52e911f90980c0b848015124",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:47:57+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "8401f2fc2387d3e49a74e95b8fa4236dbf8d4a7a52e911f90980c0b848015124",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:04:28+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "8401f2fc2387d3e49a74e95b8fa4236dbf8d4a7a52e911f90980c0b848015124",
+        "errors": [],
+        "warnings": [
+          "priority: 'exam_important' set by judgement; the book's '!' markers are not known for this chapter yet (no scan)"
+        ],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:47:57+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:47:57+00:00",
+        "content_sha256": "8401f2fc2387d3e49a74e95b8fa4236dbf8d4a7a52e911f90980c0b848015124",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

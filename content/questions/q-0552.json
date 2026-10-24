@@ -1,0 +1,151 @@
+{
+  "id": "q-0552",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "recall",
+      "difficulty": "easy",
+      "chapter": 12,
+      "section_ids": [
+        "s12-12"
+      ],
+      "topic_ids": [
+        "qsl-diplomer"
+      ],
+      "learning_objective": "Vite hva QSL-kort brukes til og hva «QSL via bureau» betyr.",
+      "priority": "normal",
+      "context": [],
+      "stem": [
+        [
+          "En stasjon sier at den sender ",
+          {
+            "term": "qsl-kort",
+            "text": "QSL-kort"
+          },
+          " «via bureau». Hva betyr det?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "At kortet sendes gjennom den nasjonale QSL-tjenesten sammen med andre kort."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "At kontakten bekreftes elektronisk i stedet for med kort."
+          ],
+          "feedback": [
+            "Elektroniske ordninger som LoTW og e-QSL finnes også, men «via bureau» gjelder papirkort sendt gjennom QSL-tjenesten."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "At kortet sendes direkte i posten til adressen din."
+          ],
+          "feedback": [
+            "Det kalles å sende direkte. Via bureau går kortene samlet gjennom de nasjonale QSL-tjenestene."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "At stasjonen ikke sender QSL-kort i det hele tatt."
+          ],
+          "feedback": [
+            "Det betyr tvert imot at kortet kommer, bare gjennom QSL-tjenesten."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "QSL-kort er en skriftlig bekreftelse på en kontakt. De er fine minner, og de dokumenterer kontaktene når man søker om diplomer.",
+        "«Via bureau» betyr at kortene sendes samlet gjennom den nasjonale QSL-tjenesten, som sorterer og videresender dem. Det er billig, men kan ta tid. Det er god skikk å si tydelig fra hvordan du gjør det med QSL-kort."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 12,
+        "section_id": "s12-12",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "a86d179173f79636",
+          "cfee4b1738c3a312"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:13:45+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "c5480d06b529c5c6dc704a5b18e56e580b341e999006ec2957fef44b65d76a7e",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:50:27+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "c5480d06b529c5c6dc704a5b18e56e580b341e999006ec2957fef44b65d76a7e",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:13:43+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "c5480d06b529c5c6dc704a5b18e56e580b341e999006ec2957fef44b65d76a7e",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:50:27+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:50:27+00:00",
+        "content_sha256": "c5480d06b529c5c6dc704a5b18e56e580b341e999006ec2957fef44b65d76a7e",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

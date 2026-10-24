@@ -1,0 +1,146 @@
+{
+  "id": "q-0406",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 10,
+      "section_ids": [
+        "s10-14"
+      ],
+      "topic_ids": [
+        "emc-stasjon"
+      ],
+      "learning_objective": "Forklare hvorfor en endefødet langtrådantenne fra radiorommet gir EMC-problemer.",
+      "priority": "normal",
+      "context": [
+        "En vanlig enkel antenne er en lang tråd som går rett ut fra vinduet i radiorommet, matet i enden, med en jordledning fra radioen."
+      ],
+      "stem": [
+        "Hvorfor er dette et dårlig valg sett fra et EMC-synspunkt?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Antennen er ubalansert og avstemt mot jord, så RF-strøm og sterke felt havner i og nær huset."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Antennen har for liten båndbredde til å brukes på flere bånd."
+          ],
+          "feedback": [
+            "Båndbredden er ikke problemet her. Problemet er at antennen trenger jord som den andre halvdelen, og at den strålende delen starter inne i huset."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Antennen gir alltid så høyt SWR at sluttforsterkeren lager falske signaler."
+          ],
+          "feedback": [
+            "Med en antennetuner kan en slik antenne tilpasses. EMC-problemet skyldes at RF-strømmene og feltene er nær husets ledningsnett."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Antennen stråler bare vertikalt polariserte bølger, som TV-antenner fanger opp."
+          ],
+          "feedback": [
+            "Polarisasjonen er ikke hovedgrunnen. Det som gjør skaden, er at antennen er avstemt mot jord og ligger tett inntil huset."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "En endefødet langtrådantenne er ubalansert: den mangler den andre halvdelen som en dipol har, og bruker jorda i stedet. Strømmen til jord går da gjennom jordledningen og ledningsnettet i huset, som stråler ut signaler – og fanger opp støy når du lytter.",
+        "Høye spenninger og sterke felt oppstår nær huset og fanges opp av elektronikk, antenner og ledninger der. Bedre er en balansert antenne et stykke unna huset, eller i det minste en antennetuner ute ved antennen og en kort jordledning."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 10,
+        "section_id": "s10-14",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "827af8643826cd72",
+          "8654a44a38d7d57b"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:12:39+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "b0d97849f3cfb1f8d6f619f40a2f2a5fe65f264a04bc851ad24126bf1464e518",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:49:01+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "b0d97849f3cfb1f8d6f619f40a2f2a5fe65f264a04bc851ad24126bf1464e518",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:12:38+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "b0d97849f3cfb1f8d6f619f40a2f2a5fe65f264a04bc851ad24126bf1464e518",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:49:01+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:49:01+00:00",
+        "content_sha256": "b0d97849f3cfb1f8d6f619f40a2f2a5fe65f264a04bc851ad24126bf1464e518",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

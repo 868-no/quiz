@@ -1,0 +1,171 @@
+{
+  "id": "q-0304",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "hard",
+      "chapter": 7,
+      "section_ids": [
+        "s7-04"
+      ],
+      "topic_ids": [
+        "analog-til-digital"
+      ],
+      "learning_objective": "Forstå avveiningen mellom å bruke hele området til A/D-omformeren og å unngå overstyring.",
+      "priority": "normal",
+      "context": [
+        [
+          "For å være sikker på aldri å overstyre en ",
+          {
+            "term": "ad-omformer",
+            "text": "A/D-omformer"
+          },
+          " stiller du inn nivået slik at signalet bare bruker halve måleområdet."
+        ]
+      ],
+      "stem": [
+        "Hva er ulempen med dette?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Signalet bruker bare halvparten av nivåene, og det er omtrent som å miste én bit."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Omformeren blir overstyrt likevel, fordi toppene blir klippet."
+          ],
+          "feedback": [
+            "Med halve området brukt er det god plass til toppene, så overstyring er nettopp det man unngår. Prisen er at færre nivåer blir brukt."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Samplingsfrekvensen halveres."
+          ],
+          "feedback": [
+            "Nivået på signalet påvirker ikke hvor ofte omformeren leser av. Det er antall nivåer signalet får nytte av, som halveres."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Det er ingen ulempe; et lavere nivå gir alltid mindre støy."
+          ],
+          "feedback": [
+            "Kvantiseringsfeilen er like stor uansett nivå, så et svakere signal får dårligere forhold mellom signal og kvantiseringsstøy."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Går signalet utenfor området, blir toppene kuttet, og feilen blir mye større enn et halvt trinn. Det vil man unngå.",
+        "Men bruker signalet bare halve området, får det glede av bare halvparten av nivåene – omtrent som en omformer med én bit mindre, altså rundt 6 dB dårligere. Målet er å utnytte området så godt som mulig uten å overstyre."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 7,
+        "section_id": "s7-04",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "9741cd74c9908911"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:09:37+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "62569f42fa5d81b6a8220a34e2c9ebcd4b0de4ac7a03e81952406e53221e89bd",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:48:12+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "5baf51f6982b24de25aa1c74aea774052fd7c61cd794fac745705c6b915940f1",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:09:36+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "5baf51f6982b24de25aa1c74aea774052fd7c61cd794fac745705c6b915940f1",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:48:12+00:00"
+      },
+      "visual": {
+        "template": "sampling",
+        "version": 1,
+        "params": {
+          "kind": "quantize",
+          "bits": 3,
+          "amplitude": 0.5,
+          "samples_per_period": 24,
+          "show_values": false
+        },
+        "after_only": true,
+        "animation": {
+          "param": "amplitude",
+          "from": 0.4,
+          "to": 1.3,
+          "phase": "after",
+          "text": "Animasjonen endrer nivået på signalet: et svakt signal bruker bare noen få av nivåene, og et for sterkt signal blir kuttet i toppene."
+        }
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:48:12+00:00",
+        "content_sha256": "5baf51f6982b24de25aa1c74aea774052fd7c61cd794fac745705c6b915940f1",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

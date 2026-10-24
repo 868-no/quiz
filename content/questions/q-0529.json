@@ -1,0 +1,153 @@
+{
+  "id": "q-0529",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "hard",
+      "chapter": 12,
+      "section_ids": [
+        "s12-09"
+      ],
+      "topic_ids": [
+        "relestasjoner-nett",
+        "kallesignaler"
+      ],
+      "learning_objective": "Forstå hvorfor det er dårlig praksis å identifisere seg med bare en del av kallesignalet.",
+      "priority": "normal",
+      "context": [
+        "Ved en listeoperasjon ber nettkontrollen stasjonene som vil ha kontakt med en DX-stasjon, om å oppgi bare de to siste bokstavene i kallesignalet sitt."
+      ],
+      "stem": [
+        "Hvorfor regnes dette som dårlig praksis?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Stasjonene sender uten å identifisere seg med fullt kallesignal."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Forbudet mot krypterte meldinger."
+          ],
+          "feedback": [
+            "Noen bokstaver av et kallesignal er ikke en kryptert melding. Problemet er at identifiseringen blir ufullstendig."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Regelen om at den som var først på frekvensen, beholder den."
+          ],
+          "feedback": [
+            "Listen ordner hvem som sender, men frekvensen er fortsatt nettkontrollens. Konflikten gjelder identifiseringen."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Forbudet mot å bruke en nettkontroll ved DX-kontakter."
+          ],
+          "feedback": [
+            "Det finnes ikke noe slikt forbud, selv om mange DX-jegere synes en slik kontakt gir for mye hjelp."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Forskriften krever fullt kallesignal ved begynnelsen og slutten av en sending og med korte mellomrom under den. En stasjon som bare sender to bokstaver, har ikke identifisert seg.",
+        [
+          "I tillegg skal stasjonene selv utveksle kallesignaler for at kontakten skal regnes som gyldig – ikke nettkontrollen. DX-stasjonen må derfor selv oppfatte hele ",
+          {
+            "term": "kallesignal",
+            "text": "kallesignalet"
+          },
+          "."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 12,
+        "section_id": "s12-09",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "fc8be73ccab1d708"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:13:44+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "f05e3b0786c86c7a600deb10b8838d8db5fec917a19a6a5c4d584cfeb2d08ae0",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:39:02+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "4ca727dcbb37d7757bbb94abd46f2ed46533338f8787e8955ddb55776e553d4c",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:50:06+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "4ca727dcbb37d7757bbb94abd46f2ed46533338f8787e8955ddb55776e553d4c",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": []
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:13:43+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "4ca727dcbb37d7757bbb94abd46f2ed46533338f8787e8955ddb55776e553d4c",
+        "errors": [],
+        "warnings": [],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T22:50:06+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:50:06+00:00",
+        "content_sha256": "4ca727dcbb37d7757bbb94abd46f2ed46533338f8787e8955ddb55776e553d4c",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

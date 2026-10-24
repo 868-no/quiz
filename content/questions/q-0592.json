@@ -1,0 +1,136 @@
+{
+  "id": "q-0592",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "medium",
+      "chapter": 13,
+      "section_ids": [
+        "s13-06"
+      ],
+      "topic_ids": [
+        "trygt-arbeid-utstyr"
+      ],
+      "learning_objective": "Forstå at en slukket varsellampe ikke beviser at utstyret er spenningsløst.",
+      "priority": "normal",
+      "context": [
+        "Varsellampen på en hjemmebygd strømforsyning lyser ikke."
+      ],
+      "stem": [
+        "Hva kan du slutte av det?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Ingenting sikkert – lampen kan være defekt, så utstyret kan likevel være strømførende."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "At strømforsyningen helt sikkert er spenningsløs."
+          ],
+          "feedback": [
+            "En lampe kan gå i stykker. Bare en lampe som lyser, gir en sikker beskjed – da er det spenning."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "At sikringen har gått, så det er trygt å jobbe."
+          ],
+          "feedback": [
+            "Den slukkede lampen kan like gjerne skyldes at selve lampen er ødelagt. Kontroller at utstyret er frakoblet før du jobber i det."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "At lampen er av feil type for nettspenning."
+          ],
+          "feedback": [
+            "Lampetypen forklarer ikke at den er slukket nå. Det viktige er at en slukket lampe ikke beviser at utstyret er uten spenning."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Varsellamper er en nyttig påminnelse om at utstyret står på, og det er lurt å bygge dem inn i eget utstyr. Men lampen kan være defekt. Lyser den, er det en klar advarsel; lyser den ikke, beviser det ingenting.",
+        "Trekk ut støpselet før du jobber i utstyret, i stedet for å stole på lampen."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 13,
+        "section_id": "s13-06",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "c814140966582694"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:11:19+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "81bcd091a250abddf19267efba0c4cb188370242f8c53f092e0154137abdc2d6",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:50:40+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "81bcd091a250abddf19267efba0c4cb188370242f8c53f092e0154137abdc2d6",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": []
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:11:18+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "81bcd091a250abddf19267efba0c4cb188370242f8c53f092e0154137abdc2d6",
+        "errors": [],
+        "warnings": [],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T22:50:40+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:50:40+00:00",
+        "content_sha256": "81bcd091a250abddf19267efba0c4cb188370242f8c53f092e0154137abdc2d6",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

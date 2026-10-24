@@ -1,0 +1,135 @@
+{
+  "id": "q-0522",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "recall",
+      "difficulty": "easy",
+      "chapter": 12,
+      "section_ids": [
+        "s12-11"
+      ],
+      "topic_ids": [
+        "anrop-kontakt"
+      ],
+      "learning_objective": "Kjenne Q-kodene QRP og QRS.",
+      "priority": "normal",
+      "context": [],
+      "stem": [
+        "En stasjon forteller at den kjører QRP. Hva betyr det?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "At den sender med lav effekt."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "At den sender morse med lav hastighet."
+          ],
+          "feedback": [
+            "Det er QRS. QRP betyr lav sendereffekt."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "At den er plaget av støy."
+          ],
+          "feedback": [
+            "Det er QRN. QRP betyr lav sendereffekt."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "At den snart stenger stasjonen."
+          ],
+          "feedback": [
+            "Det er QRT. QRP betyr lav sendereffekt."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "QRP betyr lav sendereffekt, og mange radioamatører har det som egen interesse: å få flest mulig kontakter med svært lite effekt. På flere bånd finnes egne områder der slike stasjoner samles.",
+        "Tilsvarende finnes det områder for QRS – morse med lav hastighet – som er fine for den som er ny på morse."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 12,
+        "section_id": "s12-11",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "bee82eba9219271b",
+          "767a2c9b8dfa0e14"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:13:44+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "5d97ef4f566967742ba87b6db7791c4baf6cc09fb8e52cb11f608ed173b437ab",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:49:59+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "5d97ef4f566967742ba87b6db7791c4baf6cc09fb8e52cb11f608ed173b437ab",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": []
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:13:43+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "5d97ef4f566967742ba87b6db7791c4baf6cc09fb8e52cb11f608ed173b437ab",
+        "errors": [],
+        "warnings": [],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T22:49:59+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:49:59+00:00",
+        "content_sha256": "5d97ef4f566967742ba87b6db7791c4baf6cc09fb8e52cb11f608ed173b437ab",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

@@ -1,0 +1,145 @@
+{
+  "id": "q-0551",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 12,
+      "section_ids": [
+        "s12-11",
+        "s12-05"
+      ],
+      "topic_ids": [
+        "anrop-kontakt"
+      ],
+      "learning_objective": "Forstå at HF-båndene ikke har kanaler, men er delt i segmenter etter modus i båndplanen.",
+      "priority": "normal",
+      "context": [],
+      "stem": [
+        "Hvordan er de fleste HF-båndene organisert for amatørbruk?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Uten faste kanaler, men delt i områder for ulike moduser i båndplanen."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "I faste kanaler med lik avstand, som på 2 m FM."
+          ],
+          "feedback": [
+            "Faste kanaler brukes i noen områder av VHF- og UHF-båndene og øverst på 10 m. Ellers på HF kan man bruke alle frekvenser, innenfor båndplanen."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Hver radioamatør får tildelt sin egen frekvens."
+          ],
+          "feedback": [
+            "Ingen har egne frekvenser i amatørbåndene. Alle har lik rett til å bruke dem."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Helt uten noen form for inndeling."
+          ],
+          "feedback": [
+            "Det finnes ingen kanaler, men båndplanen deler båndet i områder for for eksempel CW, SSB og digitale moduser."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "På HF finnes det med noen få unntak ingen kanaler. Du kan sende på hvilken som helst ledig frekvens i båndet.",
+        "Båndplanene fra IARU deler likevel båndene i områder for ulike moduser som CW, SSB og RTTY/PSK, og noen frekvenser er samlingspunkter for bestemte aktiviteter. Det er god skikk å følge dem."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 12,
+        "section_id": "s12-11",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "bee82eba9219271b",
+          "fa9e56b4bc92f926"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:13:45+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "664fb01fd41e0ae0174e7fd0599b04ca5a4593d9cfd6e46cbeb6d5f8cbe5f54d",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:50:26+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "664fb01fd41e0ae0174e7fd0599b04ca5a4593d9cfd6e46cbeb6d5f8cbe5f54d",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:13:43+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "664fb01fd41e0ae0174e7fd0599b04ca5a4593d9cfd6e46cbeb6d5f8cbe5f54d",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:50:26+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:50:26+00:00",
+        "content_sha256": "664fb01fd41e0ae0174e7fd0599b04ca5a4593d9cfd6e46cbeb6d5f8cbe5f54d",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

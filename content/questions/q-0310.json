@@ -1,0 +1,178 @@
+{
+  "id": "q-0310",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 7,
+      "section_ids": [
+        "s7-06"
+      ],
+      "topic_ids": [
+        "digitale-filtre"
+      ],
+      "learning_objective": "Skille FIR- og IIR-filtre: tilbakekobling, og at symmetriske FIR-filtre kan ha lineær fase.",
+      "priority": "exam_important",
+      "context": [],
+      "stem": [
+        [
+          "Hva skiller et ",
+          {
+            "term": "fir-filter",
+            "text": "FIR-filter"
+          },
+          " fra et ",
+          {
+            "term": "iir-filter",
+            "text": "IIR-filter"
+          },
+          "?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "FIR-filteret har ingen tilbakekobling fra utgangen og kan lages med lineær fase; IIR-filteret har tilbakekobling."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "FIR-filteret er analogt, IIR-filteret er digitalt."
+          ],
+          "feedback": [
+            "Begge er digitale filtre som regner med sampler. Forskjellen er om utgangen føres tilbake."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "FIR-filteret har tilbakekobling, og responsen tar i teorien aldri slutt."
+          ],
+          "feedback": [
+            "Dette beskriver IIR-filteret. «Infinite» står for responsen som i teorien aldri tar slutt, fordi utgangen føres tilbake."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "IIR-filteret trenger mer regning enn FIR-filteret for samme demping."
+          ],
+          "feedback": [
+            "Det er motsatt: tilbakekoblingen gjør IIR-filteret effektivt, så det trenger færre multiplikasjoner for samme demping."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Et FIR-filter regner bare med de siste inngangsverdiene. Responsen dør ut etter et bestemt antall sampler – derav «endelig impulsrespons». Et IIR-filter fører en del av utgangen tilbake til inngangen, så responsen i teorien aldri tar helt slutt.",
+        "Har et FIR-filter symmetriske koeffisienter, blir forsinkelsen lik for alle frekvenser. Det kalles lineær fase og er viktig for å unngå forvrengning av digitalt modulerte signaler. IIR-filtre og analoge filtre kan ikke få til dette."
+      ],
+      "glossary_after_answer": [
+        "fir-filter",
+        "iir-filter"
+      ],
+      "study_reference": {
+        "chapter": 7,
+        "section_id": "s7-06",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "c25878adf978a36b",
+          "77d5ada6beb501e2"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:09:37+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "c2d3d9d0447574642f4b3fd5f5fd979e6e59f321314cccea052128117f31bbe5",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:39:00+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "65d39d6d03caa010b95a69fa5a7ea2025229dcb2409ea25733d99e7b62b3630e",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:48:18+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "65d39d6d03caa010b95a69fa5a7ea2025229dcb2409ea25733d99e7b62b3630e",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:09:36+00:00"
+      },
+      "visual": {
+        "template": "sampling",
+        "version": 1,
+        "params": {
+          "kind": "fir_iir"
+        },
+        "after_only": true
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "65d39d6d03caa010b95a69fa5a7ea2025229dcb2409ea25733d99e7b62b3630e",
+        "errors": [],
+        "warnings": [
+          "priority: 'exam_important' set by judgement; the book's '!' markers are not known for this chapter yet (no scan)"
+        ],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:48:18+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:48:18+00:00",
+        "content_sha256": "65d39d6d03caa010b95a69fa5a7ea2025229dcb2409ea25733d99e7b62b3630e",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

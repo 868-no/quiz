@@ -1,0 +1,146 @@
+{
+  "id": "q-0606",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 13,
+      "section_ids": [
+        "s13-27",
+        "s13-28"
+      ],
+      "topic_ids": [
+        "verktoy-lodding"
+      ],
+      "learning_objective": "Kjenne vernetiltakene ved lodding: lufting, vernebriller og loddestativ.",
+      "priority": "normal",
+      "context": [],
+      "stem": [
+        "Hvilke vernetiltak er fornuftige når du lodder?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Lufting, vernebriller og et stativ til loddebolten."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Ingen – loddetinn er for kaldt til å gjøre skade."
+          ],
+          "feedback": [
+            "Loddebolten og smeltet tinn er varme nok til å gi alvorlige brannskader på hud og øyne."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Hansker er nok; øynene trenger ingen beskyttelse."
+          ],
+          "feedback": [
+            "Smeltet tinn kan sprute, og biter av komponentledninger kan fly når de klippes. Øynene må beskyttes med vernebriller."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Riste loddebolten for å bli kvitt overflødig tinn."
+          ],
+          "feedback": [
+            "Risting kan sende dråper av flytende tinn gjennom lufta. Tørk heller av spissen på en fuktig svamp."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Røyken fra lodding kan irritere luftveiene, så lodd nær et åpent vindu, bruk en vifte eller et avsug ved spissen. Smeltet tinn kan sprute, og avklipte ledninger kan fly, så bruk vernebriller.",
+        "Sett loddebolten i et stativ mellom loddingene, så du ikke brenner deg. Rengjør spissen på en fuktig svamp i stedet for å riste den."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 13,
+        "section_id": "s13-27",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "b4fdfdb293bc0834",
+          "84986d9d8a22ab0f",
+          "2a7ca34d49e50f92"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:11:20+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "72db1bad2c08ff78dfb601e3320de9eed4e37b4895669315c6350a2e2c89db3f",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:50:53+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "72db1bad2c08ff78dfb601e3320de9eed4e37b4895669315c6350a2e2c89db3f",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:11:18+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "72db1bad2c08ff78dfb601e3320de9eed4e37b4895669315c6350a2e2c89db3f",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:50:53+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:50:53+00:00",
+        "content_sha256": "72db1bad2c08ff78dfb601e3320de9eed4e37b4895669315c6350a2e2c89db3f",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

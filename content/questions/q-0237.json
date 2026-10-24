@@ -1,0 +1,138 @@
+{
+  "id": "q-0237",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "medium",
+      "chapter": 9,
+      "section_ids": [
+        "s9-02"
+      ],
+      "topic_ids": [
+        "radiobolger-polarisasjon"
+      ],
+      "learning_objective": "Forstå at sender- og mottakerantenne må ha samme polarisasjon på VHF og UHF.",
+      "priority": "exam_important",
+      "context": [
+        "To radioamatører skal ha forbindelse på 2 m over en strekning med fri sikt. Den ene bruker en loddrett vertikalantenne, den andre en Yagi-antenne montert med elementene vannrett."
+      ],
+      "stem": [
+        "Hva kan de regne med?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Signalet blir mye svakere fordi antennene har ulik polarisasjon – tapet kan bli over 20 dB."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Ingen forskjell, fordi polarisasjonen uansett endrer seg underveis på VHF."
+          ],
+          "feedback": [
+            "Det er på HF at ionosfæren og jordas magnetfelt vrir på polarisasjonen. Over en direkte strekning på VHF beholder bølgen polarisasjonen den hadde da den forlot antennen."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Signalet blir litt sterkere, fordi to ulike polarisasjoner til sammen fanger opp mer."
+          ],
+          "feedback": [
+            "En antenne tar best imot bølger med samme polarisasjon som seg selv. Står antennene på tvers av hverandre, fanges nesten ingenting av signalet opp."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Signalet blir omtrent halvert, altså 3 dB svakere."
+          ],
+          "feedback": [
+            "Med antennene på tvers av hverandre blir tapet langt større enn 3 dB. Over 20 dB betyr mindre enn en hundredel av effekten."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "På VHF og UHF går signalet som regel direkte fra antenne til antenne, og bølgen beholder polarisasjonen sin hele veien. En loddrett og en vannrett antenne står på tvers av hverandre, og tapet kan bli over 20 dB. Derfor må begge bruke samme polarisasjon.",
+        "På HF betyr dette mindre, fordi ionosfæren og jordas magnetfelt endrer polarisasjonen underveis."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 9,
+        "section_id": "s9-02",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "4d4257484d6aec9c"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:14:10+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "94a8c72d340b1a21f814725b619a8b07a5a966eb532f3c1ceb6d798465a31d32",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:47:49+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "94a8c72d340b1a21f814725b619a8b07a5a966eb532f3c1ceb6d798465a31d32",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": []
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:04:28+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "94a8c72d340b1a21f814725b619a8b07a5a966eb532f3c1ceb6d798465a31d32",
+        "errors": [],
+        "warnings": [
+          "priority: 'exam_important' set by judgement; the book's '!' markers are not known for this chapter yet (no scan)"
+        ],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T22:47:49+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:47:49+00:00",
+        "content_sha256": "94a8c72d340b1a21f814725b619a8b07a5a966eb532f3c1ceb6d798465a31d32",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

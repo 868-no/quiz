@@ -1,0 +1,136 @@
+{
+  "id": "q-0528",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 12,
+      "section_ids": [
+        "s12-09"
+      ],
+      "topic_ids": [
+        "relestasjoner-nett"
+      ],
+      "learning_objective": "Forstå rollen til en nettkontrollstasjon i et samband med mange deltakere.",
+      "priority": "normal",
+      "context": [
+        "Ved en beredskapsøvelse skal mange stasjoner bruke samme frekvens, og det trengs streng orden."
+      ],
+      "stem": [
+        "Hva kjennetegner en god nettkontrollstasjon?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "En sterk stasjon som alle deltakerne hører, og som selv hører alle."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Den stasjonen som har lengst erfaring, uansett hvor den står."
+          ],
+          "feedback": [
+            "Erfaring er nyttig, men en nettkontroll som ikke hører alle eller ikke blir hørt, kan ikke styre trafikken."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "En stasjon som sender så sjelden som mulig."
+          ],
+          "feedback": [
+            "Nettkontrollen må tvert imot være aktiv: den bestemmer rekkefølgen og slipper inn nye deltakere."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Den stasjonen som tilfeldigvis kom først på frekvensen."
+          ],
+          "feedback": [
+            "Hvem som kom først, avgjør hvem som beholder frekvensen, men en nettkontroll velges for at nettet skal fungere."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "I et nett der ikke alle hører hverandre, kan det fort bli kaos. Nød- og beredskapssamband krever streng disiplin, og det enkleste er å ha én stasjon som styrer trafikken.",
+        "Nettkontrollen bestemmer hvem som skal sende og i hvilken rekkefølge, og ber andre vente mens nye stasjoner slippes inn. Best er det om nettkontrollen har et kraftig signal og selv hører alle deltakerne. Rollen kan flyttes til en annen stasjon om forholdene endrer seg."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 12,
+        "section_id": "s12-09",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "07735f8be6f65d6a"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:13:44+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "c147d8ba6545a1fd89a6f8cbff8cfe87616fa9bdf1281e78330fec29407e304e",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:50:05+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "c147d8ba6545a1fd89a6f8cbff8cfe87616fa9bdf1281e78330fec29407e304e",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": []
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:13:43+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "c147d8ba6545a1fd89a6f8cbff8cfe87616fa9bdf1281e78330fec29407e304e",
+        "errors": [],
+        "warnings": [],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T22:50:05+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:50:05+00:00",
+        "content_sha256": "c147d8ba6545a1fd89a6f8cbff8cfe87616fa9bdf1281e78330fec29407e304e",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

@@ -1,0 +1,215 @@
+{
+  "id": "q-0347",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "calculation",
+      "difficulty": "medium",
+      "chapter": 8,
+      "section_ids": [
+        "s8-04"
+      ],
+      "topic_ids": [
+        "staende-bolger"
+      ],
+      "learning_objective": "Beregne inngangsimpedansen til en kvartbølgetransformator med Z₀² = Z_inn · Z_ut.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En kabelbit som er nøyaktig en kvart bølgelengde lang og har ",
+          {
+            "q": 75,
+            "u": "Ω"
+          },
+          " karakteristisk impedans, er koblet til en last på ",
+          {
+            "q": 100,
+            "u": "Ω"
+          },
+          "."
+        ]
+      ],
+      "stem": [
+        "Hvilken impedans ser man inn i den andre enden av kabelbiten?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 56,
+              "u": "Ω"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 133,
+              "u": "Ω"
+            }
+          ],
+          "feedback": [
+            "Her er lasten og kabelen byttet om: 100² / 75. Formelen er Z_inn = Z₀² / Z_ut, med kabelens impedans i telleren."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 88,
+              "u": "Ω"
+            }
+          ],
+          "feedback": [
+            "Dette er gjennomsnittet av 75 og 100. En kvartbølgetransformator følger Z₀² = Z_inn · Z_ut."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 75,
+              "u": "Ω"
+            }
+          ],
+          "feedback": [
+            "Man ser kabelens egen impedans bare når den er riktig terminert. Her er lasten 100 Ω, så kabelen omformer den."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        {
+          "steps": [
+            "Z_inn = Z₀² / Z_ut",
+            "Z_inn = 75 · 75 / 100 = 5625 / 100",
+            [
+              "Z_inn ≈ ",
+              {
+                "q": 56,
+                "u": "Ω"
+              }
+            ]
+          ]
+        },
+        "En kvart bølgelengde kabel kalles en kvartbølgetransformator. Den er nyttig for å tilpasse impedanser og mest brukt på VHF og UHF, hvor antennetunere er sjeldne. Husk at lengden må regnes med kabelens hastighetsfaktor."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 8,
+        "section_id": "s8-04",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "337272941f079113"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:13:25+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "04dfa50ad03632227f0a467228370cd167defc4e914fc353d71f1fb42c3402c8",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:48:30+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "72778c4b8042f9b5cd4e90333de66d14cdf5155508aa63ee0fc4d55e1c9c703d",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:13:24+00:00"
+      },
+      "calculation": {
+        "formula": "quarter_wave_transformer",
+        "inputs": {
+          "Z0": [
+            75,
+            "Ω"
+          ],
+          "Z_L": [
+            100,
+            "Ω"
+          ]
+        },
+        "answer": [
+          56,
+          "Ω"
+        ],
+        "answer_symbol": "Z_inn",
+        "sig_figs": 2
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "72778c4b8042f9b5cd4e90333de66d14cdf5155508aa63ee0fc4d55e1c9c703d",
+        "errors": [],
+        "warnings": [
+          "priority: 'exam_important' set by judgement; the book's '!' markers are not known for this chapter yet (no scan)"
+        ],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:48:30+00:00"
+      },
+      "visual": {
+        "template": "feedline",
+        "version": 1,
+        "params": {
+          "kind": "quarter_wave",
+          "z0_ohms": 75,
+          "z_load_ohms": 100,
+          "input_label": "unknown"
+        },
+        "params_after": {
+          "input_label": "value"
+        }
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:48:30+00:00",
+        "content_sha256": "72778c4b8042f9b5cd4e90333de66d14cdf5155508aa63ee0fc4d55e1c9c703d",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

@@ -1,0 +1,154 @@
+{
+  "id": "q-0598",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "recall",
+      "difficulty": "medium",
+      "chapter": 13,
+      "section_ids": [
+        "s13-09"
+      ],
+      "topic_ids": [
+        "rf-eksponering"
+      ],
+      "learning_objective": "Vite at oppvarming er den best dokumenterte helseskadelige virkningen av sterk radiofrekvent stråling.",
+      "priority": "exam_important",
+      "context": [],
+      "stem": [
+        "Hva er den best dokumenterte helseskadelige virkningen av sterke radiobølger på kroppen?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Oppvarming av vevet."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Ionisering som skader arvestoffet, slik røntgenstråling gjør."
+          ],
+          "feedback": [
+            "Radiobølger har altfor lite energi per foton til å ionisere. Det er derfor de kalles ikke-ioniserende stråling."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "At kroppen blir elektrisk ladet."
+          ],
+          "feedback": [
+            "Radiobølger lader ikke opp kroppen. Virkningen som er kjent, er at energien blir til varme i vevet."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Radioaktivitet i kroppen."
+          ],
+          "feedback": [
+            "Radiobølger har ingenting med radioaktivitet å gjøre. Den kjente virkningen er oppvarming."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Det er gjort mye forskning på radiobølger og helse, ikke minst på grunn av mobiltelefoner. Den best dokumenterte helseskadelige virkningen ved høy eksponering er at vevet varmes opp, og det er bare en fare hvis kroppen ikke klarer å kvitte seg med varmen fort nok.",
+        "Grenseverdiene for eksponering er satt med god sikkerhetsmargin under nivåene der slik skade kan oppstå."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 13,
+        "section_id": "s13-09",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "0bcfa8b2a4c69f39"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:11:19+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "a923cc406ab5afa156cf246f80a755cd04cd9a4e92c2efacaef940cfd70e2b32",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:39:03+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "91de2c1057465307b6f80c827b68f7f80a3e8d14361247be30d9054433d72fcd",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:50:46+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "91de2c1057465307b6f80c827b68f7f80a3e8d14361247be30d9054433d72fcd",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:11:18+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "91de2c1057465307b6f80c827b68f7f80a3e8d14361247be30d9054433d72fcd",
+        "errors": [],
+        "warnings": [
+          "priority: 'exam_important' set by judgement; the book's '!' markers are not known for this chapter yet (no scan)"
+        ],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:50:46+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:50:46+00:00",
+        "content_sha256": "91de2c1057465307b6f80c827b68f7f80a3e8d14361247be30d9054433d72fcd",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

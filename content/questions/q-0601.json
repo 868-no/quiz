@@ -1,0 +1,147 @@
+{
+  "id": "q-0601",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "medium",
+      "chapter": 13,
+      "section_ids": [
+        "s13-10"
+      ],
+      "topic_ids": [
+        "lyn-statisk"
+      ],
+      "learning_objective": "Vite at frakobling av antenner og kabler er en effektiv beskyttelse når et tordenvær nærmer seg.",
+      "priority": "exam_important",
+      "context": [
+        "Det er meldt tordenvær senere på dagen, men uværet er ennå ikke i nærheten. Du vil beskytte radioutstyret før du forlater stasjonen."
+      ],
+      "stem": [
+        "Hva er det mest effektive du kan gjøre for å beskytte radioutstyret?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Koble antennekablene og antennene fra radioen."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Slå av radioen, men la antennen være koblet til."
+          ],
+          "feedback": [
+            "Statisk elektrisitet og overspenning kan komme inn gjennom antennekabelen selv om radioen er slått av. Koble kabelen fra."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Gå over til lavere sendeeffekt."
+          ],
+          "feedback": [
+            "Sendeeffekten har ingenting å si for faren fra lynet. Det er ladningen som kommer inn via antennen, som skader utstyret."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Fortsette å sende, så antennen lader seg ut."
+          ],
+          "feedback": [
+            "Sending lader ikke ut statisk elektrisitet. Å koble fra antenne og kabler er den effektive beskyttelsen."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Lyn i nærheten kan gi kraftige overspenninger i antenner og kabler, selv uten direkte nedslag, og ødelegge følsom elektronikk som radioer og antennetunere.",
+        "Å koble fra antenner og antennekabler i god tid er svært effektivt. Ikke håndter antennekabler eller utendørs ledere når uværet allerede er nær – da kan det være farlig. Frakobling erstatter heller ikke riktig lynvern, overspenningsvern og jording av antenneanlegget."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 13,
+        "section_id": "s13-10",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "c68109893689751f"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:11:20+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "cabb850afec5a341c0cfac2e1817e3569117ba23bc08823db9b3c847770a4d1f",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:39:03+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "8a94ae0174fb9d7c3881e4b761f2a7e52e5345356c7899eb71580f17a8b57f2e",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:50:49+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "8a94ae0174fb9d7c3881e4b761f2a7e52e5345356c7899eb71580f17a8b57f2e",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": []
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:11:18+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "8a94ae0174fb9d7c3881e4b761f2a7e52e5345356c7899eb71580f17a8b57f2e",
+        "errors": [],
+        "warnings": [
+          "priority: 'exam_important' set by judgement; the book's '!' markers are not known for this chapter yet (no scan)"
+        ],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T22:50:49+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:50:49+00:00",
+        "content_sha256": "8a94ae0174fb9d7c3881e4b761f2a7e52e5345356c7899eb71580f17a8b57f2e",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

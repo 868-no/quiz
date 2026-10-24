@@ -1,0 +1,152 @@
+{
+  "id": "q-0468",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "hard",
+      "chapter": 11,
+      "section_ids": [
+        "s11-07"
+      ],
+      "topic_ids": [
+        "swr-meter"
+      ],
+      "learning_objective": "Forstå at SWR ikke endres langs en tapsfri kabel, selv om et enkelt SWR-meter kan vise ulik verdi ulike steder.",
+      "priority": "normal",
+      "context": [
+        "En radioamatør ser at SWR-meteret viser 1,8 med én kabellengde og 1,4 når kabelen gjøres litt lengre. Antennen er den samme, og kabelen er bare noen meter lang."
+      ],
+      "stem": [
+        "Hva er riktig konklusjon?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Det virkelige SWR er det samme; det er avlesningen som varierer med hvor meteret sitter."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Den lengre kabelen har gitt bedre tilpasning til antennen."
+          ],
+          "feedback": [
+            "Det er en vanlig feilslutning. En kort kabel med lite tap endrer ikke forholdet mellom tilført og reflektert effekt. Bare en endring ved antennen kan forbedre SWR."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Den kortere kabelen er ødelagt."
+          ],
+          "feedback": [
+            "Ingenting tyder på det. Begge avlesningene kan komme fra samme SWR, fordi et enkelt SWR-meter påvirkes av hvor på de stående bølgene det sitter."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "SWR blir alltid lavere jo lengre kabelen er, så kabelen bør være så lang som mulig."
+          ],
+          "feedback": [
+            "En lang kabel med tap kan få SWR til å se lavere ut fordi den reflekterte effekten dempes på veien – men da går effekten tapt i kabelen, ikke ut i antennen."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Ser man bort fra tap i kabelen, er ",
+          {
+            "term": "swr",
+            "text": "SWR"
+          },
+          " det samme langs hele kabelen. Med kabler kortere enn én til to bølgelengder er tapet så lite at det kan overses."
+        ],
+        "Et enkelt SWR-meter med følertråd påvirkes likevel litt av hvor på de stående bølgene det sitter, så avlesningen kan endre seg når kabellengden endres. Feilen er minst når SWR er lavt. Instrumenter med strømtransformator er mindre utsatt."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 11,
+        "section_id": "s11-07",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "60207f2d88e4c0ba"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:11:20+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "be432539e1d37596d8fb9856f965d2d371a94e339145d2915fbce41effed7f5d",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:49:32+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "be432539e1d37596d8fb9856f965d2d371a94e339145d2915fbce41effed7f5d",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:11:19+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "be432539e1d37596d8fb9856f965d2d371a94e339145d2915fbce41effed7f5d",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:49:32+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:49:32+00:00",
+        "content_sha256": "be432539e1d37596d8fb9856f965d2d371a94e339145d2915fbce41effed7f5d",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

@@ -1,0 +1,141 @@
+{
+  "id": "q-0252",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 9,
+      "section_ids": [
+        "s9-08"
+      ],
+      "topic_ids": [
+        "bolgetyper"
+      ],
+      "learning_objective": "Vite at jordbølgen når lengst over godt ledende grunn som sjø.",
+      "priority": "normal",
+      "context": [],
+      "stem": [
+        [
+          "Hvor når en ",
+          {
+            "term": "jordbolge",
+            "text": "jordbølge"
+          },
+          " lengst?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Over sjø, fordi saltvann leder godt og tar lite av signalet."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Over tørr sand og fjell."
+          ],
+          "feedback": [
+            "Dårlig ledende grunn tar mer av signalet. Over land når jordbølgen typisk rundt 100 km."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Over byer med mange høye bygninger."
+          ],
+          "feedback": [
+            "Bygninger gir ikke lengre rekkevidde. Det er hvor godt bakken leder, som avgjør, og sjøen leder best."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Like langt overalt, fordi den bare går gjennom lufta."
+          ],
+          "feedback": [
+            "Jordbølgen følger bakken ved at energi overføres ned i den. Hvor godt bakken leder, avgjør hvor mye som går tapt."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Jordbølgen er viktigst under om lag 2 MHz. Den følger bakken ved at noe av energien går ned i den, og bakken tar gradvis opp signalet. Hvor langt bølgen når, avhenger derfor av ledeevnen i grunnen: rundt 100 km over land, men mye lenger over sjø.",
+        "Jordbølgen er nesten bare vertikalt polarisert, fordi en horisontal bølge dempes mye mer, og den er lite utsatt for fading."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 9,
+        "section_id": "s9-08",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "13f96904df6d3748"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:14:11+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "d28cef60eed69648cf1393914b0f59a522d2fa38cbc429b5ed17915a20aa85d1",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:48:02+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "d28cef60eed69648cf1393914b0f59a522d2fa38cbc429b5ed17915a20aa85d1",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": []
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:04:28+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "d28cef60eed69648cf1393914b0f59a522d2fa38cbc429b5ed17915a20aa85d1",
+        "errors": [],
+        "warnings": [],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T22:48:02+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:48:02+00:00",
+        "content_sha256": "d28cef60eed69648cf1393914b0f59a522d2fa38cbc429b5ed17915a20aa85d1",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

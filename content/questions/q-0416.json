@@ -1,0 +1,151 @@
+{
+  "id": "q-0416",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 10,
+      "section_ids": [
+        "s10-15"
+      ],
+      "topic_ids": [
+        "emc-kobling"
+      ],
+      "learning_objective": "Forklare passiv intermodulasjon («rustbolteffekten»).",
+      "priority": "normal",
+      "context": [],
+      "stem": [
+        "Hva menes med «rustbolteffekten»?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "En rusten skjøt i metall ute virker som en likeretter og lager nye frekvenser."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Rust på antennen gjør at sendereffekten blir mindre."
+          ],
+          "feedback": [
+            "Dårlige forbindelser kan gi tap, men rustbolteffekten handler om at rusten skjøt virker ikke-lineært og lager nye frekvenser."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Jordspyd som ruster, slutter å virke som RF-jord."
+          ],
+          "feedback": [
+            "Jordspyd bør holdes i orden, men rustbolteffekten handler om nye frekvenser fra en ikke-lineær skjøt."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "En rusten kontakt i mottakeren lager støy når du vrir på knappene."
+          ],
+          "feedback": [
+            "Skrapelyder fra potensiometre er noe annet. Rustbolteffekten oppstår ute i metallkonstruksjoner som treffes av sterke signaler."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Når to signaler, der minst ett er sterkt – for eksempel din egen sending – treffer en leder med en rusten eller dårlig skjøt, kan skjøten likerette og blande signalene. Produktene kan havne på frekvensen til en mottaker i nærheten.",
+        [
+          "Fordi det skjer uten aktive komponenter, kalles det passiv ",
+          {
+            "term": "intermodulasjon",
+            "text": "intermodulasjon"
+          },
+          ". Metalltak, takrenner, barduner og dine egne antenner kan være kilder, så hold antenner unna metall og sørg for gode, værbeskyttede skjøter."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 10,
+        "section_id": "s10-15",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "738a5ea9b98eb38a",
+          "a25fa21a977f2100"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:12:39+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "da0dd3ecf4be636317376198cecfa84703e9eaaf3a7f5b072a44f4c0a12e9b6c",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:49:10+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "da0dd3ecf4be636317376198cecfa84703e9eaaf3a7f5b072a44f4c0a12e9b6c",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:12:38+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "da0dd3ecf4be636317376198cecfa84703e9eaaf3a7f5b072a44f4c0a12e9b6c",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:49:10+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:49:10+00:00",
+        "content_sha256": "da0dd3ecf4be636317376198cecfa84703e9eaaf3a7f5b072a44f4c0a12e9b6c",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

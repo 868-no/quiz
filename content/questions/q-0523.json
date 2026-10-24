@@ -1,0 +1,134 @@
+{
+  "id": "q-0523",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "hard",
+      "chapter": 12,
+      "section_ids": [
+        "s12-07"
+      ],
+      "topic_ids": [
+        "anrop-kontakt"
+      ],
+      "learning_objective": "Kjenne prosedyretegnene KN, SK og CL på morse.",
+      "priority": "normal",
+      "context": [],
+      "stem": [
+        "En sending på morse slutter med «W1AW de LA1XYZ KN». Hva sier KN?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "At bare W1AW skal svare; andre bes vente."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "At dette er LA1XYZ sin siste sending til W1AW."
+          ],
+          "feedback": [
+            "Det sier man med SK. KN betyr at sendingen er rettet tilbake til den ene stasjonen og ingen andre."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "At LA1XYZ stenger stasjonen."
+          ],
+          "feedback": [
+            "Det sier man med CL. KN betyr at bare den stasjonen man snakker med, skal svare."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "At LA1XYZ er klar for nye stasjoner."
+          ],
+          "feedback": [
+            "En stasjon som er klar for nye kontakter, avslutter gjerne med TU og kallesignalet. KN lukker for andre."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "På morse viser prosedyretegnet på slutten hva som skjer videre. KN betyr at du gir over til den ene stasjonen du har kontakt med, og ingen andre.",
+        "SK markerer at du har sendt for siste gang i kontakten, CL at du stenger stasjonen. Stasjoner i konkurranser og DX-stasjoner bruker gjerne TU (takk) til slutt for å vise at de er klare for neste."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 12,
+        "section_id": "s12-07",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "d1192a8b82851316"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:13:44+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "605ee35b4e8afcbd0e245322c60609e10850c9ecb0b59604f67ef105846c1f11",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:50:00+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "605ee35b4e8afcbd0e245322c60609e10850c9ecb0b59604f67ef105846c1f11",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": []
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:13:43+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "605ee35b4e8afcbd0e245322c60609e10850c9ecb0b59604f67ef105846c1f11",
+        "errors": [],
+        "warnings": [],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T22:50:00+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:50:00+00:00",
+        "content_sha256": "605ee35b4e8afcbd0e245322c60609e10850c9ecb0b59604f67ef105846c1f11",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

@@ -1,0 +1,159 @@
+{
+  "id": "q-0362",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 8,
+      "section_ids": [
+        "s8-14"
+      ],
+      "topic_ids": [
+        "dipol-vertikal"
+      ],
+      "learning_objective": "Forklare hvorfor en 5/8 λ vertikalantenne har en spole ved fødepunktet.",
+      "priority": "normal",
+      "context": [],
+      "stem": [
+        "Hvorfor har en 5/8 λ vertikalantenne vanligvis en spole i bunnen?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "En antenne på 5/8 λ er kapasitiv, og spolen motvirker reaktansen så fødepunktet blir rent resistivt."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "For å filtrere bort harmoniske frekvenser fra senderen."
+          ],
+          "feedback": [
+            "Spolen sitter i serie med antennen for å fjerne den kapasitive reaktansen, ikke som et filter."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "For å gjøre antennen balansert."
+          ],
+          "feedback": [
+            "En 5/8 λ vertikal mates ubalansert med koaksialkabel mot et jordplan. Spolen handler om tilpasning."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "For å gi den samme strålingsvinkel som en kvartbølgeantenne."
+          ],
+          "feedback": [
+            "Poenget med 5/8 λ er nettopp lavere strålingsvinkel og en viss forsterkning. Spolen trengs for å tilpasse fødepunktet."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Antennelengder som ikke er hele multipler av en kvart bølgelengde, er reaktive. 5/8 λ er kapasitiv. Spolen i bunnen gir induktiv reaktans som opphever den, slik at antennen elektrisk blir 3/4 λ og fødepunktet passer godt til ",
+          {
+            "q": 50,
+            "u": "Ω"
+          },
+          " kabel."
+        ],
+        "Lengden og matingen presser strålingen ned mot horisonten. Derfor har 5/8 λ-antennen en viss forsterkning sammenlignet med en kvartbølge jordplanantenne. Den trenger et godt jordplan."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 8,
+        "section_id": "s8-14",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "4126b24a14b1aae9"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:13:26+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "e73682402d1705f7b231ced445edff13934e2b42250978a7f09d0c59209f0465",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:48:43+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "e5d61b7c4882c8f207b8cc00617c2fecbb4c786be2b38b3915216fdd69e02fdf",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:13:24+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "e5d61b7c4882c8f207b8cc00617c2fecbb4c786be2b38b3915216fdd69e02fdf",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:48:43+00:00"
+      },
+      "visual": {
+        "template": "antenna",
+        "version": 1,
+        "params": {
+          "kind": "loaded_vertical",
+          "coil_position": 0.03,
+          "length_label": "5/8 λ"
+        }
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:48:43+00:00",
+        "content_sha256": "e5d61b7c4882c8f207b8cc00617c2fecbb4c786be2b38b3915216fdd69e02fdf",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

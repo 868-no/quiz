@@ -1,0 +1,204 @@
+{
+  "id": "q-0415",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "hard",
+      "chapter": 10,
+      "section_ids": [
+        "s10-15"
+      ],
+      "topic_ids": [
+        "emc-kobling"
+      ],
+      "learning_objective": "Forstå at et dempeledd reduserer tredjeordens intermodulasjonsprodukter tre ganger så mye i dB.",
+      "priority": "normal",
+      "context": [
+        [
+          "En mottaker blir overstyrt, og tredjeordens ",
+          {
+            "term": "intermodulasjon",
+            "text": "intermodulasjonsprodukter"
+          },
+          " havner i passbåndet. Du setter inn et dempeledd som demper alle signalene inn til mottakeren med ",
+          {
+            "q": 3,
+            "u": "dB"
+          },
+          "."
+        ]
+      ],
+      "stem": [
+        "Omtrent hvor mye svakere blir de tredjeordens produktene?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 9,
+              "u": "dB"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 3,
+              "u": "dB"
+            }
+          ],
+          "feedback": [
+            "Det ønskede signalet faller 3 dB, men intermodulasjonsproduktene faller raskere, fordi de dannes av flere signaler ganget sammen."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 6,
+              "u": "dB"
+            }
+          ],
+          "feedback": [
+            "6 dB er hvor mye bedre forholdet mellom ønsket signal og produkt blir. Selve produktet faller 9 dB."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 27,
+              "u": "dB"
+            }
+          ],
+          "feedback": [
+            "Tredjeordens produkter faller tre ganger så mange dB som inngangssignalene, ikke tre i tredje."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Tredjeordens produkter faller tre ganger så mange desibel som signalene som lager dem. 3 dB mindre inn gir 3 · 3 = 9 dB svakere produkter, mens det ønskede signalet bare faller 3 dB – du vinner altså 6 dB på forholdet. For femteordens produkter er fallet 15 dB.",
+        "Et dempeledd er derfor nyttig når de forstyrrende signalene ligger så nær det ønskede at filtrering er upraktisk, forutsatt at det ønskede signalet er sterkt nok."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 10,
+        "section_id": "s10-15",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "8f179b156d53fe69"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:12:39+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "755fc52a1026431cfe0fe0345f5dd340097abb5e2dae65e4c1f453a5ebc00b14",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:49:09+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "c3aa6b1db769a6280ba37ff7b585bd7d568eb3de9058094d30b57651efcf9dfd",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:12:38+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "c3aa6b1db769a6280ba37ff7b585bd7d568eb3de9058094d30b57651efcf9dfd",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:49:09+00:00"
+      },
+      "visual": {
+        "template": "spectrum",
+        "version": 1,
+        "params": {
+          "x_min_hz": 7000000.0,
+          "x_max_hz": 7100000.0,
+          "freq_labels": false,
+          "panels": [
+            {
+              "lines": [
+                {
+                  "f_hz": 7040000.0,
+                  "level": 0.9,
+                  "label": "f1"
+                },
+                {
+                  "f_hz": 7060000.0,
+                  "level": 0.9,
+                  "label": "f2"
+                },
+                {
+                  "f_hz": 7020000.0,
+                  "level": 0.3,
+                  "label": "2f1 − f2"
+                },
+                {
+                  "f_hz": 7080000.0,
+                  "level": 0.3,
+                  "label": "2f2 − f1"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:49:09+00:00",
+        "content_sha256": "c3aa6b1db769a6280ba37ff7b585bd7d568eb3de9058094d30b57651efcf9dfd",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

@@ -1,0 +1,155 @@
+{
+  "id": "q-0515",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "medium",
+      "chapter": 12,
+      "section_ids": [
+        "s12-05"
+      ],
+      "topic_ids": [
+        "anrop-kontakt",
+        "kallesignaler"
+      ],
+      "learning_objective": "Vite at man ved svake signaler gir sitt eget kallesignal flere ganger med fonetisk bokstavering, og alltid fullt kallesignal.",
+      "priority": "exam_important",
+      "context": [
+        "Du svarer på et anrop. Signalene er svake, og det er mye forstyrrelser på frekvensen."
+      ],
+      "stem": [
+        "Hva er god praksis når du svarer?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Gi ditt eget kallesignal flere ganger, bokstavert fonetisk."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Gjenta den andre stasjonens kallesignal mange ganger."
+          ],
+          "feedback": [
+            "Den andre stasjonen vet hva den selv heter. Det er ditt kallesignal den trenger å få med seg."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Gi bare de to siste bokstavene i kallesignalet ditt for å spare tid."
+          ],
+          "feedback": [
+            "Du skal alltid identifisere deg med fullt kallesignal. Et halvt kallesignal er ikke godkjent identifisering."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Si kallesignalet ditt raskt én gang, så frekvensen blir fortere ledig."
+          ],
+          "feedback": [
+            "Med svake signaler og forstyrrelser kan det lett gå tapt. Gjentak og fonetisk bokstavering hjelper motparten."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Når forholdene er dårlige, hjelper det motparten om du gjentar ",
+          {
+            "term": "kallesignal",
+            "text": "kallesignalet"
+          },
+          " ditt to–tre ganger og bokstaverer det fonetisk. Motpartens kallesignal trenger du vanligvis ikke gjenta mer enn én gang."
+        ],
+        "Underveis skal begge jevnlig si sitt fulle kallesignal, som regel når de begynner og avslutter en sending."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 12,
+        "section_id": "s12-05",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "b3a3b970d8132fab"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:13:44+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "66e52d48736c7d9e0c92ea69937b25363507d3629eba35865277d2756c060f16",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:49:53+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "66e52d48736c7d9e0c92ea69937b25363507d3629eba35865277d2756c060f16",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:13:43+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "66e52d48736c7d9e0c92ea69937b25363507d3629eba35865277d2756c060f16",
+        "errors": [],
+        "warnings": [
+          "priority: 'exam_important' set by judgement; the book's '!' markers are not known for this chapter yet (no scan)"
+        ],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:49:53+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:49:53+00:00",
+        "content_sha256": "66e52d48736c7d9e0c92ea69937b25363507d3629eba35865277d2756c060f16",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

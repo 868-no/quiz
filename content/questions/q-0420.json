@@ -1,0 +1,149 @@
+{
+  "id": "q-0420",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "medium",
+      "chapter": 10,
+      "section_ids": [
+        "s10-15"
+      ],
+      "topic_ids": [
+        "emc-filtre",
+        "emc-klage"
+      ],
+      "learning_objective": "Vite at man ikke skal åpne eller endre naboens utstyr, men bruke utvendige filtre.",
+      "priority": "exam_important",
+      "context": [
+        "Naboens fasttelefon får inn sendingene dine. Naboen ber deg ordne det."
+      ],
+      "stem": [
+        "Hva bør du gjøre?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Sette ferrittringer, gjerne splittferritter, eller et innpluggbart filter på ledningene utenpå telefonen."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Åpne telefonen og lodde inn en kondensator ved inngangen."
+          ],
+          "feedback": [
+            "Du skal aldri åpne naboens utstyr. En åpnet telefon er ikke lenger godkjent for tilkobling, og svikter noe senere, kan du få skylden og bli erstatningsansvarlig."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Be naboen kjøpe en ny telefon, fordi feilen ligger hos henne."
+          ],
+          "feedback": [
+            "Det kan godt være at utstyret har dårlig immunitet, men du løser ingenting og ødelegger naboforholdet. Begynn med enkle utvendige tiltak."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Øke effekten, så telefonen går i metning og blir stille."
+          ],
+          "feedback": [
+            "Mer effekt gir sterkere felt og flere problemer. Effekten bør heller ned."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Du må aldri gjøre endringer inne i naboens utstyr. Begrens deg til utvendige filtre, som er lette å fjerne igjen og ikke kan få skylden for feil senere. Splittferritter som klikkes på ledningen, er ideelle, selv om de virker litt dårligere enn hele ringer.",
+        "Leid utstyr og telefoner skal heller ikke åpnes. Ta kontakt med utleieren eller leverandøren dersom utvendige tiltak ikke er nok."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 10,
+        "section_id": "s10-15",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "080c16909bcf4330",
+          "6cb6c886b755c987"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:12:39+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "ac48f25ed0ee85ba5b68301c85c444ccb8aaae5211dd6647ee254bf0494aa841",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:49:13+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "ac48f25ed0ee85ba5b68301c85c444ccb8aaae5211dd6647ee254bf0494aa841",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:12:38+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "ac48f25ed0ee85ba5b68301c85c444ccb8aaae5211dd6647ee254bf0494aa841",
+        "errors": [],
+        "warnings": [
+          "priority: 'exam_important' set by judgement; the book's '!' markers are not known for this chapter yet (no scan)"
+        ],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:49:13+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:49:13+00:00",
+        "content_sha256": "ac48f25ed0ee85ba5b68301c85c444ccb8aaae5211dd6647ee254bf0494aa841",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

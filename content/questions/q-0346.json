@@ -1,0 +1,172 @@
+{
+  "id": "q-0346",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "hard",
+      "chapter": 8,
+      "section_ids": [
+        "s8-03",
+        "s8-04"
+      ],
+      "topic_ids": [
+        "staende-bolger"
+      ],
+      "learning_objective": "Forstå at impedansen langs en kabel med stående bølger veksler med en kvart bølgelengdes mellomrom.",
+      "priority": "normal",
+      "context": [
+        "En fødekabel er kortsluttet i den fjerne enden."
+      ],
+      "stem": [
+        "Hvordan ser kabelen ut for en kilde koblet til den en kvart bølgelengde fra kortslutningen?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Som en åpen krets: høy impedans, med spenningsmaksimum og strømminimum."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Som en kortslutning: lav impedans."
+          ],
+          "feedback": [
+            "Ved selve kortslutningen er impedansen lav. Det samme gjentar seg en halv bølgelengde unna, men en kvart bølgelengde unna er det motsatt."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Som en last lik kabelens karakteristiske impedans."
+          ],
+          "feedback": [
+            "Det gjelder bare en kabel som er riktig terminert. Kortsluttet reflekteres all effekt, og impedansen varierer sterkt langs kabelen."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Impedansen er lik overalt langs kabelen."
+          ],
+          "feedback": [
+            "Med stående bølger varierer impedansen med avstanden til enden. Bare uten refleksjon er den lik overalt."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Ved kortslutningen er spenningen null og strømmen størst – lav impedans. En kvart bølgelengde unna er det omvendt: spenningen er størst og strømmen minst, altså høy impedans, som en åpen krets.",
+        "Mønsteret gjentar seg hver kvarte bølgelengde hele veien tilbake. Mellom disse punktene er impedansen reaktiv, kapasitiv eller induktiv. Dette kan utnyttes både til filtre og til å omforme impedanser."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 8,
+        "section_id": "s8-03",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "499f02b266e65efb",
+          "0a5f2cb98f30d2ed",
+          "2c0205e953fe900c"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:13:25+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "616ff5a7c74f2e3438bf71a023ddbb061b1edae68106264f139f1ad940d31d68",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:48:29+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "3135d176c7b54f4826f1eee8a76e3c4174548823c1151d2bbaba5c55fa9c830a",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:13:24+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "3135d176c7b54f4826f1eee8a76e3c4174548823c1151d2bbaba5c55fa9c830a",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:48:29+00:00"
+      },
+      "visual": {
+        "template": "feedline",
+        "version": 1,
+        "params": {
+          "kind": "standing_wave",
+          "load": "short",
+          "envelope": "none",
+          "quarter_mark": true,
+          "wavelengths": 0.25
+        },
+        "params_after": {
+          "envelope": "voltage_current",
+          "show_minmax": true,
+          "phase_deg": 30
+        },
+        "animation": {
+          "param": "phase_deg",
+          "from": 0,
+          "to": 345,
+          "mode": "loop",
+          "phase": "after",
+          "text": "Animasjonen viser spenningen og strømmen i ett øyeblikk etter hvert: de svinger opp og ned på stedet uten å flytte seg langs kabelen."
+        }
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:48:29+00:00",
+        "content_sha256": "3135d176c7b54f4826f1eee8a76e3c4174548823c1151d2bbaba5c55fa9c830a",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

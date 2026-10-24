@@ -1,0 +1,136 @@
+{
+  "id": "q-0412",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "easy",
+      "chapter": 10,
+      "section_ids": [
+        "s10-13"
+      ],
+      "topic_ids": [
+        "emc-stasjon"
+      ],
+      "learning_objective": "Vite at sendemoduser med varierende amplitude, særlig SSB, oftest gir forstyrrelser.",
+      "priority": "exam_important",
+      "context": [],
+      "stem": [
+        "Hvilket sendemodus gir oftest problemer med forstyrrelser i annet utstyr?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "SSB."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "FM."
+          ],
+          "feedback": [
+            "FM har konstant amplitude, og det gir sjelden problemer i annet utstyr."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Digitale moduser med jevnt nivå."
+          ],
+          "feedback": [
+            "Mange digitale moduser holder et jevnt nivå og gir derfor lite problemer."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "CW med en god nøkleform."
+          ],
+          "feedback": [
+            "Morse med myke flanker er vanligvis greit. Det er bratte flanker ved nøklingen som kan gi trøbbel."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Utstyr som plukker opp RF, likeretter den gjerne i en diode eller transistor. Varierer amplituden, slik den gjør med SSB, blir likerettingen hørbar som forvrengt tale eller som urolig bilde.",
+        "Moduser med konstant amplitude, som FM og mange datamoduser, gir et jevnt nivå og forstyrrer derfor mindre."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 10,
+        "section_id": "s10-13",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "f3e8a55defd1184f"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:12:39+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "c45366a062821fa2b236a8a4d3e8b364de139c434b2fded56019e5fd06765f7b",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:49:06+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "c45366a062821fa2b236a8a4d3e8b364de139c434b2fded56019e5fd06765f7b",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": []
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:12:38+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "c45366a062821fa2b236a8a4d3e8b364de139c434b2fded56019e5fd06765f7b",
+        "errors": [],
+        "warnings": [
+          "priority: 'exam_important' set by judgement; the book's '!' markers are not known for this chapter yet (no scan)"
+        ],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T22:49:06+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:49:06+00:00",
+        "content_sha256": "c45366a062821fa2b236a8a4d3e8b364de139c434b2fded56019e5fd06765f7b",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

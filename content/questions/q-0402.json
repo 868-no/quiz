@@ -1,0 +1,139 @@
+{
+  "id": "q-0402",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "recall",
+      "difficulty": "easy",
+      "chapter": 10,
+      "section_ids": [
+        "s10-03"
+      ],
+      "topic_ids": [
+        "emc-regler"
+      ],
+      "learning_objective": "Vite at radioamatører kan bruke utstyr som ikke er CE-merket: selvbygget, byggesett og modifisert utstyr.",
+      "priority": "normal",
+      "context": [],
+      "stem": [
+        "Hvilket radioutstyr kan en radioamatør bruke selv om det ikke er CE-merket?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Selvbygget utstyr, byggesett og kommersielt utstyr som er bygget om."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Alt utstyr med under ",
+            {
+              "q": 100,
+              "u": "W"
+            },
+            " utgangseffekt."
+          ],
+          "feedback": [
+            "Effekten avgjør ikke dette. Unntaket gjelder utstyr som ikke er kommersielt tilgjengelig i den formen det brukes: selvbygget, byggesett eller ombygget."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Bare håndholdte radioer for VHF og UHF."
+          ],
+          "feedback": [
+            "Unntaket er ikke knyttet til type radio eller frekvensbånd, men til at utstyret er laget eller endret av amatøren selv."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Ikke noe – alt radioutstyr må være CE-merket."
+          ],
+          "feedback": [
+            "Ingen annen radiotjeneste har lov til å bruke utstyr uten CE-merking. Det er en viktig del av hobbyen å bygge selv."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Kravet om CE-merking gjelder utstyr som produseres og selges. Radioamatører har et unntak for utstyr som ikke er kommersielt tilgjengelig: selvbygget utstyr, byggesett og CE-merket utstyr som er modifisert.",
+        "Slikt utstyr er i stedet regulert i radioamatørforskriften, som blant annet setter grenser for uønsket utstråling."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 10,
+        "section_id": "s10-03",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "ea9e8e2e3fcb4f91"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:12:39+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "ab8faf2487bc5f747665c5def34bcc751b0b3bdb060558eac5f88c7e39aef17b",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:48:57+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "ab8faf2487bc5f747665c5def34bcc751b0b3bdb060558eac5f88c7e39aef17b",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": []
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:12:38+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "ab8faf2487bc5f747665c5def34bcc751b0b3bdb060558eac5f88c7e39aef17b",
+        "errors": [],
+        "warnings": [],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T22:48:57+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:48:57+00:00",
+        "content_sha256": "ab8faf2487bc5f747665c5def34bcc751b0b3bdb060558eac5f88c7e39aef17b",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

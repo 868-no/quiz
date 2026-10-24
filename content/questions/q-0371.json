@@ -1,0 +1,149 @@
+{
+  "id": "q-0371",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "medium",
+      "chapter": 8,
+      "section_ids": [
+        "s8-23",
+        "s8-25"
+      ],
+      "topic_ids": [
+        "hf-antenner"
+      ],
+      "learning_objective": "Velge en lavt montert dipol (NVIS) for HF-forbindelser over noen hundre kilometer.",
+      "priority": "exam_important",
+      "context": [
+        "Du vil ha sikker forbindelse på 40 m mellom Vestlandet og Østlandet, noen hundre kilometer unna."
+      ],
+      "stem": [
+        "Hvilken antenne passer best?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "En dipol montert lavt over bakken."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "En vertikal jordplanantenne."
+          ],
+          "feedback": [
+            "En vertikal har lav strålingsvinkel og passer for lange avstander. Over noen hundre kilometer trengs høy vinkel."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "En 5/8 λ vertikalantenne."
+          ],
+          "feedback": [
+            "Den presser strålingen enda lavere mot horisonten og er laget for lang rekkevidde, ikke for korte hopp."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "En lang Yagi-Uda-antenne for 2 m."
+          ],
+          "feedback": [
+            "2 m går ikke via ionosfæren på vanlig vis og når sjelden fra Vestlandet til Østlandet over fjellet."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "For korte avstander via ionosfæren må signalet gå nesten rett opp og ned. Dette kalles NVIS – nær vertikalt innfallende ionosfærebølge. En dipol bare noen få meter over bakken stråler mye rett opp og blir nesten rundstrålende.",
+        "En vertikal antenne er en langdistanseantenne med lav vinkel. Å bytte den ut med en lav dipol kan gi mange dB bedre forbindelse på slike strekninger, både ved sending og mottak."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 8,
+        "section_id": "s8-23",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "53ec11e456d46d34",
+          "0c0611455816d652"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:13:26+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "57872b22a3fcc58c21059d4610dd9d3eb805daf0349018cbe42a48323f2badc2",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:48:51+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "57872b22a3fcc58c21059d4610dd9d3eb805daf0349018cbe42a48323f2badc2",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:13:24+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "57872b22a3fcc58c21059d4610dd9d3eb805daf0349018cbe42a48323f2badc2",
+        "errors": [],
+        "warnings": [
+          "priority: 'exam_important' set by judgement; the book's '!' markers are not known for this chapter yet (no scan)"
+        ],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:48:51+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:48:51+00:00",
+        "content_sha256": "57872b22a3fcc58c21059d4610dd9d3eb805daf0349018cbe42a48323f2badc2",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

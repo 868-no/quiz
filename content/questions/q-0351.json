@@ -1,0 +1,148 @@
+{
+  "id": "q-0351",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "medium",
+      "chapter": 8,
+      "section_ids": [
+        "s8-07"
+      ],
+      "topic_ids": [
+        "staende-bolger",
+        "fodekabler"
+      ],
+      "learning_objective": "Forstå at tap i fødekabelen får SWR målt ved senderen til å se bedre ut enn det er.",
+      "priority": "normal",
+      "context": [
+        "SWR målt ved senderen har gradvis blitt bedre i løpet av et år, uten at du har gjort noe med antennen."
+      ],
+      "stem": [
+        "Hva bør du mistenke?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "At tapet i fødekabelen har økt."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "At antennen har tilpasset seg kabelen over tid."
+          ],
+          "feedback": [
+            "En antenne tilpasser seg ikke av seg selv. Når SWR bedrer seg uten grunn, er det ofte fordi tapet i kabelen har økt."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "At SWR-meteret har blitt mer nøyaktig."
+          ],
+          "feedback": [
+            "Instrumenter blir ikke bedre med alderen. Et tapsfylt kabelanlegg demper den reflekterte effekten og gir lavere avlesning."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "At ionosfæren gir bedre forhold."
+          ],
+          "feedback": [
+            "SWR handler om tilpasningen i antenneanlegget og påvirkes ikke av forholdene i ionosfæren."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Den reflekterte effekten må gjennom kabelen to ganger: ut til antennen og tilbake. Et kabeltap teller derfor dobbelt i det som måles ved senderen, og returtapet ved senderen blir antennens returtap pluss to ganger kabeltapet.",
+        "En kabel som tar inn fuktighet eller blir skadet, taper mer. Da ser SWR bedre ut, mens mindre effekt faktisk når antennen. En svært tapsfylt kabel kan til og med skjule en frakoblet antenne."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 8,
+        "section_id": "s8-07",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "9c3e48403abaf43a",
+          "9c8cd03a22ce7871",
+          "a2c9c35ea5784a6e"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:13:25+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "ec87facaaa2cae07a770bf03d6dca8b44062e5258614f070d49752c58cb221a3",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:48:33+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "ec87facaaa2cae07a770bf03d6dca8b44062e5258614f070d49752c58cb221a3",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:13:24+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "ec87facaaa2cae07a770bf03d6dca8b44062e5258614f070d49752c58cb221a3",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:48:33+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:48:33+00:00",
+        "content_sha256": "ec87facaaa2cae07a770bf03d6dca8b44062e5258614f070d49752c58cb221a3",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

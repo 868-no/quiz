@@ -1,0 +1,145 @@
+{
+  "id": "q-0510",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "medium",
+      "chapter": 12,
+      "section_ids": [
+        "s12-05"
+      ],
+      "topic_ids": [
+        "anrop-kontakt"
+      ],
+      "learning_objective": "Vite at man alltid spør om frekvensen er i bruk og lytter før man gjør et anrop.",
+      "priority": "exam_important",
+      "context": [
+        "Du har funnet en frekvens på 20 m der du ikke hører noe, og vil gjøre et alminnelig anrop (CQ)."
+      ],
+      "stem": [
+        "Hva bør du gjøre først?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Spørre om frekvensen er i bruk, si kallesignalet ditt og lytte en stund."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Anrope med en gang, siden du ikke hører noen på frekvensen."
+          ],
+          "feedback": [
+            "Du kan ligge i dødsonen til en stasjon i en pågående samtale, eller bare høre den ene av dem. Derfor spør du først og lytter etter svar."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Sende en lang bærebølge for å holde av frekvensen til deg."
+          ],
+          "feedback": [
+            "Ingen kan holde av en frekvens, og en bærebølge forstyrrer bare andre. Spør heller om frekvensen er i bruk, og lytt."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Sende «QRZ?» for å høre om noen kaller på deg."
+          ],
+          "feedback": [
+            "Med QRZ? spør man hvem som kaller, etter å ha hørt at noen kaller på en. Før et anrop spør du om frekvensen er i bruk."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "At du ikke hører noe, betyr ikke at frekvensen er ledig. Du kan ligge i dødsonen til en stasjon i nærheten, eller høre bare den ene av to stasjoner som snakker sammen – mens den andre hører dere begge.",
+        [
+          "Spør derfor om frekvensen er i bruk, oppgi ",
+          {
+            "term": "kallesignal",
+            "text": "kallesignalet"
+          },
+          " ditt og lytt noen sekunder. Kommer det ikke noe svar etter et par forsøk, kan du regne frekvensen som ledig og starte anropet."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 12,
+        "section_id": "s12-05",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "1027660c0c867f13"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:13:44+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "173b8fd7f266a369e56fcebff207bcb4900e61587c68d1d9f18669cda1b7a56a",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:49:48+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "173b8fd7f266a369e56fcebff207bcb4900e61587c68d1d9f18669cda1b7a56a",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": []
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:13:43+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "173b8fd7f266a369e56fcebff207bcb4900e61587c68d1d9f18669cda1b7a56a",
+        "errors": [],
+        "warnings": [
+          "priority: 'exam_important' set by judgement; the book's '!' markers are not known for this chapter yet (no scan)"
+        ],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T22:49:48+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:49:48+00:00",
+        "content_sha256": "173b8fd7f266a369e56fcebff207bcb4900e61587c68d1d9f18669cda1b7a56a",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

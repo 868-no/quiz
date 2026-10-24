@@ -1,0 +1,165 @@
+{
+  "id": "q-0248",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "medium",
+      "chapter": 9,
+      "section_ids": [
+        "s9-06"
+      ],
+      "topic_ids": [
+        "fading-dodsone"
+      ],
+      "learning_objective": "Kjenne igjen dødsonen (skip-sonen) mellom jordbølgens rekkevidde og der ionosfærebølgen kommer ned.",
+      "priority": "exam_important",
+      "context": [
+        "Du lytter på 40 m til en forbindelse mellom en norsk stasjon 150 km unna og en stasjon i Tyskland. Den tyske stasjonen kommer klart og tydelig inn, mens den norske knapt er hørbar."
+      ],
+      "stem": [
+        "Hva er forklaringen?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Du er i den norske stasjonens dødsone."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Den norske stasjonen har antennen med feil polarisasjon."
+          ],
+          "feedback": [
+            "På HF vrir ionosfæren på polarisasjonen underveis, så ulik polarisasjon betyr lite. Forklaringen ligger i avstanden."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Den norske stasjonen sender med for lav effekt."
+          ],
+          "feedback": [
+            "Det forklarer ikke at en stasjon mye lenger unna kommer godt inn. Problemet er at du står der signalet ikke kommer ned."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "D-laget demper bare signaler fra stasjoner som er i nærheten."
+          ],
+          "feedback": [
+            "D-laget demper de lave frekvensene uansett avstand. Det er geometrien som gir forskjellen: nære stasjoner nås av jordbølgen, fjerne av ionosfærebølgen."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Rundt en sender ligger en ring der signalet ikke høres, selv om stasjoner både nærmere og lenger unna hører det fint. Nære stasjoner får jordbølgen, som bare når noen kilometer. Fjerne stasjoner får ionosfærebølgen, som kommer ned et godt stykke unna senderen.",
+        [
+          "Ringen mellom disse kalles ",
+          {
+            "term": "dodsone",
+            "text": "dødsonen"
+          },
+          " eller skip-sonen. Her ligger du i den norske stasjonens dødsone, mens den tyske stasjonens ionosfærebølge kommer ned der du er."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 9,
+        "section_id": "s9-06",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "3012e20b27d9a117"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:14:11+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "29400bde98dcc50088d2ccc412b6e694ebe6297a802951e77483cc8abf3bfe84",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:47:59+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "b5fc28a8dcdbfc8ff840609e8129ec0dfb873eb9cc2d7ab1117f20dbea5453bc",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": []
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:04:28+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "b5fc28a8dcdbfc8ff840609e8129ec0dfb873eb9cc2d7ab1117f20dbea5453bc",
+        "errors": [],
+        "warnings": [
+          "priority: 'exam_important' set by judgement; the book's '!' markers are not known for this chapter yet (no scan)"
+        ],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T22:47:59+00:00"
+      },
+      "visual": {
+        "template": "propagation",
+        "version": 1,
+        "params": {
+          "kind": "sky_wave",
+          "f_mhz": 7.1,
+          "fc_mhz": 5,
+          "angles": [
+            12,
+            20,
+            30,
+            45,
+            70
+          ],
+          "range_km": 3000,
+          "ground_wave_km": 30,
+          "show_skip": true
+        },
+        "after_only": true
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:47:59+00:00",
+        "content_sha256": "b5fc28a8dcdbfc8ff840609e8129ec0dfb873eb9cc2d7ab1117f20dbea5453bc",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

@@ -1,0 +1,153 @@
+{
+  "id": "q-0607",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "hard",
+      "chapter": 13,
+      "section_ids": [
+        "s13-09"
+      ],
+      "topic_ids": [
+        "rf-eksponering"
+      ],
+      "learning_objective": "Forstå at grenseverdiene for eksponering tar hensyn til frekvens og tid og har stor sikkerhetsmargin.",
+      "priority": "normal",
+      "context": [],
+      "stem": [
+        "Hvordan er grenseverdiene for eksponering for radiobølger fastsatt?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "De tar hensyn til frekvens og eksponeringstid og er satt med god sikkerhetsmargin."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Akkurat ved nivået der vevet begynner å ta skade."
+          ],
+          "feedback": [
+            "Grenseverdiene ligger langt under nivået der man kan se noen virkning. Det gir en stor sikkerhetsmargin."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Som den høyeste verdien i et enkelt øyeblikk, uten hensyn til tid."
+          ],
+          "feedback": [
+            "Grensene tar hensyn til hvor lenge man utsettes, fordi oppvarmingen bygger seg opp over tid. For korte, kraftige pulser finnes det i tillegg egne begrensninger."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Likt for alle frekvenser fra langbølge til mikrobølger."
+          ],
+          "feedback": [
+            "Grenseverdiene varierer med frekvensen, fordi kroppen tar opp energi ulikt på ulike frekvenser."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Grenseverdiene anbefales av ICNIRP, en internasjonal ekspertgruppe som Verdens helseorganisasjon støtter seg på, og norske myndigheter bruker dem. De er satt med god sikkerhetsmargin under nivåene der det er påvist helseskadelige virkninger.",
+        "Grensene er ulike for ulike frekvensområder og tar hensyn til hvor lenge eksponeringen varer. Måler du høyere verdier enn grensene, må du finne årsaken og rette på det."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 13,
+        "section_id": "s13-09",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "0bcfa8b2a4c69f39",
+          "784866d8e9684393"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:11:20+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "4eeec1a77ffb89d651a3d100fc25c2f140965ba7b21a039d64311a3ca3e9bd63",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:39:03+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "cc3e83d55fe2435fa9781bc5c887b06a5874334f8ae30e804f8012578b8db88b",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:50:54+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "cc3e83d55fe2435fa9781bc5c887b06a5874334f8ae30e804f8012578b8db88b",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:11:18+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "cc3e83d55fe2435fa9781bc5c887b06a5874334f8ae30e804f8012578b8db88b",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:50:54+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:50:54+00:00",
+        "content_sha256": "cc3e83d55fe2435fa9781bc5c887b06a5874334f8ae30e804f8012578b8db88b",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

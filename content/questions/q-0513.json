@@ -1,0 +1,145 @@
+{
+  "id": "q-0513",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "medium",
+      "chapter": 12,
+      "section_ids": [
+        "s12-05"
+      ],
+      "topic_ids": [
+        "god-operasjonsskikk"
+      ],
+      "learning_objective": "Kjenne halekalling (tail-ending) i en pile-up og vite at det regnes som dårlig oppførsel.",
+      "priority": "normal",
+      "context": [
+        "Mange stasjoner kaller på en sjelden DX-stasjon samtidig. En av dem sender hele tiden helt på slutten av sendingen til den som er i kontakt med DX-stasjonen, for å komme før de andre."
+      ],
+      "stem": [
+        "Hvordan regnes dette?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Som dårlig oppførsel som forstyrrer og sinker avviklingen for alle."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Som smart og helt vanlig taktikk i en pile-up."
+          ],
+          "feedback": [
+            "Det kan virke lurt, men det forstyrrer den pågående kontakten og gjør at alt tar lengre tid for alle som venter."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Som påbudt, for å vise DX-stasjonen at man står i kø."
+          ],
+          "feedback": [
+            "Det finnes ikke noe slikt påbud. Man venter til kontakten er ferdig, og kaller først da."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Som greit, så lenge man bruker lav effekt."
+          ],
+          "feedback": [
+            "Lav effekt endrer ikke at man sender oppå en kontakt som ikke er avsluttet."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Når mange kaller på samme stasjon, kalles det en pile-up. Å kalle inn på slutten av en annen stasjons sending for å komme først har fått navnet halekalling («tail-ending»).",
+        "Kontakten som pågår, blir forstyrret, alle må vente lenger, og det regnes som dårlig oppførsel. Vent til kontakten er avsluttet, og kall da."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 12,
+        "section_id": "s12-05",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "b3a3b970d8132fab"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:13:44+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "af42d2163097fff7e772059ed1efaa56a6df61dc78bc23b0b20189df0a7ccd8f",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:49:51+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "af42d2163097fff7e772059ed1efaa56a6df61dc78bc23b0b20189df0a7ccd8f",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:13:43+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "af42d2163097fff7e772059ed1efaa56a6df61dc78bc23b0b20189df0a7ccd8f",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:49:51+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:49:51+00:00",
+        "content_sha256": "af42d2163097fff7e772059ed1efaa56a6df61dc78bc23b0b20189df0a7ccd8f",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

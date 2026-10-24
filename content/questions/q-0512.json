@@ -1,0 +1,146 @@
+{
+  "id": "q-0512",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 12,
+      "section_ids": [
+        "s12-07"
+      ],
+      "topic_ids": [
+        "anrop-kontakt"
+      ],
+      "learning_objective": "Vite at stasjonen som hadde frekvensen først, blir værende der når kontakten avsluttes.",
+      "priority": "exam_important",
+      "context": [],
+      "stem": [
+        "To stasjoner avslutter en kontakt. Hvem av dem blir vanligvis værende på frekvensen?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Den som hadde frekvensen først, altså den som anropte."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Den som har sterkest signal hos den andre."
+          ],
+          "feedback": [
+            "Signalstyrken avgjør ikke hvem som beholder frekvensen. Regelen er at den som var der først, blir værende."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Den som svarte på anropet."
+          ],
+          "feedback": [
+            "Det er motsatt: den som svarte, flytter videre. Den som fant frekvensen ledig og anropte, beholder den."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Ingen av dem; begge skal forlate frekvensen."
+          ],
+          "feedback": [
+            "Den som hadde frekvensen først, kan bli værende og fortsette å anrope. Det lønner seg å si tydelig fra om hvem som blir igjen."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Den stasjonen som først fant frekvensen ledig og anropte, beholder den til den selv vil gi seg.",
+        "Det er god skikk å gjøre det tydelig når kontakten er over, og hvem som blir værende. Ellers kan andre som lytter, begynne å anrope mens kontakten fortsatt pågår."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 12,
+        "section_id": "s12-07",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "d1192a8b82851316",
+          "b3a3b970d8132fab"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:13:44+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "e822a8b45acbeb1c268c96f19c0c50c633f343add1c6b2aa286befcac136e08a",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:49:50+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "e822a8b45acbeb1c268c96f19c0c50c633f343add1c6b2aa286befcac136e08a",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:13:43+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "e822a8b45acbeb1c268c96f19c0c50c633f343add1c6b2aa286befcac136e08a",
+        "errors": [],
+        "warnings": [
+          "priority: 'exam_important' set by judgement; the book's '!' markers are not known for this chapter yet (no scan)"
+        ],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:49:50+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:49:50+00:00",
+        "content_sha256": "e822a8b45acbeb1c268c96f19c0c50c633f343add1c6b2aa286befcac136e08a",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

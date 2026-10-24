@@ -1,0 +1,146 @@
+{
+  "id": "q-0541",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "medium",
+      "chapter": 12,
+      "section_ids": [
+        "s12-21"
+      ],
+      "topic_ids": [
+        "kallesignaler"
+      ],
+      "learning_objective": "Vite at man ikke er portabel med fast antenne og strøm fra nettet, for eksempel på hytta.",
+      "priority": "normal",
+      "context": [
+        "Du sender fra hytta, der du har fast antenne og strøm fra nettet."
+      ],
+      "stem": [
+        "Hva er vanlig praksis for identifiseringen?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Med det vanlige kallesignalet, uten tillegg."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Med /P etter kallesignalet, siden du ikke er hjemme."
+          ],
+          "feedback": [
+            "Portabel betyr at stasjonen bæres og ikke får strøm fra nettet. Med fast antenne og nettstrøm er du ikke portabel."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Med /M etter kallesignalet."
+          ],
+          "feedback": [
+            "/M brukes fra kjøretøy på land. På hytta er du verken mobil eller portabel."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Med navnet på hyttekommunen etter en skråstrek."
+          ],
+          "feedback": [
+            "Det finnes ingen slik regel. Når stasjonen verken er mobil eller portabel, bruker du vanlig kallesignal."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "/P brukes vanligvis for stasjoner som bæres og drives uten strøm fra nettet. Er stasjonen verken mobil, båret eller batteridrevet, er det vanlig å bruke bare det vanlige kallesignalet, også når du er et annet sted enn hjemme.",
+        "Tilleggene er innarbeidede konvensjoner; forskriften krever bare fullt kallesignal."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 12,
+        "section_id": "s12-21",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "b25706c1acb2e5e9",
+          "6d3665a743a40988"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:13:44+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "5ef84a8770289291d5baad0b9f12e1d16fb91dce408f8df552f3da49b87872d2",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:39:02+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "84efe050810a08544242d7736cc74f3ac277ce99092d3849a8fb427d2bd11d1d",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:50:17+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "84efe050810a08544242d7736cc74f3ac277ce99092d3849a8fb427d2bd11d1d",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": []
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:13:43+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "84efe050810a08544242d7736cc74f3ac277ce99092d3849a8fb427d2bd11d1d",
+        "errors": [],
+        "warnings": [],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T22:50:17+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:50:17+00:00",
+        "content_sha256": "84efe050810a08544242d7736cc74f3ac277ce99092d3849a8fb427d2bd11d1d",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

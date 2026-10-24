@@ -61,81 +61,6 @@
       "chapter": 2
     },
     {
-      "id": "dioder",
-      "title": "Dioder og PN-overgangen",
-      "chapter": 3
-    },
-    {
-      "id": "likeretting",
-      "title": "Likeretting",
-      "chapter": 3
-    },
-    {
-      "id": "zenerdiode",
-      "title": "Zenerdioden",
-      "chapter": 3
-    },
-    {
-      "id": "varicap",
-      "title": "Varicap-dioden",
-      "chapter": 3
-    },
-    {
-      "id": "transistorkoblinger",
-      "title": "Transistorkoblinger",
-      "chapter": 3
-    },
-    {
-      "id": "am",
-      "title": "Amplitudemodulasjon",
-      "chapter": 4
-    },
-    {
-      "id": "ssb",
-      "title": "Enkelt sidebånd (SSB)",
-      "chapter": 4
-    },
-    {
-      "id": "fm",
-      "title": "Frekvensmodulasjon",
-      "chapter": 4
-    },
-    {
-      "id": "frekvensmultiplikasjon",
-      "title": "Frekvensmultiplikasjon",
-      "chapter": 4
-    },
-    {
-      "id": "harmoniske",
-      "title": "Harmoniske signaler og uønsket utstråling",
-      "chapter": 5
-    },
-    {
-      "id": "senderfeil",
-      "title": "Feil i sendersignalet",
-      "chapter": 5
-    },
-    {
-      "id": "superheterodyn",
-      "title": "Superheterodynmottakeren",
-      "chapter": 6
-    },
-    {
-      "id": "mellomfrekvens",
-      "title": "Mellomfrekvens og speilfrekvens",
-      "chapter": 6
-    },
-    {
-      "id": "mottakeregenskaper",
-      "title": "Mottakeregenskaper",
-      "chapter": 6
-    },
-    {
-      "id": "demodulering",
-      "title": "Demodulering",
-      "chapter": 6
-    },
-    {
       "id": "kondensatorer",
       "title": "Kondensatorer og kapasitans",
       "chapter": 2
@@ -186,6 +111,31 @@
       "chapter": 2
     },
     {
+      "id": "dioder",
+      "title": "Dioder og PN-overgangen",
+      "chapter": 3
+    },
+    {
+      "id": "likeretting",
+      "title": "Likeretting",
+      "chapter": 3
+    },
+    {
+      "id": "zenerdiode",
+      "title": "Zenerdioden",
+      "chapter": 3
+    },
+    {
+      "id": "varicap",
+      "title": "Varicap-dioden",
+      "chapter": 3
+    },
+    {
+      "id": "transistorkoblinger",
+      "title": "Transistorkoblinger",
+      "chapter": 3
+    },
+    {
       "id": "halvledermaterialer",
       "title": "Halvledermaterialer og doping",
       "chapter": 3
@@ -221,6 +171,26 @@
       "chapter": 3
     },
     {
+      "id": "am",
+      "title": "Amplitudemodulasjon",
+      "chapter": 4
+    },
+    {
+      "id": "ssb",
+      "title": "Enkelt sidebånd (SSB)",
+      "chapter": 4
+    },
+    {
+      "id": "fm",
+      "title": "Frekvensmodulasjon",
+      "chapter": 4
+    },
+    {
+      "id": "frekvensmultiplikasjon",
+      "title": "Frekvensmultiplikasjon",
+      "chapter": 4
+    },
+    {
       "id": "senderoppbygging",
       "title": "Senderens oppbygging",
       "chapter": 4
@@ -246,6 +216,16 @@
       "chapter": 4
     },
     {
+      "id": "harmoniske",
+      "title": "Harmoniske signaler og uønsket utstråling",
+      "chapter": 5
+    },
+    {
+      "id": "senderfeil",
+      "title": "Feil i sendersignalet",
+      "chapter": 5
+    },
+    {
       "id": "frekvensstabilitet",
       "title": "Frekvensstabilitet og drift",
       "chapter": 5
@@ -261,6 +241,26 @@
       "chapter": 5
     },
     {
+      "id": "superheterodyn",
+      "title": "Superheterodynmottakeren",
+      "chapter": 6
+    },
+    {
+      "id": "mellomfrekvens",
+      "title": "Mellomfrekvens og speilfrekvens",
+      "chapter": 6
+    },
+    {
+      "id": "mottakeregenskaper",
+      "title": "Mottakeregenskaper",
+      "chapter": 6
+    },
+    {
+      "id": "demodulering",
+      "title": "Demodulering",
+      "chapter": 6
+    },
+    {
       "id": "agc",
       "title": "AGC og S-meter",
       "chapter": 6
@@ -274,6 +274,241 @@
       "id": "forforsterkere",
       "title": "Forforsterkere og nedkonvertere",
       "chapter": 6
+    },
+    {
+      "id": "analog-til-digital",
+      "title": "Fra analogt til digitalt signal",
+      "chapter": 7
+    },
+    {
+      "id": "sampling-aliasing",
+      "title": "Sampling, aliasing og Nyquist-frekvens",
+      "chapter": 7
+    },
+    {
+      "id": "digitale-filtre",
+      "title": "Digitale filtre og FFT",
+      "chapter": 7
+    },
+    {
+      "id": "sdr",
+      "title": "Programvarestyrte mottakere (SDR)",
+      "chapter": 7
+    },
+    {
+      "id": "fodekabler",
+      "title": "Fødekabler, baluner og kabeltap",
+      "chapter": 8
+    },
+    {
+      "id": "staende-bolger",
+      "title": "Stående bølger, SWR og returtap",
+      "chapter": 8
+    },
+    {
+      "id": "dipol-vertikal",
+      "title": "Dipoler og vertikalantenner",
+      "chapter": 8
+    },
+    {
+      "id": "retningsantenner",
+      "title": "Yagi-Uda- og quad-antenner",
+      "chapter": 8
+    },
+    {
+      "id": "hf-antenner",
+      "title": "HF-antenner, bølgefeller og lastspoler",
+      "chapter": 8
+    },
+    {
+      "id": "antennetuner",
+      "title": "Antennetuner og et godt antenneanlegg",
+      "chapter": 8
+    },
+    {
+      "id": "radiobolger-polarisasjon",
+      "title": "Radiobølger, polarisasjon og avstand",
+      "chapter": 9
+    },
+    {
+      "id": "ionosfaeren",
+      "title": "Ionosfærens lag",
+      "chapter": 9
+    },
+    {
+      "id": "muf-luf",
+      "title": "Kritisk frekvens, MUF og LUF",
+      "chapter": 9
+    },
+    {
+      "id": "fading-dodsone",
+      "title": "Fading og dødsone",
+      "chapter": 9
+    },
+    {
+      "id": "solstorm-aurora",
+      "title": "Solstormer og nordlys",
+      "chapter": 9
+    },
+    {
+      "id": "bolgetyper",
+      "title": "Jordbølge, ionosfærebølge og direktebølge",
+      "chapter": 9
+    },
+    {
+      "id": "vhf-utbredelse",
+      "title": "Utbredelse på VHF og UHF",
+      "chapter": 9
+    },
+    {
+      "id": "emc-regler",
+      "title": "EMC-regler og ansvar",
+      "chapter": 10
+    },
+    {
+      "id": "emc-stasjon",
+      "title": "En stasjon som ikke forstyrrer",
+      "chapter": 10
+    },
+    {
+      "id": "emc-kobling",
+      "title": "Hvordan forstyrrelser kommer inn i utstyr",
+      "chapter": 10
+    },
+    {
+      "id": "emc-filtre",
+      "title": "Filtre og ferritt mot forstyrrelser",
+      "chapter": 10
+    },
+    {
+      "id": "emc-klage",
+      "title": "Når naboen klager",
+      "chapter": 10
+    },
+    {
+      "id": "maleinstrumenter",
+      "title": "Viserinstrumenter og multimeter",
+      "chapter": 11
+    },
+    {
+      "id": "rf-maling",
+      "title": "Måling av RF-spenning og sendereffekt",
+      "chapter": 11
+    },
+    {
+      "id": "swr-meter",
+      "title": "SWR-meteret",
+      "chapter": 11
+    },
+    {
+      "id": "frekvensmaling",
+      "title": "Frekvensmåling og kalibrering",
+      "chapter": 11
+    },
+    {
+      "id": "oscilloskop",
+      "title": "Oscilloskopet",
+      "chapter": 11
+    },
+    {
+      "id": "desibel",
+      "title": "Regning med desibel",
+      "chapter": 11
+    },
+    {
+      "id": "anrop-kontakt",
+      "title": "Anrop, kontakt og avslutning",
+      "chapter": 12
+    },
+    {
+      "id": "relestasjoner-nett",
+      "title": "Reléstasjoner, kanaler og nett",
+      "chapter": 12
+    },
+    {
+      "id": "god-operasjonsskikk",
+      "title": "God skikk og hensyn på lufta",
+      "chapter": 12
+    },
+    {
+      "id": "qsl-diplomer",
+      "title": "QSL-kort og diplomer",
+      "chapter": 12
+    },
+    {
+      "id": "kallesignaler",
+      "title": "Kallesignaler og prefikser",
+      "chapter": 12
+    },
+    {
+      "id": "regelverk-organisasjoner",
+      "title": "Regelverk, ITU og organisasjonene",
+      "chapter": 12
+    },
+    {
+      "id": "signaltyper",
+      "title": "Betegnelser for signaltyper",
+      "chapter": 12
+    },
+    {
+      "id": "operasjon-utlandet",
+      "title": "Radio i utlandet: CEPT og SHARE",
+      "chapter": 12
+    },
+    {
+      "id": "elektrisk-sjokk",
+      "title": "Strøm gjennom kroppen",
+      "chapter": 13
+    },
+    {
+      "id": "jording-jordfeilbryter",
+      "title": "Jording og jordfeilbryter",
+      "chapter": 13
+    },
+    {
+      "id": "trygt-arbeid-utstyr",
+      "title": "Trygt arbeid på utstyr",
+      "chapter": 13
+    },
+    {
+      "id": "sikkerhet-ute-bil",
+      "title": "Sikkerhet ute og i bil",
+      "chapter": 13
+    },
+    {
+      "id": "rf-eksponering",
+      "title": "Eksponering for radiobølger",
+      "chapter": 13
+    },
+    {
+      "id": "lyn-statisk",
+      "title": "Lyn og statisk elektrisitet",
+      "chapter": 13
+    },
+    {
+      "id": "verktoy-lodding",
+      "title": "Verktøy og lodding",
+      "chapter": 13
+    },
+    {
+      "id": "baandplan-bruk",
+      "title": "Båndplaner og status i båndene",
+      "chapter": 16
+    },
+    {
+      "id": "q-koder-forkortelser",
+      "title": "Q-koder og forkortelser",
+      "chapter": 16
+    },
+    {
+      "id": "rst-rapporter",
+      "title": "Signalrapporter med RST",
+      "chapter": 16
+    },
+    {
+      "id": "fonetisk-bokstavering",
+      "title": "Bokstavering med det fonetiske alfabetet",
+      "chapter": 16
     }
   ]
 }

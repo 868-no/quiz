@@ -1,0 +1,177 @@
+{
+  "id": "q-0594",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "medium",
+      "chapter": 13,
+      "section_ids": [
+        "s13-07"
+      ],
+      "topic_ids": [
+        "sikkerhet-ute-bil"
+      ],
+      "learning_objective": "Forstå at vernet må passe til ledningens strømføringsevne, og at utendørs bruk av nettspenning bør ha jordfeilbryter.",
+      "priority": "normal",
+      "context": [
+        [
+          "En utendørs stasjon får strøm gjennom en skjøteledning som er merket for høyst ",
+          {
+            "q": 10,
+            "u": "A"
+          },
+          ". Kursen i huset er sikret med et vern på ",
+          {
+            "q": 16,
+            "u": "A"
+          },
+          ", og den har ingen jordfeilbryter."
+        ]
+      ],
+      "stem": [
+        "Hva er riktig vurdering?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Skjøteledningen kan bli overbelastet uten at vernet løser ut, og utendørs bør kursen ha jordfeilbryter."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Alt er i orden så lenge radioen trekker under 10 A."
+          ],
+          "feedback": [
+            "Radioen kan trekke lite, men vernet skal beskytte ledningen også når mer utstyr kobles til eller noe går galt. Et vern på 16 A beskytter ikke en ledning som bare tåler 10 A."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Vernet bør byttes til et større, så det ikke løser ut."
+          ],
+          "feedback": [
+            "Det gir enda dårligere beskyttelse av ledningene. Vernet skal ikke være større enn det ledningene tåler."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Jordfeilbryter trengs ikke utendørs, bare på bad og kjøkken."
+          ],
+          "feedback": [
+            "Ute er det ekstra stor fare: bakken kan være våt, og det kan komme vann i utstyret. Da er jordfeilbryter særlig viktig."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Et overstrømsvern skal beskytte ledningene. Merkestrømmen til vernet skal ligge mellom det utstyret trekker og det ledningen tåler. Her tåler skjøteledningen ",
+          {
+            "q": 10,
+            "u": "A"
+          },
+          ", mens vernet først løser ut over ",
+          {
+            "q": 16,
+            "u": "A"
+          },
+          ", så ledningen kan bli overopphetet uten at vernet reagerer."
+        ],
+        [
+          "Utendørs gjør våt bakke og vann i utstyret det lettere å få strøm gjennom kroppen. Bruk derfor ",
+          {
+            "term": "jordfeilbryter",
+            "text": "jordfeilbryter"
+          },
+          ", og kabler som er hele og laget for utendørs bruk. Endringer i den faste installasjonen gjøres av en elektroinstallatør."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 13,
+        "section_id": "s13-07",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "a47975848022b262",
+          "49f2ce9e3b8574a9"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:11:19+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "4f370f5f3aa86f9ec4fdf32e6d4ec83a4b4c962a7feff4c0ec81a388b91b1410",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:39:03+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "79692e3046581082d8bf04857c739efbe7a88eade9f361dfba4f270acb881af5",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:50:42+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "79692e3046581082d8bf04857c739efbe7a88eade9f361dfba4f270acb881af5",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": []
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:11:18+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "79692e3046581082d8bf04857c739efbe7a88eade9f361dfba4f270acb881af5",
+        "errors": [],
+        "warnings": [],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T22:50:42+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:50:42+00:00",
+        "content_sha256": "79692e3046581082d8bf04857c739efbe7a88eade9f361dfba4f270acb881af5",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

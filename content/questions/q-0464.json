@@ -1,0 +1,154 @@
+{
+  "id": "q-0464",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "medium",
+      "chapter": 11,
+      "section_ids": [
+        "s11-18",
+        "s11-05"
+      ],
+      "topic_ids": [
+        "maleinstrumenter"
+      ],
+      "learning_objective": "Vite at et analogt instrument er best når man justerer etter maksimalt utslag.",
+      "priority": "normal",
+      "context": [
+        "Du skal justere en krets til maksimal utgangseffekt og følger en målespenning mens du vrir på en trimmer."
+      ],
+      "stem": [
+        "Hvilket instrument er enklest å bruke til dette?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Et analogt multimeter, fordi du ser med en gang når viseren snur."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Et digitalt multimeter, fordi det alltid er mer nøyaktig."
+          ],
+          "feedback": [
+            "Tallene på et digitalt multimeter skifter hele tiden mens du justerer, og du kan fort gå forbi toppen uten å merke det."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Et absorpsjonsbølgemeter."
+          ],
+          "feedback": [
+            "Et bølgemeter viser omtrent hvilken frekvens et sterkt signal har. Det egner seg dårlig til å følge en målespenning i en krets."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "En frekvensteller."
+          ],
+          "feedback": [
+            "En frekvensteller viser frekvens, ikke spenning eller effekt. Den hjelper ikke når du justerer etter størst utslag."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Et digitalt ",
+          {
+            "term": "multimeter",
+            "text": "multimeter"
+          },
+          " er lett å lese av når verdien står stille, for eksempel når du måler et batteri. Når du justerer og leter etter et maksimum, skifter tallene hele tiden."
+        ],
+        "På et analogt instrument ser du med en gang når viseren slutter å stige og begynner å gå tilbake. Derfor er det analoge instrumentet best til slike justeringer."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 11,
+        "section_id": "s11-18",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "a5c1e85fea25c8bb",
+          "77cce1d3c9ef5440"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:11:20+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "2271eb96a0bb5ef8070f2dea2e05bacd0e2bc2e31d8d7ea20aadf05c74f0ce53",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:49:28+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "2271eb96a0bb5ef8070f2dea2e05bacd0e2bc2e31d8d7ea20aadf05c74f0ce53",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:11:19+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "2271eb96a0bb5ef8070f2dea2e05bacd0e2bc2e31d8d7ea20aadf05c74f0ce53",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:49:28+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:49:28+00:00",
+        "content_sha256": "2271eb96a0bb5ef8070f2dea2e05bacd0e2bc2e31d8d7ea20aadf05c74f0ce53",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

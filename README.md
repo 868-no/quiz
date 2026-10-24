@@ -13,9 +13,10 @@ on a phone's home screen.
 The repository also contains the **offline editorial pipeline** that turns the
 private textbook digitization exports into reviewed, original, publishable questions.
 
-> **Status:** live at https://quiz.868.no/ with **177 approved questions** for chapters 1–6.
-> Chapters 7–16 are imported with chapter and section references but no page numbers yet;
-> their questions are being written. Study page references have not yet been checked
+> **Status:** live at https://quiz.868.no/ with **394 approved questions** for chapters 1–13
+> and 16 (chapters 14 and 15, the exam syllabus and a list of websites, have none).
+> Chapters 7–16 have chapter and section references but no page numbers yet. Study page
+> references have not yet been checked
 > against the printed book; corrections are welcome as [GitHub issues](https://github.com/868-no/quiz/issues).
 
 ## Quick start

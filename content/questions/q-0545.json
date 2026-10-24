@@ -1,0 +1,168 @@
+{
+  "id": "q-0545",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "recall",
+      "difficulty": "medium",
+      "chapter": 12,
+      "section_ids": [
+        "s12-20"
+      ],
+      "topic_ids": [
+        "signaltyper"
+      ],
+      "learning_objective": "Kjenne betegnelsene F3E og A1A.",
+      "priority": "normal",
+      "context": [
+        "En håndholdt VHF-radio sender tale med frekvensmodulasjon."
+      ],
+      "stem": [
+        "Hvilken signalbetegnelse har slike sendinger?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "F3E"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "J3E"
+          ],
+          "feedback": [
+            "J3E er tale på SSB. F står for frekvensmodulasjon."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "A1A"
+          ],
+          "feedback": [
+            "A1A er morse med på/av-nøkling av bærebølgen. E på slutten betyr telefoni."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "F1B"
+          ],
+          "feedback": [
+            "F1B er telegrafi for automatisk mottak, som RTTY, med direkte frekvensskift. E betyr telefoni."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "F betyr at bærebølgen er frekvensmodulert, 3 at den moduleres av én analog kanal, og E at det er telefoni. Tale på FM er derfor F3E.",
+        "Til sammenligning er A1A morse med på/av-nøkling og F1B RTTY med frekvensskift."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 12,
+        "section_id": "s12-20",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "3faeed9f7786e45f",
+          "e482a56df79b1a1e"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:13:45+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "44308616e132aa548edf63abf8fb80910f9a21dfd4350d6bb3124fae9295d9c6",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:50:20+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "257a1ab3db29396b20b1a52f164142fc228af59441ae9617f87c3794ba5666d4",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:13:43+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "257a1ab3db29396b20b1a52f164142fc228af59441ae9617f87c3794ba5666d4",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:50:20+00:00"
+      },
+      "visual": {
+        "template": "code-breakdown",
+        "version": 1,
+        "params": {
+          "parts": [
+            {
+              "text": "F",
+              "label": "Frekvensmodulasjon",
+              "highlight": true
+            },
+            {
+              "text": "3",
+              "label": "Én kanal med analog informasjon"
+            },
+            {
+              "text": "E",
+              "label": "Telefoni (tale)"
+            }
+          ]
+        },
+        "after_only": true
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:50:20+00:00",
+        "content_sha256": "257a1ab3db29396b20b1a52f164142fc228af59441ae9617f87c3794ba5666d4",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

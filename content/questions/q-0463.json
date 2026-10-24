@@ -1,0 +1,248 @@
+{
+  "id": "q-0463",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "calculation",
+      "difficulty": "medium",
+      "chapter": 11,
+      "section_ids": [
+        "s11-05"
+      ],
+      "topic_ids": [
+        "maleinstrumenter"
+      ],
+      "learning_objective": "Forstå og beregne hvordan et voltmeter med lav indre motstand belaster kretsen og gir feil avlesning.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "To motstander på ",
+          {
+            "q": 47,
+            "u": "kΩ"
+          },
+          " ligger i serie over en spenning på ",
+          {
+            "q": 12,
+            "u": "V"
+          },
+          ". Du måler spenningen over den nederste motstanden med et voltmeter som har en indre motstand på ",
+          {
+            "q": 47,
+            "u": "kΩ"
+          },
+          ". Voltmeteret og motstanden det ligger over, blir da til sammen ",
+          {
+            "q": 23.5,
+            "u": "kΩ"
+          },
+          "."
+        ]
+      ],
+      "stem": [
+        "Hvilken spenning viser voltmeteret?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 4.0,
+              "u": "V"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 6.0,
+              "u": "V"
+            }
+          ],
+          "feedback": [
+            "Dette er spenningen uten voltmeteret. Når meteret kobles til, ligger det parallelt med den nederste motstanden og senker spenningen der."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 8.0,
+              "u": "V"
+            }
+          ],
+          "feedback": [
+            "Dette er spenningen over den øverste motstanden. Voltmeteret viser spenningen over den nederste, som nå bare er 23,5 kΩ."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 3.0,
+              "u": "V"
+            }
+          ],
+          "feedback": [
+            "Her er spenningen delt i fire. Delingen følger motstandene: 23,5 kΩ av totalt 70,5 kΩ, altså en tredjedel."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Uten voltmeter deler de like motstandene spenningen likt, ",
+          {
+            "q": 6,
+            "u": "V"
+          },
+          " på hver. Voltmeteret ligger parallelt med den nederste motstanden, og de to blir til sammen ",
+          {
+            "q": 23.5,
+            "u": "kΩ"
+          },
+          ". Spenningsdelingen blir da:"
+        ],
+        {
+          "steps": [
+            [
+              "U = 12 V · 23,5 kΩ / (47 kΩ + 23,5 kΩ) = ",
+              {
+                "q": 4.0,
+                "u": "V"
+              }
+            ]
+          ]
+        },
+        "Målingen viser altså en tredjedel for lite. Voltmeteret bør ha mye høyere indre motstand enn kretsen; elektroniske instrumenter har typisk 10–100 MΩ."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 11,
+        "section_id": "s11-05",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "77cce1d3c9ef5440"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:11:20+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "5f1cb81822412bc4830a2df500c018a010f92e90fdedbebfb68178ab5626fc06",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:49:27+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "f9fc72f7c85ff29a03adfc50472470d38da5b2dd5e3366a657b0889b64699b81",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:11:19+00:00"
+      },
+      "calculation": {
+        "formula": "voltage_divider",
+        "inputs": {
+          "U": [
+            12,
+            "V"
+          ],
+          "R1": [
+            47,
+            "kΩ"
+          ],
+          "R2": [
+            23.5,
+            "kΩ"
+          ]
+        },
+        "answer": [
+          4.0,
+          "V"
+        ],
+        "answer_symbol": "U",
+        "sig_figs": 2
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "f9fc72f7c85ff29a03adfc50472470d38da5b2dd5e3366a657b0889b64699b81",
+        "errors": [],
+        "warnings": [
+          "priority: 'exam_important' set by judgement; the book's '!' markers are not known for this chapter yet (no scan)"
+        ],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:49:27+00:00"
+      },
+      "visual": {
+        "template": "instrument",
+        "version": 1,
+        "params": {
+          "kind": "voltmeter_loading",
+          "supply_v": 12,
+          "r1_ohms": 47000,
+          "r2_ohms": 47000,
+          "meter_ohms": 47000
+        },
+        "params_after": {
+          "show_reading": true
+        },
+        "animation": {
+          "param": "meter_ohms",
+          "from": 10000,
+          "to": 1000000,
+          "phase": "after",
+          "text": "Animasjonen endrer voltmeterets indre motstand fra 10 kΩ til 1 MΩ: jo større den er, desto nærmere 6 V viser voltmeteret."
+        }
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:49:27+00:00",
+        "content_sha256": "f9fc72f7c85ff29a03adfc50472470d38da5b2dd5e3366a657b0889b64699b81",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

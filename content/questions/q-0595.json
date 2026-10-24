@@ -1,0 +1,136 @@
+{
+  "id": "q-0595",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 13,
+      "section_ids": [
+        "s13-07"
+      ],
+      "topic_ids": [
+        "sikkerhet-ute-bil"
+      ],
+      "learning_objective": "Vite hvordan man tar hensyn til publikum ved en stasjon på et offentlig sted.",
+      "priority": "normal",
+      "context": [
+        "Klubben din skal vise fram amatørradio på et kjøpesenter, med stasjon, antenne og kabler."
+      ],
+      "stem": [
+        "Hva er det viktigste å gjøre før arrangementet?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Gjøre en risikovurdering og sikre kabler og antenner mot publikum."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Bruke høyest mulig effekt, så publikum hører tydelige signaler."
+          ],
+          "feedback": [
+            "Effekten bør ikke være høyere enn nødvendig. Det viktigste er at publikum, som ikke kjenner farene, ikke kan komme til skade."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Legge kablene midt på gulvet, så de er lette å se."
+          ],
+          "feedback": [
+            "Kabler på gulvet bør gå langs veggen og festes, for eksempel med kabelbeskyttere eller teip, slik at ingen snubler."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Ingenting spesielt; publikum er selv ansvarlige for å passe seg."
+          ],
+          "feedback": [
+            "Folk flest kjenner ikke farene ved antenner og kabler. Det er den som setter opp stasjonen, som må passe på."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Når allmennheten har tilgang, må du tenke på folk som ikke kjenner farene. Gjør en risikovurdering på forhånd, hold uisolerte ledninger og antenner utenfor rekkevidde, og legg kabler langs veggen og fest dem slik at ingen snubler.",
+        "Vurder også en ansvarsforsikring. En ulykke ville dessuten vært dårlig reklame for hobbyen."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 13,
+        "section_id": "s13-07",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "49f2ce9e3b8574a9"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:11:19+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "55f8e5ede3bdec9d70d7a8a04e915ce03e257bdb0182db37ae595c9580cd5898",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:50:43+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "55f8e5ede3bdec9d70d7a8a04e915ce03e257bdb0182db37ae595c9580cd5898",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": []
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:11:18+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "55f8e5ede3bdec9d70d7a8a04e915ce03e257bdb0182db37ae595c9580cd5898",
+        "errors": [],
+        "warnings": [],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T22:50:43+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:50:43+00:00",
+        "content_sha256": "55f8e5ede3bdec9d70d7a8a04e915ce03e257bdb0182db37ae595c9580cd5898",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

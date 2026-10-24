@@ -1,0 +1,144 @@
+{
+  "id": "q-0597",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 13,
+      "section_ids": [
+        "s13-08"
+      ],
+      "topic_ids": [
+        "sikkerhet-ute-bil"
+      ],
+      "learning_objective": "Kjenne de viktigste sikkerhetsreglene for radioutstyr i bil.",
+      "priority": "normal",
+      "context": [],
+      "stem": [
+        "Hvilket av disse er god praksis for amatørradio i bil?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Holde RF-kabler unna bilens ledningsnett og styreenheter."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Legge radioen løst i passasjersetet, så den er lett å nå."
+          ],
+          "feedback": [
+            "Løst utstyr kan bli kastet rundt ved bråstopp eller kollisjon og skade folk i bilen. Alt skal festes skikkelig."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Føre antennekabelen sammen med bilens ledningsnett for å få et ryddig resultat."
+          ],
+          "feedback": [
+            "RF-kabler og sendere skal holdes unna bilens ledningsnett og styreenheter. RF kan forstyrre elektronikk som er viktig for sikker kjøring."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Montere en så høy antenne som mulig."
+          ],
+          "feedback": [
+            "Antennen må ikke være så høy at den kan treffe tunneler, bruer eller annet. Den må også være godt festet så den ikke svinger ut."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Utstyret skal være godt festet, slik at det ikke flyr gjennom bilen ved bråstopp eller kollisjon. Antenner må sitte støtt og ikke være så høye at de treffer tunneler og bruer.",
+        "Hold sendere og RF-kabler unna bilens ledningsnett og elektroniske styreenheter – særlig i elbiler. Gjør større endringer i innstillingene når bilen står stille, eller la en passasjer gjøre det; kjøringen skal ha full oppmerksomhet."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 13,
+        "section_id": "s13-08",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "eb4be9eb3fb5043c",
+          "6a8df0e78478eca2"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:11:19+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "b133d6f91539119f212ae586f02817e86074e8fc515e4d2cc3a61d175a5b3de4",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:50:45+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "b133d6f91539119f212ae586f02817e86074e8fc515e4d2cc3a61d175a5b3de4",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:11:18+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "b133d6f91539119f212ae586f02817e86074e8fc515e4d2cc3a61d175a5b3de4",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:50:45+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:50:45+00:00",
+        "content_sha256": "b133d6f91539119f212ae586f02817e86074e8fc515e4d2cc3a61d175a5b3de4",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

@@ -1,0 +1,144 @@
+{
+  "id": "q-0400",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "recall",
+      "difficulty": "easy",
+      "chapter": 10,
+      "section_ids": [
+        "s10-02"
+      ],
+      "topic_ids": [
+        "emc-regler"
+      ],
+      "learning_objective": "Kjenne de to grunnprinsippene i EMC: grenser for utstråling og krav til immunitet.",
+      "priority": "exam_important",
+      "context": [],
+      "stem": [
+        [
+          "Hvilke to prinsipper bygger reglene for ",
+          {
+            "term": "emc",
+            "text": "elektromagnetisk kompatibilitet"
+          },
+          " på?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Utstyr skal ikke lage mer forstyrrelser enn en fastsatt grense, og det skal tåle et visst nivå av forstyrrelser fra andre."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Sendere skal ha lisens, og mottakere skal være CE-merket."
+          ],
+          "feedback": [
+            "Lisens og merking er andre regler. EMC handler om at utstyr både skal begrense sin egen utstråling og tåle en viss mengde forstyrrelser."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Alt elektronisk utstyr skal bygges inn i en jordet metallkasse og bruke skjermede kabler."
+          ],
+          "feedback": [
+            "Skjerming er et virkemiddel, ikke selve prinsippet. Reglene setter krav til hva utstyret sender ut og hva det tåler, og overlater til produsenten hvordan kravene nås."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Den som sender, har alltid hele ansvaret, uansett hvor følsomt det forstyrrede utstyret er."
+          ],
+          "feedback": [
+            "Begge sider har krav: senderen må begrense det den lager av forstyrrelser, og det andre utstyret må tåle et rimelig nivå."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "EMC betyr at utstyr kan virke som det skal side om side. Det krever noe av begge parter.",
+        "Utstrålingsstandardene setter et tak for hvor mye forstyrrelser et apparat får lage. Immunitetsstandardene setter et minstekrav til hvor mye forstyrrelser utenfra et apparat skal tåle og likevel virke."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 10,
+        "section_id": "s10-02",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "321e6b08df72a901",
+          "ea9e8e2e3fcb4f91"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:12:39+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "31358f209c8ff010eefd03aaf61cba49c55172b69a6089e238c2c53590e2b97f",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:48:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "31358f209c8ff010eefd03aaf61cba49c55172b69a6089e238c2c53590e2b97f",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": []
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:12:38+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "31358f209c8ff010eefd03aaf61cba49c55172b69a6089e238c2c53590e2b97f",
+        "errors": [],
+        "warnings": [
+          "priority: 'exam_important' set by judgement; the book's '!' markers are not known for this chapter yet (no scan)"
+        ],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T22:48:55+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:48:55+00:00",
+        "content_sha256": "31358f209c8ff010eefd03aaf61cba49c55172b69a6089e238c2c53590e2b97f",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

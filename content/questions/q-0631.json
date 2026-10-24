@@ -1,0 +1,141 @@
+{
+  "id": "q-0631",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 16,
+      "section_ids": [
+        "s16-02"
+      ],
+      "topic_ids": [
+        "baandplan-bruk"
+      ],
+      "learning_objective": "Vite at IARU lager båndplanene, at de er veiledende, og at det er god amatørskikk å følge dem.",
+      "priority": "normal",
+      "context": [],
+      "stem": [
+        [
+          "Hva gjelder for IARUs ",
+          {
+            "term": "baandplan",
+            "text": "båndplaner"
+          },
+          "?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "De er veiledende, men god amatørskikk er å følge dem."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "De er en lov, og brudd straffes med bot."
+          ],
+          "feedback": [
+            "Båndplanene er laget av radioamatørenes egen organisasjon og er veiledende. Det er myndighetene som gir de bindende reglene, som hvilke bånd og hvor stor effekt man kan bruke."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "De bestemmer hvilke bånd radioamatører har lov til å bruke."
+          ],
+          "feedback": [
+            "Hvilke bånd amatørradio har tilgang til, bestemmer myndighetene. Båndplanene deler inn båndene etter hvilke typer signaler som skal brukes hvor."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "De er like over hele verden og endres aldri."
+          ],
+          "feedback": [
+            "IARU deler verden i tre regioner med hver sin båndplan, og planene blir oppdatert. Sjekk derfor hvilken plan som gjelder, også når du sender fra et annet land."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Myndighetene bestemmer hvilke bånd radioamatørene kan bruke og hvor mye effekt som er lov. Innenfor båndene lager IARU en mer finmasket plan for hver region, som sier hvilke typer signaler som hører hjemme hvor.",
+        "Båndplanene er veiledende, men god amatørskikk er å holde seg til dem. De blir oppdatert fra tid til annen, så det lønner seg å sjekke den nyeste utgaven, og å finne ut hva som gjelder når man sender fra et annet land."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 16,
+        "section_id": "s16-02",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "d7ec3e35cd639e6b"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:08:40+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "c601117b91e0adc87f34832919e7d6b4ceb5a485191949fee074cf8749732fd1",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:50:56+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "c601117b91e0adc87f34832919e7d6b4ceb5a485191949fee074cf8749732fd1",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": []
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:08:39+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "c601117b91e0adc87f34832919e7d6b4ceb5a485191949fee074cf8749732fd1",
+        "errors": [],
+        "warnings": [],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T22:50:56+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:50:56+00:00",
+        "content_sha256": "c601117b91e0adc87f34832919e7d6b4ceb5a485191949fee074cf8749732fd1",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

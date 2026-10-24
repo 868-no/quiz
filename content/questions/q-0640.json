@@ -1,0 +1,206 @@
+{
+  "id": "q-0640",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 16,
+      "section_ids": [
+        "s16-07"
+      ],
+      "topic_ids": [
+        "rst-rapporter"
+      ],
+      "learning_objective": "Kjenne tilleggsbokstavene X, K og C i en RST-rapport for morse.",
+      "priority": "normal",
+      "context": [
+        "En stasjon gir deg rapporten «579C» på morse."
+      ],
+      "stem": [
+        "Hva sier bokstaven C om signalet ditt?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Tonen kvitrer (chirp)."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Tonen er krystallstabil."
+          ],
+          "feedback": [
+            "En særlig stabil, krystallstyrt tone markeres med X, for eksempel 599X."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Det er klikkelyder fra nøklingen."
+          ],
+          "feedback": [
+            [
+              "Nøkkelklikk markeres med K. C står for ",
+              {
+                "term": "kvitter",
+                "text": "chirp"
+              },
+              ", altså kvitring."
+            ]
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Signalet er bekreftet (confirmed)."
+          ],
+          "feedback": [
+            "Bekreftelse har en egen forkortelse, CFM. I en RST-rapport sier C noe om tonen."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Etter tonetallet kan det legges til en bokstav: X for en svært stabil tone som fra et krystall, K for nøkkelklikk og C for ",
+          {
+            "term": "kvitter",
+            "text": "chirp"
+          },
+          " – kvitring der frekvensen forskyves litt hver gang senderen går mellom lyd og stille."
+        ],
+        "Kvitring kommer gjerne av at oscillatoren påvirkes når senderen nøkles, for eksempel fordi spenningen faller litt under belastning."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 16,
+        "section_id": "s16-07",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "b4cbd2465d9a05d3"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:08:40+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "f5e48063ba8a6144f6741f001a2f945752adc5bc9c5cbfe47bac235c649769b9",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:51:03+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "235611afe602319a896a5b62e0b83b1971200b5676bd5a84b6a348d2d56fcd17",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:08:39+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "235611afe602319a896a5b62e0b83b1971200b5676bd5a84b6a348d2d56fcd17",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:51:03+00:00"
+      },
+      "visual": {
+        "template": "code-breakdown",
+        "version": 1,
+        "params": {
+          "parts": [
+            {
+              "text": "5",
+              "label": "Lesbarhet (R): 5 av 5"
+            },
+            {
+              "text": "7",
+              "label": "Signalstyrke (S): 7 av 9"
+            },
+            {
+              "text": "9",
+              "label": "Tone (T): 9 av 9"
+            },
+            {
+              "text": "C",
+              "label": "Tonen kvitrer (chirp)",
+              "hidden": true,
+              "highlight": true
+            }
+          ]
+        },
+        "params_after": {
+          "parts": [
+            {
+              "text": "5",
+              "label": "Lesbarhet (R): 5 av 5"
+            },
+            {
+              "text": "7",
+              "label": "Signalstyrke (S): 7 av 9"
+            },
+            {
+              "text": "9",
+              "label": "Tone (T): 9 av 9"
+            },
+            {
+              "text": "C",
+              "label": "Tonen kvitrer (chirp)",
+              "highlight": true
+            }
+          ]
+        }
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:51:03+00:00",
+        "content_sha256": "235611afe602319a896a5b62e0b83b1971200b5676bd5a84b6a348d2d56fcd17",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

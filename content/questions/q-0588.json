@@ -1,0 +1,153 @@
+{
+  "id": "q-0588",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "recall",
+      "difficulty": "easy",
+      "chapter": 13,
+      "section_ids": [
+        "s13-04"
+      ],
+      "topic_ids": [
+        "jording-jordfeilbryter"
+      ],
+      "learning_objective": "Vite at metalliske rørsystemer ikke skal brukes som jordelektrode.",
+      "priority": "normal",
+      "context": [],
+      "stem": [
+        "Kan du bruke vannrøret i huset som jordelektrode for radiostasjonen?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Nei, metalliske rørsystemer skal ikke brukes som jordelektrode."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Ja, det er den anbefalte måten å jorde stasjonen på."
+          ],
+          "feedback": [
+            "Det var vanlig før, men i dag skal ikke vannrør brukes som jordelektrode. Stasjonen skal jordes til et ordentlig jordingsanlegg."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Ja, så lenge røret er av kobber."
+          ],
+          "feedback": [
+            "Materialet spiller ingen rolle; rørsystemet skal ikke brukes som jordelektrode."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Ja, men bare i eldre bygg."
+          ],
+          "feedback": [
+            "Regelen gjelder også i eldre bygg. Der kan det være krevende å få til god jording, men vannrøret er ikke løsningen."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Før i tiden ble vannrøret ofte brukt som jord. I dag skal metalliske rørsystemer ikke brukes som jordelektrode, blant annet fordi rørene kan byttes ut med plast og forbindelsen da forsvinner.",
+        "Metalliske rør kan likevel være en del av potensialutjevningen i huset. Finn ut hvilke regler som gjelder, og få en elektroinstallatør til å gjøre jordingen riktig."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 13,
+        "section_id": "s13-04",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "c2bdc3f172122adf",
+          "bfae33b0f4c6f489"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:11:19+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "a5a2c4848cd809295ddb165019ccb5de37a48a6c5d37c4f2376503ad817028d0",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:39:03+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "0c11e1a7558b6883c7e35fd7d929494148e7bc2bb4f7735589e702cd3f92ba50",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:50:37+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "0c11e1a7558b6883c7e35fd7d929494148e7bc2bb4f7735589e702cd3f92ba50",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:11:18+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "0c11e1a7558b6883c7e35fd7d929494148e7bc2bb4f7735589e702cd3f92ba50",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:50:37+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:50:37+00:00",
+        "content_sha256": "0c11e1a7558b6883c7e35fd7d929494148e7bc2bb4f7735589e702cd3f92ba50",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

@@ -1,0 +1,152 @@
+{
+  "id": "q-0462",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 11,
+      "section_ids": [
+        "s11-04"
+      ],
+      "topic_ids": [
+        "maleinstrumenter"
+      ],
+      "learning_objective": "Forstå at et dreiespoleinstrument med likeretter viser middelverdien, og at effektivverdien av en sinus er om lag 11 % høyere.",
+      "priority": "normal",
+      "context": [
+        "Et dreiespoleinstrument med en brolikeretter foran brukes til å måle en sinusformet vekselspenning."
+      ],
+      "stem": [
+        "Hva er det instrumentet egentlig reagerer på?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Middelverdien av den likerettede spenningen; effektivverdien er om lag 11 % høyere for en sinus."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Effektivverdien direkte, uansett kurveform."
+          ],
+          "feedback": [
+            "Viseren følger middelverdien av strømmen. Skalaen kan graderes i effektivverdi, men det stemmer bare for den kurveformen den er laget for, vanligvis sinus."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Toppverdien, fordi viseren stopper på det høyeste punktet."
+          ],
+          "feedback": [
+            "Viseren er for treg til å følge hver halvperiode og stiller seg inn etter middelverdien av den likerettede strømmen."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Ingenting, fordi et dreiespoleinstrument ikke kan brukes på vekselspenning."
+          ],
+          "feedback": [
+            "Uten likeretter ville viseren bare dirret rundt null. Med en brolikeretter foran blir strømmen likerettet, og instrumentet gir utslag."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Viseren i et dreiespoleinstrument reagerer bare på likestrøm. Med en brolikeretter foran går strømmen samme vei gjennom spolen i begge halvperiodene, og viseren stiller seg inn etter middelverdien.",
+        [
+          "For en sinus er ",
+          {
+            "term": "effektivverdi",
+            "text": "effektivverdien"
+          },
+          " om lag 11 % høyere enn middelverdien, så skalaen må justeres for det. Andre kurveformer har et annet forhold – for et firkantsignal er middelverdi, effektivverdi og toppverdi like. Diodenes spenningsfall gjør dessuten slike instrumenter unøyaktige under omtrent 1 V."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 11,
+        "section_id": "s11-04",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "8cb0ad2e9b7a6c26"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:11:20+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "ce9b0992c36ecc6a2a4c754df55db3835599d42672a2a4f7cd9b9f3ef0b8d9bf",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:49:26+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "ce9b0992c36ecc6a2a4c754df55db3835599d42672a2a4f7cd9b9f3ef0b8d9bf",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:11:19+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "ce9b0992c36ecc6a2a4c754df55db3835599d42672a2a4f7cd9b9f3ef0b8d9bf",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:49:26+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:49:26+00:00",
+        "content_sha256": "ce9b0992c36ecc6a2a4c754df55db3835599d42672a2a4f7cd9b9f3ef0b8d9bf",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

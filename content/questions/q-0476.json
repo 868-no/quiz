@@ -1,0 +1,217 @@
+{
+  "id": "q-0476",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "calculation",
+      "difficulty": "medium",
+      "chapter": 11,
+      "section_ids": [
+        "s11-12"
+      ],
+      "topic_ids": [
+        "frekvensmaling"
+      ],
+      "learning_objective": "Forstå at telletiden bestemmer oppløsningen til en frekvensteller.",
+      "priority": "normal",
+      "context": [
+        [
+          "En ",
+          {
+            "term": "frekvensteller",
+            "text": "frekvensteller"
+          },
+          " teller periodene i signalet i en telletid på ",
+          {
+            "q": 0.1,
+            "u": "s"
+          },
+          ". Tellingen kan bomme med én periode, fordi neste periode kan ha vært på vei akkurat da tellingen stoppet."
+        ]
+      ],
+      "stem": [
+        "Hvor stor blir usikkerheten i frekvensen på grunn av dette?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "±",
+            {
+              "q": 10,
+              "u": "Hz"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "±",
+            {
+              "q": 1,
+              "u": "Hz"
+            }
+          ],
+          "feedback": [
+            "±1 Hz får du med en telletid på 1 sekund. Med 0,1 s svarer én periode til 10 Hz."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "±",
+            {
+              "q": 0.1,
+              "u": "Hz"
+            }
+          ],
+          "feedback": [
+            "Kortere telletid gir dårligere oppløsning, ikke bedre. Én periode på 0,1 s er 1 / 0,1 s = 10 Hz."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "±",
+            {
+              "q": 100,
+              "u": "Hz"
+            }
+          ],
+          "feedback": [
+            "±100 Hz hører til en telletid på 10 ms. Her er telletiden 0,1 s, som gir 10 Hz."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Telleren viser antall perioder delt på telletiden. Én periode for mye eller for lite på ",
+          {
+            "q": 0.1,
+            "u": "s"
+          },
+          " tilsvarer:"
+        ],
+        {
+          "steps": [
+            [
+              "1 / 0,1 s = ",
+              {
+                "q": 10,
+                "u": "Hz"
+              }
+            ]
+          ]
+        },
+        "Lengre telletid gir finere oppløsning. Nøyaktigheten bestemmes derimot av krystalloscillatoren som styrer telletiden – mange siffer på skjermen betyr ikke at alle stemmer."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 11,
+        "section_id": "s11-12",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "0af47fac40d3f415"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:11:20+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "144c2729eadb349620fa629d1808c9e964f2823d432aef895430afab74a097dc",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:49:39+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "7df2ad0683f418cb9105da910e3af500afb8bbd907db3f7fe8e3a8c33ad7c746",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:11:19+00:00"
+      },
+      "calculation": {
+        "formula": "frequency_from_period",
+        "inputs": {
+          "T": [
+            0.1,
+            "s"
+          ]
+        },
+        "answer": [
+          10,
+          "Hz"
+        ],
+        "answer_symbol": "f",
+        "sig_figs": 2
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "7df2ad0683f418cb9105da910e3af500afb8bbd907db3f7fe8e3a8c33ad7c746",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:49:39+00:00"
+      },
+      "visual": {
+        "template": "instrument",
+        "version": 1,
+        "params": {
+          "kind": "gate",
+          "gate_s": 0.1
+        },
+        "params_after": {
+          "show_resolution": true
+        }
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:49:39+00:00",
+        "content_sha256": "7df2ad0683f418cb9105da910e3af500afb8bbd907db3f7fe8e3a8c33ad7c746",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

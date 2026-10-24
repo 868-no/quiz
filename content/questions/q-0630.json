@@ -1,0 +1,138 @@
+{
+  "id": "q-0630",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 16,
+      "section_ids": [
+        "s16-02"
+      ],
+      "topic_ids": [
+        "baandplan-bruk"
+      ],
+      "learning_objective": "Vite hva sekundær status i et frekvensbånd innebærer for radioamatører.",
+      "priority": "exam_important",
+      "context": [
+        "I et bestemt frekvensbånd har amatørradiotjenesten sekundær status, mens en annen radiotjeneste har primær status."
+      ],
+      "stem": [
+        "Hva betyr dette for radioamatørene i båndet?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "De må ikke forstyrre den primære tjenesten, og de må tåle forstyrrelser fra den."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "De har førsterett, og den andre tjenesten må vike for dem."
+          ],
+          "feedback": [
+            "Førsterett har den tjenesten som har primær status. Med sekundær status er det radioamatørene som må vike."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "De kan bare bruke båndet om natten."
+          ],
+          "feedback": [
+            "Sekundær status sier ingenting om tid på døgnet. Den sier hvem som må vike når tjenestene kommer i konflikt."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "De kan forstyrre den andre tjenesten så lenge de holder seg under maksimal effekt."
+          ],
+          "feedback": [
+            "Effektgrensen gjelder uansett status. En sekundær tjeneste skal ikke forstyrre den primære i det hele tatt."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Myndighetene bestemmer hvilke bånd amatørradiotjenesten kan bruke, og om den har primær eller sekundær status. Den tjenesten som har primær status, har førsterett.",
+        "Med sekundær status skal radioamatørene ikke lage forstyrrelser for den primære tjenesten, og de må finne seg i forstyrrelser fra den. Myndighetene setter også grenser for hvor stor utgangseffekt som er tillatt i de ulike båndene."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 16,
+        "section_id": "s16-02",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "d7ec3e35cd639e6b"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:08:40+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "b05d14f3a939963de0c2cd0ffa3623126559469e27e542feba8d872bdd97996b",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:50:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "b05d14f3a939963de0c2cd0ffa3623126559469e27e542feba8d872bdd97996b",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": []
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:08:39+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "b05d14f3a939963de0c2cd0ffa3623126559469e27e542feba8d872bdd97996b",
+        "errors": [],
+        "warnings": [
+          "priority: 'exam_important' set by judgement; the book's '!' markers are not known for this chapter yet (no scan)"
+        ],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T22:50:55+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:50:55+00:00",
+        "content_sha256": "b05d14f3a939963de0c2cd0ffa3623126559469e27e542feba8d872bdd97996b",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

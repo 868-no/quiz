@@ -1,0 +1,150 @@
+{
+  "id": "q-0593",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "medium",
+      "chapter": 13,
+      "section_ids": [
+        "s13-07"
+      ],
+      "topic_ids": [
+        "sikkerhet-ute-bil"
+      ],
+      "learning_objective": "Vite at master og høye antenner må stå så langt fra luftledninger at de ikke kan treffe dem om de faller.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "På en feltdag skal du sette opp en ",
+          {
+            "q": 12,
+            "u": "m"
+          },
+          " høy midlertidig mast. Det går en luftstrekt strømledning over jordet i nærheten."
+        ]
+      ],
+      "stem": [
+        "Hvor må masten plasseres?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Så langt unna ledningen at den ikke kan treffe den selv om den velter."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Rett under ledningen, så masten får god jord."
+          ],
+          "feedback": [
+            "Det er svært farlig. Både når masten reises og om den velter, kan den komme i kontakt med ledningen."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Hvor som helst, så lenge masten er av glassfiber."
+          ],
+          "feedback": [
+            "Også en glassfibermast kan bli ledende når den er våt eller skitten, og den bærer gjerne metallantenner og kabler. Hold god avstand."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Minst ",
+            {
+              "q": 2,
+              "u": "m"
+            },
+            " fra ledningen."
+          ],
+          "feedback": [
+            "Det er altfor nært. Masten må stå lenger unna ledningen enn den er høy, slik at den ikke når fram om den velter."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Høye antenner og master skal holdes godt unna høyspentlinjer og andre luftstrekte kabler. Masten skal ikke kunne nå ledningen selv om den velter.",
+        "Når du setter opp en stasjon på et nytt sted, bør du gå en runde og se etter mulige farer før du begynner. Bruk av stige for å få opp antenner krever også omtanke."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 13,
+        "section_id": "s13-07",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "49f2ce9e3b8574a9"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:11:19+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "3b74cdf3952c2ece35b150e502c7bf99ef5717434682ffdf9d959fd5e071c92a",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:50:41+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "3b74cdf3952c2ece35b150e502c7bf99ef5717434682ffdf9d959fd5e071c92a",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": []
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:11:18+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "3b74cdf3952c2ece35b150e502c7bf99ef5717434682ffdf9d959fd5e071c92a",
+        "errors": [],
+        "warnings": [
+          "priority: 'exam_important' set by judgement; the book's '!' markers are not known for this chapter yet (no scan)"
+        ],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T22:50:41+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:50:41+00:00",
+        "content_sha256": "3b74cdf3952c2ece35b150e502c7bf99ef5717434682ffdf9d959fd5e071c92a",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

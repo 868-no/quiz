@@ -1,0 +1,207 @@
+{
+  "id": "q-0301",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "calculation",
+      "difficulty": "easy",
+      "chapter": 7,
+      "section_ids": [
+        "s7-03"
+      ],
+      "topic_ids": [
+        "analog-til-digital"
+      ],
+      "learning_objective": "Regne ut antall nivåer en A/D-omformer med n bit kan skille mellom (2^n).",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En ",
+          {
+            "term": "ad-omformer",
+            "text": "A/D-omformer"
+          },
+          " bruker ",
+          {
+            "q": 8,
+            "u": ""
+          },
+          " bit for hver avlesning."
+        ]
+      ],
+      "stem": [
+        "Hvor mange ulike amplitudenivåer kan den skille mellom?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 256,
+              "u": ""
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 16,
+              "u": ""
+            }
+          ],
+          "feedback": [
+            "Her er antall bit ganget med 2. Hver ekstra bit dobler antall nivåer, så det blir 2 · 2 · … · 2 åtte ganger: 2⁸."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 64,
+              "u": ""
+            }
+          ],
+          "feedback": [
+            "Her er 8 opphøyd i andre. Det riktige er 2 opphøyd i antall bit: 2⁸."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 255,
+              "u": ""
+            }
+          ],
+          "feedback": [
+            "255 er det høyeste tallet 8 bit kan vise, men null er også et nivå. Til sammen blir det 2⁸ = 256 nivåer."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Én bit har to verdier, 0 og 1. Med to bit blir det fire kombinasjoner, med tre bit åtte, og så videre: hver ekstra bit dobler antallet. Med n bit får man 2ⁿ nivåer.",
+        {
+          "steps": [
+            [
+              "2⁸ = 2 · 2 · 2 · 2 · 2 · 2 · 2 · 2 = ",
+              {
+                "q": 256,
+                "u": ""
+              }
+            ]
+          ]
+        },
+        "Alle verdier mellom nivåene rundes av til nærmeste nivå. Avviket kalles kvantiseringsfeil."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 7,
+        "section_id": "s7-03",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "510443f7aa4e801d"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:09:36+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "24f896ea20acd7a32e324aad1e214d50c5f83c02a03dc3b85d6782f5fbd6a101",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:48:10+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "66241e601d9901d7c3fea3c5e76e3b3072180a6beba59dcf42b4920632bbe151",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": []
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:09:36+00:00"
+      },
+      "calculation": {
+        "formula": "quantization_levels",
+        "inputs": {
+          "n": [
+            8,
+            ""
+          ]
+        },
+        "answer": [
+          256,
+          ""
+        ],
+        "answer_symbol": "N",
+        "sig_figs": 3
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "66241e601d9901d7c3fea3c5e76e3b3072180a6beba59dcf42b4920632bbe151",
+        "errors": [],
+        "warnings": [
+          "priority: 'exam_important' set by judgement; the book's '!' markers are not known for this chapter yet (no scan)"
+        ],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T22:48:10+00:00"
+      },
+      "visual": {
+        "template": "sampling",
+        "version": 1,
+        "params": {
+          "kind": "quantize",
+          "bits": 3,
+          "samples_per_period": 24,
+          "show_values": false,
+          "levels_label": true
+        },
+        "after_only": true,
+        "animation": {
+          "param": "bits",
+          "from": 1,
+          "to": 5,
+          "phase": "after",
+          "text": "Animasjonen øker antall bit fra 1 til 5: hver ekstra bit dobler antall nivåer, og trappen følger signalet tettere."
+        }
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:48:10+00:00",
+        "content_sha256": "66241e601d9901d7c3fea3c5e76e3b3072180a6beba59dcf42b4920632bbe151",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

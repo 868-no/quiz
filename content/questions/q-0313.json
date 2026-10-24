@@ -1,0 +1,202 @@
+{
+  "id": "q-0313",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 7,
+      "section_ids": [
+        "s7-02",
+        "s7-07"
+      ],
+      "topic_ids": [
+        "sdr"
+      ],
+      "learning_objective": "Vite hva som kjennetegner en programvarestyrt mottaker (SDR).",
+      "priority": "exam_important",
+      "context": [],
+      "stem": [
+        [
+          "Hva kjennetegner en ",
+          {
+            "term": "sdr",
+            "text": "programvarestyrt mottaker"
+          },
+          " (SDR)?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Signalet gjøres digitalt tidlig, og nedblanding, filtrering og demodulering gjøres med programvare."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Den har bare analoge filtre, men frekvensen stilles inn fra en datamaskin."
+          ],
+          "feedback": [
+            "At frekvensen stilles inn fra en datamaskin, er ikke nok. I en SDR er også de tradisjonelt analoge leddene erstattet av regning i en prosessor."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Den kan bare ta imot digitale modulasjonstyper."
+          ],
+          "feedback": [
+            "En SDR kan demodulere SSB, CW, AM og FM like godt som digitale modulasjonstyper – alt gjøres med programvare."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Den trenger ingen A/D-omformer."
+          ],
+          "feedback": [
+            "Det er motsatt: A/D-omformeren er helt sentral, fordi radiosignalet må gjøres om til tall før programvaren kan behandle det."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Digital signalbehandling kom først inn i lavfrekvensdelen av mottakerne, så i mellomfrekvensdelen, og etter hvert helt fram til radiofrekvensen.",
+        [
+          "I en SDR gjøres signalet digitalt så tidlig som mulig. Det som før krevde analoge kretser – nedblanding til mellomfrekvens, filtrering og demodulering – gjøres med programvare i en ",
+          {
+            "term": "dsp",
+            "text": "signalprosessor"
+          },
+          " eller datamaskin."
+        ]
+      ],
+      "glossary_after_answer": [
+        "sdr"
+      ],
+      "study_reference": {
+        "chapter": 7,
+        "section_id": "s7-02",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "70a0b7b8ec4bcfad",
+          "3315503c54f6bafc"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:09:37+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "0dfb52e35418c48dd93857679e193b5f7eee4c596056f5d7d4b62caea599ec21",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:48:20+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "05618882d4d7491a514fdd31fb8aed60d415c3de2e220f65142244883bba3ff1",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:09:36+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "05618882d4d7491a514fdd31fb8aed60d415c3de2e220f65142244883bba3ff1",
+        "errors": [],
+        "warnings": [
+          "priority: 'exam_important' set by judgement; the book's '!' markers are not known for this chapter yet (no scan)"
+        ],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:48:20+00:00"
+      },
+      "visual": {
+        "template": "block-diagram",
+        "version": 1,
+        "after_only": true,
+        "params": {
+          "chain": [
+            {
+              "kind": "antenna"
+            },
+            {
+              "kind": "preselector"
+            },
+            {
+              "kind": "custom",
+              "label": "A/D-omformer",
+              "highlight": true
+            },
+            {
+              "kind": "custom",
+              "label": "Digital nedblanding"
+            },
+            {
+              "kind": "custom",
+              "label": "Digitalt filter"
+            },
+            {
+              "kind": "custom",
+              "label": "Demodulering i programvare"
+            },
+            {
+              "kind": "custom",
+              "label": "D/A-omformer"
+            },
+            {
+              "kind": "speaker"
+            }
+          ]
+        }
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:48:20+00:00",
+        "content_sha256": "05618882d4d7491a514fdd31fb8aed60d415c3de2e220f65142244883bba3ff1",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

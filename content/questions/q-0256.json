@@ -1,0 +1,172 @@
+{
+  "id": "q-0256",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 9,
+      "section_ids": [
+        "s9-04"
+      ],
+      "topic_ids": [
+        "muf-luf",
+        "ionosfaeren"
+      ],
+      "learning_objective": "Forstå at høyere frekvenser bøyes mindre i ionosfæren og til slutt går gjennom.",
+      "priority": "normal",
+      "context": [],
+      "stem": [
+        "Hvordan påvirker frekvensen hvor mye en radiobølge bøyes av i ionosfæren?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Jo høyere frekvens, desto mindre bøyes den – og til slutt går den rett gjennom."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Jo høyere frekvens, desto mer bøyes den."
+          ],
+          "feedback": [
+            "Det er motsatt. Høyere frekvenser påvirkes mindre av de frie elektronene og bøyes mindre."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Frekvensen spiller ingen rolle; bare vinkelen betyr noe."
+          ],
+          "feedback": [
+            "Vinkelen betyr mye, men frekvensen også: en høyere frekvens trenger kraftigere ionisering for å bøyes like mye."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Bare frekvenser under 2 MHz bøyes av."
+          ],
+          "feedback": [
+            "Ionosfæren sender tilbake HF-signaler helt opp til MUF, som kan nå 30–40 MHz når solaktiviteten er høy. Under 2 MHz er det tvert imot jordbølgen som er viktigst."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Når bølgen kommer inn i et område med flere frie elektroner, endres den tilsynelatende hastigheten, og bølgefronten dreies – omtrent som lys i et prisme. Dette kalles ",
+          {
+            "term": "refraksjon",
+            "text": "refraksjon"
+          },
+          ". Ioniseringen øker gradvis, så bølgen følger en slak bue."
+        ],
+        "Høyere frekvenser påvirkes mindre og bøyes mindre. Er frekvensen høy nok, går bølgen gjennom ionosfæren og ut i rommet. Derfor finnes det en høyeste brukbare frekvens."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 9,
+        "section_id": "s9-04",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "eeb95aa9eaa3717b",
+          "6032a4181de9b75a"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:14:11+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "1d63de85bbe347b70f67f381d46666d1c9b7db1e6cae9e07a8888d305e85a3a9",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:48:06+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "abf87923eb624d96414b488342e54211e637c6314055c51690caa3e7c60239a3",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:04:28+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "abf87923eb624d96414b488342e54211e637c6314055c51690caa3e7c60239a3",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:48:06+00:00"
+      },
+      "visual": {
+        "template": "propagation",
+        "version": 1,
+        "params": {
+          "kind": "sky_wave",
+          "f_mhz": 5,
+          "fc_mhz": 7,
+          "ground_wave_km": 0
+        },
+        "params_after": {
+          "show_skip": true
+        },
+        "animation": {
+          "param": "f_mhz",
+          "from": 5,
+          "to": 25,
+          "phase": "after",
+          "text": "Animasjonen øker frekvensen fra 5 til 25 MHz og tilbake: jo høyere frekvensen er, desto flere av strålene går gjennom laget, og skip-sonen blir større."
+        }
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:48:06+00:00",
+        "content_sha256": "abf87923eb624d96414b488342e54211e637c6314055c51690caa3e7c60239a3",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

@@ -4316,6 +4316,1937 @@
           "note": "Ordlisterunde 2: definisjoner gjennomgått av AI-kontroll (ChatGPT), 16 rettet."
         }
       ]
+    },
+    {
+      "id": "polarisasjon",
+      "nb": [
+        "polarisasjon",
+        "polarisasjonen",
+        "polarisert",
+        "polariserte"
+      ],
+      "en": [
+        "polarization"
+      ],
+      "definition": "Retningen til det elektriske feltet i en radiobølge. En vertikal antenne sender og tar best imot vertikalt polariserte bølger.",
+      "related": [
+        "antenne"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T22:47:41+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 5: nye kapitler 7–16, definisjoner gjennomgått av AI-kontroll (ChatGPT), 12 rettet."
+        }
+      ]
+    },
+    {
+      "id": "ionosfaere",
+      "nb": [
+        "ionosfæren",
+        "ionosfære",
+        "ionosfærelag",
+        "ionosfærelaget"
+      ],
+      "en": [
+        "ionosphere"
+      ],
+      "definition": "Den øverste delen av atmosfæren, der stråling fra sola slår løs elektroner fra luftmolekylene. Lagene kan bøye radiobølger på HF tilbake mot jorda.",
+      "related": [
+        "muf",
+        "luf"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T22:47:41+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 5: nye kapitler 7–16, definisjoner gjennomgått av AI-kontroll (ChatGPT), 12 rettet."
+        }
+      ]
+    },
+    {
+      "id": "refraksjon",
+      "nb": [
+        "refraksjon",
+        "refrakteres",
+        "refraktere",
+        "refrakterer",
+        "avbøying"
+      ],
+      "en": [
+        "refraction"
+      ],
+      "definition": "At en bølge skifter retning når den går over i et område der den får en annen hastighet, slik lys bøyes i et prisme.",
+      "related": [
+        "ionosfaere"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T22:47:41+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 5: nye kapitler 7–16, definisjoner gjennomgått av AI-kontroll (ChatGPT), 12 rettet."
+        }
+      ]
+    },
+    {
+      "id": "kritisk-frekvens",
+      "nb": [
+        "kritisk frekvens",
+        "kritiske frekvensen",
+        "den kritiske frekvensen"
+      ],
+      "en": [
+        "critical frequency"
+      ],
+      "definition": "Den høyeste frekvensen et ionosfærelag sender tilbake når bølgen går loddrett opp mot laget.",
+      "related": [
+        "muf",
+        "ionosfaere"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T22:47:41+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 5: nye kapitler 7–16, definisjoner gjennomgått av AI-kontroll (ChatGPT), 12 rettet."
+        }
+      ]
+    },
+    {
+      "id": "muf",
+      "nb": [
+        "MUF",
+        "høyeste brukbare frekvens"
+      ],
+      "en": [
+        "maximum usable frequency",
+        "MUF"
+      ],
+      "definition": "Den høyeste frekvensen som ionosfæren sender tilbake til jorda på en bestemt strekning mellom to steder.",
+      "related": [
+        "luf",
+        "kritisk-frekvens"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T22:47:41+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 5: nye kapitler 7–16, definisjoner gjennomgått av AI-kontroll (ChatGPT), 12 rettet."
+        }
+      ]
+    },
+    {
+      "id": "luf",
+      "nb": [
+        "LUF",
+        "laveste brukbare frekvens"
+      ],
+      "en": [
+        "lowest usable frequency",
+        "LUF"
+      ],
+      "definition": "Den laveste frekvensen som når fram over en bestemt strekning uten å bli dempet for mye i de nederste lagene av ionosfæren.",
+      "related": [
+        "muf"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T22:47:41+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 5: nye kapitler 7–16, definisjoner gjennomgått av AI-kontroll (ChatGPT), 12 rettet."
+        }
+      ]
+    },
+    {
+      "id": "fading",
+      "nb": [
+        "fading",
+        "fadingen"
+      ],
+      "en": [
+        "fading"
+      ],
+      "definition": "At signalstyrken i mottakeren går opp og ned, for eksempel fordi signalet kommer fram langs flere veier som forsterker og svekker hverandre.",
+      "related": [
+        "ionosfaere"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T22:47:41+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 5: nye kapitler 7–16, definisjoner gjennomgått av AI-kontroll (ChatGPT), 12 rettet."
+        }
+      ]
+    },
+    {
+      "id": "dodsone",
+      "nb": [
+        "dødsone",
+        "dødsonen",
+        "skip-sone",
+        "skip-sonen"
+      ],
+      "en": [
+        "skip zone",
+        "dead zone"
+      ],
+      "definition": "Ringen rundt en sender mellom der jordbølgen tar slutt og der ionosfærebølgen kommer ned igjen. Der kan signalet være svært svakt eller helt borte.",
+      "related": [
+        "jordbolge",
+        "ionosfaerebolge"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T22:47:41+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 5: nye kapitler 7–16, definisjoner gjennomgått av AI-kontroll (ChatGPT), 12 rettet."
+        }
+      ]
+    },
+    {
+      "id": "jordbolge",
+      "nb": [
+        "jordbølge",
+        "jordbølgen",
+        "jordbølger"
+      ],
+      "en": [
+        "ground wave"
+      ],
+      "definition": "Radiobølge som følger jordoverflaten. Viktigst under om lag 2 MHz, og når lengst over sjø.",
+      "related": [
+        "ionosfaerebolge",
+        "direktebolge"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T22:47:41+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 5: nye kapitler 7–16, definisjoner gjennomgått av AI-kontroll (ChatGPT), 12 rettet."
+        }
+      ]
+    },
+    {
+      "id": "ionosfaerebolge",
+      "nb": [
+        "ionosfærebølge",
+        "ionosfærebølgen",
+        "ionosfærebølger"
+      ],
+      "en": [
+        "sky wave"
+      ],
+      "definition": "Radiobølge som når fram ved at ionosfæren bøyer den tilbake mot jorda. Den vanlige utbredelsen for langdistanse på HF.",
+      "related": [
+        "ionosfaere",
+        "jordbolge"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T22:47:41+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 5: nye kapitler 7–16, definisjoner gjennomgått av AI-kontroll (ChatGPT), 12 rettet."
+        }
+      ]
+    },
+    {
+      "id": "direktebolge",
+      "nb": [
+        "direktebølge",
+        "direktebølgen",
+        "direktebølger",
+        "rombølge"
+      ],
+      "en": [
+        "space wave",
+        "direct wave"
+      ],
+      "definition": "Radiobølge som går gjennom de nederste luftlagene omtrent i rett linje, litt forbi den synlige horisonten. Den vanlige utbredelsen over 30–40 MHz.",
+      "related": [
+        "jordbolge"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T22:47:41+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 5: nye kapitler 7–16, definisjoner gjennomgått av AI-kontroll (ChatGPT), 12 rettet."
+        }
+      ]
+    },
+    {
+      "id": "sporadisk-e",
+      "nb": [
+        "sporadisk E",
+        "sporadisk E-lag"
+      ],
+      "en": [
+        "sporadic E"
+      ],
+      "definition": "Flekker med uvanlig sterk ionisering i E-laget, mest om sommeren. De kan sende tilbake signaler på 10, 6 og av og til 2 meter.",
+      "related": [
+        "ionosfaere"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T22:47:41+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 5: nye kapitler 7–16, definisjoner gjennomgått av AI-kontroll (ChatGPT), 12 rettet."
+        }
+      ]
+    },
+    {
+      "id": "dukting",
+      "nb": [
+        "dukting",
+        "dukt",
+        "dukten"
+      ],
+      "en": [
+        "ducting",
+        "duct"
+      ],
+      "definition": "At radiobølger fanges i et luftlag med annen temperatur eller fuktighet og ledes langt av gårde, som i en kanal.",
+      "related": [
+        "direktebolge"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T22:47:41+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 5: nye kapitler 7–16, definisjoner gjennomgått av AI-kontroll (ChatGPT), 12 rettet."
+        }
+      ]
+    },
+    {
+      "id": "solflekker",
+      "nb": [
+        "solflekker",
+        "solflekktall",
+        "solflekktallet",
+        "solflekksyklus",
+        "solflekksyklusen",
+        "solsyklus",
+        "solsyklusen"
+      ],
+      "en": [
+        "sunspots",
+        "solar cycle"
+      ],
+      "definition": "Mørke flekker på sola. Antallet går opp og ned i en syklus på om lag 11 år; mange solflekker gir sterkere ionisering og høyere MUF.",
+      "related": [
+        "muf",
+        "ionosfaere"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T22:47:41+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 5: nye kapitler 7–16, definisjoner gjennomgått av AI-kontroll (ChatGPT), 12 rettet."
+        }
+      ]
+    },
+    {
+      "id": "baandplan",
+      "nb": [
+        "båndplan",
+        "båndplanen",
+        "båndplaner",
+        "båndplanene"
+      ],
+      "en": [
+        "band plan"
+      ],
+      "definition": "Oversikt over hvordan et amatørbånd deles inn, med egne deler for for eksempel CW, smalbåndsmoduser og tale. IARU lager båndplanene for hver region.",
+      "related": [],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T22:47:41+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 5: nye kapitler 7–16, definisjoner gjennomgått av AI-kontroll (ChatGPT), 12 rettet."
+        }
+      ]
+    },
+    {
+      "id": "q-kode",
+      "nb": [
+        "Q-kode",
+        "Q-koden",
+        "Q-koder",
+        "Q-kodene"
+      ],
+      "en": [
+        "Q code"
+      ],
+      "definition": "Kode på tre bokstaver som begynner med Q og står for et fast spørsmål eller svar i radiotrafikk, for eksempel om frekvens, styrke eller forstyrrelser.",
+      "related": [],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T22:47:41+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 5: nye kapitler 7–16, definisjoner gjennomgått av AI-kontroll (ChatGPT), 12 rettet."
+        }
+      ]
+    },
+    {
+      "id": "rst",
+      "nb": [
+        "RST",
+        "RST-rapport",
+        "RST-skalaen"
+      ],
+      "en": [
+        "RST",
+        "readability, strength, tone"
+      ],
+      "definition": "Signalrapport med to eller tre sifre: lesbarhet fra 1 til 5, styrke fra 1 til 9 og, særlig for morse, tone fra 1 til 9.",
+      "related": [
+        "s-meter"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T22:47:41+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 5: nye kapitler 7–16, definisjoner gjennomgått av AI-kontroll (ChatGPT), 12 rettet."
+        }
+      ]
+    },
+    {
+      "id": "ad-omformer",
+      "nb": [
+        "A/D-omformer",
+        "A/D-omformeren",
+        "A/D-omformere",
+        "ADC"
+      ],
+      "en": [
+        "analog-to-digital converter",
+        "ADC"
+      ],
+      "definition": "Krets som måler et analogt signal med jevne mellomrom og gjør hver måling om til et tall som en prosessor kan regne med.",
+      "related": [
+        "kvantisering",
+        "sampling"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T22:47:41+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 5: nye kapitler 7–16, definisjoner gjennomgått av AI-kontroll (ChatGPT), 12 rettet."
+        }
+      ]
+    },
+    {
+      "id": "kvantisering",
+      "nb": [
+        "kvantisering",
+        "kvantiseringen",
+        "kvantiseringsfeil",
+        "kvantiseringsstøy"
+      ],
+      "en": [
+        "quantization"
+      ],
+      "definition": "Å runde av et signal med glidende verdier til nærmeste av et begrenset antall nivåer. Avrundingen gir en liten feil som høres som støy.",
+      "related": [
+        "ad-omformer"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T22:47:41+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 5: nye kapitler 7–16, definisjoner gjennomgått av AI-kontroll (ChatGPT), 12 rettet."
+        }
+      ]
+    },
+    {
+      "id": "sampling",
+      "nb": [
+        "sampling",
+        "samplingen",
+        "samplingsfrekvens",
+        "samplingsfrekvensen",
+        "sampel",
+        "samplene"
+      ],
+      "en": [
+        "sampling",
+        "sample rate"
+      ],
+      "definition": "Å lese av verdien til et signal på faste tidspunkter. Antall avlesninger per sekund kalles samplingsfrekvensen.",
+      "related": [
+        "ad-omformer",
+        "nyquist-frekvens"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T22:47:41+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 5: nye kapitler 7–16, definisjoner gjennomgått av AI-kontroll (ChatGPT), 12 rettet."
+        }
+      ]
+    },
+    {
+      "id": "nyquist-frekvens",
+      "nb": [
+        "Nyquist-frekvens",
+        "Nyquist-frekvensen",
+        "foldefrekvens",
+        "foldefrekvensen"
+      ],
+      "en": [
+        "Nyquist frequency"
+      ],
+      "definition": "Halvparten av samplingsfrekvensen: den teoretiske grensen for frekvenser som kan gjengis uten aliasing. I praksis trengs det litt margin og et filter foran.",
+      "related": [
+        "sampling",
+        "aliasing"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T22:47:41+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 5: nye kapitler 7–16, definisjoner gjennomgått av AI-kontroll (ChatGPT), 12 rettet."
+        }
+      ]
+    },
+    {
+      "id": "aliasing",
+      "nb": [
+        "aliasing",
+        "folding"
+      ],
+      "en": [
+        "aliasing"
+      ],
+      "definition": "At et signal over halve samplingsfrekvensen gir de samme samplene som et signal på en lavere frekvens, og dermed dukker opp på feil frekvens.",
+      "related": [
+        "nyquist-frekvens",
+        "sampling"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T22:47:41+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 5: nye kapitler 7–16, definisjoner gjennomgått av AI-kontroll (ChatGPT), 12 rettet."
+        }
+      ]
+    },
+    {
+      "id": "fft",
+      "nb": [
+        "FFT",
+        "Fourier-transformasjon",
+        "Fourier-transformasjonen"
+      ],
+      "en": [
+        "fast Fourier transform",
+        "FFT",
+        "Fourier transform"
+      ],
+      "definition": "Regnemetode som deler et samplet signal opp i sinussignaler på hver sin frekvens, slik at det kan vises som et spekter. FFT er en rask utgave.",
+      "related": [
+        "sampling"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T22:47:41+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 5: nye kapitler 7–16, definisjoner gjennomgått av AI-kontroll (ChatGPT), 12 rettet."
+        }
+      ]
+    },
+    {
+      "id": "dsp",
+      "nb": [
+        "DSP",
+        "digital signalbehandling",
+        "signalprosessor"
+      ],
+      "en": [
+        "digital signal processing",
+        "DSP"
+      ],
+      "definition": "Behandling av signaler som tall i en prosessor – for eksempel filtrering, støyreduksjon og demodulering – i stedet for med analoge kretser.",
+      "related": [
+        "ad-omformer",
+        "sdr"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T22:47:41+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 5: nye kapitler 7–16, definisjoner gjennomgått av AI-kontroll (ChatGPT), 12 rettet."
+        }
+      ]
+    },
+    {
+      "id": "sdr",
+      "nb": [
+        "SDR",
+        "programvarestyrt mottaker",
+        "programvarestyrte mottakere"
+      ],
+      "en": [
+        "software defined radio",
+        "SDR"
+      ],
+      "definition": "Radio der nedblanding, filtrering og demodulering gjøres med programvare i en prosessor etter at signalet er gjort digitalt.",
+      "related": [
+        "dsp",
+        "ad-omformer"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T22:47:41+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 5: nye kapitler 7–16, definisjoner gjennomgått av AI-kontroll (ChatGPT), 12 rettet."
+        }
+      ]
+    },
+    {
+      "id": "fir-filter",
+      "nb": [
+        "FIR-filter",
+        "FIR-filteret",
+        "FIR-filtre"
+      ],
+      "en": [
+        "finite impulse response filter",
+        "FIR filter"
+      ],
+      "definition": "Digitalt filter som bare regner med de siste inngangsverdiene, uten tilbakekobling fra utgangen. Responsen dør ut etter et bestemt antall sampler.",
+      "related": [
+        "iir-filter",
+        "dsp"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T22:47:41+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 5: nye kapitler 7–16, definisjoner gjennomgått av AI-kontroll (ChatGPT), 12 rettet."
+        }
+      ]
+    },
+    {
+      "id": "iir-filter",
+      "nb": [
+        "IIR-filter",
+        "IIR-filteret",
+        "IIR-filtre"
+      ],
+      "en": [
+        "infinite impulse response filter",
+        "IIR filter"
+      ],
+      "definition": "Digitalt filter der en del av utgangssignalet føres tilbake til inngangen. Det trenger lite regnekraft, men får ikke lineær fase og kan bli ustabilt.",
+      "related": [
+        "fir-filter",
+        "dsp"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T22:47:41+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 5: nye kapitler 7–16, definisjoner gjennomgått av AI-kontroll (ChatGPT), 12 rettet."
+        }
+      ]
+    },
+    {
+      "id": "jordfeilbryter",
+      "nb": [
+        "jordfeilbryter",
+        "jordfeilbryteren",
+        "jordfeilbrytere"
+      ],
+      "en": [
+        "residual current device",
+        "RCD"
+      ],
+      "definition": "Bryter som sammenligner strømmen ut og tilbake i en kurs og kobler ut når de ikke er like, for eksempel fordi strøm lekker til jord gjennom en person. Vanlige typer løser ut ved om lag 30 mA.",
+      "related": [
+        "sikkerhetsjording"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T22:47:41+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 5: nye kapitler 7–16, definisjoner gjennomgått av AI-kontroll (ChatGPT), 12 rettet."
+        }
+      ]
+    },
+    {
+      "id": "sikkerhetsjording",
+      "nb": [
+        "sikkerhetsjording",
+        "sikkerhetsjordet"
+      ],
+      "en": [
+        "protective earthing"
+      ],
+      "definition": "Forbindelse fra metalldeler på utstyr til jordingsanlegget. Ved en feil skal den holde farlig berøringsspenning nede og gjøre at vernet kobler ut.",
+      "related": [
+        "jordfeilbryter",
+        "utjevningsjording"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T22:47:41+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 5: nye kapitler 7–16, definisjoner gjennomgått av AI-kontroll (ChatGPT), 12 rettet."
+        }
+      ]
+    },
+    {
+      "id": "utjevningsjording",
+      "nb": [
+        "utjevningsjording",
+        "utjevningsjordet"
+      ],
+      "en": [
+        "equipotential bonding"
+      ],
+      "definition": "Ledere som binder sammen metalldeler og jordpunkter i en installasjon, slik at det ikke blir farlige spenningsforskjeller mellom dem.",
+      "related": [
+        "sikkerhetsjording"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T22:47:41+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 5: nye kapitler 7–16, definisjoner gjennomgått av AI-kontroll (ChatGPT), 12 rettet."
+        }
+      ]
+    },
+    {
+      "id": "flussmiddel",
+      "nb": [
+        "flussmiddel",
+        "flussmiddelet",
+        "flytemiddel",
+        "fluks"
+      ],
+      "en": [
+        "flux"
+      ],
+      "definition": "Stoff i eller på loddetinnet som renser metallflatene for oksid og får tinnet til å flyte ut.",
+      "related": [
+        "torrlodding"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T22:47:41+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 5: nye kapitler 7–16, definisjoner gjennomgått av AI-kontroll (ChatGPT), 12 rettet."
+        }
+      ]
+    },
+    {
+      "id": "torrlodding",
+      "nb": [
+        "tørrlodding",
+        "tørrloddingen",
+        "tørrloddinger"
+      ],
+      "en": [
+        "dry joint",
+        "cold joint"
+      ],
+      "definition": "Loddeskjøt der tinnet har stivnet uten å binde seg ordentlig til metallet. Gir dårlig eller ustabil kontakt.",
+      "related": [
+        "flussmiddel"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T22:47:41+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 5: nye kapitler 7–16, definisjoner gjennomgått av AI-kontroll (ChatGPT), 12 rettet."
+        }
+      ]
+    },
+    {
+      "id": "dreiespoleinstrument",
+      "nb": [
+        "dreiespoleinstrument",
+        "dreiespoleinstrumentet",
+        "dreiespoleinstrumenter"
+      ],
+      "en": [
+        "moving-coil meter"
+      ],
+      "definition": "Analogt viserinstrument der strømmen gjennom en spole i feltet fra en fast magnet dreier spolen og viseren mot en fjær. Utslaget følger likestrømmen.",
+      "related": [
+        "multimeter"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T22:47:41+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 5: nye kapitler 7–16, definisjoner gjennomgått av AI-kontroll (ChatGPT), 12 rettet."
+        }
+      ]
+    },
+    {
+      "id": "shunt",
+      "nb": [
+        "shunt",
+        "shunten",
+        "shuntmotstand",
+        "shuntmotstanden"
+      ],
+      "en": [
+        "shunt"
+      ],
+      "definition": "Motstand med svært lav verdi koblet parallelt med et strømmåleinstrument, slik at mesteparten av strømmen går utenom instrumentet.",
+      "related": [
+        "dreiespoleinstrument"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T22:47:41+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 5: nye kapitler 7–16, definisjoner gjennomgått av AI-kontroll (ChatGPT), 12 rettet."
+        }
+      ]
+    },
+    {
+      "id": "multimeter",
+      "nb": [
+        "multimeter",
+        "multimeteret",
+        "multimetre",
+        "multimetret"
+      ],
+      "en": [
+        "multimeter"
+      ],
+      "definition": "Måleinstrument med områdevelger som måler spenning, strøm og resistans, og ofte mer. Finnes som analogt (viser) og digitalt (tall).",
+      "related": [
+        "dreiespoleinstrument"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T22:47:41+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 5: nye kapitler 7–16, definisjoner gjennomgått av AI-kontroll (ChatGPT), 12 rettet."
+        }
+      ]
+    },
+    {
+      "id": "diodeprobe",
+      "nb": [
+        "diodeprobe",
+        "diodeproben",
+        "RF-probe",
+        "RF-proben"
+      ],
+      "en": [
+        "RF probe",
+        "diode probe"
+      ],
+      "definition": "Måleprobe med en diode og en kondensator som gjør en RF-spenning om til en likespenning et vanlig voltmeter kan vise.",
+      "related": [
+        "toppverdi"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T22:47:41+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 5: nye kapitler 7–16, definisjoner gjennomgått av AI-kontroll (ChatGPT), 12 rettet."
+        }
+      ]
+    },
+    {
+      "id": "retningskobler",
+      "nb": [
+        "retningsbestemt kobler",
+        "retningskobler",
+        "retningskobleren"
+      ],
+      "en": [
+        "directional coupler"
+      ],
+      "definition": "Kobling som henter ut et lite signal som bare svarer til effekten som går én vei i en kabel. Brukes i SWR-metre og wattmetre.",
+      "related": [
+        "swr"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T22:47:41+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 5: nye kapitler 7–16, definisjoner gjennomgått av AI-kontroll (ChatGPT), 12 rettet."
+        }
+      ]
+    },
+    {
+      "id": "absorpsjonsbolgemeter",
+      "nb": [
+        "absorpsjonsbølgemeter",
+        "absorpsjonsbølgemeteret",
+        "bølgemeter",
+        "bølgemeteret"
+      ],
+      "en": [
+        "absorption wavemeter"
+      ],
+      "definition": "Enkelt instrument med en avstemt LC-krets og en viser, som gir utslag når det stilles inn på et sterkt signal i nærheten. Viser omtrentlig frekvens.",
+      "related": [
+        "avstemt-krets"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T22:47:41+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 5: nye kapitler 7–16, definisjoner gjennomgått av AI-kontroll (ChatGPT), 12 rettet."
+        }
+      ]
+    },
+    {
+      "id": "nulltone",
+      "nb": [
+        "nulltone",
+        "nulltonen",
+        "zero beat"
+      ],
+      "en": [
+        "zero beat"
+      ],
+      "definition": "Når to signaler har nøyaktig samme frekvens, blir differansetonen mellom dem null og forsvinner. Brukes til å sammenligne en frekvens med en kjent referanse.",
+      "related": [
+        "frekvensteller"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T22:47:41+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 5: nye kapitler 7–16, definisjoner gjennomgått av AI-kontroll (ChatGPT), 12 rettet."
+        }
+      ]
+    },
+    {
+      "id": "frekvensteller",
+      "nb": [
+        "frekvensteller",
+        "frekvenstelleren",
+        "frekvenstellere"
+      ],
+      "en": [
+        "frequency counter"
+      ],
+      "definition": "Digitalt instrument som teller periodene i et signal i løpet av en nøyaktig telletid og viser frekvensen som tall.",
+      "related": [
+        "ppm"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T22:47:41+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 5: nye kapitler 7–16, definisjoner gjennomgått av AI-kontroll (ChatGPT), 12 rettet."
+        }
+      ]
+    },
+    {
+      "id": "oscilloskop",
+      "nb": [
+        "oscilloskop",
+        "oscilloskopet",
+        "oscilloskoper"
+      ],
+      "en": [
+        "oscilloscope"
+      ],
+      "definition": "Instrument som tegner et signal som en kurve på en skjerm: spenning loddrett og tid vannrett.",
+      "related": [
+        "periode"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T22:47:41+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 5: nye kapitler 7–16, definisjoner gjennomgått av AI-kontroll (ChatGPT), 12 rettet."
+        }
+      ]
+    },
+    {
+      "id": "desibel",
+      "nb": [
+        "desibel",
+        "dB"
+      ],
+      "en": [
+        "decibel",
+        "dB"
+      ],
+      "definition": "Logaritmisk mål for forholdet mellom to effekter: 10 · log(P2/P1). 3 dB er omtrent dobbel effekt, 10 dB er ti ganger.",
+      "related": [
+        "dbw"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T22:47:41+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 5: nye kapitler 7–16, definisjoner gjennomgått av AI-kontroll (ChatGPT), 12 rettet."
+        }
+      ]
+    },
+    {
+      "id": "dbw",
+      "nb": [
+        "dBW"
+      ],
+      "en": [
+        "dBW"
+      ],
+      "definition": "Effekt i desibel over 1 watt. 0 dBW er 1 W, 10 dBW er 10 W og 20 dBW er 100 W.",
+      "related": [
+        "desibel"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T22:47:41+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 5: nye kapitler 7–16, definisjoner gjennomgått av AI-kontroll (ChatGPT), 12 rettet."
+        }
+      ]
+    },
+    {
+      "id": "dempeledd",
+      "nb": [
+        "dempeledd",
+        "dempeleddet",
+        "attenuator"
+      ],
+      "en": [
+        "attenuator"
+      ],
+      "definition": "Motstandsnettverk som demper et signal med et bestemt antall dB, så lenge det er koblet mellom riktig kilde- og lastimpedans.",
+      "related": [
+        "desibel"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T22:47:41+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 5: nye kapitler 7–16, definisjoner gjennomgått av AI-kontroll (ChatGPT), 12 rettet."
+        }
+      ]
+    },
+    {
+      "id": "emc",
+      "nb": [
+        "EMC",
+        "elektromagnetisk kompatibilitet"
+      ],
+      "en": [
+        "electromagnetic compatibility",
+        "EMC"
+      ],
+      "definition": "At elektrisk og elektronisk utstyr kan virke som det skal side om side, uten å forstyrre hverandre for mye og uten å bli forstyrret for lett.",
+      "related": [
+        "immunitet"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T22:47:41+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 5: nye kapitler 7–16, definisjoner gjennomgått av AI-kontroll (ChatGPT), 12 rettet."
+        }
+      ]
+    },
+    {
+      "id": "immunitet",
+      "nb": [
+        "immunitet",
+        "immuniteten",
+        "immunt"
+      ],
+      "en": [
+        "immunity"
+      ],
+      "definition": "Hvor godt et apparat tåler elektromagnetiske forstyrrelser utenfra og likevel virker som det skal.",
+      "related": [
+        "emc"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T22:47:41+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 5: nye kapitler 7–16, definisjoner gjennomgått av AI-kontroll (ChatGPT), 12 rettet."
+        }
+      ]
+    },
+    {
+      "id": "erp",
+      "nb": [
+        "ERP",
+        "effektiv utstrålt effekt"
+      ],
+      "en": [
+        "effective radiated power",
+        "ERP"
+      ],
+      "definition": "Effekten inn til antennen ganget med antennens forsterkning i forhold til en dipol. Sier hvor kraftig antennen stråler i sin beste retning.",
+      "related": [
+        "feltstyrke"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T22:47:41+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 5: nye kapitler 7–16, definisjoner gjennomgått av AI-kontroll (ChatGPT), 12 rettet."
+        }
+      ]
+    },
+    {
+      "id": "feltstyrke",
+      "nb": [
+        "feltstyrke",
+        "feltstyrken",
+        "feltstyrker"
+      ],
+      "en": [
+        "field strength"
+      ],
+      "definition": "Hvor sterkt det elektriske feltet fra en sender er på et bestemt sted, oppgitt i volt per meter (V/m).",
+      "related": [
+        "erp"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T22:47:41+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 5: nye kapitler 7–16, definisjoner gjennomgått av AI-kontroll (ChatGPT), 12 rettet."
+        }
+      ]
+    },
+    {
+      "id": "rf-jord",
+      "nb": [
+        "RF-jord",
+        "RF-jorden",
+        "RF-jording",
+        "RF-jordingen"
+      ],
+      "en": [
+        "RF ground"
+      ],
+      "definition": "En forbindelse eller et referansepunkt som gir radiofrekvente strømmer en tilsiktet vei med lav impedans. RF-jording må utformes sammen med bygningens sikkerhetsjording og potensialutjevning, og den erstatter ikke beskyttelsesjord.",
+      "related": [
+        "ferrittring"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T22:47:41+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 5: nye kapitler 7–16, definisjoner gjennomgått av AI-kontroll (ChatGPT), 12 rettet."
+        }
+      ]
+    },
+    {
+      "id": "kryssmodulasjon",
+      "nb": [
+        "kryssmodulasjon",
+        "kryssmodulasjonen"
+      ],
+      "en": [
+        "cross modulation"
+      ],
+      "definition": "At et sterkt, uønsket signal får forsterkningen i et mottakertrinn til å variere, slik at modulasjonen fra det uønskede signalet legger seg på det ønskede.",
+      "related": [
+        "intermodulasjon",
+        "blokkering"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T22:47:41+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 5: nye kapitler 7–16, definisjoner gjennomgått av AI-kontroll (ChatGPT), 12 rettet."
+        }
+      ]
+    },
+    {
+      "id": "blokkering",
+      "nb": [
+        "blokkering",
+        "blokkeringen",
+        "desensing"
+      ],
+      "en": [
+        "blocking",
+        "desensitization"
+      ],
+      "definition": "At et sterkt signal utenfor kanalen overstyrer mottakeren eller får forsterkningen regulert ned, så det ønskede signalet blir svakere eller forsvinner.",
+      "related": [
+        "agc",
+        "kryssmodulasjon"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T22:47:41+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 5: nye kapitler 7–16, definisjoner gjennomgått av AI-kontroll (ChatGPT), 12 rettet."
+        }
+      ]
+    },
+    {
+      "id": "fellesmodus",
+      "nb": [
+        "fellesmodus",
+        "fellesmodusstrøm",
+        "fellesmodusstrømmer"
+      ],
+      "en": [
+        "common mode"
+      ],
+      "definition": "Strøm som går samme vei i alle lederne i en kabel, for eksempel en forstyrrelse som kabelen har fanget opp som en antenne.",
+      "related": [
+        "differansemodus",
+        "ferrittring"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T22:47:41+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 5: nye kapitler 7–16, definisjoner gjennomgått av AI-kontroll (ChatGPT), 12 rettet."
+        }
+      ]
+    },
+    {
+      "id": "differansemodus",
+      "nb": [
+        "differansemodus"
+      ],
+      "en": [
+        "differential mode"
+      ],
+      "definition": "Strøm som går fram i den ene lederen og tilbake i den andre, slik det ønskede signalet eller nettstrømmen gjør.",
+      "related": [
+        "fellesmodus"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T22:47:41+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 5: nye kapitler 7–16, definisjoner gjennomgått av AI-kontroll (ChatGPT), 12 rettet."
+        }
+      ]
+    },
+    {
+      "id": "baandstoppfilter",
+      "nb": [
+        "båndstoppfilter",
+        "båndstoppfilteret",
+        "båndstoppfiltre",
+        "notch-filter",
+        "hakkfilter"
+      ],
+      "en": [
+        "band-stop filter",
+        "notch filter"
+      ],
+      "definition": "Filter som demper et avgrenset frekvensområde og slipper gjennom frekvenser over og under. Et svært smalt båndstoppfilter kalles hakkfilter eller notch-filter.",
+      "related": [
+        "filter",
+        "baandpassfilter"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T22:47:41+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 5: nye kapitler 7–16, definisjoner gjennomgått av AI-kontroll (ChatGPT), 12 rettet."
+        }
+      ]
+    },
+    {
+      "id": "koaksialfelle",
+      "nb": [
+        "koaksialfelle",
+        "koaksialfellen",
+        "stubbfilter"
+      ],
+      "en": [
+        "coaxial stub",
+        "stub filter"
+      ],
+      "definition": "En bit koaksialkabel, for eksempel en kvart bølgelengde med åpen ende, koblet parallelt med en fødeledning. Den virker som et smalt båndstoppfilter på frekvensen den er kuttet for.",
+      "related": [
+        "baandstoppfilter"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T22:47:41+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 5: nye kapitler 7–16, definisjoner gjennomgått av AI-kontroll (ChatGPT), 12 rettet."
+        }
+      ]
+    },
+    {
+      "id": "fodekabel",
+      "nb": [
+        "fødekabel",
+        "fødekabelen",
+        "fødekabler",
+        "fødekablene",
+        "matekabel"
+      ],
+      "en": [
+        "feed line",
+        "feeder"
+      ],
+      "definition": "Kabelen eller ledningen som fører signalet mellom radioen og antennen.",
+      "related": [
+        "koaksialkabel",
+        "karakteristisk-impedans"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T22:47:41+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 5: nye kapitler 7–16, definisjoner gjennomgått av AI-kontroll (ChatGPT), 12 rettet."
+        }
+      ]
+    },
+    {
+      "id": "koaksialkabel",
+      "nb": [
+        "koaksialkabel",
+        "koaksialkabelen",
+        "koaksialkabler",
+        "koaks"
+      ],
+      "en": [
+        "coaxial cable",
+        "coax"
+      ],
+      "definition": "Kabel med en senterleder inne i en rørformet ytre leder og isolasjon mellom dem. Den er ubalansert: den ytre lederen er både skjerm og returleder for signalet.",
+      "related": [
+        "fodekabel",
+        "balun"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T22:47:41+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 5: nye kapitler 7–16, definisjoner gjennomgått av AI-kontroll (ChatGPT), 12 rettet."
+        }
+      ]
+    },
+    {
+      "id": "karakteristisk-impedans",
+      "nb": [
+        "karakteristisk impedans",
+        "karakteristiske impedans",
+        "karakteristiske impedansen"
+      ],
+      "en": [
+        "characteristic impedance"
+      ],
+      "definition": "Impedansen en fødekabel har på grunn av induktansen og kapasitansen langs den, gitt av målene på lederne. Vanlig koaksialkabel har 50 eller 75 Ω.",
+      "related": [
+        "fodekabel",
+        "impedans"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T22:47:41+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 5: nye kapitler 7–16, definisjoner gjennomgått av AI-kontroll (ChatGPT), 12 rettet."
+        }
+      ]
+    },
+    {
+      "id": "balun",
+      "nb": [
+        "balun",
+        "balunen",
+        "baluner"
+      ],
+      "en": [
+        "balun"
+      ],
+      "definition": "Komponent som kobler en balansert linje eller antenne til en ubalansert, og som ofte omformer impedansen samtidig.",
+      "related": [
+        "koaksialkabel",
+        "dipol"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T22:47:41+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 5: nye kapitler 7–16, definisjoner gjennomgått av AI-kontroll (ChatGPT), 12 rettet."
+        }
+      ]
+    },
+    {
+      "id": "staende-bolger",
+      "nb": [
+        "stående bølger",
+        "stående bølge",
+        "stående bølgen"
+      ],
+      "en": [
+        "standing waves"
+      ],
+      "definition": "Faste topper og bunner i spenning og strøm langs en fødekabel. De oppstår når en del av effekten reflekteres fra en last som ikke er tilpasset kabelen.",
+      "related": [
+        "swr",
+        "returtap"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T22:47:41+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 5: nye kapitler 7–16, definisjoner gjennomgått av AI-kontroll (ChatGPT), 12 rettet."
+        }
+      ]
+    },
+    {
+      "id": "returtap",
+      "nb": [
+        "returtap",
+        "returtapet"
+      ],
+      "en": [
+        "return loss"
+      ],
+      "definition": "Forholdet mellom utsendt og reflektert effekt, oppgitt i dB. Jo høyere tall, desto mindre effekt kommer tilbake.",
+      "related": [
+        "swr",
+        "staende-bolger"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T22:47:41+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 5: nye kapitler 7–16, definisjoner gjennomgått av AI-kontroll (ChatGPT), 12 rettet."
+        }
+      ]
+    },
+    {
+      "id": "hastighetsfaktor",
+      "nb": [
+        "hastighetsfaktor",
+        "hastighetsfaktoren",
+        "forkortningsfaktor",
+        "forkortningsfaktoren"
+      ],
+      "en": [
+        "velocity factor"
+      ],
+      "definition": "Hvor fort et signal går i en kabel eller leder, som andel av farten i fritt rom. Alltid mindre enn 1.",
+      "related": [
+        "fodekabel"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T22:47:41+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 5: nye kapitler 7–16, definisjoner gjennomgått av AI-kontroll (ChatGPT), 12 rettet."
+        }
+      ]
+    },
+    {
+      "id": "bolgeleder",
+      "nb": [
+        "bølgeleder",
+        "bølgelederen",
+        "bølgeledere"
+      ],
+      "en": [
+        "waveguide"
+      ],
+      "definition": "Metallrør, vanligvis rektangulært, som leder mikrobølger med lite tap. Målene må passe til bølgelengden.",
+      "related": [
+        "fodekabel"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T22:47:41+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 5: nye kapitler 7–16, definisjoner gjennomgått av AI-kontroll (ChatGPT), 12 rettet."
+        }
+      ]
+    },
+    {
+      "id": "dipol",
+      "nb": [
+        "dipol",
+        "dipolen",
+        "dipoler",
+        "halvbølgedipol",
+        "halvbølgedipolen",
+        "dipolantenne",
+        "dipolantennen"
+      ],
+      "en": [
+        "dipole",
+        "half-wave dipole"
+      ],
+      "definition": "Antenne med to ledende armer, vanligvis matet på midten. Den vanligste er halvbølgedipolen, som til sammen er om lag en halv bølgelengde lang.",
+      "related": [
+        "antenne",
+        "balun"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T22:47:41+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 5: nye kapitler 7–16, definisjoner gjennomgått av AI-kontroll (ChatGPT), 12 rettet."
+        }
+      ]
+    },
+    {
+      "id": "jordplanantenne",
+      "nb": [
+        "jordplanantenne",
+        "jordplanantennen",
+        "jordplanantenner"
+      ],
+      "en": [
+        "ground plane antenna"
+      ],
+      "definition": "Vertikal antenne der et jordplan eller noen radialer utgjør den andre halvdelen.",
+      "related": [
+        "antenne",
+        "dipol"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T22:47:41+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 5: nye kapitler 7–16, definisjoner gjennomgått av AI-kontroll (ChatGPT), 12 rettet."
+        }
+      ]
+    },
+    {
+      "id": "stralingsdiagram",
+      "nb": [
+        "strålingsdiagram",
+        "strålingsdiagrammet",
+        "strålingsmønster",
+        "strålingsmønsteret"
+      ],
+      "en": [
+        "radiation pattern"
+      ],
+      "definition": "Tegning som viser hvor sterkt en antenne stråler i ulike retninger.",
+      "related": [
+        "antenne"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T22:47:41+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 5: nye kapitler 7–16, definisjoner gjennomgått av AI-kontroll (ChatGPT), 12 rettet."
+        }
+      ]
+    },
+    {
+      "id": "yagi-uda",
+      "nb": [
+        "Yagi-Uda-antenne",
+        "Yagi-Uda-antennen",
+        "Yagi-Uda-antenner",
+        "Yagi-antenne",
+        "Yagi-antennen"
+      ],
+      "en": [
+        "Yagi-Uda antenna",
+        "Yagi"
+      ],
+      "definition": "Retningsantenne med ett matet dipolelement og passive elementer foran og bak som samler strålingen i én retning.",
+      "related": [
+        "dipol",
+        "stralingsdiagram"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T22:47:41+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 5: nye kapitler 7–16, definisjoner gjennomgått av AI-kontroll (ChatGPT), 12 rettet."
+        }
+      ]
+    },
+    {
+      "id": "bolgefelle",
+      "nb": [
+        "bølgefelle",
+        "bølgefellen",
+        "bølgefeller",
+        "bølgefellene"
+      ],
+      "en": [
+        "trap"
+      ],
+      "definition": "Avstemt parallellkrets i et antenneelement som lar én antenne virke på flere bånd.",
+      "related": [
+        "dipol",
+        "avstemt-krets"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T22:47:41+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 5: nye kapitler 7–16, definisjoner gjennomgått av AI-kontroll (ChatGPT), 12 rettet."
+        }
+      ]
+    },
+    {
+      "id": "lastspole",
+      "nb": [
+        "lastspole",
+        "lastspolen",
+        "lastspoler"
+      ],
+      "en": [
+        "loading coil"
+      ],
+      "definition": "Spole satt inn i en antenne som er kortere enn ønsket, for å forlenge den elektrisk.",
+      "related": [
+        "antenne",
+        "spole"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T22:47:41+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 5: nye kapitler 7–16, definisjoner gjennomgått av AI-kontroll (ChatGPT), 12 rettet."
+        }
+      ]
+    },
+    {
+      "id": "antennetuner",
+      "nb": [
+        "antennetuner",
+        "antennetuneren",
+        "antenne-tuner",
+        "antenne-tuneren",
+        "ATU",
+        "ATU-en"
+      ],
+      "en": [
+        "antenna tuner",
+        "ATU"
+      ],
+      "definition": "Justerbart tilpasningsledd med spoler og kondensatorer som gir senderen eller fødekabelen riktig impedans å arbeide mot.",
+      "related": [
+        "tilpasning",
+        "swr"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T22:47:41+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 5: nye kapitler 7–16, definisjoner gjennomgått av AI-kontroll (ChatGPT), 12 rettet."
+        }
+      ]
+    },
+    {
+      "id": "kallesignal",
+      "nb": [
+        "kallesignal",
+        "kallesignalet",
+        "kallesignaler",
+        "kallesignalene"
+      ],
+      "en": [
+        "call sign"
+      ],
+      "definition": "Den unike identiteten til en radiostasjon, satt sammen av prefiks, et siffer og et suffiks, for eksempel LA1XYZ. Skal sendes jevnlig under sendingene.",
+      "related": [
+        "prefiks"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T22:47:41+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 5: nye kapitler 7–16, definisjoner gjennomgått av AI-kontroll (ChatGPT), 12 rettet."
+        }
+      ]
+    },
+    {
+      "id": "prefiks",
+      "nb": [
+        "prefiks",
+        "prefikset",
+        "prefikser",
+        "prefiksene"
+      ],
+      "en": [
+        "prefix"
+      ],
+      "definition": "Tegnene foran sifferet i et kallesignal. De viser hvilket land stasjonen hører til, for eksempel LA for Norge.",
+      "related": [
+        "kallesignal"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T22:47:41+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 5: nye kapitler 7–16, definisjoner gjennomgått av AI-kontroll (ChatGPT), 12 rettet."
+        }
+      ]
+    },
+    {
+      "id": "relestasjon",
+      "nb": [
+        "reléstasjon",
+        "reléstasjonen",
+        "reléstasjoner",
+        "repeater",
+        "repeateren"
+      ],
+      "en": [
+        "repeater"
+      ],
+      "definition": "En fast, automatisk stasjon som tar imot signaler på én frekvens og sender dem ut igjen på en annen, slik at håndholdte og mobile stasjoner når lenger.",
+      "related": [],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T22:47:41+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 5: nye kapitler 7–16, definisjoner gjennomgått av AI-kontroll (ChatGPT), 12 rettet."
+        }
+      ]
+    },
+    {
+      "id": "qsl-kort",
+      "nb": [
+        "QSL-kort",
+        "QSL-kortet",
+        "QSL-kortene"
+      ],
+      "en": [
+        "QSL card"
+      ],
+      "definition": "Et kort som radioamatører sender hverandre som skriftlig bekreftelse på at en kontakt har funnet sted, blant annet som dokumentasjon for diplomer.",
+      "related": [
+        "q-kode"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T22:47:41+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 5: nye kapitler 7–16, definisjoner gjennomgått av AI-kontroll (ChatGPT), 12 rettet."
+        }
+      ]
+    },
+    {
+      "id": "itu",
+      "nb": [
+        "ITU",
+        "Den internasjonale telekommunikasjonsunionen"
+      ],
+      "en": [
+        "International Telecommunication Union",
+        "ITU"
+      ],
+      "definition": "FNs organisasjon for telekommunikasjon. Fordeler frekvensspekteret mellom tjenestene og gir ut radioreglementet som alle lands regler bygger på.",
+      "related": [
+        "iaru"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T22:47:41+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 5: nye kapitler 7–16, definisjoner gjennomgått av AI-kontroll (ChatGPT), 12 rettet."
+        }
+      ]
+    },
+    {
+      "id": "iaru",
+      "nb": [
+        "IARU",
+        "Den internasjonale amatørradiounionen"
+      ],
+      "en": [
+        "International Amateur Radio Union",
+        "IARU"
+      ],
+      "definition": "Samarbeidsorganisasjonen for de nasjonale radioamatørforeningene, blant dem NRRL. Ivaretar amatørenes interesser overfor myndighetene og koordinerer blant annet båndplanene.",
+      "related": [
+        "itu"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T22:47:41+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 5: nye kapitler 7–16, definisjoner gjennomgått av AI-kontroll (ChatGPT), 12 rettet."
+        }
+      ]
+    },
+    {
+      "id": "cept-lisens",
+      "nb": [
+        "CEPT-lisens",
+        "CEPT-lisensen"
+      ],
+      "en": [
+        "CEPT licence"
+      ],
+      "definition": "Ordning der en radioamatørlisens fra ett land kan brukes ved midlertidige opphold i andre land som følger ordningen. Norsk full radioamatørlisens (HAREC klasse A) gir CEPT-rettigheter; norsk begrenset lisens gjelder bare i Norge.",
+      "related": [
+        "kallesignal"
+      ],
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T22:47:41+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Ordlisterunde 5: nye kapitler 7–16, definisjoner gjennomgått av AI-kontroll (ChatGPT), 12 rettet."
+        }
+      ]
     }
   ]
 }

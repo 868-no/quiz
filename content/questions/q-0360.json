@@ -1,0 +1,169 @@
+{
+  "id": "q-0360",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "medium",
+      "chapter": 8,
+      "section_ids": [
+        "s8-12"
+      ],
+      "topic_ids": [
+        "dipol-vertikal"
+      ],
+      "learning_objective": "Kjenne strålingsdiagrammet til en horisontal dipol: mest på tvers, null langs tråden.",
+      "priority": "exam_important",
+      "context": [
+        "En vannrett dipol henger i retning øst–vest, høyt og fritt."
+      ],
+      "stem": [
+        "I hvilke retninger langs bakken stråler den best?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Mot nord og sør – på tvers av antennen."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Mot øst og vest – langs antennen."
+          ],
+          "feedback": [
+            "Langs tråden, ut av endene, stråler dipolen nesten ingenting. Strålingen er størst vinkelrett på den."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Like godt i alle retninger."
+          ],
+          "feedback": [
+            "Det er en vertikal antenne, som en jordplanantenne, som stråler likt rundt hele horisonten. En vannrett dipol har to tydelige nullpunkter."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Bare mot nord."
+          ],
+          "feedback": [
+            "En dipol er symmetrisk og stråler like mye til begge sider. Det trengs reflektor og direktorer for å samle strålingen i én retning."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "En halvbølgedipol stråler mest vinkelrett på tråden og nesten ingenting ut av endene. Sett ovenfra ser ",
+          {
+            "term": "stralingsdiagram",
+            "text": "strålingsdiagrammet"
+          },
+          " ut som et åttetall."
+        ],
+        "I tre dimensjoner ligner det en smultring med dipolen gjennom hullet. Dette gjelder en antenne som henger høyt og fritt; nær bakken og andre ting blir mønsteret annerledes."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 8,
+        "section_id": "s8-12",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "13a97c06eb9180ff",
+          "a22447ead1bd9fb5"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:13:26+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "8f32ee298540b638bde26deb48948628b2350c389d610b65477d4c214554bcbb",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:48:41+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "8f16d72eaae045b199de0ee4760ec01732d86e9e0a67359bfe7869016a93c892",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:13:24+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "8f16d72eaae045b199de0ee4760ec01732d86e9e0a67359bfe7869016a93c892",
+        "errors": [],
+        "warnings": [
+          "priority: 'exam_important' set by judgement; the book's '!' markers are not known for this chapter yet (no scan)"
+        ],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:48:41+00:00"
+      },
+      "visual": {
+        "template": "antenna",
+        "version": 1,
+        "params": {
+          "kind": "pattern",
+          "shape": "dipole",
+          "compass": true,
+          "show_pattern": false
+        },
+        "params_after": {
+          "show_pattern": true,
+          "beamwidth": true
+        }
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:48:41+00:00",
+        "content_sha256": "8f16d72eaae045b199de0ee4760ec01732d86e9e0a67359bfe7869016a93c892",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

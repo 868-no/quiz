@@ -1,0 +1,199 @@
+{
+  "id": "q-0343",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "calculation",
+      "difficulty": "medium",
+      "chapter": 8,
+      "section_ids": [
+        "s8-02"
+      ],
+      "topic_ids": [
+        "fodekabler"
+      ],
+      "learning_objective": "Beregne impedansomsetningen i en transformatorbalun ut fra vindingsforholdet.",
+      "priority": "normal",
+      "context": [
+        [
+          "En transformatorbalun har dobbelt så mange vindinger på sekundærsiden som på primærsiden. Primærsiden er koblet til en ",
+          {
+            "q": 50,
+            "u": "Ω"
+          },
+          " kabel."
+        ]
+      ],
+      "stem": [
+        "Hvilken impedans gir balunen på sekundærsiden?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 200,
+              "u": "Ω"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 100,
+              "u": "Ω"
+            }
+          ],
+          "feedback": [
+            "Spenningen dobles med vindingsforholdet, men impedansen endres med kvadratet av forholdet: 2² = 4."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 25,
+              "u": "Ω"
+            }
+          ],
+          "feedback": [
+            "Her er forholdet snudd. Flere vindinger på sekundærsiden gir høyere impedans der, ikke lavere."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 12.5,
+              "u": "Ω"
+            }
+          ],
+          "feedback": [
+            "Her er både kvadratet brukt og forholdet snudd. Flere vindinger på sekundærsiden gir høyere impedans: 50 · 4."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        {
+          "steps": [
+            "Vindingsforhold: 2 : 1",
+            "Impedansforhold: 2² = 4",
+            [
+              "50 Ω · 4 = ",
+              {
+                "q": 200,
+                "u": "Ω"
+              }
+            ]
+          ]
+        },
+        "Dette er en 4:1-balun. Slike baluner brukes for eksempel til å mate en foldet dipol, som har høyere fødeimpedans enn kabelen. Hvor stor effekt balunen tåler, avhenger av ferrittkjernen: den må ikke gå i metning."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 8,
+        "section_id": "s8-02",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "33c39909adba17f6"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:13:25+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "104794b3a3e6a4d537a19ae7f75c879756f065dde368681535efdeada96d4cc1",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:48:26+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "104794b3a3e6a4d537a19ae7f75c879756f065dde368681535efdeada96d4cc1",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:13:24+00:00"
+      },
+      "calculation": {
+        "formula": "turns_impedance",
+        "inputs": {
+          "Z1": [
+            50,
+            "Ω"
+          ],
+          "n1": [
+            1,
+            ""
+          ],
+          "n2": [
+            2,
+            ""
+          ]
+        },
+        "answer": [
+          200,
+          "Ω"
+        ],
+        "answer_symbol": "Z",
+        "sig_figs": 3
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "104794b3a3e6a4d537a19ae7f75c879756f065dde368681535efdeada96d4cc1",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:48:26+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:48:26+00:00",
+        "content_sha256": "104794b3a3e6a4d537a19ae7f75c879756f065dde368681535efdeada96d4cc1",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

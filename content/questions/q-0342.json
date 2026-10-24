@@ -1,0 +1,173 @@
+{
+  "id": "q-0342",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "recall",
+      "difficulty": "easy",
+      "chapter": 8,
+      "section_ids": [
+        "s8-02"
+      ],
+      "topic_ids": [
+        "fodekabler"
+      ],
+      "learning_objective": "Vite at en balun kobler en ubalansert kabel til en balansert antenne eller omvendt.",
+      "priority": "normal",
+      "context": [
+        [
+          "En ",
+          {
+            "term": "dipol",
+            "text": "dipol"
+          },
+          " skal mates med ",
+          {
+            "term": "koaksialkabel",
+            "text": "koaksialkabel"
+          },
+          ", og det settes en ",
+          {
+            "term": "balun",
+            "text": "balun"
+          },
+          " i fødepunktet."
+        ]
+      ],
+      "stem": [
+        "Hva er hovedoppgaven til balunen?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Å koble den ubalanserte koaksialkabelen til den balanserte dipolen."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Å filtrere bort harmoniske frekvenser fra senderen."
+          ],
+          "feedback": [
+            "En balun er ikke et filter. Den gjør om mellom balansert og ubalansert, og kan samtidig omforme impedansen."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Å forsterke signalet før det når antennen."
+          ],
+          "feedback": [
+            "En balun er passiv og kan ikke forsterke. Den kan omforme impedansen, men effekten blir ikke større."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Å beskytte radioen mot lynnedslag."
+          ],
+          "feedback": [
+            "Lynvern krever jording og egne vernekomponenter. En balun gjør om mellom balansert og ubalansert."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Navnet kommer av «balanced–unbalanced». En dipol er balansert: de to halvdelene skal ha like store, motsatte strømmer. Koaksialkabelen er ubalansert, med jordet skjerm.",
+        "Uten balun kan det flyte strøm på utsiden av skjermen, og da stråler kabelen selv. Baluner virker begge veier og finnes som transformatorbaluner, mansjettbaluner og sperrebaluner med ferritt."
+      ],
+      "glossary_after_answer": [
+        "balun"
+      ],
+      "study_reference": {
+        "chapter": 8,
+        "section_id": "s8-02",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "fd84f8b5047b1405",
+          "0901bd234a901d9e"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:13:25+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "6dff9e7a53a5993c9350bc903bc523f7bcf8447269d353fb5e1c22404e54d5ad",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:48:25+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "0a61ca53eba6977ab8055f07b95bba6fd6e5b846babd62867fba3c93c0e61296",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:13:24+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "0a61ca53eba6977ab8055f07b95bba6fd6e5b846babd62867fba3c93c0e61296",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:48:25+00:00"
+      },
+      "visual": {
+        "template": "antenna",
+        "version": 1,
+        "params": {
+          "kind": "dipole",
+          "feed": "balun"
+        }
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:48:25+00:00",
+        "content_sha256": "0a61ca53eba6977ab8055f07b95bba6fd6e5b846babd62867fba3c93c0e61296",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

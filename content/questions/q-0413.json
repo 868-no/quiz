@@ -1,0 +1,153 @@
+{
+  "id": "q-0413",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "medium",
+      "chapter": 10,
+      "section_ids": [
+        "s10-15"
+      ],
+      "topic_ids": [
+        "emc-kobling"
+      ],
+      "learning_objective": "Kjenne igjen kryssmodulasjon i en mottaker.",
+      "priority": "normal",
+      "context": [
+        "Når du snakker på SSB, får naboens gamle analoge fjernsyn lyse og mørke vannrette striper over bildet som varierer i takt med stemmen din. Det skjer på alle kanaler."
+      ],
+      "stem": [
+        "Hva kalles denne forstyrrelsen?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Kryssmodulasjon."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Speilfrekvensforstyrrelse."
+          ],
+          "feedback": [
+            "Speilfrekvensen er én bestemt frekvens som flytter seg når mottakeren stilles om. Her skjer det på alle kanaler."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Skyggebilde."
+          ],
+          "feedback": [
+            "Skyggebilde er et ekstra bilde litt forskjøvet til siden, fordi signalet også kommer fram via en refleksjon. Det har ikke med amatørsendingen å gjøre."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Blokkering."
+          ],
+          "feedback": [
+            "Ved blokkering skrur mottakeren ned forsterkningen, og bildet blir svakt og fullt av «snø». Striper i takt med talen peker mot noe annet."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Ved ",
+          {
+            "term": "kryssmodulasjon",
+            "text": "kryssmodulasjon"
+          },
+          " kommer et sterkt signal inn i et trinn i mottakeren og får forsterkningen der til å variere i takt med modulasjonen. Det ønskede signalet får da den uønskede modulasjonen oppå sin egen."
+        ],
+        "TV-bildet er amplitudemodulert og svært utsatt, mens lyden er frekvensmodulert og tåler det bedre. SSB er verst, fordi amplituden varierer med talen."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 10,
+        "section_id": "s10-15",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "1196ee29ef7f1aa2",
+          "81e012c3e7843529"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:12:39+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "d5d4c31a87273953927f6607672edbea8402bb986e29adeb7e1c73a5a5ed0e86",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:49:07+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "d5d4c31a87273953927f6607672edbea8402bb986e29adeb7e1c73a5a5ed0e86",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:12:38+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "d5d4c31a87273953927f6607672edbea8402bb986e29adeb7e1c73a5a5ed0e86",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:49:07+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:49:07+00:00",
+        "content_sha256": "d5d4c31a87273953927f6607672edbea8402bb986e29adeb7e1c73a5a5ed0e86",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

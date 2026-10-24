@@ -1,0 +1,232 @@
+{
+  "id": "q-0460",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "calculation",
+      "difficulty": "medium",
+      "chapter": 11,
+      "section_ids": [
+        "s11-02"
+      ],
+      "topic_ids": [
+        "maleinstrumenter"
+      ],
+      "learning_objective": "Beregne seriemotstanden som gjør et dreiespoleinstrument om til et voltmeter med ønsket måleområde.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "Et ",
+          {
+            "term": "dreiespoleinstrument",
+            "text": "dreiespoleinstrument"
+          },
+          " gir fullt utslag ved ",
+          {
+            "q": 1,
+            "u": "mA"
+          },
+          ". Det skal brukes som voltmeter med fullt utslag ved ",
+          {
+            "q": 50,
+            "u": "V"
+          },
+          ". Instrumentets egen motstand er så liten at du kan se bort fra den."
+        ]
+      ],
+      "stem": [
+        "Hvor stor motstand må kobles i serie med instrumentet?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 50,
+              "u": "kΩ"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 50,
+              "u": "Ω"
+            }
+          ],
+          "feedback": [
+            "Her er milliampere regnet som ampere. 50 V delt på 0,001 A gir 50 000 Ω."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 5,
+              "u": "kΩ"
+            }
+          ],
+          "feedback": [
+            "Da ville 1 mA gitt bare 5 V over motstanden, så instrumentet ville slått fullt ut allerede ved 5 V."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 50,
+              "u": "MΩ"
+            }
+          ],
+          "feedback": [
+            "Her er milliampere regnet som mikroampere. Med 50 MΩ ville det bare gått 1 µA ved 50 V, og viseren ville knapt rørt seg."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Ved fullt utslag skal det gå ",
+          {
+            "q": 1,
+            "u": "mA"
+          },
+          " gjennom instrumentet når det ligger ",
+          {
+            "q": 50,
+            "u": "V"
+          },
+          " over hele kretsen. Ohms lov gir motstanden:"
+        ],
+        {
+          "steps": [
+            [
+              "R = U / I = 50 V / 0,001 A = ",
+              {
+                "q": 50,
+                "u": "kΩ"
+              }
+            ]
+          ]
+        },
+        "Strengt tatt er dette summen av seriemotstanden og instrumentets indre motstand, men den indre motstanden er så liten at feilen blir mindre enn instrumentets egen nøyaktighet."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 11,
+        "section_id": "s11-02",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "9a7b25e02253a757"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:11:20+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "7865da92da2a3750178050ce0e141e248630089f4591cce24fd9591821946291",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:49:24+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "67e75b84526d5b7eee3f814c60347975fe2bd93e2e2ec3fdced8c0684fbe25cb",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:11:19+00:00"
+      },
+      "calculation": {
+        "formula": "ohms_law_resistance",
+        "inputs": {
+          "U": [
+            50,
+            "V"
+          ],
+          "I": [
+            1,
+            "mA"
+          ]
+        },
+        "answer": [
+          50,
+          "kΩ"
+        ],
+        "answer_symbol": "R",
+        "sig_figs": 2
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "67e75b84526d5b7eee3f814c60347975fe2bd93e2e2ec3fdced8c0684fbe25cb",
+        "errors": [],
+        "warnings": [
+          "priority: 'exam_important' set by judgement; the book's '!' markers are not known for this chapter yet (no scan)"
+        ],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:49:24+00:00"
+      },
+      "visual": {
+        "template": "instrument",
+        "version": 1,
+        "params": {
+          "kind": "meter_series",
+          "meter": {
+            "full_scale_a": 0.001
+          },
+          "range_v": 50
+        },
+        "params_after": {
+          "show_resistor": true
+        }
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:49:24+00:00",
+        "content_sha256": "67e75b84526d5b7eee3f814c60347975fe2bd93e2e2ec3fdced8c0684fbe25cb",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

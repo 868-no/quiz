@@ -1,0 +1,159 @@
+{
+  "id": "q-0539",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 12,
+      "section_ids": [
+        "s12-17",
+        "s12-21"
+      ],
+      "topic_ids": [
+        "kallesignaler",
+        "regelverk-organisasjoner"
+      ],
+      "learning_objective": "Vite at ITU tildeler blokker av kallesignaler til landene, og at nasjonal myndighet tildeler det enkelte kallesignalet.",
+      "priority": "normal",
+      "context": [],
+      "stem": [
+        "Hvordan er ansvaret for amatørkallesignaler fordelt?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "ITU gir hvert land blokker av tegn, og den nasjonale myndigheten tildeler kallesignaler innenfor dem."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "IARU tildeler alle kallesignaler direkte til radioamatørene."
+          ],
+          "feedback": [
+            "IARU er radioamatørforeningenes samarbeidsorgan og tildeler ikke kallesignaler. Det gjør myndighetene."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Radioamatøren velger fritt sitt eget kallesignal og melder det inn."
+          ],
+          "feedback": [
+            "Kallesignalet tildeles av myndighetene. Noen land lar deg søke om en bestemt kombinasjon, men innenfor landets blokker."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Den nasjonale foreningen, i Norge NRRL, tildeler kallesignalene."
+          ],
+          "feedback": [
+            "NRRL er en interesseorganisasjon og har ikke denne myndigheten. Det er Nasjonal kommunikasjonsmyndighet som tildeler kallesignaler i Norge."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          {
+            "term": "itu",
+            "text": "ITU"
+          },
+          " deler ut blokker av bokstaver og tall til hvert land, for alle slags radiostasjoner. Norge har for eksempel LAA–LNZ."
+        ],
+        [
+          "Den nasjonale myndigheten – i Norge Nasjonal kommunikasjonsmyndighet – bestemmer selv hvordan blokkene brukes, og tildeler ",
+          {
+            "term": "kallesignal",
+            "text": "kallesignaler"
+          },
+          " til radioamatørene innenfor dem."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 12,
+        "section_id": "s12-17",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "7ccd2de2870173f7",
+          "09770206facbd2f4"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:13:44+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "f372c881fca9477ec4f19b4ecd82dd004009ca7116c801a475255e0224c9aaf0",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:50:15+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "f372c881fca9477ec4f19b4ecd82dd004009ca7116c801a475255e0224c9aaf0",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:13:43+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "f372c881fca9477ec4f19b4ecd82dd004009ca7116c801a475255e0224c9aaf0",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:50:15+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:50:15+00:00",
+        "content_sha256": "f372c881fca9477ec4f19b4ecd82dd004009ca7116c801a475255e0224c9aaf0",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

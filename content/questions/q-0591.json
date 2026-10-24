@@ -1,0 +1,134 @@
+{
+  "id": "q-0591",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 13,
+      "section_ids": [
+        "s13-05"
+      ],
+      "topic_ids": [
+        "trygt-arbeid-utstyr"
+      ],
+      "learning_objective": "Kjenne kravene til en hovedbryter i radiorommet.",
+      "priority": "normal",
+      "context": [],
+      "stem": [
+        "Hva gjelder for en hovedbryter som skal gjøre alt utstyret i radiorommet strømløst?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Den bør bryte begge lederne, og alle i huset bør vite hvor den er og hvordan den brukes."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Den holder om den bryter bare den ene lederen, og bare du trenger å vite hvor den er."
+          ],
+          "feedback": [
+            "En bryter for nettspenning skal være dobbeltpolet og bryte begge lederne. Andre i huset må kunne slå av strømmen hvis du selv ikke klarer det."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Den bør skjules godt, slik at ingen slår av stasjonen ved en feil."
+          ],
+          "feedback": [
+            "Det er motsatt: andre må lett kunne finne den og slå av strømmen om du blir utsatt for strømgjennomgang."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Den trengs ikke når utstyret har egne av/på-brytere."
+          ],
+          "feedback": [
+            "Med én hovedbryter kan alt gjøres strømløst på en gang, også av andre enn deg. Det er viktig i en nødssituasjon."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "En hovedbryter i radiorommet gjør det mulig å slå av alt utstyret på én gang. Brytere for nettspenningen skal være dobbeltpolete, slik at begge lederne brytes.",
+        "Hele husstanden bør kjenne til bryteren og vite hvordan den slås av. Hvis du selv blir hengende fast i strømmen, er det noen andre som må slå den av."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 13,
+        "section_id": "s13-05",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "6cc26db27b48fc02"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:11:19+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "4f974e77ea616365f657087000d92293bdd8a687c00e46911bfc9a9fdd5b1336",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:50:40+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "4f974e77ea616365f657087000d92293bdd8a687c00e46911bfc9a9fdd5b1336",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": []
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:11:18+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "4f974e77ea616365f657087000d92293bdd8a687c00e46911bfc9a9fdd5b1336",
+        "errors": [],
+        "warnings": [],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T22:50:40+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:50:40+00:00",
+        "content_sha256": "4f974e77ea616365f657087000d92293bdd8a687c00e46911bfc9a9fdd5b1336",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

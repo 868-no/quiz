@@ -1,0 +1,160 @@
+{
+  "id": "q-0314",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "hard",
+      "chapter": 7,
+      "section_ids": [
+        "s7-07"
+      ],
+      "topic_ids": [
+        "sdr"
+      ],
+      "learning_objective": "Forstå at en SDR blander ned med to oscillatorsignaler 90° ute av fase for å skille sidebåndene.",
+      "priority": "normal",
+      "context": [
+        [
+          "En ",
+          {
+            "term": "sdr",
+            "text": "SDR"
+          },
+          " blander signalet ned digitalt med to signaler fra oscillatoren, der det ene ligger en kvart periode (90°) etter det andre."
+        ]
+      ],
+      "stem": [
+        "Hva oppnår man med dette?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Den kan skille sidebåndene og ta ut bare det ene."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Den dobler samplingsfrekvensen i A/D-omformeren."
+          ],
+          "feedback": [
+            "Samplingsfrekvensen i omformeren er den samme. De to signalene gjør at frekvensene på hver side av oscillatoren kan holdes fra hverandre."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Den fjerner kvantiseringsstøyen fra samplene."
+          ],
+          "feedback": [
+            "Faseforskjellen har ingenting med avrundingen av amplituden å gjøre. Den brukes til å skille sidebåndene."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Den hindrer at oscillatorfrekvensen driver."
+          ],
+          "feedback": [
+            "Frekvensstabiliteten avhenger av klokken. Faseforskjellen brukes til å holde sidebåndene fra hverandre."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Blander man ned med bare ett signal, havner frekvensene rett over og rett under oscillatorfrekvensen oppå hverandre. Med to blandersignaler som er 90° ute av fase, kan de skilles, og man kan velge bare det ene ",
+          {
+            "term": "sidebaand",
+            "text": "sidebåndet"
+          },
+          "."
+        ],
+        "Dette er fasemetoden for SSB. Analogt er den vanskelig, fordi 90° må være svært nøyaktig. Digitalt er det enkelt, og derfor bruker nesten alle SDR-er den."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 7,
+        "section_id": "s7-07",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "3315503c54f6bafc",
+          "3d39a61f1c5276f2"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:09:37+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "d7161c62f3e7cbb695514c1ac15d33c3d6c1de7837339771bf9363e17352ccb9",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:48:21+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "d7161c62f3e7cbb695514c1ac15d33c3d6c1de7837339771bf9363e17352ccb9",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:09:36+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "d7161c62f3e7cbb695514c1ac15d33c3d6c1de7837339771bf9363e17352ccb9",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:48:21+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:48:21+00:00",
+        "content_sha256": "d7161c62f3e7cbb695514c1ac15d33c3d6c1de7837339771bf9363e17352ccb9",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

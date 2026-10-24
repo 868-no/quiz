@@ -1,0 +1,204 @@
+{
+  "id": "q-0353",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "calculation",
+      "difficulty": "hard",
+      "chapter": 8,
+      "section_ids": [
+        "s8-08"
+      ],
+      "topic_ids": [
+        "fodekabler"
+      ],
+      "learning_objective": "Beregne den fysiske lengden av en kvart bølgelengde i koaksialkabel med hastighetsfaktor.",
+      "priority": "normal",
+      "context": [
+        [
+          "Du skal lage en kvartbølgetransformator for ",
+          {
+            "q": 70,
+            "u": "MHz"
+          },
+          " av koaksialkabel med hastighetsfaktor 0,66. Regn med ",
+          {
+            "q": 300000,
+            "u": "km"
+          },
+          " per sekund i fritt rom."
+        ]
+      ],
+      "stem": [
+        "Hvor lang må kabelbiten være?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 71,
+              "u": "cm"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 107,
+              "u": "cm"
+            }
+          ],
+          "feedback": [
+            "Dette er en kvart bølgelengde i fritt rom. I kabelen går signalet saktere, så lengden må ganges med 0,66."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 141,
+              "u": "cm"
+            }
+          ],
+          "feedback": [
+            "Dette er en halv bølgelengde i kabelen. En kvartbølgetransformator er en kvart bølgelengde."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 47,
+              "u": "cm"
+            }
+          ],
+          "feedback": [
+            "Her er hastighetsfaktoren brukt to ganger. Gang lengden i fritt rom med 0,66 én gang."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        {
+          "steps": [
+            "λ = 300 / 70 ≈ 4,29 m i fritt rom",
+            "λ/4 ≈ 1,07 m",
+            [
+              "I kabelen: 1,07 · 0,66 ≈ ",
+              {
+                "q": 71,
+                "u": "cm"
+              }
+            ]
+          ]
+        },
+        "Signalet går saktere i en kabel enn i fritt rom, så en bølgelengde i kabelen er kortere. Hastighetsfaktoren er alltid under 1. Når lengden i bølgelengder er kritisk, som i en kvartbølgetransformator, må den tas med."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 8,
+        "section_id": "s8-08",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "1df5d3a635681825"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:13:25+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "c17bc03a84a536ad603d4132a326e2ddf27909d949791afb75dd5dcb3b96db55",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:48:35+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "c17bc03a84a536ad603d4132a326e2ddf27909d949791afb75dd5dcb3b96db55",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:13:24+00:00"
+      },
+      "calculation": {
+        "formula": "cable_length",
+        "inputs": {
+          "f": [
+            70,
+            "MHz"
+          ],
+          "k": [
+            0.66,
+            ""
+          ],
+          "part": [
+            0.25,
+            ""
+          ]
+        },
+        "answer": [
+          71,
+          "cm"
+        ],
+        "answer_symbol": "l",
+        "sig_figs": 2
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "c17bc03a84a536ad603d4132a326e2ddf27909d949791afb75dd5dcb3b96db55",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:48:35+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:48:35+00:00",
+        "content_sha256": "c17bc03a84a536ad603d4132a326e2ddf27909d949791afb75dd5dcb3b96db55",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

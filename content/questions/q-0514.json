@@ -1,0 +1,145 @@
+{
+  "id": "q-0514",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 12,
+      "section_ids": [
+        "s12-05"
+      ],
+      "topic_ids": [
+        "anrop-kontakt"
+      ],
+      "learning_objective": "Forstå hvorfor man tydelig setter over til motparten ved telefoni.",
+      "priority": "normal",
+      "context": [],
+      "stem": [
+        "Hvorfor bør du på telefoni tydelig markere når du er ferdig og gir ordet til den andre stasjonen, for eksempel med «over»?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Ellers kan dere begynne å sende samtidig, og ingen av dere hører den andre."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Fordi regelverket krever ordet «over» etter hver sending."
+          ],
+          "feedback": [
+            "Ordet «over» er en vane og ikke et krav – noen bruker andre ord eller ingenting. Poenget er at det skal være tydelig når du er ferdig."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "For at senderen skal få tid til å kjøle seg ned."
+          ],
+          "feedback": [
+            "Overgangen mellom sendingene har ingenting med varme å gjøre. Det handler om å unngå at begge sender samtidig."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Fordi den andre stasjonen ellers ikke kan identifisere deg."
+          ],
+          "feedback": [
+            "Identifiseringen skjer med kallesignalet. Markeringen av at du er ferdig hindrer at dere sender oppå hverandre."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Som regel kan bare én av dere sende om gangen (halv dupleks). Slutter du bare å snakke, kan det gå en stund før den andre skjønner at det er hans tur – og så begynner dere kanskje samtidig. Da kalles det at dere «dobler», og ingen hører noe.",
+        "Ved morse og digitale sendinger er det vanlig å avslutte med et tydelig tegn. På telefoni må du gjøre det like tydelig, for eksempel «W1AW, dette er LA1XYZ, over»."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 12,
+        "section_id": "s12-05",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "231e658c6d8e330a",
+          "b3a3b970d8132fab",
+          "4fb695e1b367a36b"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:13:44+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "24296ff5e820bee5610545e1669decf7b28bf3760176d562c318f0f0c5a18e8c",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:49:52+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "24296ff5e820bee5610545e1669decf7b28bf3760176d562c318f0f0c5a18e8c",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:13:43+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "24296ff5e820bee5610545e1669decf7b28bf3760176d562c318f0f0c5a18e8c",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:49:52+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:49:52+00:00",
+        "content_sha256": "24296ff5e820bee5610545e1669decf7b28bf3760176d562c318f0f0c5a18e8c",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

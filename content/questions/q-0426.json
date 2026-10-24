@@ -1,0 +1,134 @@
+{
+  "id": "q-0426",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "recall",
+      "difficulty": "easy",
+      "chapter": 10,
+      "section_ids": [
+        "s10-20"
+      ],
+      "topic_ids": [
+        "emc-klage"
+      ],
+      "learning_objective": "Vite at NRRLs EMC-komité kan hjelpe i vanskelige forstyrrelsessaker før de blir formelle.",
+      "priority": "normal",
+      "context": [],
+      "stem": [
+        "Hvem bør du kontakte dersom en forstyrrelsessak med naboen blir vanskelig å løse, før den blir en formell sak?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "NRRLs EMC-komité."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Politiet."
+          ],
+          "feedback": [
+            "Politiet er ikke riktig instans for forstyrrelser mellom naboer. Det er en teknisk sak."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Nkom, med krav om at naboens utstyr blir beslaglagt."
+          ],
+          "feedback": [
+            "Nkom tar imot formelle klager, men ønsker gjerne at NRRLs EMC-komité har forsøkt å løse saken først. Beslag er ikke et første skritt."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Produsenten av senderen din."
+          ],
+          "feedback": [
+            "Produsenten kjenner sitt eget utstyr, men ikke situasjonen hos naboen. EMC-komiteen har erfaring med slike saker."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "NRRLs EMC-komité har lang erfaring med slike saker og kan hjelpe begge parter uten at saken blir formell. Blir Nasjonal kommunikasjonsmyndighet (Nkom) involvert senere, ser de gjerne at komiteen har prøvd først.",
+        "En formell klage går til Nkom. Det trengs ikke noe skjema, men en skriftlig klage med opplysninger om hvem det gjelder og hva problemet er, er en fordel."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 10,
+        "section_id": "s10-20",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "c474a5f82258b2d5"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:12:39+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "e08f4f9f80b1c69220d59a692dd2daa172c5f987e64972f0657f70ca8c467031",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:49:19+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "e08f4f9f80b1c69220d59a692dd2daa172c5f987e64972f0657f70ca8c467031",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": []
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:12:38+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "e08f4f9f80b1c69220d59a692dd2daa172c5f987e64972f0657f70ca8c467031",
+        "errors": [],
+        "warnings": [],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T22:49:19+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:49:19+00:00",
+        "content_sha256": "e08f4f9f80b1c69220d59a692dd2daa172c5f987e64972f0657f70ca8c467031",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

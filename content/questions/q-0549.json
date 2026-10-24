@@ -1,0 +1,146 @@
+{
+  "id": "q-0549",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 12,
+      "section_ids": [
+        "s12-24"
+      ],
+      "topic_ids": [
+        "regelverk-organisasjoner"
+      ],
+      "learning_objective": "Vite at Nasjonal kommunikasjonsmyndighet har tilsynet med radioamatører i Norge, og NRRLs rolle i forstyrrelsessaker.",
+      "priority": "exam_important",
+      "context": [],
+      "stem": [
+        "Hvem har myndighet til å føre tilsyn med hvordan radioamatører opptrer på lufta i Norge?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Nasjonal kommunikasjonsmyndighet"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "NRRL – Norsk Radio Relæ Liga"
+          ],
+          "feedback": [
+            "Foreningen har verken et slikt organ eller slik myndighet. EMC-komiteen i NRRL hjelper likevel til med å løse forstyrrelsessaker."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "IARU – Den internasjonale amatørradiounionen"
+          ],
+          "feedback": [
+            "IARU er radioamatørforeningenes internasjonale samarbeid og har ingen myndighet i Norge."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "ITU – Den internasjonale telekommunikasjonsunionen"
+          ],
+          "feedback": [
+            "ITU lager det internasjonale regelverket, men tilsynet i hvert land utføres av nasjonale myndigheter."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Tilsynet med radioamatørene og myndigheten til å reagere ligger hos Nasjonal kommunikasjonsmyndighet, ikke hos foreningen.",
+        "Når radioamatører forstyrrer eller blir forstyrret av andre, ønsker myndigheten at NRRLs EMC-komité først prøver å finne en løsning, før myndigheten selv blir involvert."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 12,
+        "section_id": "s12-24",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "5cad4c5d54dbe108",
+          "09770206facbd2f4"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:13:45+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "7fb736c1dcec938d8727c3dcfd0e48db334495a04135f5b918a3659b5f16af9f",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:50:24+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "7fb736c1dcec938d8727c3dcfd0e48db334495a04135f5b918a3659b5f16af9f",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:13:43+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "7fb736c1dcec938d8727c3dcfd0e48db334495a04135f5b918a3659b5f16af9f",
+        "errors": [],
+        "warnings": [
+          "priority: 'exam_important' set by judgement; the book's '!' markers are not known for this chapter yet (no scan)"
+        ],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:50:24+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:50:24+00:00",
+        "content_sha256": "7fb736c1dcec938d8727c3dcfd0e48db334495a04135f5b918a3659b5f16af9f",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

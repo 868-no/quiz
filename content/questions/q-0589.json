@@ -1,0 +1,138 @@
+{
+  "id": "q-0589",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "medium",
+      "chapter": 13,
+      "section_ids": [
+        "s13-05"
+      ],
+      "topic_ids": [
+        "trygt-arbeid-utstyr"
+      ],
+      "learning_objective": "Vite at utstyr skal kobles helt fra nettet før man jobber inne i det.",
+      "priority": "exam_important",
+      "context": [
+        "Du skal bytte et kretskort inne i en transceiver som er koblet til en strømforsyning på nettet."
+      ],
+      "stem": [
+        "Hva er den tryggeste framgangsmåten?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Trekke ut støpselet og holde det under kontroll."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Slå av bryteren foran på radioen og starte arbeidet."
+          ],
+          "feedback": [
+            "Bryteren på utstyret kan svikte eller bli slått på igjen. Det sikreste er å trekke ut støpselet."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "La strømmen stå på, men bruke gummihansker."
+          ],
+          "feedback": [
+            "Komponenter og kretskort skal aldri byttes med strømmen på – det kan skade både deg og utstyret."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Slå av hovedsikringen i huset og la radioen stå på."
+          ],
+          "feedback": [
+            "Det kan virke, men noen kan slå sikringen på igjen uten å vite at du jobber. Å trekke ut støpselet og ha det under kontroll er tryggere."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Hovedregelen er at man ikke arbeider i utstyr som har strøm tilkoblet. Når kort eller komponenter skal tas ut eller byttes, må utstyret være slått av – ellers kan både du og komponentene ta skade.",
+        "Det er ikke nok å slå av bryteren på apparatet. Trekk ut støpselet og legg det slik at det ikke blir satt inn igjen ved et uhell. Husk også at kondensatorer kan holde på farlig spenning en stund etter at strømmen er borte."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 13,
+        "section_id": "s13-05",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "6cc26db27b48fc02"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:11:19+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "9eb610ebf6bab13000333590d368357ab19babcb81ddb1e6684b5d766899209a",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:50:38+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "9eb610ebf6bab13000333590d368357ab19babcb81ddb1e6684b5d766899209a",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": []
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:11:18+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "9eb610ebf6bab13000333590d368357ab19babcb81ddb1e6684b5d766899209a",
+        "errors": [],
+        "warnings": [
+          "priority: 'exam_important' set by judgement; the book's '!' markers are not known for this chapter yet (no scan)"
+        ],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T22:50:38+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:50:38+00:00",
+        "content_sha256": "9eb610ebf6bab13000333590d368357ab19babcb81ddb1e6684b5d766899209a",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

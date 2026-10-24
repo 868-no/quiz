@@ -1,0 +1,147 @@
+{
+  "id": "q-0636",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "recall",
+      "difficulty": "easy",
+      "chapter": 16,
+      "section_ids": [
+        "s16-06"
+      ],
+      "topic_ids": [
+        "q-koder-forkortelser"
+      ],
+      "learning_objective": "Kjenne de vanlige forkortelsene CQ, DE og 73.",
+      "priority": "normal",
+      "context": [
+        "Du hører dette på morse: «CQ CQ DE LA1ABC» og senere, ved slutten av en forbindelse: «73»."
+      ],
+      "stem": [
+        "Hva betyr forkortelsene?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "CQ er et anrop til alle, DE betyr «fra», og 73 betyr «beste hilsener»."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "CQ betyr «kvittert», DE betyr «til», og 73 betyr «ha det»."
+          ],
+          "feedback": [
+            "Kvittering for mottak er QSL eller R. DE betyr «fra», så «CQ DE LA1ABC» er et alminnelig anrop fra LA1ABC."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "CQ er et nødanrop, DE betyr «fra», og 73 betyr «kyss og klem»."
+          ],
+          "feedback": [
+            "CQ er et alminnelig anrop, ikke et nødanrop. Og 73 betyr beste hilsener; det er 88 som betyr «kyss og klem»."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "CQ betyr «hvem kaller?», DE betyr «her», og 73 betyr «takk»."
+          ],
+          "feedback": [
+            "«Hvem kaller meg?» er QRZ. CQ er et alminnelig anrop til alle som hører."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "CQ er et alminnelig anrop til alle stasjoner som hører, og DE betyr «fra». «CQ CQ DE LA1ABC» betyr altså at LA1ABC kaller og vil ha forbindelse med hvem som helst.",
+        "73 betyr beste hilsener og brukes når man avslutter. Slike forkortelser sparer tid på morse og forstås uansett hvilket språk motparten snakker."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 16,
+        "section_id": "s16-06",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "f7850594e1a25e57",
+          "52dcc48cf28a4d1e",
+          "a07e6b55202ca775"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:08:40+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "1f87f57ff2fe6f636f6a98ab2cecdff144b8e3bb576b49ce68c70e1a55be1d29",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:51:00+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "1f87f57ff2fe6f636f6a98ab2cecdff144b8e3bb576b49ce68c70e1a55be1d29",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:08:39+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "1f87f57ff2fe6f636f6a98ab2cecdff144b8e3bb576b49ce68c70e1a55be1d29",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:51:00+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:51:00+00:00",
+        "content_sha256": "1f87f57ff2fe6f636f6a98ab2cecdff144b8e3bb576b49ce68c70e1a55be1d29",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

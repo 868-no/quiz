@@ -1,0 +1,171 @@
+{
+  "id": "q-0405",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "hard",
+      "chapter": 10,
+      "section_ids": [
+        "s10-07"
+      ],
+      "topic_ids": [
+        "emc-stasjon"
+      ],
+      "learning_objective": "Vite at uønsket RF-strøm på stasjonens kabler løses med tilpasning og fellesmodusdemping, mens sikkerhetsjord og potensialutjevning beholdes.",
+      "priority": "normal",
+      "context": [
+        "En antenneinstallasjon fører uønsket RF-strøm inn på stasjonens kabler, og du får «RF i shacket»."
+      ],
+      "stem": [
+        "Hva bør du gjøre først?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Sørge for god tilpasning og balanse i antennesystemet og bruke en fellesmodusdrossel, og beholde sikkerhetsjord og potensialutjevning."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Fjerne jordlederen i strømkabelen til radioen."
+          ],
+          "feedback": [
+            "Det er farlig. Beskyttelsesjorden skal aldri brytes for å løse et RF-problem; en feil i utstyret kan da gjøre kabinettet strømførende."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Koble stasjonen til en egen jordelektrode og ellers holde den atskilt fra husets jord."
+          ],
+          "feedback": [
+            "To jordingssystemer som ikke er koblet sammen, kan få farlige spenningsforskjeller mellom seg, for eksempel ved lyn eller feil i nettet. En egen jordelektrode må knyttes riktig til husets jordingsanlegg."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Øke sendereffekten, så signalet blir renere."
+          ],
+          "feedback": [
+            "Mer effekt gir mer RF-strøm på kablene, ikke mindre. Årsaken må fjernes der den oppstår."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "RF-strøm på utsiden av kabelskjermen – ",
+          {
+            "term": "fellesmodus",
+            "text": "fellesmodusstrøm"
+          },
+          " – skyldes ofte ubalanse eller dårlig tilpasning i antennesystemet. En balun eller fellesmodusdrossel ved antennen hindrer den i å følge kabelen inn i huset."
+        ],
+        "Sikkerhetsjord og potensialutjevning er der for å beskytte mennesker og skal beholdes. En RF-jording må utformes sammen med bygningens jordingsanlegg, ikke som et eget, atskilt system."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 10,
+        "section_id": "s10-07",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "c544a829babcd036",
+          "07574f89c5e901f0"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:12:39+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "1bff3c640d6cdbfdcf32482f38ec8b32cdbf1a53cd5aa82d08e498274fe3ac65",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:39:01+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "4ca80ea52f576f5b41ea15414c8d352172e68739bc404a6c366cf6468c519dc7",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:39:18+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "5e943973deb614248e16b6fe514ab62773b8ee49f61b1a508b9410c2d870d74f",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:49:00+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "5e943973deb614248e16b6fe514ab62773b8ee49f61b1a508b9410c2d870d74f",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:12:38+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "5e943973deb614248e16b6fe514ab62773b8ee49f61b1a508b9410c2d870d74f",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:49:00+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:49:00+00:00",
+        "content_sha256": "5e943973deb614248e16b6fe514ab62773b8ee49f61b1a508b9410c2d870d74f",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

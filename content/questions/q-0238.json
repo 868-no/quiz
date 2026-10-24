@@ -1,0 +1,135 @@
+{
+  "id": "q-0238",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 9,
+      "section_ids": [
+        "s9-02"
+      ],
+      "topic_ids": [
+        "radiobolger-polarisasjon"
+      ],
+      "learning_objective": "Forstå hvorfor sirkulær polarisasjon er nyttig for satellittkommunikasjon.",
+      "priority": "normal",
+      "context": [],
+      "stem": [
+        "Hvorfor brukes ofte sirkulær polarisasjon til satellittkommunikasjon?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Satellitten ligger ulikt vridd sett fra ulike steder på jorda, og med sirkulær polarisasjon spiller ikke vinkelen mellom antennene noen rolle."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Sirkulært polariserte bølger går ikke gjennom ionosfæren, så de forstyrrer ikke HF-trafikk."
+          ],
+          "feedback": [
+            "Satellittsignalene skal nettopp gjennom ionosfæren, og det gjør de på VHF og høyere uansett polarisasjon. Grunnen er at vinkelen mellom antennene varierer."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Sirkulær polarisasjon gir dobbelt så lang bølgelengde og dermed mindre tap."
+          ],
+          "feedback": [
+            "Bølgelengden bestemmes bare av frekvensen. Ved sirkulær polarisasjon er det feltene som roterer, én omdreining per bølgelengde."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "En høyrevridd og en venstrevridd antenne utfyller hverandre og gir sterkere signal."
+          ],
+          "feedback": [
+            "Det er motsatt: en høyrevridd og en venstrevridd antenne er krysspolarisert overfor hverandre, så den ene tar nesten ikke imot noe fra den andre."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Ved sirkulær polarisasjon roterer feltene én gang for hver bølgelengde bølgen går. Sett fra ulike steder på jorda, eller mens satellitten går i banen sin, ligger satellittantennen ulikt vridd i forhold til bakkeantennen.",
+        "Med lineær polarisasjon måtte man vri antennen etter. Med sirkulær polarisasjon slipper man det. Begge ender må likevel bruke samme rotasjonsretning, høyre- eller venstrevridd."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 9,
+        "section_id": "s9-02",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "4d4257484d6aec9c",
+          "f7b9e86ce73ef649"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:14:10+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "b9e9006017163c8b4934f84329a168ec8598706e83f2af00715373f0b9ad1681",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:47:49+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "b9e9006017163c8b4934f84329a168ec8598706e83f2af00715373f0b9ad1681",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": []
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:04:28+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "b9e9006017163c8b4934f84329a168ec8598706e83f2af00715373f0b9ad1681",
+        "errors": [],
+        "warnings": [],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T22:47:49+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:47:49+00:00",
+        "content_sha256": "b9e9006017163c8b4934f84329a168ec8598706e83f2af00715373f0b9ad1681",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

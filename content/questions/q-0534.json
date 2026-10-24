@@ -1,0 +1,152 @@
+{
+  "id": "q-0534",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "recall",
+      "difficulty": "medium",
+      "chapter": 12,
+      "section_ids": [
+        "s12-15"
+      ],
+      "topic_ids": [
+        "regelverk-organisasjoner"
+      ],
+      "learning_objective": "Vite at ITU gir ut radioreglementet som er grunnlaget for lisensvilkårene.",
+      "priority": "exam_important",
+      "context": [],
+      "stem": [
+        "Hvilken organisasjon gir ut radioreglementet (Radio Regulations) som er grunnlaget for amatørlisensene i alle land?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "ITU"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "IARU"
+          ],
+          "feedback": [
+            "IARU er samarbeidsorganisasjonen for radioamatørforeningene. Den ivaretar amatørenes interesser, men lager ikke lovverket."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "CEPT"
+          ],
+          "feedback": [
+            "CEPT er et samarbeid mellom europeiske post- og teleforvaltninger og gir blant annet anbefalingen om CEPT-lisensen."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "NRRL"
+          ],
+          "feedback": [
+            "NRRL er den norske radioamatørforeningen og medlem av IARU."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          {
+            "term": "itu",
+            "text": "ITU"
+          },
+          " er FNs organisasjon for telekommunikasjon, med hovedkontor i Genève. Radioreglementet fastsetter rammene for alle radiotjenester, og artikkel 25 handler om amatørtjenestene."
+        ],
+        "Hvert land lager sine egne regler ut fra dette. I Norge er det Nasjonal kommunikasjonsmyndighet som forvalter reglene for radioamatører."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 12,
+        "section_id": "s12-15",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "9d34b4b96e40d324",
+          "2e2eb78990e04bcb"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:13:44+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "adc234f4e777d6cfb7dc96411f84b2d4d6eaeff3d2dae12c961bc0f410bb62e1",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:50:10+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "adc234f4e777d6cfb7dc96411f84b2d4d6eaeff3d2dae12c961bc0f410bb62e1",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:13:43+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "adc234f4e777d6cfb7dc96411f84b2d4d6eaeff3d2dae12c961bc0f410bb62e1",
+        "errors": [],
+        "warnings": [
+          "priority: 'exam_important' set by judgement; the book's '!' markers are not known for this chapter yet (no scan)"
+        ],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:50:10+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:50:10+00:00",
+        "content_sha256": "adc234f4e777d6cfb7dc96411f84b2d4d6eaeff3d2dae12c961bc0f410bb62e1",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

@@ -1,0 +1,144 @@
+{
+  "id": "q-0532",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "medium",
+      "chapter": 12,
+      "section_ids": [
+        "s12-13"
+      ],
+      "topic_ids": [
+        "god-operasjonsskikk"
+      ],
+      "learning_objective": "Vite at man bør teste hvordan utstyret høres ut på lufta sammen med en annen radioamatør.",
+      "priority": "normal",
+      "context": [
+        "Du har skrudd opp taleprosessoren og mikrofonforsterkningen på senderen din for å få mer «punch»."
+      ],
+      "stem": [
+        "Hvordan finner du best ut om signalet ditt fortsatt er greit?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Be en lokal radioamatør lytte og fortelle hvordan det høres ut på lufta."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Se om effektmeteret viser høyere utslag enn før."
+          ],
+          "feedback": [
+            "Høyere utslag sier ingenting om hvordan signalet låter. For mye taleprosessering kan gi et forvrengt og bredt signal."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Lytte på din egen sending i høyttaleren mens du sender."
+          ],
+          "feedback": [
+            "Du hører ikke ditt eget utsendte signal slik andre gjør. En annen stasjon som lytter, gir et riktig bilde."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Sende et alminnelig anrop og se om noen svarer."
+          ],
+          "feedback": [
+            "At noen svarer, betyr ikke at signalet er rent. Det kan likevel være forvrengt og forstyrre nabofrekvensene."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Selv godt utstyr kan brukes feil, for eksempel med ",
+          {
+            "term": "taleprosessor",
+            "text": "taleprosessoren"
+          },
+          " skrudd for høyt eller for mye mikrofonforsterkning. Da kan signalet bli forvrengt og forstyrre andre."
+        ],
+        "Det beste er å bli kjent med hvordan utstyret ditt høres ut på lufta ved å teste med en annen lokal radioamatør. Oppstår det problemer mens du sender, skrur du ned effekten til de er løst."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 12,
+        "section_id": "s12-13",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "0591cf1e96150c1e",
+          "71bc9fbe37e7e77e"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:13:44+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "4f3a18d5d61c74da07c6abeb4db9e10ee8f9bcd358dd3e2d4ffafc6226547eaa",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:50:09+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "4f3a18d5d61c74da07c6abeb4db9e10ee8f9bcd358dd3e2d4ffafc6226547eaa",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": []
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:13:43+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "4f3a18d5d61c74da07c6abeb4db9e10ee8f9bcd358dd3e2d4ffafc6226547eaa",
+        "errors": [],
+        "warnings": [],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T22:50:09+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:50:09+00:00",
+        "content_sha256": "4f3a18d5d61c74da07c6abeb4db9e10ee8f9bcd358dd3e2d4ffafc6226547eaa",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

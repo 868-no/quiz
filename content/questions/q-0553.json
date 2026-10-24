@@ -1,0 +1,144 @@
+{
+  "id": "q-0553",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 12,
+      "section_ids": [
+        "s12-12"
+      ],
+      "topic_ids": [
+        "qsl-diplomer"
+      ],
+      "learning_objective": "Forstå hvordan elektronisk bekreftelse i Logbook of the World fungerer.",
+      "priority": "normal",
+      "context": [],
+      "stem": [
+        "Hvordan bekreftes en kontakt i Logbook of the World (LoTW)?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Begge laster opp loggene sine, og kontakten godkjennes når opplysningene stemmer overens."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Den ene stasjonen tar bilde av QSL-kortet og laster det opp."
+          ],
+          "feedback": [
+            "LoTW bruker ikke QSL-kort. Den sammenligner loggdata fra begge stasjonene."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Kontakten tas opp som lyd, og databasen sjekker opptaket."
+          ],
+          "feedback": [
+            "Noen loggprogrammer kan ta opp kontaktene, men LoTW bekrefter ved å sammenligne loggdata."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Det holder at én av stasjonene registrerer kontakten."
+          ],
+          "feedback": [
+            "Da kunne hvem som helst bekrefte kontakter som aldri fant sted. Begge må ha den samme kontakten i loggen."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "I LoTW laster brukerne opp kontaktene sine til en felles database. Kontakten regnes som bekreftet når opplysninger som kallesignal, dato og tid, bånd og modus stemmer i begge loggene.",
+        "Slike bekreftelser godtas for flere kjente diplomer, men mange diplomer krever fortsatt QSL-kort."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 12,
+        "section_id": "s12-12",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "cfee4b1738c3a312",
+          "a86d179173f79636"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:13:45+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "b29d22bd3fbb840a6d81b7f36f335758de7e222b2e3dd245974a6bf5954868d0",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:50:28+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "b29d22bd3fbb840a6d81b7f36f335758de7e222b2e3dd245974a6bf5954868d0",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:13:43+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "b29d22bd3fbb840a6d81b7f36f335758de7e222b2e3dd245974a6bf5954868d0",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:50:28+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:50:28+00:00",
+        "content_sha256": "b29d22bd3fbb840a6d81b7f36f335758de7e222b2e3dd245974a6bf5954868d0",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

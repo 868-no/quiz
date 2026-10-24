@@ -1,0 +1,143 @@
+{
+  "id": "q-0249",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 9,
+      "section_ids": [
+        "s9-05"
+      ],
+      "topic_ids": [
+        "fading-dodsone"
+      ],
+      "learning_objective": "Forklare at flerbane-fading skyldes at signalet kommer fram langs veier med ulik lengde.",
+      "priority": "normal",
+      "context": [],
+      "stem": [
+        [
+          "Hva er årsaken til flerbane-",
+          {
+            "term": "fading",
+            "text": "fading"
+          },
+          "?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Signalet når mottakeren langs flere veier med ulik lengde, og delene forsterker og svekker hverandre etter tur."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "AGC-en i mottakeren regulerer for sakte."
+          ],
+          "feedback": [
+            "AGC-en jevner tvert imot ut variasjoner i signalstyrken. Fadingen oppstår på veien mellom antennene."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Polarisasjonen til bølgen endrer seg underveis."
+          ],
+          "feedback": [
+            "Det heter polarisasjons-fading og varer typisk fra et øyeblikk til noen få sekunder. Flerbane-fading skyldes at signalet kommer fram langs flere veier."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Bølger av forstyrrelser som vandrer gjennom ionosfæren med 5–10 km i minuttet."
+          ],
+          "feedback": [
+            "Det gir TID-fading, som kan vare ti minutter eller mer. Flerbane-fading skyldes at signalet kommer fram langs flere veier."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Når et signal kommer fram langs to eller flere veier – for eksempel via ulike lag i ionosfæren – har delene gått ulikt langt og kommer fram med ulik fase. Er de i fase, forsterker de hverandre. Er de i motfase, slukker de hverandre, i korte øyeblikk helt.",
+        "Ionosfæren endrer seg hele tiden, så forholdet mellom veiene endrer seg også. Signalet går opp og ned, raskt, langsomt eller begge deler."
+      ],
+      "glossary_after_answer": [
+        "fading"
+      ],
+      "study_reference": {
+        "chapter": 9,
+        "section_id": "s9-05",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "110db192f5ac8587"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:14:11+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "0cf9a853221c2a6466606128e91facb38cdf3c0f18a0470c21d0ff9486b391a2",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:48:00+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "0cf9a853221c2a6466606128e91facb38cdf3c0f18a0470c21d0ff9486b391a2",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": []
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:04:28+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "0cf9a853221c2a6466606128e91facb38cdf3c0f18a0470c21d0ff9486b391a2",
+        "errors": [],
+        "warnings": [],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T22:48:00+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:48:00+00:00",
+        "content_sha256": "0cf9a853221c2a6466606128e91facb38cdf3c0f18a0470c21d0ff9486b391a2",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

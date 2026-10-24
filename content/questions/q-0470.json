@@ -1,0 +1,163 @@
+{
+  "id": "q-0470",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "recall",
+      "difficulty": "easy",
+      "chapter": 11,
+      "section_ids": [
+        "s11-08"
+      ],
+      "topic_ids": [
+        "rf-maling"
+      ],
+      "learning_objective": "Vite at effektmålinger på en sender bør gjøres mot en kunstlast og ikke mot antennen.",
+      "priority": "exam_important",
+      "context": [],
+      "stem": [
+        "Hva bør senderen være koblet til når du måler utgangseffekten?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "En kunstlast på ",
+            {
+              "q": 50,
+              "u": "Ω"
+            },
+            "."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Antennen, så målingen blir mest mulig realistisk."
+          ],
+          "feedback": [
+            "Da stråler du ut signal mens du måler, og en antenne er sjelden nøyaktig 50 Ω. Begge deler gjør målingen dårligere."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Ingenting – målingen gjøres med åpen utgang."
+          ],
+          "feedback": [
+            "Uten last reflekteres all effekten, og sluttforsterkeren kan ta skade. Det gir heller ingen meningsfull effektmåling."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "En kortslutning, så all effekten blir til varme."
+          ],
+          "feedback": [
+            "En kortslutning reflekterer også all effekten tilbake til senderen. En kunstlast tar opp effekten fordi den har riktig motstand."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "En ",
+          {
+            "term": "kunstlast",
+            "text": "kunstlast"
+          },
+          " er en motstand på ",
+          {
+            "q": 50,
+            "u": "Ω"
+          },
+          " som tåler senderens effekt og gjør den om til varme. Da stråles det ikke ut noe signal mens du måler, og målingen skjer ved den impedansen effektmeteret er laget for."
+        ],
+        "Et effektmeter regner om fra spenning eller strøm til effekt ut fra en antatt impedans. Lavt SWR og 50 Ω er en forutsetning for en nøyaktig måling."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 11,
+        "section_id": "s11-08",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "d594b11fd0ec691d",
+          "eccbb03ad035aa74"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:11:20+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "f0bd02c694465f6baa49904e85bc8abacf1cd768736cd1d8d186df0a67846712",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:49:34+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "f0bd02c694465f6baa49904e85bc8abacf1cd768736cd1d8d186df0a67846712",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:11:19+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "f0bd02c694465f6baa49904e85bc8abacf1cd768736cd1d8d186df0a67846712",
+        "errors": [],
+        "warnings": [
+          "priority: 'exam_important' set by judgement; the book's '!' markers are not known for this chapter yet (no scan)"
+        ],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:49:34+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:49:34+00:00",
+        "content_sha256": "f0bd02c694465f6baa49904e85bc8abacf1cd768736cd1d8d186df0a67846712",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

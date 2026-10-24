@@ -1,0 +1,146 @@
+{
+  "id": "q-0250",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "medium",
+      "chapter": 9,
+      "section_ids": [
+        "s9-07"
+      ],
+      "topic_ids": [
+        "solstorm-aurora"
+      ],
+      "learning_objective": "Forklare at et kraftig solutbrudd kan stenge HF fordi D-laget demper mye sterkere.",
+      "priority": "normal",
+      "context": [
+        "Et kraftig solutbrudd fører til at HF-forbindelser på den solbelyste siden av jorda plutselig forsvinner."
+      ],
+      "stem": [
+        "Hva skjer i ionosfæren?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "D-laget blir så sterkt ionisert at det demper bort nesten alle HF-signaler."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "F-lagene forsvinner, så ingenting bøyer signalene tilbake."
+          ],
+          "feedback": [
+            "De høyere lagene blir tvert imot sterkere ionisert og kunne bøyd signalene bedre. Problemet er at signalene dempes før de kommer så høyt."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "MUF stiger så høyt at alle signaler går rett gjennom ionosfæren."
+          ],
+          "feedback": [
+            "Høyere MUF betyr at flere frekvenser kommer tilbake, ikke færre. Signalene forsvinner fordi de dempes i D-laget."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Sporadisk E stenger for signalene."
+          ],
+          "feedback": [
+            "Sporadisk E gir tvert imot sterke signaler på de høyere båndene, mest om sommeren."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Et solutbrudd sender ut røntgenstråling og ultrafiolett stråling som raskt øker ioniseringen i D-laget på den siden av jorda som har dag. Da dempes også høyere frekvenser – i verste fall alt over 1–1,5 MHz. Fenomenet er kjent som SID – plutselig ionosfærisk forstyrrelse – og kan vare i flere timer.",
+        "Senere kan energirike partikler fra sola gi ytterligere HF-forstyrrelser, særlig i polarområdene, ofte sammen med nordlys."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 9,
+        "section_id": "s9-07",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "e1999a822a489a02",
+          "a395cbd7c12ef08c"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:14:11+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "d98d885b95bcfcdf483462a11b703d382c6c8916b181ace13645a78635f71d77",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:39:00+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "65a219674fbfc555f4941e81a6e4c3970f3092bf98f84bc1d30878a0d00cd1e0",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:48:00+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "65a219674fbfc555f4941e81a6e4c3970f3092bf98f84bc1d30878a0d00cd1e0",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": []
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:04:28+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "65a219674fbfc555f4941e81a6e4c3970f3092bf98f84bc1d30878a0d00cd1e0",
+        "errors": [],
+        "warnings": [],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T22:48:00+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:48:00+00:00",
+        "content_sha256": "65a219674fbfc555f4941e81a6e4c3970f3092bf98f84bc1d30878a0d00cd1e0",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

@@ -1,0 +1,200 @@
+{
+  "id": "q-0361",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 8,
+      "section_ids": [
+        "s8-13"
+      ],
+      "topic_ids": [
+        "dipol-vertikal"
+      ],
+      "learning_objective": "Forstå hvorfor radialene på en jordplanantenne ofte vinkles nedover.",
+      "priority": "normal",
+      "context": [
+        [
+          "En vertikal kvartbølge ",
+          {
+            "term": "jordplanantenne",
+            "text": "jordplanantenne"
+          },
+          " for 2 m har fire radialer som peker skrått nedover."
+        ]
+      ],
+      "stem": [
+        "Hva oppnår man ved å vinkle radialene nedover i stedet for å ha dem vannrett?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Fødeimpedansen kommer nærmere ",
+            {
+              "q": 50,
+              "u": "Ω"
+            },
+            "."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Antennen blir retningsbestemt mot der radialene peker."
+          ],
+          "feedback": [
+            "Med jevnt fordelte radialer stråler antennen fortsatt likt rundt hele horisonten."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Fødeimpedansen halveres til om lag ",
+            {
+              "q": 18,
+              "u": "Ω"
+            },
+            "."
+          ],
+          "feedback": [
+            "Det er motsatt: vannrette radialer gir om lag 36 Ω, og å vinkle dem nedover øker impedansen mot 50 Ω."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Antennen blir balansert og kan mates med stigekabel."
+          ],
+          "feedback": [
+            "Jordplanantennen mates ubalansert, med senterlederen til det loddrette elementet og skjermen til radialene."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "En kvartbølge jordplanantenne er som en halv dipol der jordplanet virker som et speil for den andre halvdelen. Med vannrette radialer er den teoretiske impedansen halvparten av dipolens, om lag ",
+          {
+            "q": 36.5,
+            "u": "Ω"
+          },
+          "."
+        ],
+        [
+          "Vinkles radialene nedover, stiger impedansen og passer bedre til ",
+          {
+            "q": 50,
+            "u": "Ω"
+          },
+          " kabel. Strålingsdiagrammet avhenger i tillegg av hvor høyt antennen står og av omgivelsene."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 8,
+        "section_id": "s8-13",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "a22447ead1bd9fb5",
+          "7165365096b097c0"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:13:26+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "2f319dd838c999b39192bff9f61087fdd38586bcd41a21586027b9efebc44df1",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:39:00+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "a60c9ed65fd43735e15fe9c119e2e833b98763a1a809f31c6e7dd0c0d5780723",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:48:42+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "a60c9ed65fd43735e15fe9c119e2e833b98763a1a809f31c6e7dd0c0d5780723",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:13:24+00:00"
+      },
+      "visual": {
+        "template": "antenna",
+        "version": 1,
+        "params": {
+          "kind": "ground_plane",
+          "radial_angle": 45,
+          "length_label": "λ/4"
+        },
+        "params_after": {
+          "compare": true,
+          "show_impedance": true,
+          "length_label": ""
+        }
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "a60c9ed65fd43735e15fe9c119e2e833b98763a1a809f31c6e7dd0c0d5780723",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:48:42+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:48:42+00:00",
+        "content_sha256": "a60c9ed65fd43735e15fe9c119e2e833b98763a1a809f31c6e7dd0c0d5780723",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

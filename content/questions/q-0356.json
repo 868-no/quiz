@@ -1,0 +1,151 @@
+{
+  "id": "q-0356",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "recall",
+      "difficulty": "easy",
+      "chapter": 8,
+      "section_ids": [
+        "s8-10"
+      ],
+      "topic_ids": [
+        "fodekabler"
+      ],
+      "learning_objective": "Vite at bølgeledere brukes på svært høye frekvenser der koaksialkabel taper for mye.",
+      "priority": "normal",
+      "context": [],
+      "stem": [
+        [
+          "Når er en ",
+          {
+            "term": "bolgeleder",
+            "text": "bølgeleder"
+          },
+          " et bedre valg enn koaksialkabel?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "På svært høye frekvenser, fra omkring 8 GHz og oppover."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "På de laveste HF-båndene, der kablene blir lange."
+          ],
+          "feedback": [
+            "En bølgeleder må være minst en halv bølgelengde bred. På HF ville den blitt flere meter bred."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "På 2 m, der koaksialkabel ikke kan brukes."
+          ],
+          "feedback": [
+            "Koaksialkabel er det vanlige på 2 m. Bølgeledere lønner seg først der tapet i kabel blir svært stort, høyt i GHz-området."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Når man trenger en balansert fødekabel på HF."
+          ],
+          "feedback": [
+            "Til det brukes stigekabel. En bølgeleder er et metallrør for mikrobølger."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Tapet i vanlig fødekabel øker med frekvensen. Over omkring 8 GHz er en bølgeleder klart bedre, mens god koaksialkabel med luftisolasjon taper mindre under omkring 2 GHz. Mellom disse avgjør kvalitet, pris og bruk.",
+        "En bølgeleder er som regel et rektangulært metallrør. Ved den laveste brukbare frekvensen er bredden en halv bølgelengde, så størrelsen må passe til frekvensen."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 8,
+        "section_id": "s8-10",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "3c2eb8b6ef560c63",
+          "9c3e48403abaf43a"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:13:26+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "980602651bf9f447af74716a78c7cf7a02fd4f3301c16321e1aa8ff761cc1bf6",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:48:38+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "980602651bf9f447af74716a78c7cf7a02fd4f3301c16321e1aa8ff761cc1bf6",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:13:24+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "980602651bf9f447af74716a78c7cf7a02fd4f3301c16321e1aa8ff761cc1bf6",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:48:38+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:48:38+00:00",
+        "content_sha256": "980602651bf9f447af74716a78c7cf7a02fd4f3301c16321e1aa8ff761cc1bf6",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

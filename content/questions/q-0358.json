@@ -1,0 +1,180 @@
+{
+  "id": "q-0358",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "recall",
+      "difficulty": "easy",
+      "chapter": 8,
+      "section_ids": [
+        "s8-11"
+      ],
+      "topic_ids": [
+        "dipol-vertikal"
+      ],
+      "learning_objective": "Vite at en senteret halvbølgedipol har om lag 73 ohm fødeimpedans i teorien.",
+      "priority": "normal",
+      "context": [],
+      "stem": [
+        "Omtrent hvilken impedans har en halvbølgedipol i fødepunktet når den mates på midten, i teorien?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 73,
+              "u": "Ω"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 292,
+              "u": "Ω"
+            }
+          ],
+          "feedback": [
+            "Dette er omtrent impedansen til en foldet dipol, der strømmen deles på to ledere."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 36.5,
+              "u": "Ω"
+            }
+          ],
+          "feedback": [
+            "Dette er den teoretiske verdien for en kvartbølge jordplanantenne – halvparten av dipolen."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 600,
+              "u": "Ω"
+            }
+          ],
+          "feedback": [
+            "En så høy impedans finner man ved å mate en halvbølgeantenne i enden, eller i balanserte kabler."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Midt på dipolen er strømmen størst og spenningen minst, så impedansen er lav: i teorien ",
+          {
+            "q": 73,
+            "u": "Ω"
+          },
+          ". I praksis blir den ofte litt lavere, avhengig av høyden over bakken og omgivelsene."
+        ],
+        [
+          "Derfor kan en dipol mates rett med ",
+          {
+            "q": 50,
+            "u": "Ω"
+          },
+          " koaksialkabel, gjerne via en balun. På HF gir en balansert kabel ofte best resultat."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 8,
+        "section_id": "s8-11",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "37de649b2e10dfdd"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:13:26+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "824b5492020eb163776b0e5b65808e0a34bc6c484b77b28b31a0786dcb13e3f1",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:48:40+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "94f4488af356e5095cfb55b857dad0d6611ce535bb0ff7cfc413fc0ba03ac3d0",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:13:24+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "94f4488af356e5095cfb55b857dad0d6611ce535bb0ff7cfc413fc0ba03ac3d0",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:48:40+00:00"
+      },
+      "visual": {
+        "template": "antenna",
+        "version": 1,
+        "params": {
+          "kind": "dipole"
+        },
+        "params_after": {
+          "show_current": true,
+          "show_voltage": true
+        }
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:48:40+00:00",
+        "content_sha256": "94f4488af356e5095cfb55b857dad0d6611ce535bb0ff7cfc413fc0ba03ac3d0",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

@@ -1,0 +1,150 @@
+{
+  "id": "q-0469",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 11,
+      "section_ids": [
+        "s11-08"
+      ],
+      "topic_ids": [
+        "rf-maling"
+      ],
+      "learning_objective": "Forstå at et vanlig wattmeter bare viser riktig effekt når effekten er konstant, og at tale på SSB har mye høyere spissverdi enn middelverdi.",
+      "priority": "normal",
+      "context": [],
+      "stem": [
+        "Et vanlig wattmeter gir en stabil og riktig avlesning med FM og med CW når nøkkelen holdes nede. Hvorfor blir det annerledes når du snakker på SSB?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Effekten varierer hele tiden med talen, og spissene er i snitt omtrent 20 ganger (13 dB) høyere enn middelverdien."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "SSB har ingen effekt når du ikke trykker på nøkkelen."
+          ],
+          "feedback": [
+            "På SSB styres effekten av talen, ikke av en nøkkel. Problemet er at den varierer hele tiden."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "På SSB går effekten tilbake til senderen i stedet for ut til antennen."
+          ],
+          "feedback": [
+            "Hvor mye som reflekteres, avhenger av antennens tilpasning, ikke av modulasjonsarten."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "SSB sender på to frekvenser samtidig, så wattmeteret viser dobbelt."
+          ],
+          "feedback": [
+            "Et SSB-signal har bare ett sidebånd. Avlesningen blir feil fordi effekten svinger med talen."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Et wattmeter er laget for å vise en effekt som holder seg konstant mens du leser av. Det gjør den med FM, CW med nøkkelen nede og AM uten modulasjon.",
+        [
+          "På SSB følger effekten talen. Spissene er i snitt rundt 20 ganger høyere enn gjennomsnittet, altså om lag 13 dB. En taleprosessor løfter gjennomsnittet og gjør forskjellen mindre. Skal du kjenne ",
+          {
+            "term": "spisseffekt",
+            "text": "spisseffekten"
+          },
+          ", trenger du en annen metode, for eksempel en totonetest."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 11,
+        "section_id": "s11-08",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "d594b11fd0ec691d"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:11:20+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "6decc0bc7af133f3e6ed3fdff3a3e8323e7597cb5325aa056412b725b9d5d7b7",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:49:33+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "6decc0bc7af133f3e6ed3fdff3a3e8323e7597cb5325aa056412b725b9d5d7b7",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:11:19+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "6decc0bc7af133f3e6ed3fdff3a3e8323e7597cb5325aa056412b725b9d5d7b7",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:49:33+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:49:33+00:00",
+        "content_sha256": "6decc0bc7af133f3e6ed3fdff3a3e8323e7597cb5325aa056412b725b9d5d7b7",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

@@ -1,0 +1,210 @@
+{
+  "id": "q-0359",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "calculation",
+      "difficulty": "medium",
+      "chapter": 8,
+      "section_ids": [
+        "s8-11"
+      ],
+      "topic_ids": [
+        "dipol-vertikal"
+      ],
+      "learning_objective": "Beregne lengden på en halvbølgedipol med L ≈ 143 / f(MHz).",
+      "priority": "exam_important",
+      "context": [
+        [
+          "Du skal lage en halvbølgedipol for 30 m-båndet, ",
+          {
+            "q": 10.1,
+            "u": "MHz"
+          },
+          ". Bruk forkortningsfaktoren 0,95, slik at lengden i meter blir om lag 143 delt på frekvensen i MHz."
+        ]
+      ],
+      "stem": [
+        "Hvor lang blir dipolen?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 14.2,
+              "u": "m"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 29.7,
+              "u": "m"
+            }
+          ],
+          "feedback": [
+            "Dette er en hel bølgelengde i fritt rom (300 / 10,1). En dipol er en halv bølgelengde, litt forkortet."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 14.9,
+              "u": "m"
+            }
+          ],
+          "feedback": [
+            "Dette er en halv bølgelengde i fritt rom (150 / 10,1). Antennen skal i tillegg forkortes til 95 %."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 7.1,
+              "u": "m"
+            }
+          ],
+          "feedback": [
+            "Dette er en kvart bølgelengde – lengden på hver halvdel, ikke hele dipolen."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        {
+          "steps": [
+            "L ≈ 300 / f · ½ · 0,95 = 143 / f",
+            [
+              "L ≈ 143 / 10,1 ≈ ",
+              {
+                "q": 14.2,
+                "u": "m"
+              }
+            ]
+          ]
+        },
+        [
+          "Radiobølgene går litt saktere i en metallisk leder, og ledende ting i nærheten virker også inn. Derfor kortes antennen til om lag 95 % av en halv bølgelengde i fritt rom. Hver halvdel blir om lag ",
+          {
+            "q": 7.1,
+            "u": "m"
+          },
+          "."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 8,
+        "section_id": "s8-11",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "ccc85b8735433231"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:13:26+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "a9c879c75e109c6c9b1cbc20f4def0c613e03432beaf0a23fa61586fab621f4e",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:48:40+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "1501a5b345f419915c51508fda6b0e190155a671786c8c1b39348d0aceaf1ec3",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:13:24+00:00"
+      },
+      "calculation": {
+        "formula": "dipole_length",
+        "inputs": {
+          "f": [
+            10.1,
+            "MHz"
+          ]
+        },
+        "answer": [
+          14.2,
+          "m"
+        ],
+        "answer_symbol": "L",
+        "sig_figs": 3
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "1501a5b345f419915c51508fda6b0e190155a671786c8c1b39348d0aceaf1ec3",
+        "errors": [],
+        "warnings": [
+          "priority: 'exam_important' set by judgement; the book's '!' markers are not known for this chapter yet (no scan)"
+        ],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:48:40+00:00"
+      },
+      "visual": {
+        "template": "antenna",
+        "version": 1,
+        "params": {
+          "kind": "dipole",
+          "length_label": "l = ?"
+        },
+        "params_after": {
+          "length_label": "l ≈ 14,2 m"
+        }
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:48:40+00:00",
+        "content_sha256": "1501a5b345f419915c51508fda6b0e190155a671786c8c1b39348d0aceaf1ec3",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

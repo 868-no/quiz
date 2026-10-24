@@ -1,0 +1,134 @@
+{
+  "id": "q-0602",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 13,
+      "section_ids": [
+        "s13-10"
+      ],
+      "topic_ids": [
+        "lyn-statisk"
+      ],
+      "learning_objective": "Forstå hvordan en komponent på antennekabelen kan lede statisk elektrisitet til jord uten å påvirke signalet.",
+      "priority": "normal",
+      "context": [],
+      "stem": [
+        "Hvordan kan en egen komponent på antennekabelen lede statisk elektrisitet bort uten å svekke radiosignalet?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Den har høy impedans for radiofrekvenser, men leder statisk ladning ned til en god jordforbindelse."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Den kortslutter antennekabelen til jord hele tiden."
+          ],
+          "feedback": [
+            "En fast kortslutning ville også tatt med seg radiosignalet. Komponenten slipper ladningen gjennom, men ikke RF."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Den forsterker radiosignalet så mye at tapet ikke merkes."
+          ],
+          "feedback": [
+            "Komponenten forsterker ingenting. Poenget er at den nesten ikke påvirker radiosignalet i det hele tatt."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Den fungerer uten jordforbindelse."
+          ],
+          "feedback": [
+            "Ladningen må ha et sted å gå. Komponenten trenger en god forbindelse til jord for å virke."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Statisk ladning er en langsom oppbygging av likespenning. Komponenter for antennekabelen leder slik ladning til jord, men har høy impedans for radiofrekvenser, så signalet går forbi nesten uten tap.",
+        "De krever en god jordforbindelse for å virke, og beskytter mot statisk oppladning – ikke mot et direkte lynnedslag."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 13,
+        "section_id": "s13-10",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "c68109893689751f"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:11:20+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "6eb3425c1627ae690b109f5aeadcb25ed34dc7a95e2b64e2f07aedab1e02acf1",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:50:50+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "6eb3425c1627ae690b109f5aeadcb25ed34dc7a95e2b64e2f07aedab1e02acf1",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": []
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:11:18+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "6eb3425c1627ae690b109f5aeadcb25ed34dc7a95e2b64e2f07aedab1e02acf1",
+        "errors": [],
+        "warnings": [],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T22:50:50+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:50:50+00:00",
+        "content_sha256": "6eb3425c1627ae690b109f5aeadcb25ed34dc7a95e2b64e2f07aedab1e02acf1",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

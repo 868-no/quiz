@@ -1,0 +1,146 @@
+{
+  "id": "q-0365",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 8,
+      "section_ids": [
+        "s8-16"
+      ],
+      "topic_ids": [
+        "retningsantenner"
+      ],
+      "learning_objective": "Forstå hva forsterkning oppgitt i dBd betyr.",
+      "priority": "exam_important",
+      "context": [],
+      "stem": [
+        "En Yagi-Uda-antenne har en forsterkning på 7 dBd. Hva betyr det?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Den gir om lag fem ganger så mye effekt i hovedretningen som en halvbølgedipol."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Den gir sju ganger så mye effekt som en dipol."
+          ],
+          "feedback": [
+            "Desibel er logaritmisk. 7 dB tilsvarer en faktor på om lag 5, ikke 7."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Den gir fem ganger så mye effekt som en tenkt antenne som stråler likt i alle retninger."
+          ],
+          "feedback": [
+            "«d» betyr at dipolen er referansen. Sammenlignet med en antenne som stråler likt i alle retninger, ville tallet blitt høyere."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Den taper 7 dB i forhold til en dipol."
+          ],
+          "feedback": [
+            "Forsterkningen er positiv: antennen samler effekten i én retning, så det kommer mer ut der enn fra en dipol."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Forsterkningen til en retningsantenne oppgis ofte i forhold til en enkel dipol, og da skrives det dBd. 7 dB tilsvarer en faktor på 10^0,7 ≈ 5.",
+        "En typisk fireelements Yagi-Uda ligger rundt 7 dBd. Antennen lager ikke effekt; den tar effekt fra andre retninger og samler den i hovedretningen."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 8,
+        "section_id": "s8-16",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "4808a405caf5aa73",
+          "d1b734f89501bb21"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:13:26+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "407f35f23ca78b951959558fb46d59a455250603527e226b629ea54091ca752b",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:48:46+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "407f35f23ca78b951959558fb46d59a455250603527e226b629ea54091ca752b",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:13:24+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "407f35f23ca78b951959558fb46d59a455250603527e226b629ea54091ca752b",
+        "errors": [],
+        "warnings": [
+          "priority: 'exam_important' set by judgement; the book's '!' markers are not known for this chapter yet (no scan)"
+        ],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:48:46+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:48:46+00:00",
+        "content_sha256": "407f35f23ca78b951959558fb46d59a455250603527e226b629ea54091ca752b",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

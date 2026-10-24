@@ -1,0 +1,146 @@
+{
+  "id": "q-0408",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "easy",
+      "chapter": 10,
+      "section_ids": [
+        "s10-12"
+      ],
+      "topic_ids": [
+        "emc-stasjon"
+      ],
+      "learning_objective": "Vite at å bruke bare den effekten som trengs, er det enkelttiltaket som best reduserer faren for forstyrrelser.",
+      "priority": "exam_important",
+      "context": [],
+      "stem": [
+        "Hva er trolig det enkelttiltaket som best reduserer faren for å forstyrre utstyret til naboene?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Å ikke bruke mer effekt enn forbindelsen krever."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Å gå over fra FM til SSB."
+          ],
+          "feedback": [
+            "Det er motsatt: SSB, med amplituden som varierer i takt med talen, er det sendemoduset som oftest gir problemer."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Å bruke en retningsantenne som peker mot huset."
+          ],
+          "feedback": [
+            "En retningsantenne gir høyere feltstyrke i den retningen den peker. Den bør heller peke bort fra hus og kjente problemområder."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Å bruke lengre fødekabel, så mer av effekten går tapt."
+          ],
+          "feedback": [
+            "Tap i kabelen er en dårlig måte å sette ned effekten på, og en lang kabel nær huset kan selv stråle. Sett heller ned effekten i senderen."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Full effekt trengs nesten aldri. Feltstyrken hos naboen avhenger direkte av effekten du sender med, og de fleste klager skyldes rett og slett for høy feltstyrke fra en ellers ren sending.",
+        "Lav effekt er dessuten hensynsfullt overfor andre radioamatører på båndet."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 10,
+        "section_id": "s10-12",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "25d0567f4e716da9",
+          "4ffd8126b8485150"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:12:39+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "e77dd5a52518b1e4d38d8e0ea59fef74b2ec3ae203ab74f510f5f561fa7939a2",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:49:02+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "e77dd5a52518b1e4d38d8e0ea59fef74b2ec3ae203ab74f510f5f561fa7939a2",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:12:38+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "e77dd5a52518b1e4d38d8e0ea59fef74b2ec3ae203ab74f510f5f561fa7939a2",
+        "errors": [],
+        "warnings": [
+          "priority: 'exam_important' set by judgement; the book's '!' markers are not known for this chapter yet (no scan)"
+        ],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:49:02+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:49:02+00:00",
+        "content_sha256": "e77dd5a52518b1e4d38d8e0ea59fef74b2ec3ae203ab74f510f5f561fa7939a2",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

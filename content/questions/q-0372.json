@@ -1,0 +1,184 @@
+{
+  "id": "q-0372",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 8,
+      "section_ids": [
+        "s8-24"
+      ],
+      "topic_ids": [
+        "antennetuner"
+      ],
+      "learning_objective": "Forstå at en antennetuner ved senderen ikke endrer stående bølger og tap på fødekabelen.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En ",
+          {
+            "term": "antennetuner",
+            "text": "antennetuner"
+          },
+          " står mellom senderen og fødekabelen og er justert slik at senderen ser SWR 1,0."
+        ]
+      ],
+      "stem": [
+        "Hva har tuneren gjort med de stående bølgene på fødekabelen?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Ingenting – senderen ser riktig last, men stående bølger og tap på kabelen er som før."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Den har fjernet dem helt."
+          ],
+          "feedback": [
+            "Tuneren tilpasser bare mellom senderen og kabelen. Mellom kabelen og antennen er feiltilpasningen den samme."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Den har flyttet dem inn i antennen, der de stråles ut."
+          ],
+          "feedback": [
+            "Stående bølger flyttes ikke. Refleksjonen skjer der antennen møter kabelen, og den er uendret."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Den har halvert dem."
+          ],
+          "feedback": [
+            "Tuneren påvirker ikke forholdene på kabelen i det hele tatt. For lavere SWR på kabelen må tilpasningen skje ved antennen."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "En tuner ved senderen gir senderens utgang den resistive lasten den er laget for, som regel ",
+          {
+            "q": 50,
+            "u": "Ω"
+          },
+          ". Det beskytter sluttforsterkeren og lar den yte fullt."
+        ],
+        "Feiltilpasningen mellom kabel og antenne er den samme, og med den de stående bølgene og tapet på kabelen. Jo lengre kabel, desto mer betyr det. Settes tilpasningsleddet ved antennen, blir SWR på kabelen lavt."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 8,
+        "section_id": "s8-24",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "f098043741021880",
+          "772505f9d32c4689"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:13:26+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "a82e6cda95ace734921ee103cabac6d84200f6cd8b6d39ce0c41ba25cda42a7a",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:48:52+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "9141b936f5746afdaef037380c6820ab3dac96b09c27a838b974d3faebf57965",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:13:24+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "9141b936f5746afdaef037380c6820ab3dac96b09c27a838b974d3faebf57965",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:48:52+00:00"
+      },
+      "visual": {
+        "template": "feedline",
+        "version": 1,
+        "params": {
+          "kind": "standing_wave",
+          "load": "resistive",
+          "load_ratio": 3,
+          "tuner": true,
+          "envelope": "none"
+        },
+        "params_after": {
+          "envelope": "voltage",
+          "swr_label": "value",
+          "phase_deg": 60
+        },
+        "animation": {
+          "param": "phase_deg",
+          "from": 0,
+          "to": 345,
+          "mode": "loop",
+          "phase": "after",
+          "text": "Animasjonen viser spenningen i ett øyeblikk etter hvert: bølgen står fortsatt på kabelen mellom tuneren og antennen."
+        }
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:48:52+00:00",
+        "content_sha256": "9141b936f5746afdaef037380c6820ab3dac96b09c27a838b974d3faebf57965",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

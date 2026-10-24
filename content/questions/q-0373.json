@@ -1,0 +1,143 @@
+{
+  "id": "q-0373",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "medium",
+      "chapter": 8,
+      "section_ids": [
+        "s8-24"
+      ],
+      "topic_ids": [
+        "antennetuner"
+      ],
+      "learning_objective": "Kjenne god praksis ved innstilling av antennetuneren.",
+      "priority": "normal",
+      "context": [],
+      "stem": [
+        "Hvordan bør du gå fram når du stiller inn antennetuneren for et nytt bånd?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Bruk lav effekt på en ledig frekvens, følg med på SWR-meteret og noter innstillingene."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Bruk full effekt, så SWR-meteret gir sikre utslag."
+          ],
+          "feedback": [
+            "Med feil innstilling kan full effekt skade senderen og forstyrre andre. Lav effekt holder til å finne innstillingen."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Still inn på frekvensen til en stasjon som er i gang, så du har et signal å gå etter."
+          ],
+          "feedback": [
+            "Da sender du oppå andre. Finn en ledig frekvens før du sender for å stille inn."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Still inn med kunstlasten tilkoblet i stedet for antennen."
+          ],
+          "feedback": [
+            "En kunstlast er alltid tilpasset. Tuneren skal tilpasses antennen den skal brukes med."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Innstillingen finnes med et SWR-meter. Bruk lav effekt til den er funnet, og lytt først så du ikke sender oppå noen.",
+        "Noter innstillingene for hvert bånd. Neste gang går det raskt, og du er minst mulig på lufta mens du justerer."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 8,
+        "section_id": "s8-24",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "71907c5229cfe88e"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:13:26+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "4dce1817f9d50d6538e2dba5c803bfbfabd04006b824a704d73d120407d555b5",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:48:53+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "4dce1817f9d50d6538e2dba5c803bfbfabd04006b824a704d73d120407d555b5",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:13:24+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "4dce1817f9d50d6538e2dba5c803bfbfabd04006b824a704d73d120407d555b5",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:48:53+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:48:53+00:00",
+        "content_sha256": "4dce1817f9d50d6538e2dba5c803bfbfabd04006b824a704d73d120407d555b5",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

@@ -1,0 +1,151 @@
+{
+  "id": "q-0254",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "medium",
+      "chapter": 9,
+      "section_ids": [
+        "s9-09"
+      ],
+      "topic_ids": [
+        "vhf-utbredelse"
+      ],
+      "learning_objective": "Kjenne igjen dukting som årsak til uvanlig lang rekkevidde på VHF ved høytrykk.",
+      "priority": "normal",
+      "context": [
+        "En stille sommerdag med høytrykk hører du på 2 m stasjoner på Shetland og Færøyene fra Vestlandet, langt utenfor den vanlige rekkevidden."
+      ],
+      "stem": [
+        "Hva gir mest sannsynlig denne «åpningen»?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Dukting i et luftlag nær bakken."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Jordbølge som følger havflaten."
+          ],
+          "feedback": [
+            "Jordbølge er nyttig under om lag 2 MHz. På 2 m (144 MHz) dempes den nesten med en gang."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Ionosfærebølge via F2-laget."
+          ],
+          "feedback": [
+            "F2-laget sender sjelden tilbake frekvenser så høye som 144 MHz. Høytrykk og stille vær peker mot de nederste luftlagene."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Diffraksjon over en fjelltopp ved kysten."
+          ],
+          "feedback": [
+            "Diffraksjon over en kant kan gi forbindelse forbi et fjell, men ikke over flere hundre kilometer hav."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Ved høytrykk kan det ligge luftlag som er varmere eller fuktigere enn lufta rundt. Slike lag kan fange radiobølgene, som da følger laget som en kanal – en ",
+          {
+            "term": "dukting",
+            "text": "dukt"
+          },
+          ". Signalene når da mye lenger enn vanlig – i radioamatørspråk en «åpning»."
+        ],
+        "Over sjø kan dukten ligge like over havflaten. Står man for høyt, eller går terrenget bratt opp fra kysten, kan man havne utenfor dukten og miste signalet."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 9,
+        "section_id": "s9-09",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "a017420771e8cbe5"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:04:28+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "ab4d202a7f1d16b2f43e4496367677c3304b967b04576628693c3bb16c985fd3",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:48:04+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "effd73c8fd78bc5267182840a4b4d7ab265b2f25b43e66aea4a7ea9452db23d4",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": []
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:04:28+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "effd73c8fd78bc5267182840a4b4d7ab265b2f25b43e66aea4a7ea9452db23d4",
+        "errors": [],
+        "warnings": [],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T22:48:04+00:00"
+      },
+      "visual": {
+        "template": "propagation",
+        "version": 1,
+        "params": {
+          "kind": "duct"
+        },
+        "after_only": true
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:48:04+00:00",
+        "content_sha256": "effd73c8fd78bc5267182840a4b4d7ab265b2f25b43e66aea4a7ea9452db23d4",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

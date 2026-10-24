@@ -1,0 +1,198 @@
+{
+  "id": "q-0482",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "calculation",
+      "difficulty": "medium",
+      "chapter": 11,
+      "section_ids": [
+        "s11-16"
+      ],
+      "topic_ids": [
+        "desibel"
+      ],
+      "learning_objective": "Regne om fra dBW til watt.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En sender gir ",
+          {
+            "q": 17,
+            "u": "dBW"
+          },
+          " ut."
+        ]
+      ],
+      "stem": [
+        "Hvor mange watt er det?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 50,
+              "u": "W"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 17,
+              "u": "W"
+            }
+          ],
+          "feedback": [
+            "dBW er ikke watt. 17 dBW betyr 17 dB over 1 W."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 170,
+              "u": "W"
+            }
+          ],
+          "feedback": [
+            "Desibel er logaritmisk. 17 dB er 20 dB minus 3 dB: 100 delt på 2."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 100,
+              "u": "W"
+            }
+          ],
+          "feedback": [
+            "100 W er 20 dBW. 17 dBW er 3 dB mindre, altså halvparten."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          {
+            "term": "dbw",
+            "text": "dBW"
+          },
+          " er effekt i desibel over 1 W. 17 dB kan deles opp i 20 dB minus 3 dB:"
+        ],
+        {
+          "steps": [
+            "20 dB = 100 ganger, −3 dB = halvparten",
+            [
+              "1 W · 100 / 2 = ",
+              {
+                "q": 50,
+                "u": "W"
+              }
+            ]
+          ]
+        }
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 11,
+        "section_id": "s11-16",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "a3b900e180be4f69"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:11:20+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "b2ca634e45699770b2e304b8eb43a09a5a7bb50aa6ed3e2c4bec6066863dc73e",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:49:44+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "b2ca634e45699770b2e304b8eb43a09a5a7bb50aa6ed3e2c4bec6066863dc73e",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:11:19+00:00"
+      },
+      "calculation": {
+        "formula": "power_from_dbw",
+        "inputs": {
+          "L": [
+            17,
+            "dB"
+          ]
+        },
+        "answer": [
+          50,
+          "W"
+        ],
+        "answer_symbol": "P",
+        "sig_figs": 2
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "b2ca634e45699770b2e304b8eb43a09a5a7bb50aa6ed3e2c4bec6066863dc73e",
+        "errors": [],
+        "warnings": [
+          "priority: 'exam_important' set by judgement; the book's '!' markers are not known for this chapter yet (no scan)"
+        ],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:49:44+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:49:44+00:00",
+        "content_sha256": "b2ca634e45699770b2e304b8eb43a09a5a7bb50aa6ed3e2c4bec6066863dc73e",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

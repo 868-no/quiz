@@ -1,0 +1,146 @@
+{
+  "id": "q-0425",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "medium",
+      "chapter": 10,
+      "section_ids": [
+        "s10-20"
+      ],
+      "topic_ids": [
+        "emc-klage"
+      ],
+      "learning_objective": "Vite hvordan man går fram når naboen klager: redusere effekten, samarbeide og føre logg.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "Naboen klager over forstyrrelser på radioen. Du har allerede satt ned effekten til ",
+          {
+            "q": 100,
+            "u": "W"
+          },
+          "."
+        ]
+      ],
+      "stem": [
+        "Hva er et godt neste skritt?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Be naboen notere når forstyrrelsene oppstår, så du kan sammenligne med loggen din."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Forklare at radioen hennes er for dårlig, siden du følger reglene."
+          ],
+          "feedback": [
+            "Det kan godt være sant, men det løser ikke problemet og gjør naboforholdet surt. Vis vilje til å finne en løsning sammen."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Fortsette som før, siden du ikke bruker mer enn 100 W."
+          ],
+          "feedback": [
+            "Du har fortsatt plikt til å hjelpe med å finne ut av saken. Det kan også være lurt å sette effekten enda lenger ned mens dere undersøker."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Åpne naboens radio og montere filter inne i den."
+          ],
+          "feedback": [
+            "Du skal aldri åpne naboens utstyr. Holder du deg til utvendige filtre, kan du ikke få skylden for feil senere."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Ta klagen på alvor og vær vennlig. Ved å sammenligne naboens notater med loggen din kan du se hvilke sendinger som faller sammen med forstyrrelsene – frekvens, modus, effekt, antenneretning.",
+        "Gå gjerne lavere enn 100 W: fra 100 til 25 W taper du bare 6 dB, omtrent én S-enhet. Er saken vanskelig, kan NRRLs EMC-komité hjelpe før den blir formell."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 10,
+        "section_id": "s10-20",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "08038459fe9d57f0",
+          "c474a5f82258b2d5"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:12:39+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "0293135cc4d07568b6a478d2d4d0ab48818f921ba6218b55147cec35326dc4c7",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:49:18+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "0293135cc4d07568b6a478d2d4d0ab48818f921ba6218b55147cec35326dc4c7",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": []
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:12:38+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "0293135cc4d07568b6a478d2d4d0ab48818f921ba6218b55147cec35326dc4c7",
+        "errors": [],
+        "warnings": [
+          "priority: 'exam_important' set by judgement; the book's '!' markers are not known for this chapter yet (no scan)"
+        ],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T22:49:18+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:49:18+00:00",
+        "content_sha256": "0293135cc4d07568b6a478d2d4d0ab48818f921ba6218b55147cec35326dc4c7",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

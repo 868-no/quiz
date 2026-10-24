@@ -1,0 +1,217 @@
+{
+  "id": "q-0465",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "calculation",
+      "difficulty": "medium",
+      "chapter": 11,
+      "section_ids": [
+        "s11-06"
+      ],
+      "topic_ids": [
+        "rf-maling"
+      ],
+      "learning_objective": "Regne om toppspenningen fra en diodeprobe til effekt i en 50 Ω kunstlast.",
+      "priority": "normal",
+      "context": [
+        [
+          "En ",
+          {
+            "term": "diodeprobe",
+            "text": "diodeprobe"
+          },
+          " og et voltmeter måler RF-spenningen over en ",
+          {
+            "q": 50,
+            "u": "Ω"
+          },
+          " ",
+          {
+            "term": "kunstlast",
+            "text": "kunstlast"
+          },
+          ". Voltmeteret viser ",
+          {
+            "q": 20,
+            "u": "V"
+          },
+          ". Signalet er en ren sinus."
+        ]
+      ],
+      "stem": [
+        "Hvor stor effekt går inn i kunstlasten?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 4,
+              "u": "W"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 8,
+              "u": "W"
+            }
+          ],
+          "feedback": [
+            "Her er 20 V brukt som om det var effektivverdien. Proben viser toppverdien, så den må først deles på √2."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 2,
+              "u": "W"
+            }
+          ],
+          "feedback": [
+            "Her er effekten delt på 2 én gang for mye. Effektivverdien er 20 / √2 ≈ 14,1 V, og 14,1² / 50 ≈ 4 W."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 0.4,
+              "u": "W"
+            }
+          ],
+          "feedback": [
+            "Her er spenningen ikke kvadrert. Effekt i en motstand er U² / R."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Dioden lader kondensatoren i proben opp til toppverdien av RF-spenningen, så voltmeteret viser ",
+          {
+            "term": "toppverdi",
+            "text": "toppverdien"
+          },
+          ", ikke effektivverdien. For en sinus er effektivverdien toppverdien delt på √2:"
+        ],
+        {
+          "steps": [
+            "U_eff = 20 V / √2 ≈ 14,1 V",
+            [
+              "P = U_eff² / R = 14,1² / 50 ≈ ",
+              {
+                "q": 4,
+                "u": "W"
+              }
+            ]
+          ]
+        }
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 11,
+        "section_id": "s11-06",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "a22dd5bea3efe10d",
+          "eccbb03ad035aa74"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:11:20+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "2339f08902329623d29a2cba0b88f8f6508322fe703995f84561b928a47c3f14",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:49:29+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "2339f08902329623d29a2cba0b88f8f6508322fe703995f84561b928a47c3f14",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:11:19+00:00"
+      },
+      "calculation": {
+        "formula": "power_from_peak_voltage",
+        "inputs": {
+          "U_p": [
+            20,
+            "V"
+          ],
+          "R": [
+            50,
+            "Ω"
+          ]
+        },
+        "answer": [
+          4,
+          "W"
+        ],
+        "answer_symbol": "P",
+        "sig_figs": 2
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "2339f08902329623d29a2cba0b88f8f6508322fe703995f84561b928a47c3f14",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:49:29+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:49:29+00:00",
+        "content_sha256": "2339f08902329623d29a2cba0b88f8f6508322fe703995f84561b928a47c3f14",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

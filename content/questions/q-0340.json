@@ -1,0 +1,181 @@
+{
+  "id": "q-0340",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 8,
+      "section_ids": [
+        "s8-01"
+      ],
+      "topic_ids": [
+        "fodekabler"
+      ],
+      "learning_objective": "Vite at den karakteristiske impedansen til en fødekabel er gitt av induktansen og kapasitansen per lengde, altså av målene.",
+      "priority": "normal",
+      "context": [],
+      "stem": [
+        [
+          "Hva bestemmer den ",
+          {
+            "term": "karakteristisk-impedans",
+            "text": "karakteristiske impedansen"
+          },
+          " til en ",
+          {
+            "term": "fodekabel",
+            "text": "fødekabel"
+          },
+          "?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Induktansen og kapasitansen per lengde, gitt av målene på lederne."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Hvor lang kabelen er."
+          ],
+          "feedback": [
+            "Den karakteristiske impedansen er den samme uansett lengde. Den beskriver det man ville målt inn i en tenkt, uendelig lang kabel."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Hvor stor effekt som sendes gjennom den."
+          ],
+          "feedback": [
+            "Effekten avgjør hvor varm kabelen blir og om den tåler belastningen, men ikke impedansen."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Frekvensen som brukes, og ingenting annet."
+          ],
+          "feedback": [
+            "På radiofrekvenser er den karakteristiske impedansen nesten uavhengig av frekvensen. Det er konstruksjonen av kabelen som avgjør den."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "En fødekabel har både ",
+          {
+            "term": "induktans",
+            "text": "induktans"
+          },
+          " i lederne og ",
+          {
+            "term": "kapasitans",
+            "text": "kapasitans"
+          },
+          " mellom dem. Forholdet mellom dem gir den karakteristiske impedansen, Z₀ = √(L/C). Den er en ren resistans målt i ohm."
+        ],
+        "For koaksialkabel er det målene på senterlederen og skjermen som teller, for åpen stigekabel tykkelsen på lederne og avstanden mellom dem. Lengden påvirker tapet, men ikke Z₀."
+      ],
+      "glossary_after_answer": [
+        "karakteristisk-impedans"
+      ],
+      "study_reference": {
+        "chapter": 8,
+        "section_id": "s8-01",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "17051c20e46f7e76",
+          "39f790b628789517"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:13:25+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "48ef66ae2a1ceb52fa0024c33399080644e1164121079d6bfb7c1dd691da3f78",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:48:23+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "b02d83f1ceab7811d51129f47ec788fb2265dfa4972034bd3a828f043a6707ab",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:13:24+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "b02d83f1ceab7811d51129f47ec788fb2265dfa4972034bd3a828f043a6707ab",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:48:23+00:00"
+      },
+      "visual": {
+        "template": "feedline",
+        "version": 1,
+        "params": {
+          "kind": "cable",
+          "cable": "coax"
+        },
+        "params_after": {
+          "dimensions": true
+        }
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:48:23+00:00",
+        "content_sha256": "b02d83f1ceab7811d51129f47ec788fb2265dfa4972034bd3a828f043a6707ab",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

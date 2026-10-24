@@ -1,0 +1,156 @@
+{
+  "id": "q-0247",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "easy",
+      "chapter": 9,
+      "section_ids": [
+        "s9-04"
+      ],
+      "topic_ids": [
+        "muf-luf"
+      ],
+      "learning_objective": "Vite at forbindelse via ionosfæren er umulig når LUF er lik eller høyere enn MUF.",
+      "priority": "normal",
+      "context": [],
+      "stem": [
+        [
+          "Hva betyr det når ",
+          {
+            "term": "luf",
+            "text": "LUF"
+          },
+          " ligger på eller over ",
+          {
+            "term": "muf",
+            "text": "MUF"
+          },
+          " på en strekning?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Det finnes ingen frekvens som gir forbindelse via ionosfæren på den strekningen."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Alle frekvenser mellom LUF og MUF kan brukes."
+          ],
+          "feedback": [
+            "Når LUF ligger på eller over MUF, finnes det ikke noe område mellom dem. Ingen frekvens er både lav nok til å bli sendt tilbake og høy nok til å komme gjennom D-laget."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Man må bruke en frekvens over MUF."
+          ],
+          "feedback": [
+            "Over MUF går bølgen gjennom ionosfæren og forsvinner ut i rommet."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Forholdene er spesielt gode for langdistanse."
+          ],
+          "feedback": [
+            "Det er motsatt: området av brukbare frekvenser har krympet til ingenting."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "MUF er en øvre grense: høyere frekvenser kommer ikke tilbake fra ionosfæren. LUF er en nedre grense: lavere frekvenser dempes for mye i D-laget. Forbindelse via ionosfæren krever en frekvens mellom de to.",
+        "Ligger LUF på eller over MUF, finnes ingen slik frekvens. Det kan for eksempel skje på lange strekninger der mye av veien går i sollys, så D-laget demper mye samtidig som MUF er lav."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 9,
+        "section_id": "s9-04",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "a34e8fd8547d5334",
+          "1de217ac868e9535"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:14:11+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "38700bbf779d53d576a11a4c2b8e0c4d7190def09e44c9093394ef4ddb34186c",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:47:58+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "38700bbf779d53d576a11a4c2b8e0c4d7190def09e44c9093394ef4ddb34186c",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:04:28+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "38700bbf779d53d576a11a4c2b8e0c4d7190def09e44c9093394ef4ddb34186c",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:47:58+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:47:58+00:00",
+        "content_sha256": "38700bbf779d53d576a11a4c2b8e0c4d7190def09e44c9093394ef4ddb34186c",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

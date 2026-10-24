@@ -1,0 +1,189 @@
+{
+  "id": "q-0471",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "medium",
+      "chapter": 11,
+      "section_ids": [
+        "s11-08"
+      ],
+      "topic_ids": [
+        "rf-maling"
+      ],
+      "learning_objective": "Forstå totonetesten: med to like store toner er spisseffekten dobbelt så stor som middeleffekten.",
+      "priority": "normal",
+      "context": [
+        [
+          "Du modulerer SSB-senderen din med to like sterke toner med ulik frekvens og har en kunstlast og et tregt wattmeter som viser middeleffekt. Du vil være sikker på at du ikke overstiger ",
+          {
+            "q": 200,
+            "u": "W"
+          },
+          " ",
+          {
+            "term": "spisseffekt",
+            "text": "PEP"
+          },
+          "."
+        ]
+      ],
+      "stem": [
+        "Hvilken middeleffekt skal du stille inn med totonesignalet?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 100,
+              "u": "W"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 200,
+              "u": "W"
+            }
+          ],
+          "feedback": [
+            "Med to like toner er spisseffekten dobbelt så stor som middeleffekten. 200 W middel ville gitt 400 W PEP."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 141,
+              "u": "W"
+            }
+          ],
+          "feedback": [
+            "Her er det delt på √2, som gjelder spenning og ikke effekt. Med to like toner er PEP nøyaktig det dobbelte av middeleffekten."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 50,
+              "u": "W"
+            }
+          ],
+          "feedback": [
+            "Da ville PEP bare blitt 100 W. Forholdet er 2, ikke 4."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Når to like sterke toner modulerer en SSB-sender, blir spisseffekten dobbelt så stor som middeleffekten. Med ",
+          {
+            "q": 100,
+            "u": "W"
+          },
+          " på wattmeteret er toppen av kurven ",
+          {
+            "q": 200,
+            "u": "W"
+          },
+          " PEP."
+        ],
+        [
+          "Du noterer høyden på kurvetoppen på oscilloskopet, bytter til mikrofon og justerer slik at ingen taletopp går over det nivået. Da vet du at du holder deg innenfor ",
+          {
+            "q": 200,
+            "u": "W"
+          },
+          " PEP."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 11,
+        "section_id": "s11-08",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "8e11a5d190189115",
+          "eccbb03ad035aa74"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:11:20+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "9133ff109cd37479add5ca340e51158129d7bffcf7fe3602c53c17f7207964c5",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:49:34+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "9133ff109cd37479add5ca340e51158129d7bffcf7fe3602c53c17f7207964c5",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:11:19+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "9133ff109cd37479add5ca340e51158129d7bffcf7fe3602c53c17f7207964c5",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:49:34+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:49:34+00:00",
+        "content_sha256": "9133ff109cd37479add5ca340e51158129d7bffcf7fe3602c53c17f7207964c5",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

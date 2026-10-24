@@ -1,0 +1,161 @@
+{
+  "id": "q-0472",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 11,
+      "section_ids": [
+        "s11-09"
+      ],
+      "topic_ids": [
+        "frekvensmaling"
+      ],
+      "learning_objective": "Vite hva et absorpsjonsbølgemeter kan og ikke kan avsløre.",
+      "priority": "normal",
+      "context": [],
+      "stem": [
+        [
+          "Hva kan et ",
+          {
+            "term": "absorpsjonsbolgemeter",
+            "text": "absorpsjonsbølgemeter"
+          },
+          " brukes til?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Å finne omtrent hvilken frekvens et sterkt signal har."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Å kontrollere at signalet ligger innenfor båndkanten med god margin."
+          ],
+          "feedback": [
+            "Skalaen er altfor grov til det. Til å sjekke båndkanten trengs en frekvensteller eller en nøyaktig kalibrert mottaker."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Å finne alle svake uønskede signaler fra senderen."
+          ],
+          "feedback": [
+            "Bølgemeteret er for ufølsomt. Svake, men likevel plagsomme harmoniske signaler kan gå upåaktet hen."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Å måle SWR på antennen."
+          ],
+          "feedback": [
+            "SWR måles med et SWR-meter, som sammenligner tilført og reflektert effekt i kabelen."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Et absorpsjonsbølgemeter er en avstemt LC-krets med en kort antenne og en viser. Når kretsen stilles inn på frekvensen til et sterkt signal i nærheten, gir viseren utslag.",
+        "Det viser bare omtrentlig frekvens. Det er nok til å avsløre om senderen er avstemt til feil harmonisk frekvens, eller om det finnes et sterkt uønsket signal et sted. Det er derimot for unøyaktig til å avgjøre om du er innenfor båndet, og for ufølsomt til å finne svake uønskede signaler."
+      ],
+      "glossary_after_answer": [
+        "absorpsjonsbolgemeter"
+      ],
+      "study_reference": {
+        "chapter": 11,
+        "section_id": "s11-09",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "d3352e18d928b1f2"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:11:20+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "ef9da16022fecad4c9d3bc530a2cebc65fb6fbfc244f4e7e26e0f28898b56e1b",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:39:02+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "ef9da16022fecad4c9d3bc530a2cebc65fb6fbfc244f4e7e26e0f28898b56e1b",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:49:35+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "ef9da16022fecad4c9d3bc530a2cebc65fb6fbfc244f4e7e26e0f28898b56e1b",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:11:19+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "ef9da16022fecad4c9d3bc530a2cebc65fb6fbfc244f4e7e26e0f28898b56e1b",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:49:35+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:49:35+00:00",
+        "content_sha256": "ef9da16022fecad4c9d3bc530a2cebc65fb6fbfc244f4e7e26e0f28898b56e1b",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

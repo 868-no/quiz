@@ -1,0 +1,168 @@
+{
+  "id": "q-0639",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "easy",
+      "chapter": 16,
+      "section_ids": [
+        "s16-07"
+      ],
+      "topic_ids": [
+        "rst-rapporter"
+      ],
+      "learning_objective": "Forstå at 5NN i konkurranser er en forkortet 599.",
+      "priority": "normal",
+      "context": [
+        "I en morsekonkurranse får du rapporten «5NN» fra nesten alle stasjoner."
+      ],
+      "stem": [
+        "Hva betyr «5NN»?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Det er 599, der N brukes i stedet for 9 fordi den er raskere å sende på morse."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Lesbarhet 5, men styrke og tone er ikke målt."
+          ],
+          "feedback": [
+            "N står her for tallet 9. Bokstaven N er mye kortere på morse enn sifferet 9."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Det er en rapport om at signalet ditt har nøkkelklikk."
+          ],
+          "feedback": [
+            "Nøkkelklikk meldes med en K etter rapporten, for eksempel 579K."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Det betyr «ingen forbindelse» (no, no)."
+          ],
+          "feedback": [
+            "Rapporten bekrefter tvert imot at forbindelsen er i orden. N er bare en kortform av 9."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "I konkurranser skal det nesten alltid utveksles en signalrapport, og tempoet er høyt. Sifferet 9 er langt på morse (fire streker og en prikk), mens N er bare strek–prikk. Derfor sendes 599 ofte som 5NN.",
+        "I praksis får nesten alle 599 i konkurranser, så rapporten sier lite om det faktiske signalet."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 16,
+        "section_id": "s16-07",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "b4cbd2465d9a05d3"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:08:40+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "648f9dfe570e8e5acc34b8b2065a86a3e93dd4fa6ce64d145d681912f1791a02",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:51:02+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "be895b75c22ea16db1c0661c2717ce640bf87e217f468e40c317d6225e65a10f",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:08:39+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "be895b75c22ea16db1c0661c2717ce640bf87e217f468e40c317d6225e65a10f",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:51:02+00:00"
+      },
+      "visual": {
+        "template": "code-breakdown",
+        "version": 1,
+        "params": {
+          "parts": [
+            {
+              "text": "5",
+              "label": "Lesbarhet (R): 5"
+            },
+            {
+              "text": "N",
+              "label": "Signalstyrke (S): N = 9",
+              "highlight": true
+            },
+            {
+              "text": "N",
+              "label": "Tone (T): N = 9",
+              "highlight": true
+            }
+          ]
+        },
+        "after_only": true
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:51:02+00:00",
+        "content_sha256": "be895b75c22ea16db1c0661c2717ce640bf87e217f468e40c317d6225e65a10f",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

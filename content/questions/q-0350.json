@@ -1,0 +1,179 @@
+{
+  "id": "q-0350",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 8,
+      "section_ids": [
+        "s8-06"
+      ],
+      "topic_ids": [
+        "staende-bolger"
+      ],
+      "learning_objective": "Forklare at høyt returtap betyr lite reflektert effekt og lavt SWR.",
+      "priority": "exam_important",
+      "context": [],
+      "stem": [
+        [
+          "Hva forteller det at ",
+          {
+            "term": "returtap",
+            "text": "returtapet"
+          },
+          " i et antenneanlegg er høyt, for eksempel ",
+          {
+            "q": 20,
+            "u": "dB"
+          },
+          "?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "At lite effekt kommer tilbake – god tilpasning og lavt SWR."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "At antennen sløser bort mye effekt."
+          ],
+          "feedback": [
+            "Returtapet sier hvor lite som kommer tilbake. 20 dB betyr at bare 1 % av effekten reflekteres; resten går til antennen."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "At SWR er høyt."
+          ],
+          "feedback": [
+            "Det er motsatt: høyt returtap hører sammen med lavt SWR. En frakoblet antenne gir returtap nær 0 dB."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "At kabelen taper 20 dB på veien."
+          ],
+          "feedback": [
+            "Kabeltap og returtap er to forskjellige ting. Returtapet sammenligner utsendt og reflektert effekt."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Returtap er utsendt effekt delt på reflektert effekt, oppgitt i dB. 20 dB tilsvarer et forhold på 100, altså at 1 W av 100 W kommer tilbake. Det er en god tilpasning.",
+        [
+          "Kobles antennen fra, reflekteres alt, og returtapet blir 0 dB. Høyt returtap betyr altså lavt ",
+          {
+            "term": "swr",
+            "text": "SWR"
+          },
+          ", lavt returtap betyr høyt SWR."
+        ]
+      ],
+      "glossary_after_answer": [
+        "returtap"
+      ],
+      "study_reference": {
+        "chapter": 8,
+        "section_id": "s8-06",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "54a723ccd1c464f4",
+          "a6e33aeb8933d765"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:13:25+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "9dd093ef592f34cc1b68416739a58a22f02553c7d8dae9f9e9378c1a66508bba",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:48:32+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "fc0304f55a87ee36861834b369be0dee9d0c83a6a0e26ea30f80433f39206f3f",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:13:24+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "fc0304f55a87ee36861834b369be0dee9d0c83a6a0e26ea30f80433f39206f3f",
+        "errors": [],
+        "warnings": [
+          "priority: 'exam_important' set by judgement; the book's '!' markers are not known for this chapter yet (no scan)"
+        ],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:48:32+00:00"
+      },
+      "visual": {
+        "template": "feedline",
+        "version": 1,
+        "params": {
+          "kind": "directional",
+          "forward": 100,
+          "reflected": 1,
+          "swr_label": "value",
+          "return_loss_label": "value"
+        },
+        "after_only": true
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:48:32+00:00",
+        "content_sha256": "fc0304f55a87ee36861834b369be0dee9d0c83a6a0e26ea30f80433f39206f3f",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

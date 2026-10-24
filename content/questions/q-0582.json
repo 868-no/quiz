@@ -1,0 +1,154 @@
+{
+  "id": "q-0582",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "recall",
+      "difficulty": "medium",
+      "chapter": 13,
+      "section_ids": [
+        "s13-03"
+      ],
+      "topic_ids": [
+        "elektrisk-sjokk"
+      ],
+      "learning_objective": "Vite at noen titalls milliampere vekselstrøm gjennom kroppen kan gi hjerteflimmer.",
+      "priority": "exam_important",
+      "context": [],
+      "stem": [
+        "Omtrent hvor stor vekselstrøm (50 Hz) gjennom brystet kan gi fare for hjerteflimmer?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Noen titalls milliampere."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Under 1 milliampere."
+          ],
+          "feedback": [
+            "Rundt 1 mA er omtrent det man så vidt kan kjenne. Faren for hjertet begynner ved langt høyere strøm."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Rundt 10 ampere."
+          ],
+          "feedback": [
+            "10 A er størrelsen på en vanlig sikring. Hjertet kan komme i flimmer ved under en tidel av én ampere, lenge før en sikring løser ut."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Rundt 2 ampere."
+          ],
+          "feedback": [
+            "Så stor strøm er ikke nødvendig. Faren for hjerteflimmer begynner ved noen titalls milliampere."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Kroppen reagerer på svært små strømmer. Rundt 1 mA kjennes så vidt, ved 10–20 mA blir støtet smertefullt og man kan miste evnen til å slippe taket, og noen titalls milliampere gjennom brystet kan gi hjerteflimmer.",
+        "Hvor farlig strømmen er, avhenger også av hvilken vei den går gjennom kroppen og hvor lenge den varer. Strømmene er langt under det som får en sikring til å løse ut, så sikringen beskytter ikke mot slike støt. Det gjør en jordfeilbryter."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 13,
+        "section_id": "s13-03",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "ebec1e3ac781da48"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:11:19+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "e4a4e955d7cf07f578157250a111cbdeddc03d5511c14dbcf408bb40262c3f7e",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:39:03+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "b1dc205c2ccbe0fc129671a816e42cf6ece458908a882602599d328e1ebebad8",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:50:31+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "b1dc205c2ccbe0fc129671a816e42cf6ece458908a882602599d328e1ebebad8",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:11:18+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "b1dc205c2ccbe0fc129671a816e42cf6ece458908a882602599d328e1ebebad8",
+        "errors": [],
+        "warnings": [
+          "priority: 'exam_important' set by judgement; the book's '!' markers are not known for this chapter yet (no scan)"
+        ],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:50:31+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:50:31+00:00",
+        "content_sha256": "b1dc205c2ccbe0fc129671a816e42cf6ece458908a882602599d328e1ebebad8",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

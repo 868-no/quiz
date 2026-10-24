@@ -1,0 +1,163 @@
+{
+  "id": "q-0308",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 7,
+      "section_ids": [
+        "s7-05"
+      ],
+      "topic_ids": [
+        "sampling-aliasing"
+      ],
+      "learning_objective": "Forstå at samplingsfrekvensen velges litt over det dobbelte av signalfrekvensen fordi filtrene ikke er uendelig skarpe.",
+      "priority": "normal",
+      "context": [
+        [
+          "Lyd opp til ",
+          {
+            "q": 20,
+            "u": "kHz"
+          },
+          " skal samples. I teorien holder det med en samplingsfrekvens på ",
+          {
+            "q": 40,
+            "u": "kHz"
+          },
+          ", men man velger ",
+          {
+            "q": 44.1,
+            "u": "kHz"
+          },
+          "."
+        ]
+      ],
+      "stem": [
+        "Hvorfor velges en litt høyere samplingsfrekvens enn teorien krever?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Filtrene er ikke uendelig bratte og trenger litt margin."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "For å få flere bit i hver avlesning og dermed mindre støy."
+          ],
+          "feedback": [
+            "Antall bit og samplingsfrekvensen er to forskjellige ting. Den ekstra marginen handler om filtrene."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Fordi samplingsfrekvensen alltid må være et oddetall i kilohertz."
+          ],
+          "feedback": [
+            "Det finnes ingen slik regel. Marginen gir filtrene rom til å dempe alt over Nyquist-frekvensen."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "For å kunne gjengi frekvenser helt opp til 44,1 kHz."
+          ],
+          "feedback": [
+            "Med 44,1 kHz kan man i teorien gjengi opp til halvparten, 22 050 Hz. Det er marginen over 20 kHz som er poenget."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Filteret foran A/D-omformeren skal slippe gjennom alt opp til 20 kHz og fjerne alt over halve samplingsfrekvensen. Etter D/A-omformeren sitter et rekonstruksjonsfilter, et lavpassfilter som fyller inn verdiene mellom samplene, med samme krav.",
+        "Ekte filtre går ikke fra full gjennomslipping til full demping på et øyeblikk. Med 44,1 kHz ligger Nyquist-frekvensen på 22,05 kHz, og filtrene får litt over 2 kHz å bruke."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 7,
+        "section_id": "s7-05",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "9495dd464dc863bf",
+          "2d06a92a29d8e927"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:09:37+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "f39a0ee0914237d200f52567a4e554dad5d05a1249bdda090e4c7de112dc2e01",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:48:16+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "f39a0ee0914237d200f52567a4e554dad5d05a1249bdda090e4c7de112dc2e01",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:09:36+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "f39a0ee0914237d200f52567a4e554dad5d05a1249bdda090e4c7de112dc2e01",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:48:16+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:48:16+00:00",
+        "content_sha256": "f39a0ee0914237d200f52567a4e554dad5d05a1249bdda090e4c7de112dc2e01",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

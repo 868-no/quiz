@@ -1,0 +1,145 @@
+{
+  "id": "q-0581",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "recall",
+      "difficulty": "easy",
+      "chapter": 13,
+      "section_ids": [
+        "s13-03"
+      ],
+      "topic_ids": [
+        "elektrisk-sjokk"
+      ],
+      "learning_objective": "Vite at strøm fra hånd til hånd gjennom brystet er den farligste veien gjennom kroppen.",
+      "priority": "exam_important",
+      "context": [],
+      "stem": [
+        "Hvilken vei gjennom kroppen er farligst for en elektrisk strøm?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Fra den ene hånden til den andre, gjennom brystet."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Fra den ene foten til den andre."
+          ],
+          "feedback": [
+            "Strøm mellom føttene går gjennom beina og nedre del av kroppen, langt fra hjertet. Det kan gi skader, men er ikke den farligste veien."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Fra en finger til en annen finger på samme hånd."
+          ],
+          "feedback": [
+            "En slik strøm kan gi brannskader i hånden, men den passerer ikke hjertet. Det er strøm over brystet som er farligst."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Alle veier er like farlige."
+          ],
+          "feedback": [
+            "Veien betyr mye. Strøm som passerer hjertet, kan gi hjerteflimmer ved langt lavere strøm enn andre veier."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Strøm fra hånd til hånd går gjennom armene og tvers over brystkassen, tett forbi hjertet. Hjertet styres av svake elektriske signaler og forstyrres lett. Derfor er dette den farligste veien.",
+        "Det er også grunnen til at man skal jobbe med én hånd når man må måle i utstyr som står på."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 13,
+        "section_id": "s13-03",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "d66cc5a634d57257"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:11:19+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "0ef7e8bff5d71679fc797a682c560a16c2ce74fc19aa18629b59514f0adeae9f",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:50:30+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "0ef7e8bff5d71679fc797a682c560a16c2ce74fc19aa18629b59514f0adeae9f",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:11:18+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "0ef7e8bff5d71679fc797a682c560a16c2ce74fc19aa18629b59514f0adeae9f",
+        "errors": [],
+        "warnings": [
+          "priority: 'exam_important' set by judgement; the book's '!' markers are not known for this chapter yet (no scan)"
+        ],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:50:30+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:50:30+00:00",
+        "content_sha256": "0ef7e8bff5d71679fc797a682c560a16c2ce74fc19aa18629b59514f0adeae9f",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

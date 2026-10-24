@@ -1,0 +1,161 @@
+{
+  "id": "q-0364",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "recall",
+      "difficulty": "medium",
+      "chapter": 8,
+      "section_ids": [
+        "s8-16"
+      ],
+      "topic_ids": [
+        "retningsantenner"
+      ],
+      "learning_objective": "Kjenne elementene i en Yagi-Uda-antenne: matet dipol, lengre reflektor og kortere direktorer.",
+      "priority": "exam_important",
+      "context": [],
+      "stem": [
+        [
+          "Hvordan er elementene i en ",
+          {
+            "term": "yagi-uda",
+            "text": "Yagi-Uda-antenne"
+          },
+          " bygd opp?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Bare dipolen er matet; reflektoren bak er litt lengre, og direktorene foran er kortere."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Alle elementene er matet fra fødekabelen."
+          ],
+          "feedback": [
+            "Bare dipolen er koblet til kabelen. Reflektoren og direktorene er passive og får energien sin fra strålingen."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Reflektoren er det korteste elementet og står foran."
+          ],
+          "feedback": [
+            "Reflektoren står bak og er litt lengre enn dipolen. Det er direktorene foran som er kortere."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Direktorene er lengre enn dipolen og står bak."
+          ],
+          "feedback": [
+            "Direktorene står foran, i stråleretningen, og blir gradvis kortere."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Bare dipolen er koblet til kabelen og er aktiv. Reflektoren bak er litt lengre enn en halv bølgelengde, og fasen på det den stråler ut igjen gjør at det legges til strålingen forover. De kortere direktorene foran øker strålingen forover ytterligere.",
+        "Antennen stråler altså fra reflektoren mot direktorene. Flere direktorer gir mer forsterkning og smalere stråle, men senker fødeimpedansen. Derfor brukes ofte en foldet dipol som matet element."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 8,
+        "section_id": "s8-16",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "4808a405caf5aa73"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:13:26+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "76b4aa674667a693e7374ffa5a406156d3710e2d0b36d175b321adf89bfa69ce",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:48:45+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "43a903ffb7593b25cd5c8b3e48f894c690bad55fb4717dea427ca78a75f6bba5",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:13:24+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "43a903ffb7593b25cd5c8b3e48f894c690bad55fb4717dea427ca78a75f6bba5",
+        "errors": [],
+        "warnings": [
+          "priority: 'exam_important' set by judgement; the book's '!' markers are not known for this chapter yet (no scan)"
+        ],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:48:45+00:00"
+      },
+      "visual": {
+        "template": "antenna",
+        "version": 1,
+        "params": {
+          "kind": "yagi",
+          "directors": 3
+        },
+        "after_only": true
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:48:45+00:00",
+        "content_sha256": "43a903ffb7593b25cd5c8b3e48f894c690bad55fb4717dea427ca78a75f6bba5",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

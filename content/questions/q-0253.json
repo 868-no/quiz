@@ -1,0 +1,233 @@
+{
+  "id": "q-0253",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "calculation",
+      "difficulty": "medium",
+      "chapter": 9,
+      "section_ids": [
+        "s9-08"
+      ],
+      "topic_ids": [
+        "bolgetyper"
+      ],
+      "learning_objective": "Beregne rekkevidden med direktebølge ut fra antennehøydene med tommelfingerregelen d = 4 · √h.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "To stasjoner på 2 m har antennene ",
+          {
+            "q": 16,
+            "u": "m"
+          },
+          " og ",
+          {
+            "q": 25,
+            "u": "m"
+          },
+          " over bakken. Regn med at hver stasjon når en horisont som i kilometer er 4 ganger kvadratroten av antennehøyden i meter."
+        ]
+      ],
+      "stem": [
+        [
+          "Omtrent hvor langt fra hverandre kan stasjonene være og fortsatt nå hverandre med ",
+          {
+            "term": "direktebolge",
+            "text": "direktebølge"
+          },
+          "?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 36,
+              "u": "km"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 164,
+              "u": "km"
+            }
+          ],
+          "feedback": [
+            "Her er kvadratroten glemt: 4 · (16 + 25) = 164. Ta kvadratroten av hver høyde først: √16 = 4 og √25 = 5."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 25.6,
+              "u": "km"
+            }
+          ],
+          "feedback": [
+            "Her er høydene lagt sammen før kvadratroten. Hver stasjon har sin egen horisont, så regn ut rekkevidden for hver og legg dem sammen."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 20,
+              "u": "km"
+            }
+          ],
+          "feedback": [
+            "Dette er bare horisonten til den høyeste antennen. Den andre stasjonen har sin egen horisont, og de to legges sammen."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        {
+          "steps": [
+            [
+              "Stasjon 1: 4 · √16 = 4 · 4 = ",
+              {
+                "q": 16,
+                "u": "km"
+              }
+            ],
+            [
+              "Stasjon 2: 4 · √25 = 4 · 5 = ",
+              {
+                "q": 20,
+                "u": "km"
+              }
+            ],
+            [
+              "Til sammen: 16 + 20 = ",
+              {
+                "q": 36,
+                "u": "km"
+              }
+            ]
+          ]
+        },
+        "Over 30–40 MHz er direktebølgen den vanlige utbredelsen. Lufta bøyer bølgene litt nedover, så radiohorisonten ligger om lag 30 % lenger ut enn horisonten du ser. Høyere antenner gir lengre rekkevidde."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 9,
+        "section_id": "s9-08",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "83e4d41fae04cc3e"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:14:11+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "997fc2b7bb0a941f1cb66d1992469bdb2096b7ec684a78de6de0ab042aba493c",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:48:03+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "292180bc20ef26cc572e43897e553de107db49907cd7fe33d40843e888a5ee96",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:04:28+00:00"
+      },
+      "calculation": {
+        "formula": "radio_range",
+        "inputs": {
+          "h1": [
+            16,
+            "m"
+          ],
+          "h2": [
+            25,
+            "m"
+          ]
+        },
+        "answer": [
+          36,
+          "km"
+        ],
+        "answer_symbol": "d",
+        "sig_figs": 2
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "292180bc20ef26cc572e43897e553de107db49907cd7fe33d40843e888a5ee96",
+        "errors": [],
+        "warnings": [
+          "priority: 'exam_important' set by judgement; the book's '!' markers are not known for this chapter yet (no scan)"
+        ],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:48:03+00:00"
+      },
+      "visual": {
+        "template": "propagation",
+        "version": 1,
+        "params": {
+          "kind": "horizon",
+          "h1_m": 16,
+          "h2_m": 25
+        },
+        "params_after": {
+          "show_distance": true
+        }
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:48:03+00:00",
+        "content_sha256": "292180bc20ef26cc572e43897e553de107db49907cd7fe33d40843e888a5ee96",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

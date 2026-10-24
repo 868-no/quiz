@@ -1,0 +1,163 @@
+{
+  "id": "q-0369",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "medium",
+      "chapter": 8,
+      "section_ids": [
+        "s8-21"
+      ],
+      "topic_ids": [
+        "hf-antenner"
+      ],
+      "learning_objective": "Vite at en endematet kvartbølgeantenne trenger en god returvei for RF-strømmen ved foten.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "Du setter opp en endematet kvartbølgeantenne med en ",
+          {
+            "term": "antennetuner",
+            "text": "antennetuner"
+          },
+          " ved foten."
+        ]
+      ],
+      "stem": [
+        "Hva trenger antennen ved tuneren for å virke godt?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "En kort, kraftig forbindelse til en motvekt eller et sett radialer, som gir RF-strømmen en returvei."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Bare forbindelsen til jordpolen i nærmeste stikkontakt."
+          ],
+          "feedback": [
+            "Beskyttelsesjorden i strømnettet er ikke laget for å være antennens returvei. RF-strømmen ville da gått i husets ledninger."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "En så lang jordledning som mulig, så strømmen fordeles."
+          ],
+          "feedback": [
+            "En lang jordledning gir tap og kan selv begynne å stråle, som en del av antennen. Forbindelsen skal være så kort som mulig."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Ingenting, fordi impedansen er høy."
+          ],
+          "feedback": [
+            "En endematet kvartbølgeantenne har lav impedans og store strømmer i fødepunktet. Da er returveien avgjørende."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "En kvartbølgeantenne matet i enden har lav impedans, og det går store HF-strømmer i tuneren og returveien. Motvekten eller radialene er den andre halvdelen av antennesystemet.",
+        "Dette er noe annet enn beskyttelsesjording: utstyret skal fortsatt ha sin sikkerhetsjord, og en jordelektrode ved antennen må kobles riktig sammen med husets jordingsanlegg."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 8,
+        "section_id": "s8-21",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "4abbaedf6e93823c"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:13:26+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "dcb37bff296589ba06b5c13fbf29c3732497c29951f95eae2d889d6ac077a364",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:39:01+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "dbc8bddec3ca599d019d1d27067ad7cfced14f3760fd35ffd78edcec376b1a57",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:48:50+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "dbc8bddec3ca599d019d1d27067ad7cfced14f3760fd35ffd78edcec376b1a57",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:13:24+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "dbc8bddec3ca599d019d1d27067ad7cfced14f3760fd35ffd78edcec376b1a57",
+        "errors": [],
+        "warnings": [
+          "priority: 'exam_important' set by judgement; the book's '!' markers are not known for this chapter yet (no scan)"
+        ],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:48:50+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:48:50+00:00",
+        "content_sha256": "dbc8bddec3ca599d019d1d27067ad7cfced14f3760fd35ffd78edcec376b1a57",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

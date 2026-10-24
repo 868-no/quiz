@@ -1,0 +1,163 @@
+{
+  "id": "q-0404",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 10,
+      "section_ids": [
+        "s10-07"
+      ],
+      "topic_ids": [
+        "emc-stasjon"
+      ],
+      "learning_objective": "Vite at beskyttelsesjorden aldri skal brytes eller svekkes for å løse et RF-problem, og kjenne trygge tiltak.",
+      "priority": "exam_important",
+      "context": [
+        "Signalet fra stasjonen din kommer inn i annet utstyr i huset via strømnettet."
+      ],
+      "stem": [
+        [
+          "Hvilket av disse tiltakene må du ",
+          {
+            "em": "aldri"
+          },
+          " gjøre?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Koble fra eller bryte beskyttelsesjorden til utstyret."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Tre hele strømkabelen, med alle lederne, gjennom en ferrittring."
+          ],
+          "feedback": [
+            "Dette er et vanlig og trygt tiltak. Når alle lederne går gjennom ringen sammen, dempes RF-strøm som går samme vei i alle lederne, mens strømforsyningen og jordforbindelsen virker som før."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Sette en balun eller fellesmodusdrossel der fødekabelen møter antennen."
+          ],
+          "feedback": [
+            "Dette er et godt tiltak. Det hindrer RF-strøm på utsiden av kabelskjermen, så mindre RF når inn i huset."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Legge fødekabelen unna strømkablene i huset."
+          ],
+          "feedback": [
+            "Dette er fornuftig: kabler som ligger tett sammen over lange strekninger, kobler lettere RF over til hverandre."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Beskyttelsesjorden skal hindre farlig berøringsspenning og sørge for at vernet kobler ut ved en feil. Den må aldri brytes eller gjøres dårligere for å bli kvitt RF.",
+        "RF i husets ledninger løses med god tilpasning og balanse i antennesystemet, balun eller fellesmodusdrossel, ferritt rundt hele kabler, god kabelføring og en RF-jording som er koblet riktig sammen med husets jordingsanlegg. Endringer i det faste elektriske anlegget skal gjøres av en elektroinstallatør."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 10,
+        "section_id": "s10-07",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "07574f89c5e901f0",
+          "c544a829babcd036"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:12:39+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "aaaceaaf2e3253040384538fea5a686f022cdd1478a04fe7ac4131180216598b",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:39:01+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "e10c7b63c582849ee30073b9fbb8a1afd74249d8a1896dc2719d74f861e0807b",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:48:59+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "e10c7b63c582849ee30073b9fbb8a1afd74249d8a1896dc2719d74f861e0807b",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:12:38+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "e10c7b63c582849ee30073b9fbb8a1afd74249d8a1896dc2719d74f861e0807b",
+        "errors": [],
+        "warnings": [
+          "priority: 'exam_important' set by judgement; the book's '!' markers are not known for this chapter yet (no scan)"
+        ],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:48:59+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:48:59+00:00",
+        "content_sha256": "e10c7b63c582849ee30073b9fbb8a1afd74249d8a1896dc2719d74f861e0807b",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

@@ -1,0 +1,152 @@
+{
+  "id": "q-0543",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "medium",
+      "chapter": 12,
+      "section_ids": [
+        "s12-22"
+      ],
+      "topic_ids": [
+        "operasjon-utlandet"
+      ],
+      "learning_objective": "Skille CEPT-lisens for besøk fra HAREC ved flytting.",
+      "priority": "normal",
+      "context": [
+        "En norsk radioamatør med full lisens flytter permanent til et annet europeisk land og vil ha lokalt kallesignal der uten å ta en ny lisensprøve."
+      ],
+      "stem": [
+        "Hva gjør dette enklere?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "HAREC – sertifikatet for harmonisert amatørradioeksamen."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "CEPT-lisensen alene, som gjelder uansett hvor lenge man blir."
+          ],
+          "feedback": [
+            "CEPT-lisensen er laget for midlertidige opphold. Ved flytting er det HAREC som gir fritak for prøven."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "En samling QSL-kort fra stasjoner i landet."
+          ],
+          "feedback": [
+            "QSL-kort bekrefter kontakter, ikke kompetanse."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Medlemskap i den nasjonale radioamatørforeningen."
+          ],
+          "feedback": [
+            "Foreningene utsteder ikke lisenser. Det er myndighetene som avgjør, og de godtar HAREC."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "HAREC (Harmonised Amateur Radio Examination Certificate) viser at du har bestått en eksamen etter felles europeiske krav. Land som følger ordningen, godtar det når du søker om lisens der, i stedet for sin egen prøve. Norsk full lisens tilsvarer HAREC klasse A.",
+        [
+          {
+            "term": "cept-lisens",
+            "text": "CEPT-lisensen"
+          },
+          " er derimot ment for midlertidige opphold."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 12,
+        "section_id": "s12-22",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "c3f52ee3cdc1c80c",
+          "be93aaffef72711b"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:13:44+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "a1db098c3c8b68709d0a94ff8988d5f28b06457eb6587b34fec2501d621ab9f2",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:39:02+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "29311717f8d9c9b72c22d221d4fa48eb4e2912256ac8f0cb070e5c604344acfa",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:50:19+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "29311717f8d9c9b72c22d221d4fa48eb4e2912256ac8f0cb070e5c604344acfa",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": []
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:13:43+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "29311717f8d9c9b72c22d221d4fa48eb4e2912256ac8f0cb070e5c604344acfa",
+        "errors": [],
+        "warnings": [],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T22:50:19+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:50:19+00:00",
+        "content_sha256": "29311717f8d9c9b72c22d221d4fa48eb4e2912256ac8f0cb070e5c604344acfa",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

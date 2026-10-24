@@ -1,0 +1,144 @@
+{
+  "id": "q-0547",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "recall",
+      "difficulty": "medium",
+      "chapter": 12,
+      "section_ids": [
+        "s12-23"
+      ],
+      "topic_ids": [
+        "regelverk-organisasjoner"
+      ],
+      "learning_objective": "Vite at IARU har nasjonale foreninger som medlemmer og koordinerer båndplanene.",
+      "priority": "normal",
+      "context": [],
+      "stem": [
+        [
+          "Hvem kan være medlem av ",
+          {
+            "term": "iaru",
+            "text": "IARU"
+          },
+          "?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Bare nasjonale radioamatørforeninger, som NRRL."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Alle lisensierte radioamatører, hver for seg."
+          ],
+          "feedback": [
+            "Enkeltpersoner er medlemmer i sin nasjonale forening. Det er foreningene som er medlemmer i IARU."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Landenes telemyndigheter."
+          ],
+          "feedback": [
+            "Myndighetene er medlemmer av ITU. IARU er radioamatørenes egen organisasjon."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Produsenter av radioutstyr."
+          ],
+          "feedback": [
+            "IARU er en interesseorganisasjon for radioamatørene, og medlemmene er de nasjonale foreningene."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "IARU ble grunnlagt i 1925 og er radioamatørenes egen internasjonale organisasjon. Bare nasjonale radioamatørforeninger kan være medlemmer – slik ITU har landenes myndigheter som medlemmer. NRRL er Norges medlem.",
+        "IARU er delt i tre regionale organisasjoner, én for hver ITU-region, og koordinerer blant annet båndplanene som deler opp amatørbåndene."
+      ],
+      "glossary_after_answer": [
+        "iaru"
+      ],
+      "study_reference": {
+        "chapter": 12,
+        "section_id": "s12-23",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "f48f784ef98b1219",
+          "5cad4c5d54dbe108"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:13:45+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "1bf03a5064474652d11e340d4f465a84c30f9ce43a51d2bcd09db27320943a46",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:50:22+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "1bf03a5064474652d11e340d4f465a84c30f9ce43a51d2bcd09db27320943a46",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": []
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:13:43+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "1bf03a5064474652d11e340d4f465a84c30f9ce43a51d2bcd09db27320943a46",
+        "errors": [],
+        "warnings": [],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T22:50:22+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:50:22+00:00",
+        "content_sha256": "1bf03a5064474652d11e340d4f465a84c30f9ce43a51d2bcd09db27320943a46",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

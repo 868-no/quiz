@@ -1,0 +1,136 @@
+{
+  "id": "q-0603",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "medium",
+      "chapter": 13,
+      "section_ids": [
+        "s13-16"
+      ],
+      "topic_ids": [
+        "verktoy-lodding"
+      ],
+      "learning_objective": "Kjenne de viktigste sikkerhetsreglene ved bruk av drill.",
+      "priority": "normal",
+      "context": [
+        "Du skal bore hull i et kabinett av tynn aluminiumsplate med en elektrisk drill som har en nøkkel til borchucken."
+      ],
+      "stem": [
+        "Hva er riktig framgangsmåte?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Fjerne chucknøkkelen, feste platen og bruke vernebriller."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Holde platen i hånden og bore rett gjennom med stort bor med en gang."
+          ],
+          "feedback": [
+            "Platen kan rive seg løs, og hånden kan komme på feil side av boret. Fest arbeidsstykket, og start med et lite hull."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "La chucknøkkelen stå i, så den er lett å finne."
+          ],
+          "feedback": [
+            "Står nøkkelen i når drillen starter, kan den bli slynget ut i høy fart. Fjern den alltid før du borer."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Blåse bort sponet etter hvert, så du ser hva du gjør."
+          ],
+          "feedback": [
+            "Blåser du på sponet, kan det havne i øynene. Fei det opp eller bruk støvsuger."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Fjern alltid nøkkelen fra borchucken før du starter, ellers kan den bli skutt ut. Fest arbeidsstykket i en skrustikke, og hold kroppen borte fra baksiden av det du borer i.",
+        "Merk av hullet og start med et lite hull før du går opp i størrelse – det er tryggere og gir et penere resultat. Spon fra metall er skarpt og kan slynges ut, så bruk vernebriller, og fei opp sponet etterpå i stedet for å blåse det bort."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 13,
+        "section_id": "s13-16",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "11f0af4d9c88dcaa"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:11:20+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "0448f93c7da4f83278c5d21921da74671cf948e80ef1f4f1ad9feb002b2fa7c2",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:50:50+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "0448f93c7da4f83278c5d21921da74671cf948e80ef1f4f1ad9feb002b2fa7c2",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": []
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:11:18+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "0448f93c7da4f83278c5d21921da74671cf948e80ef1f4f1ad9feb002b2fa7c2",
+        "errors": [],
+        "warnings": [],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T22:50:50+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:50:50+00:00",
+        "content_sha256": "0448f93c7da4f83278c5d21921da74671cf948e80ef1f4f1ad9feb002b2fa7c2",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

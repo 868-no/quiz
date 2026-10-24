@@ -1,0 +1,134 @@
+{
+  "id": "q-0531",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "easy",
+      "chapter": 12,
+      "section_ids": [
+        "s12-13"
+      ],
+      "topic_ids": [
+        "god-operasjonsskikk"
+      ],
+      "learning_objective": "Forstå at alt som sendes på amatørbåndene, er åpent for alle som lytter.",
+      "priority": "normal",
+      "context": [],
+      "stem": [
+        "Hvorfor bør du tenke deg om før du sender personlige eller følsomme opplysninger over amatørradio?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Alle innenfor rekkevidde kan høre sendingen; den er åpen og ubeskyttet."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Sendingene lagres automatisk hos myndighetene."
+          ],
+          "feedback": [
+            "Myndighetene lagrer ikke alle sendinger. Poenget er at hvem som helst innenfor rekkevidde kan lytte."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Det er forbudt å nevne navn og adresse på lufta."
+          ],
+          "feedback": [
+            "Navn og sted er en vanlig del av en kontakt. Men husk at alt du sier, kan høres av alle."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Følsomme opplysninger gir mer forstyrrelser på signalet."
+          ],
+          "feedback": [
+            "Innholdet påvirker ikke signalet. Grunnen er at sendingen er åpen for alle."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Alt du sender, kan høres av alle som er innenfor rekkevidde, og sendingene er ikke kryptert. De må derfor regnes som åpne og ubeskyttede.",
+        "En god operatør tenker over hva som egner seg for alle å høre, og gir et godt eksempel for andre."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 12,
+        "section_id": "s12-13",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "0591cf1e96150c1e"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:13:44+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "7cb6f0206a4b4259a2c8244a0a669e3aa872eafdce0c601b5ca8d24188048306",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:50:08+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "7cb6f0206a4b4259a2c8244a0a669e3aa872eafdce0c601b5ca8d24188048306",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": []
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:13:43+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "7cb6f0206a4b4259a2c8244a0a669e3aa872eafdce0c601b5ca8d24188048306",
+        "errors": [],
+        "warnings": [],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T22:50:08+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:50:08+00:00",
+        "content_sha256": "7cb6f0206a4b4259a2c8244a0a669e3aa872eafdce0c601b5ca8d24188048306",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

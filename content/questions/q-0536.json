@@ -1,0 +1,143 @@
+{
+  "id": "q-0536",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "recall",
+      "difficulty": "easy",
+      "chapter": 12,
+      "section_ids": [
+        "s12-19"
+      ],
+      "topic_ids": [
+        "regelverk-organisasjoner"
+      ],
+      "learning_objective": "Vite at Norge ligger i ITU Region 1.",
+      "priority": "normal",
+      "context": [],
+      "stem": [
+        "Hvilken av ITUs tre regioner hører Norge til?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Region 1"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Region 2"
+          ],
+          "feedback": [
+            "Region 2 omfatter Amerika. Norge og resten av Europa ligger i Region 1."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Region 3"
+          ],
+          "feedback": [
+            "Region 3 omfatter store deler av Asia og Oseania. Norge ligger i Region 1."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Ingen – Norge har egne frekvensbestemmelser utenfor regionene."
+          ],
+          "feedback": [
+            "Hele verden er delt inn i de tre regionene. Norge har riktignok egne regler, men de bygger på tildelingene for Region 1."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "For å fordele frekvensene har ITU delt verden i tre regioner. Region 1 omfatter Europa, Afrika, Midtøsten og de nordlige delene av Asia, Region 2 Amerika, og Region 3 resten av Asia og Oseania.",
+        "Tildelingene kan være forskjellige mellom regionene, så et amatørbånd kan ha andre grenser i USA enn i Norge."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 12,
+        "section_id": "s12-19",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "2ab7a249c9f5615f"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:13:44+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "8a46681bb3d67abd5fbf3e28110ba23fa83b6cf8fa7be86898093a8edf937ef0",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:50:12+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "8a46681bb3d67abd5fbf3e28110ba23fa83b6cf8fa7be86898093a8edf937ef0",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:13:43+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "8a46681bb3d67abd5fbf3e28110ba23fa83b6cf8fa7be86898093a8edf937ef0",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:50:12+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:50:12+00:00",
+        "content_sha256": "8a46681bb3d67abd5fbf3e28110ba23fa83b6cf8fa7be86898093a8edf937ef0",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

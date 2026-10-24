@@ -1,0 +1,147 @@
+{
+  "id": "q-0599",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "medium",
+      "chapter": 13,
+      "section_ids": [
+        "s13-09"
+      ],
+      "topic_ids": [
+        "rf-eksponering"
+      ],
+      "learning_objective": "Forstå at retningsantenner for høye frekvenser og åpne forsterkere kan gi farlig stråling, særlig for øynene.",
+      "priority": "exam_important",
+      "context": [
+        "En klubbkamerat vil sjekke en antenne for 23 cm (1,3 GHz) med høy forsterkning og vil kikke rett inn i den mens senderen står på med noen titalls watt."
+      ],
+      "stem": [
+        "Hva bør du si?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "At det er farlig, fordi strålingen kan skade øynene uten at han merker det."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "At det er ufarlig, fordi radiobølger bare gir varme."
+          ],
+          "feedback": [
+            "Nettopp oppvarmingen er faren. Øynene tåler varme dårlig, og nær en antenne med høy forsterkning kan feltet bli sterkt."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "At det bare er farlig på HF, ikke på mikrobølger."
+          ],
+          "feedback": [
+            "Det er snarere motsatt: det er på VHF og høyere frekvenser at faren for den som jobber med utstyret, er størst."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "At det er greit så lenge han bruker vanlige solbriller."
+          ],
+          "feedback": [
+            "Solbriller stopper ikke radiobølger. Man skal aldri kikke inn i en mikrobølgeantenne som sender."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Antenner med høy forsterkning samler effekten i en smal stråle, og like foran dem kan feltet bli farlig sterkt. Faren er størst på VHF og høyere frekvenser, og vevet i øynene er særlig følsomt.",
+        "Kikk aldri inn i en mikrobølgeantenne som sender, og hold deg unna fronten på retningsantenner for UHF når de sender mer enn et par watt. Det samme gjelder forsterkere med åpne deksler. Du kjenner ingenting før skaden er skjedd."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 13,
+        "section_id": "s13-09",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "784866d8e9684393"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:11:19+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "835bdfebcbe87bb7c9f38da04de17fd969c9301caccbb1ba02735b78518eb90a",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:50:47+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "835bdfebcbe87bb7c9f38da04de17fd969c9301caccbb1ba02735b78518eb90a",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:11:18+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "835bdfebcbe87bb7c9f38da04de17fd969c9301caccbb1ba02735b78518eb90a",
+        "errors": [],
+        "warnings": [
+          "priority: 'exam_important' set by judgement; the book's '!' markers are not known for this chapter yet (no scan)"
+        ],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:50:47+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:50:47+00:00",
+        "content_sha256": "835bdfebcbe87bb7c9f38da04de17fd969c9301caccbb1ba02735b78518eb90a",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

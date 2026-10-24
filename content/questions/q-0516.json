@@ -1,0 +1,136 @@
+{
+  "id": "q-0516",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 12,
+      "section_ids": [
+        "s12-04"
+      ],
+      "topic_ids": [
+        "anrop-kontakt"
+      ],
+      "learning_objective": "Kjenne kravene i IARU Region 1 til en godkjent QSO.",
+      "priority": "exam_important",
+      "context": [],
+      "stem": [
+        "Hva kreves for at en kontakt skal regnes som en godkjent QSO etter IARU Region 1?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Begge har tatt imot den andres fulle kallesignal og rapport, og fått bekreftet at egne er mottatt."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Begge har sendt hverandre QSL-kort etter kontakten."
+          ],
+          "feedback": [
+            "QSL-kortet er en bekreftelse i etterkant, ofte for diplomer. Kravet til en godkjent QSO gjelder det som utveksles på lufta."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Kontakten har vart i minst fem minutter med flere vekslinger."
+          ],
+          "feedback": [
+            "En godkjent QSO kan være ferdig etter noen sekunder, slik det er i konkurranser. Lengden betyr ingenting."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Begge har gitt hverandre navn, QTH og en kort værrapport."
+          ],
+          "feedback": [
+            "Navn, QTH og vær er vanlig å utveksle, men det er ikke det som gjør kontakten godkjent."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "IARU Region 1 krever at begge parter har fått med seg motpartens fulle kallesignal og signalrapport, og at begge har fått bekreftet at deres eget kallesignal og egen rapport er riktig mottatt.",
+        "Uten bekreftelsen kan du ikke vite at motparten faktisk fikk opplysningene. Brytes forbindelsen før dette er på plass, er kontakten ikke gyldig."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 12,
+        "section_id": "s12-04",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "19998dfa05871016"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:13:44+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "4e008dd7fe284d9ab0160f3fc2f837bf16501cdb99fe2d1f084f9e07a751f70a",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:49:54+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "4e008dd7fe284d9ab0160f3fc2f837bf16501cdb99fe2d1f084f9e07a751f70a",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": []
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:13:43+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "4e008dd7fe284d9ab0160f3fc2f837bf16501cdb99fe2d1f084f9e07a751f70a",
+        "errors": [],
+        "warnings": [
+          "priority: 'exam_important' set by judgement; the book's '!' markers are not known for this chapter yet (no scan)"
+        ],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T22:49:54+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:49:54+00:00",
+        "content_sha256": "4e008dd7fe284d9ab0160f3fc2f837bf16501cdb99fe2d1f084f9e07a751f70a",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

@@ -1,0 +1,145 @@
+{
+  "id": "q-0511",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "medium",
+      "chapter": 12,
+      "section_ids": [
+        "s12-05"
+      ],
+      "topic_ids": [
+        "anrop-kontakt",
+        "kallesignaler"
+      ],
+      "learning_objective": "Forstå at man ikke svarer på et anrop som er rettet mot et annet område, og kjenne prefiksene VK og ZL.",
+      "priority": "normal",
+      "context": [
+        "Du hører en stasjon i USA som anroper «CQ VK/ZL»."
+      ],
+      "stem": [
+        "Hva er riktig av deg som norsk stasjon?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Vente – anropet gjelder Australia og New Zealand. Svarer ingen derfra, kan du melde deg kort."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Svare med en gang; et CQ-anrop er åpent for alle."
+          ],
+          "feedback": [
+            "Et anrop med prefikser etter CQ er rettet mot bestemte land. VK er Australia og ZL er New Zealand, så det gjelder ikke deg."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Si fra til stasjonen at frekvensen allerede er i bruk."
+          ],
+          "feedback": [
+            "Det er bare riktig hvis frekvensen faktisk var i bruk før anropet. Her er spørsmålet om du skal svare på et anrop rettet mot andre."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Svare med «QRT», så stasjonen vet at du har hørt den."
+          ],
+          "feedback": [
+            "QRT betyr at man stopper sendingen. Det er ikke et svar på et anrop."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Et anrop kan rettes mot bestemte land eller områder ved å sette ",
+          {
+            "term": "prefiks",
+            "text": "prefiksene"
+          },
+          " etter CQ. VK er prefikset for Australia og ZL for New Zealand."
+        ],
+        "Passer du ikke med beskrivelsen, svarer du ikke. Har ingen fra det anropte området svart etter en stund, kan du likevel gi et kort anrop for å høre om stasjonen vil ha kontakt med deg også."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 12,
+        "section_id": "s12-05",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "1027660c0c867f13",
+          "e4343263b06775be"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:13:44+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "f598cbea2530d2f07e6724ed7cb4eae85df0fa3b2af907d347dd967b270836aa",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:49:49+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "f598cbea2530d2f07e6724ed7cb4eae85df0fa3b2af907d347dd967b270836aa",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": []
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:13:43+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "f598cbea2530d2f07e6724ed7cb4eae85df0fa3b2af907d347dd967b270836aa",
+        "errors": [],
+        "warnings": [],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T22:49:49+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:49:49+00:00",
+        "content_sha256": "f598cbea2530d2f07e6724ed7cb4eae85df0fa3b2af907d347dd967b270836aa",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

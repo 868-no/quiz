@@ -1,0 +1,147 @@
+{
+  "id": "q-0537",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "medium",
+      "chapter": 12,
+      "section_ids": [
+        "s12-19"
+      ],
+      "topic_ids": [
+        "regelverk-organisasjoner"
+      ],
+      "learning_objective": "Forstå at amatørtjenesten må vike for primærbrukere i bånd der den har sekundær status.",
+      "priority": "exam_important",
+      "context": [
+        "Du sender på et bånd der amatørtjenesten har sekundær status. En bruker med primær status begynner å sende på frekvensen din."
+      ],
+      "stem": [
+        "Hva må du gjøre?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Avslutte sendingen og bytte frekvens, også midt i en kontakt."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Klage til myndighetene på at du blir forstyrret."
+          ],
+          "feedback": [
+            "Med sekundær status kan du ikke kreve vern mot forstyrrelser fra primærbrukere. Du må vike."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Fortsette, siden du var der først."
+          ],
+          "feedback": [
+            "«Først til mølla» gjelder mellom radioamatører. Overfor en tjeneste med primær status har du vikeplikt."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Øke effekten så kontakten din kommer gjennom."
+          ],
+          "feedback": [
+            "Da forstyrrer du en bruker med høyere status. Du må stoppe og flytte."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Når ITU tildeler et bånd til flere tjenester, får de status som primær, tillatt eller sekundær. En tjeneste med sekundær status må ikke forstyrre primærbrukerne og kan ikke kreve vern mot forstyrrelser fra dem.",
+        "Begynner en primærbruker å sende, må radioamatøren derfor stoppe og flytte, også midt i en kontakt. Klage kan man bare på forstyrrelser fra andre med samme status."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 12,
+        "section_id": "s12-19",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "c681197cc7a01f7c"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:13:44+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "ab2f6abf29db5842f930f298c24752121e8afcc243bc6eabbf3960b124a2b88e",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:50:13+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "ab2f6abf29db5842f930f298c24752121e8afcc243bc6eabbf3960b124a2b88e",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:13:43+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "ab2f6abf29db5842f930f298c24752121e8afcc243bc6eabbf3960b124a2b88e",
+        "errors": [],
+        "warnings": [
+          "priority: 'exam_important' set by judgement; the book's '!' markers are not known for this chapter yet (no scan)"
+        ],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:50:13+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:50:13+00:00",
+        "content_sha256": "ab2f6abf29db5842f930f298c24752121e8afcc243bc6eabbf3960b124a2b88e",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

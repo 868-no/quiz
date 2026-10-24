@@ -1,0 +1,143 @@
+{
+  "id": "q-0642",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "easy",
+      "chapter": 16,
+      "section_ids": [
+        "s16-03"
+      ],
+      "topic_ids": [
+        "q-koder-forkortelser"
+      ],
+      "learning_objective": "Vite hvorfor Q-koder brukes og at de kan brukes som spørsmål og som svar.",
+      "priority": "normal",
+      "context": [],
+      "stem": [
+        [
+          "Hva er den viktigste grunnen til at radioamatører bruker ",
+          {
+            "term": "q-kode",
+            "text": "Q-koder"
+          },
+          "?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "De gjør kommunikasjonen kortere og mindre utsatt for misforståelser, også mellom folk med ulike språk."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "De er hemmelige, slik at andre ikke forstår hva som blir sagt."
+          ],
+          "feedback": [
+            "Q-kodene er offentlige og definert i det internasjonale radioreglementet."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "De er påbudt i alle forbindelser på tale."
+          ],
+          "feedback": [
+            "Q-kodene er nyttige og mye brukt, men ikke påbudt. De ble laget for telegrafi og brukes også på tale."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "De brukes bare i nødtrafikk til sjøs."
+          ],
+          "feedback": [
+            "En del koder er laget for skipsfart og nødsituasjoner, men mange av dem passer godt for amatørradio og brukes daglig."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Q-kodene er koder på tre bokstaver som begynner med Q, fastsatt i det internasjonale radioreglementet. Hver kode står for et fast spørsmål eller svar om ting som frekvens, effekt, forstyrrelser eller posisjon.",
+        "Med spørsmålstegn er koden et spørsmål, uten er den et svar eller en opplysning. Kodene sparer tid, særlig på morse, og forstås uansett morsmål."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 16,
+        "section_id": "s16-03",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "5d5888ddb7691083",
+          "4d81240dfd110bd5",
+          "f7850594e1a25e57"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:08:40+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "33e1ae7d4b643555b016a6bdb17521ec2093f3224ab87dae9dd9987808b16987",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:51:05+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "33e1ae7d4b643555b016a6bdb17521ec2093f3224ab87dae9dd9987808b16987",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": []
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:08:39+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "33e1ae7d4b643555b016a6bdb17521ec2093f3224ab87dae9dd9987808b16987",
+        "errors": [],
+        "warnings": [],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T22:51:05+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:51:05+00:00",
+        "content_sha256": "33e1ae7d4b643555b016a6bdb17521ec2093f3224ab87dae9dd9987808b16987",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

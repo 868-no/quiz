@@ -1,0 +1,141 @@
+{
+  "id": "q-0605",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "recall",
+      "difficulty": "easy",
+      "chapter": 13,
+      "section_ids": [
+        "s13-21"
+      ],
+      "topic_ids": [
+        "verktoy-lodding"
+      ],
+      "learning_objective": "Vite hva flussmiddelet i loddetinn gjør.",
+      "priority": "normal",
+      "context": [],
+      "stem": [
+        "Hva gjør flussmiddelet inne i loddetråden?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Renser metallet for oksid så tinnet flyter ut."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Gjør den ferdige skjøten sterkere mekanisk."
+          ],
+          "feedback": [
+            "Flussmiddelet renser og hjelper tinnet å flyte. Styrken kommer fra selve tinnet og at skjøten er godt laget."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Senker temperaturen på spissen av loddebolten."
+          ],
+          "feedback": [
+            "Flussmiddelet påvirker ikke loddebolten. Det virker på metallflatene som skal loddes."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Isolerer den ferdige skjøten elektrisk."
+          ],
+          "feedback": [
+            "Skjøten skal lede godt. Flussmiddelet hjelper til med det ved å fjerne oksid, så tinnet binder seg bedre."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Loddetråd til elektronikk har ",
+          {
+            "term": "flussmiddel",
+            "text": "flussmiddel"
+          },
+          " inni seg. Når det smelter, renser det metallflatene for oksid og hjelper loddetinnet å flyte ut og binde seg til delene."
+        ],
+        "Det finnes også flussmiddel i løs form, men tråd med flussmiddel inni er det enkleste å bruke."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 13,
+        "section_id": "s13-21",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "d3c40775e5e71b6f"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:11:20+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "4cfae3ebf6474e81b96d89ff17cade9250e0645bbaab8de8be561b91a8173979",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:50:52+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "4cfae3ebf6474e81b96d89ff17cade9250e0645bbaab8de8be561b91a8173979",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": []
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:11:18+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "4cfae3ebf6474e81b96d89ff17cade9250e0645bbaab8de8be561b91a8173979",
+        "errors": [],
+        "warnings": [],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T22:50:52+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:50:52+00:00",
+        "content_sha256": "4cfae3ebf6474e81b96d89ff17cade9250e0645bbaab8de8be561b91a8173979",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

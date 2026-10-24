@@ -1,0 +1,174 @@
+{
+  "id": "q-0479",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "medium",
+      "chapter": 11,
+      "section_ids": [
+        "s11-14"
+      ],
+      "topic_ids": [
+        "frekvensmaling"
+      ],
+      "learning_objective": "Forstå at feilene i en frekvensmåling kan summere seg, og at man må holde god avstand til båndkanten.",
+      "priority": "normal",
+      "context": [
+        [
+          "Du har kalibrert senderen mot en krystalloscillator. Krystallets nøyaktighet, aldring, avlesningen av nulltone, senderens stabilitet og hvor nøyaktig du kan stille inn frekvensen, gir til sammen et mulig avvik på opptil ",
+          {
+            "q": 3.4,
+            "u": "kHz"
+          },
+          "."
+        ]
+      ],
+      "stem": [
+        "Du vil sende SSB like innenfor båndkanten. Hva er riktig å gjøre?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Holde senderfrekvensen mer enn ",
+            {
+              "q": 3.4,
+              "u": "kHz"
+            },
+            " pluss sidebåndets bredde fra båndkanten."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Sende ",
+            {
+              "q": 1,
+              "u": "kHz"
+            },
+            " fra båndkanten, fordi feilene vanligvis går i hver sin retning."
+          ],
+          "feedback": [
+            "Du er selv ansvarlig for å holde deg innenfor båndet. I verste fall går alle feilene samme vei."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Sende ",
+            {
+              "q": 3.4,
+              "u": "kHz"
+            },
+            " fra båndkanten; da er du helt sikker."
+          ],
+          "feedback": [
+            "Sidebåndet strekker seg et par kilohertz ut fra den innstilte frekvensen. Det må også ligge innenfor båndet."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Stole på displayet, fordi kalibreringen har fjernet alle feil."
+          ],
+          "feedback": [
+            "Kalibreringen er ikke bedre enn referansen og avlesningen. Drift og aldring gjør dessuten at frekvensen endrer seg etterpå."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Hver feilkilde er liten for seg, men i verste fall går alle samme vei og legges sammen. Her blir det ",
+          {
+            "q": 3.4,
+            "u": "kHz"
+          },
+          "."
+        ],
+        "Du er ansvarlig for at hele signalet ligger innenfor amatørbåndet, også sidebåndet. Derfor må du holde minst så mye avstand som den samlede feilen, pluss bredden av sidebåndet."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 11,
+        "section_id": "s11-14",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "c1c17f7a15244073"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:11:20+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "2141714efa7eb3c568947057a6d04ecbcdd14122163a38a48c61040b92096673",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:49:42+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "2141714efa7eb3c568947057a6d04ecbcdd14122163a38a48c61040b92096673",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:11:19+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "2141714efa7eb3c568947057a6d04ecbcdd14122163a38a48c61040b92096673",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:49:42+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:49:42+00:00",
+        "content_sha256": "2141714efa7eb3c568947057a6d04ecbcdd14122163a38a48c61040b92096673",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

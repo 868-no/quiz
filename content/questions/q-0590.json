@@ -1,0 +1,138 @@
+{
+  "id": "q-0590",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 13,
+      "section_ids": [
+        "s13-05"
+      ],
+      "topic_ids": [
+        "trygt-arbeid-utstyr"
+      ],
+      "learning_objective": "Forstå hvorfor man jobber med én hånd når man må måle på utstyr som står på.",
+      "priority": "exam_important",
+      "context": [
+        "Noen ganger må man måle spenninger i et apparat mens det står på."
+      ],
+      "stem": [
+        "Hvorfor anbefales det da å bruke bare én hånd og ha den andre i lomma eller på ryggen?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "For å unngå at strøm går fra hånd til hånd tvers gjennom brystet og hjertet."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "For at måleresultatet skal bli mer nøyaktig."
+          ],
+          "feedback": [
+            "Det handler om sikkerhet, ikke nøyaktighet. Rådet skal hindre at strømmen kan gå den farligste veien gjennom kroppen."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "For at den andre hånden skal være klar til å slå av strømmen."
+          ],
+          "feedback": [
+            "Poenget er at den andre hånden ikke skal kunne berøre noe. Er den i lomma, kan den ikke lukke en strømkrets gjennom brystet."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Fordi det er lettere å holde måleprobene stødig med én hånd."
+          ],
+          "feedback": [
+            "Det er ikke grunnen. Med begge hendene i apparatet kan du få strøm fra den ene hånden til den andre, som er den farligste veien."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Strøm som går fra den ene hånden til den andre, tvers over brystet, er det farligste. Holder du den ene hånden borte fra apparatet, kan du ikke ved et uhell berøre to punkter med stor spenningsforskjell med hver sin hånd.",
+        "Unngå også hodetelefoner mens du jobber i apparatet: en plutselig lyd kan få deg til å rykke til og ta borti noe du ikke skal."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 13,
+        "section_id": "s13-05",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "6cc26db27b48fc02"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:11:19+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "432a4898c786f9db3e0a0729620a9ea8071beeedfbe77b0308ccc89cd094a786",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:50:39+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "432a4898c786f9db3e0a0729620a9ea8071beeedfbe77b0308ccc89cd094a786",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": []
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:11:18+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "432a4898c786f9db3e0a0729620a9ea8071beeedfbe77b0308ccc89cd094a786",
+        "errors": [],
+        "warnings": [
+          "priority: 'exam_important' set by judgement; the book's '!' markers are not known for this chapter yet (no scan)"
+        ],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T22:50:39+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:50:39+00:00",
+        "content_sha256": "432a4898c786f9db3e0a0729620a9ea8071beeedfbe77b0308ccc89cd094a786",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

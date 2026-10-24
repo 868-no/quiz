@@ -1,0 +1,179 @@
+{
+  "id": "q-0244",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 9,
+      "section_ids": [
+        "s9-04"
+      ],
+      "topic_ids": [
+        "muf-luf"
+      ],
+      "learning_objective": "Skille mellom kritisk frekvens og MUF, og vite at MUF alltid er høyere.",
+      "priority": "exam_important",
+      "context": [],
+      "stem": [
+        [
+          "Hva er forskjellen på ",
+          {
+            "term": "kritisk-frekvens",
+            "text": "den kritiske frekvensen"
+          },
+          " og ",
+          {
+            "term": "muf",
+            "text": "MUF"
+          },
+          "?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Den kritiske frekvensen gjelder en bølge sendt loddrett opp; MUF gjelder en bestemt strekning og er alltid høyere."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "De er det samme, bare med norsk og engelsk navn."
+          ],
+          "feedback": [
+            "Den kritiske frekvensen gjelder en bølge som sendes loddrett opp. MUF gjelder en bestemt strekning mellom to steder, der bølgen treffer laget på skrå."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "MUF er alltid lavere enn den kritiske frekvensen, fordi strekningen er lengre."
+          ],
+          "feedback": [
+            "Det er motsatt. Bølgen treffer laget på skrå og trenger mindre avbøying enn en bølge som går rett opp. Derfor kommer høyere frekvenser tilbake, og MUF blir høyere."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Den kritiske frekvensen er den laveste frekvensen som kommer fram, og MUF er den høyeste."
+          ],
+          "feedback": [
+            "Den laveste brukbare frekvensen heter LUF og settes av dempingen i D-laget. Både den kritiske frekvensen og MUF er øvre grenser."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "En bølge som sendes rett opp, må snus helt om for å komme tilbake, og det krever mest ionisering. Den høyeste frekvensen som klarer det, er den kritiske frekvensen for laget.",
+        "På en strekning mellom to steder treffer bølgen laget på skrå og trenger mindre avbøying. MUF for strekningen er derfor alltid høyere enn den kritiske frekvensen – opptil rundt fem ganger så høy."
+      ],
+      "glossary_after_answer": [
+        "kritisk-frekvens",
+        "muf"
+      ],
+      "study_reference": {
+        "chapter": 9,
+        "section_id": "s9-04",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "6032a4181de9b75a"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:14:10+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "701b4a3a7155394ef13f7c7f398f3f672abdf0a3ca8d9711c1271a4f8ad2d8fb",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:47:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "208dcc034c40f7d09d98449e856d244be93dcb882c408851736ac9bc33359115",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:04:28+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "208dcc034c40f7d09d98449e856d244be93dcb882c408851736ac9bc33359115",
+        "errors": [],
+        "warnings": [
+          "priority: 'exam_important' set by judgement; the book's '!' markers are not known for this chapter yet (no scan)"
+        ],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:47:55+00:00"
+      },
+      "visual": {
+        "template": "propagation",
+        "version": 1,
+        "params": {
+          "kind": "sky_wave",
+          "f_mhz": 10,
+          "fc_mhz": 7,
+          "angles": [
+            90,
+            60,
+            30,
+            15,
+            8
+          ],
+          "ground_wave_km": 0,
+          "range_km": 4500
+        },
+        "after_only": true
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:47:55+00:00",
+        "content_sha256": "208dcc034c40f7d09d98449e856d244be93dcb882c408851736ac9bc33359115",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

@@ -1,0 +1,152 @@
+{
+  "id": "q-0422",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 10,
+      "section_ids": [
+        "s10-16"
+      ],
+      "topic_ids": [
+        "emc-filtre"
+      ],
+      "learning_objective": "Forstå hvordan et båndstoppfilter med en parallellavstemt krets i signalveien sperrer et signal.",
+      "priority": "normal",
+      "context": [
+        [
+          "Et ",
+          {
+            "term": "baandstoppfilter",
+            "text": "båndstoppfilter"
+          },
+          " er laget med en parallellavstemt LC-krets koblet i serie med signalveien."
+        ]
+      ],
+      "stem": [
+        "Hvordan stopper filteret det uønskede signalet?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Ved resonans har kretsen høy impedans og sperrer signalet."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Kretsen har lav impedans ved resonansfrekvensen og kortslutter signalet til jord."
+          ],
+          "feedback": [
+            "Det gjelder en serieavstemt krets koblet fra signalveien til jord. En parallellavstemt krets har høy impedans ved resonans."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Kretsen slipper bare gjennom resonansfrekvensen og sperrer alle andre."
+          ],
+          "feedback": [
+            "Det ville vært et båndpassfilter. Et båndstoppfilter fjerner ett område og slipper gjennom resten."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Kretsen omdanner signalet til varme i en motstand."
+          ],
+          "feedback": [
+            "Et LC-filter har ideelt ingen motstand. Det virker ved å endre impedansen med frekvensen."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "En parallellavstemt krets har høy impedans ved resonans. Koblet i serie med signalveien sperrer den derfor resonansfrekvensen, mens andre frekvenser går forbi.",
+        "Den andre løsningen er en serieavstemt krets fra signalveien til jord, som har lav impedans ved resonans og kortslutter det uønskede signalet bort. Et svært smalt båndstoppfilter kalles et hakkfilter (notch-filter)."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 10,
+        "section_id": "s10-16",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "067d4e0eb6dde498"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:12:39+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "a041b723bda5351cae24b72495a64fb8da2b51cbfb63d1519c652a4ee2c19630",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:49:15+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "a041b723bda5351cae24b72495a64fb8da2b51cbfb63d1519c652a4ee2c19630",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:12:38+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "a041b723bda5351cae24b72495a64fb8da2b51cbfb63d1519c652a4ee2c19630",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:49:15+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:49:15+00:00",
+        "content_sha256": "a041b723bda5351cae24b72495a64fb8da2b51cbfb63d1519c652a4ee2c19630",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

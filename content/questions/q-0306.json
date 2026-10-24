@@ -1,0 +1,217 @@
+{
+  "id": "q-0306",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "calculation",
+      "difficulty": "easy",
+      "chapter": 7,
+      "section_ids": [
+        "s7-05"
+      ],
+      "topic_ids": [
+        "sampling-aliasing"
+      ],
+      "learning_objective": "Regne ut Nyquist-frekvensen som halvparten av samplingsfrekvensen.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "Et lydkort sampler signalet fra mottakeren ",
+          {
+            "q": 48000,
+            "u": ""
+          },
+          " ganger i sekundet, altså med en ",
+          {
+            "term": "sampling",
+            "text": "samplingsfrekvens"
+          },
+          " på ",
+          {
+            "q": 48,
+            "u": "kHz"
+          },
+          "."
+        ]
+      ],
+      "stem": [
+        "Hva er den høyeste signalfrekvensen som i teorien kan gjengis riktig?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 24,
+              "u": "kHz"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 48,
+              "u": "kHz"
+            }
+          ],
+          "feedback": [
+            "Man trenger minst to avlesninger per periode. Med 48 000 avlesninger i sekundet holder det til 24 000 perioder i sekundet."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 96,
+              "u": "kHz"
+            }
+          ],
+          "feedback": [
+            "Her er samplingsfrekvensen doblet. Det er motsatt: signalfrekvensen kan være høyst halvparten av samplingsfrekvensen."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 12,
+              "u": "kHz"
+            }
+          ],
+          "feedback": [
+            "Dette er en firedel av samplingsfrekvensen. Grensen i teorien er halvparten; i praksis trengs bare en liten margin under den."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "For å gjengi et signal riktig trengs minst to avlesninger i hver periode. Den høyeste frekvensen som kan gjengis, er derfor halvparten av samplingsfrekvensen. Den kalles ",
+          {
+            "term": "nyquist-frekvens",
+            "text": "Nyquist-frekvensen"
+          },
+          "."
+        ],
+        {
+          "steps": [
+            [
+              "f_N = f_s / 2 = ",
+              {
+                "q": 48,
+                "u": "kHz"
+              },
+              " / 2 = ",
+              {
+                "q": 24,
+                "u": "kHz"
+              }
+            ]
+          ]
+        },
+        "Ekte filtre kutter ikke brått av, så man holder seg litt under denne grensen."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 7,
+        "section_id": "s7-05",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "9495dd464dc863bf"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:09:37+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "8fdf8a6cee077884c8a57eb996ff463b61d0071f5995cade50d0c6522f2df9fe",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:48:14+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "1f788818f267d2caf2496438bac9bb9d4c679d941a9b10b4912f1988132aff09",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": []
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:09:36+00:00"
+      },
+      "calculation": {
+        "formula": "nyquist_frequency",
+        "inputs": {
+          "f_s": [
+            48,
+            "kHz"
+          ]
+        },
+        "answer": [
+          24,
+          "kHz"
+        ],
+        "answer_symbol": "f_N",
+        "sig_figs": 2
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "1f788818f267d2caf2496438bac9bb9d4c679d941a9b10b4912f1988132aff09",
+        "errors": [],
+        "warnings": [
+          "priority: 'exam_important' set by judgement; the book's '!' markers are not known for this chapter yet (no scan)"
+        ],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T22:48:14+00:00"
+      },
+      "visual": {
+        "template": "sampling",
+        "version": 1,
+        "params": {
+          "kind": "samples",
+          "f_hz": 24000,
+          "fs_hz": 48000,
+          "phase_deg": 90,
+          "samples_shown": 12
+        },
+        "after_only": true
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:48:14+00:00",
+        "content_sha256": "1f788818f267d2caf2496438bac9bb9d4c679d941a9b10b4912f1988132aff09",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

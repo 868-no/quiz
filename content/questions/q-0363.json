@@ -1,0 +1,171 @@
+{
+  "id": "q-0363",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "recall",
+      "difficulty": "medium",
+      "chapter": 8,
+      "section_ids": [
+        "s8-15"
+      ],
+      "topic_ids": [
+        "dipol-vertikal"
+      ],
+      "learning_objective": "Vite at en foldet dipol av to like ledere har om lag fire ganger impedansen til en vanlig dipol.",
+      "priority": "normal",
+      "context": [
+        "En foldet dipol er laget av to like ledere side om side, koblet sammen i endene."
+      ],
+      "stem": [
+        "Omtrent hvilken fødeimpedans har den?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Om lag ",
+            {
+              "q": 290,
+              "u": "Ω"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Om lag ",
+            {
+              "q": 73,
+              "u": "Ω"
+            }
+          ],
+          "feedback": [
+            "Det er en vanlig dipol. I den foldede dipolen deles strømmen på to ledere, og det endrer impedansen."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Om lag ",
+            {
+              "q": 146,
+              "u": "Ω"
+            }
+          ],
+          "feedback": [
+            "Her er impedansen bare doblet. Strømmen halveres og spenningen dobles i fødepunktet, så impedansen blir fire ganger så høy."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Om lag ",
+            {
+              "q": 18,
+              "u": "Ω"
+            }
+          ],
+          "feedback": [
+            "Den foldede dipolen gir høyere impedans enn en vanlig dipol, ikke lavere."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Strøm- og spenningsfordelingen er den samme som i en vanlig dipol, men strømmen deles likt på de to lederne. I fødepunktet er strømmen derfor halvert og spenningen doblet, og impedansen blir 2 · 2 = 4 ganger så høy: 73 · 4 ≈ 292 Ω.",
+        "Det passer godt til 300 Ω stigekabel, eller til en 4:1-balun. Foldet dipol brukes også som matet element i Yagi-Uda-antenner, der de passive elementene trekker impedansen ned."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 8,
+        "section_id": "s8-15",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "5163b32b12630a7d",
+          "4808a405caf5aa73"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:13:26+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "405a5dbe7f02e0b2ea5e7b761d84ecdfec758cc60ac717289a71d5494f21ed3c",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:48:44+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "f246715c3e3ea954965994fd058ef2cda0ebfe4da86827eb631ad50e51f75498",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:13:24+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "f246715c3e3ea954965994fd058ef2cda0ebfe4da86827eb631ad50e51f75498",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T22:48:44+00:00"
+      },
+      "visual": {
+        "template": "antenna",
+        "version": 1,
+        "params": {
+          "kind": "folded_dipole",
+          "feed": "none",
+          "length_label": "λ/2"
+        }
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:48:44+00:00",
+        "content_sha256": "f246715c3e3ea954965994fd058ef2cda0ebfe4da86827eb631ad50e51f75498",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

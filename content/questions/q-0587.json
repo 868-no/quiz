@@ -1,0 +1,143 @@
+{
+  "id": "q-0587",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 13,
+      "section_ids": [
+        "s13-04"
+      ],
+      "topic_ids": [
+        "jording-jordfeilbryter"
+      ],
+      "learning_objective": "Forstå hensikten med utjevningsjording mellom deler av installasjonen som ligger langt fra hverandre.",
+      "priority": "normal",
+      "context": [
+        "Du har en rotor og en antennetuner oppe i masten, og de får strøm fra husets anlegg. Stasjonen står inne i huset."
+      ],
+      "stem": [
+        "Hva er hensikten med å binde sammen jordingen i masten og jordingen ved stasjonen?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Å hindre spenningsforskjeller mellom delene av anlegget."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Å gi antennen bedre virkningsgrad."
+          ],
+          "feedback": [
+            "Hensikten er sikkerhet: delene av anlegget skal ikke kunne få farlig ulik spenning i forhold til hverandre."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Å gjøre det unødvendig med jordfeilbryter."
+          ],
+          "feedback": [
+            "Utjevningsjording erstatter ikke jordfeilbryteren. De to beskytter mot ulike ting og brukes sammen."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Å hindre at sikringen ryker ved feil i rotoren."
+          ],
+          "feedback": [
+            "Jordingen skal tvert imot sørge for at en feil gir stor nok strøm til at sikringen ryker."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Når deler av et anlegg står langt fra hverandre og har hvert sitt jordpunkt, kan det oppstå spenningsforskjeller mellom dem. En person som berører begge samtidig, kan da få strøm gjennom kroppen.",
+        [
+          "Med ",
+          {
+            "term": "utjevningsjording",
+            "text": "utjevningsjording"
+          },
+          " bindes jordpunktene og metalldelene sammen, slik at alt ligger på samme potensial. Til slutt skal alle jordforbindelsene knyttes til ett felles hovedjordingspunkt."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 13,
+        "section_id": "s13-04",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "c2bdc3f172122adf"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T22:11:19+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "2d4469b6f76854e9e5c13d0dfc4fa19036471c5d3dcd51614f07063d8e751fe6",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T22:50:36+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "2d4469b6f76854e9e5c13d0dfc4fa19036471c5d3dcd51614f07063d8e751fe6",
+          "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
+          "acknowledged": []
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-24T22:11:18+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "2d4469b6f76854e9e5c13d0dfc4fa19036471c5d3dcd51614f07063d8e751fe6",
+        "errors": [],
+        "warnings": [],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T22:50:36+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T22:50:36+00:00",
+        "content_sha256": "2d4469b6f76854e9e5c13d0dfc4fa19036471c5d3dcd51614f07063d8e751fe6",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}
