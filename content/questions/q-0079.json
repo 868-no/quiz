@@ -217,7 +217,7 @@
     },
     {
       "revision": 2,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "scenario",
@@ -424,6 +424,15 @@
             "figures",
             "ocr"
           ]
+        },
+        {
+          "at": "2026-10-24T14:18:31+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "3fe85d2ea3cb289709f7ea54f4a96995c968be3fec7d9ebd1659ed87821acb8e",
+          "note": "superseded by r3"
         }
       ],
       "checks": {
@@ -448,6 +457,292 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-23T20:43:49+00:00",
         "content_sha256": "3fe85d2ea3cb289709f7ea54f4a96995c968be3fec7d9ebd1659ed87821acb8e",
+        "acknowledged_hazards": [
+          "figures",
+          "ocr"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 3,
+      "status": "approved",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "medium",
+      "chapter": 4,
+      "section_ids": [
+        "s4-03"
+      ],
+      "topic_ids": [
+        "fm",
+        "frekvensmultiplikasjon"
+      ],
+      "learning_objective": "Forstå at en frekvensmultiplikator multipliserer deviasjonen like mye som bærebølgefrekvensen.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En ",
+          {
+            "term": "frekvensmodulasjon",
+            "text": "FM"
+          },
+          "-sender har en oscillator på 12,1 MHz som frekvensmoduleres. Etter ",
+          {
+            "term": "oscillator",
+            "text": "oscillatoren"
+          },
+          " følger ",
+          "frekvensmultiplikatorer",
+          " som til sammen ganger ",
+          {
+            "term": "frekvens",
+            "text": "frekvensen"
+          },
+          " med 12, slik at ",
+          {
+            "term": "sender",
+            "text": "senderen"
+          },
+          " sender på 145,2 MHz. I oscillatoren er ",
+          {
+            "term": "deviasjon",
+            "text": "spissdeviasjonen"
+          },
+          " ",
+          {
+            "q": 200,
+            "u": "Hz"
+          },
+          "."
+        ]
+      ],
+      "stem": [
+        "Hvor stor er spissdeviasjonen i det utsendte signalet?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 2.4,
+              "u": "kHz"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 200,
+              "u": "Hz"
+            }
+          ],
+          "feedback": [
+            "Multiplikatoren ganger hele den øyeblikkelige frekvensen, ikke bare midtfrekvensen. Derfor blir også frekvenssvingene 12 ganger større."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 17,
+              "u": "Hz",
+              "approx": true
+            }
+          ],
+          "feedback": [
+            "Her er deviasjonen delt på 12. Frekvensen ganges opp i multiplikatoren, og det gjør også deviasjonen."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 4.8,
+              "u": "kHz"
+            }
+          ],
+          "feedback": [
+            "Dette er dobbelt så mye som riktig svar. Deviasjonen ganges med multiplikasjonsfaktoren 12, ikke med 24."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "En ",
+          {
+            "term": "frekvensmultiplikator",
+            "text": "frekvensmultiplikator"
+          },
+          " ganger den øyeblikkelige frekvensen. Svinger oscillatoren mellom 12,1 MHz − 200 Hz og 12,1 MHz + 200 Hz, svinger utgangen mellom 12 ganger disse verdiene."
+        ],
+        {
+          "steps": [
+            [
+              {
+                "math": [
+                  "Δf_{ut}",
+                  "=",
+                  "12",
+                  "·",
+                  {
+                    "q": 200,
+                    "u": "Hz"
+                  },
+                  "=",
+                  {
+                    "q": 2400,
+                    "u": "Hz"
+                  },
+                  "=",
+                  {
+                    "q": 2.4,
+                    "u": "kHz"
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        [
+          "Konstruktøren må derfor velge deviasjonen i oscillatoren ut fra den samlede multiplikasjonsfaktoren. Modulasjonsfrekvensen endres ikke, så ",
+          {
+            "term": "modulasjonsindeks",
+            "text": "modulasjonsindeksen"
+          },
+          " blir også 12 ganger større."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 4,
+        "section_id": "s4-03",
+        "printed_pages": [
+          "4-1",
+          "4-2"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "d65f539f9c53dc13"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "Jim C K Flaten",
+        "based_on": 2,
+        "at": "2026-10-24T14:04:58+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T14:04:58+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "3fe85d2ea3cb289709f7ea54f4a96995c968be3fec7d9ebd1659ed87821acb8e",
+          "note": "Add a figure"
+        },
+        {
+          "at": "2026-10-24T14:04:59+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "2ead81d8b2e4a3c88521805231ba8fd806857b5e6c6b26faef92ae9c8e946b0a",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T14:18:31+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "3b9daea66c2c07763cc2e6b3051d63a975cc217e33d301e783b2891a48c0f72d",
+          "note": "Figure added",
+          "acknowledged": [
+            "figures",
+            "ocr"
+          ]
+        }
+      ],
+      "visual": {
+        "template": "block-diagram",
+        "version": 1,
+        "params": {
+          "chain": [
+            {
+              "kind": "custom",
+              "label": "FM-oscillator"
+            },
+            {
+              "kind": "multiplier",
+              "label": "Multiplikator ×12"
+            },
+            {
+              "kind": "power_amp"
+            },
+            {
+              "kind": "antenna"
+            }
+          ],
+          "side": [
+            {
+              "kind": "microphone",
+              "into": 0
+            }
+          ],
+          "edge_labels": [
+            {
+              "after": 0,
+              "text": "12,1 MHz"
+            },
+            {
+              "after": 1,
+              "text": "145,2 MHz"
+            }
+          ]
+        }
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "3b9daea66c2c07763cc2e6b3051d63a975cc217e33d301e783b2891a48c0f72d",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: numeric_low_conf. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T14:18:31+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T14:18:31+00:00",
+        "content_sha256": "3b9daea66c2c07763cc2e6b3051d63a975cc217e33d301e783b2891a48c0f72d",
         "acknowledged_hazards": [
           "figures",
           "ocr"

@@ -517,7 +517,7 @@
     },
     {
       "revision": 3,
-      "status": "approved",
+      "status": "retired",
       "type": "single_choice",
       "style": "scenario",
       "difficulty": "medium",
@@ -734,6 +734,15 @@
           "acknowledged": [
             "figures"
           ]
+        },
+        {
+          "at": "2026-10-24T14:18:30+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "169f072e572d2769bcd49e425efa2f715c407bef0c7aa94be761bc417ad52016",
+          "note": "superseded by r4"
         }
       ],
       "checks": {
@@ -754,6 +763,281 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-24T10:03:58+00:00",
         "content_sha256": "169f072e572d2769bcd49e425efa2f715c407bef0c7aa94be761bc417ad52016",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 4,
+      "status": "approved",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "medium",
+      "chapter": 4,
+      "section_ids": [
+        "s4-05"
+      ],
+      "topic_ids": [
+        "am"
+      ],
+      "learning_objective": "Finne frekvensene i et AM-signal modulert med én tone.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En ",
+          {
+            "term": "amplitudemodulasjon",
+            "text": "AM"
+          },
+          "-sender har ",
+          {
+            "term": "baerebolge",
+            "text": "bærebølge"
+          },
+          " på ",
+          {
+            "q": 7.1,
+            "u": "MHz",
+            "digits": 3
+          },
+          " og moduleres med en ren tone på ",
+          {
+            "q": 2,
+            "u": "kHz"
+          },
+          "."
+        ]
+      ],
+      "stem": [
+        [
+          "Hvilke ",
+          {
+            "term": "frekvens",
+            "text": "frekvenser"
+          },
+          " finnes i det utsendte signalet?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 7.098,
+              "u": "MHz",
+              "digits": 3
+            },
+            ", ",
+            {
+              "q": 7.1,
+              "u": "MHz",
+              "digits": 3
+            },
+            " og ",
+            {
+              "q": 7.102,
+              "u": "MHz",
+              "digits": 3
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "7,1 MHz og 7,102 MHz"
+          ],
+          "feedback": [
+            "Vanlig AM har to sidebånd, ett på hver side av bærebølgen. Den nedre sidefrekvensen på 7,098 MHz mangler her."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 7.098,
+              "u": "MHz",
+              "digits": 3
+            },
+            " og ",
+            {
+              "q": 7.102,
+              "u": "MHz",
+              "digits": 3
+            },
+            ", men ikke ",
+            {
+              "q": 7.1,
+              "u": "MHz",
+              "digits": 3
+            }
+          ],
+          "feedback": [
+            "Ved vanlig AM sendes bærebølgen hele tiden. Uten bærebølge kalles det dobbelt sidebånd med undertrykt bærebølge."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 7.096,
+              "u": "MHz",
+              "digits": 3
+            },
+            ", ",
+            {
+              "q": 7.1,
+              "u": "MHz",
+              "digits": 3
+            },
+            " og ",
+            {
+              "q": 7.104,
+              "u": "MHz",
+              "digits": 3
+            }
+          ],
+          "feedback": [
+            [
+              {
+                "term": "sidebaand",
+                "text": "Sidebåndene"
+              },
+              " ligger én modulasjonsfrekvens (2 kHz) fra bærebølgen, ikke to."
+            ]
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Et AM-signal modulert med én tone består av tre frekvenser: bærebølgen, en øvre sidefrekvens (bærebølgen pluss tonefrekvensen) og en nedre sidefrekvens (bærebølgen minus tonefrekvensen).",
+        [
+          {
+            "math": [
+              "f",
+              "=",
+              {
+                "q": 7.1,
+                "u": "MHz",
+                "digits": 3
+              },
+              "±",
+              {
+                "q": 2,
+                "u": "kHz"
+              }
+            ]
+          },
+          " gir 7,098 MHz og 7,102 MHz. Signalet er altså 4 kHz bredt."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 4,
+        "section_id": "s4-05",
+        "printed_pages": [
+          "4-3"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "dd05277f16a87567"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "Jim C K Flaten",
+        "based_on": 3,
+        "at": "2026-10-24T14:11:21+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T14:11:21+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "169f072e572d2769bcd49e425efa2f715c407bef0c7aa94be761bc417ad52016",
+          "note": "Add a figure"
+        },
+        {
+          "at": "2026-10-24T14:11:21+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "f8b7d50b08f58b3ae15f0cc7c66ce1b23b9330d4e55584463f37562eb11f4077",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T14:18:30+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "f8b7d50b08f58b3ae15f0cc7c66ce1b23b9330d4e55584463f37562eb11f4077",
+          "note": "Figure added",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "visual": {
+        "template": "frequency-response",
+        "version": 1,
+        "params": {
+          "kind": "spectrum",
+          "blank": true,
+          "note": "Spekteret vises når du har svart",
+          "center_hz": 7100000.0,
+          "spectrum": {
+            "mode": "am",
+            "mod_hz": 2000,
+            "index": 0.8,
+            "freq_labels": "carrier"
+          }
+        },
+        "params_after": {
+          "blank": false,
+          "spectrum": {
+            "freq_labels": "all"
+          }
+        }
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "f8b7d50b08f58b3ae15f0cc7c66ce1b23b9330d4e55584463f37562eb11f4077",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T14:18:30+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T14:18:30+00:00",
+        "content_sha256": "f8b7d50b08f58b3ae15f0cc7c66ce1b23b9330d4e55584463f37562eb11f4077",
         "acknowledged_hazards": [
           "figures"
         ],

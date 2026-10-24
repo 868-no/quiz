@@ -448,7 +448,7 @@
     },
     {
       "revision": 3,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "scenario",
@@ -641,6 +641,15 @@
           "acknowledged": [
             "figures"
           ]
+        },
+        {
+          "at": "2026-10-24T14:18:31+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "b892d7e6734970e1e5c5bea4eb97d5e2f9d2a3dc594b6a88c340b9dcb9ef496e",
+          "note": "superseded by r4"
         }
       ],
       "checks": {
@@ -661,6 +670,273 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-24T09:32:15+00:00",
         "content_sha256": "b892d7e6734970e1e5c5bea4eb97d5e2f9d2a3dc594b6a88c340b9dcb9ef496e",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 4,
+      "status": "approved",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "medium",
+      "chapter": 4,
+      "section_ids": [
+        "s4-14"
+      ],
+      "topic_ids": [
+        "frekvenssyntese"
+      ],
+      "learning_objective": "Finne VCO-frekvensen i en låst PLL ut fra referansefrekvens og delingstall, og forstå at trinnstørrelsen er lik referansefrekvensen.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "I en ",
+          {
+            "term": "faselaast-sloyfe",
+            "text": "PLL"
+          },
+          "-",
+          {
+            "term": "frekvenssyntetisator",
+            "text": "syntetisator"
+          },
+          " er referansefrekvensen inn på fasekomparatoren ",
+          {
+            "q": 12.5,
+            "u": "kHz"
+          },
+          ". Den programmerbare deleren mellom ",
+          {
+            "term": "vco",
+            "text": "VCO-en"
+          },
+          " og fasekomparatoren deler med N = 11 576. Sløyfen er låst."
+        ]
+      ],
+      "stem": [
+        [
+          "Hvilken ",
+          {
+            "term": "frekvens",
+            "text": "frekvens"
+          },
+          " svinger VCO-en på?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 144.7,
+              "u": "MHz",
+              "digits": 3
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 12.5,
+              "u": "kHz"
+            }
+          ],
+          "feedback": [
+            "Det er signalet etter deleren som har samme frekvens som referansen. VCO-en svinger N ganger høyere."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 14.47,
+              "u": "MHz",
+              "digits": 3
+            }
+          ],
+          "feedback": [
+            "Her har kommaet havnet feil. 11 576 · 12,5 kHz = 144 700 kHz."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 144.7125,
+              "u": "MHz",
+              "digits": 4
+            }
+          ],
+          "feedback": [
+            "Dette ville vært frekvensen med N = 11 577. Hvert trinn i N flytter frekvensen med 12,5 kHz."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Når sløyfen er låst, er frekvensen ut av den programmerbare deleren lik referansefrekvensen. VCO-frekvensen er derfor N ganger referansefrekvensen:",
+        {
+          "steps": [
+            [
+              {
+                "math": [
+                  "f_{VCO}",
+                  "=",
+                  "N",
+                  "·",
+                  "f_{ref}",
+                  "=",
+                  "11576",
+                  "·",
+                  {
+                    "q": 12.5,
+                    "u": "kHz"
+                  },
+                  "=",
+                  {
+                    "q": 144700,
+                    "u": "kHz"
+                  },
+                  "=",
+                  {
+                    "q": 144.7,
+                    "u": "MHz",
+                    "digits": 3
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        "Øker man N med 1, øker frekvensen med 12,5 kHz. Trinnstørrelsen er altså lik referansefrekvensen. Mindre trinn krever lavere referansefrekvens og større delingstall."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 4,
+        "section_id": "s4-14",
+        "printed_pages": [
+          "4-7"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "cae6f056fe560c19",
+          "1146241dcdb2838a"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "Jim C K Flaten",
+        "based_on": 3,
+        "at": "2026-10-24T14:04:58+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T14:04:58+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "b892d7e6734970e1e5c5bea4eb97d5e2f9d2a3dc594b6a88c340b9dcb9ef496e",
+          "note": "Add a figure"
+        },
+        {
+          "at": "2026-10-24T14:05:04+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "31bbc3e47c5cbc4201c215818cedf2adf4ab63b149f43008e8f137fa8fa34765",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T14:18:31+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "31bbc3e47c5cbc4201c215818cedf2adf4ab63b149f43008e8f137fa8fa34765",
+          "note": "Figure added",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "visual": {
+        "template": "block-diagram",
+        "version": 1,
+        "params": {
+          "chain": [
+            {
+              "kind": "custom",
+              "label": "Referanse"
+            },
+            {
+              "kind": "custom",
+              "label": "Fasekomparator"
+            },
+            {
+              "kind": "lowpass_filter",
+              "label": "Sløyfefilter"
+            },
+            {
+              "kind": "custom",
+              "label": "VCO"
+            }
+          ],
+          "side": [
+            {
+              "kind": "custom",
+              "label": "Programmerbar deler ÷N",
+              "into": 1
+            }
+          ],
+          "edge_labels": [
+            {
+              "after": 0,
+              "text": "12,5 kHz"
+            }
+          ]
+        },
+        "caption": "Deleren får signalet sitt fra VCO-en. Den tilbakekoblingen er ikke tegnet."
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "31bbc3e47c5cbc4201c215818cedf2adf4ab63b149f43008e8f137fa8fa34765",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T14:18:31+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T14:18:31+00:00",
+        "content_sha256": "31bbc3e47c5cbc4201c215818cedf2adf4ab63b149f43008e8f137fa8fa34765",
         "acknowledged_hazards": [
           "figures"
         ],

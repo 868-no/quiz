@@ -583,7 +583,7 @@
     },
     {
       "revision": 4,
-      "status": "approved",
+      "status": "retired",
       "type": "single_choice",
       "style": "concept",
       "difficulty": "medium",
@@ -750,6 +750,15 @@
           "content_sha256": "0887a61a245cabbaf95e2a0889164ceae0e6e4e8931289893e9c3cc496e724a3",
           "note": "Jevnere svaralternativer og nye figurer (gjennomgått av AI).",
           "acknowledged": []
+        },
+        {
+          "at": "2026-10-24T14:18:32+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "0887a61a245cabbaf95e2a0889164ceae0e6e4e8931289893e9c3cc496e724a3",
+          "note": "superseded by r5"
         }
       ],
       "checks": {
@@ -765,6 +774,234 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-24T10:04:04+00:00",
         "content_sha256": "0887a61a245cabbaf95e2a0889164ceae0e6e4e8931289893e9c3cc496e724a3",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 5,
+      "status": "approved",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 4,
+      "section_ids": [
+        "s4-22"
+      ],
+      "topic_ids": [
+        "am",
+        "ssb"
+      ],
+      "learning_objective": "Forklare hvordan en tradisjonell analog SSB-sender kan lage AM med balansert modulator og sidebåndsfilter, og hvorfor de etterfølgende forsterkertrinnene må være lineære.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En tradisjonell analog ",
+          {
+            "term": "ssb",
+            "text": "SSB"
+          },
+          "-sender bruker filtermetoden med ",
+          {
+            "term": "balansert-modulator",
+            "text": "balansert modulator"
+          },
+          " og sidebåndsfilter. Den skal også kunne sende ",
+          {
+            "term": "amplitudemodulasjon",
+            "text": "AM"
+          },
+          "."
+        ]
+      ],
+      "stem": [
+        "Hvordan kan AM-signalet lages med de samme trinnene?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Det tilføres bærebølge, og sidebåndsfilteret kobles forbi."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Sluttrinnet settes i klasse C og moduleres på forsyningsspenningen."
+          ],
+          "feedback": [
+            "Slik ble AM ofte laget i eldre rørsendere. I en SSB-sender lages signalet på lavt nivå og forsterkes lineært."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Bærebølgeoscillatoren slås av, og begge sidebåndene sendes ut."
+          ],
+          "feedback": [
+            "Uten bærebølge blir det dobbelt sidebånd med undertrykt bærebølge, ikke vanlig AM."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Lydsignalet styrer en varicap-diode i bærebølgeoscillatoren."
+          ],
+          "feedback": [
+            [
+              "Det gir ",
+              {
+                "term": "frekvensmodulasjon",
+                "text": "frekvensmodulasjon"
+              },
+              ". AM krever at amplituden varierer med lyden."
+            ]
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Den balanserte modulatoren ubalanseres, eller ",
+          {
+            "term": "baerebolge",
+            "text": "bærebølge"
+          },
+          " legges til i utgangen fra modulatoren. Sidebåndsfilteret kobles ut eller forbi, slik at begge ",
+          {
+            "term": "sidebaand",
+            "text": "sidebåndene"
+          },
+          " beholdes. Resultatet er et vanlig AM-signal på lav ",
+          {
+            "term": "effekt",
+            "text": "effekt"
+          },
+          ". Moderne digitalt oppbygde ",
+          {
+            "term": "sender",
+            "text": "sendere"
+          },
+          " lager ofte både AM og SSB direkte med digital signalbehandling, uten slike omkoblinger."
+        ],
+        [
+          "Signalet blandes så opp til sendefrekvensen og forsterkes i lineære trinn, for eksempel ",
+          {
+            "term": "forsterkerklasse",
+            "text": "klasse AB"
+          },
+          ", fordi amplituden varierer med lyden, og amplitudevariasjonene ikke skal forvrenges."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 4,
+        "section_id": "s4-22",
+        "printed_pages": [
+          "4-11"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "c378b14f807f70d8"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "Jim C K Flaten",
+        "based_on": 4,
+        "at": "2026-10-24T14:04:58+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T14:04:58+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "0887a61a245cabbaf95e2a0889164ceae0e6e4e8931289893e9c3cc496e724a3",
+          "note": "Add a figure"
+        },
+        {
+          "at": "2026-10-24T14:04:59+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "7b9fc0ab09a878a75fa2b410b99a9c5c8e4cbe70c799f9f68ad856394237dbb4",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T14:18:32+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "7b9fc0ab09a878a75fa2b410b99a9c5c8e4cbe70c799f9f68ad856394237dbb4",
+          "note": "Figure added",
+          "acknowledged": []
+        }
+      ],
+      "visual": {
+        "template": "block-diagram",
+        "version": 1,
+        "params": {
+          "chain": [
+            {
+              "kind": "microphone"
+            },
+            {
+              "kind": "mic_amp"
+            },
+            {
+              "kind": "balanced_modulator"
+            },
+            {
+              "kind": "sideband_filter"
+            },
+            {
+              "kind": "power_amp"
+            },
+            {
+              "kind": "antenna"
+            }
+          ],
+          "side": [
+            {
+              "kind": "carrier_osc",
+              "into": 2
+            }
+          ]
+        }
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "7b9fc0ab09a878a75fa2b410b99a9c5c8e4cbe70c799f9f68ad856394237dbb4",
+        "errors": [],
+        "warnings": [],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T14:18:32+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T14:18:32+00:00",
+        "content_sha256": "7b9fc0ab09a878a75fa2b410b99a9c5c8e4cbe70c799f9f68ad856394237dbb4",
         "acknowledged_hazards": [],
         "checklist": {
           "one_correct": true,

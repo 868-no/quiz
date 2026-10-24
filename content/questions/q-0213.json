@@ -224,7 +224,7 @@
     },
     {
       "revision": 2,
-      "status": "approved",
+      "status": "retired",
       "type": "single_choice",
       "style": "concept",
       "difficulty": "medium",
@@ -401,6 +401,15 @@
             "figures",
             "ocr"
           ]
+        },
+        {
+          "at": "2026-10-24T14:18:34+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "9d570d974d33b5bf3f7f537f53275baec18d0e2a1b91b59fb7c48d23a55349a6",
+          "note": "superseded by r3"
         }
       ],
       "checks": {
@@ -425,6 +434,247 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-24T10:04:16+00:00",
         "content_sha256": "9d570d974d33b5bf3f7f537f53275baec18d0e2a1b91b59fb7c48d23a55349a6",
+        "acknowledged_hazards": [
+          "figures",
+          "ocr"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 3,
+      "status": "approved",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 6,
+      "section_ids": [
+        "s6-20"
+      ],
+      "topic_ids": [
+        "demodulering"
+      ],
+      "learning_objective": "Forklare prinsippet for flankedetektering av FM og hvorfor metoden sjelden brukes.",
+      "priority": "normal",
+      "context": [
+        [
+          "Et ",
+          {
+            "term": "frekvensmodulasjon",
+            "text": "FM"
+          },
+          "-signal sendes gjennom en ",
+          {
+            "term": "avstemt-krets",
+            "text": "avstemt krets"
+          },
+          " der ",
+          {
+            "term": "resonans",
+            "text": "resonansfrekvensen"
+          },
+          " ligger litt ved siden av ",
+          {
+            "term": "mellomfrekvens",
+            "text": "mellomfrekvensen"
+          },
+          ". Deretter følger en vanlig ",
+          {
+            "term": "amplitudemodulasjon",
+            "text": "AM"
+          },
+          "-detektor. Dette kalles flankedetektering."
+        ]
+      ],
+      "stem": "Hvorfor kommer det lyd ut av denne koblingen?",
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Signalet ligger på den skrå delen av kurven, så frekvensendring gir amplitudeendring"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Signalet ligger på toppen av resonanskurven, så frekvensendringer gir størst mulig utslag"
+          ],
+          "feedback": [
+            "På toppen er kurven nesten flat. Små frekvensendringer gir da nesten ingen endring i amplituden."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "AM-detektoren likeretter signalet og gir en spenning som er proporsjonal med frekvensen"
+          ],
+          "feedback": [
+            "En AM-detektor reagerer på amplituden, ikke på frekvensen. Det er den avstemte kretsen som gjør om frekvens til amplitude."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Den avstemte kretsen fjerner bærebølgen, så detektoren bare får med seg sidebåndene"
+          ],
+          "feedback": [
+            [
+              "Kretsen er ikke laget for å fjerne ",
+              {
+                "term": "baerebolge",
+                "text": "bærebølgen"
+              },
+              ". Hele FM-signalet ligger på flanken og blir bare dempet mer eller mindre."
+            ]
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Et stykke unna ",
+          {
+            "term": "resonans",
+            "text": "resonansen"
+          },
+          " ligger kretsen på flanken, der dempingen endres raskt med ",
+          {
+            "term": "frekvens",
+            "text": "frekvensen"
+          },
+          ". Når FM-signalet svinger fram og tilbake i frekvens, varierer derfor amplituden etter kretsen i takt med lyden, og en vanlig AM-detektor kan hente den ut."
+        ],
+        [
+          "Metoden er enkel, men brukes sjelden. Flanken er ikke rett, så lyden blir forvrengt, og ",
+          {
+            "term": "demodulator",
+            "text": "detektoren"
+          },
+          " reagerer også på amplitudestøy og fading. Derfor brukes heller ",
+          {
+            "term": "diskriminator",
+            "text": "diskriminatorer"
+          },
+          ", forholdsdetektorer eller ",
+          {
+            "term": "faselaast-sloyfe",
+            "text": "PLL"
+          },
+          "-detektorer."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 6,
+        "section_id": "s6-20",
+        "printed_pages": [
+          "6-11"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "36fb5b2d6fb96234"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "Jim C K Flaten",
+        "based_on": 2,
+        "at": "2026-10-24T14:11:21+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T14:11:21+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "9d570d974d33b5bf3f7f537f53275baec18d0e2a1b91b59fb7c48d23a55349a6",
+          "note": "Add a figure"
+        },
+        {
+          "at": "2026-10-24T14:11:22+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "ec17d1a40fc6e90cde773af235754a1fbc2497108ccb5007830bf3a3c72f3beb",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T14:18:34+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "ec17d1a40fc6e90cde773af235754a1fbc2497108ccb5007830bf3a3c72f3beb",
+          "note": "Figure added",
+          "acknowledged": [
+            "figures",
+            "ocr"
+          ]
+        }
+      ],
+      "visual": {
+        "template": "frequency-response",
+        "version": 1,
+        "params": {
+          "kind": "resonance",
+          "center_hz": 10715000.0,
+          "resonance": {
+            "f_low_hz": 10705000.0,
+            "f_high_hz": 10725000.0,
+            "points_label": "none"
+          },
+          "band": {
+            "center_hz": 10700000.0,
+            "half_width_hz": 4000,
+            "label": "FM-signalet"
+          }
+        },
+        "params_after": {
+          "band": {
+            "project": true
+          }
+        }
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "ec17d1a40fc6e90cde773af235754a1fbc2497108ccb5007830bf3a3c72f3beb",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: equation, table. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T14:18:34+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T14:18:34+00:00",
+        "content_sha256": "ec17d1a40fc6e90cde773af235754a1fbc2497108ccb5007830bf3a3c72f3beb",
         "acknowledged_hazards": [
           "figures",
           "ocr"

@@ -376,7 +376,7 @@
     },
     {
       "revision": 3,
-      "status": "approved",
+      "status": "retired",
       "type": "single_choice",
       "style": "concept",
       "difficulty": "medium",
@@ -536,6 +536,15 @@
           "acknowledged": [
             "figures"
           ]
+        },
+        {
+          "at": "2026-10-24T14:18:31+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "085882c1efaeebe39014028f937f1f4e3b089fcbfc77f44eb149aa66d4475a0d",
+          "note": "superseded by r4"
         }
       ],
       "checks": {
@@ -556,6 +565,243 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-24T10:04:04+00:00",
         "content_sha256": "085882c1efaeebe39014028f937f1f4e3b089fcbfc77f44eb149aa66d4475a0d",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 4,
+      "status": "approved",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 4,
+      "section_ids": [
+        "s4-21"
+      ],
+      "topic_ids": [
+        "ssb",
+        "senderoppbygging"
+      ],
+      "learning_objective": "Forstå hvorfor et SSB-signal må blandes, ikke multipliseres, opp til sendefrekvensen.",
+      "priority": "normal",
+      "context": [
+        [
+          "Et ",
+          {
+            "term": "ssb",
+            "text": "SSB"
+          },
+          "-signal lages på en fast ",
+          {
+            "term": "frekvens",
+            "text": "frekvens"
+          },
+          " på 9 MHz og skal flyttes opp til 2 m-båndet."
+        ]
+      ],
+      "stem": [
+        [
+          "Hvorfor brukes et ",
+          {
+            "term": "blander",
+            "text": "blandetrinn"
+          },
+          " til dette, og ikke frekvensmultiplikatorer?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Frekvensavstandene i signalet ville også blitt ganget opp."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Sidebåndet ville havnet på feil side av bærebølgen."
+          ],
+          "feedback": [
+            "Multiplikasjon snur ikke sidebåndet. Det kan skje ved blanding når differansefrekvensen brukes. Problemet med multiplikasjon er at frekvensavstandene i signalet ganges opp."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Multiplikasjon ville fjernet det gjenværende sidebåndet."
+          ],
+          "feedback": [
+            [
+              {
+                "term": "sidebaand",
+                "text": "Sidebåndet"
+              },
+              " blir ikke fjernet. Problemet er at frekvensavstandene i signalet blir ganget opp."
+            ]
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Et blandetrinn gir høyere utgangseffekt enn en multiplikator."
+          ],
+          "feedback": [
+            [
+              "Begge er laveffektstrinn. ",
+              {
+                "term": "effekt",
+                "text": "Effekten"
+              },
+              " kommer fra ",
+              {
+                "term": "sluttforsterker",
+                "text": "sluttforsterkeren"
+              },
+              ", og det er ikke grunnen til valget."
+            ]
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "En multiplikator ganger den øyeblikkelige frekvensen. Hvis signalet ble ganget med 4, ville en tone 1 kHz over den undertrykte ",
+          {
+            "term": "baerebolge",
+            "text": "bærebølgen"
+          },
+          " havne 4 kHz over. All tale ville blitt forskjøvet og spredt ut, og signalet ville blitt bredere."
+        ],
+        "I tillegg er en multiplikator sterkt ulineær og ødelegger amplitudevariasjonene som SSB består av. Et blandetrinn flytter hele signalet med en fast frekvens, slik at avstandene mellom komponentene beholdes."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 4,
+        "section_id": "s4-21",
+        "printed_pages": [
+          "4-11"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "758f6e00b9c6cc3f"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "Jim C K Flaten",
+        "based_on": 3,
+        "at": "2026-10-24T14:04:59+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T14:04:59+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "085882c1efaeebe39014028f937f1f4e3b089fcbfc77f44eb149aa66d4475a0d",
+          "note": "Add a figure"
+        },
+        {
+          "at": "2026-10-24T14:04:59+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "320d51c5de49693ff6764056dbfea989fcc18f6c94b5f3cbb5b2355ad148ebba",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T14:18:31+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "320d51c5de49693ff6764056dbfea989fcc18f6c94b5f3cbb5b2355ad148ebba",
+          "note": "Figure added",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "visual": {
+        "template": "block-diagram",
+        "version": 1,
+        "params": {
+          "chain": [
+            {
+              "kind": "custom",
+              "label": "SSB-generator"
+            },
+            {
+              "kind": "mixer"
+            },
+            {
+              "kind": "bandpass_filter"
+            },
+            {
+              "kind": "power_amp"
+            },
+            {
+              "kind": "antenna"
+            }
+          ],
+          "side": [
+            {
+              "kind": "local_osc",
+              "label": "Oscillator",
+              "into": 1
+            }
+          ],
+          "edge_labels": [
+            {
+              "after": 0,
+              "text": "9 MHz"
+            },
+            {
+              "after": 2,
+              "text": "2 m"
+            }
+          ]
+        }
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "320d51c5de49693ff6764056dbfea989fcc18f6c94b5f3cbb5b2355ad148ebba",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T14:18:31+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T14:18:31+00:00",
+        "content_sha256": "320d51c5de49693ff6764056dbfea989fcc18f6c94b5f3cbb5b2355ad148ebba",
         "acknowledged_hazards": [
           "figures"
         ],
