@@ -603,6 +603,190 @@
         },
         "verifier": "deterministic-v1"
       }
+    },
+    {
+      "revision": 4,
+      "status": "needs_review",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "easy",
+      "chapter": 3,
+      "section_ids": [
+        "s3-05"
+      ],
+      "topic_ids": [
+        "dioder"
+      ],
+      "learning_objective": "Vite hvilken polaritet en ledende silisiumdiode har, og omtrent hvor stort spenningsfallet over den er.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En ",
+          {
+            "term": "diode",
+            "text": "silisiumdiode"
+          },
+          " har anoden på P-siden og katoden på N-siden."
+        ]
+      ],
+      "stem": [
+        [
+          "Hva er typisk riktig når dioden leder ",
+          {
+            "term": "strom",
+            "text": "strøm"
+          },
+          " i ",
+          {
+            "term": "lederetning",
+            "text": "lederetningen"
+          },
+          "?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Anoden er mer positiv enn katoden, og spenningsfallet over dioden er ca. 0,6–0,7 V."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Katoden er mer positiv enn anoden, og spenningsfallet over dioden er ca. 0,6–0,7 V."
+          ],
+          "feedback": [
+            [
+              "Med katoden mer positiv enn anoden er dioden ",
+              {
+                "term": "sperreretning",
+                "text": "forspent i sperreretningen"
+              },
+              ". Sperresjiktet blir bredere, og det går nesten ingen strøm."
+            ]
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Anoden er mer positiv enn katoden, og spenningsfallet over dioden er ca. 0,2–0,3 V."
+          ],
+          "feedback": [
+            "0,2–0,3 V er typisk for en germaniumdiode. En ledende silisiumdiode har omtrent 0,6–0,7 V over seg."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Anoden er mer positiv enn katoden, og spenningsfallet over dioden er ca. 6–7 V."
+          ],
+          "feedback": [
+            "Spenningsfallet over en ledende silisiumdiode er omtrent en tidel av dette."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Når P-siden (anoden) gjøres positiv i forhold til N-siden (katoden), blir barrieren ved overgangen mindre. Dioden er da ",
+          {
+            "term": "lederetning",
+            "text": "forspent i lederetningen"
+          },
+          "."
+        ],
+        [
+          "Strømmen øker kraftig med ",
+          {
+            "term": "spenning",
+            "text": "spenningen"
+          },
+          ", og ved vanlig drift ligger det omtrent 0,6–0,7 V over en silisiumdiode. Det er ingen helt skarp terskel; den nøyaktige verdien avhenger av strøm og temperatur. Med motsatt polaritet blir ",
+          {
+            "term": "sperresjikt",
+            "text": "sperresjiktet"
+          },
+          " bredere, og bare en svært liten lekkasjestrøm går."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 3,
+        "section_id": "s3-05",
+        "printed_pages": [
+          "3-2"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "f4e450814fed8ffc",
+          "e4d97158f629ffd0"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "Jim C K Flaten",
+        "based_on": 3,
+        "at": "2026-10-24T16:25:25+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T16:25:25+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "426fda2cda5859945ceb1477bb01a3341189e91fb1c43964b1c227e62b3441c0",
+          "note": "Add a figure"
+        },
+        {
+          "at": "2026-10-24T16:25:26+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "d1472ae3fee3aa49fb4b9bef4aa577fb77d0dd138d68e29b2a14045d5a6a6b22",
+          "note": "automated checks passed"
+        }
+      ],
+      "visual": {
+        "template": "semiconductor",
+        "version": 1,
+        "params": {
+          "kind": "junction",
+          "terminals": true
+        },
+        "params_after": {
+          "bias": "forward",
+          "depletion": "narrow"
+        }
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "d1472ae3fee3aa49fb4b9bef4aa577fb77d0dd138d68e29b2a14045d5a6a6b22",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: equation, low_ocr_confidence, numeric_low_conf. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T16:25:26+00:00"
+      }
     }
   ]
 }

@@ -584,6 +584,19 @@ def _spectrum_rules(p: dict[str, Any], errors: list[str]) -> None:
             errors.append(f"panels[{i}].skirt: outside the axis")
 
 
+# --- semiconductor --------------------------------------------------------------------
+
+def _semi_rules(p: dict[str, Any], errors: list[str]) -> None:
+    if p["dopant"] != "none" and p["kind"] != "lattice":
+        errors.append("dopant: only for kind 'lattice'")
+    if p["bias"] != "none" and p["kind"] != "junction":
+        errors.append("bias: only for kind 'junction'")
+    if p["compare"] and p["kind"] == "lattice":
+        errors.append("compare: not for kind 'lattice'")
+    if p["kind"] == "junction" and p["bias"] == "forward" and p["depletion"] == "wide":
+        errors.append("depletion: forward bias narrows the layer, it cannot be wide")
+
+
 # --- pi-network, ratio-detector ----------------------------------------------------
 
 def _no_rules(p: dict[str, Any], errors: list[str]) -> None:
@@ -595,7 +608,7 @@ RULES = {"dc-circuit": _dc_rules, "ac-circuit": _ac_rules, "waveform": _wave_rul
          "series-regulator": _reg_rules, "zener-regulator": _zen_rules,
          "frequency-response": _fr_rules, "pi-network": _no_rules,
          "ratio-detector": _no_rules, "time-signal": _ts_rules_time,
-         "spectrum": _spectrum_rules}
+         "spectrum": _spectrum_rules, "semiconductor": _semi_rules}
 QUANTITIES = {"dc-circuit": _dc_quantities, "ac-circuit": _ac_quantities, "waveform": _wave_quantities,
               "rlc-circuit": _rlc_quantities, "rectifier": _rect_quantities, "transformer": _tr_quantities,
               "transistor-stage": _ts_quantities, "series-regulator": _reg_quantities, "zener-regulator": _zen_quantities,

@@ -392,6 +392,177 @@
         },
         "verifier": "deterministic-v1"
       }
+    },
+    {
+      "revision": 3,
+      "status": "needs_review",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "easy",
+      "chapter": 3,
+      "section_ids": [
+        "s3-03",
+        "s3-04"
+      ],
+      "topic_ids": [
+        "halvledermaterialer"
+      ],
+      "learning_objective": "Forstå at et treverdig tilsetningsstoff gir P-type silisium der hull er majoritetsladningsbærerne.",
+      "priority": "normal",
+      "context": [
+        [
+          "Et silisiumkrystall blir ",
+          {
+            "term": "doping",
+            "text": "dopet"
+          },
+          " med litt av et grunnstoff som har tre elektroner i det ytterste skallet, for eksempel bor. Silisiumatomene har selv fire slike elektroner."
+        ]
+      ],
+      "stem": [
+        "Hvilke ladningsbærere står for det meste av ledningen i dette materialet?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Hull – ledige plasser i bindingene der elektroner kan hoppe inn."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Frie elektroner som er til overs fra tilsetningsstoffet."
+          ],
+          "feedback": [
+            [
+              "Overskudd av frie elektroner får man når tilsetningsstoffet har fem elektroner ytterst, slik fosfor har. Det gir ",
+              {
+                "term": "n-type",
+                "text": "N-type"
+              },
+              ". Tre ytre elektroner gir tvert imot én binding som mangler et elektron."
+            ]
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Positive ioner som vandrer fritt gjennom krystallgitteret."
+          ],
+          "feedback": [
+            "Atomene sitter fast i krystallgitteret og flytter seg ikke. Det er hullet som oppfører seg som en positiv ladningsbærer, men det er en manglende binding og ikke et ion."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Omtrent like mange frie elektroner som hull i krystallet."
+          ],
+          "feedback": [
+            "Likevekt mellom elektroner og hull gjelder omtrent i helt rent silisium. Tilsetningsstoffet skaper mange ekstra hull, så hullene blir i klart flertall."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "I ",
+          {
+            "term": "kvartskrystall",
+            "text": "krystallet"
+          },
+          " deler hvert silisiumatom elektroner med fire naboer. Et atom med bare tre ytre elektroner klarer bare tre fulle bindinger, og den fjerde mangler et elektron. Denne mangelen kalles et hull."
+        ],
+        [
+          "Et elektron fra en nabobinding kan hoppe over og fylle hullet, men etterlater da et nytt hull der det kom fra. Når dette gjentar seg, ser det ut som om hullet vandrer gjennom krystallet i motsatt retning av elektronene – som om det var en positiv ",
+          {
+            "term": "ladning",
+            "text": "ladning"
+          },
+          ". Derfor kalles materialet ",
+          {
+            "term": "p-type",
+            "text": "P-type"
+          },
+          ", og hullene er majoritetsladningsbærerne."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 3,
+        "section_id": "s3-03",
+        "printed_pages": [
+          "3-1"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "ac16d094631090f9",
+          "df904e59f417becd"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "Jim C K Flaten",
+        "based_on": 2,
+        "at": "2026-10-24T16:25:26+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T16:25:26+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "fe4b9bb139eefb2c3abb6ac06a9a3a17a83e773badc1d4b702ba1ca50cdfedc4",
+          "note": "Add a figure"
+        },
+        {
+          "at": "2026-10-24T16:25:26+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "56213c03f94ee180da7d127bf60c4b2a8a37074f880c5a871ec3b3db3fef3c7f",
+          "note": "automated checks passed"
+        }
+      ],
+      "visual": {
+        "template": "semiconductor",
+        "version": 1,
+        "params": {
+          "kind": "lattice"
+        },
+        "params_after": {
+          "dopant": "B"
+        }
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "56213c03f94ee180da7d127bf60c4b2a8a37074f880c5a871ec3b3db3fef3c7f",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: equation, low_ocr_confidence. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T16:25:26+00:00"
+      }
     }
   ]
 }

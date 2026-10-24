@@ -2208,6 +2208,91 @@
           "panels": []
         }
       }
+    },
+    {
+      "name": "semiconductor: lattice with phosphorus",
+      "valid": true,
+      "visual": {
+        "template": "semiconductor",
+        "version": 1,
+        "params": {
+          "kind": "lattice",
+          "dopant": "P"
+        }
+      },
+      "quantities": {},
+      "shown": {}
+    },
+    {
+      "name": "semiconductor: lattice with boron",
+      "valid": true,
+      "visual": {
+        "template": "semiconductor",
+        "version": 1,
+        "params": {
+          "kind": "lattice",
+          "dopant": "B"
+        }
+      },
+      "quantities": {},
+      "shown": {}
+    },
+    {
+      "name": "semiconductor: forward-biased junction",
+      "valid": true,
+      "visual": {
+        "template": "semiconductor",
+        "version": 1,
+        "params": {
+          "kind": "junction",
+          "terminals": true,
+          "bias": "forward",
+          "depletion": "narrow"
+        }
+      },
+      "quantities": {},
+      "shown": {}
+    },
+    {
+      "name": "semiconductor: varicap comparison and JFET",
+      "valid": true,
+      "visual": {
+        "template": "semiconductor",
+        "version": 1,
+        "params": {
+          "kind": "jfet",
+          "compare": true
+        }
+      },
+      "quantities": {},
+      "shown": {}
+    },
+    {
+      "name": "semiconductor: dopant only in a lattice",
+      "valid": false,
+      "error": "dopant",
+      "visual": {
+        "template": "semiconductor",
+        "version": 1,
+        "params": {
+          "kind": "junction",
+          "dopant": "P"
+        }
+      }
+    },
+    {
+      "name": "semiconductor: forward bias cannot widen the layer",
+      "valid": false,
+      "error": "forward bias",
+      "visual": {
+        "template": "semiconductor",
+        "version": 1,
+        "params": {
+          "kind": "junction",
+          "bias": "forward",
+          "depletion": "wide"
+        }
+      }
     }
   ]
 }

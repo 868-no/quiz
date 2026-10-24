@@ -716,6 +716,174 @@
         },
         "verifier": "deterministic-v1"
       }
+    },
+    {
+      "revision": 5,
+      "status": "needs_review",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "easy",
+      "chapter": 3,
+      "section_ids": [
+        "s3-01"
+      ],
+      "topic_ids": [
+        "halvledermaterialer"
+      ],
+      "learning_objective": "Forstå hvorfor rent krystallinsk silisium leder dårlig, og at doping trengs for å lage en halvleder.",
+      "priority": "exam_important",
+      "context": [
+        "Silisium har fire elektroner i det ytterste skallet. I et rent silisiumkrystall er hvert atom bundet til fire naboatomer."
+      ],
+      "stem": [
+        "Hvorfor leder et helt rent silisiumkrystall svært dårlig ved romtemperatur?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Ytterelektronene er låst i bindinger mellom atomene, så det finnes få frie ladningsbærere."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Hvert atom har bare fire ytterelektroner, mens et godt ledende stoff må ha åtte."
+          ],
+          "feedback": [
+            "Gode ledere som kobber har tvert imot bare ett ytterelektron, som lett blir fritt. Det avgjørende er om elektronene er bundet i krystallet, ikke hvor mange de er."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Krystallet inneholder så mange frie hull at elektronene fanges opp med en gang."
+          ],
+          "feedback": [
+            "Mange hull får man først når krystallet dopes med et stoff som har tre ytterelektroner. Det rene krystallet har svært få av både frie elektroner og hull."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Silisium er et metall, men overflaten er dekket av et isolerende oksidlag."
+          ],
+          "feedback": [
+            "Silisium er ikke et metall. Den dårlige ledningsevnen skyldes at elektronene er bundet i krystallet, ikke et belegg på overflaten."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "De fire ytterelektronene i hvert silisiumatom deles med naboatomene i ",
+          {
+            "term": "kvartskrystall",
+            "text": "krystallet"
+          },
+          ". Når alle disse elektronene er brukt i bindinger, er det nesten ingen frie elektroner igjen som kan føre ",
+          {
+            "term": "strom",
+            "text": "strøm"
+          },
+          ", og rent silisium oppfører seg nærmest som en isolator."
+        ],
+        [
+          "For å få en brukbar ",
+          {
+            "term": "halvleder",
+            "text": "halvleder"
+          },
+          " tilsetter man små, nøye kontrollerte mengder av et annet grunnstoff. Dette kalles ",
+          {
+            "term": "doping",
+            "text": "doping"
+          },
+          ", og det gir enten ",
+          {
+            "term": "n-type",
+            "text": "N-type"
+          },
+          " eller ",
+          {
+            "term": "p-type",
+            "text": "P-type"
+          },
+          " materiale."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 3,
+        "section_id": "s3-01",
+        "printed_pages": [
+          "3-1"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "aec5047a5e78450e"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "Jim C K Flaten",
+        "based_on": 4,
+        "at": "2026-10-24T16:25:25+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T16:25:25+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "f0a13712d21e84a3785c2380b2faeb4cdad42e6937b5108171adf35564a94966",
+          "note": "Add a figure"
+        },
+        {
+          "at": "2026-10-24T16:25:26+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "af5bf6f5664c6559e26c7291583b035aca0e222b474e6a359f17a3390a45d2e4",
+          "note": "automated checks passed"
+        }
+      ],
+      "visual": {
+        "template": "semiconductor",
+        "version": 1,
+        "params": {
+          "kind": "lattice",
+          "blank": true,
+          "note": "Tegningen vises når du har svart"
+        },
+        "params_after": {
+          "blank": false
+        }
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "af5bf6f5664c6559e26c7291583b035aca0e222b474e6a359f17a3390a45d2e4",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T16:25:26+00:00"
+      }
     }
   ]
 }

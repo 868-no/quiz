@@ -1688,6 +1688,75 @@
           }
         }
       }
+    },
+    {
+      "id": "semiconductor",
+      "version": 1,
+      "title": "Halvleder",
+      "description": "Simplified drawings of the inside of a semiconductor: a silicon lattice with electron-pair bonds, optionally with a phosphorus atom (free electron) or boron atom (hole); a PN junction as a bar with holes, free electrons and the depletion layer with its fixed charges, optionally with anode/cathode, bias polarity, or a narrow and a wide layer compared (varicap); an N-channel JFET with gate regions and depletion layers, optionally at two gate voltages. 'blank' shows only a note, for drawings shown after answering.",
+      "idealised": "Forenklet tegning av prinsippet, ikke i riktig målestokk.",
+      "status": "needs_review",
+      "params": {
+        "type": "object",
+        "required": [
+          "kind"
+        ],
+        "properties": {
+          "kind": {
+            "type": "string",
+            "enum": [
+              "lattice",
+              "junction",
+              "jfet"
+            ]
+          },
+          "dopant": {
+            "type": "string",
+            "enum": [
+              "none",
+              "P",
+              "B"
+            ],
+            "default": "none"
+          },
+          "depletion": {
+            "type": "string",
+            "enum": [
+              "none",
+              "narrow",
+              "normal",
+              "wide"
+            ],
+            "default": "normal"
+          },
+          "bias": {
+            "type": "string",
+            "enum": [
+              "none",
+              "forward",
+              "reverse"
+            ],
+            "default": "none"
+          },
+          "terminals": {
+            "type": "boolean",
+            "default": false
+          },
+          "compare": {
+            "type": "boolean",
+            "default": false
+          },
+          "blank": {
+            "type": "boolean",
+            "default": false
+          },
+          "note": {
+            "type": "string",
+            "maxLength": 48,
+            "default": ""
+          }
+        }
+      }
     }
   ]
 }
