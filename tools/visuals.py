@@ -619,17 +619,238 @@ def _no_rules(p: dict[str, Any], errors: list[str]) -> None:
     pass  # every combination of the parameters can be drawn
 
 
+# --- code-breakdown (new) ---
+
+def _code_breakdown_rules(p: dict[str, Any], errors: list[str]) -> None:
+    if sum(len(x["text"]) for x in p["parts"]) > 16:
+        errors.append("parts: the whole code is at most 16 characters")
+    for i, x in enumerate(p["parts"]):
+        if x["hidden"] and not x["label"]:
+            errors.append(f"parts[{i}].label: a hidden part needs a label to show after answering")
+    if not any(x["label"] for x in p["parts"]):
+        errors.append("parts: at least one part needs a label")
+
+# --- end code-breakdown ---
+
+
+# --- instrument (new) ---
+
+def _instrument_rules(p: dict[str, Any], errors: list[str]) -> None:
+    if p["kind"] == "scope":
+        if not p["traces"]:
+            errors.append("traces: kind scope needs 1–2 traces")
+        for i, t in enumerate(p["traces"]):
+            if t["shape"] == "am" and t["carrier_hz"] is None:
+                errors.append(f"traces[{i}].carrier_hz: required for an AM trace")
+            if t["shape"] == "am" and t["carrier_hz"] is not None and not t["carrier_hz"] >= 4 * t["frequency_hz"]:
+                errors.append(f"traces[{i}].carrier_hz: must be at least 4 times the modulating frequency")
+            if t["shape"] != "am" and t["carrier_hz"] is not None:
+                errors.append(f"traces[{i}].carrier_hz: only for an AM trace")
+            periods = 10 * p["time_per_div_s"] * t["frequency_hz"]
+            if periods < 0.25 or periods > 40:
+                errors.append(f"traces[{i}].frequency_hz: shows {periods:.3g} periods on the screen; use 0,25–40")
+            top = (abs(t["offset_v"]) + t["amplitude_v"] * (1 + t["depth"] if t["shape"] == "am" else 1)) / p["volt_per_div_v"]
+            if top > 4:
+                errors.append(f"traces[{i}].amplitude_v: the trace goes off the screen (more than 4 divisions from the middle)")
+    elif p["traces"]:
+        errors.append("traces: only for kind scope")
+    if p["kind"] == "meter_series" and p["range_v"] is None:
+        errors.append("range_v: required for kind meter_series")
+    if p["kind"] == "meter_shunt" and p["range_a"] is None:
+        errors.append("range_a: required for kind meter_shunt")
+    if p["kind"] == "meter_series" and p["range_v"] is not None:
+        um = p["meter"]["full_scale_a"] * (p["meter"]["coil_ohms"] or 0)
+        if not p["range_v"] > um:
+            errors.append("range_v: must be above the voltage over the meter at full scale")
+    if p["kind"] == "meter_shunt":
+        if p["meter"]["coil_ohms"] is None:
+            errors.append("meter.coil_ohms: a shunt needs the meter resistance")
+        if p["range_a"] is not None and not p["range_a"] > p["meter"]["full_scale_a"]:
+            errors.append("range_a: must be above the meter full-scale current")
+    if p["kind"] == "voltmeter_loading" and p["supply_v"] is None:
+        errors.append("supply_v: required for kind voltmeter_loading")
+
+
+def _instrument_quantities(p: dict[str, Any]) -> dict[str, dict[str, Any]]:
+    """Independent of web/js/visuals/instrument.js; the quantity names match the
+    calculation inputs they illustrate (U, I, R for the meters, T and f)."""
+    q: dict[str, dict[str, Any]] = {}
+    k = p["kind"]
+    if k == "scope":
+        t = p["traces"][0]
+        q["f"] = {"value": t["frequency_hz"], "unit": "Hz", "shown": False}
+        q["T"] = {"value": 1 / t["frequency_hz"], "unit": "s", "shown": False}
+        q["U_p"] = {"value": t["amplitude_v"], "unit": "V", "shown": False}
+        q["U_pp"] = {"value": 2 * t["amplitude_v"], "unit": "V", "shown": False}
+        q["time_per_div"] = {"value": p["time_per_div_s"], "unit": "s", "shown": p["show_settings"]}
+        q["volt_per_div"] = {"value": p["volt_per_div_v"], "unit": "V", "shown": p["show_settings"]}
+        q["div_per_period"] = {"value": 1 / (t["frequency_hz"] * p["time_per_div_s"]), "unit": "", "shown": False}
+    elif k == "meter_series":
+        m = p["meter"]
+        rm = m["coil_ohms"] or 0
+        q["I"] = {"value": m["full_scale_a"], "unit": "A", "shown": m["show_full_scale"]}
+        q["R_m"] = {"value": rm, "unit": "Ω", "shown": m["coil_ohms"] is not None and m["show_coil"]}
+        q["U"] = {"value": p["range_v"], "unit": "V", "shown": p["show_range"]}
+        q["R"] = {"value": p["range_v"] / m["full_scale_a"] - rm, "unit": "Ω", "shown": p["show_resistor"]}
+    elif k == "meter_shunt":
+        m = p["meter"]
+        um = m["full_scale_a"] * m["coil_ohms"]
+        q["I_m"] = {"value": m["full_scale_a"], "unit": "A", "shown": m["show_full_scale"]}
+        q["R_m"] = {"value": m["coil_ohms"], "unit": "Ω", "shown": m["show_coil"]}
+        q["U"] = {"value": um, "unit": "V", "shown": False}
+        q["I"] = {"value": p["range_a"], "unit": "A", "shown": p["show_range"]}
+        q["I_sh"] = {"value": p["range_a"] - m["full_scale_a"], "unit": "A", "shown": False}
+        q["R"] = {"value": um / (p["range_a"] - m["full_scale_a"]), "unit": "Ω", "shown": p["show_resistor"]}
+    elif k == "voltmeter_loading":
+        rp = 1 / (1 / p["r2_ohms"] + 1 / p["meter_ohms"])
+        q["U_s"] = {"value": p["supply_v"], "unit": "V", "shown": True}
+        q["R_upper"] = {"value": p["r1_ohms"], "unit": "Ω", "shown": True}
+        q["R_lower"] = {"value": p["r2_ohms"], "unit": "Ω", "shown": True}
+        q["R_i"] = {"value": p["meter_ohms"], "unit": "Ω", "shown": p["show_meter_ohms"]}
+        q["R_p"] = {"value": rp, "unit": "Ω", "shown": False}
+        q["U_m"] = {"value": p["supply_v"] * rp / (p["r1_ohms"] + rp), "unit": "V", "shown": p["show_reading"]}
+        q["U_0"] = {"value": p["supply_v"] * p["r2_ohms"] / (p["r1_ohms"] + p["r2_ohms"]), "unit": "V", "shown": False}
+    elif k == "gate":
+        q["T"] = {"value": p["gate_s"], "unit": "s", "shown": True}
+        q["f"] = {"value": 1 / p["gate_s"], "unit": "Hz", "shown": p["show_resolution"]}
+    return q
+
+# --- end instrument ---
+
+
+# --- antenna (new) ---
+
+def _antenna_rules(p: dict[str, Any], errors: list[str]) -> None:
+    k = p["kind"]
+    if (p["show_current"] or p["show_voltage"]) and k not in ("dipole", "loaded_vertical"):
+        errors.append("show_current/show_voltage: only for dipole and loaded_vertical")
+    if p["show_voltage"] and k == "loaded_vertical":
+        errors.append("show_voltage: only for dipole")
+    if p.get("phase_deg") is not None and not (k == "dipole" and (p["show_current"] or p["show_voltage"])):
+        errors.append("phase_deg: only for a dipole with current or voltage shown")
+    a = p["radial_angle"]
+    if k == "ground_plane" and p["show_impedance"] and not (a == 0 or 35 <= a <= 55):
+        errors.append("show_impedance: radials horizontal (0°) or about 45° (35–55°)")
+    if k == "ground_plane" and p["compare"] and a < 20:
+        errors.append("compare: radial_angle must be at least 20° to differ from the horizontal radials")
+    if k == "pattern" and p["beamwidth"] and p["shape"] == "vertical":
+        errors.append("beamwidth: a vertical seen from above radiates equally all round")
+    if k == "pattern" and p["compass"] and p["shape"] == "directional":
+        errors.append("compass: not for the directional pattern (it is drawn with front and back)")
+    if k != "trap_dipole" and p["active"] != "all":
+        errors.append("active: only for trap_dipole")
+
+# --- end antenna ---
+
+
+# --- propagation (new) ---
+
+def _propagation_rules(p: dict[str, Any], errors: list[str]) -> None:
+    if p["compare"] and p["kind"] != "layers":
+        errors.append("compare: only for kind layers")
+    if p["kind"] == "sky_wave":
+        if not p["angles"]:
+            errors.append("angles: at least one")
+        if len(set(p["angles"])) != len(p["angles"]):
+            errors.append("angles: each angle once")
+        if not p["ground_wave_km"] < p["range_km"]:
+            errors.append("ground_wave_km: must be below range_km")
+    if p["kind"] == "hops" and p["hops"] * 2 * p["layer_km"] / math.tan(math.radians(p["elevation_deg"])) > 40000:
+        errors.append("elevation_deg: the hops would go more than once round the earth")
+
+# --- end propagation ---
+
+
+# --- sampling (new) ---
+
+def _sampling_rules(p: dict[str, Any], errors: list[str]) -> None:
+    if p["kind"] == "samples" and p["f_hz"] > 2 * p["fs_hz"]:
+        errors.append("f_hz: at most twice fs_hz")
+    if p["kind"] == "quantize" and not p["range_max_v"] > p["range_min_v"]:
+        errors.append("range_max_v: must be above range_min_v")
+    if p["show_reconstruction"] and p["kind"] != "samples":
+        errors.append("show_reconstruction: only for kind 'samples'")
+    if p["kind"] != "quantize" and (p["show_error"] or p["levels_label"] or p["step_label"] != "none"):
+        errors.append("show_error, levels_label, step_label: only for kind 'quantize'")
+
+# --- end sampling ---
+
+
+# --- feedline (new) ---
+
+def _feedline_reflection(p: dict[str, Any]) -> float:
+    if p["load"] == "open":
+        return 1.0
+    if p["load"] == "short":
+        return -1.0
+    if p["load"] == "resistive":
+        return (p["load_ratio"] - 1) / (p["load_ratio"] + 1)
+    return 0.0
+
+
+def _feedline_dir_gamma(p: dict[str, Any]) -> float:
+    return math.sqrt(p["reflected"] / p["forward"]) if p["unit"] == "W" else p["reflected"] / p["forward"]
+
+
+def _feedline_rules(p: dict[str, Any], errors: list[str]) -> None:
+    if p["kind"] == "standing_wave":
+        if p["show_minmax"] and p["envelope"] == "none":
+            errors.append("show_minmax: needs an envelope")
+        if p["show_minmax"] and _feedline_reflection(p) == 0:
+            errors.append("show_minmax: a matched line has no maxima or minima")
+        if p["swr_label"] == "value" and p["load"] in ("open", "short"):
+            errors.append("swr_label: an open or short line has infinite SWR")
+    if p["kind"] == "cable":
+        if p["dimensions"] and p["cable"] == "ladder":
+            errors.append("dimensions: only for a coax cable")
+        if p["currents"] and p["cable"] == "coax":
+            errors.append("currents: only for a ladder line")
+    if p["kind"] == "directional":
+        if not p["reflected"] < p["forward"]:
+            errors.append("reflected: must be below forward")
+        if p["return_loss_label"] != "none" and p["reflected"] == 0:
+            errors.append("return_loss_label: needs a reflected wave")
+
+
+def _feedline_quantities(p: dict[str, Any]) -> dict[str, dict[str, Any]]:
+    swr = lambda g: (1 + abs(g)) / (1 - abs(g))  # noqa: E731
+    if p["kind"] == "standing_wave":
+        g = _feedline_reflection(p)
+        q = {"Z0": {"value": p["z0_ohms"], "unit": "Ω", "shown": p["show_z0"]}}
+        if abs(g) < 1:
+            q["SWR"] = {"value": swr(g), "unit": "", "shown": p["swr_label"] == "value"}
+        if p["load"] == "resistive":
+            q["R_L"] = {"value": p["load_ratio"] * p["z0_ohms"], "unit": "Ω", "shown": p["show_load"]}
+        return q
+    if p["kind"] == "quarter_wave":
+        return {"Z0": {"value": p["z0_ohms"], "unit": "Ω", "shown": p["show_z0"]},
+                "Z_L": {"value": p["z_load_ohms"], "unit": "Ω", "shown": p["show_load"]},
+                "Z_inn": {"value": p["z0_ohms"] ** 2 / p["z_load_ohms"], "unit": "Ω", "shown": p["input_label"] == "value"}}
+    if p["kind"] == "directional":
+        f, r, u = ("P_fwd", "P_ref", "W") if p["unit"] == "W" else ("U_fwd", "U_ref", "V")
+        g = _feedline_dir_gamma(p)
+        q = {f: {"value": p["forward"], "unit": u, "shown": p["show_readings"]},
+             r: {"value": p["reflected"], "unit": u, "shown": p["show_readings"]},
+             "SWR": {"value": swr(g), "unit": "", "shown": p["swr_label"] == "value"}}
+        if p["reflected"] > 0:
+            q["RL"] = {"value": -20 * math.log10(g), "unit": "dB", "shown": p["return_loss_label"] == "value"}
+        return q
+    return {}
+
+# --- end feedline ---
+
+
 RULES = {"dc-circuit": _dc_rules, "ac-circuit": _ac_rules, "waveform": _wave_rules, "block-diagram": _block_rules,
          "rlc-circuit": _rlc_rules, "rectifier": _rect_rules, "transformer": _tr_rules, "transistor-stage": _ts_rules,
          "series-regulator": _reg_rules, "zener-regulator": _zen_rules,
          "frequency-response": _fr_rules, "pi-network": _no_rules,
          "ratio-detector": _no_rules, "time-signal": _ts_rules_time,
          "spectrum": _spectrum_rules, "semiconductor": _semi_rules,
-         "stage": _no_rules, "illustration": _illu_rules}
+         "stage": _no_rules, "illustration": _illu_rules, "code-breakdown": _code_breakdown_rules, "instrument": _instrument_rules, "antenna": _antenna_rules, "propagation": _propagation_rules, "sampling": _sampling_rules, "feedline": _feedline_rules}
 QUANTITIES = {"dc-circuit": _dc_quantities, "ac-circuit": _ac_quantities, "waveform": _wave_quantities,
               "rlc-circuit": _rlc_quantities, "rectifier": _rect_quantities, "transformer": _tr_quantities,
               "transistor-stage": _ts_quantities, "series-regulator": _reg_quantities, "zener-regulator": _zen_quantities,
-              "frequency-response": _fr_quantities}
+              "frequency-response": _fr_quantities, "feedline": _feedline_quantities, "instrument": _instrument_quantities}
 
 
 def validate_visual(templates: dict[str, dict[str, Any]], visual: Any, where: str = "visual"

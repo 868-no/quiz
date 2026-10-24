@@ -2828,6 +2828,1329 @@
           ]
         }
       }
+    },
+    {
+      "name": "code-breakdown: call sign with labels",
+      "valid": true,
+      "visual": {
+        "template": "code-breakdown",
+        "version": 1,
+        "params": {
+          "parts": [
+            {
+              "text": "LA",
+              "label": "Prefiks"
+            },
+            {
+              "text": "1",
+              "label": "Tall"
+            },
+            {
+              "text": "XYZ",
+              "label": "Suffiks"
+            }
+          ]
+        }
+      },
+      "quantities": {},
+      "shown": {}
+    },
+    {
+      "name": "code-breakdown: hidden part revealed after answering",
+      "valid": true,
+      "visual": {
+        "template": "code-breakdown",
+        "version": 1,
+        "params": {
+          "parts": [
+            {
+              "text": "5",
+              "label": "Lesbarhet"
+            },
+            {
+              "text": "C",
+              "label": "Kvitrende tone",
+              "hidden": true
+            }
+          ]
+        },
+        "params_after": {
+          "parts": [
+            {
+              "text": "5",
+              "label": "Lesbarhet"
+            },
+            {
+              "text": "C",
+              "label": "Kvitrende tone"
+            }
+          ]
+        }
+      },
+      "quantities": {},
+      "shown": {}
+    },
+    {
+      "name": "code-breakdown: a hidden part needs a label",
+      "valid": false,
+      "error": "hidden part needs a label",
+      "visual": {
+        "template": "code-breakdown",
+        "version": 1,
+        "params": {
+          "parts": [
+            {
+              "text": "LA",
+              "label": "Prefiks"
+            },
+            {
+              "text": "1",
+              "hidden": true
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "code-breakdown: at least one label",
+      "valid": false,
+      "error": "at least one part needs a label",
+      "visual": {
+        "template": "code-breakdown",
+        "version": 1,
+        "params": {
+          "parts": [
+            {
+              "text": "LA"
+            },
+            {
+              "text": "1"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "code-breakdown: whole code at most 16 characters",
+      "valid": false,
+      "error": "at most 16 characters",
+      "visual": {
+        "template": "code-breakdown",
+        "version": 1,
+        "params": {
+          "parts": [
+            {
+              "text": "ABCDEFGH",
+              "label": "a"
+            },
+            {
+              "text": "ABCDEFGH"
+            },
+            {
+              "text": "X"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "code-breakdown: no spaces or markup in a part",
+      "valid": false,
+      "error": "does not match",
+      "visual": {
+        "template": "code-breakdown",
+        "version": 1,
+        "params": {
+          "parts": [
+            {
+              "text": "LA 1",
+              "label": "a"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "code-breakdown: at most six parts",
+      "valid": false,
+      "error": "at most 6",
+      "visual": {
+        "template": "code-breakdown",
+        "version": 1,
+        "params": {
+          "parts": [
+            {
+              "text": "A",
+              "label": "x"
+            },
+            {
+              "text": "B",
+              "label": "x"
+            },
+            {
+              "text": "C",
+              "label": "x"
+            },
+            {
+              "text": "D",
+              "label": "x"
+            },
+            {
+              "text": "E",
+              "label": "x"
+            },
+            {
+              "text": "F",
+              "label": "x"
+            },
+            {
+              "text": "G",
+              "label": "x"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "instrument: scope, 1,25 kHz at 0,2 ms/div is 4 divisions per period",
+      "valid": true,
+      "visual": {
+        "template": "instrument",
+        "version": 1,
+        "params": {
+          "kind": "scope",
+          "time_per_div_s": 0.0002,
+          "volt_per_div_v": 1,
+          "traces": [
+            {
+              "shape": "sine",
+              "frequency_hz": 1250,
+              "amplitude_v": 3
+            }
+          ]
+        }
+      },
+      "quantities": {
+        "T": 0.0008,
+        "f": 1250,
+        "div_per_period": 4,
+        "U_pp": 6
+      },
+      "shown": {
+        "f": false,
+        "T": false,
+        "time_per_div": true
+      }
+    },
+    {
+      "name": "instrument: scope, AM with two traces",
+      "valid": true,
+      "visual": {
+        "template": "instrument",
+        "version": 1,
+        "params": {
+          "kind": "scope",
+          "time_per_div_s": 0.0002,
+          "volt_per_div_v": 1,
+          "traces": [
+            {
+              "shape": "am",
+              "frequency_hz": 1000,
+              "amplitude_v": 2,
+              "carrier_hz": 40000,
+              "depth": 0.6
+            },
+            {
+              "shape": "square",
+              "frequency_hz": 1000,
+              "amplitude_v": 1
+            }
+          ]
+        }
+      },
+      "quantities": {
+        "f": 1000,
+        "div_per_period": 5
+      },
+      "shown": {
+        "f": false
+      }
+    },
+    {
+      "name": "instrument: voltmeter series resistor is computed (50 V, 1 mA)",
+      "valid": true,
+      "visual": {
+        "template": "instrument",
+        "version": 1,
+        "params": {
+          "kind": "meter_series",
+          "meter": {
+            "full_scale_a": 0.001
+          },
+          "range_v": 50
+        }
+      },
+      "quantities": {
+        "R": 50000,
+        "U": 50,
+        "I": 0.001,
+        "R_m": 0
+      },
+      "shown": {
+        "R": false,
+        "U": true,
+        "I": true,
+        "R_m": false
+      }
+    },
+    {
+      "name": "instrument: voltmeter series resistor subtracts the coil",
+      "valid": true,
+      "visual": {
+        "template": "instrument",
+        "version": 1,
+        "params": {
+          "kind": "meter_series",
+          "meter": {
+            "full_scale_a": 0.0001,
+            "coil_ohms": 1000
+          },
+          "range_v": 10,
+          "show_resistor": true
+        }
+      },
+      "quantities": {
+        "R": 99000
+      },
+      "shown": {
+        "R": true,
+        "R_m": true
+      }
+    },
+    {
+      "name": "instrument: shunt is computed (1 mA, 50 Ω, 5 A)",
+      "valid": true,
+      "visual": {
+        "template": "instrument",
+        "version": 1,
+        "params": {
+          "kind": "meter_shunt",
+          "meter": {
+            "full_scale_a": 0.001,
+            "coil_ohms": 50
+          },
+          "range_a": 5
+        }
+      },
+      "quantities": {
+        "U": 0.05,
+        "I": 5,
+        "I_sh": 4.999,
+        "R": 0.010002000400080016
+      },
+      "shown": {
+        "R": false,
+        "I": true
+      }
+    },
+    {
+      "name": "instrument: voltmeter loading reads 4 V instead of 6 V",
+      "valid": true,
+      "visual": {
+        "template": "instrument",
+        "version": 1,
+        "params": {
+          "kind": "voltmeter_loading",
+          "supply_v": 12,
+          "r1_ohms": 47000,
+          "r2_ohms": 47000,
+          "meter_ohms": 47000
+        }
+      },
+      "quantities": {
+        "R_p": 23500,
+        "U_m": 4,
+        "U_0": 6
+      },
+      "shown": {
+        "U_m": false,
+        "R_i": true
+      }
+    },
+    {
+      "name": "instrument: gate time 0,1 s gives ±10 Hz",
+      "valid": true,
+      "visual": {
+        "template": "instrument",
+        "version": 1,
+        "params": {
+          "kind": "gate",
+          "gate_s": 0.1
+        }
+      },
+      "quantities": {
+        "T": 0.1,
+        "f": 10
+      },
+      "shown": {
+        "T": true,
+        "f": false
+      }
+    },
+    {
+      "name": "instrument: scope needs a trace",
+      "valid": false,
+      "error": "needs 1–2 traces",
+      "visual": {
+        "template": "instrument",
+        "version": 1,
+        "params": {
+          "kind": "scope"
+        }
+      }
+    },
+    {
+      "name": "instrument: trace off the screen",
+      "valid": false,
+      "error": "goes off the screen",
+      "visual": {
+        "template": "instrument",
+        "version": 1,
+        "params": {
+          "kind": "scope",
+          "volt_per_div_v": 1,
+          "traces": [
+            {
+              "shape": "sine",
+              "frequency_hz": 1000,
+              "amplitude_v": 5
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "instrument: too many periods on the screen",
+      "valid": false,
+      "error": "periods on the screen",
+      "visual": {
+        "template": "instrument",
+        "version": 1,
+        "params": {
+          "kind": "scope",
+          "time_per_div_s": 0.001,
+          "traces": [
+            {
+              "shape": "sine",
+              "frequency_hz": 10000,
+              "amplitude_v": 1
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "instrument: AM needs a carrier",
+      "valid": false,
+      "error": "carrier_hz: required",
+      "visual": {
+        "template": "instrument",
+        "version": 1,
+        "params": {
+          "kind": "scope",
+          "traces": [
+            {
+              "shape": "am",
+              "frequency_hz": 1000,
+              "amplitude_v": 1
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "instrument: carrier only for AM",
+      "valid": false,
+      "error": "only for an AM trace",
+      "visual": {
+        "template": "instrument",
+        "version": 1,
+        "params": {
+          "kind": "scope",
+          "traces": [
+            {
+              "shape": "sine",
+              "frequency_hz": 1000,
+              "amplitude_v": 1,
+              "carrier_hz": 50000
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "instrument: traces only on a scope",
+      "valid": false,
+      "error": "only for kind scope",
+      "visual": {
+        "template": "instrument",
+        "version": 1,
+        "params": {
+          "kind": "gate",
+          "traces": [
+            {
+              "shape": "sine",
+              "frequency_hz": 1000,
+              "amplitude_v": 1
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "instrument: voltmeter needs a range",
+      "valid": false,
+      "error": "range_v: required",
+      "visual": {
+        "template": "instrument",
+        "version": 1,
+        "params": {
+          "kind": "meter_series"
+        }
+      }
+    },
+    {
+      "name": "instrument: shunt needs the coil resistance",
+      "valid": false,
+      "error": "coil_ohms: a shunt needs",
+      "visual": {
+        "template": "instrument",
+        "version": 1,
+        "params": {
+          "kind": "meter_shunt",
+          "range_a": 5
+        }
+      }
+    },
+    {
+      "name": "instrument: shunt range must exceed full scale",
+      "valid": false,
+      "error": "range_a: must be above",
+      "visual": {
+        "template": "instrument",
+        "version": 1,
+        "params": {
+          "kind": "meter_shunt",
+          "meter": {
+            "full_scale_a": 0.01,
+            "coil_ohms": 5
+          },
+          "range_a": 0.001
+        }
+      }
+    },
+    {
+      "name": "instrument: loading needs a supply",
+      "valid": false,
+      "error": "supply_v: required",
+      "visual": {
+        "template": "instrument",
+        "version": 1,
+        "params": {
+          "kind": "voltmeter_loading"
+        }
+      }
+    },
+    {
+      "name": "sampling: alias above half the sampling rate",
+      "valid": true,
+      "visual": {
+        "template": "sampling",
+        "version": 1,
+        "params": {
+          "kind": "samples",
+          "f_hz": 40000,
+          "fs_hz": 48000,
+          "show_reconstruction": true
+        }
+      },
+      "quantities": {},
+      "shown": {}
+    },
+    {
+      "name": "sampling: 4-bit quantizer with step and error",
+      "valid": true,
+      "visual": {
+        "template": "sampling",
+        "version": 1,
+        "params": {
+          "kind": "quantize",
+          "bits": 4,
+          "step_label": "value",
+          "levels_label": true,
+          "show_error": true
+        }
+      },
+      "quantities": {},
+      "shown": {}
+    },
+    {
+      "name": "sampling: clipped quantizer",
+      "valid": true,
+      "visual": {
+        "template": "sampling",
+        "version": 1,
+        "params": {
+          "kind": "quantize",
+          "bits": 2,
+          "amplitude": 1.3,
+          "show_values": false
+        }
+      },
+      "quantities": {},
+      "shown": {}
+    },
+    {
+      "name": "sampling: moving average, fractional taps from an animation",
+      "valid": true,
+      "visual": {
+        "template": "sampling",
+        "version": 1,
+        "params": {
+          "kind": "moving_average",
+          "taps": 7.4
+        }
+      },
+      "quantities": {},
+      "shown": {}
+    },
+    {
+      "name": "sampling: FIR and IIR structures, after answering only",
+      "valid": true,
+      "visual": {
+        "template": "sampling",
+        "version": 1,
+        "params": {
+          "kind": "fir_iir"
+        },
+        "after_only": true
+      },
+      "quantities": {},
+      "shown": {}
+    },
+    {
+      "name": "sampling: bits animated",
+      "valid": true,
+      "visual": {
+        "template": "sampling",
+        "version": 1,
+        "params": {
+          "kind": "quantize",
+          "bits": 3,
+          "levels_label": true
+        },
+        "animation": {
+          "param": "bits",
+          "from": 1,
+          "to": 5,
+          "text": "Antall bit øker fra 1 til 5."
+        }
+      },
+      "quantities": {},
+      "shown": {}
+    },
+    {
+      "name": "sampling: signal far above the sampling rate",
+      "valid": false,
+      "error": "at most twice fs_hz",
+      "visual": {
+        "template": "sampling",
+        "version": 1,
+        "params": {
+          "kind": "samples",
+          "f_hz": 100000,
+          "fs_hz": 48000
+        }
+      }
+    },
+    {
+      "name": "sampling: empty range",
+      "valid": false,
+      "error": "range_max_v",
+      "visual": {
+        "template": "sampling",
+        "version": 1,
+        "params": {
+          "kind": "quantize",
+          "range_min_v": 1,
+          "range_max_v": 1
+        }
+      }
+    },
+    {
+      "name": "sampling: reconstruction only for samples",
+      "valid": false,
+      "error": "show_reconstruction",
+      "visual": {
+        "template": "sampling",
+        "version": 1,
+        "params": {
+          "kind": "quantize",
+          "show_reconstruction": true
+        }
+      }
+    },
+    {
+      "name": "sampling: error panel only for quantize",
+      "valid": false,
+      "error": "only for kind 'quantize'",
+      "visual": {
+        "template": "sampling",
+        "version": 1,
+        "params": {
+          "kind": "samples",
+          "show_error": true
+        }
+      }
+    },
+    {
+      "name": "sampling: bits above 6",
+      "valid": false,
+      "error": "above the maximum",
+      "visual": {
+        "template": "sampling",
+        "version": 1,
+        "params": {
+          "kind": "quantize",
+          "bits": 7
+        }
+      }
+    },
+    {
+      "name": "feedline: load three times Z0 gives SWR 3",
+      "valid": true,
+      "visual": {
+        "template": "feedline",
+        "version": 1,
+        "params": {
+          "kind": "standing_wave",
+          "load": "resistive",
+          "load_ratio": 3,
+          "swr_label": "value"
+        }
+      },
+      "quantities": {
+        "SWR": 3.0,
+        "R_L": 150,
+        "Z0": 50
+      },
+      "shown": {
+        "SWR": true,
+        "R_L": true
+      }
+    },
+    {
+      "name": "feedline: quarter-wave transformer computes the input impedance",
+      "valid": true,
+      "visual": {
+        "template": "feedline",
+        "version": 1,
+        "params": {
+          "kind": "quarter_wave",
+          "z0_ohms": 75,
+          "z_load_ohms": 100
+        }
+      },
+      "quantities": {
+        "Z_inn": 56.25,
+        "Z0": 75,
+        "Z_L": 100
+      },
+      "shown": {
+        "Z_inn": false,
+        "Z0": true
+      }
+    },
+    {
+      "name": "feedline: forward and reflected power give SWR and return loss",
+      "valid": true,
+      "visual": {
+        "template": "feedline",
+        "version": 1,
+        "params": {
+          "kind": "directional",
+          "forward": 80,
+          "reflected": 5,
+          "return_loss_label": "unknown"
+        }
+      },
+      "quantities": {
+        "SWR": 1.6666666666666667,
+        "RL": 12.041199826559248,
+        "P_fwd": 80,
+        "P_ref": 5
+      },
+      "shown": {
+        "RL": false,
+        "SWR": false,
+        "P_fwd": true
+      }
+    },
+    {
+      "name": "feedline: forward and reflected voltage give SWR",
+      "valid": true,
+      "visual": {
+        "template": "feedline",
+        "version": 1,
+        "params": {
+          "kind": "directional",
+          "forward": 10,
+          "reflected": 3,
+          "unit": "V",
+          "swr_label": "value"
+        }
+      },
+      "quantities": {
+        "SWR": 1.8571428571428572,
+        "RL": 10.457574905606752,
+        "U_fwd": 10
+      },
+      "shown": {
+        "SWR": true
+      }
+    },
+    {
+      "name": "feedline: coax and ladder line with currents",
+      "valid": true,
+      "visual": {
+        "template": "feedline",
+        "version": 1,
+        "params": {
+          "kind": "cable",
+          "cable": "both",
+          "currents": true,
+          "dimensions": true
+        }
+      },
+      "quantities": {},
+      "shown": {}
+    },
+    {
+      "name": "feedline: shorted line with voltage and current, animated phase",
+      "valid": true,
+      "visual": {
+        "template": "feedline",
+        "version": 1,
+        "params": {
+          "kind": "standing_wave",
+          "load": "short",
+          "envelope": "voltage_current",
+          "show_minmax": true,
+          "quarter_mark": true,
+          "phase_deg": 90
+        }
+      },
+      "quantities": {
+        "Z0": 50
+      },
+      "shown": {
+        "Z0": true
+      }
+    },
+    {
+      "name": "feedline: a matched line has no maxima to mark",
+      "valid": false,
+      "error": "no maxima or minima",
+      "visual": {
+        "template": "feedline",
+        "version": 1,
+        "params": {
+          "kind": "standing_wave",
+          "load": "matched",
+          "show_minmax": true
+        }
+      }
+    },
+    {
+      "name": "feedline: markers need an envelope",
+      "valid": false,
+      "error": "needs an envelope",
+      "visual": {
+        "template": "feedline",
+        "version": 1,
+        "params": {
+          "kind": "standing_wave",
+          "load": "open",
+          "envelope": "none",
+          "show_minmax": true
+        }
+      }
+    },
+    {
+      "name": "feedline: an open line has no finite SWR",
+      "valid": false,
+      "error": "infinite SWR",
+      "visual": {
+        "template": "feedline",
+        "version": 1,
+        "params": {
+          "kind": "standing_wave",
+          "load": "open",
+          "swr_label": "value"
+        }
+      }
+    },
+    {
+      "name": "feedline: reflected must be below forward",
+      "valid": false,
+      "error": "must be below forward",
+      "visual": {
+        "template": "feedline",
+        "version": 1,
+        "params": {
+          "kind": "directional",
+          "forward": 10,
+          "reflected": 10
+        }
+      }
+    },
+    {
+      "name": "feedline: return loss needs a reflected wave",
+      "valid": false,
+      "error": "needs a reflected wave",
+      "visual": {
+        "template": "feedline",
+        "version": 1,
+        "params": {
+          "kind": "directional",
+          "forward": 10,
+          "reflected": 0,
+          "return_loss_label": "value"
+        }
+      }
+    },
+    {
+      "name": "feedline: diameters only on coax",
+      "valid": false,
+      "error": "only for a coax cable",
+      "visual": {
+        "template": "feedline",
+        "version": 1,
+        "params": {
+          "kind": "cable",
+          "cable": "ladder",
+          "dimensions": true
+        }
+      }
+    },
+    {
+      "name": "feedline: currents only on a ladder line",
+      "valid": false,
+      "error": "only for a ladder line",
+      "visual": {
+        "template": "feedline",
+        "version": 1,
+        "params": {
+          "kind": "cable",
+          "cable": "coax",
+          "currents": true
+        }
+      }
+    },
+    {
+      "name": "feedline: load ratio limited",
+      "valid": false,
+      "error": "above the maximum",
+      "visual": {
+        "template": "feedline",
+        "version": 1,
+        "params": {
+          "kind": "standing_wave",
+          "load": "resistive",
+          "load_ratio": 25
+        }
+      }
+    },
+    {
+      "name": "propagation: sky wave with skip zone",
+      "valid": true,
+      "visual": {
+        "template": "propagation",
+        "version": 1,
+        "params": {
+          "kind": "sky_wave",
+          "f_mhz": 14,
+          "fc_mhz": 7,
+          "show_skip": true
+        }
+      },
+      "quantities": {},
+      "shown": {}
+    },
+    {
+      "name": "propagation: day and night layers",
+      "valid": true,
+      "visual": {
+        "template": "propagation",
+        "version": 1,
+        "params": {
+          "kind": "layers",
+          "compare": true
+        }
+      },
+      "quantities": {},
+      "shown": {}
+    },
+    {
+      "name": "propagation: radio horizon",
+      "valid": true,
+      "visual": {
+        "template": "propagation",
+        "version": 1,
+        "params": {
+          "kind": "horizon",
+          "h1_m": 16,
+          "h2_m": 25,
+          "show_distance": true
+        }
+      },
+      "quantities": {},
+      "shown": {}
+    },
+    {
+      "name": "propagation: frequency animation",
+      "valid": true,
+      "visual": {
+        "template": "propagation",
+        "version": 1,
+        "params": {
+          "kind": "sky_wave",
+          "f_mhz": 5
+        },
+        "animation": {
+          "param": "f_mhz",
+          "from": 5,
+          "to": 25,
+          "text": "Frekvensen øker fra 5 til 25 MHz og tilbake."
+        }
+      },
+      "quantities": {},
+      "shown": {}
+    },
+    {
+      "name": "propagation: each angle once",
+      "valid": false,
+      "error": "each angle once",
+      "visual": {
+        "template": "propagation",
+        "version": 1,
+        "params": {
+          "kind": "sky_wave",
+          "angles": [
+            10,
+            10
+          ]
+        }
+      }
+    },
+    {
+      "name": "propagation: ground wave must end before the drawn range",
+      "valid": false,
+      "error": "ground_wave_km",
+      "visual": {
+        "template": "propagation",
+        "version": 1,
+        "params": {
+          "kind": "sky_wave",
+          "ground_wave_km": 900,
+          "range_km": 800
+        }
+      }
+    },
+    {
+      "name": "propagation: compare only for layers",
+      "valid": false,
+      "error": "compare",
+      "visual": {
+        "template": "propagation",
+        "version": 1,
+        "params": {
+          "kind": "hops",
+          "compare": true
+        }
+      }
+    },
+    {
+      "name": "propagation: hops longer than the earth's circumference",
+      "valid": false,
+      "error": "round the earth",
+      "visual": {
+        "template": "propagation",
+        "version": 1,
+        "params": {
+          "kind": "hops",
+          "hops": 3,
+          "layer_km": 500,
+          "elevation_deg": 2
+        }
+      }
+    },
+    {
+      "name": "propagation: unknown kind",
+      "valid": false,
+      "error": "kind",
+      "visual": {
+        "template": "propagation",
+        "version": 1,
+        "params": {
+          "kind": "tropo"
+        }
+      }
+    },
+    {
+      "name": "antenna: dipole with current and voltage envelopes",
+      "valid": true,
+      "visual": {
+        "template": "antenna",
+        "version": 1,
+        "params": {
+          "kind": "dipole",
+          "show_current": true,
+          "show_voltage": true
+        }
+      },
+      "quantities": {},
+      "shown": {}
+    },
+    {
+      "name": "antenna: dipole current at an instant",
+      "valid": true,
+      "visual": {
+        "template": "antenna",
+        "version": 1,
+        "params": {
+          "kind": "dipole",
+          "show_current": true,
+          "phase_deg": 90
+        }
+      },
+      "quantities": {},
+      "shown": {}
+    },
+    {
+      "name": "antenna: ground plane compared, with impedances",
+      "valid": true,
+      "visual": {
+        "template": "antenna",
+        "version": 1,
+        "params": {
+          "kind": "ground_plane",
+          "radial_angle": 45,
+          "compare": true,
+          "show_impedance": true
+        }
+      },
+      "quantities": {},
+      "shown": {}
+    },
+    {
+      "name": "antenna: yagi with six directors",
+      "valid": true,
+      "visual": {
+        "template": "antenna",
+        "version": 1,
+        "params": {
+          "kind": "yagi",
+          "directors": 6,
+          "highlight": "directors"
+        }
+      },
+      "quantities": {},
+      "shown": {}
+    },
+    {
+      "name": "antenna: trap dipole, inner part active",
+      "valid": true,
+      "visual": {
+        "template": "antenna",
+        "version": 1,
+        "params": {
+          "kind": "trap_dipole",
+          "trap_label": "14 MHz",
+          "active": "inner"
+        }
+      },
+      "quantities": {},
+      "shown": {}
+    },
+    {
+      "name": "antenna: loaded vertical with current",
+      "valid": true,
+      "visual": {
+        "template": "antenna",
+        "version": 1,
+        "params": {
+          "kind": "loaded_vertical",
+          "coil_position": 0.6,
+          "show_current": true
+        }
+      },
+      "quantities": {},
+      "shown": {}
+    },
+    {
+      "name": "antenna: dipole pattern with compass and beamwidth",
+      "valid": true,
+      "visual": {
+        "template": "antenna",
+        "version": 1,
+        "params": {
+          "kind": "pattern",
+          "shape": "dipole",
+          "compass": true,
+          "beamwidth": true
+        }
+      },
+      "quantities": {},
+      "shown": {}
+    },
+    {
+      "name": "antenna: directional pattern",
+      "valid": true,
+      "visual": {
+        "template": "antenna",
+        "version": 1,
+        "params": {
+          "kind": "pattern",
+          "shape": "directional",
+          "beamwidth": true,
+          "beamwidth_deg": 50,
+          "front_back_db": 25
+        }
+      },
+      "quantities": {},
+      "shown": {}
+    },
+    {
+      "name": "antenna: current only on a dipole or loaded vertical",
+      "valid": false,
+      "error": "show_current",
+      "visual": {
+        "template": "antenna",
+        "version": 1,
+        "params": {
+          "kind": "yagi",
+          "show_current": true
+        }
+      }
+    },
+    {
+      "name": "antenna: voltage not on the loaded vertical",
+      "valid": false,
+      "error": "show_voltage",
+      "visual": {
+        "template": "antenna",
+        "version": 1,
+        "params": {
+          "kind": "loaded_vertical",
+          "show_voltage": true
+        }
+      }
+    },
+    {
+      "name": "antenna: phase needs current or voltage",
+      "valid": false,
+      "error": "phase_deg",
+      "visual": {
+        "template": "antenna",
+        "version": 1,
+        "params": {
+          "kind": "dipole",
+          "phase_deg": 90
+        }
+      }
+    },
+    {
+      "name": "antenna: impedance only at 0 or about 45 degrees",
+      "valid": false,
+      "error": "show_impedance",
+      "visual": {
+        "template": "antenna",
+        "version": 1,
+        "params": {
+          "kind": "ground_plane",
+          "radial_angle": 20,
+          "show_impedance": true
+        }
+      }
+    },
+    {
+      "name": "antenna: compare needs a real angle",
+      "valid": false,
+      "error": "compare",
+      "visual": {
+        "template": "antenna",
+        "version": 1,
+        "params": {
+          "kind": "ground_plane",
+          "radial_angle": 10,
+          "compare": true
+        }
+      }
+    },
+    {
+      "name": "antenna: a vertical has no beamwidth",
+      "valid": false,
+      "error": "beamwidth",
+      "visual": {
+        "template": "antenna",
+        "version": 1,
+        "params": {
+          "kind": "pattern",
+          "shape": "vertical",
+          "beamwidth": true
+        }
+      }
+    },
+    {
+      "name": "antenna: no compass on the directional pattern",
+      "valid": false,
+      "error": "compass",
+      "visual": {
+        "template": "antenna",
+        "version": 1,
+        "params": {
+          "kind": "pattern",
+          "shape": "directional",
+          "compass": true
+        }
+      }
+    },
+    {
+      "name": "antenna: active only for the trap dipole",
+      "valid": false,
+      "error": "active",
+      "visual": {
+        "template": "antenna",
+        "version": 1,
+        "params": {
+          "kind": "dipole",
+          "active": "inner"
+        }
+      }
+    },
+    {
+      "name": "antenna: too many directors",
+      "valid": false,
+      "error": "directors",
+      "visual": {
+        "template": "antenna",
+        "version": 1,
+        "params": {
+          "kind": "yagi",
+          "directors": 7
+        }
+      }
     }
   ]
 }

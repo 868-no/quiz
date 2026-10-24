@@ -2059,6 +2059,920 @@
           "note": "New kinds added for round 7; all published figures render identically (checked)"
         }
       ]
+    },
+    {
+      "id": "code-breakdown",
+      "version": 1,
+      "title": "Kode delt opp i deler",
+      "description": "A short code (call sign, emission designator, signal report) drawn as 1–6 parts, each in a box with a bracket and a label underneath. A part's label can be hidden ('?') until after answering, and a part can be highlighted.",
+      "idealised": "Forenklet oppstilling av hva hver del av koden betyr.",
+      "params": {
+        "type": "object",
+        "required": [
+          "parts"
+        ],
+        "properties": {
+          "parts": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 6,
+            "items": {
+              "type": "object",
+              "required": [
+                "text"
+              ],
+              "properties": {
+                "text": {
+                  "type": "string",
+                  "maxLength": 8,
+                  "pattern": "^[A-Za-z0-9/.+-]{1,8}$"
+                },
+                "label": {
+                  "type": "string",
+                  "maxLength": 40,
+                  "default": ""
+                },
+                "hidden": {
+                  "type": "boolean",
+                  "default": false
+                },
+                "highlight": {
+                  "type": "boolean",
+                  "default": false
+                }
+              }
+            }
+          }
+        }
+      },
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T22:47:36+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Round 8 templates: checked rendered figures on desktop and phone, before and after answering, and the animations"
+        }
+      ]
+    },
+    {
+      "id": "instrument",
+      "version": 1,
+      "title": "Måleinstrument",
+      "description": "Measuring instruments. scope: an oscilloscope screen with a 10 × 8 division graticule and 1–2 traces (sine, square or AM) computed from frequency, amplitude, time/div and volt/div, with the settings printed under the screen. meter_series: a moving-coil meter with a series resistor as a voltmeter (range, full-scale current, coil resistance; the resistor is computed). meter_shunt: the same meter with a shunt as an ammeter (the shunt is computed). voltmeter_loading: a voltage divider R1/R2 measured across R2 by a voltmeter with internal resistance R_i (the reading is computed). gate: two equal counter gate windows over one pulse train, opened at slightly different times, counting one pulse more or less. Hidden values are drawn as '?'.",
+      "idealised": "Ideelle komponenter og instrumenter utover det som er tegnet; forenklet tegning.",
+      "params": {
+        "type": "object",
+        "required": [
+          "kind"
+        ],
+        "properties": {
+          "kind": {
+            "type": "string",
+            "enum": [
+              "scope",
+              "meter_series",
+              "meter_shunt",
+              "voltmeter_loading",
+              "gate"
+            ]
+          },
+          "traces": {
+            "type": "array",
+            "minItems": 0,
+            "maxItems": 2,
+            "default": [],
+            "items": {
+              "type": "object",
+              "required": [
+                "shape",
+                "frequency_hz",
+                "amplitude_v"
+              ],
+              "properties": {
+                "shape": {
+                  "type": "string",
+                  "enum": [
+                    "sine",
+                    "square",
+                    "am"
+                  ]
+                },
+                "frequency_hz": {
+                  "type": "number",
+                  "minimum": 0.001,
+                  "maximum": 10000000000.0
+                },
+                "amplitude_v": {
+                  "type": "number",
+                  "minimum": 1e-06,
+                  "maximum": 10000.0
+                },
+                "offset_v": {
+                  "type": "number",
+                  "minimum": -10000.0,
+                  "maximum": 10000.0,
+                  "default": 0
+                },
+                "phase_deg": {
+                  "type": "number",
+                  "minimum": -360,
+                  "maximum": 360,
+                  "default": 0
+                },
+                "carrier_hz": {
+                  "type": "number",
+                  "minimum": 0.001,
+                  "maximum": 100000000000.0,
+                  "nullable": true,
+                  "default": null
+                },
+                "depth": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1,
+                  "default": 0.5
+                }
+              }
+            }
+          },
+          "time_per_div_s": {
+            "type": "number",
+            "minimum": 1e-09,
+            "maximum": 10,
+            "default": 0.001
+          },
+          "volt_per_div_v": {
+            "type": "number",
+            "minimum": 0.001,
+            "maximum": 100,
+            "default": 1
+          },
+          "show_settings": {
+            "type": "boolean",
+            "default": true
+          },
+          "meter": {
+            "type": "object",
+            "required": [
+              "full_scale_a"
+            ],
+            "default": {
+              "full_scale_a": 0.001,
+              "coil_ohms": null,
+              "show_full_scale": true,
+              "show_coil": true
+            },
+            "properties": {
+              "full_scale_a": {
+                "type": "number",
+                "minimum": 1e-06,
+                "maximum": 10
+              },
+              "coil_ohms": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1000000.0,
+                "nullable": true,
+                "default": null
+              },
+              "show_full_scale": {
+                "type": "boolean",
+                "default": true
+              },
+              "show_coil": {
+                "type": "boolean",
+                "default": true
+              }
+            }
+          },
+          "range_v": {
+            "type": "number",
+            "minimum": 0.001,
+            "maximum": 100000.0,
+            "nullable": true,
+            "default": null
+          },
+          "range_a": {
+            "type": "number",
+            "minimum": 1e-06,
+            "maximum": 10000.0,
+            "nullable": true,
+            "default": null
+          },
+          "show_range": {
+            "type": "boolean",
+            "default": true
+          },
+          "show_resistor": {
+            "type": "boolean",
+            "default": false
+          },
+          "supply_v": {
+            "type": "number",
+            "minimum": 0.1,
+            "maximum": 1000,
+            "nullable": true,
+            "default": null
+          },
+          "r1_ohms": {
+            "type": "number",
+            "minimum": 1,
+            "maximum": 100000000.0,
+            "default": 47000
+          },
+          "r2_ohms": {
+            "type": "number",
+            "minimum": 1,
+            "maximum": 100000000.0,
+            "default": 47000
+          },
+          "meter_ohms": {
+            "type": "number",
+            "minimum": 1,
+            "maximum": 10000000000.0,
+            "default": 1000000.0
+          },
+          "show_reading": {
+            "type": "boolean",
+            "default": false
+          },
+          "show_meter_ohms": {
+            "type": "boolean",
+            "default": true
+          },
+          "gate_s": {
+            "type": "number",
+            "minimum": 0.001,
+            "maximum": 100,
+            "default": 0.1
+          },
+          "show_resolution": {
+            "type": "boolean",
+            "default": false
+          }
+        }
+      },
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T22:47:36+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Round 8 templates: checked rendered figures on desktop and phone, before and after answering, and the animations"
+        }
+      ]
+    },
+    {
+      "id": "propagation",
+      "version": 1,
+      "title": "Bølgeutbredelse",
+      "description": "How radio waves travel, drawn from the side and not to scale: the ionosphere's layers by day or night, or both (layers); a transmitter, its ground wave and rays at several elevation angles to one layer, each returning or escaping as computed from the frequency and the layer's critical frequency (secant law, flat earth), with the skip zone optionally shaded (sky_wave, animatable on f_mhz); 1–3 hops between ground and a layer with optional hop distances (hops); the radio horizon of two antennas on a curved earth, d ≈ 4·√h km (horizon); a ray trapped in a low duct over the sea (duct); two stations aiming north at the aurora (aurora); and two stations behind a sharp ridge with optional diffraction over the edge (knife_edge). 'blank' shows only a note.",
+      "idealised": "Forenklet sideriss, ikke i skala; strålene er tegnet som rette linjer som snur i én høyde.",
+      "params": {
+        "type": "object",
+        "required": [
+          "kind"
+        ],
+        "properties": {
+          "kind": {
+            "type": "string",
+            "enum": [
+              "layers",
+              "sky_wave",
+              "hops",
+              "horizon",
+              "duct",
+              "aurora",
+              "knife_edge"
+            ]
+          },
+          "blank": {
+            "type": "boolean",
+            "default": false
+          },
+          "note": {
+            "type": "string",
+            "maxLength": 48,
+            "default": ""
+          },
+          "time": {
+            "type": "string",
+            "enum": [
+              "day",
+              "night"
+            ],
+            "default": "day"
+          },
+          "compare": {
+            "type": "boolean",
+            "default": false
+          },
+          "show_heights": {
+            "type": "boolean",
+            "default": true
+          },
+          "layer": {
+            "type": "string",
+            "enum": [
+              "D",
+              "E",
+              "Es",
+              "F1",
+              "F2",
+              "F"
+            ],
+            "default": "F2"
+          },
+          "layer_km": {
+            "type": "number",
+            "minimum": 60,
+            "maximum": 500,
+            "default": 300
+          },
+          "f_mhz": {
+            "type": "number",
+            "minimum": 0.1,
+            "maximum": 100,
+            "default": 14
+          },
+          "fc_mhz": {
+            "type": "number",
+            "minimum": 0.5,
+            "maximum": 30,
+            "default": 7
+          },
+          "angles": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 8,
+            "items": {
+              "type": "number",
+              "minimum": 2,
+              "maximum": 90
+            },
+            "default": [
+              10,
+              20,
+              35,
+              55,
+              80
+            ]
+          },
+          "range_km": {
+            "type": "number",
+            "minimum": 500,
+            "maximum": 10000,
+            "default": 4000
+          },
+          "ground_wave_km": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 2000,
+            "default": 100
+          },
+          "show_skip": {
+            "type": "boolean",
+            "default": false
+          },
+          "show_freq": {
+            "type": "boolean",
+            "default": true
+          },
+          "hops": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 3,
+            "default": 1
+          },
+          "elevation_deg": {
+            "type": "number",
+            "minimum": 2,
+            "maximum": 80,
+            "default": 10
+          },
+          "show_distance": {
+            "type": "boolean",
+            "default": false
+          },
+          "h1_m": {
+            "type": "number",
+            "minimum": 1,
+            "maximum": 1000,
+            "default": 16
+          },
+          "h2_m": {
+            "type": "number",
+            "minimum": 1,
+            "maximum": 1000,
+            "default": 25
+          },
+          "show_diffraction": {
+            "type": "boolean",
+            "default": false
+          }
+        }
+      },
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T22:47:36+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Round 8 templates: checked rendered figures on desktop and phone, before and after answering, and the animations"
+        }
+      ]
+    },
+    {
+      "id": "sampling",
+      "version": 1,
+      "title": "Digital signalbehandling",
+      "description": "Digital signal processing, computed from the definitions: a sine sampled at f_s with the samples on stems, optionally the analogue signal and the lowest-frequency sine through the samples (the alias above f_s/2) (samples); one period of a sine rounded to the levels of an n-bit converter and held (sample and hold), optionally with the step, the number of levels and the error at each sample (quantize); a noisy pulse and the output of an N-point moving average (moving_average); and the structure of a FIR filter (no feedback) and a first-order IIR filter (feedback) (fir_iir). bits and taps may be fractional for animations and are rounded.",
+      "idealised": "Forenklet tegning, regnet ut fra definisjonen.",
+      "params": {
+        "type": "object",
+        "required": [
+          "kind"
+        ],
+        "properties": {
+          "kind": {
+            "type": "string",
+            "enum": [
+              "samples",
+              "quantize",
+              "moving_average",
+              "fir_iir"
+            ]
+          },
+          "f_hz": {
+            "type": "number",
+            "minimum": 0.001,
+            "maximum": 10000000000.0,
+            "default": 1000
+          },
+          "fs_hz": {
+            "type": "number",
+            "minimum": 0.001,
+            "maximum": 10000000000.0,
+            "default": 8000
+          },
+          "phase_deg": {
+            "type": "number",
+            "minimum": -180,
+            "maximum": 180,
+            "default": 30
+          },
+          "samples_shown": {
+            "type": "integer",
+            "minimum": 6,
+            "maximum": 40,
+            "default": 16
+          },
+          "show_analog": {
+            "type": "boolean",
+            "default": true
+          },
+          "show_reconstruction": {
+            "type": "boolean",
+            "default": false
+          },
+          "show_values": {
+            "type": "boolean",
+            "default": true
+          },
+          "bits": {
+            "type": "number",
+            "minimum": 1,
+            "maximum": 6,
+            "default": 3
+          },
+          "range_min_v": {
+            "type": "number",
+            "minimum": -1000,
+            "maximum": 1000,
+            "default": -1
+          },
+          "range_max_v": {
+            "type": "number",
+            "minimum": -1000,
+            "maximum": 1000,
+            "default": 1
+          },
+          "amplitude": {
+            "type": "number",
+            "minimum": 0.1,
+            "maximum": 1.4,
+            "default": 0.9
+          },
+          "samples_per_period": {
+            "type": "integer",
+            "minimum": 8,
+            "maximum": 64,
+            "default": 20
+          },
+          "step_label": {
+            "type": "string",
+            "enum": [
+              "none",
+              "symbol",
+              "value"
+            ],
+            "default": "none"
+          },
+          "levels_label": {
+            "type": "boolean",
+            "default": false
+          },
+          "show_error": {
+            "type": "boolean",
+            "default": false
+          },
+          "taps": {
+            "type": "number",
+            "minimum": 1,
+            "maximum": 32,
+            "default": 4
+          },
+          "noise": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 0.5,
+            "default": 0.25
+          },
+          "structure": {
+            "type": "string",
+            "enum": [
+              "both",
+              "fir",
+              "iir"
+            ],
+            "default": "both"
+          }
+        }
+      },
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T22:47:36+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Round 8 templates: checked rendered figures on desktop and phone, before and after answering, and the animations"
+        }
+      ]
+    },
+    {
+      "id": "feedline",
+      "version": 1,
+      "title": "Fødekabel",
+      "description": "Feed lines. standing_wave: a line from the transmitter to a matched, open, shorted or resistive load (load_ratio = R/Z0), with the voltage (and current) along the line computed from the reflection coefficient, the instantaneous wave at phase_deg (for animations), optional Umax/Umin markers, a λ/4 mark from the load, an antenna tuner (ATU) at the transmitter and a computed SWR label. cable: a coax cross-section (parts named, optional diameters d and D) and/or a ladder line (optional opposite currents). quarter_wave: a λ/4 transformer with Z0, Z_L and the computed input impedance Z0²/Z_L. directional: transmitter, SWR meter and antenna with the forward and reflected waves (W or V); SWR and return loss computed from the readings.",
+      "idealised": "Tapsfri kabel og rent resistiv last; ikke i målestokk.",
+      "params": {
+        "type": "object",
+        "required": [
+          "kind"
+        ],
+        "properties": {
+          "kind": {
+            "type": "string",
+            "enum": [
+              "standing_wave",
+              "cable",
+              "quarter_wave",
+              "directional"
+            ]
+          },
+          "load": {
+            "type": "string",
+            "enum": [
+              "matched",
+              "open",
+              "short",
+              "resistive"
+            ],
+            "default": "matched"
+          },
+          "load_ratio": {
+            "type": "number",
+            "minimum": 0.05,
+            "maximum": 20,
+            "default": 3
+          },
+          "z0_ohms": {
+            "type": "number",
+            "minimum": 1,
+            "maximum": 1000,
+            "default": 50
+          },
+          "show_z0": {
+            "type": "boolean",
+            "default": true
+          },
+          "show_load": {
+            "type": "boolean",
+            "default": true
+          },
+          "wavelengths": {
+            "type": "number",
+            "minimum": 0.25,
+            "maximum": 2,
+            "default": 1
+          },
+          "envelope": {
+            "type": "string",
+            "enum": [
+              "none",
+              "voltage",
+              "voltage_current"
+            ],
+            "default": "voltage"
+          },
+          "show_wave": {
+            "type": "boolean",
+            "default": true
+          },
+          "show_minmax": {
+            "type": "boolean",
+            "default": false
+          },
+          "swr_label": {
+            "type": "string",
+            "enum": [
+              "none",
+              "unknown",
+              "value"
+            ],
+            "default": "none"
+          },
+          "phase_deg": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 360,
+            "default": 0
+          },
+          "tuner": {
+            "type": "boolean",
+            "default": false
+          },
+          "quarter_mark": {
+            "type": "boolean",
+            "default": false
+          },
+          "cable": {
+            "type": "string",
+            "enum": [
+              "coax",
+              "ladder",
+              "both"
+            ],
+            "default": "coax"
+          },
+          "labels": {
+            "type": "boolean",
+            "default": true
+          },
+          "dimensions": {
+            "type": "boolean",
+            "default": false
+          },
+          "currents": {
+            "type": "boolean",
+            "default": false
+          },
+          "z_load_ohms": {
+            "type": "number",
+            "minimum": 1,
+            "maximum": 1000,
+            "default": 100
+          },
+          "input_label": {
+            "type": "string",
+            "enum": [
+              "none",
+              "unknown",
+              "value"
+            ],
+            "default": "unknown"
+          },
+          "forward": {
+            "type": "number",
+            "minimum": 0.001,
+            "maximum": 10000,
+            "default": 100
+          },
+          "reflected": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 10000,
+            "default": 0
+          },
+          "unit": {
+            "type": "string",
+            "enum": [
+              "W",
+              "V"
+            ],
+            "default": "W"
+          },
+          "show_readings": {
+            "type": "boolean",
+            "default": true
+          },
+          "return_loss_label": {
+            "type": "string",
+            "enum": [
+              "none",
+              "unknown",
+              "value"
+            ],
+            "default": "none"
+          }
+        }
+      },
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T22:47:36+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Round 8 templates: checked rendered figures on desktop and phone, before and after answering, and the animations"
+        }
+      ]
+    },
+    {
+      "id": "antenna",
+      "version": 1,
+      "title": "Antenne",
+      "description": "Simplified antenna drawings: a half-wave dipole fed in the middle (coax, balun, ferrites or ladder line) with optional graphs of current and voltage along it (envelopes, or the instantaneous values at phase_deg for animations), a folded dipole, a ground-plane antenna with radials at an angle (optionally beside one with horizontal radials, and with the feed impedance), a Yagi-Uda seen from above (reflector, driven dipole, 0–6 directors), a quad loop, a dipole with traps (the parts outside the traps can be greyed out), a short vertical with a loading coil (optionally with the current along it), and computed radiation patterns seen from above (half-wave dipole, vertical, directional antenna with beamwidth and front/back ratio).",
+      "idealised": "Forenklet tegning av prinsippet, ikke i riktig målestokk. Strøm, spenning og strålingsdiagram er regnet ut fra en forenklet modell av en ideell antenne uten tap og uten påvirkning fra omgivelsene.",
+      "params": {
+        "type": "object",
+        "required": [
+          "kind"
+        ],
+        "properties": {
+          "kind": {
+            "type": "string",
+            "enum": [
+              "dipole",
+              "folded_dipole",
+              "ground_plane",
+              "yagi",
+              "quad",
+              "trap_dipole",
+              "loaded_vertical",
+              "pattern"
+            ]
+          },
+          "feed": {
+            "type": "string",
+            "enum": [
+              "coax",
+              "balun",
+              "ferrite",
+              "ladder",
+              "none"
+            ],
+            "default": "coax"
+          },
+          "length_label": {
+            "type": "string",
+            "maxLength": 24,
+            "default": ""
+          },
+          "show_current": {
+            "type": "boolean",
+            "default": false
+          },
+          "show_voltage": {
+            "type": "boolean",
+            "default": false
+          },
+          "phase_deg": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 360,
+            "nullable": true,
+            "default": null
+          },
+          "radial_angle": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 60,
+            "default": 45
+          },
+          "compare": {
+            "type": "boolean",
+            "default": false
+          },
+          "show_impedance": {
+            "type": "boolean",
+            "default": false
+          },
+          "directors": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 6,
+            "default": 3
+          },
+          "show_labels": {
+            "type": "boolean",
+            "default": true
+          },
+          "show_direction": {
+            "type": "boolean",
+            "default": true
+          },
+          "highlight": {
+            "type": "string",
+            "enum": [
+              "none",
+              "reflector",
+              "driven",
+              "directors"
+            ],
+            "default": "none"
+          },
+          "trap_label": {
+            "type": "string",
+            "maxLength": 12,
+            "default": ""
+          },
+          "inner_label": {
+            "type": "string",
+            "maxLength": 24,
+            "default": ""
+          },
+          "outer_label": {
+            "type": "string",
+            "maxLength": 24,
+            "default": ""
+          },
+          "active": {
+            "type": "string",
+            "enum": [
+              "all",
+              "inner"
+            ],
+            "default": "all"
+          },
+          "coil_position": {
+            "type": "number",
+            "minimum": 0.03,
+            "maximum": 0.85,
+            "default": 0.05
+          },
+          "shape": {
+            "type": "string",
+            "enum": [
+              "dipole",
+              "vertical",
+              "directional"
+            ],
+            "default": "dipole"
+          },
+          "antenna_axis": {
+            "type": "string",
+            "enum": [
+              "ew",
+              "ns"
+            ],
+            "default": "ew"
+          },
+          "show_pattern": {
+            "type": "boolean",
+            "default": true
+          },
+          "compass": {
+            "type": "boolean",
+            "default": false
+          },
+          "beamwidth": {
+            "type": "boolean",
+            "default": false
+          },
+          "beamwidth_deg": {
+            "type": "number",
+            "minimum": 30,
+            "maximum": 120,
+            "default": 60
+          },
+          "front_back_db": {
+            "type": "number",
+            "minimum": 3,
+            "maximum": 40,
+            "default": 20
+          }
+        }
+      },
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T22:47:36+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Round 8 templates: checked rendered figures on desktop and phone, before and after answering, and the animations"
+        }
+      ]
     }
   ]
 }

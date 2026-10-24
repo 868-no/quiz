@@ -35,7 +35,7 @@ Figures are drawn from **parameters**, never stored as images or HTML. A questio
   shapes exports `fixedTextSize: true`; `minScale` (default 0.6) is the smallest scale a
   figure is shown at before it scrolls sideways.
 
-There are eighteen templates, all at version 1. A new template or version
+There are twenty-four templates, all at version 1. A new template or version
 starts as `needs_review`: a person checks the drawings (`python3 -m tools preview`) and
 approves it (`python3 -m tools visuals approve id@version`) before questions using it
 can be published. Changing an approved template's code or schema calls for a new
@@ -292,6 +292,185 @@ amplifier compressing), `air_coil` and `range` (a receiver's dynamic range).
 
 Also: `rlc-circuit@1` takes `current_arrow` (0–1, the current drawn as an arrow whose
 length follows it; series circuit with a source), for animations.
+
+## `sampling@1` – digital signalbehandling
+
+Four small drawings for chapter 7, all **computed** from their definition. `kind` picks one;
+the other kinds' parameters are ignored (the quantize-only options are refused elsewhere).
+
+| Param | Type |
+|---|---|
+| `kind` | `samples` \| `quantize` \| `moving_average` \| `fir_iir` |
+| `f_hz`, `fs_hz`, `phase_deg=30`, `samples_shown=16` (6–40) | `samples`: a sine at `f_hz` sampled at `fs_hz` (`f_hz` at most 2 · `fs_hz`), the samples as dots on stems |
+| `show_analog=true`, `show_reconstruction=false` | `samples`: the analogue sine (thin), and the lowest-frequency sine through the samples (dashed): the signal itself up to `fs_hz / 2`, above it the alias at \|f − round(f/f_s)·f_s\| |
+| `show_values=true` | `f` and `f_s` in the drawing (`samples`), the range limits in volts (`quantize`; otherwise "maks"/"min") |
+| `bits=3` (1–6, rounded), `range_min_v=−1`, `range_max_v=1`, `amplitude=0.9` (0,1–1,4 of half the range; above 1 the peaks are clipped), `samples_per_period=20` (8–64) | `quantize`: one period of a sine, read `samples_per_period` times, rounded to 2^bits levels in the middle of equal steps of (range)/2^bits, and held until the next reading (a staircase) |
+| `step_label=none` \| `symbol` (ΔU) \| `value` (ΔU = 125 mV), `levels_label` ("4 bit: 16 nivåer"), `show_error` | `quantize` only: the step between the two highest levels, the number of levels, and a panel with the rounding error at each reading between ±½ step |
+| `taps=4` (1–32, rounded), `noise=0.25` (0–0,5) | `moving_average`: a square pulse of 64 samples with a fixed pseudo-random noise, and the mean of the last `taps` samples |
+| `structure=both` \| `fir` \| `iir` | `fir_iir`: a 3-tap FIR filter (delays T, multipliers a0–a2, sum) and a first-order IIR filter with feedback through T and b |
+
+`bits` and `taps` are numbers so they can be animated (`animation.param: "bits"`); each frame
+rounds them. The description states the sample count per period, whether the samples show the
+signal or an alias (and at what frequency, with `show_values`), how many of the levels the
+staircase uses, clipping, and that the error stays within half a step. The assumption shown
+under the figure depends on `kind`.
+
+## `antenna@1` – antenne
+
+Simplified antenna drawings (not to scale) and computed radiation patterns, chosen with
+`kind`. The current and voltage on the dipole are the standing-wave shapes (current
+cos, voltage sin along the half-wave), the dipole pattern is cos(90°·cos φ)/sin φ, and
+the −3 dB beamwidth (field 1/√2 of the maximum) is found numerically. The assumption
+note mentions the computed parts only when the figure shows them.
+
+| Param | Type |
+|---|---|
+| `kind` | `dipole` \| `folded_dipole` \| `ground_plane` \| `yagi` \| `quad` \| `trap_dipole` \| `loaded_vertical` \| `pattern` |
+| `feed` | `coax` (default) \| `balun` \| `ferrite` (ferrite beads on the coax) \| `ladder` \| `none` – dipole and folded dipole |
+| `length_label` | ≤24 chars: a dimension line over the (folded) dipole, the height of a ground plane or loaded vertical, the circumference of a quad (`"l = ?"` before, the value after) |
+| `show_current`, `show_voltage` | graphs above a dipole (voltage dashed); `show_current` also on `loaded_vertical` |
+| `phase_deg` | `null` (default: envelopes, how large current and voltage get) or 0–360: the values at that instant of the period, inside dashed envelopes – animate it 0 → 360 with `mode: "loop"` |
+| `radial_angle` | 0–60° below horizontal (ground plane; default 45), drawn in oblique projection with the true angle marked |
+| `compare` | ground plane: horizontal radials beside the angled ones (`radial_angle` ≥ 20) |
+| `show_impedance` | ground plane: feed impedance ≈ 36 Ω (horizontal) / near 50 Ω (35–55°); other angles are refused |
+| `directors` | Yagi: 0–6 directors, each a little shorter; reflector longest, driven dipole fed |
+| `show_labels`, `show_direction`, `highlight` | Yagi: element names, main-direction arrow, `none` \| `reflector` \| `driven` \| `directors` drawn thick |
+| `trap_label`, `inner_label`, `outer_label` | trap dipole: the traps' frequency, spans between the traps and over the whole antenna |
+| `active` | `all` \| `inner` – trap dipole only: the parts outside the traps dashed and pale |
+| `coil_position` | loaded vertical: coil height as a share of the antenna (0,03–0,85); animate it to move the coil |
+| `shape` | pattern: `dipole` \| `vertical` \| `directional` |
+| `antenna_axis` | pattern dipole: `ew` \| `ns` |
+| `show_pattern` | pattern: false draws only the antenna (and compass) – reveal it with `params_after` |
+| `compass` | N/S/Ø/V around the pattern (not for `directional`, which is labelled forover/bakover) |
+| `beamwidth` | the computed −3 dB beamwidth as two dashed lines and a value (not for `vertical`) |
+| `beamwidth_deg`, `front_back_db` | directional pattern: main-lobe width at −3 dB (30–120°) and front/back ratio (3–40 dB) |
+
+Rules (both verifiers): current/voltage only on a dipole (current also on a loaded
+vertical); `phase_deg` only with a graph; the impedance labels only for horizontal or
+about 45° radials; `compare` needs `radial_angle` ≥ 20; no beamwidth for a vertical; no
+compass on the directional pattern; `active` only on the trap dipole.
+No quantities for checks.
+
+## `feedline@1` – fødekabel
+
+Feed lines, drawn from the physics of a lossless line with a resistive, open or shorted load.
+One `kind` per figure:
+
+* `standing_wave` – transmitter (optionally with an antenna tuner, `ATU`) and a line to a
+  load. Above the line, the voltage along it (and below it, the current) is **computed** from
+  the reflection coefficient Γ = (R − Z₀)/(R + Z₀): the thin solid and dashed curves are
+  ±|U| (how large the voltage gets at each place), and the thick curve is the voltage at
+  one moment (`phase_deg`). Animating `phase_deg` (0–345, `mode: "loop"`) shows a
+  travelling wave on a matched line and a wave that stands still on a mismatched one;
+  animating `load_ratio` shows the standing waves growing with the mismatch.
+* `cable` – a coax cross-section (inner conductor, insulation, braided shield, jacket;
+  optionally the diameters d and D) and/or a ladder line (optionally the equal and
+  opposite currents).
+* `quarter_wave` – a λ/4 section of impedance Z₀ before a load Z_L; the input impedance
+  Z₀²/Z_L is computed.
+* `directional` – transmitter, SWR meter (two dials: forward full scale, reflected in
+  proportion) and antenna, with arrows for the forward and reflected waves in W or V.
+  SWR and return loss are computed from the two readings (Γ = U_r/U_f or √(P_r/P_f)).
+
+| Param | Type |
+|---|---|
+| `kind` | `standing_wave` \| `cable` \| `quarter_wave` \| `directional` |
+| `load` | `matched` \| `open` \| `short` \| `resistive` (standing_wave) |
+| `load_ratio` | R/Z₀ for a resistive load, 0,05–20 (default 3) |
+| `z0_ohms`, `show_z0` | the line's impedance (default 50 Ω) and whether it is written |
+| `show_load` | write the load resistance (standing_wave) or Z_L (quarter_wave) |
+| `wavelengths` | line length, 0,25–2 wavelengths |
+| `envelope` | `none` \| `voltage` \| `voltage_current` |
+| `show_wave`, `phase_deg` | the instantaneous wave and its time phase 0–360° |
+| `show_minmax` | mark U_maks and U_min (needs an envelope and a mismatch) |
+| `swr_label` | `none` \| `unknown` (`SWR = ?`) \| `value` (computed; not for open or short) |
+| `tuner`, `quarter_mark` | an ATU at the transmitter; a λ/4 dimension from the load |
+| `cable`, `labels`, `dimensions`, `currents` | `coax` \| `ladder` \| `both`; part names; d and D (coax only); currents (ladder only) |
+| `z_load_ohms`, `input_label` | quarter_wave: Z_L and `none` \| `unknown` \| `value` for Z_inn |
+| `forward`, `reflected`, `unit`, `show_readings` | directional: the two waves (reflected below forward) in `W` or `V` |
+| `return_loss_label` | `none` \| `unknown` \| `value` (needs a reflected wave) |
+
+Quantities: standing_wave `Z0`, `SWR` (finite loads), `R_L`; quarter_wave `Z0`, `Z_L`,
+`Z_inn`; directional `P_fwd`/`P_ref` or `U_fwd`/`U_ref`, `SWR`, `RL`.
+
+## `propagation@1` – bølgeutbredelse
+
+How radio waves travel, drawn from the side and **not to scale** (the note under the
+figure says so, trimmed per kind). One `kind` per drawing:
+
+| `kind` | Draws |
+|---|---|
+| `layers` | The D, E, F1 and F2 layers with typical heights (`show_heights`), by day or by night (`time`; at night D is gone and E weak, both dashed, and F1 and F2 are one F layer). `compare` draws day and night side by side. |
+| `sky_wave` | A transmitter, its ground wave (`ground_wave_km`, drawn at least 26 px long) and rays at `angles` (elevation, 2–90°) up to one layer at `layer_km`. Whether each ray comes back is **computed**: back if `f_mhz ≤ fc_mhz / sin e` (secant law, flat earth), landing at 2h / tan e; the others go through (dashed, arrow out). `show_skip` shades the skip zone from the end of the ground wave to 2h·√((f/f₀)² − 1) and names it. `show_freq` prints f and the critical frequency. `range_km` is the width of the drawing. Animate `f_mhz` to show the rays starting to escape and the skip zone growing. |
+| `hops` | One ray making `hops` (1–3) hops between the ground and the layer at `elevation_deg`; `show_distance` labels each hop (2h / tan e, rounded). |
+| `horizon` | Two antennas `h1_m`, `h2_m` on a curved earth (curvature exaggerated, geometry consistent) whose tangent lines meet at one horizon point; `show_distance` labels each station's horizon with the book's rule d ≈ 4·√h km. |
+| `duct` | A flat ray trapped in a low layer of warm or moist air over the sea, and a steeper ray that escapes. |
+| `aurora` | Two stations to the south aiming north at the aurora, which scatters the signal back. |
+| `knife_edge` | Two stations either side of a sharp ridge, the direct path blocked; `show_diffraction` adds the waves bending over the edge into the shadow. |
+
+Common: `layer` (`D`, `E`, `Es`, `F1`, `F2` = default, `F`) names the layer in
+`sky_wave` and `hops`; `blank` + `note` shows only a note. Labels in the sky are placed
+where no ray crosses them. Rules (Python and JS): `compare` only for `layers`; in
+`sky_wave` each angle once and `ground_wave_km` < `range_km`; `hops` may not add up to
+more than 40 000 km. No quantities.
+
+The description lists the angles, which rays return and where they land, which go
+through, and the skip zone, so a question that asks about any of these should show the
+figure only after answering (`after_only`, `params_after`, or an animation with
+`phase: "after"`).
+
+## `instrument@1` – måleinstrument
+
+Measuring instruments, one drawing per `kind`. Every value the figure shows is computed
+from the parameters (series resistor, shunt, voltmeter reading, divisions per period),
+so it cannot contradict the question; hidden values are drawn as `?`.
+
+| `kind` | Draws |
+|---|---|
+| `scope` | Oscilloscope screen, 10 × 8 divisions with fine ticks on the centre lines, 1–2 traces computed from their definition (trace 2 dashed and numbered), `Tid/rute` and `Volt/rute` under the screen. The trace starts at the left edge rising through zero (phase 0), so periods can be counted in divisions. |
+| `meter_series` | Voltmeter: moving-coil meter (face with scale and needle at full scale) in series with a series resistor R_S between + and − terminals, with the range drawn across the terminals. R_S = range / full-scale current − coil resistance. |
+| `meter_shunt` | Ammeter: the same meter with a shunt R_sh in parallel; the input current I is marked. R_sh = I_m·R_m / (I − I_m). |
+| `voltmeter_loading` | A battery feeding R1 over R2, with a voltmeter (internal resistance R_i) across R2. The reading is computed with R_i in parallel with R2; the description after answering also gives the unloaded voltage. |
+| `gate` | A frequency counter's gate: two equal gate windows over the same pulse train, opened at slightly different times, counting one pulse more or less (not to scale). |
+
+| Param | Type |
+|---|---|
+| `traces` | scope only, 1–2 × `{shape: sine\|square\|am, frequency_hz, amplitude_v, offset_v=0, phase_deg=0, carrier_hz? (am only, ≥ 4 × frequency_hz), depth=0,5 (am)}` – for `am`, `frequency_hz` is the modulating frequency and `amplitude_v` the unmodulated carrier peak |
+| `time_per_div_s`, `volt_per_div_v`, `show_settings=true` | scope settings (shown like the knobs: 0,2 ms, not 200 µs). The screen must show 0,25–40 periods, and no trace may go more than 4 divisions from the middle |
+| `meter` | `{full_scale_a, coil_ohms=null, show_full_scale=true, show_coil=true}` – `null` coil resistance means "neglected" (not drawn); a shunt needs it |
+| `range_v` / `range_a`, `show_range=true`, `show_resistor=false` | voltmeter / ammeter range (required for its kind); whether R_S / R_sh is printed |
+| `supply_v` (required), `r1_ohms`, `r2_ohms`, `meter_ohms`, `show_reading=false`, `show_meter_ohms=true` | voltmeter_loading |
+| `gate_s`, `show_resolution=false` | gate time; `show_resolution` adds "Én puls mer eller mindre: ±1/T" |
+
+Quantities (named after the calculation inputs they illustrate, so `verify` checks a
+question's inputs and answer against the figure without `visual_bindings`):
+scope `f`, `T`, `U_p`, `U_pp`, `time_per_div`, `volt_per_div`, `div_per_period`;
+meter_series `U` (range), `I` (full scale), `R_m`, `R` (series resistor);
+meter_shunt `I_m`, `R_m`, `U` (= I_m·R_m), `I` (range), `I_sh`, `R` (shunt);
+voltmeter_loading `U_s`, `R_upper`, `R_lower`, `R_i`, `R_p` (R2 ∥ R_i), `U_m` (reading), `U_0` (without the meter);
+gate `T` (gate time), `f` (resolution 1/T).
+
+Use `params_after` to reveal the asked value (`show_resistor`, `show_reading`,
+`show_resolution`). `meter_ohms` animates well after answering (the reading approaches
+the unloaded voltage as R_i grows).
+
+## `code-breakdown@1` – kode delt opp i deler
+
+A short code – a call sign, an emission designator, a signal report – drawn as 1–6
+parts, each in its own box with a bracket and a label underneath. Labels wrap in
+narrow columns so they stay readable on phones; a short code is centred in a figure at
+least 480 units wide instead of being blown up.
+
+| Param | Type |
+|---|---|
+| `parts` | 1–6 × `{text, label="", hidden=false, highlight=false}` – `text` is 1–8 of `A–Z a–z 0–9 / . + -` (the whole code at most 16 characters); `label` ≤ 40 characters; `hidden` draws `?` under a dashed bracket instead of the label; `highlight` gives the box a thick border and the label bold text |
+
+Rules: at least one part has a label, and a hidden part must have a label (to show
+after answering). To reveal hidden labels, `params_after` repeats `parts` without
+`hidden` (arrays are replaced). When the split itself answers the question (which part
+is the prefix?), use `after_only: true`. The description names every part and its
+label, and says "betydningen vises etter at du har svart" for hidden ones.
+No quantities.
 
 ## Adding or changing a template
 
