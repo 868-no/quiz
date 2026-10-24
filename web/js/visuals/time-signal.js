@@ -7,6 +7,7 @@
 // am         – an AM signal modulated correctly, or overdriven so the peaks are clipped
 // fsk        – a data signal and the carrier shifting between two frequencies
 // chirp      – the frequency while a CW transmitter is keyed, with or without chirp
+// drift      – an oscillator's frequency drifting for minutes after switching on
 // 'blank' draws only a note, for figures that are shown after answering.
 
 import { h } from '../render/vnode.js';
@@ -19,6 +20,7 @@ const TRACES = {
   am: { normal: 'Riktig modulert', overdriven: 'Overstyrt: toppene klippes' },
   fsk: { fsk: '' },
   chirp: { chirp: 'Med kvitter', stable: 'Stabil oscillator' },
+  drift: { warmup: 'Oscillator som varmes opp' },
 };
 
 function rules(p) {
@@ -174,6 +176,16 @@ function drawPanel(els, p, trace, top) {
     els.push(polyline(pts, { 'stroke-width': 1.4 }));
     return;
   }
+  if (p.kind === 'drift') {
+    // frequency over the first minutes after switching on: drifts, then settles
+    const fy = top + PANEL - 10;
+    els.push(label(X0 - 6, top + 34, 'f', { 'font-size': 12, 'font-style': 'italic', 'text-anchor': 'end' }));
+    els.push(line(X0, top + 30, X1, top + 30, { 'stroke-width': 1, 'stroke-dasharray': '3 4', opacity: 0.6 }), label(X1, top + 22, 'stabil frekvens', { 'font-size': 11, 'text-anchor': 'end' }));
+    els.push(polyline(sample((t) => [xOf(t), top + 30 + 44 * Math.exp(-t / 0.28)]), { 'stroke-width': 2.5 }));
+    timeAxis(els, fy + 8);
+    els.push(label(X0, fy + 24, 'slått på', { 'font-size': 11, 'text-anchor': 'start' }), label(X1, fy + 24, 'minutter senere', { 'font-size': 11, 'text-anchor': 'end' }));
+    return;
+  }
   if (p.kind === 'chirp') {
     const fn = chirpFreq(trace === 'stable');
     const keyY = top + 30;
@@ -201,8 +213,9 @@ const DESC = {
   overdriven: 'Overstyrt: den samme modulasjonen, men toppene av omhyllingskurven er flatklippet fordi trinnet ikke klarer mer.',
   chirp: 'Med kvitter: frekvensen starter litt ved siden av og glir inn på riktig verdi hver gang nøkkelen trykkes ned.',
   stable: 'Stabil oscillator: frekvensen ligger fast fra første øyeblikk.',
+  warmup: 'Frekvensen til en oscillator de første minuttene etter påslag: den glir langsomt mens komponentene varmes opp, og flater ut mot en stabil verdi.',
 };
-const TITLE = { conduction: 'Kollektorstrøm i ulike klasser', keying: 'Nøkling av bærebølgen', envelope: 'Omhyllingskurve over tid', am: 'AM-signal over tid', fsk: 'Frekvensskiftnøkling', chirp: 'Frekvens under nøkling' };
+const TITLE = { drift: 'Frekvensdrift etter påslag', conduction: 'Kollektorstrøm i ulike klasser', keying: 'Nøkling av bærebølgen', envelope: 'Omhyllingskurve over tid', am: 'AM-signal over tid', fsk: 'Frekvensskiftnøkling', chirp: 'Frekvens under nøkling' };
 
 function render(p) {
   const els = [];

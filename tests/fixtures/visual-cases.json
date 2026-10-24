@@ -2644,6 +2644,159 @@
           "to": 5
         }
       }
+    },
+    {
+      "name": "stage: configurations",
+      "valid": true,
+      "visual": {
+        "template": "stage",
+        "version": 1,
+        "params": {
+          "kind": "configurations"
+        }
+      },
+      "quantities": {},
+      "shown": {}
+    },
+    {
+      "name": "stage: currents",
+      "valid": true,
+      "visual": {
+        "template": "stage",
+        "version": 1,
+        "params": {
+          "kind": "currents"
+        }
+      },
+      "quantities": {},
+      "shown": {}
+    },
+    {
+      "name": "stage: tank_loss",
+      "valid": true,
+      "visual": {
+        "template": "stage",
+        "version": 1,
+        "params": {
+          "kind": "tank_loss"
+        }
+      },
+      "quantities": {},
+      "shown": {}
+    },
+    {
+      "name": "illustration: fet_transfer",
+      "valid": true,
+      "visual": {
+        "template": "illustration",
+        "version": 1,
+        "params": {
+          "kind": "fet_transfer"
+        }
+      },
+      "quantities": {},
+      "shown": {}
+    },
+    {
+      "name": "illustration: phasing",
+      "valid": true,
+      "visual": {
+        "template": "illustration",
+        "version": 1,
+        "params": {
+          "kind": "phasing"
+        }
+      },
+      "quantities": {},
+      "shown": {}
+    },
+    {
+      "name": "illustration: transfer",
+      "valid": true,
+      "visual": {
+        "template": "illustration",
+        "version": 1,
+        "params": {
+          "kind": "transfer"
+        }
+      },
+      "quantities": {},
+      "shown": {}
+    },
+    {
+      "name": "illustration: air_coil",
+      "valid": true,
+      "visual": {
+        "template": "illustration",
+        "version": 1,
+        "params": {
+          "kind": "air_coil"
+        }
+      },
+      "quantities": {},
+      "shown": {}
+    },
+    {
+      "name": "illustration: range",
+      "valid": true,
+      "visual": {
+        "template": "illustration",
+        "version": 1,
+        "params": {
+          "kind": "range"
+        }
+      },
+      "quantities": {},
+      "shown": {}
+    },
+    {
+      "name": "time signal: warm-up drift",
+      "valid": true,
+      "visual": {
+        "template": "time-signal",
+        "version": 1,
+        "params": {
+          "kind": "drift",
+          "traces": [
+            "warmup"
+          ]
+        }
+      },
+      "quantities": {},
+      "shown": {}
+    },
+    {
+      "name": "a figure shown only after answering",
+      "valid": true,
+      "visual": {
+        "template": "zener-regulator",
+        "version": 1,
+        "after_only": true,
+        "params": {
+          "u_in_v": 15,
+          "u_z_v": 6.8
+        }
+      },
+      "quantities": {
+        "U_R": 8.2
+      },
+      "shown": {
+        "U_in": true
+      }
+    },
+    {
+      "name": "after_only must be true or false",
+      "valid": false,
+      "error": "after_only",
+      "visual": {
+        "template": "zener-regulator",
+        "version": 1,
+        "after_only": "yes",
+        "params": {
+          "u_in_v": 15,
+          "u_z_v": 6.8
+        }
+      }
     }
   ]
 }

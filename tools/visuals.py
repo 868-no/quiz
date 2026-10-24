@@ -547,7 +547,8 @@ def _fr_quantities(p: dict[str, Any]) -> dict[str, dict[str, Any]]:
 # --- time-signal ------------------------------------------------------------------
 
 _TS_TRACES = {"conduction": {"A", "AB", "B", "C"}, "keying": {"hard", "soft"}, "envelope": {"speech", "processed", "rtty"},
-              "am": {"normal", "overdriven"}, "fsk": {"fsk"}, "chirp": {"chirp", "stable"}}
+              "am": {"normal", "overdriven"}, "fsk": {"fsk"}, "chirp": {"chirp", "stable"},
+              "drift": {"warmup"}}
 
 
 def _ts_rules_time(p: dict[str, Any], errors: list[str]) -> None:
@@ -635,13 +636,15 @@ def validate_visual(templates: dict[str, dict[str, Any]], visual: Any, where: st
     errors: list[str] = []
     if not isinstance(visual, dict):
         return [f"{where}: expected an object"], None, None
-    unknown = set(visual) - {"template", "version", "params", "params_after", "caption", "animation"}
+    unknown = set(visual) - {"template", "version", "params", "params_after", "caption", "animation", "after_only"}
     if unknown:
         errors.append(f"{where}: unknown keys {sorted(unknown)}")
     key = f"{visual.get('template')}@{visual.get('version')}"
     tpl = templates.get(key)
     if tpl is None:
         return errors + [f"{where}: unknown visual template {key}"], None, None
+    if "after_only" in visual and not isinstance(visual["after_only"], bool):
+        errors.append(f"{where}.after_only: true or false")
     if "caption" in visual and (not isinstance(visual["caption"], str) or len(visual["caption"]) > 200):
         errors.append(f"{where}.caption: must be a string of at most 200 characters")
     params = _validate(tpl["params"], visual.get("params"), f"{where}.params", errors, tpl)

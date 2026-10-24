@@ -335,6 +335,7 @@ sub, sup { line-height: 0; }
 .fig-desc summary { font-weight: 400; }
 .fig-anim-toggle { margin: 6px 4px; }
 .fig-error { color: var(--muted); }
+.fig-later p { margin: 0; padding: 14px 8px; color: var(--muted); font-size: 0.92rem; }
 .fig-pan-hint { font-size: 0.88rem; color: var(--muted); margin: 4px 4px 0; }
 .fig-canvas:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
 .flow-path { stroke: transparent; }

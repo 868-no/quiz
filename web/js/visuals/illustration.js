@@ -11,6 +11,11 @@
 //                      angles
 // supply             – an oscillator and a final stage on one supply line; 'reveal' adds
 //                      a separate regulator for the oscillator
+// fet_transfer       – drain current against UGS for depletion and enhancement MOSFETs
+// phasing            – block diagram of the phasing method for SSB
+// transfer           – output against drive for a linear amplifier, compressing at the top
+// air_coil           – an air-wound coil with its turns, diameter and length
+// range              – a receiver's dynamic range on a signal-strength scale
 // 'blank' draws only a note, for drawings that are shown after answering.
 
 import { h } from '../render/vnode.js';
@@ -187,8 +192,113 @@ function supply(els, p) {
   return { height: p.reveal ? 250 : 210, desc };
 }
 
-const DRAW = { prefixes, tolerance, s_meter: sMeter, plates, variable_capacitor: variableCapacitor, coils, supply };
-const TITLE = { prefixes: 'SI-prefikser', tolerance: 'Toleranse', s_meter: 'S-meter', plates: 'Platekondensator', variable_capacitor: 'Variabel kondensator', coils: 'To spoler', supply: 'Felles forsyning' };
+
+// a plot frame with axes and labels; returns coordinate helpers
+function axesBox(els, x0, y0, w, hh, xName, yName) {
+  els.push(line(x0, y0 + hh, x0 + w + 12, y0 + hh, { 'stroke-width': 1.5 }), arrowHead(x0 + w + 18, y0 + hh, 1, 0, 8));
+  els.push(line(x0, y0 + hh + 4, x0, y0 - 10, { 'stroke-width': 1.5 }), arrowHead(x0, y0 - 16, 0, -1, 8));
+  const name = (x, y, n) => {
+    const [sym, sub] = n.split('_');
+    return h('text', { x, y, 'font-size': 12, fill: STROKE, 'text-anchor': 'end', 'dominant-baseline': 'middle' }, h('tspan', { 'font-style': 'italic' }, sym), sub ? h('tspan', { dy: 4, 'font-size': 9 }, sub) : null);
+  };
+  els.push(name(x0 + w + 18, y0 + hh + 16, xName), name(x0 - 6, y0 - 22, yName));
+}
+const curve = (pts, extra = {}) => h('path', { d: pts.map((q, i) => `${i ? 'L' : 'M'} ${q[0].toFixed(1)} ${q[1].toFixed(1)}`).join(' '), fill: 'none', stroke: STROKE, 'stroke-width': 2.5, ...extra });
+
+// drain current against gate voltage for a depletion and an enhancement MOSFET
+function fetTransfer(els) {
+  const x0 = 80;
+  const y0 = 40;
+  const w = 420;
+  const hh = 190;
+  const xOf = (u) => x0 + ((u + 4) / 8) * w; // −4 … +4 V
+  const yOf = (i) => y0 + hh - (i / 15) * hh;
+  axesBox(els, x0, y0, w, hh, 'U_GS', 'I_D');
+  const zero = xOf(0);
+  els.push(line(zero, y0 - 4, zero, y0 + hh, { 'stroke-width': 1.2, 'stroke-dasharray': '5 4' }), lbl(zero + 4, y0 + hh + 16, '0 V', 'middle', 11));
+  const dep = [];
+  const enh = [];
+  for (let j = 0; j <= 160; j++) {
+    const u = -4 + (8 * j) / 160;
+    dep.push([xOf(u), yOf(u > -3 ? 2.6 * (1 + u / 3) ** 2 : 0)]);
+    enh.push([xOf(u), yOf(u > 1.5 ? 1.6 * (u - 1.5) ** 2 : 0)]);
+  }
+  els.push(curve(dep), curve(enh, { 'stroke-dasharray': '8 5' }));
+  // a legend in the top left corner, clear of both curves
+  els.push(line(x0 + 20, y0 + 6, x0 + 52, y0 + 6, { 'stroke-width': 2.5 }), lbl(x0 + 60, y0 + 6, 'tømmingsmodus', 'start', 12));
+  els.push(line(x0 + 20, y0 + 26, x0 + 52, y0 + 26, { 'stroke-width': 2.5, 'stroke-dasharray': '8 5' }), lbl(x0 + 60, y0 + 26, 'forsterkningsmodus', 'start', 12));
+  els.push(h('circle', { cx: zero, cy: yOf(2.6), r: 5, fill: STROKE }), h('circle', { cx: zero, cy: yOf(0), r: 5, fill: 'var(--fig-bg)', stroke: STROKE, 'stroke-width': 2 }));
+  return { height: 270, desc: 'Drainstrømmen ID mot spenningen mellom gate og source, UGS, for to N-kanal-MOSFET-er. Tømmingsmodus (heltrukket): leder allerede ved 0 V og strupes når UGS gjøres negativ. Forsterkningsmodus (stiplet): leder ikke før UGS er blitt tydelig positiv. Ved UGS = 0 V (stiplet loddrett linje) leder bare den i tømmingsmodus.' };
+}
+
+// the phasing method for SSB: audio and carrier each split with 90° between the halves
+function phasing(els) {
+  const bx = (x, y, w, t, dashed = false) => [h('rect', { x, y, width: w, height: 36, rx: 6, fill: 'var(--fig-bg)', stroke: STROKE, 'stroke-width': 2, 'stroke-dasharray': dashed ? '6 4' : null }), lbl(x + w / 2, y + 19, t, 'middle', 11)];
+  const arr = (x1, y1, x2, y2) => [line(x1, y1, x2 - (x2 > x1 ? 8 : 0), y2 - (y2 > y1 ? 8 : y2 < y1 ? -8 : 0), { 'stroke-width': 1.6 }), arrowHead(x2, y2, x2 - x1, y2 - y1, 8)];
+  els.push(...bx(10, 30, 70, 'Mikrofon'), ...arr(80, 48, 95, 48), ...bx(95, 30, 115, 'Mikrofonforsterker'), ...arr(210, 48, 225, 48), ...bx(225, 30, 80, 'Lydfilter', true));
+  els.push(line(305, 48, 320, 48, { 'stroke-width': 1.6 }), line(320, 48, 320, 210, { 'stroke-width': 1.6 }));
+  els.push(...arr(320, 110, 380, 110), ...bx(380, 92, 110, 'Bal. modulator'));
+  els.push(...arr(320, 210, 330, 210), ...bx(330, 192, 40, '90°'), ...arr(370, 210, 380, 210), ...bx(380, 192, 110, 'Bal. modulator'));
+  els.push(...bx(400, 142, 70, 'Bærebølge'), ...arr(435, 142, 435, 128), ...arr(435, 178, 435, 192), lbl(444, 135, '0°', 'start', 10), lbl(444, 186, '90°', 'start', 10));
+  els.push(line(490, 110, 510, 110, { 'stroke-width': 1.6 }), ...arr(510, 110, 510, 146), line(490, 210, 510, 210, { 'stroke-width': 1.6 }), ...arr(510, 210, 510, 174));
+  els.push(h('circle', { cx: 510, cy: 160, r: 14, fill: 'var(--fig-bg)', stroke: STROKE, 'stroke-width': 2 }), lbl(510, 161, 'Σ', 'middle', 15), ...arr(524, 160, 552, 160), lbl(538, 146, 'SSB', 'middle', 11));
+  return { height: 245, desc: 'Blokkskjema for fasemetoden: mikrofon, mikrofonforsterker og lydfilter (stiplet). Lydsignalet deles i to: den ene delen går rett til en balansert modulator, den andre gjennom et 90°-ledd til en annen balansert modulator. Bærebølgen går til den første modulatoren direkte og til den andre forskjøvet 90°. Utgangene legges sammen (Σ) til SSB-signalet. Det finnes ikke noe sidebåndsfilter.' };
+}
+
+// output against drive for a linear amplifier: straight at first, then compressing
+function transfer(els) {
+  const x0 = 80;
+  const y0 = 40;
+  const w = 400;
+  const hh = 180;
+  axesBox(els, x0, y0, w, hh, 'inn', 'ut');
+  const out = (v) => Math.tanh(1.25 * v) / Math.tanh(1.25); // 0 … 1
+  const pts = [];
+  for (let j = 0; j <= 100; j++) { const v = j / 100; pts.push([x0 + v * w, y0 + hh - out(v) * hh]); }
+  // the straight line the output would follow without compression (the curve's slope at zero)
+  const slope = 1.25 / Math.tanh(1.25);
+  els.push(line(x0, y0 + hh, x0 + 0.65 * w, y0 + hh - 0.65 * slope * hh, { 'stroke-width': 1.2, 'stroke-dasharray': '5 4' }));
+  els.push(curve(pts));
+  const mark = (v, t, anchor) => { const x = x0 + v * w; const y = y0 + hh - out(v) * hh; els.push(h('circle', { cx: x, cy: y, r: 5.5, fill: STROKE }), lbl(x + (anchor === 'start' ? 10 : -10), y + 18, t, anchor, 11)); };
+  mark(1, 'full styring', 'end');
+  mark(0.62, 'litt mindre styring', 'start');
+  els.push(lbl(x0 + 0.25 * w, y0 + hh - 0.5 * hh, 'lineært', 'middle', 11), lbl(x0 + 0.8 * w, y0 - 8, 'metning', 'end', 11));
+  return { height: 260, desc: 'Utgangseffekt mot styring for en lineær forsterker: kurven følger først en rett linje (stiplet), men flater ut mot metning ved full styring. Markert: full styring, der forsterkeren er ulineær, og litt mindre styring, der kurven fortsatt er nesten rett.' };
+}
+
+// an air-wound coil on a tube, with its turns, diameter and length
+function airCoil(els) {
+  const x0 = 140;
+  const x1 = 420;
+  const top = 80;
+  const bot = 160;
+  els.push(h('rect', { x: x0 - 20, y: top, width: x1 - x0 + 40, height: bot - top, rx: 10, fill: 'none', stroke: STROKE, 'stroke-width': 1.4, opacity: 0.55 }));
+  const n = 20;
+  for (let i = 0; i < n; i++) { const x = x0 + ((x1 - x0) * (i + 0.5)) / n; els.push(line(x - 5, top - 4, x + 5, bot + 4, { 'stroke-width': 2.4 })); }
+  els.push(line(x0 - 60, top + 6, x0 - 2, top - 4, { 'stroke-width': 2 }), line(x1 + 2, bot + 4, x1 + 60, bot - 6, { 'stroke-width': 2 }));
+  els.push(line(x1 + 70, top, x1 + 70, bot, { 'stroke-width': 1.2 }), arrowHead(x1 + 70, top, 0, -1, 7), arrowHead(x1 + 70, bot, 0, 1, 7), lbl(x1 + 70, bot + 20, 'diameter', 'middle', 12), lbl(x1 + 70, bot + 36, '2 cm', 'middle', 12));
+  els.push(line(x0, bot + 34, x1, bot + 34, { 'stroke-width': 1.2 }), arrowHead(x0, bot + 34, -1, 0, 7), arrowHead(x1, bot + 34, 1, 0, 7), lbl((x0 + x1) / 2, bot + 50, 'lengde', 'middle', 12));
+  els.push(lbl((x0 + x1) / 2, top - 22, '20 vindinger tett inntil hverandre', 'middle', 12));
+  return { height: 230, desc: 'En luftspole: 20 vindinger tråd viklet tett inntil hverandre på et plastrør med diameter 2 cm. Spolens lengde er markert langs røret.' };
+}
+
+// a receiver's dynamic range as a span on a signal-strength scale
+function range(els) {
+  const x = 230;
+  const top = 40;
+  const bot = 250;
+  els.push(line(x, bot + 6, x, top - 10, { 'stroke-width': 2 }), arrowHead(x, top - 16, 0, -1, 9), lbl(x - 10, top - 22, 'signalstyrke', 'end', 12));
+  const hi = top + 40;
+  const lo = bot - 40;
+  els.push(h('rect', { x: x - 14, y: hi, width: 28, height: lo - hi, fill: STROKE, opacity: 0.2 }));
+  for (const [y, t] of [[hi, 'sterkeste signal uten overstyring'], [lo, 'svakeste brukbare signal']]) els.push(line(x - 20, y, x + 20, y, { 'stroke-width': 2.5 }), lbl(x + 28, y, t, 'start', 12));
+  els.push(lbl(x + 28, bot - 6, 'støy fra mottakeren selv', 'start', 11), lbl(x + 28, top + 6, 'overstyring', 'start', 11));
+  els.push(line(x - 60, hi + 8, x - 60, lo - 8, { 'stroke-width': 1.5 }), arrowHead(x - 60, hi, 0, -1, 8), arrowHead(x - 60, lo, 0, 1, 8), lbl(x - 68, (hi + lo) / 2, 'dynamisk område', 'end', 12, { 'font-weight': 'bold' }));
+  return { height: 270, desc: 'Skala for signalstyrke. Nederst mottakerens egen støy, øverst overstyring. Det dynamiske området er spennet fra det svakeste brukbare signalet opp til det sterkeste signalet mottakeren tåler uten overstyring.' };
+}
+
+const DRAW = { prefixes, tolerance, s_meter: sMeter, plates, variable_capacitor: variableCapacitor, coils, supply, fet_transfer: fetTransfer, phasing, transfer, air_coil: airCoil, range };
+const TITLE = { fet_transfer: 'MOSFET i to moduser', phasing: 'Fasemetoden for SSB', transfer: 'Forsterkerkurve', air_coil: 'Luftspole', range: 'Dynamisk område', prefixes: 'SI-prefikser', tolerance: 'Toleranse', s_meter: 'S-meter', plates: 'Platekondensator', variable_capacitor: 'Variabel kondensator', coils: 'To spoler', supply: 'Felles forsyning' };
 
 function render(p) {
   const els = [];

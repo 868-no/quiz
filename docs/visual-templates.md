@@ -14,6 +14,8 @@ Figures are drawn from **parameters**, never stored as images or HTML. A questio
   template modules); `tests/fixtures/visual-cases.json` runs through both.
 * `params_after` is deep-merged over `params` after the learner answers (arrays are
   replaced), e.g. to reveal a meter reading or highlight a block.
+* `after_only: true` shows the whole figure only after answering (before, a short note
+  says it will appear), for figures that would give the answer away.
 * Each figure gets: `role="img"` with a title, an SVG `<desc>`, a visible "Tekstbeskrivelse
   av figuren" with the same description, the template's idealisation note
   ("Forutsetning: …"), and no colour-only meaning. Animations start by themselves when
@@ -240,7 +242,7 @@ Stacked panels against time, computed: `kind` `conduction` (collector current fo
 `A`, `AB`, `B`, `C`; `bias` sets the bias directly and the class label follows), `keying`
 (`hard`, `soft`), `envelope` (`speech`, `processed`, `rtty`, with `markers` `peak` and
 `average`), `am` (`normal`, `overdriven`), `fsk` (`bits`, e.g. "1011001") and `chirp`
-(`chirp`, `stable`). `traces` lists the panels; `cursor` (0–1) draws a time cursor;
+(`chirp`, `stable`) and `drift` (`warmup`). `traces` lists the panels; `cursor` (0–1) draws a time cursor;
 `blank` + `note` for figures shown after answering.
 
 ## `spectrum@1` – frekvensspekter
@@ -261,7 +263,8 @@ gate voltages).
 ## `stage@1` – trinn og komponenter
 
 `kind` `class_c`, `push_pull`, `regulator_ic`, `transistor_mixer`, `dual_gate`, `triode`,
-`pnp` or `crystal`. `reveal` adds the part that would give the answer away (decoupling
+`pnp`, `crystal`, `configurations` (CE, CB, CC side by side), `currents` (IB, IC, IE) or
+`tank_loss` (parallel LC with the coil's loss as a series R). `reveal` adds the part that would give the answer away (decoupling
 capacitors, the tuned MF load, the gate 2 bias, the grid and anode voltages, the PNP base
 bias), usually in `params_after`.
 
@@ -270,7 +273,9 @@ bias), usually in `params_after`.
 `kind` `prefixes` (`from`, `to`), `tolerance` (`nominal`, `unit`, `percent`), `s_meter`
 (`from_s`, `to_s`, `db_per_s`, `reveal` writes the dB per S-unit), `plates` (`reveal`:
 half the distance), `variable_capacitor` (`angle` −90–90°), `coils` (`reveal`: axes at
-right angles) and `supply` (`reveal`: a separate regulator for the oscillator).
+right angles), `supply` (`reveal`: a separate regulator for the oscillator),
+`fet_transfer` (MOSFET curves), `phasing` (SSB by the phasing method), `transfer` (an
+amplifier compressing), `air_coil` and `range` (a receiver's dynamic range).
 
 Also: `ratio-detector@1` takes `marker_u` (a point on the S-curve) and `rlc-circuit@1`
 `current_arrow` (0–1, the current as an arrow), both for animations.

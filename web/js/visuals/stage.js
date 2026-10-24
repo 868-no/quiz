@@ -13,6 +13,9 @@
 //                    grid slightly negative and the anode at high positive voltage
 // pnp              – a PNP transistor with E, B and C; 'reveal' adds the base bias
 // crystal          – a quartz crystal between two electrodes
+// configurations   – common emitter, common base and common collector side by side
+// currents         – an NPN transistor with IB, IC and IE
+// tank_loss        – a parallel tuned circuit with the coil's loss as a series R
 
 import { h } from '../render/vnode.js';
 import { arrowHead, capacitor, dot, ground, inductor, label, line, npn, resistor, rotated, svgRoot, symLabel, terminal, wire, STROKE } from './svg.js';
@@ -190,8 +193,62 @@ function crystal(els) {
   return { height: 220, desc: 'Symbol for et kvartskrystall: en tynn skive av kvarts mellom to elektroder (de tykke strekene), med en tilkobling på hver side.' };
 }
 
-const DRAW = { class_c: classC, push_pull: pushPull, regulator_ic: regulator, transistor_mixer: transistorMixer, dual_gate: dualGate, triode, pnp: pnpStage, crystal };
-const TITLE = { class_c: 'Forsterkertrinn', push_pull: 'Push-pull-forsterker', regulator_ic: 'Spenningsregulator', transistor_mixer: 'Blander med transistor', dual_gate: 'Dual-gate MOSFET', triode: 'Triode', pnp: 'PNP-transistor', crystal: 'Kvartskrystall' };
+
+// three small NPN stages side by side: which terminal is common to input and output
+function configurations(els) {
+  const panel = (x0, title, common) => {
+    els.push(lbl(x0 + 80, 26, title, 'middle', 13), h('rect', { x: x0, y: 40, width: 160, height: 200, rx: 6, fill: 'none', stroke: STROKE, 'stroke-width': 1, opacity: 0.4 }));
+    const t = npn(x0 + 90, 140);
+    els.push(t.node);
+    const g = 222; // the common rail
+    els.push(line(x0 + 10, g, x0 + 150, g, { 'stroke-width': 2 }), lbl(x0 + 80, g + 12, 'felles', 'middle', 10));
+    const inn = (pt) => [wire([[x0 + 14, pt[1]], pt]), terminal(x0 + 14, pt[1]), lbl(x0 + 14, pt[1] - 12, 'inn', 'start', 10)];
+    const ut = (pt) => [wire([pt, [x0 + 146, pt[1]]]), terminal(x0 + 146, pt[1]), lbl(x0 + 146, pt[1] - 12, 'ut', 'end', 10)];
+    if (common === 'E') els.push(...inn(t.b), wire([t.e, [t.e[0], g]]), wire([t.c, [t.c[0], 80]]), ...ut([t.c[0], 80]));
+    // common base: the input comes in on the right, so the base can go straight down to the rail
+    if (common === 'B') {
+      els.push(wire([t.b, [t.b[0], g]]), wire([t.e, [t.e[0], 196], [x0 + 146, 196]]), terminal(x0 + 146, 196), lbl(x0 + 146, 182, 'inn', 'end', 10));
+      els.push(wire([t.c, [t.c[0], 80]]), ...ut([t.c[0], 80]));
+    }
+    // common collector: the collector goes to the rail along the right edge, outside the output
+    if (common === 'C') {
+      els.push(...inn(t.b), wire([t.c, [t.c[0], 64], [x0 + 156, 64], [x0 + 156, g]]), wire([t.e, [t.e[0], 190], [x0 + 136, 190]]), terminal(x0 + 136, 190), lbl(x0 + 136, 176, 'ut', 'end', 10));
+    }
+  };
+  panel(20, 'felles emitter', 'E');
+  panel(200, 'felles basis', 'B');
+  panel(380, 'felles kollektor', 'C');
+  return { height: 250, desc: 'Tre forenklede trinn med en NPN-transistor. Felles emitter: signalet inn på basis og ut fra kollektoren, emitteren felles. Felles basis: signalet inn på emitteren og ut fra kollektoren, basis felles. Felles kollektor (emitterfølger): signalet inn på basis og ut fra emitteren, kollektoren felles.' };
+}
+
+// an NPN transistor with its three currents
+function currents(els) {
+  const t = npn(280, 150);
+  els.push(t.node, wire([t.b, [150, 150]]), wire([t.c, [t.c[0], 50]]), wire([t.e, [t.e[0], 250]]));
+  const arrow = (x1, y1, x2, y2) => [line(x1, y1, x2 - Math.sign(x2 - x1) * 8, y2 - Math.sign(y2 - y1) * 8, { 'stroke-width': 2 }), arrowHead(x2, y2, x2 - x1, y2 - y1, 9)];
+  els.push(...arrow(170, 136, 230, 136), symLabel(200, 120, 'I', 'B', null, { 'font-size': 13 }));
+  els.push(...arrow(t.c[0] + 16, 60, t.c[0] + 16, 108), symLabel(t.c[0] + 26, 84, 'I', 'C', null, { 'font-size': 13, 'text-anchor': 'start' }));
+  els.push(...arrow(t.e[0] + 16, 192, t.e[0] + 16, 240), symLabel(t.e[0] + 26, 216, 'I', 'E', null, { 'font-size': 13, 'text-anchor': 'start' }));
+  els.push(lbl(150, 170, 'basis', 'start', 11), lbl(t.c[0] + 10, 46, 'kollektor', 'start', 11), lbl(t.e[0] + 10, 262, 'emitter', 'start', 11));
+  return { height: 275, desc: 'En NPN-transistor med de tre strømmene: basisstrømmen IB inn i basis, kollektorstrømmen IC inn i kollektoren og emitterstrømmen IE ut av emitteren.' };
+}
+
+// a parallel tuned circuit whose losses sit in a small resistance in series with the coil
+function tankLoss(els) {
+  const T = 60;
+  const B = 240;
+  const xL = 240;
+  const xC = 360;
+  els.push(terminal(100, T), terminal(100, B), wire([[100, T], [xC, T]]), wire([[100, B], [xC, B]]), dot(xL, T), dot(xL, B));
+  els.push(wire([[xL, T], [xL, B]]), inductor(xL, 115, 60), resistor(xL, 190, true, 40, 16));
+  els.push(wire([[xC, T], [xC, B]]), capacitor(xC, (T + B) / 2));
+  els.push(symLabel(xL + 22, 115, 'L', null, null, { 'font-size': 14, 'text-anchor': 'start' }), symLabel(xL + 16, 190, 'R', null, null, { 'font-size': 14, 'text-anchor': 'start' }), lbl(xL + 30, 206, 'tap i spoletråden', 'start', 11));
+  els.push(symLabel(xC + 26, (T + B) / 2, 'C', null, null, { 'font-size': 14, 'text-anchor': 'start' }));
+  return { height: 270, desc: 'Parallellavstemt krets: en spole L med en liten serieresistans R (tapet i spoletråden) i parallell med en kondensator C.' };
+}
+
+const DRAW = { class_c: classC, push_pull: pushPull, regulator_ic: regulator, transistor_mixer: transistorMixer, dual_gate: dualGate, triode, pnp: pnpStage, crystal, configurations, currents, tank_loss: tankLoss };
+const TITLE = { configurations: 'Tre transistorkoblinger', currents: 'Strømmene i en transistor', tank_loss: 'Parallellavstemt krets med tap', class_c: 'Forsterkertrinn', push_pull: 'Push-pull-forsterker', regulator_ic: 'Spenningsregulator', transistor_mixer: 'Blander med transistor', dual_gate: 'Dual-gate MOSFET', triode: 'Triode', pnp: 'PNP-transistor', crystal: 'Kvartskrystall' };
 
 function render(p) {
   const els = [];

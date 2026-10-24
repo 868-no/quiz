@@ -60,7 +60,7 @@ def project_question(q: dict[str, Any], rev: dict[str, Any], ctx: Context) -> di
                     for o in rev["options"]],
         "correct": list(rev["correct"]),
         "explanation": rev["explanation"],
-        "visual": ({k: rev["visual"][k] for k in ("template", "version", "params", "params_after", "caption", "animation")
+        "visual": ({k: rev["visual"][k] for k in ("template", "version", "params", "params_after", "caption", "animation", "after_only")
                     if k in rev["visual"]} if rev.get("visual") else None),
         "glossary_after_answer": list(rev.get("glossary_after_answer") or []),
         "ref": {

@@ -96,7 +96,7 @@ test('shared visual cases: same validity and physics as the Python verifier', ()
 
 test('every valid case renders a labelled SVG without NaN and with a text description', () => {
   for (const c of CASES.filter((x) => x.valid)) {
-    const res = renderVisual(c.visual, TEMPLATES);
+    const res = renderVisual(c.visual, TEMPLATES, { phase: c.visual.after_only ? 'after' : 'before' });
     assert.ok(res.ok, c.name);
     const svgStr = toString(res.node);
     assert.ok(!/NaN|undefined|Infinity/.test(svgStr), `${c.name}: bad number in SVG`);
@@ -196,4 +196,13 @@ test('an animated figure has a still image and 24 frames, and never changes its 
   // frames that would not be valid figures make the figure invalid, as in the Python verifier
   const bad = { ...visual, animation: { ...visual.animation, to: 20 } };
   assert.ok(!renderVisual(bad, TEMPLATES).ok);
+});
+
+test('a figure shown only after answering leaves a note before', () => {
+  const visual = { template: 'zener-regulator', version: 1, after_only: true, params: { u_in_v: 15, u_z_v: 6.8 } };
+  const before = renderVisual(visual, TEMPLATES, { phase: 'before' });
+  assert.ok(before.ok);
+  assert.equal(findAll(before.node, (n) => n.t === 'svg').length, 0);
+  assert.ok(toString(before.node).includes('Figuren vises når du har svart'));
+  assert.equal(findAll(renderVisual(visual, TEMPLATES, { phase: 'after' }).node, (n) => n.t === 'svg').length, 1);
 });

@@ -39,6 +39,7 @@ export function resolveParams(visual, templateDef, phase = 'before') {
   const params = validateSchema(templateDef.params, raw, 'params', errors, templateDef);
   if (!errors.length) errors.push(...impl.rules(params));
   if (!errors.length && visual.animation) errors.push(...validateAnimation(visual, templateDef));
+  if ('after_only' in visual && typeof visual.after_only !== 'boolean') errors.push('after_only: true or false');
   return { errors, params: errors.length ? null : params, impl };
 }
 
@@ -118,6 +119,10 @@ export function animationFrames(visual, templateDef, phase) {
 }
 
 export function renderVisual(visual, templates, { phase = 'before', idPrefix = 'fig' } = {}) {
+  // a figure that would give the answer away is shown only after answering
+  if (visual.after_only && phase === 'before') {
+    return { ok: true, errors: [], description: '', animatable: false, node: h('figure', { class: 'fig fig-later' }, h('p', {}, 'Figuren vises når du har svart.')) };
+  }
   const key = `${visual.template}@${visual.version}`;
   const tpl = templates && templates[key];
   const { errors, params, impl } = resolveParams(visual, tpl, phase);
