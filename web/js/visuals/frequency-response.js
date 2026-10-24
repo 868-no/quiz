@@ -13,13 +13,18 @@ import { formatNumber, formatSI } from '../render/format.js';
 import { arrowHead, label, line, svgRoot, symLabel, STROKE } from './svg.js';
 
 /**
- * A frequency in Hz, kHz or MHz with enough decimals that two frequencies `step`
- * apart get different labels (7,098 / 7,100 / 7,102 MHz, not 7,1 MHz three times).
+ * A frequency in Hz, kHz or MHz with the decimals it needs, and enough that two
+ * frequencies `step` apart get different labels (7,098 / 7,100 / 7,102 MHz, not 7,1 MHz three times).
  */
 export function formatFreq(f, step) {
   const [scale, unit] = f >= 1e6 ? [1e6, 'MHz'] : f >= 1e3 ? [1e3, 'kHz'] : [1, 'Hz'];
-  const dec = Math.max(0, Math.min(6, Math.ceil(-Math.log10(step / scale) - 1e-9)));
-  return `${formatNumber(f / scale, dec)} ${unit}`;
+  const v = f / scale;
+  // at least as many decimals as the value itself needs (12,5 kHz, not 13 kHz) …
+  let own = 0;
+  while (own < 3 && Math.abs(Math.round(v * 10 ** own) - v * 10 ** own) > 1e-6) own += 1;
+  // … and enough that a step to the next frequency shows
+  const dec = Math.max(own, Math.min(6, Math.ceil(-Math.log10(step / scale) - 1e-9)));
+  return `${formatNumber(v, dec)} ${unit}`;
 }
 
 const NEEDS = { filter: 'filters', resonance: 'resonance', spectrum: 'spectrum', coupled: 'coupled' };
