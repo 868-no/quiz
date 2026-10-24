@@ -16,6 +16,7 @@ import re
 from typing import Any
 
 from . import formulas, richtext, visuals
+from .release_check import FORBIDDEN_PATTERNS
 from .common import words
 from .context import Context
 from .questions import DIFFICULTIES, PRIORITIES, STATUSES, STYLES, TYPES, content_hash, open_flags
@@ -141,6 +142,15 @@ def check_revision(ctx: Context, qid: str, rev: dict[str, Any]) -> dict[str, Any
                 warnings.append(f"notation: '{m.group()}' uses a decimal point; Norwegian uses a comma")
     if re.search(r"\d\s?(ohm|ohms|Ohm)\b|\d\s?Q\b|\buF\b|\bu[AV]\b|\bmicro", all_text):
         warnings.append("notation: write units with symbols (Ω, µF, µA) – possible OCR-style unit")
+
+    # --- public text the release check would refuse ------------------------------
+    # Same patterns as tools/release_check.py, so a question that would stop a build
+    # (e.g. any wording about scanning or digitising) is caught when it is written.
+    for s in public_strings(rev):
+        for rx, what in FORBIDDEN_PATTERNS:
+            m = rx.search(s)
+            if m:
+                errors.append(f"public text: contains {what} ({m.group(0)!r}); the release check would refuse it – reword")
 
     # --- glossary use ---------------------------------------------------------
     pre_answer_terms: list[str] = []

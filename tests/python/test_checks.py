@@ -38,6 +38,17 @@ class ChecksTest(unittest.TestCase):
         self.assertTrue(r["passed"], r["errors"])
         self.assertEqual(r["warnings"], [])
 
+    def test_public_text_the_release_check_would_refuse(self):
+        def wrong_option(r):
+            r["options"][1]["content"] = ["Tale digitaliseres og sendes som data"]
+        self.assertError(self.mutate(wrong_option), "public text: contains mention of scanning/OCR ('digitalis')")
+        def feedback(r):
+            r["options"][2]["feedback"] = ["Se chunk-000123 for detaljer."]
+        self.assertError(self.mutate(feedback), "public text: contains source chunk id")
+        def fine(r):
+            r["options"][1]["content"] = ["Tale gjøres om til digitale data"]
+        self.assertTrue(self.mutate(fine)["passed"])
+
     def test_option_count_and_unique_correct_key(self):
         self.assertError(self.mutate(lambda r: r["options"].pop()), "exactly 4 options")
         self.assertError(self.run_checks(correct=["o1", "o2"]), "exactly one correct")
