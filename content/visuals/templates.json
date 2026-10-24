@@ -14,6 +14,12 @@
           "actor": "Jim C K Flaten",
           "action": "approve",
           "note": "Tegninger gjengitt og inspisert (polaritet, strømretning, etiketter, skjulte verdier)."
+        },
+        {
+          "at": "2026-10-24T01:12:42+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Re-approved after layout changes for phone screens (no values changed)"
         }
       ],
       "params": {
@@ -227,6 +233,12 @@
           "actor": "Jim C K Flaten",
           "action": "approve",
           "note": "Tegninger gjengitt og inspisert (polaritet, strømretning, etiketter, skjulte verdier)."
+        },
+        {
+          "at": "2026-10-24T01:12:42+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Re-approved after layout changes for phone screens (no values changed)"
         }
       ],
       "params": {
@@ -340,6 +352,12 @@
           "actor": "Jim C K Flaten",
           "action": "approve",
           "note": "Tegninger gjengitt og inspisert (polaritet, strømretning, etiketter, skjulte verdier)."
+        },
+        {
+          "at": "2026-10-24T01:12:42+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Re-approved after layout changes for phone screens (no values changed)"
         }
       ],
       "kind_labels": {
@@ -490,6 +508,12 @@
           "actor": "Jim C K Flaten",
           "action": "approve",
           "note": "Re-approved after adding reactance labels and the source label style"
+        },
+        {
+          "at": "2026-10-24T01:12:42+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Re-approved after layout changes for phone screens (no values changed)"
         }
       ],
       "params": {

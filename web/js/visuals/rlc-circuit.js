@@ -159,7 +159,7 @@ function render(p) {
   } else if (src === 'none') {
     const T = 50;
     const B = 190;
-    const xs = { 1: [220], 2: [200, 330], 3: [170, 280, 390] }[n];
+    const xs = { 1: [220], 2: [200, 345], 3: [170, 295, 420] }[n]; // room for a label beside each branch
     const right = xs[n - 1];
     els.push(wire([[60, T], [right, T]]), wire([[60, B], [right, B]]), terminal(60, T), terminal(60, B));
     comps.forEach((c, i) => {
@@ -195,7 +195,7 @@ function render(p) {
     const T = 50;
     const B = 230;
     const SY = 140;
-    const xs = { 1: [260], 2: [240, 350], 3: [220, 320, 420] }[n];
+    const xs = { 1: [260], 2: [240, 360], 3: [220, 335, 450] }[n]; // room for a label beside each branch
     const right = xs[n - 1];
     els.push(wire([[L, SY - (src === 'dc' ? 6 : 22)], [L, T], [right, T]]), wire([[right, B], [L, B], [L, SY + (src === 'dc' ? 6 : 22)]]));
     comps.forEach((c, i) => {
@@ -207,7 +207,7 @@ function render(p) {
     els.push(src === 'dc' ? battery(L, SY) : acSource(L, SY));
     els.push(...sourceLabels(p, L - 40, SY, 'end'));
     els.push(totalLabel(p, q, (L + right) / 2, B + 26));
-    W = 520;
+    W = 550;
     H = 280;
   }
   const valTxt = (c) => {

@@ -130,7 +130,9 @@ function render(p) {
     if (p.traces.length > 1) { // with one trace the y-axis name identifies it
       const yEnd = yOf(sample(tr, duration) * k(tr));
       const dy = p.traces.length > 1 && i === 1 && Math.abs(yEnd - yOf(sample(p.traces[0], duration) * k(p.traces[0]))) < 14 ? 14 : 0;
-      els.push(label(X1 + 6, yEnd + dy - 10, tr.label || `${sym}${i + 1}`, { 'text-anchor': 'start', 'font-size': 12, 'font-style': 'italic' }));
+      // a trace ending on the time axis gets its name below the axis, clear of the "t"
+      const ly = Math.abs(yEnd + dy - 10 - (y0 - 14)) < 14 ? y0 + 16 : yEnd + dy - 10;
+      els.push(label(X1 + 6, ly, tr.label || `${sym}${i + 1}`, { 'text-anchor': 'start', 'font-size': 12, 'font-style': 'italic' }));
     }
   });
 

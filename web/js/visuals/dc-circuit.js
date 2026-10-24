@@ -131,7 +131,7 @@ function renderParallel(p, q) {
   const B = 240;
   const BY = 155;
   const n = p.resistors.length;
-  const xs = { 2: [230, 330], 3: [200, 300, 400] }[n];
+  const xs = { 2: [230, 350], 3: [200, 320, 440] }[n]; // room for a label beside each branch
   const vmX = xs[n - 1] + 75;
   const right = p.voltmeter ? vmX : xs[n - 1];
   const els = [wire([[L, BY - 6], [L, T], [right, T]]), wire([[right, B], [L, B], [L, BY + 6]])];
