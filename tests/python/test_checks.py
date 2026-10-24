@@ -61,6 +61,21 @@ class ChecksTest(unittest.TestCase):
             r["context"] = [["Herdet stål ", {"q": 470, "u": "Ω"}, "."]]
         self.assertFalse(any("standalone" in w for w in self.mutate(word_inside)["warnings"]))
 
+    def test_terminology_warns_about_forms_to_avoid(self):
+        def old_terms(r):
+            r["context"] = [["Sluttrinnet i senderen, PA-en og porten på en FET ", {"q": 470, "u": "Ω"}, "."]]
+        warned = [w for w in self.mutate(old_terms)["warnings"] if w.startswith("terminology")]
+        self.assertTrue(any("'Sluttrinnet'" in w and "sluttforsterker" in w for w in warned), warned)
+        self.assertTrue(any("'porten'" in w and "gate" in w for w in warned), warned)
+        self.assertTrue(any("'PA-en'" in w for w in warned), warned)
+        def harmonics(r):
+            r["context"] = [["Filteret demper harmoniske, men ikke harmoniske frekvenser under ", {"q": 470, "u": "Ω"}, "."]]
+        warned = [w for w in self.mutate(harmonics)["warnings"] if w.startswith("terminology")]
+        self.assertEqual(len(warned), 1, warned)
+        def preferred(r):
+            r["context"] = [["Sluttforsterkeren og gate på en FET, med en kunstlast på ", {"q": 470, "u": "Ω"}, "."]]
+        self.assertFalse([w for w in self.mutate(preferred)["warnings"] if w.startswith("terminology")])
+
     def test_option_count_and_unique_correct_key(self):
         self.assertError(self.mutate(lambda r: r["options"].pop()), "exactly 4 options")
         self.assertError(self.run_checks(correct=["o1", "o2"]), "exactly one correct")

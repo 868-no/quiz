@@ -63,6 +63,15 @@ detectable is wrong. Hazards (⚠) are listed for the reviewer:
 * `figures` – the source text depends on a figure (check the private crops and make
   sure the question's figure is not derived from the book's).
 
+Warnings (!) do not stop a question, but should be read. Among them are the
+preferred terms in `config/terminology.json`: verify warns when the text uses a form
+to avoid, for example «sluttrinn» or «PA» (use sluttforsterker), «porten» (use gate)
+or «harmoniske» on its own (say frekvenser or signaler). Prefer the book's own word
+unless decided otherwise, and add a rule when the bank starts mixing two words for
+the same thing; a test holds the glossary, topic titles and
+figure labels to the same rules. Verify only rewrites a question when its result or
+status changed.
+
 ## Stage C – human review
 
 ```sh

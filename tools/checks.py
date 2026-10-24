@@ -11,8 +11,11 @@ originality. It only means nothing automatically detectable is wrong.
 """
 from __future__ import annotations
 
+import functools
+import json
 import math
 import re
+from pathlib import Path
 from typing import Any
 
 from . import formulas, richtext, visuals
@@ -49,6 +52,21 @@ def source_text_for_similarity(chunk_text: str) -> str:
     """Strip the pipeline's own annotations so they do not count as book text."""
     return _ANNOTATION.sub(" ", chunk_text).replace("[!]", " ")
 
+
+
+@functools.lru_cache(maxsize=8)
+def _terminology_rules(file: Path, mtime: float) -> tuple[tuple[re.Pattern[str], str], ...]:
+    rules = json.loads(file.read_text(encoding="utf-8"))["rules"]
+    return tuple((re.compile(r["avoid"], re.I), r["use"]) for r in rules)
+
+
+def terminology_issues(paths: Any, text: str) -> list[tuple[str, str]]:
+    """(word found, preferred form) for every place `text` uses a form that
+    config/terminology.json says to avoid (nothing if the file is missing)."""
+    f = paths.config / "terminology.json"
+    if not f.exists():
+        return []
+    return [(m.group(0), use) for rx, use in _terminology_rules(f, f.stat().st_mtime) for m in rx.finditer(text)]
 
 def public_strings(rev: dict[str, Any]) -> list[str]:
     out: list[str] = []
@@ -153,6 +171,11 @@ def check_revision(ctx: Context, qid: str, rev: dict[str, Any]) -> dict[str, Any
             m = rx.search(s)
             if m:
                 errors.append(f"public text: contains {what} ({m.group(0)!r}); the release check would refuse it – reword")
+
+    # --- preferred terms (config/terminology.json) -----------------------------------
+    for s in public_strings(rev):
+        for word, use in terminology_issues(ctx.paths, s):
+            warnings.append(f"terminology: {word!r} – use {use}")
 
     # --- the question stands on its own -----------------------------------------
     # The question is shown alone, so its opening can't point back at earlier text

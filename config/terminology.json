@@ -1,0 +1,45 @@
+{
+  "about": "Preferred terms. verify warns when public question text (context, question, options, feedback, explanation, figure caption) matches an 'avoid' pattern (Python regex, case-insensitive), and a test holds the glossary, topic titles and figure labels to the same rules. Prefer the book's own word unless decided otherwise, and add a rule when the bank starts mixing two forms of the same thing.",
+  "rules": [
+    {
+      "avoid": "\\bsluttrinn\\w*|\\bPA\\b(-\\w+)?",
+      "use": "sluttforsterker (sluttforsterkeren, sluttforsterkere)",
+      "why": "the book's word for the transmitter's final stage; the glossary entry says it is also called effektforsterker or PA"
+    },
+    {
+      "avoid": "\\bport(en|er|ene)?\\b|\\bport(strøm|spenning)\\w*",
+      "use": "gate (gatespenning, gatestrøm)",
+      "why": "the FET electrodes are called gate, drain and source"
+    },
+    {
+      "avoid": "\\bkunstig\\w* antenne\\w*|\\bdummy load\\b",
+      "use": "kunstlast",
+      "why": "one name for the dummy load"
+    },
+    {
+      "avoid": "\\bgrensefrekvens\\w*",
+      "use": "knekkfrekvens",
+      "why": "one name for a filter's cut-off frequency"
+    },
+    {
+      "avoid": "\\b(svingekrets|resonanskrets)\\w*",
+      "use": "avstemt krets",
+      "why": "one name for an LC circuit tuned to a frequency"
+    },
+    {
+      "avoid": "\\bfilterkondensator\\w*",
+      "use": "glattekondensator",
+      "why": "one name for the capacitor after a rectifier"
+    },
+    {
+      "avoid": "\\b\\w*harmonisk\\w*\\b(?!\\s+(frekvens|signal|utstråling))",
+      "use": "harmoniske frekvenser / signaler",
+      "why": "«harmoniske» does not stand alone; the book says «harmoniske frekvenser» (and «signaler»)"
+    },
+    {
+      "avoid": "\\bdreiekondensator\\w*",
+      "use": "variabel kondensator",
+      "why": "the book's word"
+    }
+  ]
+}
