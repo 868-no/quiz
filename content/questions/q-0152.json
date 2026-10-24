@@ -3,7 +3,7 @@
   "revisions": [
     {
       "revision": 1,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "calculation",
@@ -294,6 +294,15 @@
             "figures",
             "ocr"
           ]
+        },
+        {
+          "at": "2026-10-24T10:04:13+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "1526388f96eb17f664cb25cc91a6f673be695fcdf36957270abc7a8bc6196fbe",
+          "note": "superseded by r2"
         }
       ],
       "calculation": {
@@ -342,6 +351,396 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-24T09:30:04+00:00",
         "content_sha256": "1526388f96eb17f664cb25cc91a6f673be695fcdf36957270abc7a8bc6196fbe",
+        "acknowledged_hazards": [
+          "figures",
+          "ocr"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 2,
+      "status": "approved",
+      "type": "single_choice",
+      "style": "calculation",
+      "difficulty": "medium",
+      "chapter": 3,
+      "section_ids": [
+        "s3-16"
+      ],
+      "topic_ids": [
+        "transistorforspenning"
+      ],
+      "learning_objective": "Beregne basismotstanden for en transistor forspent med én motstand fra forsyningen.",
+      "priority": "normal",
+      "context": [
+        [
+          "En ",
+          {
+            "term": "transistor",
+            "text": "NPN-transistor"
+          },
+          " av silisium i ",
+          {
+            "term": "felles-emitter",
+            "text": "felles emitter-kobling"
+          },
+          " får basisstrøm gjennom én ",
+          {
+            "term": "motstand",
+            "text": "motstand"
+          },
+          " R_B fra forsyningsspenningen på ",
+          {
+            "q": 12,
+            "u": "V"
+          },
+          ". Emitteren ligger på jord. Transistoren har en ",
+          {
+            "term": "stromforsterkning",
+            "text": "strømforsterkning"
+          },
+          " på 150, og kollektorstrømmen skal være ",
+          {
+            "q": 6,
+            "u": "mA"
+          },
+          ". Regn med at basis–emitter-",
+          {
+            "term": "spenning",
+            "text": "spenningen"
+          },
+          " er ",
+          {
+            "q": 0.6,
+            "u": "V"
+          },
+          "."
+        ]
+      ],
+      "stem": [
+        "Hvor stor må R_B være?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 285,
+              "u": "kΩ"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 300,
+              "u": "kΩ"
+            }
+          ],
+          "feedback": [
+            "Her er hele forsyningsspenningen brukt. Basis ligger 0,6 V over jord, så spenningen over R_B er 11,4 V."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 1.9,
+              "u": "kΩ"
+            }
+          ],
+          "feedback": [
+            "Her er kollektorstrømmen brukt. Det er bare basisstrømmen som går gjennom R_B, og den er 150 ganger mindre."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 28.5,
+              "u": "kΩ"
+            }
+          ],
+          "feedback": [
+            "Kommaet har havnet feil. 11,4 V delt på 40 µA er 285 000 Ω."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Først finner vi basisstrømmen fra strømforsterkningen β, deretter spenningen over R_B. Til slutt gir ",
+          {
+            "term": "ohms-lov",
+            "text": "Ohms lov"
+          },
+          " ",
+          {
+            "term": "motstand",
+            "text": "motstanden"
+          },
+          ":"
+        ],
+        {
+          "steps": [
+            [
+              {
+                "math": [
+                  "I_B",
+                  "=",
+                  {
+                    "frac": [
+                      [
+                        "I_C"
+                      ],
+                      [
+                        "β"
+                      ]
+                    ]
+                  },
+                  "=",
+                  {
+                    "frac": [
+                      [
+                        {
+                          "q": 6,
+                          "u": "mA"
+                        }
+                      ],
+                      [
+                        "150"
+                      ]
+                    ]
+                  },
+                  "=",
+                  {
+                    "q": 40,
+                    "u": "µA"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "math": [
+                  "U_{RB}",
+                  "=",
+                  {
+                    "q": 12,
+                    "u": "V"
+                  },
+                  "−",
+                  {
+                    "q": 0.6,
+                    "u": "V"
+                  },
+                  "=",
+                  {
+                    "q": 11.4,
+                    "u": "V"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "math": [
+                  "R_B",
+                  "=",
+                  {
+                    "frac": [
+                      [
+                        "U_{RB}"
+                      ],
+                      [
+                        "I_B"
+                      ]
+                    ]
+                  },
+                  "=",
+                  {
+                    "frac": [
+                      [
+                        {
+                          "q": 11.4,
+                          "u": "V"
+                        }
+                      ],
+                      [
+                        {
+                          "q": 40,
+                          "u": "µA"
+                        }
+                      ]
+                    ]
+                  },
+                  "=",
+                  {
+                    "q": 285,
+                    "u": "kΩ"
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        [
+          "Denne enkle ",
+          {
+            "term": "forspenning",
+            "text": "forspenningen"
+          },
+          " virker bare med den strømforsterkningen vi har regnet med. Strømforsterkningen varierer mye fra eksemplar til eksemplar av samme transistortype, og da endres kollektorstrømmen like mye. Derfor brukes oftere en ",
+          {
+            "term": "spenningsdeler",
+            "text": "spenningsdeler"
+          },
+          " på basis og en emittermotstand."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "calculation": {
+        "formula": "ohms_law_resistance",
+        "inputs": {
+          "U": [
+            11.4,
+            "V"
+          ],
+          "I": [
+            40,
+            "µA"
+          ]
+        },
+        "answer": [
+          285,
+          "kΩ"
+        ],
+        "answer_symbol": "R_B",
+        "sig_figs": 3
+      },
+      "study_reference": {
+        "chapter": 3,
+        "section_id": "s3-16",
+        "printed_pages": [
+          "3-7"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "069f19f7b3a40aeb"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "AI-assistent (Claude), figurer",
+        "based_on": 1,
+        "at": "2026-10-24T09:53:25+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T09:53:25+00:00",
+          "actor": "AI-assistent (Claude), figurer",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "1526388f96eb17f664cb25cc91a6f673be695fcdf36957270abc7a8bc6196fbe",
+          "note": "Legger til figur"
+        },
+        {
+          "at": "2026-10-24T09:53:26+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "f513313563091956d118d594ad7a4e548d4c774db6d5c8b1f06b1aef1716c87d",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T09:54:14+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "8f8eae333401a546483d17ef6ee366038dfa2772f9fb12315936b6cfebc1b46d",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T10:04:13+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "8f8eae333401a546483d17ef6ee366038dfa2772f9fb12315936b6cfebc1b46d",
+          "note": "Jevnere svaralternativer og nye figurer (gjennomgått av AI).",
+          "acknowledged": [
+            "figures",
+            "ocr"
+          ]
+        }
+      ],
+      "visual": {
+        "template": "transistor-stage",
+        "version": 1,
+        "params": {
+          "vcc_v": 12,
+          "rc_ohms": 1000,
+          "show_resistor_values": false,
+          "base_resistor": {
+            "ohms": 285000,
+            "show_value": false
+          },
+          "labels": [
+            {
+              "node": "IC",
+              "value": 0.006
+            }
+          ]
+        },
+        "params_after": {
+          "base_resistor": {
+            "show_value": true
+          }
+        }
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "8f8eae333401a546483d17ef6ee366038dfa2772f9fb12315936b6cfebc1b46d",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: equation, numeric_low_conf. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T10:04:13+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T10:04:13+00:00",
+        "content_sha256": "8f8eae333401a546483d17ef6ee366038dfa2772f9fb12315936b6cfebc1b46d",
         "acknowledged_hazards": [
           "figures",
           "ocr"

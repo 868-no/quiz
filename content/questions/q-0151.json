@@ -3,7 +3,7 @@
   "revisions": [
     {
       "revision": 1,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "concept",
@@ -217,6 +217,15 @@
           "acknowledged": [
             "figures"
           ]
+        },
+        {
+          "at": "2026-10-24T10:04:12+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "72c5e49662dd914b8f814e4604a2c92d5fb95bc71e7e5d2e8ee25bc4aab0a228",
+          "note": "superseded by r2"
         }
       ],
       "provenance": {
@@ -242,6 +251,274 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-24T09:30:04+00:00",
         "content_sha256": "72c5e49662dd914b8f814e4604a2c92d5fb95bc71e7e5d2e8ee25bc4aab0a228",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 2,
+      "status": "approved",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 3,
+      "section_ids": [
+        "s3-07"
+      ],
+      "topic_ids": [
+        "likeretting"
+      ],
+      "learning_objective": "Forstå at en fullbølgelikeretter med midtuttak lader glattekondensatoren to ganger per periode.",
+      "priority": "normal",
+      "context": [
+        [
+          "En ",
+          {
+            "term": "transformator",
+            "text": "transformator"
+          },
+          " har midtuttak på sekundærviklingen. Hver ende av viklingen går gjennom hver sin ",
+          {
+            "term": "diode",
+            "text": "diode"
+          },
+          " til en felles glattekondensator, og midtuttaket er koblet til minus på utgangen. Nettspenningen har ",
+          {
+            "term": "frekvens",
+            "text": "frekvens"
+          },
+          " ",
+          {
+            "q": 50,
+            "u": "Hz"
+          },
+          ", og det er last på utgangen."
+        ]
+      ],
+      "stem": [
+        [
+          "Hvilken frekvens får ",
+          {
+            "term": "rippel",
+            "text": "rippelspenningen"
+          },
+          " over ",
+          {
+            "term": "glattekondensator",
+            "text": "glattekondensatoren"
+          },
+          "?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 100,
+              "u": "Hz"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 50,
+              "u": "Hz"
+            }
+          ],
+          "feedback": [
+            [
+              "Det ville gjelde for en ",
+              {
+                "term": "likeretter",
+                "text": "halvbølgelikeretter"
+              },
+              " med én diode. Her leder diodene annenhver halvperiode, så kondensatoren får to ladestøt per periode."
+            ]
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 25,
+              "u": "Hz"
+            }
+          ],
+          "feedback": [
+            "Rippelen blir ikke langsommere enn nettspenningen. Når begge halvperiodene brukes, kommer ladestøtene oftere, ikke sjeldnere."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 200,
+              "u": "Hz"
+            }
+          ],
+          "feedback": [
+            "Bare én diode leder om gangen, og hver av dem leder én gang per periode. Det gir to ladestøt per periode, ikke fire."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "I den ene halvperioden er den øvre enden av viklingen positiv i forhold til midtuttaket. Da leder den øvre dioden, mens den nedre er ",
+          {
+            "term": "sperreretning",
+            "text": "forspent i sperreretningen"
+          },
+          ". I neste halvperiode er det omvendt. ",
+          {
+            "term": "strom",
+            "text": "Strømmen"
+          },
+          " går altså gjennom hver halvdel av viklingen annenhver gang."
+        ],
+        {
+          "steps": [
+            [
+              {
+                "math": [
+                  "f_{rippel}",
+                  "=",
+                  "2",
+                  "·",
+                  {
+                    "q": 50,
+                    "u": "Hz"
+                  },
+                  "=",
+                  {
+                    "q": 100,
+                    "u": "Hz"
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        [
+          "Fordi ",
+          {
+            "term": "kondensator",
+            "text": "kondensatoren"
+          },
+          " bare må forsyne lasten alene i omtrent en halv ",
+          {
+            "term": "periode",
+            "text": "periode"
+          },
+          " før den lades opp igjen, synker ",
+          {
+            "term": "spenning",
+            "text": "spenningen"
+          },
+          " mindre mellom ladestøtene. Fullbølgelikeretting gir derfor mindre rippel og er lettere å glatte enn halvbølgelikeretting."
+        ]
+      ],
+      "glossary_after_answer": [
+        "rippel"
+      ],
+      "study_reference": {
+        "chapter": 3,
+        "section_id": "s3-07",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "7fb9a1b48ca9e949"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "AI-assistent (Claude), figurer",
+        "based_on": 1,
+        "at": "2026-10-24T09:53:25+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T09:53:25+00:00",
+          "actor": "AI-assistent (Claude), figurer",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "72c5e49662dd914b8f814e4604a2c92d5fb95bc71e7e5d2e8ee25bc4aab0a228",
+          "note": "Legger til figur"
+        },
+        {
+          "at": "2026-10-24T09:53:26+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "55f0cfd5751fe4e9b72c7c3b9a429f0516f0170fafe301391b9d4a5ea585adbd",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T10:04:12+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "55f0cfd5751fe4e9b72c7c3b9a429f0516f0170fafe301391b9d4a5ea585adbd",
+          "note": "Jevnere svaralternativer og nye figurer (gjennomgått av AI).",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "visual": {
+        "template": "rectifier",
+        "version": 1,
+        "params": {
+          "kind": "center_tap",
+          "source": {
+            "name": "Nett 50 Hz"
+          },
+          "capacitor": true,
+          "load": true
+        }
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "55f0cfd5751fe4e9b72c7c3b9a429f0516f0170fafe301391b9d4a5ea585adbd",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T10:04:12+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T10:04:12+00:00",
+        "content_sha256": "55f0cfd5751fe4e9b72c7c3b9a429f0516f0170fafe301391b9d4a5ea585adbd",
         "acknowledged_hazards": [
           "figures"
         ],

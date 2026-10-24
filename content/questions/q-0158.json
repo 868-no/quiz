@@ -3,7 +3,7 @@
   "revisions": [
     {
       "revision": 1,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "calculation",
@@ -257,6 +257,15 @@
           "acknowledged": [
             "figures"
           ]
+        },
+        {
+          "at": "2026-10-24T10:04:13+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "afb6f0b9d6ad57c2e9b0b81d9431a4fb35532cc36e6245f686cd2ff5d34534d8",
+          "note": "superseded by r2"
         }
       ],
       "calculation": {
@@ -301,6 +310,341 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-24T09:30:06+00:00",
         "content_sha256": "afb6f0b9d6ad57c2e9b0b81d9431a4fb35532cc36e6245f686cd2ff5d34534d8",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 2,
+      "status": "approved",
+      "type": "single_choice",
+      "style": "calculation",
+      "difficulty": "easy",
+      "chapter": 3,
+      "section_ids": [
+        "s3-11",
+        "s3-32"
+      ],
+      "topic_ids": [
+        "zenerdiode",
+        "regulert-stromforsyning"
+      ],
+      "learning_objective": "Beregne seriemotstanden som gir ønsket strøm gjennom en zenerdiode.",
+      "priority": "normal",
+      "context": [
+        [
+          "En ",
+          {
+            "term": "zenerdiode",
+            "text": "zenerdiode"
+          },
+          " på ",
+          {
+            "q": 6.8,
+            "u": "V"
+          },
+          " skal holde basis i en serietransistor på fast ",
+          {
+            "term": "spenning",
+            "text": "spenning"
+          },
+          ". Den får strøm gjennom en seriemotstand R fra en ",
+          {
+            "term": "likespenning",
+            "text": "likespenning"
+          },
+          " på ",
+          {
+            "q": 15,
+            "u": "V"
+          },
+          ". ",
+          {
+            "term": "strom",
+            "text": "Strømmen"
+          },
+          " gjennom zenerdioden skal være ",
+          {
+            "q": 10,
+            "u": "mA"
+          },
+          ", og basisstrømmen er så liten at du kan se bort fra den."
+        ]
+      ],
+      "stem": [
+        "Hvor stor må R være?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 820,
+              "u": "Ω"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 680,
+              "u": "Ω"
+            }
+          ],
+          "feedback": [
+            "Her er zenerspenningen brukt. Over R ligger forskjellen mellom inngangsspenningen og zenerspenningen."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 1.5,
+              "u": "kΩ"
+            }
+          ],
+          "feedback": [
+            "Her er hele inngangsspenningen brukt, som om zenerdioden ikke tok noe av spenningen."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 2.2,
+              "u": "kΩ"
+            }
+          ],
+          "feedback": [
+            [
+              "Her er spenningene lagt sammen. Zenerdioden og R ligger ",
+              {
+                "term": "seriekobling",
+                "text": "i serie"
+              },
+              ", så spenningen over R er 15 V minus 6,8 V."
+            ]
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Zenerdioden holder sin spenning, så resten av inngangsspenningen ligger over R. Deretter gir ",
+          {
+            "term": "ohms-lov",
+            "text": "Ohms lov"
+          },
+          " ",
+          {
+            "term": "motstand",
+            "text": "motstanden"
+          },
+          ":"
+        ],
+        {
+          "steps": [
+            [
+              {
+                "math": [
+                  "U_R",
+                  "=",
+                  {
+                    "q": 15,
+                    "u": "V"
+                  },
+                  "−",
+                  {
+                    "q": 6.8,
+                    "u": "V"
+                  },
+                  "=",
+                  {
+                    "q": 8.2,
+                    "u": "V"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "math": [
+                  "R",
+                  "=",
+                  {
+                    "frac": [
+                      [
+                        "U_R"
+                      ],
+                      [
+                        "I_Z"
+                      ]
+                    ]
+                  },
+                  "=",
+                  {
+                    "frac": [
+                      [
+                        {
+                          "q": 8.2,
+                          "u": "V"
+                        }
+                      ],
+                      [
+                        {
+                          "q": 10,
+                          "u": "mA"
+                        }
+                      ]
+                    ]
+                  },
+                  "=",
+                  {
+                    "q": 820,
+                    "u": "Ω"
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        [
+          "Strømmen gjennom zenerdioden må ikke bli for liten. Da slutter den å holde spenningen konstant. Med en serietransistor trenger zenerdioden bare å levere den lille basisstrømmen, mens ",
+          {
+            "term": "transistor",
+            "text": "transistoren"
+          },
+          " tar lasten."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "calculation": {
+        "formula": "ohms_law_resistance",
+        "inputs": {
+          "U": [
+            8.2,
+            "V"
+          ],
+          "I": [
+            10,
+            "mA"
+          ]
+        },
+        "answer": [
+          820,
+          "Ω"
+        ],
+        "answer_symbol": "R",
+        "sig_figs": 2,
+        "visual_bindings": {
+          "U": "U_R",
+          "I": "I"
+        }
+      },
+      "study_reference": {
+        "chapter": 3,
+        "section_id": "s3-11",
+        "printed_pages": [
+          "3-5",
+          "3-14"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "df45d6a6687f07f1",
+          "06b7316cb9ac32d2"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "AI-assistent (Claude), figurer",
+        "based_on": 1,
+        "at": "2026-10-24T09:53:25+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T09:53:25+00:00",
+          "actor": "AI-assistent (Claude), figurer",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "afb6f0b9d6ad57c2e9b0b81d9431a4fb35532cc36e6245f686cd2ff5d34534d8",
+          "note": "Legger til figur"
+        },
+        {
+          "at": "2026-10-24T09:53:26+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "796176165fa5280152e0c58ccfda2174e7f97cae19e48676e79cfe502fb03fb0",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T10:04:13+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "796176165fa5280152e0c58ccfda2174e7f97cae19e48676e79cfe502fb03fb0",
+          "note": "Jevnere svaralternativer og nye figurer (gjennomgått av AI).",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "visual": {
+        "template": "zener-regulator",
+        "version": 1,
+        "params": {
+          "u_in_v": 15,
+          "u_z_v": 6.8,
+          "i_a": 0.01,
+          "unknown": [
+            "R"
+          ],
+          "output_label": "til basis"
+        },
+        "params_after": {
+          "unknown": []
+        }
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "796176165fa5280152e0c58ccfda2174e7f97cae19e48676e79cfe502fb03fb0",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T10:04:13+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T10:04:13+00:00",
+        "content_sha256": "796176165fa5280152e0c58ccfda2174e7f97cae19e48676e79cfe502fb03fb0",
         "acknowledged_hazards": [
           "figures"
         ],
