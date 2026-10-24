@@ -915,6 +915,12 @@
           "actor": "Jim C K Flaten",
           "action": "approve",
           "note": "Reviewed rendered figure for q-0075"
+        },
+        {
+          "at": "2026-10-24T02:32:41+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Re-approved: voltage labels moved under the terminals so the figure fits phones (no values changed)"
         }
       ],
       "params": {

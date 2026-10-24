@@ -63,9 +63,10 @@ function render(p) {
   // labels
   const v = (name, val, unit) => (val == null ? null : unk.has(name) ? '?' : formatSI(val, unit));
   const uin = v('U_in', p.u_in_v, 'V');
-  if (uin) els.push(symLabel(IN_X - 12, (TOP + GND) / 2, 'U', 'inn', ` = ${uin}`, { 'text-anchor': 'end', 'font-size': 13 }));
+  // voltage labels under the terminal pairs, so the figure stays narrow enough for phones
+  if (uin) els.push(symLabel(IN_X - 6, GND + 30, 'U', 'inn', ` = ${uin}`, { 'text-anchor': 'start', 'font-size': 13 }));
   const uout = v('U_out', p.u_out_v, 'V');
-  if (uout) els.push(symLabel(OUT_X + 12, (TOP + GND) / 2, 'U', 'ut', ` = ${uout}`, { 'text-anchor': 'start', 'font-size': 13 }));
+  if (uout) els.push(symLabel(OUT_X + 6, GND + 30, 'U', 'ut', ` = ${uout}`, { 'text-anchor': 'end', 'font-size': 13 }));
   const il = v('I_L', p.i_load_a, 'A');
   if (il) {
     els.push(line(lx - 52, TOP - 14, lx - 26, TOP - 14, { 'stroke-width': 1.5 }), arrowHead(lx - 18, TOP - 14, 1, 0, 8));
@@ -81,7 +82,7 @@ function render(p) {
   if (p.input_capacitor) description += ' En kondensator sitter over inngangen.';
   if (parts.length) description += ` Oppgitt: ${parts.join(', ')}.`;
   if (unk.has('P_pass')) description += ' Effekten i serietransistoren er markert med spørsmålstegn.';
-  return { svg: svgRoot(730, 330, 'Spenningsregulator med serietransistor', description, els, {}, -80, 20), description, animatable: false };
+  return { svg: svgRoot(510, 330, 'Spenningsregulator med serietransistor', description, els, {}, 30, 20), description, animatable: false };
 }
 
 export default { id: 'series-regulator', version: 1, rules, quantities, render };
