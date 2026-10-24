@@ -1008,9 +1008,10 @@
         "harmoniske signalene",
         "harmonisk signal",
         "andre harmoniske frekvensen",
-        "harmoniske",
-        "harmonisk",
-        "andre harmoniske"
+        "harmoniske komponenter",
+        "harmoniske komponenten",
+        "harmoniske komponentene",
+        "harmonisk komponent"
       ],
       "en": [
         "harmonics",
@@ -1033,6 +1034,12 @@
           "actor": "Jim C K Flaten",
           "action": "approve",
           "note": "Harmoniske always followed by a noun (frekvenser/signaler)"
+        },
+        {
+          "at": "2026-10-24T15:03:18+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "ChatGPT review round 4: components are cancelled; drop the bare forms that could link the wrong words"
         }
       ]
     },
@@ -3334,7 +3341,7 @@
         "push-pull configuration",
         "push-pull"
       ],
-      "definition": "Forsterkerkobling med to transistorer eller rør som arbeider i motfase mot en felles last. I klasse B og AB leverer de hovedsakelig hver sin halvperiode. Koblingen kan gi høy virkningsgrad, og når trinnet er symmetrisk, kanselleres de harmoniske frekvensene på partallsmultipler (2, 4, 6 … ganger grunnfrekvensen).",
+      "definition": "Forsterkerkobling med to transistorer eller rør som arbeider i motfase mot en felles last. I klasse B og AB leverer de hovedsakelig hver sin halvperiode. Koblingen kan gi høy virkningsgrad, og når trinnet er symmetrisk, blir harmoniske komponenter ved 2, 4, 6 … ganger grunnfrekvensen i stor grad kansellert i utgangssignalet.",
       "related": [
         "forsterkerklasse",
         "harmoniske"
@@ -3352,6 +3359,12 @@
           "actor": "Jim C K Flaten",
           "action": "approve",
           "note": "Harmoniske always followed by a noun (frekvenser/signaler)"
+        },
+        {
+          "at": "2026-10-24T15:03:18+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "ChatGPT review round 4: components are cancelled; drop the bare forms that could link the wrong words"
         }
       ]
     },
