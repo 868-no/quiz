@@ -14,6 +14,7 @@ try {
 } catch {
   JSDOM = null;
 }
+if (!JSDOM && process.env.RADIOQUIZ_REQUIRE_JSDOM) throw new Error('jsdom is required (RADIOQUIZ_REQUIRE_JSDOM is set) but could not be loaded');
 const skip = JSDOM ? false : 'jsdom not installed';
 
 function setupDom(url = 'http://localhost/') {

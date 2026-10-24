@@ -1,5 +1,5 @@
-# Builds the public site from approved content and deploys it to GitHub Pages
-# (https://quiz.868.no/).
+# Tests the tools and the site, builds the public site from approved content and
+# deploys it to GitHub Pages (https://quiz.868.no/).
 #
 # CI has no access to the private source import, so it publishes with
 # --without-source: only revisions whose approval pins their exact content are
@@ -12,7 +12,7 @@ name: Deploy site
 on:
   push:
     branches: [main]
-    paths: ["content/**", "web/**", "config/**", "tools/**", ".github/workflows/pages.yml"]
+    paths: ["content/**", "web/**", "config/**", "tools/**", "tests/**", "package.json", "package-lock.json", ".github/workflows/pages.yml"]
   workflow_dispatch:
 
 permissions:
@@ -25,7 +25,27 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  test:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v7
+        with:
+          node-version: "22"
+      - name: Install jsdom for the UI tests (locked versions, no install scripts)
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Tool and site tests
+        run: ./run-tests.sh
+        env:
+          RADIOQUIZ_REQUIRE_JSDOM: "1"   # fail instead of skipping the UI tests
+
   deploy:
+    needs: test
     runs-on: ubuntu-latest
     environment:
       name: github-pages
@@ -35,8 +55,6 @@ jobs:
       - uses: actions/setup-python@v7
         with:
           python-version: "3.12"
-      - name: Tool tests
-        run: python3 -m unittest discover -s tests/python -t .
       - name: Build from approved content (fails closed)
         run: python3 -m tools publish --without-source
       - name: Release check (fails closed)

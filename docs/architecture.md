@@ -107,7 +107,8 @@ sets the custom domain; `publish` writes `dist/CNAME` and an empty `dist/.nojeky
 
 The repository `868-no/quiz` is public and holds the source; the built site is not
 committed. On every push to `main` that touches `content/`, `web/`, `config/` or
-`tools/`, `.github/workflows/pages.yml` runs the tool tests, builds the site with
+`tools/` (or the tests), `.github/workflows/pages.yml` runs the Python and JavaScript
+tests (jsdom from the committed `package-lock.json`), builds the site with
 `python3 -m tools publish --without-source` and the release check, and deploys **only
 `dist/`** to GitHub Pages. Any failure stops the deploy.
 
