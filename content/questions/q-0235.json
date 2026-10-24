@@ -1,0 +1,338 @@
+{
+  "id": "q-0235",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "retired",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "recall",
+      "difficulty": "easy",
+      "chapter": 1,
+      "section_ids": [
+        "s1-01"
+      ],
+      "topic_ids": [
+        "amatorradio"
+      ],
+      "learning_objective": "Kjenne PSK31 som en tekstsendeform utviklet av radioamatører, som virker godt med svake signaler.",
+      "priority": "normal",
+      "context": [
+        "Radioamatører har utviklet flere sendeformer selv. En av dem er PSK31."
+      ],
+      "stem": [
+        "Hva kjennetegner PSK31?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Tekst sendes via lydkort og PC og kommer gjennom selv svake signaler"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Tale digitaliseres og komprimeres, og signalet trenger derfor stor båndbredde"
+          ],
+          "feedback": [
+            "PSK31 sender tekst, ikke tale, og signalet er svært smalt – bare noen titalls hertz."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Stillbilder sendes linje for linje, slik at hvert bilde tar flere sekunder"
+          ],
+          "feedback": [
+            "Det beskriver langsom bildeoverføring (SSTV). PSK31 er en tekstsendeform."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Morsetegn sendes automatisk av en egen nøkkelenhet, helt uten datamaskin"
+          ],
+          "feedback": [
+            "PSK31 bruker ikke morsekode. Signalet lages og dekodes av et program på datamaskinen, via lydkortet."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "PSK31 er en digital sendeform for tekst som ble utviklet av radioamatører. Et dataprogram lager og dekoder signalet, vanligvis ved hjelp av et lydkort. Ved sending mates lydsignalet inn i radioen, som omformer det til et fasekodet radiosignal (RF).",
+        [
+          "Signalet er svært smalt, så lite støy kommer med i ",
+          {
+            "term": "mottaker",
+            "text": "mottakeren"
+          },
+          ". Derfor kommer PSK31 ofte gjennom når signalene er så svake at andre sendeformer drukner i støy."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 1,
+        "section_id": "s1-01",
+        "printed_pages": [
+          "1-1"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "87a6c2a17e447ef4"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T10:24:40+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "511743813ebc6147f5b0feef2bcbf39f398ee3df0a7541b73489ffc0568952b9",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T10:24:57+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "0fe56d2cdfdb9b0a1710f5475949260d0f5cd3d700da827120e04ca0347a7d32",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T10:25:50+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "c330982ddec03472d80863d6a8815ad8e4e3fc3a08adba61f8ff8802f7812d98",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T10:26:03+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "9c63d179dbf8352c4b783301ed164c3f4c5b7062a20ae7d37347932c861fb152",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T10:37:25+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "f39cd63a63f9c4df2966bb732100006cb7d851945d6847c7eaa842bdc71a9075",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T10:40:16+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "f39cd63a63f9c4df2966bb732100006cb7d851945d6847c7eaa842bdc71a9075",
+          "note": "Kapittel 1, runde 3: faglig kontrollert av AI (ChatGPT); lisensreglene sjekket mot forskrift 2026-03-23-465 og Nkom.",
+          "acknowledged": []
+        },
+        {
+          "at": "2026-10-24T10:40:37+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "f39cd63a63f9c4df2966bb732100006cb7d851945d6847c7eaa842bdc71a9075",
+          "note": "superseded by r2"
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-24T10:23:56+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "f39cd63a63f9c4df2966bb732100006cb7d851945d6847c7eaa842bdc71a9075",
+        "errors": [],
+        "warnings": [],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T10:40:16+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T10:40:16+00:00",
+        "content_sha256": "f39cd63a63f9c4df2966bb732100006cb7d851945d6847c7eaa842bdc71a9075",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 2,
+      "status": "approved",
+      "type": "single_choice",
+      "style": "recall",
+      "difficulty": "easy",
+      "chapter": 1,
+      "section_ids": [
+        "s1-01"
+      ],
+      "topic_ids": [
+        "amatorradio"
+      ],
+      "learning_objective": "Kjenne PSK31 som en tekstsendeform utviklet av radioamatører, som virker godt med svake signaler.",
+      "priority": "normal",
+      "context": [
+        "Radioamatører har utviklet flere sendeformer selv. En av dem er PSK31."
+      ],
+      "stem": [
+        "Hva kjennetegner PSK31?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Tekst sendes via lydkort og PC og kommer gjennom selv svake signaler"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Tale gjøres om til digitale data og komprimeres, så signalet blir bredt"
+          ],
+          "feedback": [
+            "PSK31 sender tekst, ikke tale, og signalet er svært smalt – bare noen titalls hertz."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Stillbilder sendes linje for linje, slik at hvert bilde tar flere sekunder"
+          ],
+          "feedback": [
+            "Det beskriver langsom bildeoverføring (SSTV). PSK31 er en tekstsendeform."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Morsetegn sendes automatisk av en egen nøkkelenhet, helt uten datamaskin"
+          ],
+          "feedback": [
+            "PSK31 bruker ikke morsekode. Signalet lages og dekodes av et program på datamaskinen, via lydkortet."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "PSK31 er en digital sendeform for tekst som ble utviklet av radioamatører. Et dataprogram lager og dekoder signalet, vanligvis ved hjelp av et lydkort. Ved sending mates lydsignalet inn i radioen, som omformer det til et fasekodet radiosignal (RF).",
+        [
+          "Signalet er svært smalt, så lite støy kommer med i ",
+          {
+            "term": "mottaker",
+            "text": "mottakeren"
+          },
+          ". Derfor kommer PSK31 ofte gjennom når signalene er så svake at andre sendeformer drukner i støy."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 1,
+        "section_id": "s1-01",
+        "printed_pages": [
+          "1-1"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "87a6c2a17e447ef4"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "Jim C K Flaten",
+        "based_on": 1,
+        "at": "2026-10-24T10:40:36+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T10:40:36+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "f39cd63a63f9c4df2966bb732100006cb7d851945d6847c7eaa842bdc71a9075",
+          "note": "Omformulerer o2 (release check: 'digitaliseres')"
+        },
+        {
+          "at": "2026-10-24T10:40:36+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "5fbfe12a0df193d800eb7e94e0e9dc5d15ed9ca6b5dbdd3ef2dee18bfed037d6",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T10:40:37+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "5fbfe12a0df193d800eb7e94e0e9dc5d15ed9ca6b5dbdd3ef2dee18bfed037d6",
+          "note": "Kun omformulert galt alternativ o2; samme innhold.",
+          "acknowledged": []
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "5fbfe12a0df193d800eb7e94e0e9dc5d15ed9ca6b5dbdd3ef2dee18bfed037d6",
+        "errors": [],
+        "warnings": [],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T10:40:37+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T10:40:37+00:00",
+        "content_sha256": "5fbfe12a0df193d800eb7e94e0e9dc5d15ed9ca6b5dbdd3ef2dee18bfed037d6",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

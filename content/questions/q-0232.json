@@ -1,0 +1,206 @@
+{
+  "id": "q-0232",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "easy",
+      "chapter": 1,
+      "section_ids": [
+        "s1-05"
+      ],
+      "topic_ids": [
+        "enheter-prefikser"
+      ],
+      "learning_objective": "Forstå hva toleranse betyr, og at komponentverdier har begrenset nøyaktighet.",
+      "priority": "normal",
+      "context": [
+        [
+          "Du har en ",
+          {
+            "term": "motstand",
+            "text": "motstand"
+          },
+          " merket ",
+          {
+            "q": 1,
+            "u": "kΩ"
+          },
+          " med toleranse ±10 %. Du skal regne med den i en krets der den virkelige verdien betyr noe."
+        ]
+      ],
+      "stem": [
+        [
+          "Mellom hvilke verdier kan den virkelige ",
+          {
+            "term": "resistans",
+            "text": "resistansen"
+          },
+          " ligge?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 900,
+              "u": "Ω"
+            },
+            " og ",
+            {
+              "q": 1100,
+              "u": "Ω"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 990,
+              "u": "Ω"
+            },
+            " og ",
+            {
+              "q": 1010,
+              "u": "Ω"
+            }
+          ],
+          "feedback": [
+            "Det ville vært ±1 %. 10 % av 1000 Ω er 100 Ω, ikke 10 Ω."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 950,
+              "u": "Ω"
+            },
+            " og ",
+            {
+              "q": 1050,
+              "u": "Ω"
+            }
+          ],
+          "feedback": [
+            "Dette er ±5 %. Med ±10 % kan verdien avvike med 100 Ω til hver side."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 1000,
+              "u": "Ω"
+            },
+            " og ",
+            {
+              "q": 1100,
+              "u": "Ω"
+            }
+          ],
+          "feedback": [
+            "Toleransen gjelder begge veier. Verdien kan være like mye under som over den påstemplede verdien."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Toleransen sier hvor mye den virkelige verdien kan avvike fra den påstemplede, i begge retninger. 10 % av 1000 Ω er 100 Ω, så verdien ligger mellom 900 Ω og 1100 Ω.",
+        "Derfor har det lite for seg å regne med mange desimaler når komponentene er så unøyaktige. Et svar med to–tre gjeldende sifre er som regel mer enn presist nok."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 1,
+        "section_id": "s1-05",
+        "printed_pages": [
+          "1-3"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "618f5c2ee6ebcdc7"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T10:24:40+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "3a0fcafbdc5555454d17772152aa2aebbe532de2809a137b16a9520c33b9d5b6",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T10:24:57+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "da25e7f5fa7af61ebb589decd90dbc7862418777e6f7894f96a49ac22fa4c4de",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T10:40:15+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "da25e7f5fa7af61ebb589decd90dbc7862418777e6f7894f96a49ac22fa4c4de",
+          "note": "Kapittel 1, runde 3: faglig kontrollert av AI (ChatGPT); lisensreglene sjekket mot forskrift 2026-03-23-465 og Nkom.",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-24T10:23:55+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "da25e7f5fa7af61ebb589decd90dbc7862418777e6f7894f96a49ac22fa4c4de",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T10:40:15+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T10:40:15+00:00",
+        "content_sha256": "da25e7f5fa7af61ebb589decd90dbc7862418777e6f7894f96a49ac22fa4c4de",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

@@ -1,0 +1,167 @@
+{
+  "id": "q-0234",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 1,
+      "section_ids": [
+        "s1-03",
+        "s1-02"
+      ],
+      "topic_ids": [
+        "amatorradio"
+      ],
+      "learning_objective": "Vite at full radioamatørlisens bygger på HAREC (CEPT T/R 61-02), at CEPT T/R 61-01 gjør at den kan brukes under korte opphold i andre land, og at begrenset lisens bare gjelder i Norge.",
+      "priority": "normal",
+      "context": [
+        "I Norge arrangeres radioamatørprøven av Norsk Radio Relæ Liga (NRRL), med spørsmål utarbeidet av Nasjonal kommunikasjonsmyndighet (Nkom). Etter bestått prøve tildeler Nkom lisens og kallesignal."
+      ],
+      "stem": [
+        "Hvorfor kan en radioamatør med norsk full lisens normalt bruke lisensen under korte opphold i mange andre land?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Prøven oppfyller HAREC-kravene, og CEPT-avtaler åpner for gjensidig godkjenning"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Lisensen utstedes direkte av Den internasjonale teleunionen (ITU) og gjelder i alle medlemsland"
+          ],
+          "feedback": [
+            "Lisenser utstedes av hvert land, i Norge av Nkom. ITU fordeler frekvensbånd, men utsteder ikke amatørlisenser."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Amatørbåndene og kallesignalene er de samme i alle land, så lisensen gjelder automatisk overalt"
+          ],
+          "feedback": [
+            "Båndgrenser og regler varierer mellom land, og kallesignalene er nasjonale. Lisensen gjelder ikke automatisk overalt."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Lisensprøven avlegges på engelsk og med de samme spørsmålene i alle land som godtar den"
+          ],
+          "feedback": [
+            "Lisensprøvene arrangeres nasjonalt, og spørsmålene trenger ikke være like. HAREC harmoniserer kravene til kunnskap, ikke språket eller de konkrete eksamensoppgavene."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Den norske fullstendige radioamatørlisensen bygger på det harmoniserte eksamensnivået HAREC, beskrevet i CEPT-anbefaling T/R 61-02.",
+        "Etter CEPT-anbefaling T/R 61-01 kan innehaveren av en kvalifiserende lisens sende under midlertidige opphold i land som har gjennomført ordningen, uten å søke om en ny lokal lisens. Radioamatøren må likevel følge reglene i besøkslandet.",
+        "Norsk begrenset lisens har ikke denne internasjonale gyldigheten; den gjelder bare i Norge."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 1,
+        "section_id": "s1-03",
+        "printed_pages": [
+          "1-2"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "27cec471711f5684",
+          "0518cdfae75a2c8f"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T10:24:40+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "6225b0ea23cb71bd24ab971515a8a4b81e053216333af3c35e4f518010c3b4f5",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T10:25:50+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "c5475487d030d9d21aed718e2f8b56fd8a03f507430871b2093f8eabff369e21",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T10:37:25+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "e3b22cfa52b07a274b43549f91f4e09b7bb5527ad2d2eb2e7e70818dbef34fa1",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T10:37:32+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "da35337f8f7cd3ccaca6a0ffbf8cd1e5ae8349e44b77fcae7ea0e97711f545c5",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T10:40:16+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "da35337f8f7cd3ccaca6a0ffbf8cd1e5ae8349e44b77fcae7ea0e97711f545c5",
+          "note": "Kapittel 1, runde 3: faglig kontrollert av AI (ChatGPT); lisensreglene sjekket mot forskrift 2026-03-23-465 og Nkom.",
+          "acknowledged": []
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-24T10:23:56+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "da35337f8f7cd3ccaca6a0ffbf8cd1e5ae8349e44b77fcae7ea0e97711f545c5",
+        "errors": [],
+        "warnings": [],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T10:40:16+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T10:40:16+00:00",
+        "content_sha256": "da35337f8f7cd3ccaca6a0ffbf8cd1e5ae8349e44b77fcae7ea0e97711f545c5",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

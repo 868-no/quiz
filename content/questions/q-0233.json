@@ -1,0 +1,176 @@
+{
+  "id": "q-0233",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "recall",
+      "difficulty": "easy",
+      "chapter": 1,
+      "section_ids": [
+        "s1-02"
+      ],
+      "topic_ids": [
+        "amatorradio"
+      ],
+      "learning_objective": "Vite at radioamatører, i motsetning til andre radiobrukere, kan bygge og bruke sitt eget sendeutstyr.",
+      "priority": "normal",
+      "context": [],
+      "stem": [
+        "Hva har radioamatører lov til som andre radiobrukere normalt ikke har?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Bygge eget sendeutstyr og bruke det på amatørbåndene"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Sende på alle frekvenser så lenge sendeeffekten er lav"
+          ],
+          "feedback": [
+            [
+              "Radioamatører er bundet til frekvensområdene som er satt av til amatørradio, uansett ",
+              {
+                "term": "effekt",
+                "text": "effekt"
+              },
+              "."
+            ]
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Ta betalt for å formidle meldinger for andre over radio"
+          ],
+          "feedback": [
+            "Amatørradio er ikke-kommersiell. Det er ikke lov å ta betalt for sambandet eller formidle betalte meldinger."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Sende uten å oppgi kallesignal når forbindelsen er kort"
+          ],
+          "feedback": [
+            "Radioamatører skal identifisere seg med kallesignalet sitt. Det gjelder også korte forbindelser."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Ved vanlig bruk av for eksempel jaktradio og PMR må man bruke radioutstyr som oppfyller kravene for den aktuelle tjenesten. Radioamatører har større frihet til å bygge, endre og bruke eget sendeutstyr på amatørbåndene.",
+        [
+          "Denne friheten krever teknisk kunnskap. Også hjemmelaget utstyr må oppfylle kravene til blant annet tillatte ",
+          {
+            "term": "frekvens",
+            "text": "frekvenser"
+          },
+          " og uønsket utstråling. Det er en viktig grunn til at radioamatørlisens krever en prøve."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 1,
+        "section_id": "s1-02",
+        "printed_pages": [
+          "1-2"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "0518cdfae75a2c8f"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T10:24:40+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "97461c02a0719c92b3887d1e9762655b21d6f6c29f35c606b9148fe93be9dac2",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T10:24:57+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "4d8781b2b79cfc02826947eb5e77afa4c1396cc91ffc1e23889756c641f99a8d",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T10:25:50+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "32f8e5a6b541f7e50f515dfde4b8aed8d1d36e510d755acef74c33ab9547a27a",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T10:37:25+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "33c713c7869613996c83301d5cb415e4dfbeeffe1e94a637d6fd7dc01694d26c",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T10:40:15+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "33c713c7869613996c83301d5cb415e4dfbeeffe1e94a637d6fd7dc01694d26c",
+          "note": "Kapittel 1, runde 3: faglig kontrollert av AI (ChatGPT); lisensreglene sjekket mot forskrift 2026-03-23-465 og Nkom.",
+          "acknowledged": []
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-24T10:23:55+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "33c713c7869613996c83301d5cb415e4dfbeeffe1e94a637d6fd7dc01694d26c",
+        "errors": [],
+        "warnings": [],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T10:40:15+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T10:40:15+00:00",
+        "content_sha256": "33c713c7869613996c83301d5cb415e4dfbeeffe1e94a637d6fd7dc01694d26c",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

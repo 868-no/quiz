@@ -1,0 +1,241 @@
+{
+  "id": "q-0231",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "easy",
+      "chapter": 1,
+      "section_ids": [
+        "s1-05"
+      ],
+      "topic_ids": [
+        "enheter-prefikser"
+      ],
+      "learning_objective": "Skrive en frekvens med prefiks som tierpotens i grunnenheten.",
+      "priority": "normal",
+      "context": [
+        [
+          "En repeater på 2 m-båndet sender på ",
+          {
+            "term": "frekvens",
+            "text": "frekvensen"
+          },
+          " ",
+          {
+            "q": 145,
+            "u": "MHz"
+          },
+          ". I en utregning skal den skrives i hertz med tierpotens."
+        ]
+      ],
+      "stem": [
+        "Hvordan skrives 145 MHz i hertz?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "math": [
+                "1,45",
+                "·",
+                "10^8",
+                {
+                  "unit": "Hz"
+                }
+              ]
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "math": [
+                "1,45",
+                "·",
+                "10^6",
+                {
+                  "unit": "Hz"
+                }
+              ]
+            }
+          ],
+          "feedback": [
+            "10⁶ er prefikset mega alene. Når 145 skrives som 1,45, flyttes kommaet to plasser til, så eksponenten øker med 2."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "math": [
+                "1,45",
+                "·",
+                "10^9",
+                {
+                  "unit": "Hz"
+                }
+              ]
+            }
+          ],
+          "feedback": [
+            "Det er 1,45 GHz, ti ganger for mye. 145 MHz er 145 · 10⁶ Hz, som blir 1,45 · 10⁸ Hz."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "math": [
+                "1,45",
+                "·",
+                "10^4",
+                {
+                  "unit": "Hz"
+                }
+              ]
+            }
+          ],
+          "feedback": [
+            "Her er eksponenten gjort 2 mindre i stedet for 2 større. Når 145 skrives som 1,45, er tallet delt på 100, og da må tierpotensen økes med 2."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Mega betyr 10⁶, så 145 MHz er 145 · 10⁶ Hz.",
+        "Skrives 145 som 1,45, er tallet delt på 100. Da må tierpotensen ganges med 100, altså økes med 2:",
+        {
+          "steps": [
+            [
+              {
+                "math": [
+                  "145",
+                  "·",
+                  "10^6",
+                  {
+                    "unit": "Hz"
+                  },
+                  "=",
+                  "1,45",
+                  "·",
+                  "10^2",
+                  "·",
+                  "10^6",
+                  {
+                    "unit": "Hz"
+                  },
+                  "=",
+                  "1,45",
+                  "·",
+                  "10^8",
+                  {
+                    "unit": "Hz"
+                  }
+                ]
+              }
+            ]
+          ]
+        }
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 1,
+        "section_id": "s1-05",
+        "printed_pages": [
+          "1-3"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "3e399032ce84e97c"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T10:24:40+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "ba862ee5a79be65a8cce40a81791aad1878ae9b580a777ed7366d105a61ee552",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T10:24:57+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "dac95e8e50a56dd4c5223f4f9232b032eb11c98cc8b2c79165a0ad06ab713c28",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T10:40:15+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "dac95e8e50a56dd4c5223f4f9232b032eb11c98cc8b2c79165a0ad06ab713c28",
+          "note": "Kapittel 1, runde 3: faglig kontrollert av AI (ChatGPT); lisensreglene sjekket mot forskrift 2026-03-23-465 og Nkom.",
+          "acknowledged": [
+            "figures",
+            "ocr"
+          ]
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "at": "2026-10-24T10:23:55+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "dac95e8e50a56dd4c5223f4f9232b032eb11c98cc8b2c79165a0ad06ab713c28",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: table. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T10:40:15+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T10:40:15+00:00",
+        "content_sha256": "dac95e8e50a56dd4c5223f4f9232b032eb11c98cc8b2c79165a0ad06ab713c28",
+        "acknowledged_hazards": [
+          "figures",
+          "ocr"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

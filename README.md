@@ -13,7 +13,7 @@ on a phone's home screen.
 The repository also contains the **offline editorial pipeline** that turns the
 private textbook digitization exports into reviewed, original, publishable questions.
 
-> **Status:** live at https://quiz.868.no/ with **121 approved questions** for chapters 2–6
+> **Status:** live at https://quiz.868.no/ with **177 approved questions** for chapters 1–6
 > (chapters 7–16 are not scanned yet). Study page references have not yet been checked
 > against the printed book; corrections are welcome as [GitHub issues](https://github.com/868-no/quiz/issues).
 

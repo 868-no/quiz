@@ -1,6 +1,16 @@
 {
   "topics": [
     {
+      "id": "enheter-prefikser",
+      "title": "Enheter, prefikser og nøyaktighet",
+      "chapter": 1
+    },
+    {
+      "id": "amatorradio",
+      "title": "Amatørradio og lisensen",
+      "chapter": 1
+    },
+    {
       "id": "ohms-lov",
       "title": "Ohms lov",
       "chapter": 2
