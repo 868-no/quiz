@@ -6,9 +6,8 @@ import { h, toDOM } from '../render/vnode.js';
 import { plainText, renderInlines, renderRich } from '../render/richtext.js';
 import { renderVisual } from '../visuals/registry.js';
 import {
-  advance, createSession, currentItem, indexBank, pool, restoreSession, submitAnswer, summary,
+  advance, createSession, currentItem, feedbackVisible, indexBank, pool, restoreSession, submitAnswer, summary,
 } from '../quiz/engine.js';
-import { getPolicy } from '../quiz/policies.js';
 import { randomSeed } from '../quiz/rng.js';
 import {
   clearMissed, clearSession, clearSolved, loadMissed, loadMode, loadSession, loadSolved, saveMissed, saveMode, saveSession,
@@ -371,10 +370,9 @@ export function createApp(root, bank) {
 
   // ------------------------------------------------------------- question
   function marksOf(session) {
-    const hidden = getPolicy(session.policy).feedback !== 'immediate' && !session.finished;
-    return session.items.map((it) => {
+    return session.items.map((it, i) => {
       if (!it.answer) return null;
-      if (hidden) return 'answered';
+      if (!feedbackVisible(session, i)) return 'answered';
       return it.answer.correct ? 'correct' : 'wrong';
     });
   }

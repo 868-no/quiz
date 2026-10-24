@@ -4,7 +4,7 @@
 import { makeRng, shuffle } from './rng.js';
 import { getPolicy } from './policies.js';
 
-export const SESSION_VERSION = 1;
+const SESSION_VERSION = 1;
 
 /**
  * Questions in the selected chapters that match the filters (and, if given, the id

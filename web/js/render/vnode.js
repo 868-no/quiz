@@ -60,7 +60,7 @@ export function toDOM(node, doc = globalThis.document, inSvg = false) {
 }
 
 const ESC = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' };
-export const escapeText = (s) => String(s).replace(/[&<>"']/g, (c) => ESC[c]);
+const escapeText = (s) => String(s).replace(/[&<>"']/g, (c) => ESC[c]);
 
 /** Serialise to an escaped markup string. */
 export function toString(node) {

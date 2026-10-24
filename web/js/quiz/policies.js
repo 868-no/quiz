@@ -2,7 +2,7 @@
 // `learning`: feedback after each answer. `exam` (prøveeksamen): no feedback until
 // the end, questions can be skipped, and the result is pass/fail.
 
-export const POLICIES = {
+const POLICIES = {
   learning: {
     id: 'learning',
     label: 'Øvingsmodus',

@@ -123,7 +123,7 @@ function glue(rendered) {
   return out;
 }
 
-export function renderParagraph(par, opts, tag = 'p') {
+function renderParagraph(par, opts, tag = 'p') {
   const inl = typeof par === 'string' ? [par] : par;
   return h(tag, { class: opts.pClass || null }, glue(inl.map((n) => renderInline(n, opts))));
 }

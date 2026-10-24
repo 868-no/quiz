@@ -15,7 +15,7 @@ function termRefs(value, out = []) {
   return out;
 }
 
-export function validateQuestion(q, bank) {
+function validateQuestion(q, bank) {
   const errors = [];
   if (typeof q.id !== 'string' || !Number.isInteger(q.rev)) errors.push('id/rev');
   if (!Array.isArray(q.options) || q.options.length !== 4) errors.push('options');

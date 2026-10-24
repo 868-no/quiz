@@ -48,7 +48,7 @@ function timeUnit(duration) {
   return TIME_UNITS.find(([f]) => duration / f >= 0.5) || TIME_UNITS[TIME_UNITS.length - 1];
 }
 
-export function niceStep(span, target = 6) {
+function niceStep(span, target = 6) {
   const raw = span / target;
   const mag = 10 ** Math.floor(Math.log10(raw));
   const n = raw / mag;
