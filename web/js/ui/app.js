@@ -240,37 +240,49 @@ export function createApp(root, bank) {
             ? (state.selection.chapters.size === 0 ? 'Velg minst ett kapittel.' : 'Det finnes ingen spørsmål for dette valget.')
             : `${avail} spørsmål er tilgjengelige i valget ditt.`),
         state.message ? h('p', { class: 'error', role: 'alert' }, state.message) : null,
-        h('button', { type: 'submit', class: 'btn btn-primary', disabled: avail === 0 }, 'Start')),
-      startBar(avail));
+        h('button', { type: 'submit', class: 'btn btn-primary', disabled: avail === 0 }, resume ? 'Start ny runde' : 'Start')),
+      startBar(avail, resume));
     mount(view, focus);
     watchStart();
   }
 
   // A bar fixed to the bottom of the screen while the form's Start button is further
-  // down, so a round can be started right after choosing chapters. It is a shortcut
-  // for pointer and touch: hidden from assistive technology and left out of the tab
-  // order, where the form and its own Start button work as before.
-  function startBar(avail) {
+  // down, so a round can be started right after choosing chapters. It waits until the
+  // "Fortsett der du slapp" box is out of view, so continuing and starting anew are
+  // never offered side by side. It is a shortcut for pointer and touch: hidden from
+  // assistive technology and left out of the tab order, where the form and its own
+  // Start button work as before.
+  function startBar(avail, resume) {
     const k = [...state.selection.chapters].filter((n) => chapterOf(n) && chapterOf(n).status === 'available').length;
     const text = avail === 0
-      ? (state.selection.chapters.size === 0 ? 'Velg minst ett kapittel.' : 'Ingen spørsmål for dette valget.')
-      : `${state.selection.count} spørsmål fra ${k} ${k === 1 ? 'kapittel' : 'kapitler'}`;
+      ? [(state.selection.chapters.size === 0 ? 'Velg minst ett kapittel.' : 'Ingen spørsmål for dette valget.')]
+      : [h('strong', {}, `${resume ? 'Ny runde:' : 'Runde på'} ${state.selection.count} spørsmål`),
+        h('span', { class: 'start-bar-sub' }, ` av ${avail} i ${k} ${k === 1 ? 'kapittel' : 'kapitler'}`)];
     return h('div', { class: 'start-bar', 'aria-hidden': 'true', hidden: true },
       h('div', { class: 'start-bar-inner' },
         h('span', { class: 'start-bar-text' }, text),
-        h('button', { type: 'button', class: 'btn btn-primary', tabindex: '-1', 'data-action': 'start-bar', disabled: avail === 0 }, 'Start')));
+        h('button', { type: 'button', class: 'btn btn-primary', tabindex: '-1', 'data-action': 'start-bar', disabled: avail === 0 }, resume ? 'Start ny runde' : 'Start')));
   }
 
   let startObserver = null;
   function watchStart() {
     const bar = root.querySelector('.start-bar');
     const btn = root.querySelector('#setup-form button[type=submit]');
+    const box = root.querySelector('.notice-continue');
     if (!bar || !btn || typeof globalThis.IntersectionObserver !== 'function') return;
-    startObserver = new globalThis.IntersectionObserver(([e]) => {
-      // shown only while the real button is below the visible part of the page
-      bar.hidden = e.isIntersecting || e.boundingClientRect.top < 0;
+    // shown only while the real button is below the visible part of the page and the
+    // continue box is not in view
+    let startBelow = false;
+    let boxInView = Boolean(box);
+    startObserver = new globalThis.IntersectionObserver((entries) => {
+      for (const e of entries) {
+        if (e.target === btn) startBelow = !e.isIntersecting && e.boundingClientRect.top > 0;
+        if (e.target === box) boxInView = e.isIntersecting;
+      }
+      bar.hidden = !startBelow || boxInView;
     });
     startObserver.observe(btn);
+    if (box) startObserver.observe(box);
   }
 
   // ------------------------------------------------------------- question

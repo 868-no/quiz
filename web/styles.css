@@ -169,7 +169,7 @@ select {
 /* keep keyboard focus clear of the bar */
 :root:has(.start-bar:not([hidden])) { scroll-padding-bottom: 96px; }
 .start-bar-inner { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 16px calc(10px + env(safe-area-inset-bottom, 0px)); }
-.start-bar-text { font-weight: 700; }
+.start-bar-sub { color: var(--muted); }
 .start-bar .btn { width: auto; min-width: 7rem; }
 .error { color: var(--bad); font-weight: 700; }
 
@@ -344,6 +344,7 @@ sub, sup { line-height: 0; }
   .q-chapter-title { display: none; }
   .btn { width: 100%; }
   .start-bar { border-left: 0; border-right: 0; border-radius: 0; }
+  .start-bar-sub { display: block; font-size: 0.9rem; }
 }
 
 @media print {
