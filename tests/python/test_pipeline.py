@@ -1,8 +1,10 @@
 """Stages B–D end to end on a temporary repository: verify, review, publish, release check."""
 import copy
 import json
+import os
 import re
 import unittest
+from unittest import mock
 
 from tools import publish, review
 from tools.common import ToolError, read_json
@@ -55,8 +57,11 @@ class PipelineTest(unittest.TestCase):
         with self.assertRaises(ToolError):  # still draft
             self.approve()
         review.verify(self.paths, None, quiet=True)
-        with self.assertRaises(ToolError):
-            self.approve(reviewer=None)
+        # no reviewer given: must fail even if the shell running the tests has one set
+        with mock.patch.dict(os.environ, {}, clear=False):
+            os.environ.pop("RADIOQUIZ_REVIEWER", None)
+            with self.assertRaises(ToolError):
+                self.approve(reviewer=None)
         with self.assertRaises(ToolError):
             self.approve(checklist=None)
         res = self.approve(ack=[])  # this question has no hazards: nothing to acknowledge
