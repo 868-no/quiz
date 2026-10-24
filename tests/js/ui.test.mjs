@@ -132,7 +132,9 @@ test('no report link when the site has no issue tracker configured', { skip }, a
   start(root, [2]);
   choose(root, 0);
   $(root, '#answer-form button[type=submit]').click();
-  assert.equal($(root, '.feedback .report'), null);
+  assert.equal($(root, '.feedback .report a'), null);
+  assert.match($(root, '.feedback .report .qid').textContent, /Spørsmål q-\d+/);
+  assert.ok($(root, '.feedback [data-action=copy-link]'), 'the question can still be linked');
 });
 
 test('a correct answer still gets an explanation and a study reference', { skip }, async () => {
@@ -320,7 +322,7 @@ test('wrong answers are remembered and can be practised until answered right', {
   finishRound(root, (stem) => ![...wrongOn].some((id) => stem.includes(id)));
   assert.deepEqual(Object.keys(JSON.parse(w.localStorage.getItem('radioquiz.missed.v1'))).sort(), ['q-2000', 'q-2001']);
   $(root, '[data-action=new]').click();
-  assert.ok($(root, '.notice-missed').textContent.includes('2 spørsmål'));
+  assert.ok($(root, '.continue-missed').textContent.includes('2 spørsmål'));
   $(root, '[data-action=practice-missed]').click();
   assert.ok($(root, '.q-meta .tag').textContent.includes('Feil fra før'));
   assert.ok($(root, '#q-progress').textContent.endsWith('av 2'));
@@ -332,7 +334,7 @@ test('wrong answers are remembered and can be practised until answered right', {
   finishRound(root, () => true);
   assert.equal($(root, '[data-action=practice-missed]'), null, 'list is empty');
   $(root, '[data-action=new]').click();
-  assert.equal($(root, '.notice-missed'), null);
+  assert.equal($(root, '.continue-missed'), null);
 });
 
 test('the list of mistakes can be cleared and ignores questions no longer published', { skip }, async () => {
@@ -341,9 +343,9 @@ test('the list of mistakes can be cleared and ignores questions no longer publis
   env.w.localStorage.setItem('radioquiz.missed.v1', JSON.stringify({ 'q-2000': 1, 'q-9999': 2, bad: 3 }));
   const { createApp } = await import('../../web/js/ui/app.js');
   createApp(env.root, bank);
-  assert.ok($(env.root, '.notice-missed').textContent.includes('ett spørsmål'));
+  assert.ok($(env.root, '.continue-missed').textContent.includes('ett spørsmål'));
   $(env.root, '[data-action=clear-missed]').click();
-  assert.equal($(env.root, '.notice-missed'), null);
+  assert.equal($(env.root, '.continue-missed'), null);
   assert.equal(env.w.localStorage.getItem('radioquiz.missed.v1'), null);
 });
 

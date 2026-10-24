@@ -135,16 +135,24 @@ export function createApp(root, bank) {
     start({ chapters, ids, count: Math.min(ids.length, MISSED_ROUND), kind: 'missed' });
   }
 
-  function missedNotice() {
+  // One box for picking up where you left off: a round in progress and/or earlier mistakes.
+  function continueNotice(resume) {
     const n = missedNow().length;
-    if (!n) return null;
+    if (!resume && !n) return null;
     const what = n === 1 ? 'ett spørsmål' : `${n} spørsmål`;
-    return h('div', { class: 'notice notice-missed' },
-      h('p', {}, `Du har svart feil på ${what} som du ikke har fått riktig senere. Et spørsmål forsvinner fra lista når du svarer riktig på det.`),
-      n > MISSED_ROUND ? h('p', { class: 'hint' }, `En runde tar ${MISSED_ROUND} av dem om gangen.`) : null,
-      h('div', { class: 'actions' },
-        h('button', { type: 'button', class: 'btn', 'data-action': 'practice-missed' }, 'Øv på de du bommet på'),
-        h('button', { type: 'button', class: 'btn btn-secondary', 'data-action': 'clear-missed' }, 'Tøm lista')));
+    return h('section', { class: 'notice notice-continue', 'aria-labelledby': 'continue-title' },
+      h('h3', { id: 'continue-title' }, 'Fortsett der du slapp'),
+      resume ? h('div', { class: 'continue-row continue-resume' },
+        h('p', {}, `Du har en påbegynt runde (spørsmål ${resume.index + 1} av ${resume.items.length}).`),
+        h('div', { class: 'continue-actions' },
+          h('button', { type: 'button', class: 'btn', 'data-action': 'resume' }, 'Fortsett runden'),
+          h('button', { type: 'button', class: 'btn-link', 'data-action': 'discard' }, 'Forkast den'))) : null,
+      n ? h('div', { class: 'continue-row continue-missed' },
+        h('p', {}, `Du har svart feil på ${what} som du ikke har fått riktig senere.`),
+        h('p', { class: 'hint' }, `Et spørsmål forsvinner fra lista når du svarer riktig på det.${n > MISSED_ROUND ? ` En runde tar ${MISSED_ROUND} av dem om gangen.` : ''}`),
+        h('div', { class: 'continue-actions' },
+          h('button', { type: 'button', class: 'btn', 'data-action': 'practice-missed' }, 'Øv på de du bommet på'),
+          h('button', { type: 'button', class: 'btn-link', 'data-action': 'clear-missed' }, 'Tøm lista'))) : null);
   }
 
   // ---------------------------------------------------------------- setup
@@ -209,12 +217,7 @@ export function createApp(root, bank) {
       h('p', { class: 'lead' }, 'Velg kapitlene du vil øve på og hvor mange spørsmål du vil ha. Etter hvert svar får du vite om det var riktig, hvorfor, og hvor i læreboka du kan lese mer.'),
       h('div', { class: 'dial-wrap' }, chapterDial(bank.chapters, state.selection.chapters)),
       state.linkNotice ? h('div', { class: 'notice notice-error link-notice', role: 'alert', tabindex: '-1' }, h('p', {}, state.linkNotice)) : null,
-      resume ? h('div', { class: 'notice', role: 'status' },
-        h('p', {}, `Du har en påbegynt runde (spørsmål ${resume.index + 1} av ${resume.items.length}).`),
-        h('div', { class: 'actions' },
-          h('button', { type: 'button', class: 'btn', 'data-action': 'resume' }, 'Fortsett runden'),
-          h('button', { type: 'button', class: 'btn btn-secondary', 'data-action': 'discard' }, 'Forkast den'))) : null,
-      missedNotice(),
+      continueNotice(resume),
       !anyAvailable ? h('div', { class: 'notice notice-empty', role: 'status' },
         h('p', {}, 'Det er ikke publisert noen godkjente spørsmål ennå. Kom tilbake senere.')) : null,
       h('form', { id: 'setup-form', novalidate: true },
@@ -255,36 +258,38 @@ export function createApp(root, bank) {
     return `${parts.join(', ')}${book}.`;
   }
 
-  // Pre-filled GitHub issue for a question (id + revision identify it exactly).
-  function reportLink(q) {
+  // Question id with a link that opens it, and (if configured) a pre-filled GitHub
+  // issue; id + revision identify the question exactly.
+  function questionLinks(q) {
     const issues = bank.site && bank.site.issues_url;
-    if (!issues) return null;
-    const title = `[${q.id} v${q.rev}] `;
-    const body = [
-      `Spørsmål: ${q.id} (versjon ${q.rev}), kapittel ${q.chapter}: ${questionUrl(q.id)}`,
-      `> ${plainText(q.stem).replace(/\n/g, ' ')}`,
-      '',
-      '**Hva er feil eller uklart?**',
-      '',
-      '',
-      '**Forslag til retting:**',
-      '',
-      '',
-      '**Sidehenvisning i boka (hvis du har den):**',
-      '',
-    ].join('\n');
-    const href = `${issues}/new?title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}`;
-    return h('p', { class: 'report' },
-      h('span', { class: 'qid' }, `Spørsmål ${q.id}, versjon ${q.rev}. `),
-      h('a', { href, target: '_blank', rel: 'noopener noreferrer' }, 'Fant du en feil? Rapporter den på GitHub'),
-      h('span', { class: 'visually-hidden' }, ' (åpnes i ny fane)'));
-  }
-
-  // Copy a link that opens this one question. Shows the address if copying is not possible.
-  function shareLink(q) {
-    return h('p', { class: 'share' },
-      h('button', { type: 'button', class: 'btn-small', 'data-action': 'copy-link', 'data-qid': q.id }, 'Kopier lenke til spørsmålet'),
-      h('span', { class: 'copy-status', role: 'status' }));
+    let report = null;
+    if (issues) {
+      const title = `[${q.id} v${q.rev}] `;
+      const body = [
+        `Spørsmål: ${q.id} (versjon ${q.rev}), kapittel ${q.chapter}: ${questionUrl(q.id)}`,
+        `> ${plainText(q.stem).replace(/\n/g, ' ')}`,
+        '',
+        '**Hva er feil eller uklart?**',
+        '',
+        '',
+        '**Forslag til retting:**',
+        '',
+        '',
+        '**Sidehenvisning i boka (hvis du har den):**',
+        '',
+      ].join('\n');
+      const href = `${issues}/new?title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}`;
+      report = h('p', {},
+        h('a', { href, target: '_blank', rel: 'noopener noreferrer' }, 'Fant du en feil? Rapporter den på GitHub'),
+        h('span', { class: 'visually-hidden' }, ' (åpnes i ny fane)'));
+    }
+    return h('div', { class: 'report' },
+      h('p', {},
+        h('span', { class: 'qid' }, `Spørsmål ${q.id}, versjon ${q.rev}. `),
+        h('button', { type: 'button', class: 'btn-link', 'data-action': 'copy-link', 'data-qid': q.id },
+          'Kopier lenke', h('span', { class: 'visually-hidden' }, ` til spørsmål ${q.id}`)),
+        h('span', { class: 'copy-status', role: 'status' })),
+      report);
   }
 
   async function copyLink(btn) {
@@ -350,8 +355,7 @@ export function createApp(root, bank) {
           h('strong', {}, `${letterOf(id)}: `), optText(id),
           renderRich(q.options.find((o) => o.id === id).feedback, opts))))) : null,
       h('p', { class: 'ref' }, h('span', { 'aria-hidden': 'true' }, '📖 '), h('strong', {}, 'Les mer: '), refText(q)),
-      shareLink(q),
-      reportLink(q),
+      questionLinks(q),
       h('div', { class: 'actions' },
         isSingle()
           ? h('button', { type: 'button', class: 'btn btn-primary', 'data-action': 'leave' }, 'Øv på flere spørsmål')
@@ -449,7 +453,7 @@ export function createApp(root, bank) {
               chosen && !x.correct ? h('div', { class: 'fb-block' }, h('h4', {}, 'Hvorfor svaret ditt er feil'), renderRich(chosen.feedback, opts)) : null,
               h('div', { class: 'fb-block' }, h('h4', {}, 'Forklaring'), renderRich(q.explanation, opts)),
               h('p', { class: 'ref' }, h('strong', {}, 'Les mer: '), refText(q)),
-              reportLink(q))));
+              questionLinks(q))));
       })));
     mount(view, '#res-title');
   }
