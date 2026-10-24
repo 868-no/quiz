@@ -884,7 +884,7 @@
     },
     {
       "revision": 4,
-      "status": "approved",
+      "status": "retired",
       "type": "single_choice",
       "style": "scenario",
       "difficulty": "medium",
@@ -1182,6 +1182,15 @@
           "acknowledged": [
             "figures"
           ]
+        },
+        {
+          "at": "2026-10-24T14:31:56+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "1461bab4b059d2f41f9fe3f3e622c39db573404b8196fdc2471f0e0b698518d2",
+          "note": "superseded by r5"
         }
       ],
       "checks": {
@@ -1202,6 +1211,340 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-24T09:32:19+00:00",
         "content_sha256": "1461bab4b059d2f41f9fe3f3e622c39db573404b8196fdc2471f0e0b698518d2",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 5,
+      "status": "approved",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "medium",
+      "chapter": 4,
+      "section_ids": [
+        "s4-26"
+      ],
+      "topic_ids": [
+        "senderoppbygging"
+      ],
+      "learning_objective": "Finne sum- og differansefrekvensen fra blandetrinnet i en sender og vite at det uønskede produktet må filtreres bort.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En HF-sender lager ",
+          {
+            "term": "ssb",
+            "text": "SSB"
+          },
+          "-signalet sitt på ",
+          {
+            "q": 9.0,
+            "u": "MHz",
+            "digits": 1
+          },
+          ". For å komme til 20 m-båndet føres signalet til et ",
+          {
+            "term": "blander",
+            "text": "blandetrinn"
+          },
+          " sammen med en ",
+          {
+            "term": "vfo",
+            "text": "VFO"
+          },
+          " på ",
+          {
+            "q": 5.2,
+            "u": "MHz"
+          },
+          "."
+        ]
+      ],
+      "stem": [
+        "Hvilke to hovedprodukter kommer ut av blandetrinnet?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 14.2,
+              "u": "MHz"
+            },
+            " og ",
+            {
+              "q": 3.8,
+              "u": "MHz"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 14.2,
+              "u": "MHz"
+            },
+            " og ",
+            {
+              "q": 9.0,
+              "u": "MHz",
+              "digits": 1
+            }
+          ],
+          "feedback": [
+            [
+              "Rester av inngangssignalet kan lekke gjennom, men hovedproduktene er summen og differansen av de to ",
+              {
+                "term": "frekvens",
+                "text": "frekvensene"
+              },
+              "."
+            ]
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 18.0,
+              "u": "MHz",
+              "digits": 1
+            },
+            " og ",
+            {
+              "q": 10.4,
+              "u": "MHz"
+            }
+          ],
+          "feedback": [
+            [
+              "Dette er den ",
+              {
+                "term": "harmoniske",
+                "text": "andre harmoniske frekvensen"
+              },
+              " til hvert av signalene. Et ",
+              {
+                "term": "blander",
+                "text": "blandetrinn"
+              },
+              " lager først og fremst summen og differansen."
+            ]
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 7.1,
+              "u": "MHz"
+            },
+            " og ",
+            {
+              "q": 14.2,
+              "u": "MHz"
+            }
+          ],
+          "feedback": [
+            "Summen er riktig, men differansen mellom 9,0 MHz og 5,2 MHz er 3,8 MHz."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        {
+          "steps": [
+            [
+              {
+                "math": [
+                  "f_{sum}",
+                  "=",
+                  {
+                    "q": 9.0,
+                    "u": "MHz",
+                    "digits": 1
+                  },
+                  "+",
+                  {
+                    "q": 5.2,
+                    "u": "MHz"
+                  },
+                  "=",
+                  {
+                    "q": 14.2,
+                    "u": "MHz"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "math": [
+                  "f_{diff}",
+                  "=",
+                  {
+                    "q": 9.0,
+                    "u": "MHz",
+                    "digits": 1
+                  },
+                  "−",
+                  {
+                    "q": 5.2,
+                    "u": "MHz"
+                  },
+                  "=",
+                  {
+                    "q": 3.8,
+                    "u": "MHz"
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        [
+          "Summen ligger i 20 m-båndet og er den ønskede frekvensen. Differansen på 3,8 MHz ligger helt i øvre kant av 80 m-båndet og må fjernes med et ",
+          {
+            "term": "baandpassfilter",
+            "text": "båndpassfilter"
+          },
+          " før ",
+          {
+            "term": "sluttforsterker",
+            "text": "sluttforsterkeren"
+          },
+          ". Ved å bytte VFO-område og ",
+          {
+            "term": "filter",
+            "text": "filter"
+          },
+          " kan samme prinsipp brukes på andre bånd."
+        ]
+      ],
+      "visual": {
+        "template": "block-diagram",
+        "version": 1,
+        "params": {
+          "chain": [
+            {
+              "kind": "custom",
+              "label": "SSB 9,0 MHz"
+            },
+            {
+              "kind": "mixer"
+            },
+            {
+              "kind": "bandpass_filter"
+            },
+            {
+              "kind": "power_amp"
+            }
+          ],
+          "side": [
+            {
+              "kind": "vfo",
+              "label": "VFO 5,2 MHz",
+              "into": 1
+            }
+          ],
+          "edge_labels": [
+            {
+              "after": 1,
+              "text": "?"
+            }
+          ]
+        }
+      },
+      "glossary_after_answer": [
+        "blander"
+      ],
+      "study_reference": {
+        "chapter": 4,
+        "section_id": "s4-26",
+        "printed_pages": [
+          "4-13"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "1241b1e6d1ef7640"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "Jim C K Flaten",
+        "based_on": 4,
+        "at": "2026-10-24T14:26:39+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T14:26:39+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "1461bab4b059d2f41f9fe3f3e622c39db573404b8196fdc2471f0e0b698518d2",
+          "note": "Harmoniske always followed by a noun (frekvenser/signaler)"
+        },
+        {
+          "at": "2026-10-24T14:26:42+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "666dfb262fe67542c2d798656e707d203eda24e4ae4360656467c6488a918d1e",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T14:31:56+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "666dfb262fe67542c2d798656e707d203eda24e4ae4360656467c6488a918d1e",
+          "note": "Harmoniske always followed by a noun",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "666dfb262fe67542c2d798656e707d203eda24e4ae4360656467c6488a918d1e",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T14:31:56+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T14:31:56+00:00",
+        "content_sha256": "666dfb262fe67542c2d798656e707d203eda24e4ae4360656467c6488a918d1e",
         "acknowledged_hazards": [
           "figures"
         ],

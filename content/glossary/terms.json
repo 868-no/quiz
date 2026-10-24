@@ -1000,16 +1000,23 @@
     {
       "id": "harmoniske",
       "nb": [
+        "harmoniske frekvenser",
+        "harmoniske frekvensen",
+        "harmoniske frekvensene",
+        "harmonisk frekvens",
+        "harmoniske signaler",
+        "harmoniske signalene",
+        "harmonisk signal",
+        "andre harmoniske frekvensen",
         "harmoniske",
         "harmonisk",
-        "andre harmoniske",
-        "harmoniske frekvenser"
+        "andre harmoniske"
       ],
       "en": [
         "harmonics",
         "second harmonic"
       ],
-      "definition": "Signaler på hele multipler av en grunnfrekvens (2, 3, 4 … ganger). Oppstår når en bølgeform ikke er en ren sinus.",
+      "definition": "Frekvenser på hele multipler av en grunnfrekvens (2, 3, 4 … ganger). Signaler på disse frekvensene oppstår når en bølgeform ikke er en ren sinus. Grunnfrekvensen regnes som den første harmoniske frekvensen.",
       "related": [
         "frekvens"
       ],
@@ -1020,6 +1027,12 @@
           "actor": "Jim C K Flaten",
           "action": "approve",
           "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        },
+        {
+          "at": "2026-10-24T14:26:27+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Harmoniske always followed by a noun (frekvenser/signaler)"
         }
       ]
     },
@@ -3321,7 +3334,7 @@
         "push-pull configuration",
         "push-pull"
       ],
-      "definition": "Forsterkerkobling med to transistorer eller rør som arbeider i motfase mot en felles last. I klasse B og AB leverer de hovedsakelig hver sin halvperiode. Koblingen kan gi høy virkningsgrad, og når trinnet er symmetrisk, kanselleres mange likeordens harmoniske.",
+      "definition": "Forsterkerkobling med to transistorer eller rør som arbeider i motfase mot en felles last. I klasse B og AB leverer de hovedsakelig hver sin halvperiode. Koblingen kan gi høy virkningsgrad, og når trinnet er symmetrisk, kanselleres de harmoniske frekvensene på partallsmultipler (2, 4, 6 … ganger grunnfrekvensen).",
       "related": [
         "forsterkerklasse",
         "harmoniske"
@@ -3333,6 +3346,12 @@
           "actor": "Jim C K Flaten",
           "action": "approve",
           "note": "Ordlisterunde 2: definisjoner gjennomgått av AI-kontroll (ChatGPT), 16 rettet."
+        },
+        {
+          "at": "2026-10-24T14:26:27+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Harmoniske always followed by a noun (frekvenser/signaler)"
         }
       ]
     },
@@ -3502,7 +3521,7 @@
         "pi network",
         "pi filter"
       ],
-      "definition": "Tilpasnings- og filterkrets formet som den greske bokstaven π: en kondensator på hver side og en spole i midten. Brukes på utgangen av sluttforsterkere for å tilpasse impedansen til antennen og dempe harmoniske.",
+      "definition": "Tilpasnings- og filterkrets formet som den greske bokstaven π: en kondensator på hver side og en spole i midten. Brukes på utgangen av sluttforsterkere for å tilpasse impedansen til antennen og dempe harmoniske signaler.",
       "related": [
         "tilpasning",
         "lavpassfilter",
@@ -3515,6 +3534,12 @@
           "actor": "Jim C K Flaten",
           "action": "approve",
           "note": "Ordlisterunde 2: definisjoner gjennomgått av AI-kontroll (ChatGPT), 16 rettet."
+        },
+        {
+          "at": "2026-10-24T14:26:27+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Harmoniske always followed by a noun (frekvenser/signaler)"
         }
       ]
     },

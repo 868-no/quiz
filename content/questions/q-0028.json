@@ -533,7 +533,7 @@
     },
     {
       "revision": 3,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "concept",
@@ -787,6 +787,15 @@
             "figures",
             "ocr"
           ]
+        },
+        {
+          "at": "2026-10-24T14:31:54+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "0d2f985080511a02f92178b98b1141218d6f89265a4f77f3f90046bd202650e6",
+          "note": "superseded by r4"
         }
       ],
       "checks": {
@@ -811,6 +820,301 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-24T09:32:05+00:00",
         "content_sha256": "0d2f985080511a02f92178b98b1141218d6f89265a4f77f3f90046bd202650e6",
+        "acknowledged_hazards": [
+          "figures",
+          "ocr"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 4,
+      "status": "approved",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "easy",
+      "chapter": 6,
+      "section_ids": [
+        "s6-09",
+        "s6-07"
+      ],
+      "topic_ids": [
+        "superheterodyn"
+      ],
+      "learning_objective": "Kjenne igjen trinnene i en superheterodynmottaker.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "Blokkskjemaet viser en enkel ",
+          {
+            "term": "superheterodyn",
+            "text": "superheterodynmottaker"
+          },
+          ". Ett av trinnene er erstattet med et spørsmålstegn."
+        ]
+      ],
+      "stem": [
+        "Hvilket trinn mangler?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Blander"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Sluttforsterker"
+          ],
+          "feedback": [
+            [
+              "En ",
+              {
+                "term": "sluttforsterker",
+                "text": "sluttforsterker"
+              },
+              " hører til i en sender, der den gir den endelige utgangseffekten."
+            ]
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Frekvensmultiplikator"
+          ],
+          "feedback": [
+            [
+              "En ",
+              {
+                "term": "frekvensmultiplikator",
+                "text": "frekvensmultiplikator"
+              },
+              " lager ",
+              {
+                "term": "harmoniske",
+                "text": "harmoniske frekvenser"
+              },
+              " av én frekvens. Her skal to signaler kombineres."
+            ]
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Demodulator"
+          ],
+          "feedback": [
+            [
+              {
+                "term": "demodulator",
+                "text": "Demodulatoren"
+              },
+              " finnes allerede i skjemaet, etter MF-forsterkeren."
+            ]
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Trinnet som får signaler både fra RF-",
+          {
+            "term": "forsterker",
+            "text": "forsterkeren"
+          },
+          " og fra ",
+          {
+            "term": "lokaloscillator",
+            "text": "lokaloscillatoren"
+          },
+          ", er ",
+          {
+            "term": "blander",
+            "text": "blanderen"
+          },
+          ". Den lager blant annet differansefrekvensen, som er ",
+          {
+            "term": "mottaker",
+            "text": "mottakerens"
+          },
+          " faste ",
+          {
+            "term": "mellomfrekvens",
+            "text": "mellomfrekvens"
+          },
+          "."
+        ],
+        [
+          "Fordi resten av mottakeren arbeider på én fast frekvens, kan filtre og forsterkere der lages med god ",
+          {
+            "term": "selektivitet",
+            "text": "selektivitet"
+          },
+          " og høy forsterkning."
+        ]
+      ],
+      "visual": {
+        "template": "block-diagram",
+        "version": 1,
+        "params": {
+          "chain": [
+            {
+              "kind": "antenna"
+            },
+            {
+              "kind": "rf_amp"
+            },
+            {
+              "kind": "mixer",
+              "hidden": true
+            },
+            {
+              "kind": "if_filter"
+            },
+            {
+              "kind": "if_amp"
+            },
+            {
+              "kind": "demodulator"
+            },
+            {
+              "kind": "af_amp"
+            },
+            {
+              "kind": "speaker"
+            }
+          ],
+          "side": [
+            {
+              "kind": "local_osc",
+              "into": 2
+            }
+          ]
+        },
+        "params_after": {
+          "chain": [
+            {
+              "kind": "antenna"
+            },
+            {
+              "kind": "rf_amp"
+            },
+            {
+              "kind": "mixer",
+              "highlight": true
+            },
+            {
+              "kind": "if_filter"
+            },
+            {
+              "kind": "if_amp"
+            },
+            {
+              "kind": "demodulator"
+            },
+            {
+              "kind": "af_amp"
+            },
+            {
+              "kind": "speaker"
+            }
+          ]
+        }
+      },
+      "glossary_after_answer": [
+        "superheterodyn"
+      ],
+      "study_reference": {
+        "chapter": 6,
+        "section_id": "s6-09",
+        "printed_pages": [
+          "6-4"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "1eeb2a5ab810c263",
+          "84fc3490161549d2"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "Jim C K Flaten",
+        "based_on": 3,
+        "at": "2026-10-24T14:26:38+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T14:26:38+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "0d2f985080511a02f92178b98b1141218d6f89265a4f77f3f90046bd202650e6",
+          "note": "Harmoniske always followed by a noun (frekvenser/signaler)"
+        },
+        {
+          "at": "2026-10-24T14:26:42+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "a6c1ca7a3c1dc4c288b785cd93d3f1366bcb7a99d5f0b25c5385f7794b23593d",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T14:31:54+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "a6c1ca7a3c1dc4c288b785cd93d3f1366bcb7a99d5f0b25c5385f7794b23593d",
+          "note": "Harmoniske always followed by a noun",
+          "acknowledged": [
+            "figures",
+            "ocr"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "a6c1ca7a3c1dc4c288b785cd93d3f1366bcb7a99d5f0b25c5385f7794b23593d",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: equation, low_ocr_confidence, numeric_low_conf. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T14:31:54+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T14:31:54+00:00",
+        "content_sha256": "a6c1ca7a3c1dc4c288b785cd93d3f1366bcb7a99d5f0b25c5385f7794b23593d",
         "acknowledged_hazards": [
           "figures",
           "ocr"

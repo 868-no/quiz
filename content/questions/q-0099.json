@@ -489,7 +489,7 @@
     },
     {
       "revision": 3,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "concept",
@@ -712,6 +712,15 @@
             "figures",
             "pages"
           ]
+        },
+        {
+          "at": "2026-10-24T14:31:58+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "79dcd6cc2d32bc57aaf0f9f59350679afca9bbcb422f6a497234d97d933b0fcf",
+          "note": "superseded by r4"
         }
       ],
       "checks": {
@@ -736,6 +745,279 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-24T09:32:20+00:00",
         "content_sha256": "79dcd6cc2d32bc57aaf0f9f59350679afca9bbcb422f6a497234d97d933b0fcf",
+        "acknowledged_hazards": [
+          "figures",
+          "pages"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 4,
+      "status": "approved",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "easy",
+      "chapter": 5,
+      "section_ids": [
+        "s5-12"
+      ],
+      "topic_ids": [
+        "harmoniske"
+      ],
+      "learning_objective": "Vite at en HF-sender vanligvis har et lavpassfilter på utgangen for å dempe harmoniske.",
+      "priority": "normal",
+      "context": [
+        [
+          "Figuren viser de siste trinnene i en HF-sender. Én blokk mellom ",
+          {
+            "term": "sluttforsterker",
+            "text": "sluttforsterkeren"
+          },
+          " og ",
+          {
+            "term": "antenne",
+            "text": "antennen"
+          },
+          " er skjult."
+        ]
+      ],
+      "stem": [
+        [
+          "Hvilken blokk står vanligvis der for å dempe ",
+          {
+            "term": "harmoniske",
+            "text": "harmoniske frekvenser"
+          },
+          " av sendesignalet?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Et lavpassfilter"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Et høypassfilter"
+          ],
+          "feedback": [
+            [
+              "Harmoniske frekvenser ligger over sendefrekvensen. Et høypassfilter slipper høye ",
+              {
+                "term": "frekvens",
+                "text": "frekvenser"
+              },
+              " gjennom og ville ikke dempe dem."
+            ]
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Et båndstoppfilter for sendefrekvensen"
+          ],
+          "feedback": [
+            "Det ville stoppe selve signalet du vil sende, og la de harmoniske frekvensene passere."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "En bufferforsterker"
+          ],
+          "feedback": [
+            [
+              "En buffer skiller ",
+              {
+                "term": "oscillator",
+                "text": "oscillatoren"
+              },
+              " fra lastendringer. En ",
+              {
+                "term": "forsterker",
+                "text": "forsterker"
+              },
+              " på dette stedet ville forsterke de harmoniske signalene i stedet for å dempe dem."
+            ]
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "De harmoniske frekvensene ligger alltid høyere enn grunnfrekvensen, på 2, 3, 4 … ganger den. Et ",
+          {
+            "term": "lavpassfilter",
+            "text": "lavpassfilter"
+          },
+          " skal slippe gjennom sendefrekvensen med lite tap, men dempe de harmoniske frekvensene. Grensefrekvensen må derfor tilpasses båndet det sendes på: på 7 MHz må ",
+          {
+            "term": "filter",
+            "text": "filteret"
+          },
+          " slippe gjennom 7 MHz, men dempe den andre harmoniske frekvensen på 14 MHz. En flerbåndssender har derfor flere lavpassfiltre som velges etter bånd."
+        ],
+        "Hvis det harmoniske signalet allerede er for eksempel 25 dB svakere enn signalet ut av sluttrinnet, og filteret demper det 45 dB mer, blir det totalt 70 dB under det ønskede signalet.",
+        [
+          "På VHF og høyere brukes oftere ",
+          {
+            "term": "baandpassfilter",
+            "text": "båndpassfiltre"
+          },
+          ", fordi uønskede ",
+          {
+            "term": "intermodulasjon",
+            "text": "blandingsprodukter"
+          },
+          " der også kan ligge under sendefrekvensen."
+        ]
+      ],
+      "visual": {
+        "template": "block-diagram",
+        "version": 1,
+        "params": {
+          "chain": [
+            {
+              "kind": "vfo"
+            },
+            {
+              "kind": "driver"
+            },
+            {
+              "kind": "power_amp"
+            },
+            {
+              "kind": "lowpass_filter",
+              "hidden": true
+            },
+            {
+              "kind": "antenna"
+            }
+          ]
+        },
+        "params_after": {
+          "chain": [
+            {
+              "kind": "vfo"
+            },
+            {
+              "kind": "driver"
+            },
+            {
+              "kind": "power_amp"
+            },
+            {
+              "kind": "lowpass_filter",
+              "highlight": true
+            },
+            {
+              "kind": "antenna"
+            }
+          ]
+        }
+      },
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 5,
+        "section_id": "s5-12",
+        "printed_pages": [
+          "5-5"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "1979e24cac0fd041"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "Jim C K Flaten",
+        "based_on": 3,
+        "at": "2026-10-24T14:26:39+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T14:26:39+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "79dcd6cc2d32bc57aaf0f9f59350679afca9bbcb422f6a497234d97d933b0fcf",
+          "note": "Harmoniske always followed by a noun (frekvenser/signaler)"
+        },
+        {
+          "at": "2026-10-24T14:26:42+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "90420b8d214532aa147508171dde96362d593e603bfdb0072d1b5d0872af7740",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T14:27:13+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "3ff66c67814249f49446b9a099f52e995e3779c63e78af3fb82dd874feb9453c",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T14:31:58+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "3ff66c67814249f49446b9a099f52e995e3779c63e78af3fb82dd874feb9453c",
+          "note": "Harmoniske always followed by a noun",
+          "acknowledged": [
+            "figures",
+            "pages"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "3ff66c67814249f49446b9a099f52e995e3779c63e78af3fb82dd874feb9453c",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "pages",
+            "detail": "cited printed page number is uncertain in the source (printed_page_status=inferred). Confirm the page in the book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T14:31:58+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T14:31:58+00:00",
+        "content_sha256": "3ff66c67814249f49446b9a099f52e995e3779c63e78af3fb82dd874feb9453c",
         "acknowledged_hazards": [
           "figures",
           "pages"

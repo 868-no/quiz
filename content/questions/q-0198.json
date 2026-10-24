@@ -230,7 +230,7 @@
     },
     {
       "revision": 2,
-      "status": "approved",
+      "status": "retired",
       "type": "single_choice",
       "style": "concept",
       "difficulty": "hard",
@@ -420,6 +420,15 @@
             "figures",
             "ocr"
           ]
+        },
+        {
+          "at": "2026-10-24T14:32:02+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "15762dd023553320c7fb9e14fbb5efbef8e2299659133ce48be84907c4ac04c8",
+          "note": "superseded by r3"
         }
       ],
       "checks": {
@@ -444,6 +453,237 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-24T10:04:15+00:00",
         "content_sha256": "15762dd023553320c7fb9e14fbb5efbef8e2299659133ce48be84907c4ac04c8",
+        "acknowledged_hazards": [
+          "figures",
+          "ocr"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 3,
+      "status": "approved",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "hard",
+      "chapter": 5,
+      "section_ids": [
+        "s5-21"
+      ],
+      "topic_ids": [
+        "blandingsprodukter",
+        "senderfeil"
+      ],
+      "learning_objective": "Forstå at intermodulasjonsprodukter fra en overstyrt lineærforsterker ligger like ved sendefrekvensen, slik at utgangsfilteret ikke kan fjerne splatter.",
+      "priority": "normal",
+      "context": [
+        [
+          "En radioamatør har en ",
+          {
+            "term": "lineaer-forsterker",
+            "text": "lineærforsterker"
+          },
+          " etter ",
+          {
+            "term": "ssb",
+            "text": "SSB"
+          },
+          "-stasjonen sin på 40 m og driver den så hardt at den blir ulineær. Stasjoner noen få kilohertz unna klager over at signalet hans «spruter» utover. Mellom ",
+          {
+            "term": "forsterker",
+            "text": "forsterkeren"
+          },
+          " og ",
+          {
+            "term": "antenne",
+            "text": "antennen"
+          },
+          " står et godt ",
+          {
+            "term": "lavpassfilter",
+            "text": "lavpassfilter"
+          },
+          " med knekkfrekvens like over 40 m-båndet."
+        ]
+      ],
+      "stem": [
+        "Hvorfor fjerner ikke filteret denne forstyrrelsen?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Et lavpassfilter slipper gjennom de harmoniske frekvensene og stopper grunnfrekvensen."
+          ],
+          "feedback": [
+            "Det er omvendt: et lavpassfilter slipper gjennom de lave frekvensene, altså grunnfrekvensen, og demper de harmoniske frekvensene over knekkfrekvensen."
+          ]
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Produktene ligger like ved sendefrekvensen, innenfor filterets passbånd."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Forstyrrelsen oppstår først i antennen, etter at signalet har passert filteret."
+          ],
+          "feedback": [
+            [
+              "Produktene dannes i den overstyrte forsterkeren, før ",
+              {
+                "term": "filter",
+                "text": "filteret"
+              },
+              ". Problemet er at de ligger på frekvenser filteret slipper gjennom."
+            ]
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Knekkfrekvensen ligger for høyt; den burde vært lagt midt i 40 m-båndet."
+          ],
+          "feedback": [
+            "Da ville filteret dempe ditt eget signal i den øvre delen av båndet. Et utgangsfilter skal slippe gjennom hele båndet, og produkter noen få kilohertz fra sendefrekvensen kan det uansett ikke skille ut."
+          ]
+        }
+      ],
+      "correct": [
+        "o2"
+      ],
+      "explanation": [
+        [
+          "Når en forsterker overstyres, ",
+          {
+            "term": "blander",
+            "text": "blander"
+          },
+          " de ulike ",
+          {
+            "term": "frekvens",
+            "text": "frekvensene"
+          },
+          " i talesignalet seg med hverandre og danner ",
+          {
+            "term": "intermodulasjon",
+            "text": "intermodulasjonsprodukter"
+          },
+          ", for eksempel 2·f1 − f2 og 2·f2 − f1. Mange av dem ligger bare noen kilohertz fra det ønskede signalet, slik at signalet blir mye bredere enn det skal (",
+          {
+            "term": "splatter",
+            "text": "splatter"
+          },
+          ")."
+        ],
+        [
+          "Utgangsfilteret skal slippe gjennom hele båndet og fjerner bare det som ligger over knekkfrekvensen, som de ",
+          {
+            "term": "harmoniske",
+            "text": "harmoniske signalene"
+          },
+          " på høyere bånd. Splatter innenfor båndet kan det ikke gjøre noe med."
+        ],
+        [
+          "Den eneste løsningen er å unngå å skape produktene: reduser driveffekten (og bruk ",
+          {
+            "term": "alc",
+            "text": "ALC"
+          },
+          " riktig), slik at forsterkeren arbeider lineært. Kontroller at signalet er rent fram til forsterkeren, at det ikke er klikk eller støy på nabokanalene, at du holder deg innenfor båndet, og at harmoniske signaler er dempet."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 5,
+        "section_id": "s5-21",
+        "printed_pages": [
+          "5-9",
+          "5-10"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "27358d0b3c2d8975",
+          "2f7a5bd9f503a553"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "Jim C K Flaten",
+        "based_on": 2,
+        "at": "2026-10-24T14:26:41+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T14:26:41+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "15762dd023553320c7fb9e14fbb5efbef8e2299659133ce48be84907c4ac04c8",
+          "note": "Harmoniske always followed by a noun (frekvenser/signaler)"
+        },
+        {
+          "at": "2026-10-24T14:26:42+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "0fa1dc8908b7a9e57031ecdc93345424176107445b95c979c59ed6e5fe3e42f6",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T14:32:02+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "0fa1dc8908b7a9e57031ecdc93345424176107445b95c979c59ed6e5fe3e42f6",
+          "note": "Harmoniske always followed by a noun",
+          "acknowledged": [
+            "figures",
+            "ocr"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "0fa1dc8908b7a9e57031ecdc93345424176107445b95c979c59ed6e5fe3e42f6",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: equation, numeric_low_conf, table. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T14:32:02+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T14:32:02+00:00",
+        "content_sha256": "0fa1dc8908b7a9e57031ecdc93345424176107445b95c979c59ed6e5fe3e42f6",
         "acknowledged_hazards": [
           "figures",
           "ocr"

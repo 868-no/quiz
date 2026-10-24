@@ -259,7 +259,7 @@
     },
     {
       "revision": 2,
-      "status": "approved",
+      "status": "retired",
       "type": "single_choice",
       "style": "calculation",
       "difficulty": "easy",
@@ -471,6 +471,15 @@
           "acknowledged": [
             "figures"
           ]
+        },
+        {
+          "at": "2026-10-24T14:32:00+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "a24fdffe2baffbe3ebee42dae102b8d79ce746c8975851558346d0f29e894fc6",
+          "note": "superseded by r3"
         }
       ],
       "visual": {
@@ -535,6 +544,298 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-24T10:04:14+00:00",
         "content_sha256": "a24fdffe2baffbe3ebee42dae102b8d79ce746c8975851558346d0f29e894fc6",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 3,
+      "status": "approved",
+      "type": "single_choice",
+      "style": "calculation",
+      "difficulty": "easy",
+      "chapter": 4,
+      "section_ids": [
+        "s4-18"
+      ],
+      "topic_ids": [
+        "frekvensmultiplikasjon"
+      ],
+      "learning_objective": "Regne ut utgangsfrekvensen fra en frekvensmultiplikator som plukker ut en bestemt harmonisk.",
+      "priority": "normal",
+      "context": [
+        [
+          "En ",
+          {
+            "term": "frekvensmultiplikator",
+            "text": "frekvensmultiplikator"
+          },
+          " for 10 GHz-båndet består av en ",
+          {
+            "term": "varicap",
+            "text": "varaktordiode"
+          },
+          " som drives med et signal på ",
+          {
+            "q": 2592,
+            "u": "MHz"
+          },
+          ". Et resonanshulrom på utgangen er avstemt slik at det bare slipper gjennom den fjerde ",
+          {
+            "term": "harmoniske",
+            "text": "harmoniske frekvensen"
+          },
+          "."
+        ]
+      ],
+      "stem": [
+        [
+          "Hvilken ",
+          {
+            "term": "frekvens",
+            "text": "frekvens"
+          },
+          " har utgangssignalet?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 10368,
+              "u": "MHz"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 12960,
+              "u": "MHz"
+            }
+          ],
+          "feedback": [
+            "Her er det regnet med fem ganger inngangsfrekvensen. Den fjerde harmoniske frekvensen er fire ganger grunnfrekvensen; grunnfrekvensen selv regnes som den første."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 7776,
+              "u": "MHz"
+            }
+          ],
+          "feedback": [
+            "Dette er tre ganger inngangsfrekvensen, altså den tredje harmoniske frekvensen."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 5184,
+              "u": "MHz"
+            }
+          ],
+          "feedback": [
+            "Dette er bare en dobling av inngangsfrekvensen, altså den andre harmoniske frekvensen."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Den n-te ",
+          {
+            "term": "harmoniske",
+            "text": "harmoniske frekvensen"
+          },
+          " ligger på n ganger grunnfrekvensen:"
+        ],
+        [
+          {
+            "math": [
+              "f_4",
+              "=",
+              "4",
+              "·",
+              {
+                "q": 2592,
+                "u": "MHz"
+              },
+              "=",
+              {
+                "q": 10368,
+                "u": "MHz"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "term": "diode",
+            "text": "Dioden"
+          },
+          " er ulineær og lager mange harmoniske frekvenser. Resonanshulrommet velger ut den ønskede, mens de andre dempes. Utgangseffekten blir mye lavere enn inngangseffekten, fordi bare en liten del av ",
+          {
+            "term": "effekt",
+            "text": "effekten"
+          },
+          " havner i den valgte harmoniske frekvensen."
+        ]
+      ],
+      "visual": {
+        "template": "block-diagram",
+        "version": 1,
+        "params": {
+          "chain": [
+            {
+              "kind": "oscillator"
+            },
+            {
+              "kind": "custom",
+              "label": "Varaktordiode"
+            },
+            {
+              "kind": "custom",
+              "label": "Resonanshulrom"
+            },
+            {
+              "kind": "antenna"
+            }
+          ],
+          "edge_labels": [
+            {
+              "after": 0,
+              "text": "2592 MHz"
+            },
+            {
+              "after": 2,
+              "text": "?"
+            }
+          ]
+        },
+        "params_after": {
+          "edge_labels": [
+            {
+              "after": 0,
+              "text": "2592 MHz"
+            },
+            {
+              "after": 2,
+              "text": "10368 MHz"
+            }
+          ]
+        }
+      },
+      "glossary_after_answer": [],
+      "calculation": {
+        "formula": "harmonic_frequency",
+        "inputs": {
+          "f": [
+            2592,
+            "MHz"
+          ],
+          "n": [
+            4,
+            ""
+          ]
+        },
+        "answer": [
+          10368,
+          "MHz"
+        ],
+        "answer_symbol": "f_4",
+        "sig_figs": 5
+      },
+      "study_reference": {
+        "chapter": 4,
+        "section_id": "s4-18",
+        "printed_pages": [
+          "4-10"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "125fc57d6eb02532"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "Jim C K Flaten",
+        "based_on": 2,
+        "at": "2026-10-24T14:26:40+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T14:26:40+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "a24fdffe2baffbe3ebee42dae102b8d79ce746c8975851558346d0f29e894fc6",
+          "note": "Harmoniske always followed by a noun (frekvenser/signaler)"
+        },
+        {
+          "at": "2026-10-24T14:26:42+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "7b5b2ff2ea2705a394ec73ea67401d8dda2c96c434efcfe43a22c5912218f94c",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T14:32:00+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "7b5b2ff2ea2705a394ec73ea67401d8dda2c96c434efcfe43a22c5912218f94c",
+          "note": "Harmoniske always followed by a noun",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "7b5b2ff2ea2705a394ec73ea67401d8dda2c96c434efcfe43a22c5912218f94c",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T14:32:00+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T14:32:00+00:00",
+        "content_sha256": "7b5b2ff2ea2705a394ec73ea67401d8dda2c96c434efcfe43a22c5912218f94c",
         "acknowledged_hazards": [
           "figures"
         ],

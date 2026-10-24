@@ -369,7 +369,7 @@
     },
     {
       "revision": 3,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "concept",
@@ -539,6 +539,15 @@
           "acknowledged": [
             "figures"
           ]
+        },
+        {
+          "at": "2026-10-24T14:31:56+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "d6c7a510713bdf6e65f6b5f1dd95b8967595bbb90c1ee95cc1db4682c3c0dea2",
+          "note": "superseded by r4"
         }
       ],
       "checks": {
@@ -559,6 +568,212 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-24T09:32:17+00:00",
         "content_sha256": "d6c7a510713bdf6e65f6b5f1dd95b8967595bbb90c1ee95cc1db4682c3c0dea2",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 4,
+      "status": "approved",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "easy",
+      "chapter": 4,
+      "section_ids": [
+        "s4-27"
+      ],
+      "topic_ids": [
+        "sluttforsterker"
+      ],
+      "learning_objective": "Vite hvilke sendingsformer som krever lineær forsterkning, og hvilke som kan bruke klasse C.",
+      "priority": "exam_important",
+      "context": [],
+      "stem": [
+        [
+          "Hvilke to sendingsformer kan forsterkes i en ",
+          {
+            "term": "forsterkerklasse",
+            "text": "klasse C"
+          },
+          "-",
+          {
+            "term": "forsterker",
+            "text": "forsterker"
+          },
+          " uten at selve modulasjonen ødelegges, forutsatt at ",
+          {
+            "term": "harmoniske",
+            "text": "harmoniske signaler"
+          },
+          " filtreres bort?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "FM og CW"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "SSB og AM"
+          ],
+          "feedback": [
+            "Både SSB og AM har informasjonen i amplitudevariasjonene. De må forsterkes lineært."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "SSB og FM"
+          ],
+          "feedback": [
+            "FM tåler klasse C, men SSB gjør det ikke. SSB-signalets amplitude følger lyden."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "AM og CW"
+          ],
+          "feedback": [
+            "CW tåler klasse C, men AM gjør det ikke. En klasse C-forsterker ville forvrengt amplitudevariasjonene."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Et ",
+          {
+            "term": "frekvensmodulasjon",
+            "text": "FM"
+          },
+          "-signal har konstant amplitude, så det er ingen amplitudevariasjoner som kan forvrenges. Ved CW slås ",
+          {
+            "term": "baerebolge",
+            "text": "bærebølgen"
+          },
+          " bare av og på. Begge kan derfor forsterkes i klasse C, som har høy ",
+          {
+            "term": "virkningsgrad",
+            "text": "virkningsgrad"
+          },
+          ", så lenge ",
+          {
+            "term": "harmoniske",
+            "text": "harmoniske signaler"
+          },
+          " filtreres bort."
+        ],
+        [
+          {
+            "term": "amplitudemodulasjon",
+            "text": "AM"
+          },
+          " og ",
+          {
+            "term": "ssb",
+            "text": "SSB"
+          },
+          " har informasjonen i amplituden og trenger en ",
+          {
+            "term": "lineaer-forsterker",
+            "text": "lineær forsterker"
+          },
+          ", for eksempel klasse A eller AB. For datamodus avhenger det av om modulasjonen gir amplitudeendringer."
+        ]
+      ],
+      "glossary_after_answer": [
+        "forsterkerklasse"
+      ],
+      "study_reference": {
+        "chapter": 4,
+        "section_id": "s4-27",
+        "printed_pages": [
+          "4-14"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "2848f0ff4a5e2382"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "Jim C K Flaten",
+        "based_on": 3,
+        "at": "2026-10-24T14:26:38+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T14:26:38+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "d6c7a510713bdf6e65f6b5f1dd95b8967595bbb90c1ee95cc1db4682c3c0dea2",
+          "note": "Harmoniske always followed by a noun (frekvenser/signaler)"
+        },
+        {
+          "at": "2026-10-24T14:26:42+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "bc6879e8418d63d22f90a1ab7ff32735a4be9239a866c7059dacaeccb44acbed",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T14:31:56+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "bc6879e8418d63d22f90a1ab7ff32735a4be9239a866c7059dacaeccb44acbed",
+          "note": "Harmoniske always followed by a noun",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "bc6879e8418d63d22f90a1ab7ff32735a4be9239a866c7059dacaeccb44acbed",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T14:31:56+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T14:31:56+00:00",
+        "content_sha256": "bc6879e8418d63d22f90a1ab7ff32735a4be9239a866c7059dacaeccb44acbed",
         "acknowledged_hazards": [
           "figures"
         ],

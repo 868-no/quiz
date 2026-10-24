@@ -568,7 +568,7 @@
     },
     {
       "revision": 4,
-      "status": "approved",
+      "status": "retired",
       "type": "single_choice",
       "style": "recall",
       "difficulty": "easy",
@@ -735,6 +735,15 @@
           "acknowledged": [
             "figures"
           ]
+        },
+        {
+          "at": "2026-10-24T14:31:54+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "5f0997f8b10b46c90ed87b7c59e2e6c245da64355f74bb1415ad9448c4acf40c",
+          "note": "superseded by r5"
         }
       ],
       "checks": {
@@ -755,6 +764,209 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-24T10:03:58+00:00",
         "content_sha256": "5f0997f8b10b46c90ed87b7c59e2e6c245da64355f74bb1415ad9448c4acf40c",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 5,
+      "status": "approved",
+      "type": "single_choice",
+      "style": "recall",
+      "difficulty": "easy",
+      "chapter": 5,
+      "section_ids": [
+        "s5-08"
+      ],
+      "topic_ids": [
+        "senderfeil"
+      ],
+      "learning_objective": "Kjenne igjen senderfeilen kvitter (chirp).",
+      "priority": "exam_important",
+      "context": [],
+      "stem": [
+        [
+          "Hva er ",
+          {
+            "term": "kvitter",
+            "text": "kvitter"
+          },
+          " på et morsesignal?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "At frekvensen glir litt når senderen nøkles, før den blir stabil"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Korte, brede klikk hver gang senderen slås av og på"
+          ],
+          "feedback": [
+            "Det beskriver nøkleklikk, som skyldes for brå av- og påslag av signalet."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Utstråling på det dobbelte av senderfrekvensen"
+          ],
+          "feedback": [
+            [
+              "Det er et ",
+              {
+                "term": "harmoniske",
+                "text": "harmonisk signal"
+              },
+              ", ikke kvitter."
+            ]
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "At tonen får en ru brumlyd fordi strømforsyningen er dårlig glattet"
+          ],
+          "feedback": [
+            "Det er brum fra dårlig glattet forsyningsspenning. Kvitter er en frekvensendring ved hver nøkling, ikke brum."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          {
+            "term": "kvitter",
+            "text": "Kvitter"
+          },
+          " er en liten, rask frekvensendring i begynnelsen av hvert morsetegn. I ",
+          {
+            "term": "mottaker",
+            "text": "mottakeren"
+          },
+          " høres tonen «gli», og signalet tar mer ",
+          {
+            "term": "baandbredde",
+            "text": "båndbredde"
+          },
+          " enn nødvendig."
+        ],
+        [
+          "Typiske årsaker er at forsyningsspenningen til ",
+          {
+            "term": "oscillator",
+            "text": "oscillatoren"
+          },
+          " synker når ",
+          {
+            "term": "sender",
+            "text": "senderen"
+          },
+          " trekker ",
+          {
+            "term": "strom",
+            "text": "strøm"
+          },
+          ", eller at belastningen på oscillatoren endres når senderen nøkles. Bedre spenningsregulering og et ",
+          {
+            "term": "bufferforsterker",
+            "text": "buffertrinn"
+          },
+          " hjelper."
+        ]
+      ],
+      "glossary_after_answer": [
+        "kvitter"
+      ],
+      "study_reference": {
+        "chapter": 5,
+        "section_id": "s5-08",
+        "printed_pages": [
+          "5-2"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "b1b1bc833142e4d0"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "Jim C K Flaten",
+        "based_on": 4,
+        "at": "2026-10-24T14:26:37+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T14:26:37+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "5f0997f8b10b46c90ed87b7c59e2e6c245da64355f74bb1415ad9448c4acf40c",
+          "note": "Harmoniske always followed by a noun (frekvenser/signaler)"
+        },
+        {
+          "at": "2026-10-24T14:26:42+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "5aa389802ea6cc43fc5133bdd5faac694de4c3e1caa3cd13881d080b20bb0fec",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T14:31:54+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "5aa389802ea6cc43fc5133bdd5faac694de4c3e1caa3cd13881d080b20bb0fec",
+          "note": "Harmoniske always followed by a noun",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "5aa389802ea6cc43fc5133bdd5faac694de4c3e1caa3cd13881d080b20bb0fec",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T14:31:54+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T14:31:54+00:00",
+        "content_sha256": "5aa389802ea6cc43fc5133bdd5faac694de4c3e1caa3cd13881d080b20bb0fec",
         "acknowledged_hazards": [
           "figures"
         ],
