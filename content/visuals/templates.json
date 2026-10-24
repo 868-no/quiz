@@ -514,6 +514,12 @@
           "actor": "Jim C K Flaten",
           "action": "approve",
           "note": "Re-approved after layout changes for phone screens (no values changed)"
+        },
+        {
+          "at": "2026-10-24T02:09:12+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Re-approved: horizontal coils drawn with their turns above the wire (no values changed)"
         }
       ],
       "params": {

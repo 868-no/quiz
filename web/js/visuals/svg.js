@@ -112,11 +112,15 @@ export function rotated(node, cx, cy, deg) {
   return deg ? h('g', { transform: `rotate(${deg} ${cx} ${cy})` }, node) : node;
 }
 
-/** R, C or L centred at (cx, cy), along a vertical (default) or horizontal wire. */
+/**
+ * R, C or L centred at (cx, cy), along a vertical (default) or horizontal wire.
+ * A vertical coil has its turns to the right; turned a quarter anticlockwise, a
+ * horizontal coil has them above the wire, as coils are usually drawn.
+ */
 export function component(kind, cx, cy, horizontal = false) {
   if (kind === 'R') return resistor(cx, cy, !horizontal);
   const sym = kind === 'C' ? capacitor(cx, cy) : inductor(cx, cy);
-  return rotated(sym, cx, cy, horizontal ? 90 : 0);
+  return rotated(sym, cx, cy, horizontal ? -90 : 0);
 }
 
 /**
