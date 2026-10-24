@@ -17,9 +17,11 @@ import zenerRegulator from './zener-regulator.js';
 import frequencyResponse from './frequency-response.js';
 import piNetwork from './pi-network.js';
 import ratioDetector from './ratio-detector.js';
+import timeSignal from './time-signal.js';
+import spectrum from './spectrum.js';
 
 export const IMPLEMENTATIONS = new Map(
-  [dcCircuit, acCircuit, waveform, blockDiagram, rlcCircuit, rectifier, transformer, transistorStage, seriesRegulator, zenerRegulator, frequencyResponse, piNetwork, ratioDetector]
+  [dcCircuit, acCircuit, waveform, blockDiagram, rlcCircuit, rectifier, transformer, transistorStage, seriesRegulator, zenerRegulator, frequencyResponse, piNetwork, ratioDetector, timeSignal, spectrum]
     .map((m) => [`${m.id}@${m.version}`, m]),
 );
 

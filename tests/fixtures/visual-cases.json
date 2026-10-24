@@ -1970,6 +1970,244 @@
           "variant": "foster-seeley"
         }
       }
+    },
+    {
+      "name": "time signal: classes A to C",
+      "valid": true,
+      "visual": {
+        "template": "time-signal",
+        "version": 1,
+        "params": {
+          "kind": "conduction",
+          "traces": [
+            "A",
+            "AB",
+            "B",
+            "C"
+          ]
+        }
+      },
+      "quantities": {},
+      "shown": {}
+    },
+    {
+      "name": "time signal: speech envelope with peak and average",
+      "valid": true,
+      "visual": {
+        "template": "time-signal",
+        "version": 1,
+        "params": {
+          "kind": "envelope",
+          "traces": [
+            "speech",
+            "processed",
+            "rtty"
+          ],
+          "markers": [
+            "peak",
+            "average"
+          ]
+        }
+      },
+      "quantities": {},
+      "shown": {}
+    },
+    {
+      "name": "time signal: FSK",
+      "valid": true,
+      "visual": {
+        "template": "time-signal",
+        "version": 1,
+        "params": {
+          "kind": "fsk",
+          "traces": [
+            "fsk"
+          ],
+          "bits": "1011001"
+        }
+      },
+      "quantities": {},
+      "shown": {}
+    },
+    {
+      "name": "time signal: keying, AM and chirp",
+      "valid": true,
+      "visual": {
+        "template": "time-signal",
+        "version": 1,
+        "params": {
+          "kind": "keying",
+          "traces": [
+            "hard",
+            "soft"
+          ]
+        }
+      },
+      "quantities": {},
+      "shown": {}
+    },
+    {
+      "name": "time signal: a trace from another kind is refused",
+      "valid": false,
+      "error": "not used with kind",
+      "visual": {
+        "template": "time-signal",
+        "version": 1,
+        "params": {
+          "kind": "conduction",
+          "traces": [
+            "speech"
+          ]
+        }
+      }
+    },
+    {
+      "name": "time signal: markers only for envelopes",
+      "valid": false,
+      "error": "markers",
+      "visual": {
+        "template": "time-signal",
+        "version": 1,
+        "params": {
+          "kind": "am",
+          "traces": [
+            "normal"
+          ],
+          "markers": [
+            "peak"
+          ]
+        }
+      }
+    },
+    {
+      "name": "time signal: FSK needs bits",
+      "valid": false,
+      "error": "bits",
+      "visual": {
+        "template": "time-signal",
+        "version": 1,
+        "params": {
+          "kind": "fsk",
+          "traces": [
+            "fsk"
+          ],
+          "bits": "12"
+        }
+      }
+    },
+    {
+      "name": "spectrum: harmonics",
+      "valid": true,
+      "visual": {
+        "template": "spectrum",
+        "version": 1,
+        "params": {
+          "x_min_hz": 0,
+          "x_max_hz": 25000000.0,
+          "panels": [
+            {
+              "lines": [
+                {
+                  "f_hz": 7050000.0,
+                  "level": 1,
+                  "label": "f",
+                  "mark": false
+                },
+                {
+                  "f_hz": 14100000.0,
+                  "level": 0.3,
+                  "label": "2f",
+                  "mark": true
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "quantities": {},
+      "shown": {}
+    },
+    {
+      "name": "spectrum: AM and SSB with bands, skirt and filter",
+      "valid": true,
+      "visual": {
+        "template": "spectrum",
+        "version": 1,
+        "params": {
+          "x_min_hz": 7090000.0,
+          "x_max_hz": 7110000.0,
+          "panels": [
+            {
+              "title": "AM",
+              "lines": [
+                {
+                  "f_hz": 7100000.0,
+                  "level": 1,
+                  "label": "",
+                  "mark": false
+                }
+              ],
+              "bands": [
+                {
+                  "from_hz": 7097000.0,
+                  "to_hz": 7099700.0,
+                  "level": 0.4
+                }
+              ],
+              "skirt": {
+                "center_hz": 7100000.0,
+                "width_hz": 500,
+                "level": 0.2
+              },
+              "filter": {
+                "from_hz": 7000000.0,
+                "to_hz": 7200000.0
+              }
+            }
+          ]
+        }
+      },
+      "quantities": {},
+      "shown": {}
+    },
+    {
+      "name": "spectrum: a line off the axis is refused",
+      "valid": false,
+      "error": "outside the axis",
+      "visual": {
+        "template": "spectrum",
+        "version": 1,
+        "params": {
+          "x_min_hz": 0,
+          "x_max_hz": 10000000.0,
+          "panels": [
+            {
+              "lines": [
+                {
+                  "f_hz": 12000000.0,
+                  "level": 1,
+                  "label": "",
+                  "mark": false
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "spectrum: an axis must go upwards",
+      "valid": false,
+      "error": "x_max_hz",
+      "visual": {
+        "template": "spectrum",
+        "version": 1,
+        "params": {
+          "x_min_hz": 10000000.0,
+          "x_max_hz": 1000000.0,
+          "panels": []
+        }
+      }
     }
   ]
 }

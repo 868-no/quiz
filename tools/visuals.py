@@ -542,6 +542,48 @@ def _fr_quantities(p: dict[str, Any]) -> dict[str, dict[str, Any]]:
     return q
 
 
+# --- time-signal ------------------------------------------------------------------
+
+_TS_TRACES = {"conduction": {"A", "AB", "B", "C"}, "keying": {"hard", "soft"}, "envelope": {"speech", "processed", "rtty"},
+              "am": {"normal", "overdriven"}, "fsk": {"fsk"}, "chirp": {"chirp", "stable"}}
+
+
+def _ts_rules_time(p: dict[str, Any], errors: list[str]) -> None:
+    allowed = _TS_TRACES[p["kind"]]
+    if not p["traces"]:
+        errors.append("traces: at least one")
+    for t in p["traces"]:
+        if t not in allowed:
+            errors.append(f"traces: '{t}' is not used with kind '{p['kind']}'")
+    if len(set(p["traces"])) != len(p["traces"]):
+        errors.append("traces: duplicates")
+    if p["markers"] and p["kind"] != "envelope":
+        errors.append("markers: only for kind 'envelope'")
+    if p["kind"] == "fsk" and not re.fullmatch(r"[01]{2,10}", p["bits"]):
+        errors.append("bits: 2–10 characters of 0 and 1")
+
+
+# --- spectrum -----------------------------------------------------------------------
+
+def _spectrum_rules(p: dict[str, Any], errors: list[str]) -> None:
+    lo, hi = p["x_min_hz"], p["x_max_hz"]
+    if not hi > lo:
+        errors.append("x_max_hz: must be above x_min_hz")
+    if not p["blank"] and not p["panels"]:
+        errors.append("panels: at least one")
+    for i, pa in enumerate(p["panels"]):
+        for j, ln in enumerate(pa["lines"]):
+            if not lo <= ln["f_hz"] <= hi:
+                errors.append(f"panels[{i}].lines[{j}]: outside the axis")
+        for j, b in enumerate(pa["bands"]):
+            if not (b["to_hz"] > b["from_hz"] and lo <= b["from_hz"] <= hi and lo <= b["to_hz"] <= hi):
+                errors.append(f"panels[{i}].bands[{j}]: must lie on the axis, from below to")
+        if pa.get("filter") and not pa["filter"]["to_hz"] > pa["filter"]["from_hz"]:
+            errors.append(f"panels[{i}].filter: to_hz must be above from_hz")
+        if pa.get("skirt") and not lo <= pa["skirt"]["center_hz"] <= hi:
+            errors.append(f"panels[{i}].skirt: outside the axis")
+
+
 # --- pi-network, ratio-detector ----------------------------------------------------
 
 def _no_rules(p: dict[str, Any], errors: list[str]) -> None:
@@ -552,7 +594,8 @@ RULES = {"dc-circuit": _dc_rules, "ac-circuit": _ac_rules, "waveform": _wave_rul
          "rlc-circuit": _rlc_rules, "rectifier": _rect_rules, "transformer": _tr_rules, "transistor-stage": _ts_rules,
          "series-regulator": _reg_rules, "zener-regulator": _zen_rules,
          "frequency-response": _fr_rules, "pi-network": _no_rules,
-         "ratio-detector": _no_rules}
+         "ratio-detector": _no_rules, "time-signal": _ts_rules_time,
+         "spectrum": _spectrum_rules}
 QUANTITIES = {"dc-circuit": _dc_quantities, "ac-circuit": _ac_quantities, "waveform": _wave_quantities,
               "rlc-circuit": _rlc_quantities, "rectifier": _rect_quantities, "transformer": _tr_quantities,
               "transistor-stage": _ts_quantities, "series-regulator": _reg_quantities, "zener-regulator": _zen_quantities,
