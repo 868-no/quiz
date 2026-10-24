@@ -12,7 +12,6 @@ Pipeline (all offline):
   chapters    Stage C  verify chapter and section headings
   preview     private preview site with drafts (private/preview/, never deploy)
   publish     Stage D  build dist/ from approved content only (fail closed; CI deploys it)
-  deploy      push dist/ to a separate static-hosting repository (unused; see docs)
   release-check        scan a build directory for private material
   serve                serve dist/ (or the preview) on localhost
   status               overview of the bank
@@ -192,16 +191,6 @@ def cmd_preview(paths, a) -> int:
     return 0
 
 
-def cmd_deploy(paths, a) -> int:
-    from .deploy import deploy
-    res = deploy(paths, a.remote, branch=a.branch, yes=a.yes, dry_run=a.dry_run)
-    print(res.get("summary") or "")
-    for c in res.get("changes", [])[:50]:
-        print("  " + c)
-    print(res["status"])
-    return 0
-
-
 def cmd_release_check(paths, a) -> int:
     from .release_check import release_check
     root = Path(a.dir) if a.dir else paths.dist
@@ -343,13 +332,6 @@ def main(argv: list[str] | None = None) -> int:
     s.add_argument("--without-source", action="store_true",
                    help="publish without the private import (source/copy checks skipped)")
     s.set_defaults(fn=cmd_publish)
-
-    s = sub.add_parser("deploy", help="push dist/ to a static-hosting git branch (e.g. GitHub Pages)")
-    s.add_argument("--remote", required=True, help="git remote URL of the site repository")
-    s.add_argument("--branch", default="gh-pages")
-    s.add_argument("--dry-run", action="store_true", help="show what would change, push nothing")
-    s.add_argument("--yes", action="store_true", help="do not ask for confirmation")
-    s.set_defaults(fn=cmd_deploy)
 
     s = sub.add_parser("release-check", help="scan a build for private material")
     s.add_argument("dir", nargs="?")

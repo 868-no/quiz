@@ -298,24 +298,14 @@ class PipelineTest(unittest.TestCase):
         self.assertEqual(publish.publish(self.paths)["questions"], 1)
 
 
-class DeployTest(unittest.TestCase):
+class SiteConfigTest(unittest.TestCase):
     def setUp(self):
-        import subprocess
         self.repo = TempRepo()
         self.repo.import_()
         self.paths = self.repo.paths
-        self.remote = self.repo.dir / "site.git"
-        subprocess.run(["git", "init", "-q", "--bare", str(self.remote)], check=True)
-        self.env_backup = {}
 
     def tearDown(self):
         self.repo.cleanup()
-
-    def git_files(self, branch="gh-pages"):
-        import subprocess
-        out = subprocess.run(["git", "--git-dir", str(self.remote), "ls-tree", "-r", "--name-only", branch],
-                             capture_output=True, text=True, check=True).stdout
-        return set(out.split())
 
     def test_site_links_are_published_and_validated(self):
         (self.paths.config / "site.json").write_text(json.dumps(
@@ -335,39 +325,6 @@ class DeployTest(unittest.TestCase):
         (self.paths.config / "site.json").write_text(json.dumps({"cname": "not a host"}))
         with self.assertRaises(publish.PublishError):
             publish.publish(self.paths)
-
-    def test_deploy_pushes_only_dist_and_refuses_source_branches(self):
-        import os
-        import subprocess
-        from tools.deploy import deploy
-        os.environ.setdefault("GIT_AUTHOR_NAME", "T")
-        os.environ.setdefault("GIT_AUTHOR_EMAIL", "t@example.invalid")
-        os.environ.setdefault("GIT_COMMITTER_NAME", "T")
-        os.environ.setdefault("GIT_COMMITTER_EMAIL", "t@example.invalid")
-        (self.paths.config / "site.json").write_text(json.dumps({"cname": "quiz.868.no"}))
-        publish.publish(self.paths)
-        self.assertEqual(deploy(self.paths, str(self.remote), dry_run=True)["status"], "dry_run")
-        self.assertEqual(deploy(self.paths, str(self.remote), yes=True)["status"], "pushed")
-        files = self.git_files()
-        self.assertIn("index.html", files)
-        self.assertIn("CNAME", files)
-        self.assertIn("data/bank.json", files)
-        self.assertFalse(any(f.startswith(("content/", "tools/", "private/")) for f in files))
-        self.assertEqual(deploy(self.paths, str(self.remote), yes=True)["status"], "unchanged")
-        # a branch holding source code is never overwritten
-        src = self.repo.dir / "src"
-        src.mkdir()
-        (src / "tools").mkdir()
-        (src / "tools" / "x.py").write_text("")
-        for cmd in (["init", "-q"], ["checkout", "-q", "-b", "main"], ["add", "-A"], ["commit", "-q", "-m", "src"],
-                    ["push", "-q", str(self.remote), "main"]):
-            subprocess.run(["git", *cmd], cwd=src, check=True, capture_output=True)
-        with self.assertRaises(ToolError):
-            deploy(self.paths, str(self.remote), branch="main", yes=True)
-        # a build failing the release check is never deployed
-        (self.paths.dist / "leak.png").write_bytes(b"x")
-        with self.assertRaises(ToolError):
-            deploy(self.paths, str(self.remote), yes=True)
 
 
 class GenerationTest(unittest.TestCase):

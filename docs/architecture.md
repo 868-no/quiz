@@ -164,9 +164,7 @@ python3 -m tools publish            # full checks with the private import (outpu
 git add content && git commit -m "Approve …" && git push
 ```
 
-The workflow builds and deploys within a minute or two. `python3 -m tools deploy` (push `dist/` to a
-separate site repository) remains available if the source repository should ever be
-made private again.
+The workflow builds and deploys within a minute or two.
 
 ### HTTP headers on GitHub Pages
 
