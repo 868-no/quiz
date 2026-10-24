@@ -382,6 +382,197 @@
         },
         "verifier": "deterministic-v1"
       }
+    },
+    {
+      "revision": 3,
+      "status": "needs_review",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 2,
+      "section_ids": [
+        "s2-20"
+      ],
+      "topic_ids": [
+        "tidskonstant"
+      ],
+      "learning_objective": "Vite hvor mye av spenningen som er igjen etter én tidskonstant ved utlading av en kondensator.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En oppladet kondensator lades ut gjennom en ",
+          {
+            "term": "motstand",
+            "text": "motstand"
+          },
+          ". Kretsen har ",
+          {
+            "term": "tidskonstant",
+            "text": "tidskonstanten"
+          },
+          " τ = R · C."
+        ]
+      ],
+      "stem": [
+        [
+          "Omtrent hvor stor del av startspenningen ligger fortsatt over ",
+          {
+            "term": "kondensator",
+            "text": "kondensatoren"
+          },
+          " når det har gått én tidskonstant?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Ca. 37 %"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Ca. 63 %"
+          ],
+          "feedback": [
+            "63 % er den andelen spenningen har falt med etter én tidskonstant (eller nådd ved opplading). Det som er igjen ved utlading, er ca. 37 %."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Ca. 50 %"
+          ],
+          "feedback": [
+            "Utladingen følger en eksponentialkurve, ikke en rett linje. Etter én tidskonstant er spenningen lavere enn halvparten."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Ca. 0 %; kondensatoren er tom"
+          ],
+          "feedback": [
+            "Det tar mye lenger tid. Først etter omtrent fem tidskonstanter er kondensatoren praktisk talt utladet."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Ved utlading avtar både spenning og ",
+          {
+            "term": "strom",
+            "text": "strøm"
+          },
+          " eksponentielt. Etter én tidskonstant er ",
+          {
+            "term": "spenning",
+            "text": "spenningen"
+          },
+          " redusert til e^−1 av startverdien:"
+        ],
+        {
+          "steps": [
+            [
+              {
+                "math": [
+                  "e^−1",
+                  "≈",
+                  "0,37"
+                ]
+              }
+            ],
+            [
+              "Altså er rundt en tredjedel igjen. Etter fem tidskonstanter er under 1 % igjen."
+            ]
+          ]
+        }
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 2,
+        "section_id": "s2-20",
+        "printed_pages": [
+          "2-8"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "fe9c6b3763b81a79"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "Jim C K Flaten",
+        "based_on": 2,
+        "at": "2026-10-24T16:13:53+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T16:13:53+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "e9633acf88c5a506b99208a6ae514e7e2b953b6c9dca419429fc1b4d1310a519",
+          "note": "Add a figure"
+        },
+        {
+          "at": "2026-10-24T16:13:56+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "a80e18888e3b006934c4df2aca44cbb4f8c9047015fa1e925039bbb00f48d6be",
+          "note": "automated checks passed"
+        }
+      ],
+      "visual": {
+        "template": "rlc-circuit",
+        "version": 1,
+        "params": {
+          "topology": "parallel",
+          "components": [
+            {
+              "kind": "R",
+              "value": 10000
+            },
+            {
+              "kind": "C",
+              "value": 1e-06
+            }
+          ],
+          "label_style": "names"
+        },
+        "caption": "Den oppladede kondensatoren C lades ut gjennom motstanden R."
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "a80e18888e3b006934c4df2aca44cbb4f8c9047015fa1e925039bbb00f48d6be",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: equation. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T16:13:56+00:00"
+      }
     }
   ]
 }

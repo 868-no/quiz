@@ -524,6 +524,179 @@
         },
         "verifier": "deterministic-v1"
       }
+    },
+    {
+      "revision": 4,
+      "status": "needs_review",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "medium",
+      "chapter": 2,
+      "section_ids": [
+        "s2-39"
+      ],
+      "topic_ids": [
+        "kobling-avkobling"
+      ],
+      "learning_objective": "Vite hvilket krav som stilles til en koblingskondensator mellom to forsterkertrinn.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "Et lydsignal (ca. 300–3000 Hz) skal overføres fra ett ",
+          {
+            "term": "forsterker",
+            "text": "forsterkertrinn"
+          },
+          " til det neste gjennom en ",
+          {
+            "term": "kondensator",
+            "text": "kondensator"
+          },
+          ". Trinnene har ulike likespenninger som ikke må påvirke hverandre."
+        ]
+      ],
+      "stem": [
+        "Hvilket krav bør kondensatoren oppfylle?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Reaktansen skal være lav sammenlignet med kretsresistansen ved den laveste frekvensen, ca. 300 Hz."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Reaktansen skal være lav sammenlignet med kretsresistansen ved den høyeste frekvensen, ca. 3000 Hz."
+          ],
+          "feedback": [
+            "Reaktansen til en kondensator øker når frekvensen synker. Er den lav nok ved 3000 Hz, kan den være for høy ved 300 Hz, slik at bassen dempes."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Reaktansen skal være høy ved alle signalfrekvenser, slik at likespenningen blokkeres."
+          ],
+          "feedback": [
+            "Likespenningen blokkeres uansett, siden en kondensator ikke leder likestrøm. Høy reaktans ville også stoppe signalet."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Kondensatoren må lede likestrøm godt, slik at arbeidspunktet overføres."
+          ],
+          "feedback": [
+            "Poenget er det motsatte: koblingskondensatoren skal skille likespenningene i de to trinnene."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "En koblingskondensator slipper gjennom vekselspenningssignalet, men sperrer for ",
+          {
+            "term": "likespenning",
+            "text": "likespenningen"
+          },
+          ". ",
+          {
+            "term": "kapasitiv-reaktans",
+            "text": "Kapasitiv reaktans"
+          },
+          " er X_C = 1/(2πfC), så den er størst ved den laveste ",
+          {
+            "term": "frekvens",
+            "text": "frekvensen"
+          },
+          "."
+        ],
+        [
+          "Derfor dimensjoneres kondensatoren slik at ",
+          {
+            "term": "reaktans",
+            "text": "reaktansen"
+          },
+          " er klart mindre enn kretsens ",
+          {
+            "term": "resistans",
+            "text": "resistans"
+          },
+          " også nederst i frekvensområdet som skal overføres. Da går hele det ønskede frekvensområdet gjennom uten merkbar demping. Ved avkobling (til jord) gjelder samme prinsipp, men man velger gjerne enda større verdier."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 2,
+        "section_id": "s2-39",
+        "printed_pages": [
+          "2-15",
+          "2-16"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "fa5ddb51771d8527"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "Jim C K Flaten",
+        "based_on": 3,
+        "at": "2026-10-24T16:13:54+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T16:13:54+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "2d3540ab59adba804d45719506b259ee284ac4cca092da3dec1aae9861f66932",
+          "note": "Add a figure"
+        },
+        {
+          "at": "2026-10-24T16:13:56+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "67c56472c3fcfdcafcf7e1e1f5c228b627a1c178a273806a76dca3c12dfb551a",
+          "note": "automated checks passed"
+        }
+      ],
+      "visual": {
+        "template": "transistor-stage",
+        "version": 1,
+        "params": {
+          "vcc_v": 9,
+          "rc_ohms": 4700,
+          "re_ohms": 1000,
+          "bypass_capacitor": true,
+          "divider": true,
+          "coupling": true,
+          "show_resistor_values": false
+        },
+        "caption": "Koblingskondensatorene sitter på inngangen og utgangen av trinnet."
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "67c56472c3fcfdcafcf7e1e1f5c228b627a1c178a273806a76dca3c12dfb551a",
+        "errors": [],
+        "warnings": [],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T16:13:56+00:00"
+      }
     }
   ]
 }

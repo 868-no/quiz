@@ -816,6 +816,216 @@
         },
         "verifier": "deterministic-v1"
       }
+    },
+    {
+      "revision": 5,
+      "status": "needs_review",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "hard",
+      "chapter": 2,
+      "section_ids": [
+        "s2-47"
+      ],
+      "topic_ids": [
+        "resonans",
+        "q-faktor"
+      ],
+      "learning_objective": "Forstå at det sirkulerer store strømmer i en parallellkrets med høy Q, og hva det betyr for komponentvalget.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En antennetilpasningsenhet inneholder en parallellavstemt krets med høy ",
+          {
+            "term": "q-faktor",
+            "text": "Q-faktor"
+          },
+          ". ",
+          {
+            "term": "sender",
+            "text": "Senderen"
+          },
+          " leverer full ",
+          {
+            "term": "effekt",
+            "text": "effekt"
+          },
+          " gjennom enheten."
+        ]
+      ],
+      "stem": [
+        [
+          "Hva må man ta særlig hensyn til ved valg av ",
+          {
+            "term": "spole",
+            "text": "spole"
+          },
+          " og ",
+          {
+            "term": "kondensator",
+            "text": "kondensator"
+          },
+          "?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "At strømmen som sirkulerer i L og C kan bli mange ganger større enn strømmen inn, så de må tåle stor strøm."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "At strømmen i L og C er like liten som strømmen inn, så vanlige småkomponenter holder."
+          ],
+          "feedback": [
+            "Utenfor kretsen er strømmen liten, men i den lukkede sløyfen som L og C danner, går en stor sirkulerende strøm."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "At det ved resonans ikke går strøm i spolen, så den kan være av tynn tråd."
+          ],
+          "feedback": [
+            "Ved resonans går det tvert imot stor strøm i både spolen og kondensatoren. De opphever hverandre bare sett utenfra."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "At kondensatoren bør være en elektrolyttkondensator, så den tåler stor effekt."
+          ],
+          "feedback": [
+            [
+              {
+                "term": "elektrolyttkondensator",
+                "text": "Elektrolyttkondensatorer"
+              },
+              " egner seg ikke på radiofrekvenser og tåler ikke ",
+              {
+                "term": "vekselspenning",
+                "text": "vekselspenning"
+              },
+              ". Det som setter kravene, er den store sirkulerende strømmen og den høye spenningen i kretsen."
+            ]
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "I en parallellkrets ved ",
+          {
+            "term": "resonans",
+            "text": "resonans"
+          },
+          " er ",
+          {
+            "term": "strom",
+            "text": "strømmen"
+          },
+          " fra kilden liten, men i den lukkede sløyfen som L og C danner, ser kretsen ut som en seriekrets der ",
+          {
+            "term": "energi",
+            "text": "energien"
+          },
+          " pendler fram og tilbake. Den sirkulerende strømmen er omtrent Q ganger strømmen inn."
+        ],
+        [
+          "Med full sendeeffekt kan dette gi store strømmer og høye spenninger. Komponentene må derfor tåle høy strøm (tykk tråd, kondensatorer med lave tap) og høy spenning. I en serieavstemt krets kan på tilsvarende måte ",
+          {
+            "term": "spenning",
+            "text": "spenningen"
+          },
+          " over L og C bli svært høy, gjerne i kilovoltområdet."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 2,
+        "section_id": "s2-47",
+        "printed_pages": [
+          "2-19"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "1df188b24e3b2078"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "Jim C K Flaten",
+        "based_on": 4,
+        "at": "2026-10-24T16:13:54+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T16:13:54+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "8df79e44d8b4b521e8f6319127e9014ab389a43b7f2986bd5b91f1c4cb981ef1",
+          "note": "Add a figure"
+        },
+        {
+          "at": "2026-10-24T16:13:56+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "8b116ffc043fc2bbb42ed4c22e2be5002c7e83e52b68f43f5b57e2ae976567f7",
+          "note": "automated checks passed"
+        }
+      ],
+      "visual": {
+        "template": "rlc-circuit",
+        "version": 1,
+        "params": {
+          "source": {
+            "kind": "ac",
+            "frequency_hz": 7000000.0,
+            "show_frequency": false
+          },
+          "topology": "parallel",
+          "components": [
+            {
+              "kind": "L",
+              "value": 2e-06
+            },
+            {
+              "kind": "C",
+              "value": 2.6e-10
+            }
+          ],
+          "label_style": "names"
+        }
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "8b116ffc043fc2bbb42ed4c22e2be5002c7e83e52b68f43f5b57e2ae976567f7",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T16:13:56+00:00"
+      }
     }
   ]
 }

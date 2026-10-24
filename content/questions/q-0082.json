@@ -786,6 +786,213 @@
         },
         "verifier": "deterministic-v1"
       }
+    },
+    {
+      "revision": 5,
+      "status": "needs_review",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 4,
+      "section_ids": [
+        "s4-14"
+      ],
+      "topic_ids": [
+        "frekvenssyntese"
+      ],
+      "learning_objective": "Forstå hvorfor en sender med PLL må sperre sending når sløyfen ikke er låst.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "Frekvensratten på en transceiver med ",
+          {
+            "term": "faselaast-sloyfe",
+            "text": "PLL"
+          },
+          "-",
+          {
+            "term": "frekvenssyntetisator",
+            "text": "syntetisator"
+          },
+          " vris svært raskt, og sløyfen mister låsingen en kort stund."
+        ]
+      ],
+      "stem": [
+        [
+          "Hvorfor bør ",
+          {
+            "term": "sender",
+            "text": "senderen"
+          },
+          " hindre sending så lenge sløyfen ikke er låst?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "VCO-frekvensen er ikke styrt og kan havne utenfor båndet."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Referanseoscillatoren slutter å svinge til sløyfen er låst."
+          ],
+          "feedback": [
+            "Krystalloscillatoren som gir referansen, svinger hele tiden uavhengig av om sløyfen er låst."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Sluttforsterkeren mister forspenningen når sløyfen er ulåst."
+          ],
+          "feedback": [
+            [
+              "PLL-en styrer frekvensen. ",
+              {
+                "term": "forspenning",
+                "text": "Forspenningen"
+              },
+              " i ",
+              {
+                "term": "sluttforsterker",
+                "text": "sluttforsterkeren"
+              },
+              " påvirkes ikke av om sløyfen er låst."
+            ]
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Mikrofonsignalet kobles fra så lenge sløyfen er ulåst."
+          ],
+          "feedback": [
+            "Modulasjonen er ikke problemet. Faren er at senderen sender på en frekvens som ingen styrer."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Når sløyfen er ulåst, sammenligner fasekomparatoren to frekvenser som er helt forskjellige. Styrespenningen til ",
+          {
+            "term": "vco",
+            "text": "VCO-en"
+          },
+          " blir da tilfeldig, og ",
+          {
+            "term": "frekvens",
+            "text": "frekvensen"
+          },
+          " kan svinge langt bort fra ønsket frekvens."
+        ],
+        "Senderen kan da forstyrre andre og sende utenfor amatørbåndene. Derfor bør en låseindikator sperre sending til sløyfen er låst igjen. Gode konstruksjoner begrenser også hvor raskt frekvensen kan endres, slik at låsingen ikke går tapt."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 4,
+        "section_id": "s4-14",
+        "printed_pages": [
+          "4-8"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "7f36d1db693541c5"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "Jim C K Flaten",
+        "based_on": 4,
+        "at": "2026-10-24T16:13:54+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T16:13:54+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "cd29e2c3e2b49efa65c4a5681893d70ef1aee80abee14dda44416558ca30ddf3",
+          "note": "Add a figure"
+        },
+        {
+          "at": "2026-10-24T16:13:56+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "8c309603f618b8f45eafdae6f507c3d1df24e545db48f62842069c410630a861",
+          "note": "automated checks passed"
+        }
+      ],
+      "visual": {
+        "template": "block-diagram",
+        "version": 1,
+        "params": {
+          "chain": [
+            {
+              "kind": "custom",
+              "label": "Referanse"
+            },
+            {
+              "kind": "custom",
+              "label": "Fasekomparator"
+            },
+            {
+              "kind": "lowpass_filter",
+              "label": "Sløyfefilter"
+            },
+            {
+              "kind": "custom",
+              "label": "VCO"
+            },
+            {
+              "kind": "power_amp"
+            },
+            {
+              "kind": "antenna"
+            }
+          ],
+          "side": [
+            {
+              "kind": "custom",
+              "label": "Programmerbar deler ÷N",
+              "into": 1
+            }
+          ]
+        },
+        "caption": "Deleren får signalet sitt fra VCO-en. Den tilbakekoblingen er ikke tegnet."
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "8c309603f618b8f45eafdae6f507c3d1df24e545db48f62842069c410630a861",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: equation. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T16:13:56+00:00"
+      }
     }
   ]
 }

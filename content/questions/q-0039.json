@@ -1119,6 +1119,220 @@
         },
         "verifier": "deterministic-v1"
       }
+    },
+    {
+      "revision": 6,
+      "status": "needs_review",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "easy",
+      "chapter": 2,
+      "section_ids": [
+        "s2-20"
+      ],
+      "topic_ids": [
+        "tidskonstant",
+        "kondensatorer"
+      ],
+      "learning_objective": "Forstå hvorfor høyspente filterkondensatorer skal ha en permanent utladningsmotstand.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En strømforsyning til en rørsender har glattekondensatorer som lades til over ",
+          {
+            "q": 2,
+            "u": "kV"
+          },
+          ". Over ",
+          {
+            "term": "kondensator",
+            "text": "kondensatorene"
+          },
+          " er det koblet en ",
+          {
+            "term": "motstand",
+            "text": "motstand"
+          },
+          " med høy ",
+          {
+            "term": "resistans",
+            "text": "resistans"
+          },
+          " som alltid sitter der."
+        ]
+      ],
+      "stem": [
+        "Hva er hovedhensikten med denne motstanden?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Å lade ut kondensatorene etter at forsyningen er slått av."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Å begrense ladestrømmen når forsyningen slås på."
+          ],
+          "feedback": [
+            [
+              "En motstand ",
+              {
+                "term": "parallellkobling",
+                "text": "i parallell"
+              },
+              " med kondensatoren begrenser ikke ladestrømmen. Det gjør en motstand ",
+              {
+                "term": "seriekobling",
+                "text": "i serie"
+              },
+              "."
+            ]
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Å øke kapasitansen slik at rippelen blir mindre."
+          ],
+          "feedback": [
+            [
+              "En motstand endrer ikke ",
+              {
+                "term": "kapasitans",
+                "text": "kapasitansen"
+              },
+              ". Den gir bare en utladningsvei for ladningen."
+            ]
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Å beskytte kondensatorene mot for høy strøm under sending."
+          ],
+          "feedback": [
+            [
+              "Motstanden har høy resistans og trekker bare en liten strøm; den hindrer ikke store ",
+              {
+                "term": "strom",
+                "text": "strømmer"
+              },
+              " i kondensatorene."
+            ]
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "En ladet kondensator kan holde på ",
+          {
+            "term": "spenning",
+            "text": "spenningen"
+          },
+          " lenge etter at apparatet er slått av. En permanent ",
+          {
+            "term": "utladningsmotstand",
+            "text": "utladningsmotstand"
+          },
+          " gir ",
+          {
+            "term": "ladning",
+            "text": "ladningen"
+          },
+          " en vei å gå, slik at spenningen faller til et ufarlig nivå i løpet av noen tidskonstanter."
+        ],
+        [
+          "Motstanden må tåle ",
+          {
+            "term": "effekt",
+            "text": "effekten"
+          },
+          " som omsettes i den under drift. Selv med en permanent utladningsmotstand må man aldri anta at kondensatorene er utladet. Kontroller spenningen med egnet høyspenningsmåleutstyr, og bruk utstyr og fremgangsmåter som er laget for å lade ut høyspenningskondensatorer. Direkte kortslutning er ingen sikker generell fremgangsmåte."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 2,
+        "section_id": "s2-20",
+        "printed_pages": [
+          "2-8"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "1d41613b789a2b76",
+          "fe9c6b3763b81a79"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "Jim C K Flaten",
+        "based_on": 5,
+        "at": "2026-10-24T16:13:54+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T16:13:54+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "d55bd1952af5e6890ab9c62401b06b8893965389461d19f990af9c219fce1733",
+          "note": "Add a figure"
+        },
+        {
+          "at": "2026-10-24T16:13:56+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "525ce31e45711ec98b6cfd6448e453fb0a1e87cd6b2652301462fd5c63e4d772",
+          "note": "automated checks passed"
+        }
+      ],
+      "visual": {
+        "template": "rectifier",
+        "version": 1,
+        "params": {
+          "kind": "bridge",
+          "source": {
+            "show_value": false
+          },
+          "capacitor": true,
+          "load": true,
+          "load_name": "R"
+        },
+        "caption": "R er motstanden som alltid sitter over glattekondensatoren."
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "525ce31e45711ec98b6cfd6448e453fb0a1e87cd6b2652301462fd5c63e4d772",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: equation. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T16:13:56+00:00"
+      }
     }
   ]
 }

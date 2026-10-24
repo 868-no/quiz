@@ -390,6 +390,208 @@
         },
         "verifier": "deterministic-v1"
       }
+    },
+    {
+      "revision": 3,
+      "status": "needs_review",
+      "type": "single_choice",
+      "style": "recall",
+      "difficulty": "easy",
+      "chapter": 6,
+      "section_ids": [
+        "s6-04"
+      ],
+      "topic_ids": [
+        "mottakeregenskaper"
+      ],
+      "learning_objective": "Velge passende mottakerbåndbredde for SSB-tale.",
+      "priority": "exam_important",
+      "context": [],
+      "stem": [
+        [
+          "Hvilken ",
+          {
+            "term": "baandbredde",
+            "text": "båndbredde"
+          },
+          " i ",
+          {
+            "term": "mellomfrekvens",
+            "text": "MF"
+          },
+          "-",
+          {
+            "term": "filter",
+            "text": "filteret"
+          },
+          " passer best når du skal ta imot ",
+          {
+            "term": "ssb",
+            "text": "SSB"
+          },
+          "-tale?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Omtrent ",
+            {
+              "q": 2.4,
+              "u": "kHz"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Omtrent ",
+            {
+              "q": 500,
+              "u": "Hz"
+            }
+          ],
+          "feedback": [
+            "Så smale filtre er typiske for morsetelegrafi (CW). For tale blir mange av lydfrekvensene kuttet bort."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Omtrent ",
+            {
+              "q": 6,
+              "u": "kHz"
+            }
+          ],
+          "feedback": [
+            [
+              "Det passer for ",
+              {
+                "term": "amplitudemodulasjon",
+                "text": "AM"
+              },
+              " med to ",
+              {
+                "term": "sidebaand",
+                "text": "sidebånd"
+              },
+              ". For SSB slipper det inn unødvendig mye støy og nabosignaler."
+            ]
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Omtrent ",
+            {
+              "q": 15,
+              "u": "kHz"
+            }
+          ],
+          "feedback": [
+            [
+              "Så stor båndbredde hører hjemme ved smalbånds-",
+              {
+                "term": "frekvensmodulasjon",
+                "text": "FM"
+              },
+              ". For SSB blir ",
+              {
+                "term": "selektivitet",
+                "text": "selektiviteten"
+              },
+              " svært dårlig."
+            ]
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Filteret bør være omtrent like bredt som signalet som sendes. Et SSB-signal med tale tar opp et par kilohertz, så et filter på rundt 2,4–2,7 kHz slipper gjennom det som trengs.",
+        "Et bredere filter slipper også inn støy og stasjoner like ved. Et smalere filter gir bedre selektivitet, men kutter deler av talen. Ved kraftig forstyrrelse kan et litt for smalt filter likevel være et brukbart kompromiss."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 6,
+        "section_id": "s6-04",
+        "printed_pages": [
+          "6-1",
+          "6-2"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "ee9c6008753ad14e"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "Jim C K Flaten",
+        "based_on": 2,
+        "at": "2026-10-24T16:13:55+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T16:13:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "edd1efabb5faadf4786ad3044fa5c352d4610c75eaa1182ac4d35e06a0662ea3",
+          "note": "Add a figure"
+        },
+        {
+          "at": "2026-10-24T16:13:56+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "ebb3f6591a0a7ff11e778cec7dfb91f741c52a50ede223078cd44791298364c9",
+          "note": "automated checks passed"
+        }
+      ],
+      "visual": {
+        "template": "frequency-response",
+        "version": 1,
+        "params": {
+          "kind": "filter",
+          "blank": true,
+          "note": "Filterkurven vises når du har svart",
+          "filters": [
+            {
+              "bw6_hz": 2400,
+              "bw60_hz": 4300,
+              "bw60_label": "none"
+            }
+          ]
+        },
+        "params_after": {
+          "blank": false
+        }
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "ebb3f6591a0a7ff11e778cec7dfb91f741c52a50ede223078cd44791298364c9",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T16:13:56+00:00"
+      }
     }
   ]
 }

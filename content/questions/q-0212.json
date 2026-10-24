@@ -279,6 +279,277 @@
         },
         "verifier": "deterministic-v1"
       }
+    },
+    {
+      "revision": 2,
+      "status": "needs_review",
+      "type": "single_choice",
+      "style": "calculation",
+      "difficulty": "medium",
+      "chapter": 6,
+      "section_ids": [
+        "s6-19"
+      ],
+      "topic_ids": [
+        "demodulering"
+      ],
+      "learning_objective": "Bruke Carsons regel til å finne båndbredden et FM-signal trenger i mottakeren.",
+      "priority": "normal",
+      "context": [
+        [
+          "En ",
+          {
+            "term": "frekvensmodulasjon",
+            "text": "FM"
+          },
+          "-mottaker for amatørsamband skal ta imot signaler med ",
+          {
+            "term": "deviasjon",
+            "text": "spissdeviasjon"
+          },
+          " ",
+          {
+            "q": 5,
+            "u": "kHz"
+          },
+          ". Den høyeste lydfrekvensen er ",
+          {
+            "q": 3,
+            "u": "kHz"
+          },
+          "."
+        ]
+      ],
+      "stem": [
+        [
+          "Hvor stor ",
+          {
+            "term": "baandbredde",
+            "text": "båndbredde"
+          },
+          " må ",
+          {
+            "term": "mellomfrekvens",
+            "text": "MF"
+          },
+          "-filteret omtrent slippe gjennom etter ",
+          {
+            "term": "carsons-regel",
+            "text": "Carsons regel"
+          },
+          "?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 16,
+              "u": "kHz"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 8,
+              "u": "kHz"
+            }
+          ],
+          "feedback": [
+            "Her er deviasjonen og lydfrekvensen lagt sammen, men ikke doblet. Signalet brer seg ut på begge sider av senterfrekvensen."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 10,
+              "u": "kHz"
+            }
+          ],
+          "feedback": [
+            [
+              "Det er bare det dobbelte av deviasjonen. ",
+              {
+                "term": "sidebaand",
+                "text": "Sidebåndene"
+              },
+              " fra lydfrekvensen kommer i tillegg."
+            ]
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 6,
+              "u": "kHz"
+            }
+          ],
+          "feedback": [
+            [
+              "Det er båndbredden et ",
+              {
+                "term": "amplitudemodulasjon",
+                "text": "AM"
+              },
+              "-signal med samme lyd ville trengt. FM trenger mer fordi frekvensen også svinger med deviasjonen."
+            ]
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          {
+            "math": [
+              "B",
+              "≈",
+              "2",
+              "·",
+              {
+                "paren": [
+                  "Δf",
+                  "+",
+                  "f_mod"
+                ]
+              },
+              "=",
+              "2",
+              "·",
+              {
+                "paren": [
+                  {
+                    "q": 5,
+                    "u": "kHz"
+                  },
+                  "+",
+                  {
+                    "q": 3,
+                    "u": "kHz"
+                  }
+                ]
+              },
+              "=",
+              {
+                "q": 16,
+                "u": "kHz"
+              }
+            ]
+          }
+        ],
+        [
+          "Carsons regel tar med nesten all effekten i signalet. Er MF-",
+          {
+            "term": "filter",
+            "text": "filteret"
+          },
+          " smalere, blir lyden forvrengt ved de største frekvensutslagene. Er det mye bredere, slipper det inn unødig mye støy."
+        ],
+        [
+          "FM-",
+          {
+            "term": "demodulator",
+            "text": "detektoren"
+          },
+          " gjør deretter frekvensendringene om til en spenning som varierer i takt med lyden."
+        ]
+      ],
+      "glossary_after_answer": [
+        "carsons-regel"
+      ],
+      "calculation": {
+        "formula": "fm_carson_bandwidth",
+        "inputs": {
+          "deviation": [
+            5,
+            "kHz"
+          ],
+          "f_mod": [
+            3,
+            "kHz"
+          ]
+        },
+        "answer": [
+          16,
+          "kHz"
+        ],
+        "answer_symbol": "B",
+        "sig_figs": 2
+      },
+      "study_reference": {
+        "chapter": 6,
+        "section_id": "s6-19",
+        "printed_pages": [
+          "6-11"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "69f923c0729dc7e6"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "Jim C K Flaten",
+        "based_on": 1,
+        "at": "2026-10-24T16:13:55+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T16:13:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "2202a4882935a67066694fa0974373702bfc7502c7eeddef0aa8be5fc20dbb72",
+          "note": "Add a figure"
+        },
+        {
+          "at": "2026-10-24T16:14:02+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "f62e2131ab585ade50feb816a54b2149ab14d02a2ad1ecea881672eab1f474de",
+          "note": "automated checks passed"
+        }
+      ],
+      "visual": {
+        "template": "frequency-response",
+        "version": 1,
+        "params": {
+          "kind": "spectrum",
+          "center_hz": 145500000.0,
+          "spectrum": {
+            "mode": "fm",
+            "mod_hz": 3000,
+            "index": 1.6666666666666667,
+            "freq_labels": "none",
+            "spacing_label": true
+          }
+        },
+        "caption": "Spekteret til signalet, regnet ut fra tonen og deviasjonen i oppgaven."
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "f62e2131ab585ade50feb816a54b2149ab14d02a2ad1ecea881672eab1f474de",
+        "errors": [],
+        "warnings": [],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T16:14:02+00:00"
+      }
     }
   ]
 }
