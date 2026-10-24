@@ -542,16 +542,17 @@ def _fr_quantities(p: dict[str, Any]) -> dict[str, dict[str, Any]]:
     return q
 
 
-# --- pi-network -------------------------------------------------------------------
+# --- pi-network, ratio-detector ----------------------------------------------------
 
-def _pi_rules(p: dict[str, Any], errors: list[str]) -> None:
+def _no_rules(p: dict[str, Any], errors: list[str]) -> None:
     pass  # every combination of the parameters can be drawn
 
 
 RULES = {"dc-circuit": _dc_rules, "ac-circuit": _ac_rules, "waveform": _wave_rules, "block-diagram": _block_rules,
          "rlc-circuit": _rlc_rules, "rectifier": _rect_rules, "transformer": _tr_rules, "transistor-stage": _ts_rules,
          "series-regulator": _reg_rules, "zener-regulator": _zen_rules,
-         "frequency-response": _fr_rules, "pi-network": _pi_rules}
+         "frequency-response": _fr_rules, "pi-network": _no_rules,
+         "ratio-detector": _no_rules}
 QUANTITIES = {"dc-circuit": _dc_quantities, "ac-circuit": _ac_quantities, "waveform": _wave_quantities,
               "rlc-circuit": _rlc_quantities, "rectifier": _rect_quantities, "transformer": _tr_quantities,
               "transistor-stage": _ts_quantities, "series-regulator": _reg_quantities, "zener-regulator": _zen_quantities,

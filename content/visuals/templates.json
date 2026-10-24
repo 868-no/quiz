@@ -1393,6 +1393,36 @@
           "note": "Reviewed rendered figure for q-0171"
         }
       ]
+    },
+    {
+      "id": "ratio-detector",
+      "version": 1,
+      "title": "Forholdsdetektor",
+      "description": "Simplified ratio detector (FM demodulator): tuned MF transformer with a centre-tapped secondary, two diodes the same way round the loop charging C3 and C4 (U1, U2), a large capacitor Cs across both, R1/R2 with their middle to ground, LF output between the C3/C4 junction and ground. show_curve adds the S-curve (output against frequency, through zero at f0), typically only after answering.",
+      "idealised": "Forenklet koblingsskjema uten komponentverdier. Tertiærviklingen som mange forholdsdetektorer har, er utelatt.",
+      "status": "approved",
+      "params": {
+        "type": "object",
+        "properties": {
+          "input_label": {
+            "type": "string",
+            "maxLength": 24,
+            "default": "fra MF-forsterkeren"
+          },
+          "show_curve": {
+            "type": "boolean",
+            "default": false
+          }
+        }
+      },
+      "review_log": [
+        {
+          "at": "2026-10-24T16:08:33+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Reviewed rendered figure for q-0117 (before and after answering)"
+        }
+      ]
     }
   ]
 }

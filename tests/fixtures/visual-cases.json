@@ -1934,6 +1934,42 @@
           "mark": "r1"
         }
       }
+    },
+    {
+      "name": "ratio detector, schematic only",
+      "valid": true,
+      "visual": {
+        "template": "ratio-detector",
+        "version": 1,
+        "params": {}
+      },
+      "quantities": {},
+      "shown": {}
+    },
+    {
+      "name": "ratio detector with its S-curve",
+      "valid": true,
+      "visual": {
+        "template": "ratio-detector",
+        "version": 1,
+        "params": {
+          "show_curve": true
+        }
+      },
+      "quantities": {},
+      "shown": {}
+    },
+    {
+      "name": "ratio detector rejects unknown parameters",
+      "valid": false,
+      "error": "unknown parameter",
+      "visual": {
+        "template": "ratio-detector",
+        "version": 1,
+        "params": {
+          "variant": "foster-seeley"
+        }
+      }
     }
   ]
 }

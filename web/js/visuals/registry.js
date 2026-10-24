@@ -16,9 +16,10 @@ import seriesRegulator from './series-regulator.js';
 import zenerRegulator from './zener-regulator.js';
 import frequencyResponse from './frequency-response.js';
 import piNetwork from './pi-network.js';
+import ratioDetector from './ratio-detector.js';
 
 export const IMPLEMENTATIONS = new Map(
-  [dcCircuit, acCircuit, waveform, blockDiagram, rlcCircuit, rectifier, transformer, transistorStage, seriesRegulator, zenerRegulator, frequencyResponse, piNetwork]
+  [dcCircuit, acCircuit, waveform, blockDiagram, rlcCircuit, rectifier, transformer, transistorStage, seriesRegulator, zenerRegulator, frequencyResponse, piNetwork, ratioDetector]
     .map((m) => [`${m.id}@${m.version}`, m]),
 );
 
