@@ -267,7 +267,7 @@
     },
     {
       "revision": 2,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "calculation",
@@ -533,6 +533,15 @@
             "figures",
             "ocr"
           ]
+        },
+        {
+          "at": "2026-10-24T00:26:30+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "420f950e04b45bba530420bc34dbd6cde5a29cb88371a6b892fd32c2488292fc",
+          "note": "superseded by r3"
         }
       ],
       "checks": {
@@ -551,12 +560,337 @@
           }
         ],
         "passed": true,
-        "at": "2026-10-23T20:55:01+00:00"
+        "at": "2026-10-24T00:20:49+00:00"
       },
       "approval": {
         "by": "Jim C K Flaten",
         "at": "2026-10-23T20:43:49+00:00",
         "content_sha256": "420f950e04b45bba530420bc34dbd6cde5a29cb88371a6b892fd32c2488292fc",
+        "acknowledged_hazards": [
+          "figures",
+          "ocr"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 3,
+      "status": "approved",
+      "type": "single_choice",
+      "style": "calculation",
+      "difficulty": "medium",
+      "chapter": 3,
+      "section_ids": [
+        "s3-32"
+      ],
+      "topic_ids": [
+        "regulert-stromforsyning"
+      ],
+      "learning_objective": "Beregne effekttapet i seriepasstransistoren i en regulert strømforsyning.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En ",
+          {
+            "term": "spenningsregulator",
+            "text": "spenningsregulator"
+          },
+          " med en ",
+          {
+            "term": "seriekobling",
+            "text": "seriekoblet"
+          },
+          " passtransistor får ",
+          {
+            "q": 18,
+            "u": "V"
+          },
+          " fra ",
+          {
+            "term": "likeretter",
+            "text": "likeretteren"
+          },
+          " og glattekondensatoren. Utgangsspenningen er ",
+          {
+            "q": 13.8,
+            "u": "V"
+          },
+          " og laststrømmen er ",
+          {
+            "q": 1.5,
+            "u": "A"
+          },
+          ". Se bort fra ",
+          {
+            "term": "strom",
+            "text": "strømmen"
+          },
+          " i styrekretsen og rippel på inngangen."
+        ]
+      ],
+      "stem": [
+        [
+          "Hvor stor ",
+          {
+            "term": "effekt",
+            "text": "effekt"
+          },
+          " avgis som varme i passtransistoren?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 6.3,
+              "u": "W"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 27,
+              "u": "W"
+            }
+          ],
+          "feedback": [
+            [
+              "Her er hele inngangsspenningen brukt. Det er bare forskjellen mellom inngang og utgang som ligger over ",
+              {
+                "term": "transistor",
+                "text": "transistoren"
+              },
+              "."
+            ]
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 20.7,
+              "u": "W"
+            }
+          ],
+          "feedback": [
+            "Det er effekten som leveres til lasten. Transistoren tar bare spenningsforskjellen mellom inngang og utgang."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 2.8,
+              "u": "W"
+            }
+          ],
+          "feedback": [
+            "Her er spenningen delt på strømmen. Effekt er spenning ganger strøm."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Hele laststrømmen går gjennom passtransistoren, og ",
+          {
+            "term": "spenning",
+            "text": "spenningen"
+          },
+          " over den er forskjellen mellom inngangs- og utgangsspenningen:"
+        ],
+        {
+          "steps": [
+            [
+              {
+                "math": [
+                  "U",
+                  "=",
+                  {
+                    "q": 18,
+                    "u": "V"
+                  },
+                  "−",
+                  {
+                    "q": 13.8,
+                    "u": "V"
+                  },
+                  "=",
+                  {
+                    "q": 4.2,
+                    "u": "V"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "math": [
+                  "P",
+                  "=",
+                  "U",
+                  "·",
+                  "I",
+                  "=",
+                  {
+                    "q": 4.2,
+                    "u": "V"
+                  },
+                  "·",
+                  {
+                    "q": 1.5,
+                    "u": "A"
+                  },
+                  "=",
+                  {
+                    "q": 6.3,
+                    "u": "W"
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        [
+          "Så mye varme krever en effekttransistor på kjøleribbe. En styretransistor sammenligner en del av utgangsspenningen med en referansespenning fra en ",
+          {
+            "term": "zenerdiode",
+            "text": "zenerdiode"
+          },
+          " og justerer basisstrømmen til passtransistoren slik at utgangen holdes konstant."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "calculation": {
+        "formula": "power_ui",
+        "inputs": {
+          "U": [
+            4.2,
+            "V"
+          ],
+          "I": [
+            1.5,
+            "A"
+          ]
+        },
+        "answer": [
+          6.3,
+          "W"
+        ],
+        "answer_symbol": "P",
+        "sig_figs": 2,
+        "visual_bindings": {
+          "U": "U_pass",
+          "I": "I_L",
+          "P": "P_pass"
+        }
+      },
+      "study_reference": {
+        "chapter": 3,
+        "section_id": "s3-32",
+        "printed_pages": [
+          "3-14",
+          "3-15"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "c9e2b205485892a1",
+          "3d6505714c5f689a"
+        ]
+      },
+      "tags": [],
+      "visual": {
+        "template": "series-regulator",
+        "version": 1,
+        "params": {
+          "u_in_v": 18,
+          "u_out_v": 13.8,
+          "i_load_a": 1.5,
+          "unknown": [
+            "P_pass"
+          ],
+          "input_capacitor": true
+        }
+      },
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "AI-assistent (Claude), figurer",
+        "based_on": 2,
+        "at": "2026-10-24T00:22:00+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T00:22:00+00:00",
+          "actor": "AI-assistent (Claude), figurer",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "f9bcd06bfed4ca5dd328ecdadd442917ba6c82b4a9722c690a6f1788cce11012",
+          "note": "figur lagt til (teksten uendret)"
+        },
+        {
+          "at": "2026-10-24T00:22:01+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "f9bcd06bfed4ca5dd328ecdadd442917ba6c82b4a9722c690a6f1788cce11012",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T00:26:30+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "f9bcd06bfed4ca5dd328ecdadd442917ba6c82b4a9722c690a6f1788cce11012",
+          "note": "Figure added (text unchanged)",
+          "acknowledged": [
+            "figures",
+            "ocr"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "f9bcd06bfed4ca5dd328ecdadd442917ba6c82b4a9722c690a6f1788cce11012",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: equation. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T00:26:30+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T00:26:30+00:00",
+        "content_sha256": "f9bcd06bfed4ca5dd328ecdadd442917ba6c82b4a9722c690a6f1788cce11012",
         "acknowledged_hazards": [
           "figures",
           "ocr"

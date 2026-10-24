@@ -1,8 +1,8 @@
 {
   "schema": 1,
   "mode": "production",
-  "built_at": "2026-10-23T20:58:41+00:00",
-  "bank_id": "33f272944f0bd69c",
+  "built_at": "2026-10-24T00:26:35+00:00",
+  "bank_id": "9466f9773c046647",
   "book": {
     "title": "Veien til internasjonal radioamatørlisens"
   },
@@ -2538,8 +2538,7 @@
             "items": {
               "type": "object",
               "required": [
-                "kind",
-                "value"
+                "kind"
               ],
               "properties": {
                 "kind": {
@@ -2553,11 +2552,19 @@
                 "value": {
                   "type": "number",
                   "minimum": 1e-15,
-                  "maximum": 100000000.0
+                  "maximum": 100000000.0,
+                  "nullable": true
                 },
                 "show_value": {
                   "type": "boolean",
                   "default": true
+                },
+                "reactance_ohms": {
+                  "type": "number",
+                  "minimum": 0.001,
+                  "maximum": 1000000000.0,
+                  "nullable": true,
+                  "unit": "Ω"
                 }
               }
             }
@@ -2579,9 +2586,61 @@
             "type": "string",
             "enum": [
               "values",
-              "names"
+              "names",
+              "source"
             ],
             "default": "values"
+          }
+        }
+      }
+    },
+    "series-regulator@1": {
+      "id": "series-regulator",
+      "version": 1,
+      "title": "Spenningsregulator med serietransistor",
+      "idealised": "Forenklet koblingsskjema av en lineær spenningsregulator.",
+      "params": {
+        "type": "object",
+        "properties": {
+          "u_in_v": {
+            "type": "number",
+            "minimum": 0.1,
+            "maximum": 1000,
+            "unit": "V",
+            "nullable": true
+          },
+          "u_out_v": {
+            "type": "number",
+            "minimum": 0.1,
+            "maximum": 1000,
+            "unit": "V",
+            "nullable": true
+          },
+          "i_load_a": {
+            "type": "number",
+            "minimum": 1e-06,
+            "maximum": 100,
+            "unit": "A",
+            "nullable": true
+          },
+          "unknown": {
+            "type": "array",
+            "maxItems": 5,
+            "default": [],
+            "items": {
+              "type": "string",
+              "enum": [
+                "U_in",
+                "U_out",
+                "I_L",
+                "U_pass",
+                "P_pass"
+              ]
+            }
+          },
+          "input_capacitor": {
+            "type": "boolean",
+            "default": false
           }
         }
       }
@@ -8265,7 +8324,7 @@
     },
     {
       "id": "q-0035",
-      "rev": 2,
+      "rev": 3,
       "chapter": 2,
       "sections": [
         "s2-17"
@@ -8404,7 +8463,26 @@
           ". Velg derfor en type som er spesifisert for vekselspenning, med god margin. Kondensatorer som kobles direkte på lysnettet, må i tillegg være sikkerhetsgodkjente for det (X- eller Y-klasse). Overspenning kan ødelegge kondensatoren og gi følgeskader på andre komponenter."
         ]
       ],
-      "visual": null,
+      "visual": {
+        "template": "rlc-circuit",
+        "version": 1,
+        "params": {
+          "source": {
+            "kind": "ac",
+            "frequency_hz": 50,
+            "voltage_v": 24,
+            "show_frequency": false
+          },
+          "topology": "series",
+          "components": [
+            {
+              "kind": "C",
+              "value": 1e-06
+            }
+          ],
+          "label_style": "source"
+        }
+      },
       "glossary_after_answer": [],
       "ref": {
         "chapter": 2,
@@ -9774,7 +9852,7 @@
     },
     {
       "id": "q-0045",
-      "rev": 2,
+      "rev": 3,
       "chapter": 2,
       "sections": [
         "s2-38"
@@ -9955,7 +10033,27 @@
         },
         "Impedansen er alltid større enn både R og X alene, men mindre enn summen av dem."
       ],
-      "visual": null,
+      "visual": {
+        "template": "rlc-circuit",
+        "version": 1,
+        "params": {
+          "topology": "series",
+          "components": [
+            {
+              "kind": "R",
+              "value": 30
+            },
+            {
+              "kind": "C",
+              "reactance_ohms": 40
+            }
+          ],
+          "total_label": "unknown"
+        },
+        "params_after": {
+          "total_label": "value"
+        }
+      },
       "glossary_after_answer": [],
       "ref": {
         "chapter": 2,
@@ -14055,7 +14153,7 @@
     },
     {
       "id": "q-0075",
-      "rev": 2,
+      "rev": 3,
       "chapter": 3,
       "sections": [
         "s3-32"
@@ -14244,7 +14342,19 @@
           " og justerer basisstrømmen til passtransistoren slik at utgangen holdes konstant."
         ]
       ],
-      "visual": null,
+      "visual": {
+        "template": "series-regulator",
+        "version": 1,
+        "params": {
+          "u_in_v": 18,
+          "u_out_v": 13.8,
+          "i_load_a": 1.5,
+          "unknown": [
+            "P_pass"
+          ],
+          "input_capacitor": true
+        }
+      },
       "glossary_after_answer": [],
       "ref": {
         "chapter": 3,

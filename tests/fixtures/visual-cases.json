@@ -1177,6 +1177,184 @@
     "L": false,
     "f": false
    }
+  },
+  {
+   "name": "rlc reactance given directly: impedance without a source",
+   "valid": true,
+   "visual": {
+    "template": "rlc-circuit",
+    "version": 1,
+    "params": {
+     "topology": "series",
+     "components": [
+      {
+       "kind": "R",
+       "value": 30
+      },
+      {
+       "kind": "C",
+       "reactance_ohms": 40
+      }
+     ],
+     "total_label": "unknown"
+    }
+   },
+   "quantities": {
+    "X_C": 40,
+    "Z": 50,
+    "R": 30
+   },
+   "shown": {
+    "X_C": true,
+    "Z": false,
+    "R": true
+   }
+  },
+  {
+   "name": "rlc source label style shows the source, not the components",
+   "valid": true,
+   "visual": {
+    "template": "rlc-circuit",
+    "version": 1,
+    "params": {
+     "source": {
+      "kind": "ac",
+      "frequency_hz": 50,
+      "voltage_v": 24,
+      "show_frequency": false
+     },
+     "topology": "series",
+     "components": [
+      {
+       "kind": "C",
+       "value": 1e-06
+      }
+     ],
+     "label_style": "source"
+    }
+   },
+   "quantities": {
+    "U": 24
+   },
+   "shown": {
+    "U": true,
+    "f": false,
+    "C": false
+   }
+  },
+  {
+   "name": "rlc component without value or reactance",
+   "valid": false,
+   "error": "value or a reactance",
+   "visual": {
+    "template": "rlc-circuit",
+    "version": 1,
+    "params": {
+     "topology": "series",
+     "components": [
+      {
+       "kind": "C"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "name": "rlc resistor cannot have a reactance",
+   "valid": false,
+   "error": "no reactance",
+   "visual": {
+    "template": "rlc-circuit",
+    "version": 1,
+    "params": {
+     "topology": "series",
+     "components": [
+      {
+       "kind": "R",
+       "value": 10,
+       "reactance_ohms": 5
+      }
+     ]
+    }
+   }
+  },
+  {
+   "name": "rlc mixed total needs known reactances",
+   "valid": false,
+   "error": "known reactances",
+   "visual": {
+    "template": "rlc-circuit",
+    "version": 1,
+    "params": {
+     "topology": "series",
+     "components": [
+      {
+       "kind": "R",
+       "value": 10
+      },
+      {
+       "kind": "C",
+       "value": 1e-06
+      }
+     ],
+     "total_label": "unknown"
+    }
+   }
+  },
+  {
+   "name": "regulator pass transistor power",
+   "valid": true,
+   "visual": {
+    "template": "series-regulator",
+    "version": 1,
+    "params": {
+     "u_in_v": 18,
+     "u_out_v": 13.8,
+     "i_load_a": 1.5,
+     "unknown": [
+      "P_pass"
+     ],
+     "input_capacitor": true
+    }
+   },
+   "quantities": {
+    "U_pass": 4.2,
+    "P_pass": 6.3,
+    "U_in": 18
+   },
+   "shown": {
+    "U_in": true,
+    "P_pass": false,
+    "U_pass": false
+   }
+  },
+  {
+   "name": "regulator output must be below input",
+   "valid": false,
+   "error": "lower than its input",
+   "visual": {
+    "template": "series-regulator",
+    "version": 1,
+    "params": {
+     "u_in_v": 10,
+     "u_out_v": 12
+    }
+   }
+  },
+  {
+   "name": "regulator unknown needs a value",
+   "valid": false,
+   "error": "no value",
+   "visual": {
+    "template": "series-regulator",
+    "version": 1,
+    "params": {
+     "u_in_v": 10,
+     "unknown": [
+      "I_L"
+     ]
+    }
+   }
   }
  ]
 }

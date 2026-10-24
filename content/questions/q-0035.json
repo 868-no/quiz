@@ -201,7 +201,7 @@
     },
     {
       "revision": 2,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "scenario",
@@ -393,6 +393,15 @@
           "content_sha256": "5cbce048d6b671a913af1bb7cd899c0e0b151b73a26f433791b7c98c428e1030",
           "note": "Godkjent av redaktør: kun nye ordforklaringslenker (automatisk lenking, kontrollert for svarlekkasje), teksten er uendret fra forrige godkjente versjon. Sidehenvisninger er fortsatt ikke kontrollert mot trykt bok.",
           "acknowledged": []
+        },
+        {
+          "at": "2026-10-24T00:26:29+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "5cbce048d6b671a913af1bb7cd899c0e0b151b73a26f433791b7c98c428e1030",
+          "note": "superseded by r3"
         }
       ],
       "checks": {
@@ -402,12 +411,253 @@
         "warnings": [],
         "hazards": [],
         "passed": true,
-        "at": "2026-10-23T20:55:01+00:00"
+        "at": "2026-10-24T00:20:48+00:00"
       },
       "approval": {
         "by": "Jim C K Flaten",
         "at": "2026-10-23T20:43:47+00:00",
         "content_sha256": "5cbce048d6b671a913af1bb7cd899c0e0b151b73a26f433791b7c98c428e1030",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 3,
+      "status": "approved",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "medium",
+      "chapter": 2,
+      "section_ids": [
+        "s2-17"
+      ],
+      "topic_ids": [
+        "kondensatorer",
+        "vekselstromsverdier"
+      ],
+      "learning_objective": "Vite at en kondensator på vekselspenning må tåle toppverdien, ikke bare effektivverdien.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En ",
+          {
+            "term": "kondensator",
+            "text": "kondensator"
+          },
+          " skal kobles over sekundærsiden til en ",
+          {
+            "term": "transformator",
+            "text": "transformator"
+          },
+          ", som gir en sinusformet ",
+          {
+            "term": "spenning",
+            "text": "spenning"
+          },
+          " på ",
+          {
+            "q": 24,
+            "u": "V"
+          },
+          " ",
+          {
+            "term": "effektivverdi",
+            "text": "effektivverdi"
+          },
+          "."
+        ]
+      ],
+      "stem": [
+        "Hva må du særlig passe på når du velger kondensator?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Den må være beregnet for vekselspenning og tåle toppverdien på ca. 34 V med god margin."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Det holder at den er merket for 24 V likespenning."
+          ],
+          "feedback": [
+            "Spenningen over kondensatoren når toppverdien, ca. 34 V. En kondensator merket 24 V likespenning er derfor for svak, og mange typer tåler dessuten vekselspenning dårligere enn likespenning."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Spenningsangivelsen er uten betydning ved vekselspenning, bare kapasitansen teller."
+          ],
+          "feedback": [
+            "Arbeidsspenningen gjelder alltid. Overskrides den, kan dielektrikumet slå gjennom og kondensatoren ødelegges."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Den holder med en kondensator for ca. 12 V, fordi spenningen er positiv bare halve tiden."
+          ],
+          "feedback": [
+            "Spenningen veksler retning, men hver halvperiode når den toppverdien på ca. 34 V. Kondensatoren må tåle dette i begge retninger."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "En kondensator har en oppgitt ",
+          {
+            "term": "arbeidsspenning",
+            "text": "arbeidsspenning"
+          },
+          " som ikke må overskrides. For sinusformet ",
+          {
+            "term": "vekselspenning",
+            "text": "vekselspenning"
+          },
+          " er ",
+          {
+            "term": "toppverdi",
+            "text": "toppverdien"
+          },
+          " √2 ganger effektivverdien:"
+        ],
+        {
+          "steps": [
+            [
+              {
+                "math": [
+                  "U_p",
+                  "=",
+                  {
+                    "sqrt": [
+                      "2"
+                    ]
+                  },
+                  "·",
+                  {
+                    "q": 24,
+                    "u": "V"
+                  },
+                  "≈",
+                  {
+                    "q": 34,
+                    "u": "V"
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        [
+          "Mange kondensatorer tåler spisspenning fra vekselspenning dårligere enn tilsvarende ",
+          {
+            "term": "likespenning",
+            "text": "likespenning"
+          },
+          ". Velg derfor en type som er spesifisert for vekselspenning, med god margin. Kondensatorer som kobles direkte på lysnettet, må i tillegg være sikkerhetsgodkjente for det (X- eller Y-klasse). Overspenning kan ødelegge kondensatoren og gi følgeskader på andre komponenter."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 2,
+        "section_id": "s2-17",
+        "printed_pages": [
+          "2-7"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "e0cb4ecee216bb6a"
+        ]
+      },
+      "tags": [],
+      "visual": {
+        "template": "rlc-circuit",
+        "version": 1,
+        "params": {
+          "source": {
+            "kind": "ac",
+            "frequency_hz": 50,
+            "voltage_v": 24,
+            "show_frequency": false
+          },
+          "topology": "series",
+          "components": [
+            {
+              "kind": "C",
+              "value": 1e-06
+            }
+          ],
+          "label_style": "source"
+        }
+      },
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "AI-assistent (Claude), figurer",
+        "based_on": 2,
+        "at": "2026-10-24T00:22:00+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T00:22:00+00:00",
+          "actor": "AI-assistent (Claude), figurer",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "c9ff5d68f6a6e56993c556ed5c15f40cfcfd65e4bcf5e50ec920b3f7274cca35",
+          "note": "figur lagt til (teksten uendret)"
+        },
+        {
+          "at": "2026-10-24T00:22:01+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "c9ff5d68f6a6e56993c556ed5c15f40cfcfd65e4bcf5e50ec920b3f7274cca35",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T00:26:29+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "c9ff5d68f6a6e56993c556ed5c15f40cfcfd65e4bcf5e50ec920b3f7274cca35",
+          "note": "Figure added (text unchanged)",
+          "acknowledged": []
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "c9ff5d68f6a6e56993c556ed5c15f40cfcfd65e4bcf5e50ec920b3f7274cca35",
+        "errors": [],
+        "warnings": [],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T00:26:29+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T00:26:29+00:00",
+        "content_sha256": "c9ff5d68f6a6e56993c556ed5c15f40cfcfd65e4bcf5e50ec920b3f7274cca35",
         "acknowledged_hazards": [],
         "checklist": {
           "one_correct": true,

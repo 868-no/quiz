@@ -123,12 +123,16 @@ export function component(kind, cx, cy, horizontal = false) {
  * Diode centred at (cx, cy); conducts (anode → cathode) in direction `deg`
  * (0 = towards +x, 90 = towards +y). IEC: triangle pointing at the cathode bar.
  */
-export function diode(cx, cy, deg = 0, size = 12) {
+export function diode(cx, cy, deg = 0, size = 12, zener = false) {
   const s = size;
-  return rotated(h('g', { class: 'diode' },
+  const bx = cx + s * 0.7;
+  return rotated(h('g', { class: zener ? 'diode zener' : 'diode' },
     h('rect', { x: cx - s - 2, y: cy - s - 2, width: 2 * s + 4, height: 2 * s + 4, fill: 'var(--fig-bg)', stroke: 'none' }),
-    h('polygon', { points: `${cx - s},${cy - s} ${cx - s},${cy + s} ${cx + s * 0.7},${cy}`, fill: 'var(--fig-bg)', stroke: STROKE, 'stroke-width': 2, 'stroke-linejoin': 'round' }),
-    line(cx + s * 0.7, cy - s, cx + s * 0.7, cy + s, { 'stroke-width': 2.5 })), cx, cy, deg);
+    h('polygon', { points: `${cx - s},${cy - s} ${cx - s},${cy + s} ${bx},${cy}`, fill: 'var(--fig-bg)', stroke: STROKE, 'stroke-width': 2, 'stroke-linejoin': 'round' }),
+    line(bx, cy - s, bx, cy + s, { 'stroke-width': 2.5 }),
+    // zener: the cathode bar has bent ends
+    zener ? line(bx, cy - s, bx - 5, cy - s - 3, { 'stroke-width': 2.5 }) : null,
+    zener ? line(bx, cy + s, bx + 5, cy + s + 3, { 'stroke-width': 2.5 }) : null), cx, cy, deg);
 }
 
 /** Open switch on a horizontal wire from (x1, y) to (x2, y). */

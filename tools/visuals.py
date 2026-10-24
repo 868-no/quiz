@@ -244,12 +244,34 @@ def rlc_names(p: dict[str, Any]) -> list[str]:
     return out
 
 
+def _rlc_reactances(p: dict[str, Any]) -> list[float | None]:
+    """Reactance of each component: given directly, computed from f, or unknown (None)."""
+    src = p["source"]
+    f = src.get("frequency_hz") if src["kind"] == "ac" else None
+    out: list[float | None] = []
+    for c in p["components"]:
+        if c["kind"] == "R":
+            out.append(0.0)
+        elif c.get("reactance_ohms") is not None:
+            out.append(c["reactance_ohms"])
+        elif f is not None and c.get("value") is not None:
+            out.append(2 * math.pi * f * c["value"] if c["kind"] == "L" else 1 / (2 * math.pi * f * c["value"]))
+        else:
+            out.append(None)
+    return out
+
+
 def _rlc_rules(p: dict[str, Any], errors: list[str]) -> None:
     src = p["source"]
     for i, c in enumerate(p["components"]):
-        lo, hi = _LIMITS[c["kind"]]
-        if not lo <= c["value"] <= hi:
-            errors.append(f"components[{i}].value: {c['value']} is implausible for {c['kind']}")
+        if c.get("value") is None and c.get("reactance_ohms") is None:
+            errors.append(f"components[{i}]: give a value or a reactance")
+        if c["kind"] == "R" and c.get("reactance_ohms") is not None:
+            errors.append(f"components[{i}]: a resistor has no reactance")
+        if c.get("value") is not None:
+            lo, hi = _LIMITS[c["kind"]]
+            if not lo <= c["value"] <= hi:
+                errors.append(f"components[{i}].value: {c['value']} is implausible for {c['kind']}")
     if src["kind"] == "ac" and src.get("frequency_hz") is None:
         errors.append("source.frequency_hz: required for an AC source")
     if src["kind"] == "none" and src.get("voltage_v") is not None:
@@ -257,46 +279,56 @@ def _rlc_rules(p: dict[str, Any], errors: list[str]) -> None:
     if p["switch"] and (p["topology"] != "series" or src["kind"] == "none"):
         errors.append("switch: only for a series circuit with a source")
     kinds = {c["kind"] for c in p["components"]}
-    if p["label_style"] == "names" and p["total_label"] != "none":
-        errors.append("total_label: not used with label_style 'names'")
-    if p["total_label"] != "none" and len(kinds) > 1 and not (src["kind"] == "ac" and p["topology"] == "series"):
-        errors.append("total_label: a total is only defined for components of one kind, or as impedance in a series AC circuit")
+    if p["label_style"] != "values" and p["total_label"] != "none":
+        errors.append("total_label: only used with label_style 'values'")
+    if p["total_label"] != "none":
+        if len(kinds) > 1:
+            if not (p["topology"] == "series" and None not in _rlc_reactances(p)):
+                errors.append("total_label: for mixed components only defined as impedance in a series circuit "
+                              "with known reactances")
+        elif any(c.get("value") is None for c in p["components"]):
+            errors.append("total_label: the total needs the component values")
 
 
 def _rlc_quantities(p: dict[str, Any]) -> dict[str, dict[str, Any]]:
     comps, names, src = p["components"], rlc_names(p), p["source"]
+    style = p["label_style"]
     q: dict[str, dict[str, Any]] = {}
-    values_shown = p["label_style"] == "values"
     for c, n in zip(comps, names):
-        q[n] = {"value": c["value"], "unit": _UNIT[c["kind"]], "shown": c["show_value"] and values_shown}
+        if c.get("value") is not None:
+            q[n] = {"value": c["value"], "unit": _UNIT[c["kind"]],
+                    "shown": c["show_value"] and style == "values" and c.get("reactance_ohms") is None}
     kinds = {c["kind"] for c in comps}
     shown_total = p["total_label"] == "value"
-    if len(kinds) == 1:
+    if len(kinds) == 1 and all(c.get("value") is not None for c in comps):
         k = next(iter(kinds))
         vals = [c["value"] for c in comps]
         add = (k == "C") == (p["topology"] == "parallel")  # C adds in parallel; R and L add in series
         total = sum(vals) if add else 1 / sum(1 / v for v in vals)
         q[f"{k}_total"] = {"value": total, "unit": _UNIT[k], "shown": shown_total}
+    src_shown = style in ("values", "source")
     if src.get("voltage_v") is not None:
-        q["U"] = {"value": src["voltage_v"], "unit": "V", "shown": src["show_voltage"] and values_shown}
+        q["U"] = {"value": src["voltage_v"], "unit": "V", "shown": src["show_voltage"] and src_shown}
     if src["kind"] == "ac":
-        f = src["frequency_hz"]
-        q["f"] = {"value": f, "unit": "Hz", "shown": src["show_frequency"] and values_shown}
-        x_l = sum(2 * math.pi * f * c["value"] for c in comps if c["kind"] == "L")
-        x_c = sum(1 / (2 * math.pi * f * c["value"]) for c in comps if c["kind"] == "C")
-        if any(c["kind"] == "L" for c in comps):
-            q["X_L"] = {"value": x_l, "unit": "Ω", "shown": False}
-        if any(c["kind"] == "C" for c in comps):
-            q["X_C"] = {"value": x_c, "unit": "Ω", "shown": False}
-        if p["topology"] == "series":
-            r = sum(c["value"] for c in comps if c["kind"] == "R")
-            q["Z"] = {"value": math.hypot(r, x_l - x_c), "unit": "Ω", "shown": shown_total and len(kinds) > 1}
+        q["f"] = {"value": src["frequency_hz"], "unit": "Hz", "shown": src["show_frequency"] and src_shown}
+    xs = _rlc_reactances(p)
+    for k in ("L", "C"):
+        idx = [i for i, c in enumerate(comps) if c["kind"] == k]
+        if idx and all(xs[i] is not None for i in idx):
+            given = any(comps[i].get("reactance_ohms") is not None and comps[i]["show_value"] for i in idx)
+            q[f"X_{k}"] = {"value": sum(xs[i] for i in idx), "unit": "Ω", "shown": given and style == "values"}
+    if p["topology"] == "series" and None not in xs:
+        r = sum(c["value"] for c in comps if c["kind"] == "R")
+        x_l = sum(x for x, c in zip(xs, comps) if c["kind"] == "L")
+        x_c = sum(x for x, c in zip(xs, comps) if c["kind"] == "C")
+        if len(kinds) > 1:
+            q["Z"] = {"value": math.hypot(r, x_l - x_c), "unit": "Ω", "shown": shown_total}
     rs = [c["value"] for c in comps if c["kind"] == "R"]
-    cs = [c["value"] for c in comps if c["kind"] == "C"]
-    ls = [c["value"] for c in comps if c["kind"] == "L"]
-    if p["topology"] == "series" and len(rs) == 1 and len(cs) == 1 and not ls:
+    cs = [c.get("value") for c in comps if c["kind"] == "C"]
+    ls = [c.get("value") for c in comps if c["kind"] == "L"]
+    if p["topology"] == "series" and len(rs) == 1 and len(cs) == 1 and not ls and cs[0] is not None:
         q["tau"] = {"value": rs[0] * cs[0], "unit": "s", "shown": False}
-    if len(cs) == 1 and len(ls) == 1:
+    if len(cs) == 1 and len(ls) == 1 and cs[0] is not None and ls[0] is not None:
         q["f0"] = {"value": 1 / (2 * math.pi * math.sqrt(ls[0] * cs[0])), "unit": "Hz", "shown": False}
     return q
 
@@ -372,11 +404,37 @@ def _ts_quantities(p: dict[str, Any]) -> dict[str, dict[str, Any]]:
     return q
 
 
+# --- series-regulator -------------------------------------------------------------
+
+def _reg_rules(p: dict[str, Any], errors: list[str]) -> None:
+    if p.get("u_in_v") is not None and p.get("u_out_v") is not None and p["u_out_v"] >= p["u_in_v"]:
+        errors.append("u_out_v: a series regulator's output must be lower than its input")
+    if len(set(p["unknown"])) != len(p["unknown"]):
+        errors.append("unknown: duplicates")
+    given = {"U_in": p.get("u_in_v"), "U_out": p.get("u_out_v"), "I_L": p.get("i_load_a")}
+    for k in p["unknown"]:
+        if k in given and given[k] is None:
+            errors.append(f"unknown: {k} is marked '?' but has no value to check against")
+
+
+def _reg_quantities(p: dict[str, Any]) -> dict[str, dict[str, Any]]:
+    q: dict[str, dict[str, Any]] = {}
+    unk = set(p["unknown"])
+    for key, name, unit in (("u_in_v", "U_in", "V"), ("u_out_v", "U_out", "V"), ("i_load_a", "I_L", "A")):
+        if p.get(key) is not None:
+            q[name] = {"value": p[key], "unit": unit, "shown": name not in unk}
+    if p.get("u_in_v") is not None and p.get("u_out_v") is not None:
+        q["U_pass"] = {"value": p["u_in_v"] - p["u_out_v"], "unit": "V", "shown": False}
+        if p.get("i_load_a") is not None:
+            q["P_pass"] = {"value": (p["u_in_v"] - p["u_out_v"]) * p["i_load_a"], "unit": "W", "shown": False}
+    return q
+
+
 RULES = {"dc-circuit": _dc_rules, "ac-circuit": _ac_rules, "waveform": _wave_rules, "block-diagram": _block_rules,
-         "rlc-circuit": _rlc_rules, "rectifier": _rect_rules, "transformer": _tr_rules, "transistor-stage": _ts_rules}
+         "rlc-circuit": _rlc_rules, "rectifier": _rect_rules, "transformer": _tr_rules, "transistor-stage": _ts_rules, "series-regulator": _reg_rules}
 QUANTITIES = {"dc-circuit": _dc_quantities, "ac-circuit": _ac_quantities, "waveform": _wave_quantities,
               "rlc-circuit": _rlc_quantities, "rectifier": _rect_quantities, "transformer": _tr_quantities,
-              "transistor-stage": _ts_quantities}
+              "transistor-stage": _ts_quantities, "series-regulator": _reg_quantities}
 
 
 def validate_visual(templates: dict[str, dict[str, Any]], visual: Any, where: str = "visual"

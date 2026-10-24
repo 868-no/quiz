@@ -475,7 +475,7 @@
       "id": "rlc-circuit",
       "version": 1,
       "title": "Krets med R, C og L",
-      "description": "One to three resistors, capacitors and/or inductors in series or parallel, either alone between two terminals or connected to a DC or AC source (optionally with an open switch). Totals, reactances, impedance, time constant and resonance frequency are computed, never typed in. label_style 'names' shows only component names (for concept questions).",
+      "description": "One to three resistors, capacitors and/or inductors in series or parallel, alone between two terminals or connected to a DC or AC source (optionally with an open switch). Totals, reactances, impedance, time constant and resonance frequency are computed; a capacitor or coil can instead be labelled by a given reactance (reactance_ohms). label_style: 'values' (default), 'names' (component names only, for concept questions) or 'source' (source values shown, components by name).",
       "idealised": "Ideelle komponenter og ledninger uten motstand; ingen kobling mellom spolene.",
       "status": "approved",
       "review_log": [
@@ -484,6 +484,12 @@
           "actor": "Jim C K Flaten",
           "action": "approve",
           "note": "Nye figurmaler, tegninger gjengitt og inspisert."
+        },
+        {
+          "at": "2026-10-24T00:26:29+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Re-approved after adding reactance labels and the source label style"
         }
       ],
       "params": {
@@ -548,8 +554,7 @@
             "items": {
               "type": "object",
               "required": [
-                "kind",
-                "value"
+                "kind"
               ],
               "properties": {
                 "kind": {
@@ -563,11 +568,19 @@
                 "value": {
                   "type": "number",
                   "minimum": 1e-15,
-                  "maximum": 100000000.0
+                  "maximum": 100000000.0,
+                  "nullable": true
                 },
                 "show_value": {
                   "type": "boolean",
                   "default": true
+                },
+                "reactance_ohms": {
+                  "type": "number",
+                  "minimum": 0.001,
+                  "maximum": 1000000000.0,
+                  "nullable": true,
+                  "unit": "Ω"
                 }
               }
             }
@@ -589,7 +602,8 @@
             "type": "string",
             "enum": [
               "values",
-              "names"
+              "names",
+              "source"
             ],
             "default": "values"
           }
@@ -854,6 +868,67 @@
                 }
               }
             }
+          }
+        }
+      }
+    },
+    {
+      "id": "series-regulator",
+      "version": 1,
+      "title": "Spenningsregulator med serietransistor",
+      "description": "Linear series regulator: NPN pass transistor between input and output, base fed through a resistor from the input and held by a zener diode to ground, load at the output, optional input capacitor. Input/output voltage and load current are shown as values or '?'; the voltage across and the power in the pass transistor are computed.",
+      "idealised": "Forenklet koblingsskjema av en lineær spenningsregulator.",
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-24T00:26:29+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Reviewed rendered figure for q-0075"
+        }
+      ],
+      "params": {
+        "type": "object",
+        "properties": {
+          "u_in_v": {
+            "type": "number",
+            "minimum": 0.1,
+            "maximum": 1000,
+            "unit": "V",
+            "nullable": true
+          },
+          "u_out_v": {
+            "type": "number",
+            "minimum": 0.1,
+            "maximum": 1000,
+            "unit": "V",
+            "nullable": true
+          },
+          "i_load_a": {
+            "type": "number",
+            "minimum": 1e-06,
+            "maximum": 100,
+            "unit": "A",
+            "nullable": true
+          },
+          "unknown": {
+            "type": "array",
+            "maxItems": 5,
+            "default": [],
+            "items": {
+              "type": "string",
+              "enum": [
+                "U_in",
+                "U_out",
+                "I_L",
+                "U_pass",
+                "P_pass"
+              ]
+            }
+          },
+          "input_capacitor": {
+            "type": "boolean",
+            "default": false
           }
         }
       }
