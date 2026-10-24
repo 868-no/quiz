@@ -39,6 +39,13 @@ class PipelineTest(unittest.TestCase):
         self.assertTrue(rev["checks"]["passed"])
         self.assertEqual(rev["review_log"][-1]["actor"], "deterministic-v1")
 
+    def test_verify_leaves_an_unchanged_question_untouched(self):
+        review.verify(self.paths, None, quiet=True)
+        path = self.paths.questions / "q-0001.json"
+        before = path.read_bytes()
+        review.verify(self.paths, None, quiet=True)
+        self.assertEqual(path.read_bytes(), before, "a second verify with the same result rewrote the file")
+
     def test_failing_checks_keep_draft(self):
         self.repo.write_question("q-0001", sample_revision(self.iid, correct=["zz"]))
         self.assertEqual(review.verify(self.paths, None, quiet=True), 1)

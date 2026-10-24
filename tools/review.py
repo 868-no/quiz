@@ -68,14 +68,22 @@ def verify(paths: Paths, qids: list[str] | None, *, quiet: bool = False) -> int:
         if rev.get("status") in ("rejected", "retired"):
             continue
         result = checks.check_revision(ctx, q["id"], rev)
-        result["at"] = now_iso()
-        rev["checks"] = result
-        write_json(paths.reviews / "checks" / f"{q['id']}-r{rev['revision']}.json", result)
+        # Only touch the file when something changed: an unchanged result keeps its old
+        # timestamp, so verifying the whole bank does not rewrite every question.
+        old = {k: v for k, v in (rev.get("checks") or {}).items() if k != "at"}
+        changed = old != result
+        result["at"] = now_iso() if changed else rev["checks"]["at"]
+        if changed:
+            rev["checks"] = result
+            write_json(paths.reviews / "checks" / f"{q['id']}-r{rev['revision']}.json", result)
         if result["passed"] and rev["status"] == "draft":
             _log(paths, q["id"], rev, checks.VERIFIER, "verify", "needs_review", "automated checks passed")
+            changed = True
         elif not result["passed"] and rev["status"] == "needs_review":
             _log(paths, q["id"], rev, checks.VERIFIER, "verify", "draft", "automated checks failed")
-        save_question(path, q)
+            changed = True
+        if changed:
+            save_question(path, q)
         failures += not result["passed"]
         if not quiet:
             mark = "OK  " if result["passed"] else "FAIL"
