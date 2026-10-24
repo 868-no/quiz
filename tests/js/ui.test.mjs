@@ -293,3 +293,55 @@ test('reduced motion removes the animation control', { skip }, async () => {
   assert.equal($(root, '.fig-anim-toggle'), null);
   assert.ok($(root, 'figure.fig svg'));
 });
+
+function answer(root, correct) {
+  const idx = $$(root, '.opt input').findIndex((i) => (i.value === 'o1') === correct);
+  $$(root, '.opt label')[idx].click();
+  $(root, '#answer-form button[type=submit]').click();
+}
+
+function finishRound(root, correctFor) {
+  while ($(root, '#answer-form')) {
+    answer(root, correctFor($(root, '.q-stem').textContent));
+    $(root, '[data-action=next]').click();
+  }
+}
+
+test('wrong answers are remembered and can be practised until answered right', { skip }, async () => {
+  const bank = makeBank({ perChapter: { 2: 4 } });
+  const { root, w } = await app(bank);
+  assert.equal($(root, '[data-action=practice-missed]'), null, 'nothing to practise yet');
+  $(root, '#count').value = String(4);
+  $(root, '#count').dispatchEvent(new w.Event('change', { bubbles: true }));
+  start(root, [2]);
+  // wrong on q-2000 and q-2001, right on the others
+  const wrongOn = new Set(['q-2000', 'q-2001']);
+  finishRound(root, (stem) => ![...wrongOn].some((id) => stem.includes(id)));
+  assert.deepEqual(Object.keys(JSON.parse(w.localStorage.getItem('radioquiz.missed.v1'))).sort(), ['q-2000', 'q-2001']);
+  $(root, '[data-action=new]').click();
+  assert.ok($(root, '.notice-missed').textContent.includes('2 spørsmål'));
+  $(root, '[data-action=practice-missed]').click();
+  assert.ok($(root, '#q-progress').textContent.includes('Feil fra før'));
+  assert.ok($(root, '#q-progress').textContent.endsWith('av 2'));
+  // right on q-2000, wrong again on q-2001
+  finishRound(root, (stem) => stem.includes('q-2000'));
+  assert.deepEqual(Object.keys(JSON.parse(w.localStorage.getItem('radioquiz.missed.v1'))), ['q-2001']);
+  assert.ok($(root, '[data-action=practice-missed]').textContent.includes('1 igjen'));
+  $(root, '[data-action=practice-missed]').click();
+  finishRound(root, () => true);
+  assert.equal($(root, '[data-action=practice-missed]'), null, 'list is empty');
+  $(root, '[data-action=new]').click();
+  assert.equal($(root, '.notice-missed'), null);
+});
+
+test('the list of mistakes can be cleared and ignores questions no longer published', { skip }, async () => {
+  const bank = makeBank({ perChapter: { 2: 2 } });
+  const env = setupDom();
+  env.w.localStorage.setItem('radioquiz.missed.v1', JSON.stringify({ 'q-2000': 1, 'q-9999': 2, bad: 3 }));
+  const { createApp } = await import('../../web/js/ui/app.js');
+  createApp(env.root, bank);
+  assert.ok($(env.root, '.notice-missed').textContent.includes('ett spørsmål'));
+  $(env.root, '[data-action=clear-missed]').click();
+  assert.equal($(env.root, '.notice-missed'), null);
+  assert.equal(env.w.localStorage.getItem('radioquiz.missed.v1'), null);
+});

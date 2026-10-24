@@ -80,7 +80,8 @@ content/ (original, version-controlled)
   glossary references, quantities and figures are typed structures rendered by an
   allowlisted renderer (`web/js/render/`).
 * **No backend, accounts, cookies, analytics or LLM calls** on the public site. An
-  in-progress quiz is stored only in the visitor's browser (`localStorage`).
+  in-progress quiz and the list of questions answered wrong are stored only in the
+  visitor's browser (`localStorage`).
 
 More: [docs/architecture.md](docs/architecture.md).
 

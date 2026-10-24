@@ -6,14 +6,16 @@ import { getPolicy } from './policies.js';
 
 export const SESSION_VERSION = 1;
 
-/** Questions in the selected chapters that match the optional filters. */
-export function pool(bank, { chapters, difficulties = null, styles = null }) {
+/** Questions in the selected chapters that match the optional filters (and, if given, the id list). */
+export function pool(bank, { chapters, difficulties = null, styles = null, ids = null }) {
   const chapterSet = new Set(chapters);
+  const idSet = ids ? new Set(ids) : null;
   const available = new Set(bank.chapters.filter((c) => c.status === 'available').map((c) => c.number));
   return bank.questions.filter((q) =>
     chapterSet.has(q.chapter) && available.has(q.chapter) &&
     (!difficulties || difficulties.length === 0 || difficulties.includes(q.difficulty)) &&
-    (!styles || styles.length === 0 || styles.includes(q.style)));
+    (!styles || styles.length === 0 || styles.includes(q.style)) &&
+    (!idSet || idSet.has(q.id)));
 }
 
 /**
@@ -42,12 +44,14 @@ export function selectQuestions(candidates, count, rng) {
 /**
  * Create a session. Returns {ok: true, session} or {ok: false, error, available}.
  * Never pads with questions from other chapters and never repeats a question.
+ * `ids` limits the round to those questions; `kind` marks special rounds
+ * ('missed': practising earlier mistakes, 'single': one question opened from a link).
  */
-export function createSession(bank, { chapters, count, difficulties = [], styles = [], policy = 'learning', seed }) {
+export function createSession(bank, { chapters, count, difficulties = [], styles = [], ids = null, kind = null, policy = 'learning', seed }) {
   const pol = getPolicy(policy);
   if (!pol.enabled) return { ok: false, error: 'policy_unavailable', available: 0 };
   if (!Array.isArray(chapters) || chapters.length === 0) return { ok: false, error: 'no_chapters', available: 0 };
-  const candidates = pool(bank, { chapters, difficulties, styles });
+  const candidates = pool(bank, { chapters, difficulties, styles, ids });
   if (candidates.length === 0) return { ok: false, error: 'no_questions', available: 0 };
   if (!Number.isInteger(count) || count < 1) return { ok: false, error: 'invalid_count', available: candidates.length };
   if (count > candidates.length) return { ok: false, error: 'insufficient', available: candidates.length };
@@ -62,7 +66,7 @@ export function createSession(bank, { chapters, count, difficulties = [], styles
     ok: true,
     session: {
       v: SESSION_VERSION, bankId: bank.bank_id, policy, seed, chapters: [...chapters], count,
-      difficulties: [...difficulties], styles: [...styles], items, index: 0, finished: false,
+      difficulties: [...difficulties], styles: [...styles], ids: ids ? [...ids] : null, kind, items, index: 0, finished: false,
     },
   };
 }

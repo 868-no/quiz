@@ -165,6 +165,7 @@ select {
 .notice { border-left: 4px solid var(--line); background: var(--note-bg); padding: 10px 16px; margin: 12px 0 20px; }
 .notice p { margin: 0.3em 0; }
 .notice-error { border-left-color: var(--bad); }
+.notice-missed { border-left-color: var(--action); }
 
 /* ---- question ---- */
 .q-head { display: grid; grid-template-columns: 1fr auto; gap: 0 12px; align-items: center; }

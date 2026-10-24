@@ -9,7 +9,8 @@ import {
   advance, createSession, currentItem, indexBank, pool, restoreSession, submitAnswer, summary,
 } from '../quiz/engine.js';
 import { randomSeed } from '../quiz/rng.js';
-import { clearSession, loadSession, saveSession } from '../quiz/storage.js';
+import { clearMissed, clearSession, loadMissed, loadSession, saveMissed, saveSession } from '../quiz/storage.js';
+import { missedIds, parseMissed, recordAnswer } from '../quiz/progress.js';
 import { createGlossary } from './glossary.js';
 import { chapterDial, roundDial, setDialWidth } from './dial.js';
 
@@ -17,6 +18,7 @@ const LETTERS = ['A', 'B', 'C', 'D', 'E', 'F'];
 const DIFFICULTY_LABEL = { easy: 'Lett', medium: 'Middels', hard: 'Vanskelig' };
 const STYLE_LABEL = { recall: 'Faktakunnskap', concept: 'Forståelse', scenario: 'Praktiske situasjoner', calculation: 'Regneoppgaver' };
 const COUNT_CHOICES = [5, 10, 20, 30, 50];
+const MISSED_ROUND = 20; // most questions in one round of practising earlier mistakes
 
 const reducedMotion = () => Boolean(globalThis.matchMedia && globalThis.matchMedia('(prefers-reduced-motion: reduce)').matches);
 
@@ -34,6 +36,7 @@ export function createApp(root, bank) {
       styles: new Set(),
     },
     resumable: restoreSession(loadSession(), bank),
+    missed: parseMissed(loadMissed()),
     message: '',
   };
 
@@ -67,6 +70,31 @@ export function createApp(root, bank) {
 
   function persist() {
     if (state.session) saveSession(state.session);
+  }
+
+  // --------------------------------------------------------------- missed
+  const missedNow = () => missedIds(state.missed, bank);
+
+  function startMissed() {
+    const ids = missedNow();
+    if (!ids.length) {
+      renderSetup();
+      return;
+    }
+    const chapters = [...new Set(ids.map((id) => byId.get(id).chapter))].sort((a, b) => a - b);
+    start({ chapters, ids, count: Math.min(ids.length, MISSED_ROUND), kind: 'missed' });
+  }
+
+  function missedNotice() {
+    const n = missedNow().length;
+    if (!n) return null;
+    const what = n === 1 ? 'ett spørsmål' : `${n} spørsmål`;
+    return h('div', { class: 'notice notice-missed' },
+      h('p', {}, `Du har svart feil på ${what} som du ikke har fått riktig senere. Et spørsmål forsvinner fra lista når du svarer riktig på det.`),
+      n > MISSED_ROUND ? h('p', { class: 'hint' }, `En runde tar ${MISSED_ROUND} av dem om gangen.`) : null,
+      h('div', { class: 'actions' },
+        h('button', { type: 'button', class: 'btn', 'data-action': 'practice-missed' }, 'Øv på de du bommet på'),
+        h('button', { type: 'button', class: 'btn btn-secondary', 'data-action': 'clear-missed' }, 'Tøm lista')));
   }
 
   // ---------------------------------------------------------------- setup
@@ -135,6 +163,7 @@ export function createApp(root, bank) {
         h('div', { class: 'actions' },
           h('button', { type: 'button', class: 'btn', 'data-action': 'resume' }, 'Fortsett runden'),
           h('button', { type: 'button', class: 'btn btn-secondary', 'data-action': 'discard' }, 'Forkast den'))) : null,
+      missedNotice(),
       !anyAvailable ? h('div', { class: 'notice notice-empty', role: 'status' },
         h('p', {}, 'Det er ikke publisert noen godkjente spørsmål ennå. Kom tilbake senere.')) : null,
       h('form', { id: 'setup-form', novalidate: true },
@@ -268,7 +297,8 @@ export function createApp(root, bank) {
     const opts = richOpts(q, answered);
     const view = h('section', { class: 'question', 'aria-labelledby': 'q-progress' },
       h('div', { class: 'q-head' },
-        h('h2', { id: 'q-progress', class: 'q-progress', tabindex: '-1' }, `Spørsmål ${s.index + 1} av ${total}`),
+        h('h2', { id: 'q-progress', class: 'q-progress', tabindex: '-1' },
+          `${s.kind === 'missed' ? 'Feil fra før: spørsmål' : 'Spørsmål'} ${s.index + 1} av ${total}`),
         h('div', { class: 'dial-wrap' }, roundDial(marksOf(s), s.index)),
         h('p', { class: 'q-meta' }, h('span', { class: 'q-chapter' }, chapterName(q.chapter)),
           q.topics.filter((t) => bank.topics[t]).map((t) => h('span', { class: 'q-topic' }, bank.topics[t].title)),
@@ -289,6 +319,20 @@ export function createApp(root, bank) {
   }
 
   // -------------------------------------------------------------- results
+  function resultActions() {
+    if (state.session.kind === 'missed') {
+      const left = missedNow().length;
+      return [
+        left ? h('button', { type: 'button', class: 'btn btn-primary', 'data-action': 'practice-missed' }, `Øv videre på feilene (${left} igjen)`) : null,
+        h('button', { type: 'button', class: left ? 'btn btn-secondary' : 'btn btn-primary', 'data-action': 'new' }, 'Til forsiden'),
+      ];
+    }
+    return [
+      h('button', { type: 'button', class: 'btn btn-primary', 'data-action': 'restart-same' }, 'Ny runde med samme valg'),
+      h('button', { type: 'button', class: 'btn btn-secondary', 'data-action': 'new' }, 'Velg andre kapitler'),
+    ];
+  }
+
   function renderResults() {
     fitDial();
     const sum = summary(state.session, byId);
@@ -302,9 +346,7 @@ export function createApp(root, bank) {
         h('caption', {}, 'Resultat per kapittel'),
         h('thead', {}, h('tr', {}, h('th', { scope: 'col' }, 'Kapittel'), h('th', { scope: 'col' }, 'Riktige'))),
         h('tbody', {}, sum.byChapter.map((r) => h('tr', {}, h('th', { scope: 'row' }, chapterName(r.chapter)), h('td', {}, `${r.correct} av ${r.total}`))))) : null,
-      h('div', { class: 'actions' },
-        h('button', { type: 'button', class: 'btn btn-primary', 'data-action': 'restart-same' }, 'Ny runde med samme valg'),
-        h('button', { type: 'button', class: 'btn btn-secondary', 'data-action': 'new' }, 'Velg andre kapitler')),
+      h('div', { class: 'actions' }, resultActions()),
       h('h3', {}, 'Gjennomgang'),
       sum.wrong > 0 ? h('div', { class: 'toggle' },
         h('input', { type: 'checkbox', id: 'only-wrong', checked: state.onlyWrong, 'data-action': 'only-wrong' }),
@@ -381,6 +423,9 @@ export function createApp(root, bank) {
       } catch {
         return; // already answered: ignore repeated submissions
       }
+      const it = currentItem(state.session);
+      state.missed = recordAnswer(state.missed, it.qid, it.answer.correct);
+      saveMissed(state.missed);
       state.choice = null;
       persist();
       renderQuestion('#fb-title');
@@ -427,6 +472,20 @@ export function createApp(root, bank) {
       return;
     }
     switch (el.dataset.action) {
+      case 'practice-missed':
+        if (state.session) {
+          state.session = null;
+          clearSession();
+        }
+        startMissed();
+        break;
+      case 'clear-missed':
+        if (globalThis.confirm('Vil du tømme lista over spørsmål du har svart feil på?')) {
+          state.missed = {};
+          clearMissed();
+          renderSetup();
+        }
+        break;
       case 'select-all':
         bank.chapters.filter((c) => c.status === 'available').forEach((c) => state.selection.chapters.add(c.number));
         renderSetup('[data-action=select-all]');
@@ -451,7 +510,7 @@ export function createApp(root, bank) {
         render();
         break;
       case 'quit':
-        if (globalThis.confirm('Vil du avslutte runden? Svarene dine så langt blir ikke lagret.')) {
+        if (globalThis.confirm('Vil du avslutte runden? Du kan ikke fortsette den senere.')) {
           state.session = null;
           clearSession();
           renderSetup();

@@ -46,8 +46,8 @@ dist/                     build output = the deployable site
   attributes, using text nodes; no `innerHTML` anywhere.
 * `index.html` sets a strict Content-Security-Policy (`default-src 'self'`, no inline
   scripts/styles, `form-action 'none'`, `base-uri 'none'`).
-* `localStorage` stores only question ids, revisions, option order and chosen ids;
-  every access is wrapped so the quiz works when storage is blocked.
+* `localStorage` stores only question ids, revisions, option order and chosen ids,
+  plus the ids of questions answered wrong (with a timestamp); every access is wrapped so the quiz works when storage is blocked.
 
 ## Accessibility
 

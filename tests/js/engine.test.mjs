@@ -158,3 +158,13 @@ test('bank validation rejects a visual with invalid parameters', () => {
   b.questions = [question('q-1', 2, 's', { visual: { template: 'dc-circuit', version: 1, params: { topology: 'series', source: { voltage_v: 5 }, resistors: [] } } })];
   assert.equal(validateBank(b).bank.questions.length, 0);
 });
+
+test('pool and sessions can be limited to a list of question ids', () => {
+  const ids = ['q-2001', 'q-3002'];
+  assert.deepEqual(pool(bank, { chapters: [2, 3, 6], ids }).map((q) => q.id).sort(), ids);
+  const res = createSession(bank, { chapters: [2, 3], ids, count: 2, kind: 'missed', seed: 7 });
+  assert.ok(res.ok);
+  assert.deepEqual(res.session.items.map((it) => it.qid).sort(), ids);
+  assert.equal(res.session.kind, 'missed');
+  assert.equal(createSession(bank, { chapters: [2, 3], ids, count: 3, seed: 7 }).error, 'insufficient');
+});
