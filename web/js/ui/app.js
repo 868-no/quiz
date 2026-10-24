@@ -11,7 +11,8 @@ import {
 import { getPolicy } from '../quiz/policies.js';
 import { randomSeed } from '../quiz/rng.js';
 import {
-  clearMissed, clearSession, clearSolved, loadMissed, loadSession, loadSolved, saveMissed, saveSession, saveSolved,
+  clearMissed, clearSession, clearSolved, loadMissed, loadMode, loadSession, loadSolved, saveMissed, saveMode, saveSession,
+  saveSolved,
 } from '../quiz/storage.js';
 import { missedIds, parseMissed, recordAnswer, recordSolved, solvedByChapter } from '../quiz/progress.js';
 import { createGlossary } from './glossary.js';
@@ -48,6 +49,7 @@ export function createApp(root, bank) {
     resumable: restoreSession(loadSession(), bank),
     missed: parseMissed(loadMissed()),
     solved: parseMissed(loadSolved()),
+    mode: loadMode() === 'exam' ? 'exam' : 'practice', // the start screen's mode switch
     message: '',
     linkNotice: '',
   };
@@ -168,11 +170,11 @@ export function createApp(root, bank) {
     const rule = n === EXAM_QUESTIONS
       ? `Du består med ${pass} riktige, som på eksamen.`
       : `Du består med ${pass} riktige (75 %, som på eksamen).`;
-    return h('section', { class: 'exam', 'aria-labelledby': 'exam-title' },
-      h('h2', { id: 'exam-title' }, 'Prøveeksamen'),
-      h('p', {}, `${n} spørsmål fra alle kapitlene, uten fasit underveis. ${rule} Du ser svarene og forklaringene til slutt.`),
+    return h('section', { class: 'exam', 'aria-labelledby': 'setup-title' },
+      h('h2', { id: 'setup-title', tabindex: '-1' }, 'Prøveeksamen'),
+      h('p', { class: 'lead' }, `${n} spørsmål fra alle kapitlene, uten fasit underveis. ${rule} Du ser svarene og forklaringene til slutt.`),
       h('p', { class: 'hint' }, `Spørsmålene kommer foreløpig fra ${chapterSpan(availableChapters())}. Prøveeksamenen har ingen tidsfrist.`),
-      h('button', { type: 'button', class: 'btn', 'data-action': 'start-exam' }, 'Start prøveeksamen'),
+      h('button', { type: 'button', class: 'btn btn-primary', 'data-action': 'start-exam' }, 'Start prøveeksamen'),
       resume ? h('p', { class: 'hint' }, 'Den påbegynte runden din blir forkastet.') : null);
   }
 
@@ -199,7 +201,7 @@ export function createApp(root, bank) {
     if (!resume && !n) return null;
     const what = n === 1 ? 'ett spørsmål' : `${n} spørsmål`;
     return h('section', { class: 'notice notice-continue', 'aria-labelledby': 'continue-title' },
-      h('h3', { id: 'continue-title' }, 'Fortsett der du slapp'),
+      h('h2', { id: 'continue-title' }, 'Fortsett der du slapp'), // a section of its own, above the mode switch
       resume ? h('div', { class: 'continue-row continue-resume' },
         h('p', {}, `Du har en påbegynt runde (spørsmål ${resume.index + 1} av ${resume.items.length}).`),
         h('div', { class: 'continue-actions' },
@@ -284,14 +286,34 @@ export function createApp(root, bank) {
     if (avail > 0) counts.push(avail);
     if (!counts.includes(state.selection.count)) state.selection.count = counts.includes(10) ? 10 : counts[counts.length - 1];
     const resume = state.resumable && !state.resumable.finished ? state.resumable : null;
-    const view = h('section', { class: 'setup', 'aria-labelledby': 'setup-title' },
-      h('h2', { id: 'setup-title', tabindex: '-1' }, 'Sett opp en øvingsrunde'),
-      h('p', { class: 'lead' }, 'Velg kapitlene du vil øve på og hvor mange spørsmål du vil ha. Etter hvert svar får du vite om det var riktig, hvorfor, og hvor i læreboka du kan lese mer.'),
-      h('div', { class: 'dial-wrap' }, chapterDial(bank.chapters, state.selection.chapters)),
+    const exam = state.mode === 'exam';
+    const view = h('div', { class: 'setup' },
       state.linkNotice ? h('div', { class: 'notice notice-error link-notice', role: 'alert', tabindex: '-1' }, h('p', {}, state.linkNotice)) : null,
       continueNotice(resume),
       !anyAvailable ? h('div', { class: 'notice notice-empty', role: 'status' },
         h('p', {}, 'Det er ikke publisert noen godkjente spørsmål ennå. Kom tilbake senere.')) : null,
+      modeSwitch(),
+      exam ? examSection(resume) : practiceSection(avail, anyAvailable, counts, resume));
+    mount(view, focus);
+    if (!exam) watchStart();
+  }
+
+  // Practice or practice exam, chosen first; only the chosen mode's setup is shown.
+  // Native radio buttons, so keyboard and screen readers work as for any radio group.
+  function modeSwitch() {
+    const opt = (value, text) => [
+      h('input', { type: 'radio', name: 'mode', id: `mode-${value}`, value, checked: state.mode === value }),
+      h('label', { for: `mode-${value}` }, text),
+    ];
+    return h('div', { class: 'mode-switch', role: 'radiogroup', 'aria-label': 'Velg øvingsform' },
+      opt('practice', 'Øv på kapitler'), opt('exam', 'Prøveeksamen'));
+  }
+
+  function practiceSection(avail, anyAvailable, counts, resume) {
+    return h('section', { class: 'practice', 'aria-labelledby': 'setup-title' },
+      h('h2', { id: 'setup-title', tabindex: '-1' }, 'Øvingsrunde'),
+      h('p', { class: 'lead' }, 'Velg kapitlene du vil øve på og hvor mange spørsmål du vil ha. Etter hvert svar får du vite om det var riktig, hvorfor, og hvor i læreboka du kan lese mer.'),
+      h('div', { class: 'dial-wrap' }, chapterDial(bank.chapters, state.selection.chapters)),
       h('form', { id: 'setup-form', novalidate: true },
         h('fieldset', { class: 'chapters' },
           h('legend', {}, 'Kapitler'),
@@ -312,10 +334,7 @@ export function createApp(root, bank) {
             : `${avail} spørsmål er tilgjengelige i valget ditt.`),
         state.message ? h('p', { class: 'error', role: 'alert' }, state.message) : null,
         h('button', { type: 'submit', class: 'btn btn-primary', disabled: avail === 0 }, resume ? 'Start ny runde' : 'Start')),
-      examSection(resume),
       startBar(avail, resume));
-    mount(view, focus);
-    watchStart();
   }
 
   // A bar fixed to the bottom of the screen while the form's Start button is further
@@ -676,6 +695,10 @@ export function createApp(root, bank) {
       if (t.checked) set.add(t.value);
       else set.delete(t.value);
       renderSetup(`#${t.id}`);
+    } else if (t.name === 'mode') {
+      state.mode = t.value === 'exam' ? 'exam' : 'practice';
+      saveMode(state.mode);
+      renderSetup(`#mode-${state.mode}`);
     } else if (t.id === 'count') {
       state.selection.count = Number(t.value);
       renderSetup('#count');

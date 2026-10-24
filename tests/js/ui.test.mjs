@@ -511,6 +511,7 @@ function examAnswer(root, correct) {
 
 test('a practice exam gives no feedback until the end and then a pass or fail', { skip }, async () => {
   const { root } = await app(makeBank({ perChapter: { 2: 4, 3: 4 } }));
+  $(root, '#mode-exam').click();
   const exam = $(root, '.exam');
   assert.ok(exam.textContent.includes('8 spørsmål fra alle kapitlene'));
   assert.ok(exam.textContent.includes('Du består med 6 riktige (75 %'), '75 % of 8, rounded up');
@@ -537,6 +538,7 @@ test('a practice exam gives no feedback until the end and then a pass or fail', 
 
 test('a failed practice exam says how many were missing', { skip }, async () => {
   const { root } = await app(makeBank({ perChapter: { 2: 4 } }));
+  $(root, '#mode-exam').click();
   $(root, '[data-action=start-exam]').click();
   examAnswer(root, true);
   for (let i = 0; i < 3; i++) examAnswer(root, false);
@@ -565,4 +567,30 @@ test('difficulty and question type start checked, and none checked means none', 
   assert.equal($(root, '#avail').textContent, 'Velg minst én spørsmålstype.');
   $(root, '[data-action=filter-all][data-filter=style]').click();
   assert.ok($(root, '#avail').textContent.startsWith('4 spørsmål'));
+});
+
+test('the start screen chooses between practice and practice exam first', { skip }, async () => {
+  const { root, w } = await app(makeBank({ perChapter: { 2: 4 } }));
+  const sw = $(root, '.mode-switch');
+  assert.equal(sw.getAttribute('role'), 'radiogroup');
+  assert.equal(sw.getAttribute('aria-label'), 'Velg øvingsform');
+  assert.ok($(root, '#mode-practice').checked, 'practice is the default');
+  assert.equal($(root, '#setup-title').textContent, 'Øvingsrunde');
+  assert.ok($(root, '#setup-form') && $(root, '.start-bar'));
+  assert.equal($(root, '.exam'), null, 'the exam setup is not shown in practice mode');
+  $(root, '#mode-exam').click();
+  assert.equal($(root, '#setup-title').textContent, 'Prøveeksamen');
+  assert.equal($(root, '#setup-form'), null, 'no chapter form in exam mode');
+  assert.equal($(root, '.start-bar'), null);
+  assert.ok($(root, '[data-action=start-exam]'));
+  assert.equal(w.localStorage.getItem('radioquiz.mode.v1'), 'exam', 'the choice is remembered');
+  // a fresh page load opens in the remembered mode
+  const { createApp } = await import('../../web/js/ui/app.js');
+  const root2 = w.document.createElement('main');
+  root.replaceChildren();
+  w.document.body.appendChild(root2);
+  createApp(root2, makeBank({ perChapter: { 2: 4 } }));
+  assert.ok(root2.querySelector('#mode-exam').checked);
+  root2.querySelector('#mode-practice').click();
+  assert.ok(root2.querySelector('#setup-form'));
 });

@@ -172,16 +172,23 @@ select {
 .notice p { margin: 0.3em 0; }
 .notice-error { border-left-color: var(--bad); }
 .notice-continue { border-left-color: var(--action); }
-.notice-continue h3 { margin: 0.2em 0 0.3em; font-size: 1.05rem; }
+.notice-continue h2 { margin: 0.2em 0 0.3em; font-size: 1.05rem; }
 .continue-row + .continue-row { border-top: 1px solid var(--line-soft); margin-top: 10px; padding-top: 6px; }
 .continue-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 18px; margin: 8px 0 6px; }
 .notice .hint { color: var(--muted); font-size: 0.92rem; }
 .progress-note { color: var(--muted); font-size: 0.92rem; margin: 8px 0 0; }
 
-/* practice exam: its own section below the round form, and a pass/fail verdict */
-.exam { margin-top: 36px; padding-top: 8px; border-top: 2px solid var(--line); }
-.exam h2 { font-size: 1.25rem; }
-.exam .btn { margin: 6px 0 4px; }
+/* the start screen's mode switch: two native radio buttons drawn as one segmented control */
+.mode-switch { display: flex; margin: 4px 0 20px; border: 2px solid var(--action); border-radius: var(--radius); background: var(--surface); }
+.mode-switch input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.mode-switch label { flex: 1 1 0; display: flex; align-items: center; justify-content: center; min-height: 44px; padding: 8px 12px;
+  text-align: center; font-weight: 700; color: var(--action); cursor: pointer; }
+.mode-switch input + label + input + label { border-left: 2px solid var(--action); }
+.mode-switch input:checked + label { background: var(--action); color: var(--action-ink); }
+.mode-switch input:focus-visible + label { outline: 3px solid var(--focus); outline-offset: 2px; position: relative; }
+
+/* practice exam: its setup, and a pass/fail verdict */
+.exam .btn { margin: 10px 0 4px; }
 .exam-verdict { border-left: 4px solid var(--line); padding: 4px 0 4px 14px; margin: 4px 0 16px; }
 .exam-verdict p { margin: 0.2em 0; }
 .exam-verdict-title { font-size: 1.3rem; font-weight: 700; }

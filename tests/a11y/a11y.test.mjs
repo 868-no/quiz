@@ -100,7 +100,9 @@ async function screens(page, url, check) {
   await check('link to a missing question');
   // the practice exam: a question, then skip to the result
   await page.goto(url);
-  await page.waitForSelector('[data-action=start-exam]');
+  await page.waitForSelector('.mode-switch');
+  await page.click('label[for=mode-exam]');
+  await check('practice exam setup');
   await page.click('[data-action=start-exam]');
   await page.waitForSelector('#answer-form');
   await check('practice exam question');

@@ -45,6 +45,9 @@ dist/                     build output = the deployable site (not committed; CI 
 * `submitAnswer` – only once per item (throws otherwise); correctness is computed from
   the bank, never trusted from storage. `restoreSession` discards a stored session if
   any question or revision is no longer published.
+* **Start screen:** a two-part switch (native radio buttons, labelled "Velg øvingsform")
+  chooses between a practice round and the practice exam first; only the chosen
+  mode's heading and setup are shown, and the choice is remembered in the browser.
 * **Mistakes** (`progress.js`): a question answered wrong is added to a list in
   `localStorage` and removed the next time it is answered right; the start screen
   offers a round of up to 20 of them. Questions answered right at least once are
