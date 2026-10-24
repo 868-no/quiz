@@ -7,7 +7,8 @@ web/                      site source (copied into dist/; publish fills in sw.js
   index.html styles.css
   sw.js                   service worker: offline copy of the site
   manifest.webmanifest    app manifest (install to home screen)
-  brand/                  app icons (icon.svg; PNGs rendered from it with rsvg-convert)
+  brand/                  app icons (icon.svg; PNGs rendered from it with rsvg-convert) and
+                          og.png, the link preview image (source: assets/og-image.html)
   fonts/                  self-hosted Atkinson Hyperlegible Next (OFL)
   js/main.js              boot: load + validate data/bank.json, start the app, register sw.js
   js/content/bank.js      defensive bank validation (invalid questions are dropped)

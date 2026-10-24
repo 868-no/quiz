@@ -10,6 +10,7 @@ Checks
 * no private markers (chunk ids/uids, private paths, OCR annotations, review data);
 * bank.json uses exactly the public allowlisted fields and is a production bank;
 * sw.js (offline copy) lists exactly the files of this build, with a matching version;
+* absolute URLs in index.html (canonical, link previews) use the configured domain;
 * no 8-word passage shared with the imported textbook text (when an import exists).
 """
 from __future__ import annotations
@@ -58,6 +59,25 @@ def precache(root: Path) -> dict[str, Any]:
     for rel in files:
         h.update(rel.encode() + b"\0" + hashlib.sha256((root / rel).read_bytes()).digest())
     return {"version": h.hexdigest()[:16], "files": files}
+
+
+def _check_site_urls(root: Path, paths: Paths) -> list[str]:
+    """Absolute site URLs in index.html (canonical, link previews) must use the configured domain."""
+    index = root / "index.html"
+    cfg = paths.config / "site.json"
+    if not index.exists() or not cfg.exists():
+        return []
+    cname = json.loads(cfg.read_text(encoding="utf-8")).get("cname")
+    if not cname:
+        return []
+    errors = []
+    for url in re.findall(r'(?:href|content)="(https?://[^"]+)"', index.read_text(encoding="utf-8")):
+        host = re.match(r"https?://([^/]+)", url).group(1)
+        if host != cname:
+            errors.append(f"index.html: {url} does not use the site's domain {cname} (config/site.json)")
+        elif not url.startswith("https://"):
+            errors.append(f"index.html: {url} must use https")
+    return errors
 
 
 def _check_sw(root: Path, expect_mode: str) -> list[str]:
@@ -180,5 +200,6 @@ def release_check(root: Path, paths: Paths, *, expect_mode: str = "production") 
                 if len(q.get("correct", [])) != 1 or q["correct"][0] not in ids:
                     errors.append(f"data/bank.json: question {q.get('id')} has an invalid correct key")
     errors += _check_sw(root, expect_mode)
+    errors += _check_site_urls(root, paths)
     notes.append(f"{files} file(s) scanned")
     return {"errors": errors, "notes": notes}

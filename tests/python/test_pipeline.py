@@ -207,6 +207,16 @@ class PipelineTest(unittest.TestCase):
         self.assertIn("brand/fake.png: not a PNG", errs)
         self.assertIn("data/page.png: PNG files are only allowed", errs)
 
+    def test_link_preview_urls_must_use_the_site_domain(self):
+        self.repo.approve_templates()
+        publish.publish(self.paths)
+        self.assertEqual(release_check(self.paths.dist, self.paths)["errors"], [])
+        index = self.paths.dist / "index.html"
+        index.write_text(index.read_text(encoding="utf-8").replace(
+            'property="og:url" content="https://quiz.868.no/"', 'property="og:url" content="https://example.org/"'), encoding="utf-8")
+        errs = "\n".join(release_check(self.paths.dist, self.paths)["errors"])
+        self.assertIn("https://example.org/ does not use the site's domain quiz.868.no", errs)
+
     def test_release_check_rejects_mentions_of_scanning(self):
         self.repo.approve_templates()
         publish.publish(self.paths)
