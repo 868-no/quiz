@@ -1,7 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import {
-  advance, canAdvance, createSession, currentItem, feedbackVisible, indexBank, pool, restoreSession, selectQuestions,
+  advance, canAdvance, chapterQuotas, createSession, currentItem, feedbackVisible, indexBank, pool, restoreSession, selectQuestions,
   submitAnswer, summary,
 } from '../../web/js/quiz/engine.js';
 import { makeRng, shuffle } from '../../web/js/quiz/rng.js';
@@ -179,6 +179,36 @@ test('the exam policy defers feedback and lets a question be skipped', () => {
   while (!s.finished) s = advance(s);
   assert.equal(summary(s, byId).unanswered, 5);
   assert.equal(feedbackVisible(s, 0), false, 'nothing to show for a skipped question');
+});
+
+test('a practice exam takes a fixed share from each chapter, with a minimum', () => {
+  const qs = (spec) => spec.flatMap(([chapter, n]) => Array.from({ length: n }, (_, i) => ({ id: `${chapter}-${i}`, chapter })));
+  const asObj = (m) => Object.fromEntries(m);
+  // in proportion to size, adding up exactly (17,5 and 17,5: the tie goes to the lower chapter)
+  assert.deepEqual(asObj(chapterQuotas(qs([[1, 6], [2, 53], [3, 33], [4, 31], [5, 23], [6, 31]]), 100)),
+    { 1: 3, 2: 30, 3: 19, 4: 18, 5: 13, 6: 17 });
+  // a small chapter gets the minimum (or all it has), taken from the others
+  assert.deepEqual(asObj(chapterQuotas(qs([[1, 1], [2, 200], [3, 3]]), 100)), { 1: 1, 2: 97, 3: 2 });
+  // when the minimums alone would exceed the count, it is purely proportional
+  assert.deepEqual(asObj(chapterQuotas(qs([[1, 50], [2, 50], [3, 50], [4, 50]]), 6)), { 1: 2, 2: 2, 3: 1, 4: 1 });
+  // asking for everything gives everything
+  assert.deepEqual(asObj(chapterQuotas(qs([[1, 4], [2, 5]]), 9)), { 1: 4, 2: 5 });
+});
+
+test('every practice exam has the same mix of chapters, other rounds do not need to', () => {
+  const chapters = [2, 3, 6];
+  const avail = pool(bank, { chapters });
+  const n = Math.min(6, avail.length);
+  const want = Object.fromEntries(chapterQuotas(avail, n));
+  for (let seed = 1; seed < 60; seed++) {
+    const res = createSession(bank, { chapters, count: n, policy: 'exam', kind: 'exam', seed });
+    assert.ok(res.ok);
+    const got = {};
+    for (const it of res.session.items) { const c = byId.get(it.qid).chapter; got[c] = (got[c] || 0) + 1; }
+    for (const c of Object.keys(want)) got[c] = got[c] || 0;
+    assert.deepEqual(got, want, `seed ${seed}`);
+    assert.equal(new Set(res.session.items.map((it) => it.qid)).size, n);
+  }
 });
 
 test('a filter of null means all, an empty filter means none', () => {

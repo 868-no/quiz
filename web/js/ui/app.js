@@ -152,13 +152,6 @@ export function createApp(root, bank) {
   const isExam = () => Boolean(state.session && state.session.policy === 'exam');
   const availableChapters = () => bank.chapters.filter((c) => c.status === 'available').map((c) => c.number);
 
-  function chapterSpan(nums) {
-    const consecutive = nums.every((n, i) => i === 0 || n === nums[i - 1] + 1);
-    if (nums.length === 1) return `kapittel ${nums[0]}`;
-    if (consecutive) return `kapittel ${nums[0]}–${nums[nums.length - 1]}`;
-    return `kapittel ${nums.slice(0, -1).join(', ')} og ${nums[nums.length - 1]}`;
-  }
-
   function examSize() {
     return Math.min(EXAM_QUESTIONS, pool(bank, { chapters: availableChapters() }).length);
   }
@@ -172,8 +165,8 @@ export function createApp(root, bank) {
       : `Du består med ${pass} riktige (75 %, som på eksamen).`;
     return h('section', { class: 'exam', 'aria-labelledby': 'setup-title' },
       h('h2', { id: 'setup-title', tabindex: '-1' }, 'Prøveeksamen'),
-      h('p', { class: 'lead' }, `${n} spørsmål fra alle kapitlene, uten fasit underveis. ${rule} Du ser svarene og forklaringene til slutt.`),
-      h('p', { class: 'hint' }, `Spørsmålene kommer foreløpig fra ${chapterSpan(availableChapters())}. Prøveeksamenen har ingen tidsfrist.`),
+      h('p', { class: 'lead' }, `${n} tilfeldige spørsmål fra alle tilgjengelige kapitler, uten fasit underveis. ${rule} Du ser svarene og forklaringene til slutt.`),
+      h('p', { class: 'hint' }, 'Prøveeksamenen har ingen tidsfrist.'),
       h('button', { type: 'button', class: 'btn btn-primary', 'data-action': 'start-exam' }, 'Start prøveeksamen'),
       resume ? h('p', { class: 'hint' }, 'Den påbegynte runden din blir forkastet.') : null);
   }

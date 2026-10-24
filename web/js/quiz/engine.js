@@ -45,10 +45,48 @@ export function selectQuestions(candidates, count, rng) {
 }
 
 /**
+ * How many of `count` questions each chapter gets: in proportion to the number of
+ * questions the chapter has, but at least `minimum` (or all it has), by largest
+ * remainder so the counts add up exactly. Fixed for a given bank, so every practice
+ * exam has the same mix of chapters. Returns a Map chapter -> count.
+ */
+export function chapterQuotas(candidates, count, minimum = 2) {
+  const size = new Map();
+  for (const q of candidates) size.set(q.chapter, (size.get(q.chapter) || 0) + 1);
+  const chapters = [...size.keys()].sort((x, y) => x - y);
+  const quota = new Map();
+  if (count >= candidates.length) return new Map(chapters.map((c) => [c, size.get(c)]));
+  // Chapters whose proportional share is below the minimum get the minimum (or all
+  // they have); the rest is shared in proportion among the others. Repeat until no
+  // proportional share falls below the minimum.
+  const fixed = new Set();
+  const floorOf = (c) => Math.min(minimum, size.get(c));
+  if (chapters.reduce((t, c) => t + floorOf(c), 0) > count) minimum = 0;
+  for (;;) {
+    const free = chapters.filter((c) => !fixed.has(c));
+    const left = count - [...fixed].reduce((t, c) => t + floorOf(c), 0);
+    const room = free.reduce((t, c) => t + size.get(c), 0);
+    const low = free.filter((c) => (left * size.get(c)) / room < floorOf(c));
+    if (!low.length) {
+      for (const c of fixed) quota.set(c, floorOf(c));
+      const share = free.map((c) => ({ c, exact: (left * size.get(c)) / room }));
+      for (const x of share) quota.set(x.c, Math.floor(x.exact));
+      let rest = left - share.reduce((t, x) => t + Math.floor(x.exact), 0);
+      // the last few go to the largest remainders (ties: the larger chapter, then the lower number)
+      share.sort((x, y) => (y.exact % 1) - (x.exact % 1) || size.get(y.c) - size.get(x.c) || x.c - y.c);
+      for (const x of share) if (rest > 0) { quota.set(x.c, quota.get(x.c) + 1); rest -= 1; }
+      return new Map(chapters.map((c) => [c, quota.get(c)]));
+    }
+    low.forEach((c) => fixed.add(c));
+  }
+}
+
+/**
  * Create a session. Returns {ok: true, session} or {ok: false, error, available}.
  * Never pads with questions from other chapters and never repeats a question.
  * `ids` limits the round to those questions; `kind` marks special rounds
- * ('missed': practising earlier mistakes, 'single': one question opened from a link).
+ * ('missed': practising earlier mistakes, 'single': one question opened from a link,
+ * 'exam': a practice exam, which takes a fixed number of questions from each chapter).
  */
 export function createSession(bank, { chapters, count, difficulties = null, styles = null, ids = null, kind = null, policy = 'learning', seed }) {
   const pol = getPolicy(policy);
@@ -59,7 +97,13 @@ export function createSession(bank, { chapters, count, difficulties = null, styl
   if (!Number.isInteger(count) || count < 1) return { ok: false, error: 'invalid_count', available: candidates.length };
   if (count > candidates.length) return { ok: false, error: 'insufficient', available: candidates.length };
   const rng = makeRng(seed);
-  const items = selectQuestions(candidates, count, rng).map((q) => ({
+  // A practice exam gets a fixed number of questions from each chapter (see chapterQuotas);
+  // other rounds spread their picks over the sections of the chosen chapters.
+  const chosen = kind === 'exam'
+    ? shuffle([...chapterQuotas(candidates, count)].flatMap(([c, n]) =>
+      selectQuestions(candidates.filter((q) => q.chapter === c), n, rng)), rng)
+    : selectQuestions(candidates, count, rng);
+  const items = chosen.map((q) => ({
     qid: q.id,
     rev: q.rev,
     order: shuffle(q.options.map((o) => o.id), rng),

@@ -513,9 +513,9 @@ test('a practice exam gives no feedback until the end and then a pass or fail', 
   const { root } = await app(makeBank({ perChapter: { 2: 4, 3: 4 } }));
   $(root, '#mode-exam').click();
   const exam = $(root, '.exam');
-  assert.ok(exam.textContent.includes('8 spørsmål fra alle kapitlene'));
+  assert.ok(exam.textContent.includes('8 tilfeldige spørsmål fra alle tilgjengelige kapitler'));
   assert.ok(exam.textContent.includes('Du består med 6 riktige (75 %'), '75 % of 8, rounded up');
-  assert.ok(exam.textContent.includes('kapittel 2–3'));
+  assert.ok(!/kapittel \d/.test(exam.textContent), 'the exam text does not list chapters');
   $(root, '[data-action=start-exam]').click();
   assert.equal($(root, '.q-meta .tag').textContent, 'Prøveeksamen');
   assert.equal($(root, '[data-action=quit]').textContent, 'Avslutt prøven');
