@@ -111,7 +111,7 @@ test('answering locks the question and shows complete feedback', { skip }, async
 
 test('feedback has a pre-filled GitHub issue link identifying the question', { skip }, async () => {
   const bank = bankWithTerms();
-  bank.site = { issues_url: 'https://github.com/868-no/quiz-site/issues' };
+  bank.site = { issues_url: 'https://github.com/868-no/quiz/issues' };
   const { root } = await app(bank);
   start(root, [2]);
   choose(root, 0);
@@ -120,7 +120,7 @@ test('feedback has a pre-filled GitHub issue link identifying the question', { s
   const id = $(root, '.feedback .report .qid').textContent;
   assert.match(id, /Spørsmål q-\d+, versjon 1/);
   const url = new URL(a.getAttribute('href'));
-  assert.equal(url.origin + url.pathname, 'https://github.com/868-no/quiz-site/issues/new');
+  assert.equal(url.origin + url.pathname, 'https://github.com/868-no/quiz/issues/new');
   assert.match(url.searchParams.get('title'), /^\[q-\d+ v1\] $/);
   assert.ok(url.searchParams.get('body').includes('Hva er feil eller uklart?'));
   assert.equal(a.getAttribute('rel'), 'noopener noreferrer');
