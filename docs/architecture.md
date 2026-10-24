@@ -87,12 +87,19 @@ sets the custom domain; `publish` writes `dist/CNAME` and an empty `dist/.nojeky
 
 ### How it is deployed
 
-The repository `868-no/quiz` is public and holds both the source and the built site.
-`dist/` is committed: it is built locally with `python3 -m tools publish`, where the
-private import is available for the full checks (sources, pages, textbook overlap).
-On every push that changes `dist/`, `.github/workflows/pages.yml` re-runs the release
-check on `dist/` and deploys **only that folder** to GitHub Pages. CI never builds or
-approves content.
+The repository `868-no/quiz` is public and holds the source; the built site is not
+committed. On every push to `main` that touches `content/`, `web/`, `config/` or
+`tools/`, `.github/workflows/pages.yml` runs the tool tests, builds the site with
+`python3 -m tools publish --without-source` and the release check, and deploys **only
+`dist/`** to GitHub Pages. Any failure stops the deploy.
+
+CI has no private import, so it cannot run the source, page and textbook-overlap
+checks. Those run locally: when a revision is verified and approved, and when you run
+`python3 -m tools publish` before pushing. CI only builds revisions whose approval pins
+their exact content, so nothing reaches the site that was not checked and approved
+locally. CI never approves content.
+
+Pushing approved content to `main` therefore deploys it; approval is the gate.
 
 What the public repository shows besides the site: all question files including review
 history and reviewer names, internal source references (chunk ids, page numbers, exam
@@ -115,11 +122,11 @@ shows its id and version after answering, with a link to a pre-filled issue.
 ### Every release
 
 ```sh
-python3 -m tools publish            # approved content only; full checks with the private import
-git add dist content && git commit -m "Publish …" && git push
+python3 -m tools publish            # full checks with the private import (output stays local)
+git add content && git commit -m "Approve …" && git push
 ```
 
-The workflow deploys within a minute or two. `python3 -m tools deploy` (push `dist/` to a
+The workflow builds and deploys within a minute or two. `python3 -m tools deploy` (push `dist/` to a
 separate site repository) remains available if the source repository should ever be
 made private again.
 

@@ -32,12 +32,14 @@ python3 -m tools serve --preview          # http://127.0.0.1:8000/
 python3 -m tools review show q-0001
 python3 -m tools review approve q-0001 --reviewer "Navn" --ack ocr,figures --checklist all
 
-# 5. Build the public site from approved content only, and serve it
+# 5. Build the public site from approved content only (full checks against the
+#    private import), and serve it locally
 python3 -m tools publish
 python3 -m tools serve                    # serves dist/
 
-# 6. Deploy: commit dist/ and push; GitHub Actions publishes it to https://quiz.868.no/
-git add dist content && git commit -m "Publish" && git push
+# 6. Deploy: push; GitHub Actions builds the site from approved content and
+#    publishes it to https://quiz.868.no/
+git add content && git commit -m "Approve …" && git push
 
 # Tests
 ./run-tests.sh
@@ -99,7 +101,7 @@ More: [docs/architecture.md](docs/architecture.md).
 | Path | Public? | Committed? | Contents |
 |---|---|---|---|
 | `private/` | **never** | **no** (`.gitignore`) | imported exports and figure crops, LLM prompts/outputs, check reports, audit log, preview build |
-| `dist/` | **yes – this is the deployed site** | yes (deployed by `.github/workflows/pages.yml`) | only `index.html`, `styles.css`, `js/`, `data/bank.json`, `CNAME`, `.nojekyll` |
+| `dist/` | **yes – this is the deployed site** | no (`.gitignore`; built and deployed by `.github/workflows/pages.yml`) | only `index.html`, `styles.css`, `sw.js`, `js/`, `fonts/`, `data/bank.json`, `CNAME`, `.nojekyll` |
 | `web/` | yes (copied into `dist/`) | yes | site source code |
 | `content/` | readable in the public repository; the site uses only the allowlisted projection in `data/bank.json` | yes | original questions (incl. review history), glossary, chapter registry, template schemas |
 | `tools/`, `tests/`, `config/`, `docs/` | no | yes | pipeline, tests, configuration, documentation |

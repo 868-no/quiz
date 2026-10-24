@@ -3,7 +3,7 @@
 Four separate offline stages. None of them runs on the public site.
 
 ```text
-import ──▶ A: new / generate ──▶ B: verify ──▶ C: human review ──▶ D: publish ──▶ deploy dist/
+import ──▶ A: new / generate ──▶ B: verify ──▶ C: human review ──▶ D: publish ──▶ push (CI deploys)
              (draft)              (needs_review)  (approved)        (fail closed)
 ```
 
@@ -122,8 +122,9 @@ the staged build for disallowed file types, oversized files, symlinks, private m
 (chunk ids, private field names and paths, OCR annotations, credentials), non-public
 bank fields and any 8-word passage shared with the imported textbook text.
 
-`--without-source` publishes without the private import (e.g. on a CI machine);
-source, page and copy checks are then skipped, so prefer publishing where the import is.
+`--without-source` publishes without the private import; source, page and copy checks
+are then skipped. GitHub Actions builds the deployed site this way, which is why you run
+a full `publish` locally before pushing.
 
 ## Adding new chapters (new scans)
 
@@ -136,12 +137,12 @@ source, page and copy checks are then skipped, so prefer publishing where the im
 
 ## Deployment
 
-The site at https://quiz.868.no/ is served by GitHub Pages from the committed `dist/`
-directory of the public repository (see [architecture.md](architecture.md#deployment)):
+The site at https://quiz.868.no/ is built and deployed by GitHub Actions on every push to
+`main` that changes content or site code (see [architecture.md](architecture.md#deployment)):
 
 ```sh
-python3 -m tools publish
-git add dist content && git commit -m "Publish …" && git push
+python3 -m tools publish     # full local check against the private import; output is not committed
+git add content && git commit -m "Approve …" && git push
 ```
 
 The repository is public, so never commit anything from `private/` (it is git-ignored)

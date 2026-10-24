@@ -1,15 +1,18 @@
-# Deploys the committed dist/ directory to GitHub Pages (https://quiz.868.no/).
+# Builds the public site from approved content and deploys it to GitHub Pages
+# (https://quiz.868.no/).
 #
-# dist/ is built locally with `python3 -m tools publish`, which needs the private
-# source import for its full checks. CI never builds content; it only re-runs the
-# release check on dist/ (file types, private markers, allowlisted bank fields)
-# and refuses to deploy if it fails. Nothing outside dist/ is ever published.
+# CI has no access to the private source import, so it publishes with
+# --without-source: only revisions whose approval pins their exact content are
+# built (the textbook copy checks ran locally when they were verified and
+# approved). The release check then scans the build (file types, private
+# markers, allowlisted bank fields, offline copy) and nothing is deployed if any
+# step fails. Only the built dist/ folder is published.
 name: Deploy site
 
 on:
   push:
     branches: [main]
-    paths: ["dist/**", ".github/workflows/pages.yml"]
+    paths: ["content/**", "web/**", "config/**", "tools/**", ".github/workflows/pages.yml"]
   workflow_dispatch:
 
 permissions:
@@ -32,6 +35,10 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - name: Tool tests
+        run: python3 -m unittest discover -s tests/python -t .
+      - name: Build from approved content (fails closed)
+        run: python3 -m tools publish --without-source
       - name: Release check (fails closed)
         run: python3 -m tools release-check dist
       - uses: actions/configure-pages@v5
