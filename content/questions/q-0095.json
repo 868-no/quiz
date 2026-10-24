@@ -1353,7 +1353,7 @@
     },
     {
       "revision": 7,
-      "status": "approved",
+      "status": "retired",
       "type": "single_choice",
       "style": "scenario",
       "difficulty": "easy",
@@ -1566,6 +1566,15 @@
           "acknowledged": [
             "figures"
           ]
+        },
+        {
+          "at": "2026-10-24T17:23:06+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "a5d4263979332edbeefa48988c3ef70cad0533374d7a9e8a7be049b7f3680e62",
+          "note": "superseded by r8"
         }
       ],
       "checks": {
@@ -1602,7 +1611,7 @@
     },
     {
       "revision": 8,
-      "status": "needs_review",
+      "status": "approved",
       "type": "single_choice",
       "style": "scenario",
       "difficulty": "easy",
@@ -1794,6 +1803,18 @@
           "to_status": "needs_review",
           "content_sha256": "e704ada9c187153fe996e5d10faa52873c96eb726541e8a680d0fb143187beb3",
           "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T17:23:06+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "e704ada9c187153fe996e5d10faa52873c96eb726541e8a680d0fb143187beb3",
+          "note": "Figure added or fixed",
+          "acknowledged": [
+            "figures"
+          ]
         }
       ],
       "visual": {
@@ -1819,7 +1840,24 @@
           }
         ],
         "passed": true,
-        "at": "2026-10-24T17:09:42+00:00"
+        "at": "2026-10-24T17:23:06+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T17:23:06+00:00",
+        "content_sha256": "e704ada9c187153fe996e5d10faa52873c96eb726541e8a680d0fb143187beb3",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
       }
     }
   ]

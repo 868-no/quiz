@@ -379,6 +379,12 @@
           "actor": "Jim C K Flaten",
           "action": "approve",
           "note": "Re-approved after layout changes for phone screens (no values changed)"
+        },
+        {
+          "at": "2026-10-24T17:23:03+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "One side block per chain block; all other figures unchanged"
         }
       ],
       "kind_labels": {
@@ -1885,6 +1891,12 @@
           "actor": "Jim C K Flaten",
           "action": "approve",
           "note": "New kinds added for round 7; all published figures render identically (checked)"
+        },
+        {
+          "at": "2026-10-24T17:23:02+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Dual-gate and push-pull layouts fixed (no overlapping labels); other figures unchanged"
         }
       ]
     },
