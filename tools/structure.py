@@ -13,10 +13,15 @@ from typing import Any
 from .common import Paths, ToolError, read_json, sha256_bytes, write_json
 
 _ACRONYMS = {
-    "AM", "FM", "SSB", "CW", "RF", "LO", "MF", "LF", "HF", "VHF", "UHF", "FET", "LC", "LR",
+    "AM", "FM", "SSB", "CW", "RF", "LO", "MF", "LF", "HF", "VHF", "UHF", "SHF", "FET", "LC", "LR",
     "RC", "RMS", "ALC", "SWR", "PLL", "DDS", "AB", "B", "C", "Q", "AGC", "IC", "DC", "AC",
+    "ATU", "SDR", "DSP", "EMC", "EMK", "CEPT", "IARU", "NRRL", "NKOM", "ITU", "QSL", "QSO", "DX",
+    "RTTY", "SSTV", "PSK", "FSK", "AFSK", "PEP", "ERP", "EIRP", "MUF", "LUF", "PTT", "VOX", "RIT",
+    "BNC", "UTC", "CQ", "RST", "LED", "NPN", "PNP", "PN", "JFET", "MOSFET", "VFO", "BFO", "DMR",
+    "APRS", "FT8", "WSPR", "RDS", "DAB", "TV", "GPS", "USB", "LSB", "AFC", "VSWR", "QRP", "QRO",
 }
-_PROPER = {"OHMS": "Ohms", "OHM": "Ohm"}
+_PROPER = {"OHMS": "Ohms", "OHM": "Ohm", "YAGI": "Yagi", "UDA": "Uda"}
+_UNITS = {"DB": "dB", "DBV": "dBV", "DBM": "dBm", "DBI": "dBi", "DBD": "dBd"}
 _TRAILING_SPLIT = {"OG", "AV", "ELLER", "TIL", "ET", "EN", "FOR", "UTENFOR", "MED", "I", "SOM"}
 _ALLOWED_CHARS = re.compile(r"^[A-ZÆØÅ0-9 ()\-–—,/:.?!]+$")
 _VOWELS = set("AEIOUYÆØÅ")
@@ -61,8 +66,11 @@ def propose_title(ocr_title: str | None) -> str | None:
             out.append(tok)
             continue
         up = tok.upper()
-        if up in _ACRONYMS and (len(up) > 1 or "".join(out).strip()):
+        core = up.rstrip("?!.")
+        if core in _ACRONYMS and (len(core) > 1 or "".join(out).strip()):
             out.append(up)
+        elif core in _UNITS:
+            out.append(_UNITS[core] + tok[len(core):])
         elif up in _PROPER:
             out.append(_PROPER[up])
         elif not "".join(out).strip():
@@ -121,6 +129,53 @@ def ocr_titles(source: dict[str, Any] | None) -> dict[str, str | None]:
     for c in (source or {}).get("chunks", []):
         out.setdefault(c["section_id"], c.get("section_ocr"))
     return out
+
+
+def _heading_norm(t: str | None) -> str:
+    return re.sub(r"[^A-ZÆØÅ0-9]+", " ", (t or "").upper()).strip()
+
+
+def book_heading_titles(reg: dict[str, Any], chunks: list[dict[str, Any]]) -> list[str]:
+    """Give sections their heading from the chapter PDFs (exact text from the PDF
+    bookmarks, not OCR). Chapters cited from the PDFs get their headings as is; in
+    scanned chapters an OCR heading is replaced when it matches a PDF heading of the
+    same chapter closely. Curated (already verified) titles are never touched.
+    Returns a log (private: it quotes headings)."""
+    import difflib
+
+    log: list[str] = []
+    pdf_heads: dict[int, list[str]] = {}
+    for c in chunks:
+        if c.get("collection") != "book":
+            continue
+        for h in [c.get("section_ocr")] + list(c.get("subsections_ocr") or []):
+            if h and h not in pdf_heads.setdefault(c["chapter"], []):
+                pdf_heads[c["chapter"]].append(h)
+    first: dict[str, dict[str, Any]] = {}
+    for c in chunks:
+        if c.get("section_id") and c["section_id"] not in first:
+            first[c["section_id"]] = c
+    for ch in reg["chapters"]:
+        for sec in ch.get("sections", []):
+            c = first.get(sec["id"])
+            if c is None or sec.get("title_status") == "verified" or not c.get("section_ocr"):
+                continue
+            heading = None
+            if c.get("collection") == "book":
+                heading = c["section_ocr"]
+            else:
+                cands = pdf_heads.get(ch["number"], [])
+                best = max(cands, key=lambda h: difflib.SequenceMatcher(
+                    None, _heading_norm(c["section_ocr"]), _heading_norm(h)).ratio(), default=None)
+                if best and difflib.SequenceMatcher(None, _heading_norm(c["section_ocr"]), _heading_norm(best)).ratio() >= 0.85:
+                    heading = best
+            if heading:
+                joined = re.sub(r"(\w)- (?!(?:OG|ELLER)\b)(\w)", r"\1\2", heading)
+                sec["title"] = propose_title(joined.lstrip("* ").strip())
+                sec["title_status"] = "verified"
+                sec["title_source"] = "book-pdf"
+                log.append(f"section {sec['id']}: heading from the PDF: {sec['title']!r}")
+    return log
 
 
 def assign_section_ids(

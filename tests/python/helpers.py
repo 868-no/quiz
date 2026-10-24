@@ -94,6 +94,37 @@ def write_export(root: Path, data: dict) -> Path:
     return root
 
 
+def doc_collections() -> dict:
+    """The chapter PDFs and the extra documents of a collections export: chapter 2 is
+    also scanned (its PDF text is reference only), chapter 9 exists only as a PDF."""
+    def chunk(uid, ch, section, text, coll, doc, pages):
+        return {"id": f"{coll}-{uid}", "uid": uid, "chapter_number": ch, "section": section, "subsections": [],
+                "text": text, "printed_pages": pages, "source_pages": [1], "document": doc, "collection": coll,
+                "marked_important": False}
+    book = [
+        chunk("b1", 2, "TESTAVSNITT OHMS", "Syntetisk tekst om spenning.", "book", "kap2.pdf", ["2-1"]),
+        chunk("b2", 9, "BØLGER I LUFTA", "Syntetisk tekst om bølger.", "book", "kap9.pdf", []),
+        chunk("b3", 9, "REFLEKSJON FRA BAKKEN", "Syntetisk tekst om refleksjon.", "book", "kap9.pdf", []),
+    ]
+    extras = [chunk("x1", None, "Q-KODER", "Syntetisk tekst om koder.", "extras", "qkoder.pdf", [])]
+    return {
+        "book": {"chunks": book, "manifest": {"documents": [
+            {"chapter": 2, "title": "Grunnleggende elektronikk"}, {"chapter": 9, "title": "Bølgeutbredelse"}]}},
+        "extras": {"chunks": extras, "manifest": {"documents": [{"chapter": None, "title": "Q-koder"}]}},
+    }
+
+
+def write_collections_export(root: Path, data: dict, docs: dict) -> Path:
+    write_export(root / "scans", data)
+    for coll, d in docs.items():
+        (root / coll).mkdir(parents=True, exist_ok=True)
+        with open(root / coll / "chunks.jsonl", "w", encoding="utf-8") as fh:
+            for c in d["chunks"]:
+                fh.write(json.dumps(c, ensure_ascii=False) + "\n")
+        (root / coll / "manifest.json").write_text(json.dumps(d["manifest"], ensure_ascii=False))
+    return root
+
+
 class TempRepo:
     """A throwaway repository with the real config, templates, glossary schema and web app."""
 

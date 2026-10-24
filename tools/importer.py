@@ -25,11 +25,17 @@ from .common import (
     write_json, write_text,
 )
 from .source_schema import (
-    CHAPTER_FIELDS, CHUNK_FIELDS, FLAG_FIELDS, MANIFEST_FIELDS, PAGE_FIELDS, RELIABLE_PAGE_STATUSES,
-    VISUAL_FIELDS, Diagnostics, check_object, check_records,
+    CHAPTER_FIELDS, CHUNK_FIELDS, DOC_CHUNK_FIELDS, FLAG_FIELDS, MANIFEST_FIELDS, PAGE_FIELDS,
+    RELIABLE_PAGE_STATUSES, VISUAL_FIELDS, Diagnostics, check_object, check_records,
 )
 
-IMPORTER_VERSION = 1
+IMPORTER_VERSION = 2
+
+# An export can be one scan collection (the files directly in the source directory), or
+# three collections in sub-directories: "scans" (the scanned chapters, with printed pages
+# and "!" markers), "book" (the chapter PDFs: all chapters, exact headings, but printed
+# pages only where a scan exists) and "extras" (other official documents).
+DOC_COLLECTIONS = ("book", "extras")
 
 # file name in source dir -> (key, required)
 SOURCE_FILES = {
@@ -50,26 +56,55 @@ OCR_HAZARD_REASONS = {
 PRINTED_PAGE_RE = re.compile(r"^\d{1,2}-\d{1,3}$")
 
 
+def _load_files(base: Path, prefix: str, files: dict[str, tuple[str, bool]], data: dict[str, Any],
+                target: dict[str, Any], diag: Diagnostics) -> None:
+    for rel, (key, required) in files.items():
+        path = base / rel
+        name = f"{prefix}{rel}"
+        if not path.exists():
+            (diag.errors if required else diag.warnings).append(
+                f"{name}: not found" + ("" if required else " (optional; related checks are skipped)"))
+            continue
+        data["_files"][name] = {"sha256": sha256_file(path), "bytes": path.stat().st_size}
+        try:
+            if rel.endswith(".jsonl"):
+                target[key] = read_jsonl(path)
+            elif rel.endswith(".json"):
+                target[key] = read_json(path)
+            else:
+                target[key] = path.read_text(encoding="utf-8")
+        except ToolError as exc:
+            diag.errors.append(str(exc))
+
+
+DOC_FILES = {
+    "chunks.jsonl": ("chunks", True),
+    "manifest.json": ("manifest", True),
+    "visuals.jsonl": ("visuals", False),
+    "qa_report.md": ("qa_report", False),
+}
+
+
+def is_collections_layout(source: Path) -> bool:
+    return (source / "scans").is_dir() and (source / "book").is_dir()
+
+
 def _load_sources(source: Path, diag: Diagnostics) -> dict[str, Any]:
     if not source.is_dir():
         raise ToolError(f"source directory not found: {source}")
-    data: dict[str, Any] = {"_files": {}}
-    for rel, (key, required) in SOURCE_FILES.items():
-        path = source / rel
-        if not path.exists():
-            (diag.errors if required else diag.warnings).append(
-                f"{rel}: not found" + ("" if required else " (optional; related checks are skipped)"))
+    data: dict[str, Any] = {"_files": {}, "layout": "single"}
+    if not is_collections_layout(source):
+        _load_files(source, "", SOURCE_FILES, data, data, diag)
+        return data
+    # the scans fill the same keys as a single-collection export; the PDFs go beside them
+    data["layout"] = "collections"
+    _load_files(source / "scans", "scans/", SOURCE_FILES, data, data, diag)
+    for coll in DOC_COLLECTIONS:
+        if not (source / coll).is_dir():
+            (diag.errors if coll == "book" else diag.warnings).append(f"{coll}/: not found")
             continue
-        data["_files"][rel] = {"sha256": sha256_file(path), "bytes": path.stat().st_size}
-        try:
-            if rel.endswith(".jsonl"):
-                data[key] = read_jsonl(path)
-            elif rel.endswith(".json"):
-                data[key] = read_json(path)
-            else:
-                data[key] = path.read_text(encoding="utf-8")
-        except ToolError as exc:
-            diag.errors.append(str(exc))
+        data[coll] = {}
+        _load_files(source / coll, f"{coll}/", DOC_FILES, data, data[coll], diag)
     return data
 
 
@@ -89,13 +124,16 @@ def validate_sources(data: dict[str, Any], diag: Diagnostics) -> None:
         check_records("visuals.jsonl", data["visuals"], VISUAL_FIELDS, diag)
     if data.get("flags") is not None:
         check_records("review/flags.jsonl", data["flags"], FLAG_FIELDS, diag)
+    for coll in DOC_COLLECTIONS:
+        if data.get(coll, {}).get("chunks") is not None:
+            check_records(f"{coll}/chunks.jsonl", data[coll]["chunks"], DOC_CHUNK_FIELDS, diag)
     if not diag.ok:
         return
 
     # Semantic checks that only make sense once the shape is right.
-    uids = [c["uid"] for c in chunks]
+    uids = [c["uid"] for c in chunks] + [c["uid"] for coll in DOC_COLLECTIONS for c in data.get(coll, {}).get("chunks", [])]
     if len(set(uids)) != len(uids):
-        diag.errors.append("chunks.jsonl: duplicate 'uid' values; chunk identity would be ambiguous")
+        diag.errors.append("chunks: duplicate 'uid' values; chunk identity would be ambiguous")
     pages = {p["pdf_page"]: p for p in manifest["pages"]}
     printed = {p.get("printed_page") for p in manifest["pages"]}
     for c in chunks:
@@ -150,9 +188,17 @@ def normalize(data: dict[str, Any], reg: dict[str, Any]) -> tuple[dict[str, Any]
             flags_by_element.setdefault(f["element"], []).append(
                 {k: f.get(k) for k in ("rule", "severity", "token", "detail")})
 
+    # Chapters with a scan are cited from the scan (printed pages, "!" markers); the other
+    # chapters are cited from the chapter PDFs. The PDF text of scanned chapters and the
+    # extra documents are kept as reference text (copy check; extras can also be cited).
+    scanned = {c["chapter_number"] for c in chunks}
+    book = (data.get("book") or {}).get("chunks") or []
+    extras = (data.get("extras") or {}).get("chunks") or []
+    book_cited = [c for c in book if c["chapter_number"] not in scanned]
+
     # Sections in reading order, from chunk metadata (what questions actually cite).
     sections: list[dict[str, Any]] = []
-    for c in chunks:
+    for c in chunks + book_cited:
         key = (c["chapter_number"], c.get("section"))
         if not sections or (sections[-1]["chapter"], sections[-1]["ocr_title"]) != key:
             ordinal = sum(1 for s in sections if s["chapter"] == key[0])
@@ -208,7 +254,45 @@ def normalize(data: dict[str, Any], reg: dict[str, Any]) -> tuple[dict[str, Any]
             "page_uncertainty": page_issues,
             "printed_pages_reliable": not page_issues,
             "text": c["text"],
+            "collection": "scans",
+            "citable": True,
+            "markers_known": True,
+            "document": None,
+            "doc_pages": [],
         })
+
+    def doc_chunk(c: dict[str, Any], collection: str, citable: bool, section_id: str | None) -> dict[str, Any]:
+        reasons = list(c.get("review_reasons") or [])
+        marked = bool(c.get("marked_important"))
+        return {
+            "uid": c["uid"], "id": c["id"], "chapter": c["chapter_number"], "section_id": section_id,
+            "section_ocr": c.get("section"), "subsections_ocr": c.get("subsections") or [],
+            "printed_pages": c["printed_pages"], "pdf_pages": [],
+            "source_files": c.get("source_files") or [c["document"]],
+            "text_sha256": sha256_bytes(c["text"].encode("utf-8")), "char_count": len(c["text"]),
+            "marked_important": marked, "marked_via": "pdf_marker" if marked else None,
+            "paragraph_markers": c["text"].count("[!]"),
+            "requires_visual_context": bool(c.get("requires_visual_context")),
+            "visual_elements": c.get("visual_elements") or [], "figure_references": c.get("figure_references") or [],
+            "review_reasons": reasons,
+            # text from the PDF itself, not OCR
+            "ocr_hazards": [], "ocr_flags": [], "has_unverified_equation": False,
+            "page_uncertainty": [] if c["printed_pages"] else ["no_printed_page"],
+            "printed_pages_reliable": bool(c["printed_pages"]),
+            "text": c["text"],
+            "collection": collection, "citable": citable,
+            # the "!" markers come from the scans; without a scan they are mostly missing
+            "markers_known": c["chapter_number"] in scanned,
+            "document": c["document"], "doc_pages": c["source_pages"],
+        }
+
+    for c in book:
+        cited = c["chapter_number"] not in scanned
+        norm_chunks.append(doc_chunk(c, "book", cited, chunk_section.get(c["uid"]) if cited else None))
+    for c in extras:
+        norm_chunks.append(doc_chunk(c, "extras", True, None))
+
+    log += structure.book_heading_titles(reg, norm_chunks)
 
     chapters = []
     for ch in manifest["chapters"]:
@@ -229,11 +313,28 @@ def normalize(data: dict[str, Any], reg: dict[str, Any]) -> tuple[dict[str, Any]
             entry["scanned"] = True
             entry["printed_pages"] = ch.get("printed_pages")
 
+    for d in ((data.get("book") or {}).get("manifest") or {}).get("documents") or []:
+        if d.get("chapter") is None or d["chapter"] in scanned:
+            continue
+        chapters.append({"number": d["chapter"], "title": d.get("title"), "pdf_pages": None, "printed_pages": None})
+        entry = structure.chapter_entry(reg, d["chapter"])
+        if entry is not None:
+            entry["title_key"] = structure.heading_key(d.get("title"))
+            entry["scanned"] = True  # = the source is imported; see printed_pages_known
+            entry["source"] = "book"
+            entry["printed_pages_known"] = False
+    chapters.sort(key=lambda c: c["number"])
+
     visuals = [
         {k: v.get(k) for k in ("id", "type", "pdf_page", "printed_page", "image", "caption", "status",
                                "chapter", "section")}
         for v in data.get("visuals") or []
     ]
+    for coll in DOC_COLLECTIONS:
+        for v in (data.get(coll) or {}).get("visuals") or []:
+            visuals.append({"id": v.get("id"), "type": v.get("type"), "collection": coll, "document": v.get("document"),
+                            "page": v.get("page"), "printed_page": v.get("printed_page"),
+                            "image": f"{coll}/{v['image']}" if v.get("image") else None, "caption": v.get("caption")})
     norm = {
         "importer_version": IMPORTER_VERSION,
         "document": manifest.get("document", {}),
@@ -418,8 +519,12 @@ def run_import(paths: Paths, source: Path, *, dry_run: bool = False, force: bool
         dest = tmp / "source" / rel
         dest.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(source / rel, dest)
-    if copy_figures and (source / "figures").is_dir():
-        shutil.copytree(source / "figures", tmp / "figures")
+    scan_dir = source / "scans" if data.get("layout") == "collections" else source
+    if copy_figures and (scan_dir / "figures").is_dir():
+        shutil.copytree(scan_dir / "figures", tmp / "figures")
+    for coll in DOC_COLLECTIONS:
+        if copy_figures and data.get("layout") == "collections" and (source / coll / "figures").is_dir():
+            shutil.copytree(source / coll / "figures", tmp / coll / "figures")
     write_json(tmp / "normalized.json", norm)
     write_json(tmp / "diff.json", diff)
     write_json(tmp / "import.json", meta)

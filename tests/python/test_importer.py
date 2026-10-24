@@ -6,7 +6,7 @@ from tools import importer, structure
 from tools.common import ToolError, read_json
 from tools.questions import load_question
 
-from .helpers import TempRepo, sample_revision
+from .helpers import TempRepo, doc_collections, sample_revision, write_collections_export
 
 
 class ImporterTest(unittest.TestCase):
@@ -140,3 +140,74 @@ class ImporterTest(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class CollectionsImportTest(unittest.TestCase):
+    """An export with the scans, the chapter PDFs and the extra documents side by side."""
+
+    def setUp(self):
+        self.repo = TempRepo()
+        self.src = self.repo.dir / "collections"
+        write_collections_export(self.src, self.repo.data, doc_collections())
+
+    def tearDown(self):
+        self.repo.cleanup()
+
+    def _import(self):
+        res = importer.run_import(self.repo.paths, self.src)
+        self.assertEqual(res["status"], "imported", res["diagnostics"].errors)
+        return importer.load_import(self.repo.paths, res["import_id"])
+
+    def test_scans_are_cited_and_pdf_text_of_scanned_chapters_is_reference_only(self):
+        by = {c["uid"]: c for c in self._import()["chunks"]}
+        self.assertEqual((by["u1"]["collection"], by["u1"]["citable"], by["u1"]["markers_known"]), ("scans", True, True))
+        self.assertEqual((by["b1"]["collection"], by["b1"]["citable"]), ("book", False))
+        self.assertIsNone(by["b1"]["section_id"])
+        # a chapter without a scan is cited from its PDF: sections, but no pages or markers
+        self.assertEqual((by["b2"]["citable"], by["b2"]["markers_known"]), (True, False))
+        self.assertEqual((by["b2"]["section_id"], by["b3"]["section_id"]), ("s9-01", "s9-02"))
+        self.assertEqual(by["b2"]["page_uncertainty"], ["no_printed_page"])
+        self.assertEqual(by["b2"]["doc_pages"], [1])
+        # extras can be cited but belong to no chapter
+        self.assertEqual((by["x1"]["collection"], by["x1"]["citable"], by["x1"]["chapter"]), ("extras", True, None))
+
+    def test_headings_come_from_the_pdfs(self):
+        self._import()
+        reg = structure.load_registry(self.repo.paths)
+        secs = structure.all_sections(reg)
+        self.assertEqual((secs["s9-01"]["title"], secs["s9-01"]["title_status"]), ("Bølger i lufta", "verified"))
+        # an OCR heading close to a PDF heading takes the PDF's text
+        self.assertEqual((secs["s2-01"]["title"], secs["s2-01"]["title_source"]), ("Testavsnitt Ohms", "book-pdf"))
+        # the garbled heading matches nothing and stays unverified
+        self.assertEqual(secs["s6-01"]["title_status"], "proposed")
+        ch9 = structure.chapter_entry(reg, 9)
+        self.assertEqual((ch9["source"], ch9["printed_pages_known"]), ("book", False))
+
+    def test_curated_titles_are_kept_on_reimport(self):
+        self._import()
+        reg = structure.load_registry(self.repo.paths)
+        sec = next(s for c in reg["chapters"] for s in c["sections"] if s["id"] == "s9-02")
+        sec["title"] = "Refleksjon fra bakken (rettet)"
+        structure.save_registry(self.repo.paths, reg)
+        docs = doc_collections()
+        docs["book"]["chunks"][2]["text"] += " Endret."
+        write_collections_export(self.src, self.repo.data, docs)
+        self._import()
+        secs = structure.all_sections(structure.load_registry(self.repo.paths))
+        self.assertEqual(secs["s9-02"]["title"], "Refleksjon fra bakken (rettet)")
+
+    def test_duplicate_uid_across_collections_refuses_import(self):
+        docs = doc_collections()
+        docs["extras"]["chunks"][0]["uid"] = "u1"
+        write_collections_export(self.src, self.repo.data, docs)
+        res = importer.run_import(self.repo.paths, self.src)
+        self.assertEqual(res["status"], "invalid")
+        self.assertTrue(any("duplicate 'uid'" in e for e in res["diagnostics"].errors))
+
+    def test_missing_book_collection_refuses_import(self):
+        import shutil
+        shutil.rmtree(self.src / "book")
+        (self.src / "book").mkdir()
+        res = importer.run_import(self.repo.paths, self.src)
+        self.assertEqual(res["status"], "invalid")
+        self.assertTrue(any("book/chunks.jsonl" in e for e in res["diagnostics"].errors))

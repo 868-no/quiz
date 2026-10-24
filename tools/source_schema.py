@@ -44,6 +44,36 @@ CHUNK_FIELDS: list[tuple[str, tuple, bool]] = [
     ("overlap_element_ids", _LIST, False),
 ]
 
+# Chunks of the PDF collections ("book": the chapter PDFs, "extras": other official
+# documents). They have pages in the source PDF instead of scan pages, and printed
+# pages only where the export could match a scan.
+DOC_CHUNK_FIELDS: list[tuple[str, tuple, bool]] = [
+    ("id", _STR, True),
+    ("uid", _STR, True),
+    ("chapter_number", (int, type(None)), True),
+    ("text", _STR, True),
+    ("printed_pages", _LIST, True),
+    ("source_pages", _LIST, True),
+    ("document", _STR, True),
+    ("collection", _STR, True),
+    ("section", _OPT_STR, False),
+    ("chapter", _OPT_STR, False),
+    ("subsections", _LIST, False),
+    ("source_files", _LIST, False),
+    ("element_ids", _LIST, False),
+    ("requires_visual_context", _BOOL, False),
+    ("visual_elements", _LIST, False),
+    ("figure_references", _LIST, False),
+    ("review_required", _BOOL, False),
+    ("review_reasons", _LIST, False),
+    ("marked_important", _BOOL, False),
+    ("char_count", _INT, False),
+    ("overlap_element_ids", _LIST, False),
+    ("document_title", _STR, False),
+    ("language", _STR, False),
+    ("printed_page_status", _OPT_STR, False),
+]
+
 MANIFEST_FIELDS: list[tuple[str, tuple, bool]] = [
     ("pages", _LIST, True),
     ("chapters", _LIST, True),

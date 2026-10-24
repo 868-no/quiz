@@ -332,8 +332,11 @@ def check_revision(ctx: Context, qid: str, rev: dict[str, Any]) -> dict[str, Any
         errors.append("sources: no source import available; references cannot be validated")
     else:
         if sources.get("import_id") and sources["import_id"] != ctx.source["import_id"]:
-            warnings.append(f"sources: written against {sources['import_id']}; current import is "
-                            f"{ctx.source['import_id']} (checked against current)")
+            # a newer import only matters if a cited chunk differs from the one written against
+            changed = _changed_since(ctx, sources["import_id"], uids)
+            if changed:
+                warnings.append(f"sources: written against {sources['import_id']}; cited chunk(s) {changed} have "
+                                f"changed in the current import {ctx.source['import_id']} (checked against current)")
         chunks = []
         for uid in uids:
             c = ctx.chunks.get(uid)
@@ -341,11 +344,18 @@ def check_revision(ctx: Context, qid: str, rev: dict[str, Any]) -> dict[str, Any
                 errors.append(f"sources: chunk {uid} is not in the current import")
             else:
                 chunks.append(c)
+        for c in chunks:
+            if c.get("citable") is False:
+                errors.append(f"sources: chunk {c['uid']} is reference text only (the chapter's scan is the source); cite the scan")
         if chunks:
-            chs = {c["chapter"] for c in chunks}
-            if chs != {chapter}:
+            # the extra documents (Q-codes, IARU guides) belong to no chapter and may be cited beside the book
+            book_chunks = [c for c in chunks if c.get("chapter") is not None]
+            chs = {c["chapter"] for c in book_chunks}
+            if not book_chunks:
+                errors.append("sources: cite at least one chunk from the book's chapter, not only extra documents")
+            elif chs != {chapter}:
                 errors.append(f"sources: cited chunks are from chapter(s) {sorted(chs)}, question is chapter {chapter}")
-            secs = {c["section_id"] for c in chunks}
+            secs = {c["section_id"] for c in book_chunks}
             if rev.get("section_ids") and not set(rev["section_ids"]) <= secs:
                 warnings.append(f"section_ids {rev['section_ids']} are not all among the cited chunks' sections {sorted(secs)}")
             pages = {p for c in chunks for p in c["printed_pages"]}
@@ -355,8 +365,14 @@ def check_revision(ctx: Context, qid: str, rev: dict[str, Any]) -> dict[str, Any
             if ref.get("section_id") and ref["section_id"] not in secs:
                 errors.append(f"study_reference.section_id {ref['section_id']} is not a section of the cited chunks")
             marked = any(c["marked_important"] for c in chunks)
+            # the "!" markers come from the scans; chapters without a scan mostly lack them
+            known = all(c.get("markers_known", True) for c in book_chunks)
             if rev.get("priority") == "exam_important" and not marked:
-                errors.append("priority: 'exam_important' but none of the cited chunks carries the book's '!' marker")
+                if known:
+                    errors.append("priority: 'exam_important' but none of the cited chunks carries the book's '!' marker")
+                else:
+                    warnings.append("priority: 'exam_important' set by judgement; the book's '!' markers are not "
+                                    "known for this chapter yet (no scan)")
             if rev.get("priority") == "normal" and marked:
                 warnings.append("priority: a cited chunk is marked exam-important ('!'); consider 'exam_important'")
             ocr = sorted({h for c in chunks for h in c["ocr_hazards"]})
@@ -418,6 +434,24 @@ def check_revision(ctx: Context, qid: str, rev: dict[str, Any]) -> dict[str, Any
         "hazards": hazards,
         "passed": not errors,
     }
+
+
+def _changed_since(ctx: Context, import_id: str, uids: list[str]) -> list[str] | str:
+    """Cited chunks whose text differs between an earlier import and the current one
+    (or a note when the earlier import is no longer available)."""
+    from .importer import load_import
+
+    key = f"import:{import_id}"
+    if key not in ctx.cache:
+        try:
+            old = load_import(ctx.paths, import_id)
+        except Exception:  # noqa: BLE001 - a missing snapshot only weakens the comparison
+            old = None
+        ctx.cache[key] = {c["uid"]: c["text_sha256"] for c in old["chunks"]} if old else None
+    old_hashes = ctx.cache[key]
+    if old_hashes is None:
+        return "(the earlier import is not available)"
+    return [u for u in uids if u in ctx.chunks and old_hashes.get(u) != ctx.chunks[u]["text_sha256"]]
 
 
 def _source_shingles(ctx: Context) -> tuple[set[tuple[str, ...]], set[tuple[str, ...]]]:

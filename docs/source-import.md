@@ -50,8 +50,43 @@ Observations that shaped the importer:
   section ids (`s2-07`), a hash of each OCR'd heading (`heading_key`, used to recognise
   the section on re-import), pages and chunk uids – never the heading text. Proposed
   titles are computed from the private import when you run `chapters list`, and a
-  section gets a `title` only when a person enters it. Public references only name a section after a person verifies the
+  section gets a `title` only when a person enters it or it is taken from the exact
+  PDF heading (see below). Public references only name a section after a person verifies the
   heading (`python3 -m tools chapters verify-section ID --title "…"`).
+
+## Three collections (2026-10-24)
+
+A later export splits the material into sub-directories; the importer recognises it by
+`scans/` and `book/` and reads them together (importer version 2):
+
+| Directory | Contents | Role |
+|---|---|---|
+| `scans/` | the scanned chapters (1–6), same files as above | cited: printed pages and `!` markers |
+| `book/` | one text PDF per chapter (all 16): `chunks.jsonl`, `manifest.json`, optional `visuals.jsonl`, `figures/` | cited for chapters without a scan; otherwise reference text only |
+| `extras/` | other official documents (ethics guide, formula sheets, Q codes) | citable, but belong to no chapter |
+
+Each normalized chunk records its `collection`, whether it is `citable`, whether the
+chapter's `!` markers are known (`markers_known`, only for scanned chapters), the
+`document` and the PDF pages (`doc_pages`). Chunk uids must be unique across all three.
+
+* **Chapters with a scan** are cited from the scan as before. Their PDF text is kept for
+  the copy check and as better text to read, but `verify` refuses a question citing it.
+* **Chapters without a scan** get sections from the PDF chunks. The PDFs have no printed
+  page numbers (their pagination is not the book's), so the registry entry has
+  `source: "book"` and `printed_pages_known: false`; questions use a chapter and section
+  reference with an empty `printed_pages`. Without markers, `exam_important` is a
+  judgement call and `verify` warns about it instead of refusing it.
+* **Headings.** The PDF headings are exact text, so the importer uses them as section
+  titles (`title_status: verified`, `title_source: book-pdf`): directly for chapters
+  cited from the PDFs, and for scanned chapters when an OCR heading matches a PDF heading
+  of the same chapter closely. Titles a person has verified are never replaced. Headings
+  that matched nothing stay unverified and are not shown publicly.
+* Scanning a chapter later and re-importing makes the scan the citable source for it.
+  `verify` then refuses questions that still cite the PDF chunks of that chapter, so each
+  one is moved to the scan's chunks (`review edit`), given printed pages and checked
+  against the markers.
+
+The single-collection layout still works unchanged.
 
 ## Snapshots and identity
 

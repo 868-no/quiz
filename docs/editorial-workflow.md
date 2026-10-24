@@ -134,7 +134,7 @@ python3 -m tools release-check    # also run automatically by publish
 against the current import, and refuses – writing nothing – if anything is wrong:
 content changed after approval, unresolved source flags (`--skip-flagged` leaves those
 questions out instead), failing checks, unapproved glossary terms or templates, unknown
-templates, chapters that are not scanned, invalid keys. The release check then scans
+templates, chapters that are not imported, invalid keys. The release check then scans
 the staged build for disallowed file types, oversized files, symlinks, private markers
 (chunk ids, private field names and paths, OCR annotations, credentials), non-public
 bank fields and any 8-word passage shared with the imported textbook text.
@@ -152,6 +152,10 @@ a full `publish` locally before pushing.
 4. Author/generate, verify, review and approve questions for the new chapter.
 5. `python3 -m tools publish` locally, then commit and push; GitHub Actions deploys it. The
    chapter becomes selectable once it has approved questions.
+
+Chapters that exist only as chapter PDFs (`book/` in the export, see
+[source-import.md](source-import.md#three-collections-2026-10-24)) follow the same steps,
+with a chapter and section reference and no printed pages until the chapter is scanned.
 
 ## Deployment
 

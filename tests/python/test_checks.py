@@ -4,7 +4,7 @@ import unittest
 from tools import checks
 from tools.context import load_context
 
-from .helpers import SYNTH_TEXT, TempRepo, sample_revision
+from .helpers import SYNTH_TEXT, TempRepo, doc_collections, sample_revision, write_collections_export
 
 
 class ChecksTest(unittest.TestCase):
@@ -216,3 +216,57 @@ class ChecksTest(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class CollectionsChecksTest(unittest.TestCase):
+    """Citing an import with the scans, the chapter PDFs and the extra documents."""
+
+    @classmethod
+    def setUpClass(cls):
+        import json
+        cls.repo = TempRepo()
+        topics = cls.repo.root / "content" / "chapters" / "topics.json"
+        data = json.loads(topics.read_text())
+        data["topics"].append({"id": "refleksjon", "title": "Refleksjon", "chapter": 9})
+        topics.write_text(json.dumps(data, ensure_ascii=False))
+        from tools.importer import run_import
+        src = write_collections_export(cls.repo.dir / "collections", cls.repo.data, doc_collections())
+        cls.iid = run_import(cls.repo.paths, src)["import_id"]
+        cls.ctx = load_context(cls.repo.paths)
+
+    @classmethod
+    def tearDownClass(cls):
+        cls.repo.cleanup()
+
+    def chapter9(self, **over):
+        rev = sample_revision(self.iid, style="concept", calculation=None, visual=None, chapter=9,
+                              section_ids=["s9-02"], topic_ids=["refleksjon"],
+                              context=[], stem=[["Hva skjer med en bølge som treffer bakken?"]],
+                              options=[{"id": f"o{i}", "content": [t], "feedback": [] if i == 1 else ["Nei."]}
+                                       for i, t in enumerate(["Den reflekteres.", "Den forsvinner.",
+                                                              "Den dobles.", "Den stopper."], 1)],
+                              explanation=[["Bakken reflekterer en del av bølgen."]],
+                              study_reference={"chapter": 9, "section_id": "s9-02", "printed_pages": []},
+                              sources={"import_id": self.iid, "chunk_uids": ["b3"]})
+        for k in ("calculation", "visual"):
+            rev.pop(k)
+        rev.update(over)
+        return checks.check_revision(self.ctx, "q-0001", rev)
+
+    def test_chapter_from_the_pdf_can_be_cited_by_section(self):
+        r = self.chapter9(priority="normal")
+        self.assertTrue(r["passed"], r["errors"])
+
+    def test_priority_is_a_judgement_without_markers(self):
+        r = self.chapter9()
+        self.assertTrue(r["passed"], r["errors"])
+        self.assertTrue(any("set by judgement" in w for w in r["warnings"]), r["warnings"])
+
+    def test_pdf_text_of_a_scanned_chapter_cannot_be_cited(self):
+        rev = sample_revision(self.iid, sources={"import_id": self.iid, "chunk_uids": ["u1", "b1"]})
+        r = checks.check_revision(self.ctx, "q-0001", rev)
+        self.assertTrue(any("reference text only" in e for e in r["errors"]), r["errors"])
+
+    def test_scanned_question_still_passes(self):
+        r = checks.check_revision(self.ctx, "q-0001", sample_revision(self.iid))
+        self.assertTrue(r["passed"], r["errors"])

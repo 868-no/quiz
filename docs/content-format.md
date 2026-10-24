@@ -26,7 +26,7 @@ One file per question **identity**, holding a list of **revisions**:
 | `difficulty` | `easy`, `medium`, `hard` |
 | `chapter`, `section_ids`, `topic_ids` | taxonomy; sections from `chapters.json`, topics from `topics.json` |
 | `learning_objective` | internal (not published) |
-| `priority` | `exam_important` (requires a cited `!`-marked chunk) or `normal` |
+| `priority` | `exam_important` (requires a cited `!`-marked chunk; in chapters without a scan it is a judgement and `verify` warns) or `normal` |
 | `context` | rich text shown *before* answering (scenario, assumptions, units) – must not reveal the answer |
 | `stem` | rich text: the question |
 | `options` | exactly 4 × `{id, content (paragraph), feedback (rich text; required for wrong options)}` |
@@ -35,7 +35,7 @@ One file per question **identity**, holding a list of **revisions**:
 | `visual` | optional `{template, version, params, params_after?, caption?}` – see visual-templates.md |
 | `glossary_after_answer` | term ids shown as plain text until answered (their definition would reveal the answer) |
 | `calculation` | required for `style: calculation`, see below |
-| `study_reference` | `{chapter, section_id, printed_pages}` – printed pages must belong to the cited chunks |
+| `study_reference` | `{chapter, section_id, printed_pages}` – printed pages must belong to the cited chunks; empty for chapters without printed pages yet |
 | `sources` | private: `{import_id, chunk_uids}` |
 | `provenance`, `checks`, `flags`, `review_log`, `approval` | private metadata |
 
@@ -102,4 +102,6 @@ Only `approved` terms can be published; `python3 -m tools glossary approve ID…
 
 `content/chapters/chapters.json` (registry with stable section ids; maintained by the
 importer, curated by people) and `content/chapters/topics.json` (`{id, title, chapter}`).
-`book.total_chapters` makes not-yet-scanned chapters visible as unavailable.
+`book.total_chapters` makes chapters not yet imported visible as unavailable. A chapter's
+`scanned` means its source is imported; `printed_pages_known: false` marks a chapter cited
+from the chapter PDF, without printed pages yet.
