@@ -3,7 +3,7 @@
   "revisions": [
     {
       "revision": 1,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "concept",
@@ -187,6 +187,15 @@
             "figures",
             "ocr"
           ]
+        },
+        {
+          "at": "2026-10-24T10:04:15+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "ea5f6105bbebcfa227383de4812e153c2bd20d00f78a21aa10e2ca79b813243a",
+          "note": "superseded by r2"
         }
       ],
       "provenance": {
@@ -252,6 +261,273 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-24T09:30:13+00:00",
         "content_sha256": "ea5f6105bbebcfa227383de4812e153c2bd20d00f78a21aa10e2ca79b813243a",
+        "acknowledged_hazards": [
+          "figures",
+          "ocr"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 2,
+      "status": "approved",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 6,
+      "section_ids": [
+        "s6-18"
+      ],
+      "topic_ids": [
+        "agc",
+        "demodulering"
+      ],
+      "learning_objective": "Forstå at middelverdien av utgangen fra en AM-diodedetektor følger signalstyrken og kan styre AGC og S-meter.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En ",
+          {
+            "term": "amplitudemodulasjon",
+            "text": "AM"
+          },
+          "-",
+          {
+            "term": "demodulator",
+            "text": "detektor"
+          },
+          " med diode ",
+          {
+            "term": "likeretter",
+            "text": "likeretter"
+          },
+          " MF-signalet og glatter det. Utgangsspenningen består av lyden, som varierer opp og ned rundt et gjennomsnittlig nivå."
+        ]
+      ],
+      "stem": [
+        [
+          "Hvilken del av utgangsspenningen egner seg best til å styre ",
+          {
+            "term": "agc",
+            "text": "AGC"
+          },
+          " og ",
+          {
+            "term": "s-meter",
+            "text": "S-meteret"
+          },
+          "?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Gjennomsnittsnivået, fordi det følger bærebølgens styrke og ikke lyden"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Lydsignalet, fordi det blir sterkere jo kraftigere modulasjonen er"
+          ],
+          "feedback": [
+            "Lyden varierer hele tiden med tale og musikk. En AGC styrt av lyden ville skrudd forsterkningen opp og ned i takt med modulasjonen."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "MF-rippelen, fordi den viser hvor nær senterfrekvensen signalet ligger"
+          ],
+          "feedback": [
+            [
+              "MF-",
+              {
+                "term": "rippel",
+                "text": "rippelen"
+              },
+              " er restene av ",
+              {
+                "term": "mellomfrekvens",
+                "text": "mellomfrekvensen"
+              },
+              " som glattingen skal fjerne. Den sier ikke noe nyttig om signalstyrken."
+            ]
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "De høyeste lydfrekvensene, fordi de viser hvor dyp modulasjonen er"
+          ],
+          "feedback": [
+            [
+              "Lydens frekvensinnhold avhenger av hva som sies, ikke av hvor sterkt signalet er når det kommer til ",
+              {
+                "term": "mottaker",
+                "text": "mottakeren"
+              },
+              "."
+            ]
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Modulasjonen svinger like mye opp som ned rundt et middelnivå. Middelnivået er en ",
+          {
+            "term": "likespenning",
+            "text": "likespenning"
+          },
+          " som er proporsjonal med bærebølgens styrke, og dermed med hvor sterkt signalet er."
+        ],
+        [
+          "Filtreres lyden bort med et RC-ledd med lang ",
+          {
+            "term": "tidskonstant",
+            "text": "tidskonstant"
+          },
+          ", står bare denne likespenningen igjen. Den kan vise signalstyrken på S-meteret og brukes som AGC-",
+          {
+            "term": "spenning",
+            "text": "spenning"
+          },
+          " som endrer ",
+          {
+            "term": "forspenning",
+            "text": "forspenningen"
+          },
+          " på MF-forsterkerne, slik at forsterkningen går ned når signalet blir sterkere."
+        ],
+        "Før lydforsterkeren fjernes likespenningen med en seriekondensator, slik at den ikke forskyver arbeidspunktet i lydtrinnet."
+      ],
+      "visual": {
+        "template": "block-diagram",
+        "version": 1,
+        "params": {
+          "chain": [
+            {
+              "kind": "antenna"
+            },
+            {
+              "kind": "mixer"
+            },
+            {
+              "kind": "if_amp"
+            },
+            {
+              "kind": "demodulator"
+            },
+            {
+              "kind": "af_amp"
+            },
+            {
+              "kind": "speaker"
+            }
+          ],
+          "side": [
+            {
+              "kind": "local_osc",
+              "into": 1
+            },
+            {
+              "kind": "agc",
+              "into": 2
+            }
+          ]
+        }
+      },
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 6,
+        "section_id": "s6-18",
+        "printed_pages": [
+          "6-10"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "52a23fd493ddfb5f"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "AI-assistent (Claude), svaralternativer",
+        "based_on": 1,
+        "at": "2026-10-24T10:03:19+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T10:03:19+00:00",
+          "actor": "AI-assistent (Claude), svaralternativer",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "ea5f6105bbebcfa227383de4812e153c2bd20d00f78a21aa10e2ca79b813243a",
+          "note": "Jevnere svaralternativer"
+        },
+        {
+          "at": "2026-10-24T10:03:39+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "24c917762b109555d4a0fec19c66d0d32ae24b2b18158d9a0b314b858693e428",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T10:04:15+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "24c917762b109555d4a0fec19c66d0d32ae24b2b18158d9a0b314b858693e428",
+          "note": "Jevnere svaralternativer og nye figurer (gjennomgått av AI).",
+          "acknowledged": [
+            "figures",
+            "ocr"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "24c917762b109555d4a0fec19c66d0d32ae24b2b18158d9a0b314b858693e428",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: equation, low_ocr_confidence, numeric_low_conf. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T10:04:15+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T10:04:15+00:00",
+        "content_sha256": "24c917762b109555d4a0fec19c66d0d32ae24b2b18158d9a0b314b858693e428",
         "acknowledged_hazards": [
           "figures",
           "ocr"

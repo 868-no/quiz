@@ -3,7 +3,7 @@
   "revisions": [
     {
       "revision": 1,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "scenario",
@@ -186,6 +186,15 @@
           "acknowledged": [
             "figures"
           ]
+        },
+        {
+          "at": "2026-10-24T10:04:11+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "a32085398f539bc7c4c490ba781aeda87852d74d50e3ab2254d96fd6f6038d4b",
+          "note": "superseded by r2"
         }
       ],
       "provenance": {
@@ -211,6 +220,222 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-24T09:30:01+00:00",
         "content_sha256": "a32085398f539bc7c4c490ba781aeda87852d74d50e3ab2254d96fd6f6038d4b",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 2,
+      "status": "approved",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "medium",
+      "chapter": 2,
+      "section_ids": [
+        "s2-10"
+      ],
+      "topic_ids": [
+        "komponentstabilitet"
+      ],
+      "learning_objective": "Vite at vanlige trådviklede motstander er induktive og dårlig egnet på radiofrekvenser, og at en kunstlast bør bygges av motstander som er lavinduktive på de aktuelle frekvensene.",
+      "priority": "normal",
+      "context": [
+        [
+          "Du vil lage en enkel ",
+          {
+            "term": "kunstlast",
+            "text": "kunstlast"
+          },
+          " for HF-båndene ved å parallellkoble flere ",
+          {
+            "term": "motstand",
+            "text": "motstander"
+          },
+          " til en samlet ",
+          {
+            "term": "resistans",
+            "text": "resistans"
+          },
+          " på ",
+          {
+            "q": 50,
+            "u": "Ω"
+          },
+          ". Du har to typer å velge mellom: trådviklede effektmotstander og metallfilmmotstander. Begge typene har tilstrekkelig effekttåling."
+        ]
+      ],
+      "stem": [
+        "Hvilken motstandstype bør du velge?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Metallfilmmotstandene, fordi de vanligvis har langt mindre induktans"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Trådviklede motstander, fordi induktansen deres hjelper med å tilpasse senderen"
+          ],
+          "feedback": [
+            [
+              "En kunstlast skal oppføre seg som en ren resistans på 50 Ω. Induktans gir en reaktans som gjør at lasten ikke lenger er 50 Ω, og den endrer seg med ",
+              {
+                "term": "frekvens",
+                "text": "frekvensen"
+              },
+              "."
+            ]
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Trådviklede motstander, fordi tråden tåler varmen bedre enn en tynn film"
+          ],
+          "feedback": [
+            [
+              "Varmen er løst når effekttålingen er nok, slik det står i oppgaven. Problemet med trådviklede motstander er at de er viklet som en ",
+              {
+                "term": "spole",
+                "text": "spole"
+              },
+              " og derfor er induktive."
+            ]
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Det spiller ingen rolle, fordi en motstand har samme impedans uansett frekvens"
+          ],
+          "feedback": [
+            [
+              "Det gjelder bare en ideell motstand. Virkelige motstander har litt induktans og ",
+              {
+                "term": "kapasitans",
+                "text": "kapasitans"
+              },
+              ", og i en vanlig trådviklet motstand er induktansen så stor at den egner seg dårlig på radiofrekvenser."
+            ]
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "En vanlig trådviklet motstand har viklinger som gir ",
+          {
+            "term": "induktans",
+            "text": "induktans"
+          },
+          ". På radiofrekvenser kan denne induktansen gi betydelig ",
+          {
+            "term": "reaktans",
+            "text": "reaktans"
+          },
+          "."
+        ],
+        [
+          "Motstander beregnet for RF har små parasittiske induktanser og kapasitanser. De er derfor bedre egnet til kunstlaster, der ",
+          {
+            "term": "impedans",
+            "text": "impedansen"
+          },
+          " bør være tilnærmet resistiv over hele det aktuelle frekvensområdet."
+        ],
+        [
+          "Enkelte spesialkonstruerte trådviklede motstander kan også brukes på RF, og vanlige metallfilmmotstander er ikke automatisk lavinduktive. Det avgjørende er motstandens spesifiserte frekvensegenskaper, ikke bare materialtypen."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 2,
+        "section_id": "s2-10",
+        "printed_pages": [
+          "2-3"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "e37f6f8c76891feb"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "AI-assistent (Claude), svaralternativer",
+        "based_on": 1,
+        "at": "2026-10-24T10:03:17+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T10:03:17+00:00",
+          "actor": "AI-assistent (Claude), svaralternativer",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "a32085398f539bc7c4c490ba781aeda87852d74d50e3ab2254d96fd6f6038d4b",
+          "note": "Jevnere svaralternativer"
+        },
+        {
+          "at": "2026-10-24T10:03:39+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "2eaf934e8f3aa0fe2ba7e91734e0cddff1e3cbe73b12d476e4aa0052017895f9",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T10:04:11+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "2eaf934e8f3aa0fe2ba7e91734e0cddff1e3cbe73b12d476e4aa0052017895f9",
+          "note": "Jevnere svaralternativer og nye figurer (gjennomgått av AI).",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "2eaf934e8f3aa0fe2ba7e91734e0cddff1e3cbe73b12d476e4aa0052017895f9",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T10:04:11+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T10:04:11+00:00",
+        "content_sha256": "2eaf934e8f3aa0fe2ba7e91734e0cddff1e3cbe73b12d476e4aa0052017895f9",
         "acknowledged_hazards": [
           "figures"
         ],

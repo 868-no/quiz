@@ -3,7 +3,7 @@
   "revisions": [
     {
       "revision": 1,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "scenario",
@@ -199,6 +199,15 @@
           "content_sha256": "fdf7afad7a1160de109460af665b0151d6f5028d2e5095db62df93140b4d3744",
           "note": "Runde 2: faglig kontrollert av AI (ChatGPT), 11 spørsmål rettet.",
           "acknowledged": []
+        },
+        {
+          "at": "2026-10-24T10:04:11+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "fdf7afad7a1160de109460af665b0151d6f5028d2e5095db62df93140b4d3744",
+          "note": "superseded by r2"
         }
       ],
       "provenance": {
@@ -219,6 +228,228 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-24T09:30:02+00:00",
         "content_sha256": "fdf7afad7a1160de109460af665b0151d6f5028d2e5095db62df93140b4d3744",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 2,
+      "status": "approved",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "hard",
+      "chapter": 2,
+      "section_ids": [
+        "s2-24",
+        "s2-23"
+      ],
+      "topic_ids": [
+        "spoler"
+      ],
+      "learning_objective": "Forstå at energien i magnetfeltet til en spole gir en høy indusert spenning når strømmen brytes brått.",
+      "priority": "normal",
+      "context": [
+        [
+          "Et relé drives av et batteri på ",
+          {
+            "q": 12,
+            "u": "V"
+          },
+          " gjennom en bryter. Når bryteren åpnes, ser du en liten gnist mellom kontaktene, og et oscilloskop viser en kortvarig ",
+          {
+            "term": "spenning",
+            "text": "spenning"
+          },
+          " på flere hundre volt over reléspolen."
+        ]
+      ],
+      "stem": [
+        "Hva er årsaken til den høye spenningen?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Spolen prøver å holde strømmen i gang med energien som er lagret i magnetfeltet"
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Spolen har ladet seg opp som en kondensator og lades ut gjennom kontaktene"
+          ],
+          "feedback": [
+            [
+              "Spolen lagrer ",
+              {
+                "term": "energi",
+                "text": "energien"
+              },
+              " i et magnetfelt. En ",
+              {
+                "term": "kondensator",
+                "text": "kondensator"
+              },
+              " lagrer derimot energi i et elektrisk felt. Den høye spenningen i dette tilfellet skyldes at strømmen gjennom spolen forsøkes brutt raskt."
+            ]
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Batteriet gir en kort spenningstopp når belastningen fra reléet plutselig forsvinner"
+          ],
+          "feedback": [
+            "Batteriet leverer omtrent 12 V, men spolen kan indusere en langt høyere spenning når strømmen gjennom den endres raskt. Det er energien som allerede er lagret i magnetfeltet, som skaper spenningstoppen."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Strømmen i spolen øker kraftig i det øyeblikket kontaktene skilles"
+          ],
+          "feedback": [
+            "Strømmen minker når kontaktene skilles. Det er nettopp den raske minkingen som induserer spenningen."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Mens ",
+          {
+            "term": "strom",
+            "text": "strømmen"
+          },
+          " går, er det lagret energi i magnetfeltet til ",
+          {
+            "term": "spole",
+            "text": "spolen"
+          },
+          ". Når strømmen brytes, faller feltet sammen, og det induseres en spenning som prøver å holde strømmen i gang. Spenningen er proporsjonal med ",
+          {
+            "term": "induktans",
+            "text": "induktansen"
+          },
+          " og med hvor raskt strømmen endres:"
+        ],
+        {
+          "steps": [
+            [
+              {
+                "math": [
+                  "U",
+                  "=",
+                  "L",
+                  "·",
+                  {
+                    "frac": [
+                      [
+                        "ΔI"
+                      ],
+                      [
+                        "Δt"
+                      ]
+                    ]
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        [
+          "Brytes strømmen svært raskt, blir Δt liten og spenningen mye høyere enn batterispenningen. Spenningen slår over mellom kontaktene som en gnist, og den kan ødelegge en ",
+          {
+            "term": "transistor",
+            "text": "transistor"
+          },
+          " som styrer reléet. Derfor kobles ofte en ",
+          {
+            "term": "diode",
+            "text": "diode"
+          },
+          " i sperreretning over reléspolen, slik at strømmen får en vei å gå og spenningen begrenses."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 2,
+        "section_id": "s2-24",
+        "printed_pages": [
+          "2-9",
+          "2-10"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "6eaaeb4fb134515e",
+          "5ec4bd360fc74c8b"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "AI-assistent (Claude), svaralternativer",
+        "based_on": 1,
+        "at": "2026-10-24T10:03:17+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T10:03:17+00:00",
+          "actor": "AI-assistent (Claude), svaralternativer",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "fdf7afad7a1160de109460af665b0151d6f5028d2e5095db62df93140b4d3744",
+          "note": "Jevnere svaralternativer"
+        },
+        {
+          "at": "2026-10-24T10:03:39+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "1586923a397d80361d30dd8d863f4ac62824bdbaf6f26f01979bf8ae92b40b44",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T10:04:11+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "1586923a397d80361d30dd8d863f4ac62824bdbaf6f26f01979bf8ae92b40b44",
+          "note": "Jevnere svaralternativer og nye figurer (gjennomgått av AI).",
+          "acknowledged": []
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "1586923a397d80361d30dd8d863f4ac62824bdbaf6f26f01979bf8ae92b40b44",
+        "errors": [],
+        "warnings": [],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T10:04:11+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T10:04:11+00:00",
+        "content_sha256": "1586923a397d80361d30dd8d863f4ac62824bdbaf6f26f01979bf8ae92b40b44",
         "acknowledged_hazards": [],
         "checklist": {
           "one_correct": true,

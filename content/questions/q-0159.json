@@ -3,7 +3,7 @@
   "revisions": [
     {
       "revision": 1,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "scenario",
@@ -210,6 +210,15 @@
           "acknowledged": [
             "figures"
           ]
+        },
+        {
+          "at": "2026-10-24T10:04:13+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "0808d0acd4bbead77374174cc2495b2d339ce568dccaa67e8fbb00a5967801f9",
+          "note": "superseded by r2"
         }
       ],
       "provenance": {
@@ -235,6 +244,230 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-24T09:30:06+00:00",
         "content_sha256": "0808d0acd4bbead77374174cc2495b2d339ce568dccaa67e8fbb00a5967801f9",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 2,
+      "status": "approved",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "medium",
+      "chapter": 3,
+      "section_ids": [
+        "s3-33"
+      ],
+      "topic_ids": [
+        "regulert-stromforsyning"
+      ],
+      "learning_objective": "Vite at en integrert spenningsregulator trenger avkoblingskondensatorer for ikke å oscillere.",
+      "priority": "normal",
+      "context": [
+        [
+          "En radioamatør bygger en strømforsyning på ",
+          {
+            "q": 12,
+            "u": "V"
+          },
+          " med en integrert ",
+          {
+            "term": "spenningsregulator",
+            "text": "spenningsregulator"
+          },
+          " av typen 7812 med tre bein: inngang, jord og utgang. Regulatoren er koblet rett mellom ",
+          {
+            "term": "glattekondensator",
+            "text": "glattekondensatoren"
+          },
+          " og utgangsklemmene uten andre komponenter, og glattekondensatoren sitter et stykke unna. På utgangen ser han en høyfrekvent svingning oppå ",
+          {
+            "term": "likespenning",
+            "text": "likespenningen"
+          },
+          "."
+        ]
+      ],
+      "stem": [
+        "Hvilket tiltak vil mest sannsynlig fjerne svingningen?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Sette små avkoblingskondensatorer tett inntil inngang og utgang."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Bytte glattekondensatoren med en som har mye større kapasitans."
+          ],
+          "feedback": [
+            [
+              "En større ",
+              {
+                "term": "elektrolyttkondensator",
+                "text": "elektrolyttkondensator"
+              },
+              " langt unna hjelper lite mot høyfrekvente svingninger. Den har selv induktans, og ledningene til regulatoren gir mer."
+            ]
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Sette en drosselspole i serie med utgangen fra regulatoren."
+          ],
+          "feedback": [
+            [
+              "En ",
+              {
+                "term": "spole",
+                "text": "spole"
+              },
+              " ",
+              {
+                "term": "seriekobling",
+                "text": "i serie"
+              },
+              " legger til induktans i utgangen og gjør det heller lettere for regulatoren å svinge."
+            ]
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Øke inngangsspenningen, så regulatoren får større spenningsmargin."
+          ],
+          "feedback": [
+            "Svingningen skyldes ikke for liten spenningsmargin. Høyere inngangsspenning gir bare mer varme i regulatoren og fjerner ikke ustabiliteten."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "En lineær ",
+          {
+            "term": "spenningsregulator",
+            "text": "spenningsregulator"
+          },
+          " bruker tilbakekobling for å holde utgangsspenningen konstant. ",
+          {
+            "term": "induktans",
+            "text": "Induktans"
+          },
+          " i ledningene og feil eller manglende avkobling kan gjøre reguleringen ustabil, slik at den svinger av seg selv."
+        ],
+        [
+          "For en vanlig 7812-regulator brukes typisk avkoblingskondensatorer nær inngangs- og utgangspinnene. Vanlige eksempler er ",
+          {
+            "q": 0.33,
+            "u": "µF"
+          },
+          " på inngangen og ",
+          {
+            "q": 0.1,
+            "u": "µF"
+          },
+          " på utgangen, men databladet for den aktuelle regulatoren skal følges."
+        ],
+        [
+          "Andre typer spenningsregulatorer kan ha andre krav til både ",
+          {
+            "term": "kapasitans",
+            "text": "kapasitans"
+          },
+          " og kondensatorenes ESR."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 3,
+        "section_id": "s3-33",
+        "printed_pages": [
+          "3-15"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "8dc5d983d56fd77c"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "AI-assistent (Claude), svaralternativer",
+        "based_on": 1,
+        "at": "2026-10-24T10:03:18+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T10:03:18+00:00",
+          "actor": "AI-assistent (Claude), svaralternativer",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "0808d0acd4bbead77374174cc2495b2d339ce568dccaa67e8fbb00a5967801f9",
+          "note": "Jevnere svaralternativer"
+        },
+        {
+          "at": "2026-10-24T10:03:39+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "26c1f9230281eb4d3cd3ea9302a710a5067ca55995be3c31c8f31f9c7cc5c9b1",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T10:04:13+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "26c1f9230281eb4d3cd3ea9302a710a5067ca55995be3c31c8f31f9c7cc5c9b1",
+          "note": "Jevnere svaralternativer og nye figurer (gjennomgått av AI).",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "26c1f9230281eb4d3cd3ea9302a710a5067ca55995be3c31c8f31f9c7cc5c9b1",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-24T10:04:13+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T10:04:13+00:00",
+        "content_sha256": "26c1f9230281eb4d3cd3ea9302a710a5067ca55995be3c31c8f31f9c7cc5c9b1",
         "acknowledged_hazards": [
           "figures"
         ],

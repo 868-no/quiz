@@ -3,7 +3,7 @@
   "revisions": [
     {
       "revision": 1,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "scenario",
@@ -183,6 +183,15 @@
           "content_sha256": "dcb4f899dd74a4bf52188374fd6e762ffd10d98584f9cebb410d7c7b275ce9f3",
           "note": "Runde 2: faglig kontrollert av AI (ChatGPT), 11 spørsmål rettet.",
           "acknowledged": []
+        },
+        {
+          "at": "2026-10-24T10:04:15+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "dcb4f899dd74a4bf52188374fd6e762ffd10d98584f9cebb410d7c7b275ce9f3",
+          "note": "superseded by r2"
         }
       ],
       "provenance": {
@@ -203,6 +212,229 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-24T09:30:10+00:00",
         "content_sha256": "dcb4f899dd74a4bf52188374fd6e762ffd10d98584f9cebb410d7c7b275ce9f3",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 2,
+      "status": "approved",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "easy",
+      "chapter": 5,
+      "section_ids": [
+        "s5-05"
+      ],
+      "topic_ids": [
+        "frekvensstabilitet"
+      ],
+      "learning_objective": "Kjenne igjen frekvensendring på grunn av strøkapasitans fra hånden, og vite at skjerming og isolert kobling til betjeningsknappene hindrer det.",
+      "priority": "normal",
+      "context": [
+        [
+          "Du har bygget en ",
+          {
+            "term": "vfo",
+            "text": "VFO"
+          },
+          "-styrt CW-",
+          {
+            "term": "sender",
+            "text": "sender"
+          },
+          " i et kabinett av treplater. Når du holder hånden nær avstemmingsknappen, flytter ",
+          {
+            "term": "frekvens",
+            "text": "frekvensen"
+          },
+          " seg litt, og den går tilbake når du tar hånden bort. Det samme skjer når senderen er koblet til en ",
+          {
+            "term": "kunstlast",
+            "text": "kunstlast"
+          },
+          " i stedet for ",
+          {
+            "term": "antenne",
+            "text": "antennen"
+          },
+          "."
+        ]
+      ],
+      "stem": [
+        "Hva er det beste tiltaket mot dette?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Bytte til en tykkere koaksialkabel mellom senderen og antennen."
+          ],
+          "feedback": [
+            "Problemet er der også med kunstlast, så det kommer ikke fra antennen eller kabelen. Det er hånden nær oscillatoren som påvirker frekvensen."
+          ]
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Øke forsyningsspenningen til oscillatoren, så den svinger kraftigere."
+          ],
+          "feedback": [
+            [
+              "Sterkere svingninger gjør ikke kretsen mindre følsom for ytre kapasitans. En endret ",
+              {
+                "term": "spenning",
+                "text": "spenning"
+              },
+              " kan dessuten i seg selv flytte frekvensen."
+            ]
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Bygge oscillatoren inn i metallboks, med isolert aksel til knappen."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Sette inn et buffertrinn mellom oscillatoren og sluttforsterkeren."
+          ],
+          "feedback": [
+            [
+              "Et buffertrinn hindrer at endringer i lasten trekker frekvensen, men her er det hånden som påvirker selve oscillatorkretsen direkte. Det hjelper bare ",
+              {
+                "term": "skjerming",
+                "text": "skjerming"
+              },
+              " mot."
+            ]
+          ]
+        }
+      ],
+      "correct": [
+        "o3"
+      ],
+      "explanation": [
+        [
+          "Hånden din danner sammen med kretsen en liten, uønsket ",
+          {
+            "term": "kapasitans",
+            "text": "kapasitans"
+          },
+          " (",
+          {
+            "term": "strokapasitans",
+            "text": "strøkapasitans"
+          },
+          "). Den legger seg til kapasitansen i oscillatorens ",
+          {
+            "term": "avstemt-krets",
+            "text": "avstemte krets"
+          },
+          " og endrer ",
+          {
+            "term": "resonans",
+            "text": "resonansfrekvensen"
+          },
+          " litt."
+        ],
+        "En jordet metallboks rundt oscillatoren skjermer den mot slike ytre påvirkninger. En aksel eller kobling av isolerende materiale mellom knappen på frontpanelet og komponenten hindrer at hånden kommer elektrisk nær kretsen.",
+        [
+          "Beslektet: også endringer i lasten etter oscillatoren kan trekke frekvensen. Derfor skiller man ",
+          {
+            "term": "oscillator",
+            "text": "oscillatoren"
+          },
+          " fra ",
+          {
+            "term": "sluttforsterker",
+            "text": "sluttrinnet"
+          },
+          " med en ",
+          {
+            "term": "bufferforsterker",
+            "text": "bufferforsterker"
+          },
+          "."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 5,
+        "section_id": "s5-05",
+        "printed_pages": [
+          "5-2"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "040dcd28252ac2f4"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "AI-assistent (Claude), svaralternativer",
+        "based_on": 1,
+        "at": "2026-10-24T10:03:18+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-24T10:03:18+00:00",
+          "actor": "AI-assistent (Claude), svaralternativer",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "dcb4f899dd74a4bf52188374fd6e762ffd10d98584f9cebb410d7c7b275ce9f3",
+          "note": "Jevnere svaralternativer"
+        },
+        {
+          "at": "2026-10-24T10:03:39+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "8accb0322e93da720bb8c336f5f12873070e42bac6f4fdf7bac07098564c0033",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-24T10:04:15+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "8accb0322e93da720bb8c336f5f12873070e42bac6f4fdf7bac07098564c0033",
+          "note": "Jevnere svaralternativer og nye figurer (gjennomgått av AI).",
+          "acknowledged": []
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "8accb0322e93da720bb8c336f5f12873070e42bac6f4fdf7bac07098564c0033",
+        "errors": [],
+        "warnings": [],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-24T10:04:15+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-24T10:04:15+00:00",
+        "content_sha256": "8accb0322e93da720bb8c336f5f12873070e42bac6f4fdf7bac07098564c0033",
         "acknowledged_hazards": [],
         "checklist": {
           "one_correct": true,
