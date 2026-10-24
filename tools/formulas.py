@@ -98,6 +98,31 @@ FORMULAS: dict[str, tuple[list[str] | None, str, Callable[..., float], str]] = {
     "modulation_index": (["deviation", "f_mod"], "", lambda deviation, f_mod: deviation / f_mod, "m = Δf / f_mod"),
     "efficiency_percent": (["P_out", "P_in"], "%", lambda P_out, P_in: 100 * P_out / P_in, "η = P_ut / P_inn · 100 %"),
     "harmonic_frequency": (["f", "n"], "Hz", lambda f, n: n * f, "f_n = n · f"),
+    # the book's rule of thumb for the radio horizon: d (km) ≈ 4 · √h (m), per station
+    "radio_range": (["h1", "h2"], "m", lambda h1, h2: 4000 * (math.sqrt(h1) + math.sqrt(h2)),
+                    "d ≈ 4 · (√h1 + √h2) km, h i meter"),
+    # a converter with n bits has 2^n levels
+    "quantization_levels": (["n"], "", lambda n: 2 ** n, "N = 2^n"),
+    "quantization_step": (["U_range", "n"], "V", lambda U_range, n: U_range / 2 ** n, "ΔU = U_område / 2^n"),
+    "nyquist_frequency": (["f_s"], "Hz", lambda f_s: f_s / 2, "f_N = f_s / 2"),
+    "db_voltage_ratio": (["U1", "U2"], "dB", lambda U1, U2: 20 * math.log10(U2 / U1),
+                         "20 · log10(U2 / U1) (same impedance)"),
+    "power_from_dbw": (["L"], "W", lambda L: 10 ** (L / 10), "P = 1 W · 10^(L/10) (L in dBW)"),
+    "power_gain_db": (["P", "G"], "W", lambda P, G: P * 10 ** (G / 10), "P_ut = P_inn · 10^(G/10) (G in dB)"),
+    "power_from_peak_voltage": (["U_p", "R"], "W", lambda U_p, R: U_p * U_p / (2 * R),
+                                "P = U_p² / (2R) (sine)"),
+    "ppm_offset": (["f", "ppm"], "Hz", lambda f, ppm: f * ppm / 1e6, "Δf = f · ppm / 10⁶"),
+    # effective radiated power from the power into the antenna and its gain over a dipole (dBd)
+    "erp_dbd": (["P", "G"], "W", lambda P, G: P * 10 ** (G / 10), "ERP = P · 10^(G/10), G i dBd"),
+    "turns_impedance": (["Z1", "n1", "n2"], "Ω", lambda Z1, n1, n2: Z1 * (n2 / n1) ** 2, "Z2 = Z1 · (n2 / n1)²"),
+    "quarter_wave_transformer": (["Z0", "Z_L"], "Ω", lambda Z0, Z_L: Z0 ** 2 / Z_L,
+                                 "Z_inn = Z0² / Z_ut (kvartbølgetransformator)"),
+    "swr_from_voltages": (["U_fwd", "U_ref"], "", lambda U_fwd, U_ref: (U_fwd + U_ref) / (U_fwd - U_ref),
+                          "SWR = (U_forover + U_tilbake) / (U_forover − U_tilbake)"),
+    "power_after_loss": (["P", "L"], "W", lambda P, L: P * 10 ** (-L / 10), "P_ut = P_inn · 10^(−L/10), L i dB"),
+    "cable_length": (["f", "k", "part"], "m", lambda f, k, part: 3e8 / f * part * k,
+                     "l = (c / f) · andel av bølgelengden · k (c ≈ 3·10⁸ m/s)"),
+    "dipole_length": (["f"], "m", lambda f: 143e6 / f, "L ≈ 143 / f(MHz) (halvbølgedipol, k = 0,95)"),
 }
 
 
