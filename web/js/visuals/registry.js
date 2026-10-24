@@ -66,7 +66,9 @@ export function renderVisual(visual, templates, { phase = 'before', idPrefix = '
   if (!impl.fixedTextSize) tagFontSizes(svg);
   const captionBits = [];
   if (visual.caption) captionBits.push(h('span', { class: 'fig-caption-text' }, visual.caption));
-  if (tpl.idealised) captionBits.push(h('span', { class: 'fig-ideal' }, `Forutsetning: ${tpl.idealised}`));
+  // a template can trim its assumption to what the drawing contains (see rlc-circuit)
+  const ideal = impl.idealised ? impl.idealised(params, tpl.idealised) : tpl.idealised;
+  if (ideal) captionBits.push(h('span', { class: 'fig-ideal' }, `Forutsetning: ${ideal}`));
   return {
     ok: true,
     errors: [],

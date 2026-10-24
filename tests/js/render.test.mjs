@@ -169,3 +169,9 @@ test('block labels wrap and long words shrink', async () => {
   assert.deepEqual(wrapLabel('RF-forsterker').lines, ['RF-forsterker']);
   assert.ok(wrapLabel('Bærebølgeoscillator').fontSize < 12.5);
 });
+
+test('the rlc assumption only mentions coupling between coils when there are two coils', () => {
+  const fig = (components) => toString(renderVisual({ template: 'rlc-circuit', version: 1, params: { topology: 'series', components } }, TEMPLATES).node);
+  assert.ok(!fig([{ kind: 'L', value: 0.01 }, { kind: 'R', value: 100 }]).includes('kobling mellom spolene'));
+  assert.ok(fig([{ kind: 'L', value: 0.01 }, { kind: 'L', value: 0.02 }]).includes('kobling mellom spolene'));
+});

@@ -232,4 +232,10 @@ function render(p) {
   return { svg: svgRoot(W, H, title, description, els.filter(Boolean)), description, animatable: false };
 }
 
-export default { id: 'rlc-circuit', version: 1, rules, quantities, render };
+// Coupling between coils only means something with two or more coils.
+function idealised(p, text) {
+  const coils = p.components.filter((c) => c.kind === 'L').length;
+  return coils < 2 ? text.replace(/;\s*ingen kobling mellom spolene/, '') : text;
+}
+
+export default { id: 'rlc-circuit', version: 1, rules, quantities, render, idealised };

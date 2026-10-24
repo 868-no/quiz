@@ -541,6 +541,12 @@
           "actor": "Jim C K Flaten",
           "action": "approve",
           "note": "Re-approved: horizontal coils drawn with their turns above the wire (no values changed)"
+        },
+        {
+          "at": "2026-10-24T15:08:40+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Assumption text drops coil coupling when there is only one coil; drawing unchanged"
         }
       ],
       "params": {
@@ -1322,6 +1328,12 @@
           "actor": "Jim C K Flaten",
           "action": "approve",
           "note": "Reviewed rendered figures for q-0115, q-0053, q-0051, q-0213, q-0021, q-0197, q-0114"
+        },
+        {
+          "at": "2026-10-24T15:08:40+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "AM description names lower/upper sideband and says lower amplitude; frequency labels keep the value's own decimals; drawings unchanged"
         }
       ]
     },

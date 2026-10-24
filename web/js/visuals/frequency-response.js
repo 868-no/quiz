@@ -349,8 +349,8 @@ function renderSpectrum(p, els) {
   if (s.mode === 'am') {
     const f = (v) => formatFreq(v, s.mod_hz);
     desc.push(s.freq_labels === 'all'
-      ? `Spekteret til et AM-signal: bærebølgen i midten (${f(fc)}) og ett sidebånd på hver side (${f(fc - s.mod_hz)} og ${f(fc + s.mod_hz)}), begge lavere enn bærebølgen.`
-      : 'Spekteret til et AM-signal: bærebølgen i midten og ett lavere sidebånd på hver side.');
+      ? `Spekteret til et AM-signal: bærebølgen i midten (${f(fc)}), med et nedre sidebånd på ${f(fc - s.mod_hz)} og et øvre sidebånd på ${f(fc + s.mod_hz)}. Begge sidebåndene har lavere amplitude enn bærebølgen.`
+      : 'Spekteret til et AM-signal: bærebølgen i midten og ett sidebånd på hver side. Begge sidebåndene har lavere amplitude enn bærebølgen.');
   } else {
     desc.push(`Spekteret til et FM-signal modulert med én tone: bærebølgen og ${lines.length - 1} sidebåndslinjer med lik avstand fordelt på begge sider. Høyden varierer fra linje til linje.`);
     if (s.freq_labels === 'carrier') desc.push(`Bærebølgen ligger på ${formatFreq(fc, s.mod_hz)}.`);
