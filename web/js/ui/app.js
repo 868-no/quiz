@@ -41,8 +41,9 @@ export function createApp(root, bank) {
     selection: {
       chapters: new Set(bank.chapters.filter((c) => c.status === 'available').map((c) => c.number)),
       count: 10,
-      difficulties: new Set(),
-      styles: new Set(),
+      // every chapter, difficulty and question type starts selected; none selected means none
+      difficulties: new Set(distinct('difficulty')),
+      styles: new Set(distinct('style')),
     },
     resumable: restoreSession(loadSession(), bank),
     missed: parseMissed(loadMissed()),
@@ -230,7 +231,9 @@ export function createApp(root, bank) {
     if (values.length < 2) return null;
     return h('fieldset', { class: 'filter' },
       h('legend', {}, title),
-      h('p', { class: 'hint' }, 'Ingen valgt betyr alle.'),
+      h('div', { class: 'actions actions-compact' },
+        h('button', { type: 'button', class: 'btn-small', 'data-action': 'filter-all', 'data-filter': key }, 'Velg alle'),
+        h('button', { type: 'button', class: 'btn-small', 'data-action': 'filter-none', 'data-filter': key }, 'Fjern alle')),
       h('ul', { class: 'check-list check-inline' }, Object.keys(labels).filter((v) => values.includes(v)).map((v) =>
         h('li', {}, h('input', { type: 'checkbox', id: `${key}-${v}`, name: key, value: v, checked: selected.has(v), 'data-filter': key }),
           h('label', { for: `${key}-${v}` }, labels[v])))));
@@ -265,6 +268,14 @@ export function createApp(root, bank) {
     return rows;
   }
 
+  // Why the selection has no questions, naming the empty choice if there is one.
+  function emptyReason() {
+    if (state.selection.chapters.size === 0) return 'Velg minst ett kapittel.';
+    if (distinct('difficulty').length > 1 && state.selection.difficulties.size === 0) return 'Velg minst én vanskelighetsgrad.';
+    if (distinct('style').length > 1 && state.selection.styles.size === 0) return 'Velg minst én spørsmålstype.';
+    return null;
+  }
+
   function renderSetup(focus = 'h2') {
     fitDial();
     const avail = selectionPool().length;
@@ -297,7 +308,7 @@ export function createApp(root, bank) {
             h('option', { value: String(n), selected: n === state.selection.count }, n === avail && !COUNT_CHOICES.includes(n) ? `Alle (${n})` : String(n))))),
         h('p', { class: 'avail', id: 'avail', role: 'status' },
           avail === 0
-            ? (state.selection.chapters.size === 0 ? 'Velg minst ett kapittel.' : 'Det finnes ingen spørsmål for dette valget.')
+            ? (emptyReason() || 'Det finnes ingen spørsmål for dette valget.')
             : `${avail} spørsmål er tilgjengelige i valget ditt.`),
         state.message ? h('p', { class: 'error', role: 'alert' }, state.message) : null,
         h('button', { type: 'submit', class: 'btn btn-primary', disabled: avail === 0 }, resume ? 'Start ny runde' : 'Start')),
@@ -316,7 +327,7 @@ export function createApp(root, bank) {
   function startBar(avail, resume) {
     const k = [...state.selection.chapters].filter((n) => chapterOf(n) && chapterOf(n).status === 'available').length;
     const text = avail === 0
-      ? [(state.selection.chapters.size === 0 ? 'Velg minst ett kapittel.' : 'Ingen spørsmål for dette valget.')]
+      ? [emptyReason() || 'Ingen spørsmål for dette valget.']
       : [h('strong', {}, `${resume ? 'Ny runde:' : 'Runde på'} ${state.selection.count} spørsmål`),
         h('span', { class: 'start-bar-sub' }, ` av ${avail} i ${k} ${k === 1 ? 'kapittel' : 'kapitler'}`)];
     return h('div', { class: 'start-bar', 'aria-hidden': 'true', hidden: true },
@@ -730,6 +741,15 @@ export function createApp(root, bank) {
         state.selection.chapters.clear();
         renderSetup('[data-action=select-none]');
         break;
+      case 'filter-all':
+      case 'filter-none': {
+        const key = el.dataset.filter;
+        const set = key === 'difficulty' ? state.selection.difficulties : state.selection.styles;
+        set.clear();
+        if (el.dataset.action === 'filter-all') distinct(key).forEach((v) => set.add(v));
+        renderSetup(`[data-action=${el.dataset.action}][data-filter=${key}]`);
+        break;
+      }
       case 'resume':
         state.session = state.resumable;
         state.resumable = null;

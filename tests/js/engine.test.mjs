@@ -180,3 +180,22 @@ test('the exam policy defers feedback and lets a question be skipped', () => {
   assert.equal(summary(s, byId).unanswered, 5);
   assert.equal(feedbackVisible(s, 0), false, 'nothing to show for a skipped question');
 });
+
+test('a filter of null means all, an empty filter means none', () => {
+  const all = pool(bank, { chapters: [2, 3, 6] }).length;
+  assert.equal(pool(bank, { chapters: [2, 3, 6], difficulties: null, styles: null }).length, all);
+  assert.equal(pool(bank, { chapters: [2, 3, 6], difficulties: [] }).length, 0);
+  assert.equal(pool(bank, { chapters: [2, 3, 6], styles: [] }).length, 0);
+  assert.equal(pool(bank, { chapters: [2, 3, 6], difficulties: ['easy'], styles: ['concept'] }).length, all);
+  const res = createSession(bank, { chapters: [2], count: 2, seed: 1 });
+  assert.equal(res.session.difficulties, null, 'no filter is stored as null');
+});
+
+test('a saved session from before keeps meaning "all" for empty filters', () => {
+  const res = createSession(bank, { chapters: [2], count: 2, seed: 1 });
+  const old = JSON.parse(JSON.stringify({ ...res.session, difficulties: [], styles: [] }));
+  const s = restoreSession(old, bank);
+  assert.equal(s.difficulties, null);
+  assert.equal(s.styles, null);
+  assert.ok(pool(bank, s).length > 0);
+});

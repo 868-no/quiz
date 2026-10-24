@@ -544,3 +544,25 @@ test('a failed practice exam says how many were missing', { skip }, async () => 
   assert.ok(v.textContent.includes('Ikke bestått'));
   assert.ok(v.textContent.includes('Du trengte 3 riktige for å bestå, og manglet 2'));
 });
+
+test('difficulty and question type start checked, and none checked means none', { skip }, async () => {
+  const bank = makeBank({ perChapter: { 2: 4 } });
+  bank.questions[1].difficulty = 'hard';
+  bank.questions[2].style = 'calculation';
+  const { root } = await app(bank);
+  const boxes = (name) => $$(root, `input[name=${name}]`);
+  assert.ok(boxes('difficulty').length >= 2 && boxes('difficulty').every((b) => b.checked), 'all difficulties start checked');
+  assert.ok(boxes('style').every((b) => b.checked), 'all question types start checked');
+  assert.ok($(root, '#avail').textContent.startsWith('4 spørsmål'));
+  $(root, '[data-action=filter-none][data-filter=difficulty]').click();
+  assert.ok(boxes('difficulty').every((b) => !b.checked));
+  assert.equal($(root, '#avail').textContent, 'Velg minst én vanskelighetsgrad.');
+  assert.equal($(root, '#setup-form button[type=submit]').disabled, true);
+  $(root, '#difficulty-hard').click();
+  assert.ok($(root, '#avail').textContent.startsWith('1 spørsmål'), 'only the checked difficulty counts');
+  $(root, '[data-action=filter-all][data-filter=difficulty]').click();
+  $(root, '[data-action=filter-none][data-filter=style]').click();
+  assert.equal($(root, '#avail').textContent, 'Velg minst én spørsmålstype.');
+  $(root, '[data-action=filter-all][data-filter=style]').click();
+  assert.ok($(root, '#avail').textContent.startsWith('4 spørsmål'));
+});

@@ -6,15 +6,18 @@ import { getPolicy } from './policies.js';
 
 export const SESSION_VERSION = 1;
 
-/** Questions in the selected chapters that match the optional filters (and, if given, the id list). */
+/**
+ * Questions in the selected chapters that match the filters (and, if given, the id
+ * list). A filter of null means "no filter"; an empty list selects nothing.
+ */
 export function pool(bank, { chapters, difficulties = null, styles = null, ids = null }) {
   const chapterSet = new Set(chapters);
   const idSet = ids ? new Set(ids) : null;
   const available = new Set(bank.chapters.filter((c) => c.status === 'available').map((c) => c.number));
   return bank.questions.filter((q) =>
     chapterSet.has(q.chapter) && available.has(q.chapter) &&
-    (!difficulties || difficulties.length === 0 || difficulties.includes(q.difficulty)) &&
-    (!styles || styles.length === 0 || styles.includes(q.style)) &&
+    (!difficulties || difficulties.includes(q.difficulty)) &&
+    (!styles || styles.includes(q.style)) &&
     (!idSet || idSet.has(q.id)));
 }
 
@@ -47,7 +50,7 @@ export function selectQuestions(candidates, count, rng) {
  * `ids` limits the round to those questions; `kind` marks special rounds
  * ('missed': practising earlier mistakes, 'single': one question opened from a link).
  */
-export function createSession(bank, { chapters, count, difficulties = [], styles = [], ids = null, kind = null, policy = 'learning', seed }) {
+export function createSession(bank, { chapters, count, difficulties = null, styles = null, ids = null, kind = null, policy = 'learning', seed }) {
   const pol = getPolicy(policy);
   if (!pol.enabled) return { ok: false, error: 'policy_unavailable', available: 0 };
   if (!Array.isArray(chapters) || chapters.length === 0) return { ok: false, error: 'no_chapters', available: 0 };
@@ -66,7 +69,8 @@ export function createSession(bank, { chapters, count, difficulties = [], styles
     ok: true,
     session: {
       v: SESSION_VERSION, bankId: bank.bank_id, policy, seed, chapters: [...chapters], count,
-      difficulties: [...difficulties], styles: [...styles], ids: ids ? [...ids] : null, kind, items, index: 0, finished: false,
+      difficulties: difficulties ? [...difficulties] : null, styles: styles ? [...styles] : null,
+      ids: ids ? [...ids] : null, kind, items, index: 0, finished: false,
     },
   };
 }
@@ -150,6 +154,8 @@ export function restoreSession(raw, bank) {
     const s = typeof raw === 'string' ? JSON.parse(raw) : raw;
     if (!s || s.v !== SESSION_VERSION || !Array.isArray(s.items) || s.items.length === 0) return null;
     getPolicy(s.policy);
+    // sessions saved before empty filters meant "none" used [] for "all"
+    for (const k of ['difficulties', 'styles']) if (Array.isArray(s[k]) && s[k].length === 0) s[k] = null;
     const byId = indexBank(bank);
     for (const it of s.items) {
       const q = byId.get(it.qid);

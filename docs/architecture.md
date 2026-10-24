@@ -29,8 +29,10 @@ dist/                     build output = the deployable site (not committed; CI 
 
 `web/js/quiz/engine.js` is pure and fully unit-tested:
 
-* `pool` – questions in the selected, *available* chapters matching optional
-  difficulty/style filters and, if given, a list of question ids. Unavailable chapters
+* `pool` – questions in the selected, *available* chapters matching the difficulty and
+  style filters and, if given, a list of question ids. A filter of `null` means no
+  filter; an empty list selects nothing (on the start screen all chapters, difficulties
+  and question types start checked, and none checked means none). Unavailable chapters
   can never contribute.
 * `selectQuestions` – shuffle within each section, visit sections round-robin in random
   order, shuffle the result: no duplicates, topics spread out, every question in a
