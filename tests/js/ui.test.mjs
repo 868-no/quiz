@@ -395,3 +395,42 @@ test('pasting a question link into an open tab opens that question', { skip }, a
   await new Promise((r) => setTimeout(r, 0));
   assert.equal($(root, '#q-progress').textContent, 'Spørsmål q-2001');
 });
+
+test('the start bar follows the selection and appears only while Start is out of view', { skip }, async () => {
+  const observed = [];
+  const env = setupDom();
+  globalThis.IntersectionObserver = class {
+    constructor(cb) { this.cb = cb; observed.push(this); }
+    observe(el) { this.el = el; }
+    disconnect() { this.gone = true; }
+  };
+  try {
+    const { createApp } = await import('../../web/js/ui/app.js');
+    createApp(env.root, makeBank({ perChapter: { 2: 6, 3: 3 } }));
+    const root = env.root;
+    const bar = $(root, '.start-bar');
+    assert.equal(bar.getAttribute('aria-hidden'), 'true');
+    assert.equal($(root, '[data-action=start-bar]').getAttribute('tabindex'), '-1');
+    assert.equal(bar.hidden, true, 'hidden until we know where the Start button is');
+    const io = observed.at(-1);
+    assert.equal(io.el, $(root, '#setup-form button[type=submit]'));
+    io.cb([{ isIntersecting: false, boundingClientRect: { top: 900 } }]);
+    assert.equal(bar.hidden, false, 'shown while Start is below the screen');
+    assert.equal($(root, '.start-bar-text').textContent, '9 spørsmål fra 2 kapitler');
+    io.cb([{ isIntersecting: true, boundingClientRect: { top: 400 } }]);
+    assert.equal(bar.hidden, true);
+    // the selection is reflected, and the old observer is let go on re-render
+    $(root, '#ch-3').click();
+    assert.ok(io.gone);
+    assert.equal($(root, '.start-bar-text').textContent, '6 spørsmål fra 1 kapittel');
+    $(root, '[data-action=select-none]').click();
+    assert.equal($(root, '.start-bar-text').textContent, 'Velg minst ett kapittel.');
+    assert.equal($(root, '[data-action=start-bar]').disabled, true);
+    $(root, '[data-action=select-all]').click();
+    $(root, '[data-action=start-bar]').click();
+    assert.ok($(root, '#answer-form'), 'the bar starts the round');
+    assert.equal($(root, '.start-bar'), null);
+  } finally {
+    delete globalThis.IntersectionObserver;
+  }
+});

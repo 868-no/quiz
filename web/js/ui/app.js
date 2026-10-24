@@ -65,6 +65,8 @@ export function createApp(root, bank) {
 
   function mount(vnode, focusSelector) {
     glossaryUi.close();
+    if (startObserver) startObserver.disconnect();
+    startObserver = null;
     root.replaceChildren(toDOM(vnode));
     fitFigures(root);
     glideNeedle();
@@ -238,8 +240,37 @@ export function createApp(root, bank) {
             ? (state.selection.chapters.size === 0 ? 'Velg minst ett kapittel.' : 'Det finnes ingen spørsmål for dette valget.')
             : `${avail} spørsmål er tilgjengelige i valget ditt.`),
         state.message ? h('p', { class: 'error', role: 'alert' }, state.message) : null,
-        h('button', { type: 'submit', class: 'btn btn-primary', disabled: avail === 0 }, 'Start')));
+        h('button', { type: 'submit', class: 'btn btn-primary', disabled: avail === 0 }, 'Start')),
+      startBar(avail));
     mount(view, focus);
+    watchStart();
+  }
+
+  // A bar fixed to the bottom of the screen while the form's Start button is further
+  // down, so a round can be started right after choosing chapters. It is a shortcut
+  // for pointer and touch: hidden from assistive technology and left out of the tab
+  // order, where the form and its own Start button work as before.
+  function startBar(avail) {
+    const k = [...state.selection.chapters].filter((n) => chapterOf(n) && chapterOf(n).status === 'available').length;
+    const text = avail === 0
+      ? (state.selection.chapters.size === 0 ? 'Velg minst ett kapittel.' : 'Ingen spørsmål for dette valget.')
+      : `${state.selection.count} spørsmål fra ${k} ${k === 1 ? 'kapittel' : 'kapitler'}`;
+    return h('div', { class: 'start-bar', 'aria-hidden': 'true', hidden: true },
+      h('div', { class: 'start-bar-inner' },
+        h('span', { class: 'start-bar-text' }, text),
+        h('button', { type: 'button', class: 'btn btn-primary', tabindex: '-1', 'data-action': 'start-bar', disabled: avail === 0 }, 'Start')));
+  }
+
+  let startObserver = null;
+  function watchStart() {
+    const bar = root.querySelector('.start-bar');
+    const btn = root.querySelector('#setup-form button[type=submit]');
+    if (!bar || !btn || typeof globalThis.IntersectionObserver !== 'function') return;
+    startObserver = new globalThis.IntersectionObserver(([e]) => {
+      // shown only while the real button is below the visible part of the page
+      bar.hidden = e.isIntersecting || e.boundingClientRect.top < 0;
+    });
+    startObserver.observe(btn);
   }
 
   // ------------------------------------------------------------- question
@@ -574,6 +605,9 @@ export function createApp(root, bank) {
           clearMissed();
           renderSetup();
         }
+        break;
+      case 'start-bar':
+        root.querySelector('#setup-form button[type=submit]').click();
         break;
       case 'select-all':
         bank.chapters.filter((c) => c.status === 'available').forEach((c) => state.selection.chapters.add(c.number));
