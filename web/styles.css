@@ -225,6 +225,23 @@ select {
 .notice-update { border-left-color: var(--action); margin-bottom: 0; }
 .notice-update .btn-small { margin-left: 6px; }
 
+/* ---- confirmation dialog (instead of window.confirm) ---- */
+.confirm-dialog {
+  padding: 0; border: 2px solid var(--line); border-radius: var(--radius);
+  background: var(--panel); color: var(--ink); width: min(26rem, calc(100% - 32px)); max-width: none;
+  box-shadow: 0 12px 40px rgb(0 0 0 / 0.35);
+}
+.confirm-dialog::backdrop { background: rgb(10 16 14 / 0.55); }
+.confirm-dialog:not([open]) { display: none; }
+/* without showModal (old browsers) the open dialog is placed like a modal by hand */
+.confirm-dialog.is-fallback { position: fixed; inset: 0; margin: auto; height: fit-content; z-index: 50; }
+.confirm-box { padding: 20px 20px 16px; border-top: 4px solid var(--action); border-radius: var(--radius) var(--radius) 0 0; }
+.confirm-title { margin: 0 0 8px; font-size: 1.2rem; }
+.confirm-message { margin: 0 0 18px; }
+.confirm-actions { display: flex; flex-wrap: wrap-reverse; justify-content: flex-end; gap: 10px; }
+/* side by side when they fit, stacked (action on top) when they do not; labels never wrap */
+.confirm-actions .btn { flex: 1 1 auto; white-space: nowrap; padding-left: 16px; padding-right: 16px; }
+
 /* ---- question ---- */
 .q-head { display: grid; grid-template-columns: 1fr auto; gap: 0 12px; align-items: center; }
 .q-head .dial-wrap { grid-column: 1 / -1; margin: 10px 0 6px; }

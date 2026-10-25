@@ -23,7 +23,7 @@ function setupDom(url = 'http://localhost/') {
   Object.assign(globalThis, {
     window: w, document: w.document, Element: w.Element, Node: w.Node, localStorage: w.localStorage,
     location: w.location, history: w.history,
-    confirm: () => true, matchMedia: () => ({ matches: false }),
+    confirm: () => { throw new Error('window.confirm is not used; the app has its own dialog'); }, matchMedia: () => ({ matches: false }),
     addEventListener: w.addEventListener.bind(w), removeEventListener: w.removeEventListener.bind(w),
   });
   return { dom, root: w.document.getElementById('app'), w };
@@ -49,6 +49,14 @@ async function app(bank, url) {
 
 const $ = (root, sel) => root.querySelector(sel);
 const $$ = (root, sel) => [...root.querySelectorAll(sel)];
+
+// the app's confirmation dialog (instead of window.confirm), placed at the end of <body>
+const dialogOf = (node) => node.ownerDocument.querySelector('dialog.confirm-dialog');
+function answerDialog(node, yes) {
+  const d = dialogOf(node);
+  assert.ok(d, 'a confirmation dialog is open');
+  d.querySelector(`[data-dialog=${yes ? 'confirm' : 'cancel'}]`).click();
+}
 
 function start(root, chapters) {
   for (const cb of $$(root, 'input[name=chapter]')) {
@@ -355,6 +363,7 @@ test('the list of mistakes can be cleared and ignores questions no longer publis
   createApp(env.root, bank);
   assert.ok($(env.root, '.continue-missed').textContent.includes('ett spørsmål'));
   $(env.root, '[data-action=clear-missed]').click();
+  answerDialog(env.root, true);
   assert.equal($(env.root, '.continue-missed'), null);
   assert.equal(env.w.localStorage.getItem('radioquiz.missed.v1'), null);
 });
@@ -480,34 +489,56 @@ test('with a round in progress the bar shows too, and a new round asks before re
     io.cb([{ target: startBtn, isIntersecting: false, boundingClientRect: { top: 900 } }]);
     assert.equal($(root, '.start-bar').hidden, false, 'shown although "Fortsett der du slapp" is on screen');
     // declining keeps the paused round
-    const asked = [];
-    globalThis.confirm = (msg) => { asked.push(msg); return false; };
     $(root, '[data-action=start-bar]').click();
-    assert.equal(asked.length, 1);
-    assert.match(asked[0], /påbegynt runde.*forkaste den og starte en ny runde/);
+    const d = dialogOf(root);
+    assert.ok(d, 'the dialog opens');
+    assert.equal(d.getAttribute('aria-labelledby'), 'confirm-title');
+    assert.equal($(d, '.confirm-title').textContent, 'Forkaste den påbegynte runden?');
+    assert.match($(d, '.confirm-message').textContent, /påbegynt runde \(spørsmål 1 av 6\)\. Starter du en ny runde, blir den forkastet\./);
+    assert.equal($(d, '[data-dialog=confirm]').textContent, 'Forkast og start');
+    assert.equal(d.ownerDocument.activeElement, $(d, '[data-dialog=cancel]'), 'the safe choice has focus');
+    answerDialog(root, false);
+    assert.equal(dialogOf(root), null, 'the dialog is gone');
     assert.equal($(root, '#answer-form'), null, 'no new round');
     assert.ok($(root, '.continue-resume'), 'the paused round is still offered');
-    $(root, '[data-action=practice-missed]')?.click();
-    assert.equal($(root, '#answer-form'), null, 'not from the missed list either');
-    // accepting starts the new round and drops the old one
-    globalThis.confirm = (msg) => { asked.push(msg); return true; };
+    // Escape cancels too
     $(root, '#setup-form button[type=submit]').click();
+    assert.ok(dialogOf(root));
+    root.ownerDocument.dispatchEvent(new env.w.KeyboardEvent('keydown', { key: 'Escape', bubbles: true }));
+    assert.equal(dialogOf(root), null, 'Escape closes it');
+    assert.equal($(root, '#answer-form'), null);
+    // accepting starts the new round and drops the old one
+    $(root, '#setup-form button[type=submit]').click();
+    answerDialog(root, true);
     assert.ok($(root, '#answer-form'), 'the new round starts');
-    assert.equal($(root, '#q-progress').textContent.includes('1'), true);
+    assert.equal($(root, '.continue-resume'), null);
   } finally {
     delete globalThis.IntersectionObserver;
-    globalThis.confirm = () => true;
   }
+});
+
+test('quitting asks first, and cancelling keeps the round and the focus', { skip }, async () => {
+  const { root } = await app(makeBank({ perChapter: { 2: 3 } }));
+  start(root, [2]);
+  const quit = $(root, '[data-action=quit]');
+  quit.focus();
+  quit.click();
+  const d = dialogOf(root);
+  assert.equal($(d, '.confirm-title').textContent, 'Avslutte runden?');
+  assert.equal($(d, '[data-dialog=confirm]').textContent, 'Avslutt runden');
+  answerDialog(root, false);
+  assert.ok($(root, '#answer-form'), 'still in the round');
+  assert.equal(root.ownerDocument.activeElement, quit, 'focus is back on the button');
+  quit.click();
+  answerDialog(root, true);
+  assert.ok($(root, '#setup-form'), 'back to the start page');
 });
 
 test('without a paused round a new round starts without asking', { skip }, async () => {
   const { root } = await app(makeBank({ perChapter: { 2: 3 } }));
-  let asked = 0;
-  globalThis.confirm = () => { asked += 1; return true; };
   $(root, '#setup-form button[type=submit]').click();
+  assert.equal(dialogOf(root), null);
   assert.ok($(root, '#answer-form'));
-  assert.equal(asked, 0);
-  globalThis.confirm = () => true;
 });
 
 test('a list of missed questions alone does not hold back the start bar', { skip }, async () => {
@@ -521,6 +552,7 @@ test('a list of missed questions alone does not hold back the start bar', { skip
     start(env.root, [2]);
     answer(env.root, false);
     $(env.root, '[data-action=quit]').click();
+    answerDialog(env.root, true);
     // a fresh page load: no round to continue, but a mistake to practise
     const root = env.w.document.createElement('main');
     env.root.replaceChildren();
@@ -548,11 +580,13 @@ test('the chapter list shows progress, explains it, and can be reset', { skip },
   $(root, '[data-action=next]').click();
   answer(root, false);
   $(root, '[data-action=quit]').click();
+  answerDialog(root, true);
   assert.ok($(root, '#ch-2-st').textContent.includes('1 av 3 riktig besvart'));
   assert.ok($(root, '#ch-3-st').textContent.includes('2 spørsmål'));
   assert.ok($(root, '.progress-note').textContent.includes('minst én gang'));
   assert.equal(Object.keys(JSON.parse(w.localStorage.getItem('radioquiz.solved.v1'))).length, 1);
   $(root, '[data-action=clear-solved]').click();
+  answerDialog(root, true);
   assert.ok($(root, '#ch-2-st').textContent.includes('3 spørsmål'));
   assert.equal(w.localStorage.getItem('radioquiz.solved.v1'), null);
   assert.ok(w.localStorage.getItem('radioquiz.missed.v1'), 'the list of mistakes is kept');

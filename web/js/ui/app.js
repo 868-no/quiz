@@ -17,6 +17,7 @@ import { missedIds, parseMissed, recordAnswer, recordSolved, solvedByChapter } f
 import { createGlossary } from './glossary.js';
 import { chapterDial, roundDial, setDialWidth } from './dial.js';
 import { fitFigures } from './figures.js';
+import { askConfirm } from './dialog.js';
 
 const LETTERS = ['A', 'B', 'C', 'D', 'E', 'F'];
 const DIFFICULTY_LABEL = { easy: 'Lett', medium: 'Middels', hard: 'Vanskelig' };
@@ -179,14 +180,22 @@ export function createApp(root, bank) {
       resume ? h('p', { class: 'hint' }, 'Den påbegynte runden din blir forkastet.') : null);
   }
 
-  // A new round replaces a paused one, so ask first; true when it is fine to go on.
-  function discardPausedRound(what) {
-    const paused = state.resumable && !state.resumable.finished && !state.session;
-    return !paused || globalThis.confirm(`Du har en påbegynt runde. Vil du forkaste den og starte ${what}?`);
+  // A new round replaces a paused one, so ask first; go() runs once that is settled.
+  function afterPausedRound(what, go) {
+    const r = state.resumable;
+    if (!r || r.finished || state.session) { go(); return; }
+    askConfirm({
+      title: 'Forkaste den påbegynte runden?',
+      message: `Du har en påbegynt runde (spørsmål ${r.index + 1} av ${r.items.length}). Starter du ${what}, blir den forkastet.`,
+      confirm: 'Forkast og start',
+    }, go);
   }
 
   function startExam() {
-    if (!discardPausedRound('en prøveeksamen')) return;
+    afterPausedRound('en prøveeksamen', beginExam);
+  }
+
+  function beginExam() {
     state.session = null;
     clearSession();
     start({ chapters: availableChapters(), count: examSize(), policy: 'exam', kind: 'exam' });
@@ -660,13 +669,12 @@ export function createApp(root, bank) {
   root.addEventListener('submit', (e) => {
     e.preventDefault();
     if (e.target.id === 'setup-form') {
-      if (!discardPausedRound('en ny runde')) return;
-      start({
+      afterPausedRound('en ny runde', () => start({
         chapters: [...state.selection.chapters].sort((a, b) => a - b),
         count: state.selection.count,
         difficulties: [...state.selection.difficulties],
         styles: [...state.selection.styles],
-      });
+      }));
     } else if (e.target.id === 'answer-form' && state.choice) {
       try {
         state.session = submitAnswer(state.session, byId, state.choice);
@@ -745,26 +753,35 @@ export function createApp(root, bank) {
         toSetup();
         break;
       case 'practice-missed':
-        if (!discardPausedRound('en runde med spørsmålene du bommet på')) break;
-        if (state.session) {
-          state.session = null;
-          clearSession();
-        }
-        startMissed();
+        afterPausedRound('en runde med spørsmålene du bommet på', () => {
+          if (state.session) {
+            state.session = null;
+            clearSession();
+          }
+          startMissed();
+        });
         break;
       case 'clear-solved':
-        if (globalThis.confirm('Vil du nullstille fremgangen? Lista over spørsmål du har svart feil på beholdes.')) {
+        askConfirm({
+          title: 'Nullstille fremgangen?',
+          message: 'Merkingen av hvilke spørsmål du har svart riktig på, blir slettet. Lista over spørsmål du har svart feil på, beholdes.',
+          confirm: 'Nullstill',
+        }, () => {
           state.solved = {};
           clearSolved();
           renderSetup('#setup-title');
-        }
+        });
         break;
       case 'clear-missed':
-        if (globalThis.confirm('Vil du tømme lista over spørsmål du har svart feil på?')) {
+        askConfirm({
+          title: 'Tømme lista?',
+          message: 'Lista over spørsmål du har svart feil på, blir tømt.',
+          confirm: 'Tøm lista',
+        }, () => {
           state.missed = {};
           clearMissed();
           renderSetup();
-        }
+        });
         break;
       case 'start-bar':
         root.querySelector('#setup-form button[type=submit]').click();
@@ -811,11 +828,15 @@ export function createApp(root, bank) {
         render('#q-progress');
         break;
       case 'quit':
-        if (globalThis.confirm(isExam() ? 'Vil du avslutte prøveeksamenen? Du kan ikke fortsette den senere.' : 'Vil du avslutte runden? Du kan ikke fortsette den senere.')) {
+        askConfirm({
+          title: isExam() ? 'Avslutte prøveeksamenen?' : 'Avslutte runden?',
+          message: 'Du kan ikke fortsette den senere.',
+          confirm: isExam() ? 'Avslutt prøven' : 'Avslutt runden',
+        }, () => {
           state.session = null;
           clearSession();
           renderSetup();
-        }
+        });
         break;
       case 'restart-same': {
         const s = state.session;

@@ -68,7 +68,11 @@ async function screens(page, url, check) {
   await page.waitForSelector('.mode-switch');
   await page.click('label[for=mode-exam]');
   await check('practice exam setup');
+  // a round is still paused from above, so starting asks first, in the app's own dialog
   await page.click('[data-action=start-exam]');
+  await page.waitForSelector('dialog.confirm-dialog[open]');
+  await check('confirmation dialog');
+  await page.click('dialog.confirm-dialog [data-dialog=confirm]');
   await page.waitForSelector('#answer-form');
   await check('practice exam question');
   while (await page.$('[data-action=skip]')) await page.click('[data-action=skip]');
@@ -87,7 +91,7 @@ test('every screen passes the automated accessibility check', { skip: missing ||
       // the page's CSP would block the injected axe script
       const context = await browser.newContext({ viewport, colorScheme, bypassCSP: true, serviceWorkers: 'block' });
       const page = await context.newPage();
-      page.on('dialog', (d) => d.accept());
+      page.on('dialog', () => { throw new Error('a native browser dialog was opened'); });
       page.setDefaultTimeout(15_000);
       await screens(page, url, async (label) => {
         const t0 = Date.now();

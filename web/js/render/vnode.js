@@ -9,7 +9,7 @@ const HTML_TAGS = new Set([
   'div', 'span', 'p', 'ol', 'ul', 'li', 'em', 'strong', 'sub', 'sup', 'var', 'button', 'figure',
   'figcaption', 'details', 'summary', 'section', 'h1', 'h2', 'h3', 'h4', 'small', 'abbr', 'br', 'input',
   'label', 'select', 'option', 'fieldset', 'legend', 'progress', 'table', 'caption', 'thead', 'tbody', 'tr',
-  'th', 'td', 'form', 'i', 'b', 'a',
+  'th', 'td', 'form', 'i', 'b', 'a', 'dialog',
 ]);
 const SVG_TAGS = new Set([
   'svg', 'g', 'path', 'line', 'polyline', 'polygon', 'rect', 'circle', 'ellipse', 'text', 'tspan',
