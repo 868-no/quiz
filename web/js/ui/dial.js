@@ -41,8 +41,10 @@ function needle(x, top, bottom) {
 export function chapterDial(chapters, selected) {
   const shown = chapters.filter((c) => c.status !== 'not_in_quiz');
   const n = shown.length;
+  // the scale line runs through the middle; the lamps above it and the numbers below it
+  // reach equally far, so the glass has the same margin at the top and the bottom
   const H = 76;
-  const base = 46;
+  const base = H / 2;
   const svg = glass(H);
   const els = [h('line', { x1: PAD - 10, y1: base, x2: W - PAD + 10, y2: base, class: 'dial-base' })];
   const pos = new Map(shown.map((c, i) => [c.number, scaleX(i + 1, n)]));
@@ -57,13 +59,13 @@ export function chapterDial(chapters, selected) {
     els.push(h('line', { x1: x, y1: base, x2: x, y2: base + 10, class: avail ? 'dial-tick' : 'dial-tick dial-tick-faint' }));
     els.push(h('text', { x, y: base + 24, class: avail ? 'dial-num' : 'dial-num dial-faint', 'text-anchor': 'middle' }, String(c.number)));
     if (avail) {
-      els.push(h('circle', { cx: x, cy: base - 14, r: 6, class: selected.has(c.number) ? 'dial-station is-on' : 'dial-station' }));
+      els.push(h('circle', { cx: x, cy: base - 18, r: 6, class: selected.has(c.number) ? 'dial-station is-on' : 'dial-station' }));
     }
   }
   if (blank.length) {
     const x1 = pos.get(blank[0].number);
     const x2 = pos.get(blank[blank.length - 1].number);
-    els.push(h('text', { x: (x1 + x2) / 2, y: base - 12, class: 'dial-note', 'text-anchor': 'middle' }, 'kommer senere'));
+    els.push(h('text', { x: (x1 + x2) / 2, y: base - 14, class: 'dial-note', 'text-anchor': 'middle' }, 'kommer senere'));
   }
   svg.c.push(...els);
   return svg;
@@ -79,8 +81,11 @@ export function chapterDial(chapters, selected) {
  */
 export function roundDial(marks, current, { compact = false } = {}) {
   const n = marks.length;
+  // full size: the scale line through the middle, the marks above and the numbers below it
+  // equally far out (as on the chapter scale); compact has no numbers and keeps its own balance
   const H = compact ? 40 : 70;
-  const base = compact ? 22 : 40;
+  const base = compact ? 22 : H / 2;
+  const markY = base - (compact ? 11 : 18);
   const svg = glass(H, { class: 'dial dial-round' });
   const els = [h('line', { x1: PAD - 10, y1: base, x2: W - PAD + 10, y2: base, class: 'dial-base' })];
   const every = n <= 12 ? 1 : n <= 30 ? 5 : 10;
@@ -91,10 +96,10 @@ export function roundDial(marks, current, { compact = false } = {}) {
     els.push(h('line', { x1: x, y1: base, x2: x, y2: base + tick, class: major ? 'dial-tick' : 'dial-tick dial-tick-minor' }));
     if (major && !compact) els.push(h('text', { x, y: base + 23, class: 'dial-num', 'text-anchor': 'middle' }, String(i + 1)));
     const r = n <= 30 ? (compact ? 4 : 4.5) : 3;
-    if (m === 'correct') els.push(h('circle', { cx: x, cy: base - 11, r, class: 'dial-mark-ok' }));
-    if (m === 'answered') els.push(h('circle', { cx: x, cy: base - 11, r: r * 0.8, class: 'dial-mark-answered' }));
+    if (m === 'correct') els.push(h('circle', { cx: x, cy: markY, r, class: 'dial-mark-ok' }));
+    if (m === 'answered') els.push(h('circle', { cx: x, cy: markY, r: r * 0.8, class: 'dial-mark-answered' }));
     if (m === 'wrong') {
-      els.push(h('path', { d: `M ${x - r} ${base - 11 - r} L ${x + r} ${base - 11 + r} M ${x + r} ${base - 11 - r} L ${x - r} ${base - 11 + r}`, class: 'dial-mark-bad' }));
+      els.push(h('path', { d: `M ${x - r} ${markY - r} L ${x + r} ${markY + r} M ${x + r} ${markY - r} L ${x - r} ${markY + r}`, class: 'dial-mark-bad' }));
     }
   });
   if (current !== null && current !== undefined) els.push(needle(scaleX(current + 1, n), compact ? 4 : 6, H - (compact ? 4 : 6)));
