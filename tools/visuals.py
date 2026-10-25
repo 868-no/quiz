@@ -611,6 +611,8 @@ def _illu_rules(p: dict[str, Any], errors: list[str]) -> None:
         errors.append("from_s/to_s: two S-units 1–9, from below to")
     if p["kind"] == "tolerance" and p.get("nominal") is None:
         errors.append("nominal: required for kind tolerance")
+    if p["kind"] == "band_edge" and (p.get("edge_khz") is None or p.get("dial_khz") is None):
+        errors.append("edge_khz/dial_khz: required for kind band_edge")
 
 
 # --- pi-network, ratio-detector, stage --------------------------------------------

@@ -288,7 +288,10 @@ bias), usually in `params_after`.
 half the distance), `variable_capacitor` (`angle` −90–90°), `coils` (`reveal`: axes at
 right angles), `supply` (`reveal`: a separate regulator for the oscillator),
 `fet_transfer` (MOSFET curves), `phasing` (SSB by the phasing method), `transfer` (an
-amplifier compressing), `air_coil` and `range` (a receiver's dynamic range).
+amplifier compressing), `air_coil`, `range` (a receiver's dynamic range) and `band_edge`
+(a band-plan boundary `edge_khz` between a CW segment and an all-modes segment, with an
+SSB signal of `width_khz`, default 2,7, on `sideband` `lsb` or `usb`, tuned to `dial_khz`
+and optionally `compare_khz`; each panel says whether the speech lands above the boundary).
 
 Also: `rlc-circuit@1` takes `current_arrow` (0–1, the current drawn as an arrow whose
 length follows it; series circuit with a source), for animations.

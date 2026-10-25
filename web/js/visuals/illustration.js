@@ -16,6 +16,9 @@
 // transfer           – output against drive for a linear amplifier, compressing at the top
 // air_coil           – an air-wound coil with its turns, diameter and length
 // range              – a receiver's dynamic range on a signal-strength scale
+// band_edge          – a band-plan boundary (edge_khz) between a CW segment below and an
+//                      all-modes segment above, and an SSB signal tuned to dial_khz (and,
+//                      for comparison, compare_khz), the sideband drawn where it lands
 // 'blank' draws only a note, for drawings that are shown after answering.
 
 import { h } from '../render/vnode.js';
@@ -29,6 +32,7 @@ function rules(p) {
   if (p.kind === 'prefixes' && p.from === p.to) errors.push('to: must differ from from');
   if (p.kind === 's_meter' && !(p.from_s >= 1 && p.to_s <= 9 && p.from_s < p.to_s)) errors.push('from_s/to_s: two S-units 1–9, from below to');
   if (p.kind === 'tolerance' && p.nominal == null) errors.push('nominal: required for kind tolerance');
+  if (p.kind === 'band_edge' && (p.edge_khz == null || p.dial_khz == null)) errors.push('edge_khz/dial_khz: required for kind band_edge');
   return errors;
 }
 
@@ -297,8 +301,41 @@ function range(els) {
   return { height: 270, desc: 'Skala for signalstyrke. Nederst mottakerens egen støy, øverst overstyring. Det dynamiske området er spennet fra det svakeste brukbare signalet opp til det sterkeste signalet mottakeren tåler uten overstyring.' };
 }
 
-const DRAW = { prefixes, tolerance, s_meter: sMeter, plates, variable_capacitor: variableCapacitor, coils, supply, fet_transfer: fetTransfer, phasing, transfer, air_coil: airCoil, range };
-const TITLE = { fet_transfer: 'MOSFET i to moduser', phasing: 'Fasemetoden for SSB', transfer: 'Forsterkerkurve', air_coil: 'Luftspole', range: 'Dynamisk område', prefixes: 'SI-prefikser', tolerance: 'Toleranse', s_meter: 'S-meter', plates: 'Platekondensator', variable_capacitor: 'Variabel kondensator', coils: 'To spoler', supply: 'Felles forsyning' };
+// A band-plan edge and where an SSB signal lands: one panel per tuning.
+function bandEdge(els, p) {
+  const dials = [p.dial_khz, p.compare_khz].filter((d) => d != null);
+  const w = p.width_khz;
+  const lsb = p.sideband === 'lsb';
+  const span = (d) => (lsb ? [d - w, d] : [d, d + w]);
+  const ends = dials.flatMap(span).concat([p.edge_khz]);
+  const lo = Math.min(...ends) - 2;
+  const hi = Math.max(...ends) + 2;
+  const x = (f) => 40 + ((f - lo) / (hi - lo)) * 470;
+  const khz = (f) => `${formatNumber(Math.round(f * 10) / 10)} kHz`;
+  const PANEL = 124;
+  const desc = [`Frekvensakse rundt grensen ved ${khz(p.edge_khz)} i båndplanen. Under grensen er båndet satt av til CW og smalbåndsmoduser, over den til alle moduser.`];
+  dials.forEach((d, i) => {
+    const y0 = 8 + i * (PANEL + 8);
+    const base = y0 + 84;
+    const xe = x(p.edge_khz);
+    els.push(lbl((40 + xe) / 2, y0 + 12, 'CW og smalbånd', 'middle', 12), lbl((xe + 510) / 2, y0 + 12, 'alle moduser', 'middle', 12));
+    els.push(line(xe, y0 + 4, xe, base + 4, { 'stroke-width': 1.6, 'stroke-dasharray': '5 4' }), lbl(xe, base + 16, khz(p.edge_khz), 'middle', 11));
+    els.push(line(34, base, 516, base, { 'stroke-width': 1.5 }), arrowHead(522, base, 1, 0, 8), lbl(526, base + 14, 'f', 'end', 12, { 'font-style': 'italic' }));
+    const [a, b] = span(d);
+    // the sideband: highest near the suppressed carrier, as on a spectrum
+    const [ya, yb] = lsb ? [base - 22, base - 34] : [base - 34, base - 22];
+    els.push(h('path', { d: `M ${x(a)} ${base} L ${x(a)} ${ya} L ${x(b)} ${yb} L ${x(b)} ${base} Z`, fill: STROKE, opacity: 0.4, stroke: STROKE, 'stroke-width': 1.2 }));
+    els.push(lbl((x(a) + x(b)) / 2, base - 44, lsb ? 'LSB' : 'USB', 'middle', 11, { 'font-weight': 'bold' }));
+    els.push(arrowHead(x(d), base - 2, 0, 1, 8), lbl(x(d) + (lsb ? 6 : -6), y0 + 30, `innstilt: ${khz(d)}`, lsb ? 'start' : 'end', 12));
+    const inside = lsb ? a >= p.edge_khz : b >= p.edge_khz && a >= p.edge_khz;
+    els.push(lbl(275, base + 34, inside ? 'hele talen ligger over grensen' : 'talen havner under grensen, i CW-delen', 'middle', 12, { 'font-weight': 'bold' }));
+    desc.push(`Radioen stilt på ${khz(d)} med ${lsb ? 'nedre' : 'øvre'} sidebånd: talen dekker ${khz(a)} til ${khz(b)}${inside ? ', over grensen, i delen for alle moduser.' : ', og havner under grensen, i delen for CW og smalbåndsmoduser.'}`);
+  });
+  return { height: 8 + dials.length * (PANEL + 8), desc: desc.join(' ') };
+}
+
+const DRAW = { band_edge: bandEdge, prefixes, tolerance, s_meter: sMeter, plates, variable_capacitor: variableCapacitor, coils, supply, fet_transfer: fetTransfer, phasing, transfer, air_coil: airCoil, range };
+const TITLE = { band_edge: 'Sidebånd og båndplan', fet_transfer: 'MOSFET i to moduser', phasing: 'Fasemetoden for SSB', transfer: 'Forsterkerkurve', air_coil: 'Luftspole', range: 'Dynamisk område', prefixes: 'SI-prefikser', tolerance: 'Toleranse', s_meter: 'S-meter', plates: 'Platekondensator', variable_capacitor: 'Variabel kondensator', coils: 'To spoler', supply: 'Felles forsyning' };
 
 function render(p) {
   const els = [];

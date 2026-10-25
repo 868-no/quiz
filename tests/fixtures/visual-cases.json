@@ -4305,6 +4305,35 @@
           "height_m": 80
         }
       }
+    },
+    {
+      "name": "illustration: band edge with LSB tuned on the edge and above it",
+      "valid": true,
+      "quantities": {},
+      "shown": {},
+      "visual": {
+        "template": "illustration",
+        "version": 1,
+        "params": {
+          "kind": "band_edge",
+          "edge_khz": 3600,
+          "dial_khz": 3600,
+          "compare_khz": 3603
+        }
+      }
+    },
+    {
+      "name": "illustration: band edge needs the edge and the tuned frequency",
+      "valid": false,
+      "error": "edge_khz/dial_khz",
+      "visual": {
+        "template": "illustration",
+        "version": 1,
+        "params": {
+          "kind": "band_edge",
+          "edge_khz": 3600
+        }
+      }
     }
   ]
 }

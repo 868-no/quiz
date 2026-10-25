@@ -1928,7 +1928,7 @@
       "id": "illustration",
       "version": 1,
       "title": "Illustrasjon",
-      "description": "Small explanatory drawings: the SI prefix ladder with a step marked (prefixes), a tolerance range on a number line (tolerance), an S-meter scale with two readings and optionally the dB per S-unit (s_meter), a plate capacitor with area and distance and optionally half the distance (plates), a variable capacitor's rotor and stator with the overlap shaded (variable_capacitor), two coils with parallel and optionally perpendicular axes (coils), and an oscillator and final stage on one supply line, optionally with a separate regulator (supply). 'blank' shows only a note. angle (−90 to 90°) turns the variable capacitor's rotor (for animations). Also: MOSFET transfer curves in depletion and enhancement mode (fet_transfer), the phasing method for SSB (phasing), an amplifier's output against drive with compression (transfer), an air-wound coil (air_coil) and a receiver's dynamic range (range).",
+      "description": "Small explanatory drawings: the SI prefix ladder with a step marked (prefixes), a tolerance range on a number line (tolerance), an S-meter scale with two readings and optionally the dB per S-unit (s_meter), a plate capacitor with area and distance and optionally half the distance (plates), a variable capacitor's rotor and stator with the overlap shaded (variable_capacitor), two coils with parallel and optionally perpendicular axes (coils), and an oscillator and final stage on one supply line, optionally with a separate regulator (supply). 'blank' shows only a note. angle (−90 to 90°) turns the variable capacitor's rotor (for animations). Also: MOSFET transfer curves in depletion and enhancement mode (fet_transfer), the phasing method for SSB (phasing), an amplifier's output against drive with compression (transfer), an air-wound coil (air_coil) and a receiver's dynamic range (range). Also a band-plan edge between a CW segment and an all-modes segment, with an SSB signal tuned to one or two frequencies and its sideband drawn where it lands (band_edge).",
       "idealised": "Forenklet illustrasjon av prinsippet.",
       "status": "approved",
       "params": {
@@ -1951,7 +1951,8 @@
               "phasing",
               "transfer",
               "air_coil",
-              "range"
+              "range",
+              "band_edge"
             ]
           },
           "reveal": {
@@ -2042,6 +2043,38 @@
             "minimum": -90,
             "maximum": 90,
             "default": 30
+          },
+          "edge_khz": {
+            "type": "number",
+            "minimum": 100,
+            "maximum": 10000000,
+            "nullable": true
+          },
+          "dial_khz": {
+            "type": "number",
+            "minimum": 100,
+            "maximum": 10000000,
+            "nullable": true
+          },
+          "compare_khz": {
+            "type": "number",
+            "minimum": 100,
+            "maximum": 10000000,
+            "nullable": true
+          },
+          "sideband": {
+            "type": "string",
+            "enum": [
+              "lsb",
+              "usb"
+            ],
+            "default": "lsb"
+          },
+          "width_khz": {
+            "type": "number",
+            "minimum": 0.5,
+            "maximum": 20,
+            "default": 2.7
           }
         }
       },
@@ -2057,6 +2090,12 @@
           "actor": "Jim C K Flaten",
           "action": "approve",
           "note": "New kinds added for round 7; all published figures render identically (checked)"
+        },
+        {
+          "at": "2026-10-25T02:38:02+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "New kind band_edge (LSB at a band-plan edge); all published figures render as before"
         }
       ]
     },
