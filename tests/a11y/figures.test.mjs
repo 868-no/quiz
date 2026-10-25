@@ -3,7 +3,9 @@
 // fails if a text label overlaps another label or crosses a straight line. Letters
 // inside a circle (meters, atoms) are left out: their lines run under the filled circle.
 // Needs the built site in dist/ and Playwright with Chromium, like the accessibility
-// check; skipped without them unless RADIOQUIZ_REQUIRE_BROWSER is set (CI).
+// check; skipped without them unless RADIOQUIZ_REQUIRE_BROWSER is set (CI). With
+// RADIOQUIZ_SITE=private/preview it checks the preview build, figures on unapproved
+// questions included (run-tests.sh does this when the private import is present).
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { existsSync } from 'node:fs';
@@ -11,7 +13,7 @@ import { join } from 'node:path';
 import { DIST, chromium, launchOptions, serve } from './browser.mjs';
 
 const missing = !chromium ? 'Playwright is not installed'
-  : !existsSync(join(DIST, 'index.html')) ? 'no built site in dist/ (run python3 -m tools publish)' : null;
+  : !existsSync(join(DIST, 'index.html')) ? `no built site in ${DIST} (run python3 -m tools publish, or preview)` : null;
 if (missing && process.env.RADIOQUIZ_REQUIRE_BROWSER) throw new Error(`figure layout check required, but ${missing}`);
 
 /** Runs in the page: draws every figure and returns the overlaps found. */

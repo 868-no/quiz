@@ -12,6 +12,13 @@ if command -v node >/dev/null 2>&1; then
   node --test tests/js/*.test.mjs
   echo "== Accessibility check and figure layout check"
   node --test tests/a11y/*.test.mjs
+  # with the private import present: the same figure check on the preview build, so
+  # figures on questions that are not approved yet are checked too
+  if [ -f private/imported/current.json ]; then
+    echo "== Figure layout check on the preview (unapproved questions too)"
+    python3 -m tools preview >/dev/null
+    RADIOQUIZ_SITE=private/preview node --test tests/a11y/figures.test.mjs
+  fi
 else
   echo "== JavaScript tests SKIPPED (node not found)"
 fi

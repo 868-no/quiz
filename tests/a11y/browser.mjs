@@ -1,14 +1,15 @@
-// Shared by the browser tests: finds Playwright, and serves the built site in dist/.
+// Shared by the browser tests: finds Playwright, and serves the built site in dist/ (or the
+// folder in RADIOQUIZ_SITE, e.g. private/preview, which also has unapproved questions).
 // RADIOQUIZ_PLAYWRIGHT / RADIOQUIZ_JSDOM may name extra directories with node_modules,
 // and RADIOQUIZ_CHROMIUM a Chromium to use instead of Playwright's own.
 import { createServer } from 'node:http';
 import { createRequire } from 'node:module';
 import { existsSync, readFileSync, statSync } from 'node:fs';
-import { extname, join, normalize, sep } from 'node:path';
+import { extname, join, normalize, resolve, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 export const ROOT = join(fileURLToPath(new URL('.', import.meta.url)), '..', '..');
-export const DIST = join(ROOT, 'dist');
+export const DIST = process.env.RADIOQUIZ_SITE ? resolve(ROOT, process.env.RADIOQUIZ_SITE) : join(ROOT, 'dist');
 const bases = [process.env.RADIOQUIZ_PLAYWRIGHT, process.env.RADIOQUIZ_JSDOM].filter(Boolean).map((d) => join(d, 'x.js'));
 bases.push(import.meta.url);
 
