@@ -152,7 +152,7 @@
     },
     {
       "revision": 2,
-      "status": "approved",
+      "status": "retired",
       "type": "single_choice",
       "style": "recall",
       "difficulty": "easy",
@@ -263,6 +263,15 @@
           "acknowledged": [
             "figures"
           ]
+        },
+        {
+          "at": "2026-10-25T02:18:51+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "56cf18e51251c114f0261f55ca37294ff1fe40c21e112421147607855cad818c",
+          "note": "superseded by r3"
         }
       ],
       "visual": {
@@ -296,6 +305,165 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-25T01:44:54+00:00",
         "content_sha256": "56cf18e51251c114f0261f55ca37294ff1fe40c21e112421147607855cad818c",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 3,
+      "status": "approved",
+      "type": "single_choice",
+      "style": "recall",
+      "difficulty": "easy",
+      "chapter": 13,
+      "section_ids": [
+        "s13-03"
+      ],
+      "topic_ids": [
+        "elektrisk-sjokk"
+      ],
+      "learning_objective": "Vite at strøm fra hånd til hånd går tvers gjennom brystet og kan være livsfarlig.",
+      "priority": "exam_important",
+      "context": [],
+      "stem": [
+        "Hvilken av disse strømveiene kan føre farlig strøm gjennom brystet?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Fra den ene hånden til den andre."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Fra den ene foten til den andre."
+          ],
+          "feedback": [
+            "Strøm mellom føttene går gjennom beina og nedre del av kroppen, langt fra hjertet. Den kan gi skader, men går ikke gjennom brystet."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Fra en finger til en annen finger på samme hånd."
+          ],
+          "feedback": [
+            "En slik strøm kan gi brannskader i hånden, men den går ikke gjennom brystet."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Ingen av disse, så lenge spenningen er vanlig nettspenning."
+          ],
+          "feedback": [
+            "Også vanlig nettspenning kan drive en livsfarlig strøm gjennom kroppen. Strøm fra hånd til hånd går tvers gjennom brystet."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Strøm fra hånd til hånd går gjennom armene og tvers over brystkassen, tett forbi hjertet. Hjertet styres av svake elektriske signaler og forstyrres lett, så en slik strøm kan gi hjerteflimmer.",
+        "Også strøm fra hånd til fot går gjennom brystet, og etter den internasjonale standarden for virkninger av strøm (IEC 60479-1) belaster den hjertet enda mer. Begge veiene er farlige. Det er grunnen til at man skal jobbe med én hånd når man må måle i utstyr som står på."
+      ],
+      "visual": {
+        "template": "safety",
+        "version": 1,
+        "params": {
+          "kind": "body_paths",
+          "reveal": true,
+          "highlight": "hand_hand"
+        },
+        "after_only": true
+      },
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 13,
+        "section_id": "s13-03",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "d66cc5a634d57257"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "Jim C K Flaten",
+        "based_on": 2,
+        "at": "2026-10-25T02:13:02+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-25T02:13:02+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "56cf18e51251c114f0261f55ca37294ff1fe40c21e112421147607855cad818c",
+          "note": "Runde 6 (ChatGPT)"
+        },
+        {
+          "at": "2026-10-25T02:13:03+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "791c65f753fddfb509feb9b9884702c7396134a3cc89400e3b5034143265b860",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-25T02:18:51+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "791c65f753fddfb509feb9b9884702c7396134a3cc89400e3b5034143265b860",
+          "note": "Runde 6: rettet etter AI-kontroll (ChatGPT)",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "791c65f753fddfb509feb9b9884702c7396134a3cc89400e3b5034143265b860",
+        "errors": [],
+        "warnings": [
+          "priority: 'exam_important' set by judgement; the book's '!' markers are not known for this chapter yet (no scan)"
+        ],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-25T02:18:51+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-25T02:18:51+00:00",
+        "content_sha256": "791c65f753fddfb509feb9b9884702c7396134a3cc89400e3b5034143265b860",
         "acknowledged_hazards": [
           "figures"
         ],

@@ -145,7 +145,7 @@
     },
     {
       "revision": 2,
-      "status": "approved",
+      "status": "retired",
       "type": "single_choice",
       "style": "concept",
       "difficulty": "medium",
@@ -256,6 +256,15 @@
           "content_sha256": "897801e1ce2ba1fb97b62b70c98a42f5ba406d519335bea8a0da3ee0f052273f",
           "note": "Ny figur (safety@1) kontrollert på mobil og PC, før og etter svar",
           "acknowledged": []
+        },
+        {
+          "at": "2026-10-25T02:18:53+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "897801e1ce2ba1fb97b62b70c98a42f5ba406d519335bea8a0da3ee0f052273f",
+          "note": "superseded by r3"
         }
       ],
       "visual": {
@@ -283,6 +292,158 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-25T01:44:57+00:00",
         "content_sha256": "897801e1ce2ba1fb97b62b70c98a42f5ba406d519335bea8a0da3ee0f052273f",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 3,
+      "status": "approved",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 13,
+      "section_ids": [
+        "s13-05"
+      ],
+      "topic_ids": [
+        "trygt-arbeid-utstyr"
+      ],
+      "learning_objective": "Forstå hvorfor man jobber med én hånd når man må måle på utstyr som står på.",
+      "priority": "exam_important",
+      "context": [
+        "Noen ganger må man måle spenninger i et apparat mens det står på."
+      ],
+      "stem": [
+        "Hvorfor anbefales det da å bruke bare én hånd og ha den andre i lomma eller på ryggen?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "For å unngå at strøm går fra hånd til hånd tvers gjennom brystet og hjertet."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "For at måleresultatet skal bli mer nøyaktig."
+          ],
+          "feedback": [
+            "Det handler om sikkerhet, ikke nøyaktighet. Rådet skal hindre at strømmen kan gå fra hånd til hånd, tvers gjennom brystet."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "For at den andre hånden skal være klar til å slå av strømmen."
+          ],
+          "feedback": [
+            "Poenget er at den andre hånden ikke skal kunne berøre noe. Er den i lomma, kan den ikke lukke en strømkrets gjennom brystet."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Fordi det er lettere å holde måleprobene stødig med én hånd."
+          ],
+          "feedback": [
+            "Det er ikke grunnen. Med begge hendene i apparatet kan du få strøm fra den ene hånden til den andre, en farlig vei gjennom brystet."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Strøm som går fra den ene hånden til den andre, tvers over brystet, er en farlig strømvei. Holder du den ene hånden borte fra apparatet, kan du ikke ved et uhell berøre to punkter med stor spenningsforskjell med hver sin hånd.",
+        "Rådet fjerner ikke all fare: strøm fra én hånd til føttene går også gjennom brystet. Unngå også hodetelefoner mens du jobber i apparatet: en plutselig lyd kan få deg til å rykke til og ta borti noe du ikke skal."
+      ],
+      "visual": {
+        "template": "safety",
+        "version": 1,
+        "params": {
+          "kind": "body_paths",
+          "reveal": true,
+          "highlight": "hand_hand"
+        },
+        "after_only": true
+      },
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 13,
+        "section_id": "s13-05",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "6cc26db27b48fc02"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "Jim C K Flaten",
+        "based_on": 2,
+        "at": "2026-10-25T02:13:02+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-25T02:13:02+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "897801e1ce2ba1fb97b62b70c98a42f5ba406d519335bea8a0da3ee0f052273f",
+          "note": "Runde 6 (ChatGPT)"
+        },
+        {
+          "at": "2026-10-25T02:13:03+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "b45fd0b37394277dde99ad4d4642f69833209ce119f8accda23108dcf2b88328",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-25T02:18:53+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "b45fd0b37394277dde99ad4d4642f69833209ce119f8accda23108dcf2b88328",
+          "note": "Runde 6: rettet etter AI-kontroll (ChatGPT)",
+          "acknowledged": []
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "b45fd0b37394277dde99ad4d4642f69833209ce119f8accda23108dcf2b88328",
+        "errors": [],
+        "warnings": [
+          "priority: 'exam_important' set by judgement; the book's '!' markers are not known for this chapter yet (no scan)"
+        ],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-25T02:18:53+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-25T02:18:53+00:00",
+        "content_sha256": "b45fd0b37394277dde99ad4d4642f69833209ce119f8accda23108dcf2b88328",
         "acknowledged_hazards": [],
         "checklist": {
           "one_correct": true,

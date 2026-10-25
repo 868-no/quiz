@@ -3,7 +3,7 @@
   "revisions": [
     {
       "revision": 1,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "scenario",
@@ -108,6 +108,15 @@
           "content_sha256": "7b7546b368665b40cfca717758e48e043e2b89246c9b6a7c1aaa7e05b97449c9",
           "note": "Kapittel 15: organisasjoner og tjenester",
           "acknowledged": []
+        },
+        {
+          "at": "2026-10-25T02:18:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "7b7546b368665b40cfca717758e48e043e2b89246c9b6a7c1aaa7e05b97449c9",
+          "note": "superseded by r2"
         }
       ],
       "provenance": {
@@ -129,6 +138,155 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-25T01:53:30+00:00",
         "content_sha256": "7b7546b368665b40cfca717758e48e043e2b89246c9b6a7c1aaa7e05b97449c9",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 2,
+      "status": "approved",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "medium",
+      "chapter": 15,
+      "section_ids": [
+        "s15-04",
+        "s15-03"
+      ],
+      "topic_ids": [
+        "organisasjoner-tjenester"
+      ],
+      "learning_objective": "Vite hva diplomene DXCC og IOTA går ut på.",
+      "priority": "normal",
+      "context": [
+        "To radioamatører forteller om diplomene de jakter på. Den ene samler til DXCC, den andre til IOTA."
+      ],
+      "stem": [
+        "Hva samler de på?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "DXCC: kontakter med ulike land og områder i verden. IOTA: kontakter med stasjoner på øyer."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "DXCC: kontakter på flest mulig bånd. IOTA: flest mulig kontakter i én konkurranse."
+          ],
+          "feedback": [
+            "Ingen av diplomene handler om antall bånd eller én konkurranse. DXCC gjelder land og områder, IOTA gjelder øyer."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "DXCC: QSL-kort fra stasjoner i USA. IOTA: QSL-kort fra stasjoner i Storbritannia."
+          ],
+          "feedback": [
+            "Diplomene administreres av ARRL og RSGB, men de gjelder kontakter over hele verden."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Begge går ut på å høre flest mulig stasjoner, uten å ha kontakt med dem."
+          ],
+          "feedback": [
+            "Begge krever bekreftede kontakter, for eksempel med QSL-kort eller i LoTW."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "DXCC (DX Century Club) administreres av ARRL og gis for bekreftede kontakter med minst 100 ulike land og områder. IOTA (Islands on the Air) drives av IOTA Ltd i samarbeid med RSGB og handler om kontakter med stasjoner på øyer rundt om i verden.",
+        [
+          "Begge krever at kontaktene er bekreftet, for eksempel med ",
+          {
+            "term": "qsl-kort",
+            "text": "QSL-kort"
+          },
+          " eller elektronisk."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 15,
+        "section_id": "s15-04",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "a32a2cb623201ccd",
+          "641bf849aa79fc77"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "Jim C K Flaten",
+        "based_on": 1,
+        "at": "2026-10-25T02:13:01+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-25T02:13:01+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "7b7546b368665b40cfca717758e48e043e2b89246c9b6a7c1aaa7e05b97449c9",
+          "note": "Runde 6 (ChatGPT)"
+        },
+        {
+          "at": "2026-10-25T02:13:03+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "63636932ed0ca5700359a2b395671b621f8d3632fad89708447ec123c3ce1992",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-25T02:18:55+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "63636932ed0ca5700359a2b395671b621f8d3632fad89708447ec123c3ce1992",
+          "note": "Runde 6: rettet etter AI-kontroll (ChatGPT)",
+          "acknowledged": []
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "63636932ed0ca5700359a2b395671b621f8d3632fad89708447ec123c3ce1992",
+        "errors": [],
+        "warnings": [],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-25T02:18:55+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-25T02:18:55+00:00",
+        "content_sha256": "63636932ed0ca5700359a2b395671b621f8d3632fad89708447ec123c3ce1992",
         "acknowledged_hazards": [],
         "checklist": {
           "one_correct": true,

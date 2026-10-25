@@ -179,7 +179,7 @@
     },
     {
       "revision": 2,
-      "status": "approved",
+      "status": "retired",
       "type": "single_choice",
       "style": "concept",
       "difficulty": "medium",
@@ -299,6 +299,15 @@
           "acknowledged": [
             "figures"
           ]
+        },
+        {
+          "at": "2026-10-25T02:18:52+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "426c38b264ba9c778ec08943ae03bafb6208da3814b49176c4490c0b434d46bc",
+          "note": "superseded by r3"
         }
       ],
       "visual": {
@@ -331,6 +340,165 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-25T01:44:56+00:00",
         "content_sha256": "426c38b264ba9c778ec08943ae03bafb6208da3814b49176c4490c0b434d46bc",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 3,
+      "status": "approved",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 13,
+      "section_ids": [
+        "s13-04"
+      ],
+      "topic_ids": [
+        "jording-jordfeilbryter"
+      ],
+      "learning_objective": "Forstå at beskyttelsesjord i klasse I-utstyr holder berøringsspenningen nede og legger til rette for at vernet kobler ut ved en feil.",
+      "priority": "exam_important",
+      "context": [],
+      "stem": [
+        "Hvorfor skal berørbare metalldeler i nettdrevet klasse I-utstyr være koblet til beskyttelsesjord?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Feilstrømmen får en lett vei, så vernet kan koble ut."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "For at radioen skal få bedre mottak og mindre støy."
+          ],
+          "feedback": [
+            "Sikkerhetsjordingen er der for å beskytte mennesker. Hva den gjør for mottaket, er ikke poenget."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "For at metallkabinettet ikke skal bli varmt under sending."
+          ],
+          "feedback": [
+            "Jordingen fører bort feilstrøm, ikke varme. Uten feil går det ingen strøm i jordlederen."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "For å hindre at sikringen ryker når det oppstår en feil."
+          ],
+          "feedback": [
+            "Det er motsatt: en god jordforbindelse gir stor feilstrøm, og nettopp det skal få vernet til å koble ut utstyret."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Får et metallkabinett kontakt med en strømførende leder, gir en god jordforbindelse feilstrømmen en vei med lav motstand. Strømmen blir stor, og vernet kan koble ut. Samtidig holdes spenningen på kabinettet nede.",
+        "Hvor godt dette virker, avhenger av jordingssystemet og vernet; en jordfeilbryter gir ekstra beskyttelse. Utstyr i klasse II har i stedet dobbel eller forsterket isolasjon og trenger ikke jordleder, og utstyr på lav spenning, som en morsenøkkel på en isolert krets, trenger det heller ikke."
+      ],
+      "visual": {
+        "template": "safety",
+        "version": 1,
+        "params": {
+          "kind": "earth_fault"
+        },
+        "params_after": {
+          "reveal": true
+        }
+      },
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 13,
+        "section_id": "s13-04",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "bfae33b0f4c6f489"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "Jim C K Flaten",
+        "based_on": 2,
+        "at": "2026-10-25T02:13:02+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-25T02:13:02+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "426c38b264ba9c778ec08943ae03bafb6208da3814b49176c4490c0b434d46bc",
+          "note": "Runde 6 (ChatGPT)"
+        },
+        {
+          "at": "2026-10-25T02:13:03+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "9b71868220ffcad69ceb7daded945e8b00b9e94f8a080fb4758eb540390b3e4f",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-25T02:18:52+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "9b71868220ffcad69ceb7daded945e8b00b9e94f8a080fb4758eb540390b3e4f",
+          "note": "Runde 6: rettet etter AI-kontroll (ChatGPT)",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "9b71868220ffcad69ceb7daded945e8b00b9e94f8a080fb4758eb540390b3e4f",
+        "errors": [],
+        "warnings": [
+          "priority: 'exam_important' set by judgement; the book's '!' markers are not known for this chapter yet (no scan)"
+        ],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-25T02:18:52+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-25T02:18:52+00:00",
+        "content_sha256": "9b71868220ffcad69ceb7daded945e8b00b9e94f8a080fb4758eb540390b3e4f",
         "acknowledged_hazards": [
           "figures"
         ],

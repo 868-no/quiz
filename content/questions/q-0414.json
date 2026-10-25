@@ -3,7 +3,7 @@
   "revisions": [
     {
       "revision": 1,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "concept",
@@ -121,6 +121,15 @@
           "content_sha256": "07c88fae1c1a9678e2399f6ce25ae21de68a5c90ae9b999f287107b123c69a10",
           "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
           "acknowledged": []
+        },
+        {
+          "at": "2026-10-25T02:18:49+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "07c88fae1c1a9678e2399f6ce25ae21de68a5c90ae9b999f287107b123c69a10",
+          "note": "superseded by r2"
         }
       ],
       "provenance": {
@@ -172,6 +181,190 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-24T22:49:08+00:00",
         "content_sha256": "07c88fae1c1a9678e2399f6ce25ae21de68a5c90ae9b999f287107b123c69a10",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 2,
+      "status": "approved",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 10,
+      "section_ids": [
+        "s10-15"
+      ],
+      "topic_ids": [
+        "emc-kobling"
+      ],
+      "learning_objective": "Forklare blokkering: et sterkt signal på en annen frekvens overbelaster mottakeren eller får forsterkningen regulert ned, så det ønskede signalet dempes.",
+      "priority": "normal",
+      "context": [],
+      "stem": [
+        [
+          "Hva skjer i en mottaker ved ",
+          {
+            "term": "blokkering",
+            "text": "blokkering"
+          },
+          "?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Et sterkt, uønsket signal overbelaster mottakeren, slik at et svakere, ønsket signal blir dempet eller forsvinner."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Modulasjonen fra et sterkt signal legger seg oppå det ønskede signalet."
+          ],
+          "feedback": [
+            "Det beskriver kryssmodulasjon. Ved blokkering blir det ønskede signalet dempet, uten at modulasjonen fra det sterke signalet legger seg på det."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "To sterke signaler blandes og lager nye frekvenser i passbåndet."
+          ],
+          "feedback": [
+            "Det beskriver intermodulasjon. Ved blokkering lages det ingen nye frekvenser; det ønskede signalet blir bare svakere."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Et signal på det dobbelte av senderfrekvensen slipper inn i mottakeren."
+          ],
+          "feedback": [
+            "Det beskriver en harmonisk frekvens fra senderen. Blokkering skyldes at et sterkt signal på en annen frekvens overbelaster mottakeren."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Blokkering oppstår når et sterkt signal utenfor den ønskede kanalen reduserer mottakerens evne til å ta imot svakere signaler. Det kan skje ved overstyring eller kompresjon i mottakertrinnene, eller fordi den automatiske forsterkningsreguleringen (",
+          {
+            "term": "agc",
+            "text": "AGC"
+          },
+          ") skrur ned forsterkningen."
+        ],
+        "Resultatet er at det ønskede signalet blir svakere eller forsvinner, selv om det sterke signalet ligger på en annen frekvens. Blokkering er noe annet enn intermodulasjon, som lager nye frekvenser, og kryssmodulasjon, der modulasjonen fra ett signal overføres til et annet."
+      ],
+      "visual": {
+        "template": "spectrum",
+        "version": 1,
+        "params": {
+          "x_min_hz": 144700000.0,
+          "x_max_hz": 145300000.0,
+          "freq_labels": false,
+          "panels": [
+            {
+              "lines": [
+                {
+                  "f_hz": 144900000.0,
+                  "level": 0.25,
+                  "label": "Ønsket"
+                },
+                {
+                  "f_hz": 145100000.0,
+                  "level": 0.95,
+                  "label": "Sterkt signal"
+                }
+              ],
+              "filter": {
+                "from_hz": 144860000.0,
+                "to_hz": 144940000.0,
+                "label": "Passbånd"
+              }
+            }
+          ]
+        }
+      },
+      "glossary_after_answer": [
+        "blokkering"
+      ],
+      "study_reference": {
+        "chapter": 10,
+        "section_id": "s10-15",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "81e012c3e7843529"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "Jim C K Flaten",
+        "based_on": 1,
+        "at": "2026-10-25T02:13:02+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-25T02:13:02+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "07c88fae1c1a9678e2399f6ce25ae21de68a5c90ae9b999f287107b123c69a10",
+          "note": "Runde 6 (ChatGPT)"
+        },
+        {
+          "at": "2026-10-25T02:13:03+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "dafcca96c8710fcc2f02927abe40b3e49538da3a83d479469aace74b61806fcd",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-25T02:18:49+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "dafcca96c8710fcc2f02927abe40b3e49538da3a83d479469aace74b61806fcd",
+          "note": "Runde 6: rettet etter AI-kontroll (ChatGPT)",
+          "acknowledged": []
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "dafcca96c8710fcc2f02927abe40b3e49538da3a83d479469aace74b61806fcd",
+        "errors": [],
+        "warnings": [],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-25T02:18:49+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-25T02:18:49+00:00",
+        "content_sha256": "dafcca96c8710fcc2f02927abe40b3e49538da3a83d479469aace74b61806fcd",
         "acknowledged_hazards": [],
         "checklist": {
           "one_correct": true,
