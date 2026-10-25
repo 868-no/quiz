@@ -621,7 +621,7 @@ def _no_rules(p: dict[str, Any], errors: list[str]) -> None:
     pass  # every combination of the parameters can be drawn
 
 
-# --- code-breakdown (new) ---
+# --- code-breakdown -------------------------------------------------------------------
 
 def _code_breakdown_rules(p: dict[str, Any], errors: list[str]) -> None:
     if sum(len(x["text"]) for x in p["parts"]) > 16:
@@ -632,10 +632,8 @@ def _code_breakdown_rules(p: dict[str, Any], errors: list[str]) -> None:
     if not any(x["label"] for x in p["parts"]):
         errors.append("parts: at least one part needs a label")
 
-# --- end code-breakdown ---
 
-
-# --- instrument (new) ---
+# --- instrument -----------------------------------------------------------------------
 
 def _instrument_rules(p: dict[str, Any], errors: list[str]) -> None:
     if p["kind"] == "scope":
@@ -717,10 +715,8 @@ def _instrument_quantities(p: dict[str, Any]) -> dict[str, dict[str, Any]]:
         q["f"] = {"value": 1 / p["gate_s"], "unit": "Hz", "shown": p["show_resolution"]}
     return q
 
-# --- end instrument ---
 
-
-# --- antenna (new) ---
+# --- antenna --------------------------------------------------------------------------
 
 def _antenna_rules(p: dict[str, Any], errors: list[str]) -> None:
     k = p["kind"]
@@ -742,10 +738,8 @@ def _antenna_rules(p: dict[str, Any], errors: list[str]) -> None:
     if k != "trap_dipole" and p["active"] != "all":
         errors.append("active: only for trap_dipole")
 
-# --- end antenna ---
 
-
-# --- propagation (new) ---
+# --- propagation ----------------------------------------------------------------------
 
 def _propagation_rules(p: dict[str, Any], errors: list[str]) -> None:
     if p["compare"] and p["kind"] != "layers":
@@ -760,10 +754,8 @@ def _propagation_rules(p: dict[str, Any], errors: list[str]) -> None:
     if p["kind"] == "hops" and p["hops"] * 2 * p["layer_km"] / math.tan(math.radians(p["elevation_deg"])) > 40000:
         errors.append("elevation_deg: the hops would go more than once round the earth")
 
-# --- end propagation ---
 
-
-# --- sampling (new) ---
+# --- sampling -------------------------------------------------------------------------
 
 def _sampling_rules(p: dict[str, Any], errors: list[str]) -> None:
     if p["kind"] == "samples" and p["f_hz"] > 2 * p["fs_hz"]:
@@ -775,10 +767,8 @@ def _sampling_rules(p: dict[str, Any], errors: list[str]) -> None:
     if p["kind"] != "quantize" and (p["show_error"] or p["levels_label"] or p["step_label"] != "none"):
         errors.append("show_error, levels_label, step_label: only for kind 'quantize'")
 
-# --- end sampling ---
 
-
-# --- feedline (new) ---
+# --- feedline -------------------------------------------------------------------------
 
 def _feedline_reflection(p: dict[str, Any]) -> float:
     if p["load"] == "open":
@@ -839,10 +829,8 @@ def _feedline_quantities(p: dict[str, Any]) -> dict[str, dict[str, Any]]:
         return q
     return {}
 
-# --- end feedline ---
 
-
-# --- safety (new) ---
+# --- safety ---------------------------------------------------------------------------
 
 def _safety_rules(p: dict[str, Any], errors: list[str]) -> None:
     if p["highlight"] != "none" and p["kind"] != "body_paths":
@@ -852,16 +840,18 @@ def _safety_rules(p: dict[str, Any], errors: list[str]) -> None:
     if (p.get("leak_ma") is not None or p.get("fuse_a") is not None) and p["kind"] != "earth_fault":
         errors.append("fuse_a/leak_ma: only for kind earth_fault")
 
-# --- end safety ---
 
-
-RULES = {"dc-circuit": _dc_rules, "ac-circuit": _ac_rules, "waveform": _wave_rules, "block-diagram": _block_rules,
-         "rlc-circuit": _rlc_rules, "rectifier": _rect_rules, "transformer": _tr_rules, "transistor-stage": _ts_rules,
-         "series-regulator": _reg_rules, "zener-regulator": _zen_rules,
-         "frequency-response": _fr_rules, "pi-network": _no_rules,
-         "ratio-detector": _no_rules, "time-signal": _ts_rules_time,
-         "spectrum": _spectrum_rules, "semiconductor": _semi_rules,
-         "stage": _no_rules, "illustration": _illu_rules, "code-breakdown": _code_breakdown_rules, "instrument": _instrument_rules, "antenna": _antenna_rules, "propagation": _propagation_rules, "sampling": _sampling_rules, "feedline": _feedline_rules, "safety": _safety_rules}
+RULES = {
+    "dc-circuit": _dc_rules, "ac-circuit": _ac_rules, "waveform": _wave_rules,
+    "block-diagram": _block_rules, "rlc-circuit": _rlc_rules, "rectifier": _rect_rules,
+    "transformer": _tr_rules, "transistor-stage": _ts_rules, "series-regulator": _reg_rules,
+    "zener-regulator": _zen_rules, "frequency-response": _fr_rules, "pi-network": _no_rules,
+    "ratio-detector": _no_rules, "time-signal": _ts_rules_time, "spectrum": _spectrum_rules,
+    "semiconductor": _semi_rules, "stage": _no_rules, "illustration": _illu_rules,
+    "code-breakdown": _code_breakdown_rules, "instrument": _instrument_rules, "antenna": _antenna_rules,
+    "propagation": _propagation_rules, "sampling": _sampling_rules, "feedline": _feedline_rules,
+    "safety": _safety_rules
+}
 QUANTITIES = {"dc-circuit": _dc_quantities, "ac-circuit": _ac_quantities, "waveform": _wave_quantities,
               "rlc-circuit": _rlc_quantities, "rectifier": _rect_quantities, "transformer": _tr_quantities,
               "transistor-stage": _ts_quantities, "series-regulator": _reg_quantities, "zener-regulator": _zen_quantities,
