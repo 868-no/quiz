@@ -16,7 +16,7 @@ from pathlib import Path
 from typing import Any
 
 from . import checks, richtext, visuals
-from .common import Paths, ToolError, canonical_hash, now_iso, read_json, write_json
+from .common import Paths, ToolError, canonical_hash, now_iso, read_json, write_text
 from .context import Context, load_context, validate_glossary
 from .questions import VARIANT_KEYS, content_hash, latest, open_flags, publishable_revision, variant_revisions
 from .release_check import SW_FILE, SW_PLACEHOLDER, precache, release_check
@@ -267,7 +267,7 @@ def publish(paths: Paths, *, skip_flagged: bool = False, require_source: bool = 
     out = out or paths.dist
     staging = out.with_name(out.name + ".staging")
     _copy_web(paths, staging)
-    write_json(staging / "data" / "bank.json", bank)
+    _write_bank(staging / "data" / "bank.json", bank)
     _write_host_files(paths, staging)
     _write_precache(staging)
     report = release_check(staging, paths, expect_mode="production")
@@ -281,9 +281,14 @@ def publish(paths: Paths, *, skip_flagged: bool = False, require_source: bool = 
             "release_check": report, "chapters": bank["chapters"]}
 
 
+def _write_bank(path: Path, bank: dict[str, Any]) -> None:
+    # compact: the bank is downloaded by every visitor, and indentation is half its size
+    write_text(path, json.dumps(bank, ensure_ascii=False, separators=(",", ":")))
+
+
 def preview(paths: Paths) -> dict[str, Any]:
     bank, problems, notes = build_bank(paths, mode="preview", require_source=False)
     out = paths.preview
     _copy_web(paths, out)
-    write_json(out / "data" / "bank.json", bank)
+    _write_bank(out / "data" / "bank.json", bank)
     return {"out": str(out), "questions": len(bank["questions"]), "problems": problems, "notes": notes}
