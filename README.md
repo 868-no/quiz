@@ -19,6 +19,55 @@ private textbook digitization exports into reviewed, original, publishable quest
 > numbers yet. Study page references have not yet been checked against the printed book;
 > corrections are welcome as [GitHub issues](https://github.com/868-no/quiz/issues).
 
+## Verifying questions
+
+Every question on the site was written and approved by AI models ("Claude + ChatGPT",
+`"machine_verified": true` in the approval). We want a person to check each one. You can
+help with this without the private textbook import or the rest of the pipeline. All you
+need is Python ≥ 3.10, Git, a GitHub account and, ideally, the textbook.
+
+```sh
+# Fork https://github.com/868-no/quiz on GitHub, then:
+git clone https://github.com/<you>/quiz.git && cd quiz
+git switch -c verify-chapter-3
+export RADIOQUIZ_REVIEWER="Fornavn Etternavn"     # your name, as it will appear in the repository
+
+# Questions that no person has verified yet (here: chapter 3)
+python3 -m tools status -v | grep "AI-approved" | grep " ch3 "
+
+# Read a question: text, answer options, explanations, calculation and figure parameters
+python3 -m tools review show q-0045 --no-source
+```
+
+Each question can also be seen exactly as learners see it, at `https://quiz.868.no/#q-0045`.
+Answer it to see the explanation and the figure.
+
+When **every** item below holds, record your verification:
+
+1. Exactly one option is defensibly correct, and the other three are clearly wrong.
+2. Facts, numbers, units, rounding and the working are right. Work the calculation out
+   yourself.
+3. Nothing shown before answering gives the answer away: the question, the figure and the
+   glossary popups.
+4. The text and figure are not copied or closely paraphrased from the textbook.
+5. The study reference (chapter, section and, where given, printed page) points to the
+   right place in the book.
+6. The language is clear, correct bokmål.
+
+```sh
+python3 -m tools review human-verify q-0045 --note "Regnet ut selv; sidetallet stemmer."
+# asks you to confirm each item (or pass --checklist all once you have checked them all)
+```
+
+This adds `human_verified` (your name, the time and the checklist) to the question's
+approval. It is only metadata: the content and the site stay as they are. Commit the
+changed `content/questions/*.json` files and open a pull request.
+
+**If something is wrong,** don't verify the question. Open an
+[issue](https://github.com/868-no/quiz/issues) that says what is wrong and what the right
+answer or reference is. Each question links to a pre-filled issue after you answer it. A
+corrected question gets a new revision and a new approval, so it must be verified again.
+
 ## Quick start
 
 Requirements: Python ≥ 3.10 (standard library only). Node.js ≥ 18 is optional and
@@ -77,7 +126,7 @@ content/ (original, version-controlled)
 | Import | `import --source DIR` | Validates the actual export schema, snapshots it under `private/imported/<id>/`, diffs against the previous import and flags questions citing changed chunks. |
 | A. Generate | `new --chunk UID` / `generate --chunk UID` | Manual draft skeleton mapped to source chunks, or LLM candidates (provider off by default; local first; remote only with explicit opt-in). |
 | B. Verify | `verify` | Deterministic checks: schema, Norwegian, 4 options/1 key, units and notation, **independent recomputation** of calculations, figure/answer consistency, answer leakage, source/page validity, OCR hazards, near-verbatim copying, duplicates. |
-| C. Review | `review show/approve/reject/request-changes/edit/retire/resolve-flag`, `glossary approve`, `visuals approve`, `chapters verify-section` | Local CLI with audit trail. Approval needs a named reviewer, a checklist, and explicit acknowledgement of OCR/page/figure hazards. |
+| C. Review | `review show/approve/human-verify/reject/request-changes/edit/retire/resolve-flag`, `glossary approve`, `visuals approve`, `chapters verify-section` | Local CLI with audit trail. Approval needs a named reviewer, a checklist, and explicit acknowledgement of OCR/page/figure hazards. |
 | D. Publish | `publish`, `release-check` | Builds `dist/` from approved revisions only; refuses (writes nothing) on any problem; scans the build for private material. Run locally as the full check; GitHub Actions runs it again (without the private import) to build the deployed site. |
 
 ## Stack and why
