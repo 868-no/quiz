@@ -479,7 +479,7 @@ answering.
 
 | Kind | Draws | `reveal` adds |
 |---|---|---|
-| `body_paths` | a calm outline of a person touching live parts, with three current paths (hand to hand, hand to foot, within one hand) and the heart | `highlight` (`hand_hand`, `hand_foot`, `one_hand`) picks one out; hand to hand is marked as the most dangerous |
+| `body_paths` | a calm outline of a person touching live parts, with three current paths (hand to hand, hand to foot, within one hand) and the heart | `highlight` (`hand_hand`, `hand_foot`, `one_hand`) picks one out; hand to hand is marked as a dangerous path through the chest (not the most dangerous: hand to foot weighs more on the heart) |
 | `shock_scale` | a logarithmic scale 0,1 mA–10 A with rounded effects of 50 Hz current through the chest, and where an RCD (30 mA) and an ordinary fuse (10 A) act | – |
 | `earth_fault` | a fuse box (`protection`: `fuse` or `fuse_rcd`; `fuse_a` labels the fuse) feeding a load in an earthed metal case, with a fault from phase to the case | the fault current back through PE and what trips; `leak_ma` labels a small leak (needs `fuse_rcd`) |
 | `mast_fall` | a mast (`height_m`) with guys and an overhead power line `line_distance_m` away, seen from the side | the arc a falling mast sweeps, and whether it reaches the line |

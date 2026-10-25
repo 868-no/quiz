@@ -1,7 +1,8 @@
 // safety@1: drawings for electrical and practical safety (chapter 13).
 // body_paths   – a plain outline of a person with three ways a current can take: hand to
 //                hand across the chest, hand to foot, and within one hand; 'highlight'
-//                (with 'reveal') picks one out
+//                (with 'reveal') picks one out. Hand to hand is marked as dangerous, not as
+//                the most dangerous: by IEC 60479-1 hand to foot weighs more on the heart
 // shock_scale  – a logarithmic current scale from 0,1 mA to 10 A with what a 50 Hz current
 //                through the chest does, and where a residual-current device and an ordinary
 //                fuse act
@@ -65,8 +66,8 @@ function bodyPaths(els, p) {
   });
   const desc = ['Forenklet figur av et menneske som berører spenningsførende deler. Tre mulige strømveier er tegnet: fra hånd til hånd tvers over brystet, fra hånd til fot, og innenfor én hånd. Hjertet ligger i brystet.'];
   if (shown === 'hand_hand') {
-    els.push(lbl(410, 124, 'farligst: tvers', 'start', 12, { 'font-weight': 'bold' }), lbl(410, 140, 'gjennom brystet', 'start', 12, { 'font-weight': 'bold' }));
-    desc.push('Veien fra hånd til hånd er framhevet: den går tvers gjennom brystet og hjertet og er den farligste.');
+    els.push(lbl(410, 124, 'farlig: tvers', 'start', 12, { 'font-weight': 'bold' }), lbl(410, 140, 'gjennom brystet', 'start', 12, { 'font-weight': 'bold' }));
+    desc.push('Veien fra hånd til hånd er framhevet: den går tvers gjennom brystet, tett forbi hjertet. Også veien fra hånd til fot går gjennom brystet.');
   } else if (shown) desc.push(`Veien ${BODY_PATHS[shown].name} er framhevet.`);
   return { height: 334, desc: desc.join(' ') };
 }
