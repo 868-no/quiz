@@ -1458,11 +1458,13 @@
         "formfaktoren"
       ],
       "en": [
-        "shape factor"
+        "shape factor",
+        "form factor"
       ],
-      "definition": "Forholdet mellom båndbredden til et filter ved stor demping (ofte −60 dB) og ved liten demping (ofte −6 dB). Beskriver hvor bratte filterflankene er.",
+      "definition": "Brukes om to ting. For et filter: forholdet mellom båndbredden ved stor demping (ofte −60 dB) og ved liten demping (ofte −6 dB), som sier hvor bratte filterflankene er. For en vekselspenning: forholdet mellom effektivverdien og middelverdien, om lag 1,11 for en sinus.",
       "related": [
         "baandbredde",
+        "effektivverdi",
         "selektivitet"
       ],
       "status": "approved",
@@ -1472,6 +1474,12 @@
           "actor": "Jim C K Flaten",
           "action": "approve",
           "note": "Godkjent sammen med spørsmålene; definisjoner gjennomgått av AI-kontroll."
+        },
+        {
+          "at": "2026-10-25T02:48:54+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "To betydninger: filterets formfaktor og formfaktoren til en vekselspenning (teknisk gjeld)"
         }
       ]
     },
