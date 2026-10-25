@@ -2973,6 +2973,91 @@
           "note": "Round 8 templates: checked rendered figures on desktop and phone, before and after answering, and the animations"
         }
       ]
+    },
+    {
+      "id": "safety",
+      "version": 1,
+      "title": "Sikkerhet",
+      "description": "Drawings for electrical and practical safety: current paths through a person (body_paths, 'highlight' one with 'reveal'), a logarithmic current scale with the effects of 50 Hz current and where an RCD and a fuse act (shock_scale), an earth fault in an appliance with a fuse or a fuse and RCD (earth_fault; 'reveal' draws the fault current and what trips, 'leak_ma' labels a small leak), a mast and an overhead power line ('reveal' draws how far a falling mast reaches; mast_fall), a mobile radio's supply in a car with fuses in both leads ('reveal' breaks the engine's earth cable and draws the starter current through the radio's negative lead; car_supply), and a good and a dry solder joint in cross-section (solder_joint).",
+      "idealised": "Forenklet prinsippskisse.",
+      "params": {
+        "type": "object",
+        "required": [
+          "kind"
+        ],
+        "properties": {
+          "kind": {
+            "type": "string",
+            "enum": [
+              "body_paths",
+              "shock_scale",
+              "earth_fault",
+              "mast_fall",
+              "car_supply",
+              "solder_joint"
+            ]
+          },
+          "reveal": {
+            "type": "boolean",
+            "default": false
+          },
+          "highlight": {
+            "type": "string",
+            "enum": [
+              "none",
+              "hand_hand",
+              "hand_foot",
+              "one_hand"
+            ],
+            "default": "none"
+          },
+          "protection": {
+            "type": "string",
+            "enum": [
+              "fuse",
+              "fuse_rcd"
+            ],
+            "default": "fuse"
+          },
+          "fuse_a": {
+            "type": "number",
+            "minimum": 1,
+            "maximum": 63,
+            "nullable": true
+          },
+          "leak_ma": {
+            "type": "number",
+            "minimum": 1,
+            "maximum": 1000,
+            "nullable": true
+          },
+          "height_m": {
+            "type": "number",
+            "minimum": 2,
+            "maximum": 40,
+            "default": 12
+          },
+          "line_distance_m": {
+            "type": "number",
+            "minimum": 1,
+            "maximum": 60,
+            "default": 9
+          },
+          "good_first": {
+            "type": "boolean",
+            "default": true
+          }
+        }
+      },
+      "status": "approved",
+      "review_log": [
+        {
+          "at": "2026-10-25T01:44:51+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "note": "Checked rendered figures on desktop and phone, before and after answering"
+        }
+      ]
     }
   ]
 }

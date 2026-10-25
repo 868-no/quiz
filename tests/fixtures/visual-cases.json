@@ -4151,6 +4151,160 @@
           "directors": 7
         }
       }
+    },
+    {
+      "name": "safety: body paths with the hand-to-hand path picked out",
+      "valid": true,
+      "quantities": {},
+      "shown": {},
+      "visual": {
+        "template": "safety",
+        "version": 1,
+        "params": {
+          "kind": "body_paths",
+          "reveal": true,
+          "highlight": "hand_hand"
+        }
+      }
+    },
+    {
+      "name": "safety: current scale",
+      "valid": true,
+      "quantities": {},
+      "shown": {},
+      "visual": {
+        "template": "safety",
+        "version": 1,
+        "params": {
+          "kind": "shock_scale"
+        }
+      }
+    },
+    {
+      "name": "safety: earth fault with RCD and a 50 mA leak",
+      "valid": true,
+      "quantities": {},
+      "shown": {},
+      "visual": {
+        "template": "safety",
+        "version": 1,
+        "params": {
+          "kind": "earth_fault",
+          "protection": "fuse_rcd",
+          "fuse_a": 10,
+          "leak_ma": 50,
+          "reveal": true
+        }
+      }
+    },
+    {
+      "name": "safety: falling mast",
+      "valid": true,
+      "quantities": {},
+      "shown": {},
+      "visual": {
+        "template": "safety",
+        "version": 1,
+        "params": {
+          "kind": "mast_fall",
+          "height_m": 12,
+          "line_distance_m": 9,
+          "reveal": true
+        }
+      }
+    },
+    {
+      "name": "safety: car supply with a broken earth cable",
+      "valid": true,
+      "quantities": {},
+      "shown": {},
+      "visual": {
+        "template": "safety",
+        "version": 1,
+        "params": {
+          "kind": "car_supply",
+          "reveal": true
+        }
+      }
+    },
+    {
+      "name": "safety: solder joints",
+      "valid": true,
+      "quantities": {},
+      "shown": {},
+      "visual": {
+        "template": "safety",
+        "version": 1,
+        "params": {
+          "kind": "solder_joint",
+          "reveal": true,
+          "good_first": false
+        }
+      }
+    },
+    {
+      "name": "safety: highlight belongs to body paths",
+      "valid": false,
+      "error": "highlight: only for kind body_paths",
+      "visual": {
+        "template": "safety",
+        "version": 1,
+        "params": {
+          "kind": "shock_scale",
+          "highlight": "hand_hand"
+        }
+      }
+    },
+    {
+      "name": "safety: a leak needs an RCD",
+      "valid": false,
+      "error": "leak_ma: only with protection fuse_rcd",
+      "visual": {
+        "template": "safety",
+        "version": 1,
+        "params": {
+          "kind": "earth_fault",
+          "leak_ma": 50
+        }
+      }
+    },
+    {
+      "name": "safety: fuse rating only for an earth fault",
+      "valid": false,
+      "error": "fuse_a/leak_ma",
+      "visual": {
+        "template": "safety",
+        "version": 1,
+        "params": {
+          "kind": "mast_fall",
+          "fuse_a": 10
+        }
+      }
+    },
+    {
+      "name": "safety: unknown kind",
+      "valid": false,
+      "error": "ladder",
+      "visual": {
+        "template": "safety",
+        "version": 1,
+        "params": {
+          "kind": "ladder"
+        }
+      }
+    },
+    {
+      "name": "safety: mast too tall",
+      "valid": false,
+      "error": "above the maximum",
+      "visual": {
+        "template": "safety",
+        "version": 1,
+        "params": {
+          "kind": "mast_fall",
+          "height_m": 80
+        }
+      }
     }
   ]
 }

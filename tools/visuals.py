@@ -840,13 +840,26 @@ def _feedline_quantities(p: dict[str, Any]) -> dict[str, dict[str, Any]]:
 # --- end feedline ---
 
 
+# --- safety (new) ---
+
+def _safety_rules(p: dict[str, Any], errors: list[str]) -> None:
+    if p["highlight"] != "none" and p["kind"] != "body_paths":
+        errors.append("highlight: only for kind body_paths")
+    if p.get("leak_ma") is not None and p["protection"] != "fuse_rcd":
+        errors.append("leak_ma: only with protection fuse_rcd")
+    if (p.get("leak_ma") is not None or p.get("fuse_a") is not None) and p["kind"] != "earth_fault":
+        errors.append("fuse_a/leak_ma: only for kind earth_fault")
+
+# --- end safety ---
+
+
 RULES = {"dc-circuit": _dc_rules, "ac-circuit": _ac_rules, "waveform": _wave_rules, "block-diagram": _block_rules,
          "rlc-circuit": _rlc_rules, "rectifier": _rect_rules, "transformer": _tr_rules, "transistor-stage": _ts_rules,
          "series-regulator": _reg_rules, "zener-regulator": _zen_rules,
          "frequency-response": _fr_rules, "pi-network": _no_rules,
          "ratio-detector": _no_rules, "time-signal": _ts_rules_time,
          "spectrum": _spectrum_rules, "semiconductor": _semi_rules,
-         "stage": _no_rules, "illustration": _illu_rules, "code-breakdown": _code_breakdown_rules, "instrument": _instrument_rules, "antenna": _antenna_rules, "propagation": _propagation_rules, "sampling": _sampling_rules, "feedline": _feedline_rules}
+         "stage": _no_rules, "illustration": _illu_rules, "code-breakdown": _code_breakdown_rules, "instrument": _instrument_rules, "antenna": _antenna_rules, "propagation": _propagation_rules, "sampling": _sampling_rules, "feedline": _feedline_rules, "safety": _safety_rules}
 QUANTITIES = {"dc-circuit": _dc_quantities, "ac-circuit": _ac_quantities, "waveform": _wave_quantities,
               "rlc-circuit": _rlc_quantities, "rectifier": _rect_quantities, "transformer": _tr_quantities,
               "transistor-stage": _ts_quantities, "series-regulator": _reg_quantities, "zener-regulator": _zen_quantities,

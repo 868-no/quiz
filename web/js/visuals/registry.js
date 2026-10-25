@@ -22,6 +22,7 @@ import spectrum from './spectrum.js';
 import semiconductor from './semiconductor.js';
 import stage from './stage.js';
 import illustration from './illustration.js';
+import safety from './safety.js';
 import feedline from './feedline.js';
 import sampling from './sampling.js';
 import propagation from './propagation.js';
@@ -30,7 +31,7 @@ import instrument from './instrument.js';
 import codeBreakdown from './code-breakdown.js';
 
 export const IMPLEMENTATIONS = new Map(
-  [dcCircuit, acCircuit, waveform, blockDiagram, rlcCircuit, rectifier, transformer, transistorStage, seriesRegulator, zenerRegulator, frequencyResponse, piNetwork, ratioDetector, timeSignal, spectrum, semiconductor, stage, illustration, codeBreakdown, instrument, antenna, propagation, sampling, feedline]
+  [dcCircuit, acCircuit, waveform, blockDiagram, rlcCircuit, rectifier, transformer, transistorStage, seriesRegulator, zenerRegulator, frequencyResponse, piNetwork, ratioDetector, timeSignal, spectrum, semiconductor, stage, illustration, codeBreakdown, instrument, antenna, propagation, sampling, feedline, safety]
     .map((m) => [`${m.id}@${m.version}`, m]),
 );
 

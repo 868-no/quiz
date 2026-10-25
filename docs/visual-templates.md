@@ -35,7 +35,7 @@ Figures are drawn from **parameters**, never stored as images or HTML. A questio
   shapes exports `fixedTextSize: true`; `minScale` (default 0.6) is the smallest scale a
   figure is shown at before it scrolls sideways.
 
-There are twenty-four templates, all at version 1. A new template or version
+There are twenty-five templates, all at version 1. A new template or version
 starts as `needs_review`: a person checks the drawings (`python3 -m tools preview`) and
 approves it (`python3 -m tools visuals approve id@version`) before questions using it
 can be published. Changing an approved template's code or schema calls for a new
@@ -471,6 +471,23 @@ after answering). To reveal hidden labels, `params_after` repeats `parts` withou
 is the prefix?), use `after_only: true`. The description names every part and its
 label, and says "betydningen vises etter at du har svart" for hidden ones.
 No quantities.
+
+## `safety@1` – sikkerhet
+
+Schematic drawings for chapter 13; `kind` picks one, `reveal` adds what is shown after
+answering.
+
+| Kind | Draws | `reveal` adds |
+|---|---|---|
+| `body_paths` | a calm outline of a person touching live parts, with three current paths (hand to hand, hand to foot, within one hand) and the heart | `highlight` (`hand_hand`, `hand_foot`, `one_hand`) picks one out; hand to hand is marked as the most dangerous |
+| `shock_scale` | a logarithmic scale 0,1 mA–10 A with rounded effects of 50 Hz current through the chest, and where an RCD (30 mA) and an ordinary fuse (10 A) act | – |
+| `earth_fault` | a fuse box (`protection`: `fuse` or `fuse_rcd`; `fuse_a` labels the fuse) feeding a load in an earthed metal case, with a fault from phase to the case | the fault current back through PE and what trips; `leak_ma` labels a small leak (needs `fuse_rcd`) |
+| `mast_fall` | a mast (`height_m`) with guys and an overhead power line `line_distance_m` away, seen from the side | the arc a falling mast sweeps, and whether it reaches the line |
+| `car_supply` | a car radio fed from the battery with fuses in both leads, the engine's earth cable, the engine bonded to the body and the radio bonded through the antenna mount | the earth cable broken and the starter current through the radio's negative lead |
+| `solder_joint` | a good joint and a dry joint in cross-section (`good_first` sets the order) | which is which |
+
+Rules: `highlight` only for `body_paths`; `fuse_a` and `leak_ma` only for `earth_fault`,
+and `leak_ma` only with `fuse_rcd`. The note under each figure is worded per kind.
 
 ## Adding or changing a template
 
