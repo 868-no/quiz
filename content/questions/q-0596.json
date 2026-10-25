@@ -3,7 +3,7 @@
   "revisions": [
     {
       "revision": 1,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "concept",
@@ -99,6 +99,15 @@
           "content_sha256": "d44165a3ebb4d16f86c885361ef85ca34bc3e6cac2de75f08fc64b645daa3244",
           "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
           "acknowledged": []
+        },
+        {
+          "at": "2026-10-25T01:44:59+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "d44165a3ebb4d16f86c885361ef85ca34bc3e6cac2de75f08fc64b645daa3244",
+          "note": "superseded by r2"
         }
       ],
       "provenance": {
@@ -120,6 +129,156 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-24T22:50:44+00:00",
         "content_sha256": "d44165a3ebb4d16f86c885361ef85ca34bc3e6cac2de75f08fc64b645daa3244",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 2,
+      "status": "approved",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "hard",
+      "chapter": 13,
+      "section_ids": [
+        "s13-08"
+      ],
+      "topic_ids": [
+        "sikkerhet-ute-bil"
+      ],
+      "learning_objective": "Forstå hvorfor radioen i bil bør ha sikring både i pluss- og minusleder.",
+      "priority": "normal",
+      "context": [
+        "En mobilstasjon i bil får strøm rett fra batteriet, med sikring i både plussleder og minusleder. Minuslederen er også koblet til karosseriet via radioen."
+      ],
+      "stem": [
+        "Hva beskytter sikringen i minuslederen mot?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "At startstrømmen går gjennom radioens ledning hvis motorens jordkabel ryker."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Kortslutning mellom plusslederen og karosseriet i bilen."
+          ],
+          "feedback": [
+            "Det er sikringen i plusslederen som normalt beskytter mot kortslutning. Minussikringen beskytter mot strøm som tar en uventet vei."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Overspenning fra dynamoen mens motoren går."
+          ],
+          "feedback": [
+            "En sikring reagerer på for stor strøm, ikke på spenning. Minussikringen er der i tilfelle strømmen finner en annen vei til batteriet."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Radiostøy fra tenningssystemet og andre deler av motoren."
+          ],
+          "feedback": [
+            "Sikringer fjerner ikke støy. Minussikringen er en beskyttelse mot for store strømmer i radioens minusleder."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Sikringen i plusslederen beskytter vanligvis mot kortslutning. Sikringen i minuslederen beskytter mot en annen feil: hvis jordkabelen mellom motoren og karosseriet ryker, kan strømmen til startmotoren finne veien gjennom radioens minusleder, som også er koblet til karosseriet.",
+        "Den strømmen er svært stor og kan brenne opp ledningen. Med en sikring også i minuslederen blir kretsen brutt før det skjer."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 13,
+        "section_id": "s13-08",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "6a8df0e78478eca2"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "Jim C K Flaten",
+        "based_on": 1,
+        "at": "2026-10-25T01:44:51+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-25T01:44:51+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "d44165a3ebb4d16f86c885361ef85ca34bc3e6cac2de75f08fc64b645daa3244",
+          "note": "Figur fra safety@1"
+        },
+        {
+          "at": "2026-10-25T01:44:52+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "1b995dca7ab75504d81b8880e340d38215ed38d3fedced52fedb64cfb5e030a9",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-25T01:44:59+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "1b995dca7ab75504d81b8880e340d38215ed38d3fedced52fedb64cfb5e030a9",
+          "note": "Ny figur (safety@1) kontrollert på mobil og PC, før og etter svar",
+          "acknowledged": []
+        }
+      ],
+      "visual": {
+        "template": "safety",
+        "version": 1,
+        "params": {
+          "kind": "car_supply"
+        },
+        "params_after": {
+          "reveal": true
+        }
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "1b995dca7ab75504d81b8880e340d38215ed38d3fedced52fedb64cfb5e030a9",
+        "errors": [],
+        "warnings": [],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-25T01:44:59+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-25T01:44:59+00:00",
+        "content_sha256": "1b995dca7ab75504d81b8880e340d38215ed38d3fedced52fedb64cfb5e030a9",
         "acknowledged_hazards": [],
         "checklist": {
           "one_correct": true,

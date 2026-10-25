@@ -3,7 +3,7 @@
   "revisions": [
     {
       "revision": 1,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "concept",
@@ -119,6 +119,15 @@
           "acknowledged": [
             "figures"
           ]
+        },
+        {
+          "at": "2026-10-25T01:45:00+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "08ab3553a3fd549bf5d6339b77ebf0c37d648db073de598b36f69bfbe79d9593",
+          "note": "superseded by r2"
         }
       ],
       "provenance": {
@@ -145,6 +154,174 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-24T22:50:51+00:00",
         "content_sha256": "08ab3553a3fd549bf5d6339b77ebf0c37d648db073de598b36f69bfbe79d9593",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 2,
+      "status": "approved",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 13,
+      "section_ids": [
+        "s13-24",
+        "s13-25"
+      ],
+      "topic_ids": [
+        "verktoy-lodding"
+      ],
+      "learning_objective": "Kjenne igjen en tørrlodding og vite hva som forårsaker den.",
+      "priority": "normal",
+      "context": [],
+      "stem": [
+        [
+          "Hva er en ",
+          {
+            "term": "torrlodding",
+            "text": "tørrlodding"
+          },
+          ", og hvordan ser den typisk ut?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Tinn som stivnet før det bandt seg til metallet; skjøten blir klumpete og flyter dårlig ut."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "En lodding helt uten loddetinn, der skjøten blir blank og ren."
+          ],
+          "feedback": [
+            "En tørrlodding har loddetinn, men tinnet har ikke bundet seg ordentlig til delene. En god skjøt har tinn som har flytt jevnt ut på begge delene."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "En skjøt som er varmet så lenge at komponenten har smeltet."
+          ],
+          "feedback": [
+            "For mye varme kan ødelegge komponenter, men det er en annen feil. Tørrlodding skyldes for lite varme, så tinnet stivner for tidlig."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "En skjøt med for mye flussmiddel, som gjør overflaten glatt."
+          ],
+          "feedback": [
+            "Flussmiddel hjelper tinnet å flyte ut og binde seg. Tørrlodding skyldes at tinnet stivner før forbindelsen er god."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Holdes loddebolten for kort tid på skjøten, kan tinnet stivne før det har bundet seg til begge delene. Resultatet er en tørrlodding: dårlig eller ustabil elektrisk kontakt. Slike feil er vanlige og vanskelige å finne senere.",
+        "En god skjøt har en jevn form der tinnet har flytt ut og fuktet begge delene. Blyfritt loddetinn blir ofte matt selv når skjøten er god, så se mer på formen enn på glansen. Ser skjøten klumpete ut, smelter du den opp, fjerner tinnet og lodder på nytt."
+      ],
+      "glossary_after_answer": [
+        "torrlodding"
+      ],
+      "study_reference": {
+        "chapter": 13,
+        "section_id": "s13-24",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "7b28846a83a17bb7",
+          "bf0e49db6e3573a7"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "Jim C K Flaten",
+        "based_on": 1,
+        "at": "2026-10-25T01:44:51+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-25T01:44:51+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "08ab3553a3fd549bf5d6339b77ebf0c37d648db073de598b36f69bfbe79d9593",
+          "note": "Figur fra safety@1"
+        },
+        {
+          "at": "2026-10-25T01:44:52+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "8028a2388fb7bb61a73cd94fac9a50af294ede2e1886a2e7a8dd8769aeb0e0ce",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-25T01:45:00+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "8028a2388fb7bb61a73cd94fac9a50af294ede2e1886a2e7a8dd8769aeb0e0ce",
+          "note": "Ny figur (safety@1) kontrollert på mobil og PC, før og etter svar",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "visual": {
+        "template": "safety",
+        "version": 1,
+        "params": {
+          "kind": "solder_joint"
+        },
+        "params_after": {
+          "reveal": true
+        }
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "8028a2388fb7bb61a73cd94fac9a50af294ede2e1886a2e7a8dd8769aeb0e0ce",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-25T01:45:00+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-25T01:45:00+00:00",
+        "content_sha256": "8028a2388fb7bb61a73cd94fac9a50af294ede2e1886a2e7a8dd8769aeb0e0ce",
         "acknowledged_hazards": [
           "figures"
         ],
