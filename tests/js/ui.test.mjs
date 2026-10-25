@@ -454,7 +454,7 @@ test('the start bar follows the selection and appears only while Start is out of
   }
 });
 
-test('with a round in progress the bar offers a new round only once the continue box is out of view', { skip }, async () => {
+test('with a round in progress the start bar shows too', { skip }, async () => {
   const observed = [];
   const env = setupDom();
   globalThis.IntersectionObserver = fakeObserver(observed);
@@ -470,19 +470,43 @@ test('with a round in progress the bar offers a new round only once the continue
     env.root.replaceChildren();
     env.w.document.body.appendChild(root);
     createApp(root, bank);
-    const box = $(root, '.notice-continue');
+    assert.ok($(root, '.continue-resume'));
     const startBtn = $(root, '#setup-form button[type=submit]');
-    assert.ok(box);
     assert.equal(startBtn.textContent, 'Start ny runde');
     assert.equal($(root, '[data-action=start-bar]').textContent, 'Start ny runde');
     assert.match($(root, '.start-bar-text').textContent, /^Ny runde: \d+ spørsmål av 6 i 1 kapittel$/);
     const io = observed.at(-1);
-    assert.deepEqual(io.els, [startBtn, box]);
-    const bar = $(root, '.start-bar');
-    io.cb([{ target: startBtn, isIntersecting: false, boundingClientRect: { top: 900 } }, { target: box, isIntersecting: true, boundingClientRect: { top: 300 } }]);
-    assert.equal(bar.hidden, true, 'not while "Fortsett der du slapp" is on screen');
-    io.cb([{ target: box, isIntersecting: false, boundingClientRect: { top: -200 } }]);
-    assert.equal(bar.hidden, false, 'shown once the box has scrolled away');
+    assert.deepEqual(io.els, [startBtn], 'only Start is watched, not the continue box');
+    io.cb([{ target: startBtn, isIntersecting: false, boundingClientRect: { top: 900 } }]);
+    assert.equal($(root, '.start-bar').hidden, false, 'shown although "Fortsett der du slapp" is on screen');
+  } finally {
+    delete globalThis.IntersectionObserver;
+  }
+});
+
+test('a list of missed questions alone does not hold back the start bar', { skip }, async () => {
+  const observed = [];
+  const env = setupDom();
+  globalThis.IntersectionObserver = fakeObserver(observed);
+  try {
+    const { createApp } = await import('../../web/js/ui/app.js');
+    const bank = makeBank({ perChapter: { 2: 6 } });
+    createApp(env.root, bank);
+    start(env.root, [2]);
+    answer(env.root, false);
+    $(env.root, '[data-action=quit]').click();
+    // a fresh page load: no round to continue, but a mistake to practise
+    const root = env.w.document.createElement('main');
+    env.root.replaceChildren();
+    env.w.document.body.appendChild(root);
+    createApp(root, bank);
+    assert.ok($(root, '.continue-missed'), 'the box with missed questions is shown');
+    assert.equal($(root, '.continue-resume'), null);
+    const startBtn = $(root, '#setup-form button[type=submit]');
+    const io = observed.at(-1);
+    assert.deepEqual(io.els, [startBtn], 'only Start is watched');
+    io.cb([{ target: startBtn, isIntersecting: false, boundingClientRect: { top: 900 } }]);
+    assert.equal($(root, '.start-bar').hidden, false, 'shown as soon as Start is below the screen');
   } finally {
     delete globalThis.IntersectionObserver;
   }

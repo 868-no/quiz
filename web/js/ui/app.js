@@ -372,21 +372,14 @@ export function createApp(root, bank) {
   function watchStart() {
     const bar = root.querySelector('.start-bar');
     const btn = root.querySelector('#setup-form button[type=submit]');
-    const box = root.querySelector('.notice-continue');
     if (!bar || !btn || typeof globalThis.IntersectionObserver !== 'function') return;
-    // shown only while the real button is below the visible part of the page and the
-    // continue box is not in view
-    let startBelow = false;
-    let boxInView = Boolean(box);
+    // shown only while the real button is below the visible part of the page
     startObserver = new globalThis.IntersectionObserver((entries) => {
       for (const e of entries) {
-        if (e.target === btn) startBelow = !e.isIntersecting && e.boundingClientRect.top > 0;
-        if (e.target === box) boxInView = e.isIntersecting;
+        if (e.target === btn) bar.hidden = !(!e.isIntersecting && e.boundingClientRect.top > 0);
       }
-      bar.hidden = !startBelow || boxInView;
     });
     startObserver.observe(btn);
-    if (box) startObserver.observe(box);
   }
 
   // ------------------------------------------------------------- question
