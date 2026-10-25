@@ -109,7 +109,7 @@
         },
         {
           "at": "2026-10-23T19:12:54+00:00",
-          "actor": "Jim C K Flaten",
+          "actor": "Claude + ChatGPT",
           "action": "approve",
           "from_status": "needs_review",
           "to_status": "approved",
@@ -117,11 +117,12 @@
           "note": "Godkjent av redaktør etter tre runder uavhengig AI-gjennomgang (Claude) og tre runder ChatGPT-kontroll; alle beregninger kontrollert, figurer gjengitt og inspisert. Sidehenvisninger er IKKE kontrollert mot trykt bok; OCR-/side-/figurmerknader kvittert på dette grunnlaget.",
           "acknowledged": [
             "figures"
-          ]
+          ],
+          "machine_verified": true
         },
         {
           "at": "2026-10-23T20:43:51+00:00",
-          "actor": "Jim C K Flaten",
+          "actor": "Claude + ChatGPT",
           "action": "superseded",
           "from_status": "approved",
           "to_status": "retired",
@@ -144,7 +145,8 @@
         "at": "2026-10-23T19:12:54+00:00"
       },
       "approval": {
-        "by": "Jim C K Flaten",
+        "by": "Claude + ChatGPT",
+        "machine_verified": true,
         "at": "2026-10-23T19:12:54+00:00",
         "content_sha256": "b51e5ae5941dce9e00bfa803652b2575b3aea62e08a18c17715406b68a1b24ea",
         "acknowledged_hazards": [
@@ -306,7 +308,7 @@
         },
         {
           "at": "2026-10-23T20:43:51+00:00",
-          "actor": "Jim C K Flaten",
+          "actor": "Claude + ChatGPT",
           "action": "approve",
           "from_status": "needs_review",
           "to_status": "approved",
@@ -314,11 +316,12 @@
           "note": "Godkjent av redaktør: kun nye ordforklaringslenker (automatisk lenking, kontrollert for svarlekkasje), teksten er uendret fra forrige godkjente versjon. Sidehenvisninger er fortsatt ikke kontrollert mot trykt bok.",
           "acknowledged": [
             "figures"
-          ]
+          ],
+          "machine_verified": true
         },
         {
           "at": "2026-10-24T09:32:21+00:00",
-          "actor": "Jim C K Flaten",
+          "actor": "Claude + ChatGPT",
           "action": "superseded",
           "from_status": "approved",
           "to_status": "retired",
@@ -341,7 +344,8 @@
         "at": "2026-10-24T00:20:49+00:00"
       },
       "approval": {
-        "by": "Jim C K Flaten",
+        "by": "Claude + ChatGPT",
+        "machine_verified": true,
         "at": "2026-10-23T20:43:51+00:00",
         "content_sha256": "14605756edd56ea9fe638cabfeb35a1e30339826b5c8befa5269a3f1e2df7d7d",
         "acknowledged_hazards": [
@@ -527,7 +531,7 @@
         },
         {
           "at": "2026-10-24T09:32:21+00:00",
-          "actor": "Jim C K Flaten",
+          "actor": "Claude + ChatGPT",
           "action": "approve",
           "from_status": "needs_review",
           "to_status": "approved",
@@ -535,11 +539,12 @@
           "note": "Nye ordlistelenker (runde 2); teksten er uendret.",
           "acknowledged": [
             "figures"
-          ]
+          ],
+          "machine_verified": true
         },
         {
           "at": "2026-10-24T10:04:06+00:00",
-          "actor": "Jim C K Flaten",
+          "actor": "Claude + ChatGPT",
           "action": "superseded",
           "from_status": "approved",
           "to_status": "retired",
@@ -562,7 +567,8 @@
         "at": "2026-10-24T09:32:21+00:00"
       },
       "approval": {
-        "by": "Jim C K Flaten",
+        "by": "Claude + ChatGPT",
+        "machine_verified": true,
         "at": "2026-10-24T09:32:21+00:00",
         "content_sha256": "994d0c21745b2e77060057a1367c7b4f51aa2c1d2d74dbe258d2b552d2be94bf",
         "acknowledged_hazards": [
@@ -758,7 +764,7 @@
         },
         {
           "at": "2026-10-24T10:04:06+00:00",
-          "actor": "Jim C K Flaten",
+          "actor": "Claude + ChatGPT",
           "action": "approve",
           "from_status": "needs_review",
           "to_status": "approved",
@@ -766,11 +772,12 @@
           "note": "Jevnere svaralternativer og nye figurer (gjennomgått av AI).",
           "acknowledged": [
             "figures"
-          ]
+          ],
+          "machine_verified": true
         },
         {
           "at": "2026-10-24T15:40:49+00:00",
-          "actor": "Jim C K Flaten",
+          "actor": "Claude + ChatGPT",
           "action": "superseded",
           "from_status": "approved",
           "to_status": "retired",
@@ -793,7 +800,8 @@
         "at": "2026-10-24T10:04:06+00:00"
       },
       "approval": {
-        "by": "Jim C K Flaten",
+        "by": "Claude + ChatGPT",
+        "machine_verified": true,
         "at": "2026-10-24T10:04:06+00:00",
         "content_sha256": "fab7490230e9bcd294ca0557dc819b7ff6da28c317273ec51ae8558eb5847acc",
         "acknowledged_hazards": [
@@ -963,7 +971,7 @@
       "language": "nb-NO",
       "provenance": {
         "method": "edit",
-        "author": "Jim C K Flaten",
+        "author": "Claude + ChatGPT",
         "based_on": 4,
         "at": "2026-10-24T15:16:41+00:00"
       },
@@ -971,7 +979,7 @@
       "review_log": [
         {
           "at": "2026-10-24T15:16:41+00:00",
-          "actor": "Jim C K Flaten",
+          "actor": "Claude + ChatGPT",
           "action": "new_revision",
           "from_status": "draft",
           "to_status": "draft",
@@ -998,7 +1006,7 @@
         },
         {
           "at": "2026-10-24T15:40:49+00:00",
-          "actor": "Jim C K Flaten",
+          "actor": "Claude + ChatGPT",
           "action": "approve",
           "from_status": "needs_review",
           "to_status": "approved",
@@ -1006,7 +1014,8 @@
           "note": "Book terminology: sluttforsterker, gate, kunstlast, knekkfrekvens, avstemt krets, glattekondensator, harmoniske signaler, variabel kondensator",
           "acknowledged": [
             "figures"
-          ]
+          ],
+          "machine_verified": true
         }
       ],
       "checks": {
@@ -1024,7 +1033,8 @@
         "at": "2026-10-24T15:40:49+00:00"
       },
       "approval": {
-        "by": "Jim C K Flaten",
+        "by": "Claude + ChatGPT",
+        "machine_verified": true,
         "at": "2026-10-24T15:40:49+00:00",
         "content_sha256": "d7e4a8d610db4b2f05818aa50fe7bdc758ea2790b468b73201001ba256c2b827",
         "acknowledged_hazards": [

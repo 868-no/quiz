@@ -118,7 +118,7 @@
         },
         {
           "at": "2026-10-23T19:12:51+00:00",
-          "actor": "Jim C K Flaten",
+          "actor": "Claude + ChatGPT",
           "action": "approve",
           "from_status": "needs_review",
           "to_status": "approved",
@@ -126,11 +126,12 @@
           "note": "Godkjent av redaktør etter tre runder uavhengig AI-gjennomgang (Claude) og tre runder ChatGPT-kontroll; alle beregninger kontrollert, figurer gjengitt og inspisert. Sidehenvisninger er IKKE kontrollert mot trykt bok; OCR-/side-/figurmerknader kvittert på dette grunnlaget.",
           "acknowledged": [
             "figures"
-          ]
+          ],
+          "machine_verified": true
         },
         {
           "at": "2026-10-23T20:43:47+00:00",
-          "actor": "Jim C K Flaten",
+          "actor": "Claude + ChatGPT",
           "action": "superseded",
           "from_status": "approved",
           "to_status": "retired",
@@ -153,7 +154,8 @@
         "at": "2026-10-23T19:12:51+00:00"
       },
       "approval": {
-        "by": "Jim C K Flaten",
+        "by": "Claude + ChatGPT",
+        "machine_verified": true,
         "at": "2026-10-23T19:12:51+00:00",
         "content_sha256": "72f40af0317d7ff5d0898076f1472dacfa5bcb29704acbb8db63bf1399a0ef63",
         "acknowledged_hazards": [
@@ -324,7 +326,7 @@
         },
         {
           "at": "2026-10-23T20:43:47+00:00",
-          "actor": "Jim C K Flaten",
+          "actor": "Claude + ChatGPT",
           "action": "approve",
           "from_status": "needs_review",
           "to_status": "approved",
@@ -332,11 +334,12 @@
           "note": "Godkjent av redaktør: kun nye ordforklaringslenker (automatisk lenking, kontrollert for svarlekkasje), teksten er uendret fra forrige godkjente versjon. Sidehenvisninger er fortsatt ikke kontrollert mot trykt bok.",
           "acknowledged": [
             "figures"
-          ]
+          ],
+          "machine_verified": true
         },
         {
           "at": "2026-10-23T20:58:39+00:00",
-          "actor": "Jim C K Flaten",
+          "actor": "Claude + ChatGPT",
           "action": "superseded",
           "from_status": "approved",
           "to_status": "retired",
@@ -359,7 +362,8 @@
         "at": "2026-10-23T20:43:47+00:00"
       },
       "approval": {
-        "by": "Jim C K Flaten",
+        "by": "Claude + ChatGPT",
+        "machine_verified": true,
         "at": "2026-10-23T20:43:47+00:00",
         "content_sha256": "274764389b755080d2062cc8e26ce7afc245a086b06ccbe47ea8e52a803e4b58",
         "acknowledged_hazards": [
@@ -552,7 +556,7 @@
         },
         {
           "at": "2026-10-23T20:58:39+00:00",
-          "actor": "Jim C K Flaten",
+          "actor": "Claude + ChatGPT",
           "action": "approve",
           "from_status": "needs_review",
           "to_status": "approved",
@@ -560,11 +564,12 @@
           "note": "Godkjent av redaktør: figur lagt til, teksten uendret fra forrige godkjente versjon. Sidehenvisninger er fortsatt ikke kontrollert mot trykt bok.",
           "acknowledged": [
             "figures"
-          ]
+          ],
+          "machine_verified": true
         },
         {
           "at": "2026-10-24T10:04:00+00:00",
-          "actor": "Jim C K Flaten",
+          "actor": "Claude + ChatGPT",
           "action": "superseded",
           "from_status": "approved",
           "to_status": "retired",
@@ -587,7 +592,8 @@
         "at": "2026-10-24T00:20:48+00:00"
       },
       "approval": {
-        "by": "Jim C K Flaten",
+        "by": "Claude + ChatGPT",
+        "machine_verified": true,
         "at": "2026-10-23T20:58:39+00:00",
         "content_sha256": "bf859ababed059b326b6180148d585654710607127dc4ce2144119a8ee3f4a14",
         "acknowledged_hazards": [
@@ -780,7 +786,7 @@
         },
         {
           "at": "2026-10-24T10:04:00+00:00",
-          "actor": "Jim C K Flaten",
+          "actor": "Claude + ChatGPT",
           "action": "approve",
           "from_status": "needs_review",
           "to_status": "approved",
@@ -788,7 +794,8 @@
           "note": "Jevnere svaralternativer og nye figurer (gjennomgått av AI).",
           "acknowledged": [
             "figures"
-          ]
+          ],
+          "machine_verified": true
         }
       ],
       "checks": {
@@ -806,7 +813,8 @@
         "at": "2026-10-24T10:04:00+00:00"
       },
       "approval": {
-        "by": "Jim C K Flaten",
+        "by": "Claude + ChatGPT",
+        "machine_verified": true,
         "at": "2026-10-24T10:04:00+00:00",
         "content_sha256": "40d2f8620170ab628748ca8487eace4d08e112df751d3ba53c0465679e5345fd",
         "acknowledged_hazards": [

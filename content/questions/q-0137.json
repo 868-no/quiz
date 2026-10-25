@@ -153,7 +153,7 @@
         },
         {
           "at": "2026-10-24T09:30:02+00:00",
-          "actor": "Jim C K Flaten",
+          "actor": "Claude + ChatGPT",
           "action": "approve",
           "from_status": "needs_review",
           "to_status": "approved",
@@ -161,11 +161,12 @@
           "note": "Runde 2: faglig kontrollert av AI (ChatGPT), 11 spørsmål rettet.",
           "acknowledged": [
             "figures"
-          ]
+          ],
+          "machine_verified": true
         },
         {
           "at": "2026-10-24T15:40:51+00:00",
-          "actor": "Jim C K Flaten",
+          "actor": "Claude + ChatGPT",
           "action": "superseded",
           "from_status": "approved",
           "to_status": "retired",
@@ -193,7 +194,8 @@
         "at": "2026-10-24T09:30:02+00:00"
       },
       "approval": {
-        "by": "Jim C K Flaten",
+        "by": "Claude + ChatGPT",
+        "machine_verified": true,
         "at": "2026-10-24T09:30:02+00:00",
         "content_sha256": "a8d64bed90d7b2846f7b00dddaeaf8efae09a741b4148761692d9fd1f376b1a3",
         "acknowledged_hazards": [
@@ -342,7 +344,7 @@
       "language": "nb-NO",
       "provenance": {
         "method": "edit",
-        "author": "Jim C K Flaten",
+        "author": "Claude + ChatGPT",
         "based_on": 1,
         "at": "2026-10-24T15:31:33+00:00"
       },
@@ -350,7 +352,7 @@
       "review_log": [
         {
           "at": "2026-10-24T15:31:33+00:00",
-          "actor": "Jim C K Flaten",
+          "actor": "Claude + ChatGPT",
           "action": "new_revision",
           "from_status": "draft",
           "to_status": "draft",
@@ -368,7 +370,7 @@
         },
         {
           "at": "2026-10-24T15:40:51+00:00",
-          "actor": "Jim C K Flaten",
+          "actor": "Claude + ChatGPT",
           "action": "approve",
           "from_status": "needs_review",
           "to_status": "approved",
@@ -376,11 +378,12 @@
           "note": "Book terminology: sluttforsterker, gate, kunstlast, knekkfrekvens, avstemt krets, glattekondensator, harmoniske signaler, variabel kondensator",
           "acknowledged": [
             "figures"
-          ]
+          ],
+          "machine_verified": true
         },
         {
           "at": "2026-10-24T17:02:55+00:00",
-          "actor": "Jim C K Flaten",
+          "actor": "Claude + ChatGPT",
           "action": "superseded",
           "from_status": "approved",
           "to_status": "retired",
@@ -403,7 +406,8 @@
         "at": "2026-10-24T15:40:51+00:00"
       },
       "approval": {
-        "by": "Jim C K Flaten",
+        "by": "Claude + ChatGPT",
+        "machine_verified": true,
         "at": "2026-10-24T15:40:51+00:00",
         "content_sha256": "75df7462fea62200f6c0bffe7768cc9b6b11aa3d628c630247a126a19fe8e4bd",
         "acknowledged_hazards": [
@@ -552,7 +556,7 @@
       "language": "nb-NO",
       "provenance": {
         "method": "edit",
-        "author": "Jim C K Flaten",
+        "author": "Claude + ChatGPT",
         "based_on": 2,
         "at": "2026-10-24T16:33:21+00:00"
       },
@@ -560,7 +564,7 @@
       "review_log": [
         {
           "at": "2026-10-24T16:33:21+00:00",
-          "actor": "Jim C K Flaten",
+          "actor": "Claude + ChatGPT",
           "action": "new_revision",
           "from_status": "draft",
           "to_status": "draft",
@@ -596,7 +600,7 @@
         },
         {
           "at": "2026-10-24T17:02:55+00:00",
-          "actor": "Jim C K Flaten",
+          "actor": "Claude + ChatGPT",
           "action": "approve",
           "from_status": "needs_review",
           "to_status": "approved",
@@ -604,7 +608,8 @@
           "note": "Figure/animation added",
           "acknowledged": [
             "figures"
-          ]
+          ],
+          "machine_verified": true
         }
       ],
       "visual": {
@@ -641,7 +646,8 @@
         "at": "2026-10-24T17:02:55+00:00"
       },
       "approval": {
-        "by": "Jim C K Flaten",
+        "by": "Claude + ChatGPT",
+        "machine_verified": true,
         "at": "2026-10-24T17:02:55+00:00",
         "content_sha256": "b2bdb5f514a41e642d818c3439fc12914bdec14df38fbd920912659df33cb4d5",
         "acknowledged_hazards": [

@@ -145,11 +145,15 @@ class RepositoryContentTest(unittest.TestCase):
                 res = check_revision(self.ctx, q["id"], rev)
                 self.assertEqual([e for e in res["errors"] if not e.startswith("sources: no source import")], [])
 
-    def test_nothing_is_approved_by_the_assistant(self):
+    def test_approvals_by_ai_models_are_marked(self):
         for _, q in load_all(PATHS):
             for rev in q["revisions"]:
                 if rev["status"] == "approved":
-                    self.assertNotIn("AI", rev["approval"]["by"])
+                    appr = rev["approval"]
+                    with self.subTest(q["id"]):
+                        self.assertIsInstance(appr.get("machine_verified"), bool)
+                        if any(w in appr["by"] for w in ("AI", "Claude", "ChatGPT")):
+                            self.assertTrue(appr["machine_verified"], "an AI approval must be machine_verified")
 
 
 if __name__ == "__main__":

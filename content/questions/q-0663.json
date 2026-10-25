@@ -90,13 +90,14 @@
         },
         {
           "at": "2026-10-25T01:53:31+00:00",
-          "actor": "Jim C K Flaten",
+          "actor": "Claude + ChatGPT",
           "action": "approve",
           "from_status": "needs_review",
           "to_status": "approved",
           "content_sha256": "2525eb9b565e0252e30274520544e0b565eaec153a5a046a7ba86c2461df8742",
           "note": "Kapittel 15: organisasjoner og tjenester",
-          "acknowledged": []
+          "acknowledged": [],
+          "machine_verified": true
         }
       ],
       "provenance": {
@@ -115,7 +116,8 @@
         "at": "2026-10-25T01:53:31+00:00"
       },
       "approval": {
-        "by": "Jim C K Flaten",
+        "by": "Claude + ChatGPT",
+        "machine_verified": true,
         "at": "2026-10-25T01:53:31+00:00",
         "content_sha256": "2525eb9b565e0252e30274520544e0b565eaec153a5a046a7ba86c2461df8742",
         "acknowledged_hazards": [],

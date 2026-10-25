@@ -168,7 +168,7 @@
         },
         {
           "at": "2026-10-24T09:30:02+00:00",
-          "actor": "Jim C K Flaten",
+          "actor": "Claude + ChatGPT",
           "action": "approve",
           "from_status": "needs_review",
           "to_status": "approved",
@@ -176,7 +176,8 @@
           "note": "Runde 2: faglig kontrollert av AI (ChatGPT), 11 spørsmål rettet.",
           "acknowledged": [
             "figures"
-          ]
+          ],
+          "machine_verified": true
         }
       ],
       "provenance": {
@@ -199,7 +200,8 @@
         "at": "2026-10-24T09:30:02+00:00"
       },
       "approval": {
-        "by": "Jim C K Flaten",
+        "by": "Claude + ChatGPT",
+        "machine_verified": true,
         "at": "2026-10-24T09:30:02+00:00",
         "content_sha256": "248961d6f95dd00a802504fc88e8abe2a0cbcadc66c441d332c36f431c559fe9",
         "acknowledged_hazards": [

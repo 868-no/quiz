@@ -104,6 +104,26 @@ The approval stores reviewer, time, checklist, acknowledged hazards and a hash o
 content. Every action is appended to the revision's `review_log` and to
 `private/reviews/audit.jsonl`.
 
+**Approved by AI models or by a person.** An approval records `machine_verified`: `true`
+when AI models did the review, `false` when a person did. AI reviewers set both
+variables, so their approvals are marked:
+
+```sh
+export RADIOQUIZ_REVIEWER="Claude + ChatGPT" RADIOQUIZ_MACHINE_REVIEW=1   # or --machine
+```
+
+A person can then verify a question that AI models approved, without a new revision:
+
+```sh
+python3 -m tools review show q-0003            # "approved by AI models; not verified by a person"
+python3 -m tools review human-verify q-0003    # interactive checklist, or --checklist all
+```
+
+This adds `approval.human_verified` (`by`, `at`, `checklist`, the content hash). It refuses
+when RADIOQUIZ_MACHINE_REVIEW is set. `python3 -m tools status` counts the published
+questions a person has verified, and `status -v` marks the rest «AI-approved». A new
+revision needs a new approval, and a person must verify that one again.
+
 Approve the dependencies too (publish refuses otherwise):
 
 ```sh

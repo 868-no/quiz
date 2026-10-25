@@ -97,7 +97,7 @@
         },
         {
           "at": "2026-10-24T22:47:56+00:00",
-          "actor": "Jim C K Flaten",
+          "actor": "Claude + ChatGPT",
           "action": "approve",
           "from_status": "needs_review",
           "to_status": "approved",
@@ -105,7 +105,8 @@
           "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
           "acknowledged": [
             "figures"
-          ]
+          ],
+          "machine_verified": true
         }
       ],
       "provenance": {
@@ -140,7 +141,8 @@
         "after_only": true
       },
       "approval": {
-        "by": "Jim C K Flaten",
+        "by": "Claude + ChatGPT",
+        "machine_verified": true,
         "at": "2026-10-24T22:47:56+00:00",
         "content_sha256": "be8cefad62e35eb49f906f0c2d7051cbba396ba77c6b80d537f3c1a75a539a63",
         "acknowledged_hazards": [

@@ -16,6 +16,9 @@ One file per question **identity**, holding a list of **revisions**:
   older approved ones; until then the old one stays published.
 * An approved revision is frozen: its `approval.content_sha256` must match the content,
   or `publish` refuses. Change it with `review edit` (creates a new draft revision).
+* `approval.machine_verified` says whether AI models (`true`) or a person (`false`)
+  approved it. `approval.human_verified` is added when a person later verifies an approval
+  made by AI models (`review human-verify`). See editorial-workflow.md.
 * Option ids (`o1`…`o4`) are stable; the quiz shuffles their display order per session.
 
 | Field | Notes |

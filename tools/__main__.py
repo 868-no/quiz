@@ -91,12 +91,15 @@ def cmd_review(paths, a) -> int:
         print(review.show(paths, a.id, a.revision, with_source=not a.no_source))
     elif a.action == "approve":
         res = review.approve(paths, a.id, reviewer=a.reviewer, note=a.note,
-                             ack=[x for x in (a.ack or "").split(",") if x], checklist=a.checklist)
+                             ack=[x for x in (a.ack or "").split(",") if x], checklist=a.checklist,
+                             machine=a.machine or None)
         print(f"approved {res['approved']}")
         if res["dependencies_not_approved"]:
             print("before publishing, also approve: " + ", ".join(res["dependencies_not_approved"]))
     elif a.action in ("reject", "request-changes", "retire", "reopen"):
         print(review.set_status(paths, a.id, a.action, reviewer=a.reviewer, note=a.note))
+    elif a.action == "human-verify":
+        print(review.human_verify(paths, a.id, reviewer=a.reviewer, note=a.note, checklist=a.checklist))
     elif a.action == "edit":
         print(review.edit(paths, a.id, reviewer=a.reviewer, note=a.note))
     elif a.action == "new-revision":
@@ -136,7 +139,8 @@ def cmd_glossary(paths, a) -> int:
             mark = ", changed since approval" if t.get("changed_since_approval") else ""
             print(f"{t['id']:<28} [{t['status']}{mark}] {t['nb']} = {t['en']}")
         return 0
-    print("approved:", ", ".join(review.approve_terms(paths, a.ids, reviewer=a.reviewer, note=a.note)))
+    print("approved:", ", ".join(review.approve_terms(paths, a.ids, reviewer=a.reviewer, note=a.note,
+                                                                machine=a.machine or None)))
     return 0
 
 
@@ -148,7 +152,7 @@ def cmd_visuals(paths, a) -> int:
             print(f"{key:<20} [{t['status']}] {t['title']} — {t['description']}")
         return 0
     print("approved:", review.approve_template(paths, a.key, reviewer=a.reviewer, note=a.note,
-                                               checklist=a.checklist))
+                                               checklist=a.checklist, machine=a.machine or None))
     return 0
 
 
@@ -228,22 +232,30 @@ def cmd_serve(paths, a) -> int:
 
 def cmd_status(paths, a) -> int:
     from .context import load_context
-    from .questions import latest, open_flags, publishable_revision
+    from .questions import human_verified, latest, open_flags, publishable_revision
     ctx = load_context(paths)
     print(f"source import: {ctx.source['import_id'] if ctx.source else 'none'}")
     counts: dict[str, int] = {}
+    published = by_person = 0
     for _, q in ctx.all_questions:
         rev = latest(q)
         counts[rev["status"]] = counts.get(rev["status"], 0) + 1
         pub = publishable_revision(q)
+        if pub:
+            published += 1
+            by_person += human_verified(pub)
         line = f"  {q['id']} r{rev['revision']} {rev['status']:<12} ch{rev.get('chapter')} {rev.get('style'):<11}"
         if pub and pub is not rev:
             line += f" (published r{pub['revision']})"
+        if pub and not human_verified(pub):
+            line += " (AI-approved)"
         if open_flags(rev):
             line += " FLAGGED"
         if a.verbose:
             print(line)
     print("questions by status of latest revision:", counts or "none")
+    print(f"published questions verified by a person: {by_person} of {published} "
+          f"(the rest are approved by AI models only)")
     g = {}
     for t in ctx.glossary.values():
         g[t["status"]] = g.get(t["status"], 0) + 1
@@ -293,7 +305,7 @@ def main(argv: list[str] | None = None) -> int:
 
     s = sub.add_parser("review", help="human review actions")
     s.add_argument("action", choices=["show", "approve", "reject", "request-changes", "reopen", "retire", "edit",
-                                      "new-revision", "resolve-flag"])
+                                      "new-revision", "resolve-flag", "human-verify"])
     s.add_argument("id")
     s.add_argument("--revision", type=int)
     s.add_argument("--reviewer")
@@ -302,6 +314,8 @@ def main(argv: list[str] | None = None) -> int:
     s.add_argument("--checklist", choices=["all"], help="confirm the whole checklist non-interactively")
     s.add_argument("--no-source", action="store_true")
     s.add_argument("--demote", action="store_true", help="resolve-flag: send an approved revision back to review")
+    s.add_argument("--machine", action="store_true",
+                   help="approve: the review was done by AI models, not a person (or RADIOQUIZ_MACHINE_REVIEW=1)")
     s.set_defaults(fn=cmd_review)
 
     s = sub.add_parser("glossary", help="glossary: list/check/approve/suggest/autolink")
@@ -310,6 +324,7 @@ def main(argv: list[str] | None = None) -> int:
     s.add_argument("ids", nargs="*")
     s.add_argument("--reviewer")
     s.add_argument("--note")
+    s.add_argument("--machine", action="store_true", help="approve: reviewed by AI models, not a person")
     s.set_defaults(fn=cmd_glossary)
 
     s = sub.add_parser("visuals", help="visual templates: list/approve")
@@ -318,6 +333,7 @@ def main(argv: list[str] | None = None) -> int:
     s.add_argument("--reviewer")
     s.add_argument("--note")
     s.add_argument("--checklist", choices=["all"])
+    s.add_argument("--machine", action="store_true", help="approve: reviewed by AI models, not a person")
     s.set_defaults(fn=cmd_visuals)
 
     s = sub.add_parser("chapters", help="chapter/section headings: list/verify")

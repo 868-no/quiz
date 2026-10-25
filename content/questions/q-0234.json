@@ -124,13 +124,14 @@
         },
         {
           "at": "2026-10-24T10:40:16+00:00",
-          "actor": "Jim C K Flaten",
+          "actor": "Claude + ChatGPT",
           "action": "approve",
           "from_status": "needs_review",
           "to_status": "approved",
           "content_sha256": "da35337f8f7cd3ccaca6a0ffbf8cd1e5ae8349e44b77fcae7ea0e97711f545c5",
           "note": "Kapittel 1, runde 3: faglig kontrollert av AI (ChatGPT); lisensreglene sjekket mot forskrift 2026-03-23-465 og Nkom.",
-          "acknowledged": []
+          "acknowledged": [],
+          "machine_verified": true
         }
       ],
       "provenance": {
@@ -148,7 +149,8 @@
         "at": "2026-10-24T10:40:16+00:00"
       },
       "approval": {
-        "by": "Jim C K Flaten",
+        "by": "Claude + ChatGPT",
+        "machine_verified": true,
         "at": "2026-10-24T10:40:16+00:00",
         "content_sha256": "da35337f8f7cd3ccaca6a0ffbf8cd1e5ae8349e44b77fcae7ea0e97711f545c5",
         "acknowledged_hazards": [],

@@ -128,5 +128,12 @@ def next_question_id(paths: Paths) -> str:
     return f"q-{(max(nums) + 1 if nums else 1):04d}"
 
 
+def human_verified(rev: dict[str, Any]) -> bool:
+    """An approved revision that a person has checked: approved by a person, or approved by
+    AI models (`machine_verified`) and later confirmed with `review human-verify`."""
+    appr = rev.get("approval") or {}
+    return bool(appr) and (not appr.get("machine_verified") or bool(appr.get("human_verified")))
+
+
 def open_flags(rev: dict[str, Any]) -> list[dict[str, Any]]:
     return [f for f in rev.get("flags", []) if not f.get("resolved")]

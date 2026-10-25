@@ -92,17 +92,18 @@
         },
         {
           "at": "2026-10-24T22:50:44+00:00",
-          "actor": "Jim C K Flaten",
+          "actor": "Claude + ChatGPT",
           "action": "approve",
           "from_status": "needs_review",
           "to_status": "approved",
           "content_sha256": "d44165a3ebb4d16f86c885361ef85ca34bc3e6cac2de75f08fc64b645daa3244",
           "note": "Runde 5 godkjent: nye kapitler 7–16, faglig gjennomgått av AI-kontroll (ChatGPT) og rettet",
-          "acknowledged": []
+          "acknowledged": [],
+          "machine_verified": true
         },
         {
           "at": "2026-10-25T01:44:59+00:00",
-          "actor": "Jim C K Flaten",
+          "actor": "Claude + ChatGPT",
           "action": "superseded",
           "from_status": "approved",
           "to_status": "retired",
@@ -126,7 +127,8 @@
         "at": "2026-10-24T22:50:44+00:00"
       },
       "approval": {
-        "by": "Jim C K Flaten",
+        "by": "Claude + ChatGPT",
+        "machine_verified": true,
         "at": "2026-10-24T22:50:44+00:00",
         "content_sha256": "d44165a3ebb4d16f86c885361ef85ca34bc3e6cac2de75f08fc64b645daa3244",
         "acknowledged_hazards": [],
@@ -221,7 +223,7 @@
       "language": "nb-NO",
       "provenance": {
         "method": "edit",
-        "author": "Jim C K Flaten",
+        "author": "Claude + ChatGPT",
         "based_on": 1,
         "at": "2026-10-25T01:44:51+00:00"
       },
@@ -229,7 +231,7 @@
       "review_log": [
         {
           "at": "2026-10-25T01:44:51+00:00",
-          "actor": "Jim C K Flaten",
+          "actor": "Claude + ChatGPT",
           "action": "new_revision",
           "from_status": "draft",
           "to_status": "draft",
@@ -247,13 +249,14 @@
         },
         {
           "at": "2026-10-25T01:44:59+00:00",
-          "actor": "Jim C K Flaten",
+          "actor": "Claude + ChatGPT",
           "action": "approve",
           "from_status": "needs_review",
           "to_status": "approved",
           "content_sha256": "1b995dca7ab75504d81b8880e340d38215ed38d3fedced52fedb64cfb5e030a9",
           "note": "Ny figur (safety@1) kontrollert på mobil og PC, før og etter svar",
-          "acknowledged": []
+          "acknowledged": [],
+          "machine_verified": true
         }
       ],
       "visual": {
@@ -276,7 +279,8 @@
         "at": "2026-10-25T01:44:59+00:00"
       },
       "approval": {
-        "by": "Jim C K Flaten",
+        "by": "Claude + ChatGPT",
+        "machine_verified": true,
         "at": "2026-10-25T01:44:59+00:00",
         "content_sha256": "1b995dca7ab75504d81b8880e340d38215ed38d3fedced52fedb64cfb5e030a9",
         "acknowledged_hazards": [],

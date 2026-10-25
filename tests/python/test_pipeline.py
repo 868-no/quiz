@@ -9,7 +9,7 @@ from unittest import mock
 from tools import publish, review
 from tools.common import ToolError, read_json
 from tools.context import load_glossary
-from tools.questions import load_question
+from tools.questions import human_verified, load_question
 from tools.release_check import release_check
 
 from .helpers import SYNTH_TEXT, TempRepo, sample_revision, sample_variant
@@ -70,8 +70,51 @@ class PipelineTest(unittest.TestCase):
         rev = load_question(self.paths.questions / "q-0001.json")["revisions"][0]
         self.assertEqual(rev["status"], "approved")
         self.assertEqual(rev["approval"]["by"], "Testperson")
+        self.assertIs(rev["approval"]["machine_verified"], False)
         audit = (self.paths.reviews / "audit.jsonl").read_text().splitlines()
         self.assertEqual(json.loads(audit[-1])["action"], "approve")
+
+    def test_machine_approval_and_later_human_verification(self):
+        review.verify(self.paths, None, quiet=True)
+        with mock.patch.dict(os.environ, {"RADIOQUIZ_MACHINE_REVIEW": "1"}):
+            self.approve(reviewer="Claude + ChatGPT", ack=[])
+            with self.assertRaises(ToolError):  # a person must do this, not the models
+                review.human_verify(self.paths, "q-0001", reviewer="Testperson", note=None, checklist="all",
+                                    interactive=False)
+        path = self.paths.questions / "q-0001.json"
+        appr = load_question(path)["revisions"][0]["approval"]
+        self.assertIs(appr["machine_verified"], True)
+        self.assertFalse(human_verified(load_question(path)["revisions"][0]))
+        with mock.patch.dict(os.environ, {}, clear=False):
+            os.environ.pop("RADIOQUIZ_MACHINE_REVIEW", None)
+            with self.assertRaises(ToolError):  # the checklist must be confirmed
+                review.human_verify(self.paths, "q-0001", reviewer="Testperson", note=None, checklist=None,
+                                    interactive=False)
+            review.human_verify(self.paths, "q-0001", reviewer="Testperson", note="sjekket", checklist="all",
+                                interactive=False)
+            rev = load_question(path)["revisions"][0]
+            self.assertEqual(rev["status"], "approved")
+            self.assertEqual(rev["approval"]["human_verified"]["by"], "Testperson")
+            self.assertTrue(human_verified(rev))
+            self.assertEqual(rev["review_log"][-1]["action"], "human_verify")
+            with self.assertRaises(ToolError):  # only once
+                review.human_verify(self.paths, "q-0001", reviewer="Testperson", note=None, checklist="all",
+                                    interactive=False)
+        self.repo.approve_templates()
+        self.assertEqual(publish.publish(self.paths)["questions"], 1)  # the content did not change
+        self.assertNotIn("verified", (self.paths.dist / "data" / "bank.json").read_text())
+
+    def test_human_verify_needs_a_machine_approval(self):
+        review.verify(self.paths, None, quiet=True)
+        with mock.patch.dict(os.environ, {}, clear=False):
+            os.environ.pop("RADIOQUIZ_MACHINE_REVIEW", None)
+            with self.assertRaises(ToolError):  # nothing approved yet
+                review.human_verify(self.paths, "q-0001", reviewer="Testperson", note=None, checklist="all",
+                                    interactive=False)
+            self.approve(ack=[])
+            with self.assertRaises(ToolError):  # a person approved it already
+                review.human_verify(self.paths, "q-0001", reviewer="Annen person", note=None, checklist="all",
+                                    interactive=False)
 
     def test_hazards_must_be_acknowledged(self):
         rev = sample_revision(self.iid)

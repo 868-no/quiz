@@ -165,7 +165,7 @@
         },
         {
           "at": "2026-10-24T09:30:13+00:00",
-          "actor": "Jim C K Flaten",
+          "actor": "Claude + ChatGPT",
           "action": "approve",
           "from_status": "needs_review",
           "to_status": "approved",
@@ -174,11 +174,12 @@
           "acknowledged": [
             "figures",
             "ocr"
-          ]
+          ],
+          "machine_verified": true
         },
         {
           "at": "2026-10-24T10:04:15+00:00",
-          "actor": "Jim C K Flaten",
+          "actor": "Claude + ChatGPT",
           "action": "superseded",
           "from_status": "approved",
           "to_status": "retired",
@@ -210,7 +211,8 @@
         "at": "2026-10-24T09:30:13+00:00"
       },
       "approval": {
-        "by": "Jim C K Flaten",
+        "by": "Claude + ChatGPT",
+        "machine_verified": true,
         "at": "2026-10-24T09:30:13+00:00",
         "content_sha256": "f713f0b70a5da6f478f4d76e3922cb79deef73084665ee296eb1554294b8b503",
         "acknowledged_hazards": [
@@ -410,7 +412,7 @@
         },
         {
           "at": "2026-10-24T10:04:15+00:00",
-          "actor": "Jim C K Flaten",
+          "actor": "Claude + ChatGPT",
           "action": "approve",
           "from_status": "needs_review",
           "to_status": "approved",
@@ -419,11 +421,12 @@
           "acknowledged": [
             "figures",
             "ocr"
-          ]
+          ],
+          "machine_verified": true
         },
         {
           "at": "2026-10-24T14:32:02+00:00",
-          "actor": "Jim C K Flaten",
+          "actor": "Claude + ChatGPT",
           "action": "superseded",
           "from_status": "approved",
           "to_status": "retired",
@@ -450,7 +453,8 @@
         "at": "2026-10-24T10:04:15+00:00"
       },
       "approval": {
-        "by": "Jim C K Flaten",
+        "by": "Claude + ChatGPT",
+        "machine_verified": true,
         "at": "2026-10-24T10:04:15+00:00",
         "content_sha256": "15762dd023553320c7fb9e14fbb5efbef8e2299659133ce48be84907c4ac04c8",
         "acknowledged_hazards": [
@@ -624,7 +628,7 @@
       "language": "nb-NO",
       "provenance": {
         "method": "edit",
-        "author": "Jim C K Flaten",
+        "author": "Claude + ChatGPT",
         "based_on": 2,
         "at": "2026-10-24T14:26:41+00:00"
       },
@@ -632,7 +636,7 @@
       "review_log": [
         {
           "at": "2026-10-24T14:26:41+00:00",
-          "actor": "Jim C K Flaten",
+          "actor": "Claude + ChatGPT",
           "action": "new_revision",
           "from_status": "draft",
           "to_status": "draft",
@@ -650,7 +654,7 @@
         },
         {
           "at": "2026-10-24T14:32:02+00:00",
-          "actor": "Jim C K Flaten",
+          "actor": "Claude + ChatGPT",
           "action": "approve",
           "from_status": "needs_review",
           "to_status": "approved",
@@ -659,11 +663,12 @@
           "acknowledged": [
             "figures",
             "ocr"
-          ]
+          ],
+          "machine_verified": true
         },
         {
           "at": "2026-10-24T17:02:59+00:00",
-          "actor": "Jim C K Flaten",
+          "actor": "Claude + ChatGPT",
           "action": "superseded",
           "from_status": "approved",
           "to_status": "retired",
@@ -690,7 +695,8 @@
         "at": "2026-10-24T14:32:02+00:00"
       },
       "approval": {
-        "by": "Jim C K Flaten",
+        "by": "Claude + ChatGPT",
+        "machine_verified": true,
         "at": "2026-10-24T14:32:02+00:00",
         "content_sha256": "0fa1dc8908b7a9e57031ecdc93345424176107445b95c979c59ed6e5fe3e42f6",
         "acknowledged_hazards": [
@@ -864,7 +870,7 @@
       "language": "nb-NO",
       "provenance": {
         "method": "edit",
-        "author": "Jim C K Flaten",
+        "author": "Claude + ChatGPT",
         "based_on": 3,
         "at": "2026-10-24T16:20:17+00:00"
       },
@@ -872,7 +878,7 @@
       "review_log": [
         {
           "at": "2026-10-24T16:20:17+00:00",
-          "actor": "Jim C K Flaten",
+          "actor": "Claude + ChatGPT",
           "action": "new_revision",
           "from_status": "draft",
           "to_status": "draft",
@@ -890,7 +896,7 @@
         },
         {
           "at": "2026-10-24T17:02:59+00:00",
-          "actor": "Jim C K Flaten",
+          "actor": "Claude + ChatGPT",
           "action": "approve",
           "from_status": "needs_review",
           "to_status": "approved",
@@ -899,7 +905,8 @@
           "acknowledged": [
             "figures",
             "ocr"
-          ]
+          ],
+          "machine_verified": true
         }
       ],
       "visual": {
@@ -966,7 +973,8 @@
         "at": "2026-10-24T17:02:59+00:00"
       },
       "approval": {
-        "by": "Jim C K Flaten",
+        "by": "Claude + ChatGPT",
+        "machine_verified": true,
         "at": "2026-10-24T17:02:59+00:00",
         "content_sha256": "7366d480472ba16548c68a720decd0aba724f8a0339f4539c2e425b8a3cc43c3",
         "acknowledged_hazards": [

@@ -20,7 +20,8 @@ from . import checks, richtext, visuals
 from .common import Paths, ToolError, append_jsonl, now_iso, read_json, write_json
 from .context import Context, load_context
 from .questions import (
-    CONTENT_FIELDS, content_hash, get_question, get_revision, latest, open_flags, save_question, variant_revisions,
+    CONTENT_FIELDS, content_hash, get_question, get_revision, latest, open_flags, publishable_revision, save_question,
+    variant_revisions,
 )
 
 CHECKLIST = {
@@ -38,6 +39,14 @@ def _reviewer(name: str | None) -> str:
     if not name or not name.strip():
         raise ToolError("a reviewer name is required (--reviewer NAME or RADIOQUIZ_REVIEWER)")
     return name.strip()
+
+
+def _machine(flag: bool | None) -> bool:
+    """True when the review was done by AI models rather than a person: --machine, or
+    RADIOQUIZ_MACHINE_REVIEW=1 in the environment (set it together with RADIOQUIZ_REVIEWER)."""
+    if flag is not None:
+        return flag
+    return os.environ.get("RADIOQUIZ_MACHINE_REVIEW", "").strip().lower() in ("1", "true", "yes")
 
 
 def _log(paths: Paths, qid: str, rev: dict[str, Any], actor: str, action: str, to_status: str | None,
@@ -186,6 +195,12 @@ def show(paths: Paths, qid: str, revision: int | None = None, *, with_source: bo
             for vid in ch["visual_elements"]:
                 img = paths.imported / ctx.source["import_id"] / "figures" / f"{vid}.png"
                 out.append(f"    figure crop: {img}" + ("" if img.exists() else " (not copied)"))
+    appr = rev.get("approval")
+    if appr:
+        h = appr.get("human_verified")
+        out += ["", f"APPROVED by {appr['by']} at {appr['at']} — "
+                + ("approved by AI models; " + (f"verified by {h['by']} at {h['at']}" if h else "not verified by a person")
+                   if appr.get("machine_verified") else "approved by a person")]
     out += ["", "History:"] + [f"  {e['at']} {e['actor']}: {e['action']} {e['from_status']}→{e['to_status']} "
                                f"{e.get('note') or ''}" for e in rev.get("review_log", [])]
     return "\n".join(out)
@@ -213,8 +228,9 @@ def _confirm_checklist(checklist: str | None, interactive: bool) -> dict[str, bo
 
 
 def approve(paths: Paths, qid: str, *, reviewer: str | None, note: str | None, ack: list[str],
-            checklist: str | None, interactive: bool | None = None) -> dict[str, Any]:
+            checklist: str | None, interactive: bool | None = None, machine: bool | None = None) -> dict[str, Any]:
     who = _reviewer(reviewer)
+    machine = _machine(machine)
     ctx = load_context(paths, need_source=True)
     path, q = get_question(paths, qid)
     rev = latest(q)
@@ -234,16 +250,42 @@ def approve(paths: Paths, qid: str, *, reviewer: str | None, note: str | None, a
     unapproved = _dependencies_unapproved(ctx, rev)
     confirmed = _confirm_checklist(checklist, sys.stdin.isatty() if interactive is None else interactive)
     rev["checks"] = result | {"at": now_iso()}
-    rev["approval"] = {"by": who, "at": now_iso(), "content_sha256": content_hash(rev),
+    rev["approval"] = {"by": who, "machine_verified": machine, "at": now_iso(), "content_sha256": content_hash(rev),
                        "acknowledged_hazards": sorted(needed), "checklist": confirmed,
                        "verifier": result["verifier"]}
-    _log(paths, qid, rev, who, "approve", "approved", note, acknowledged=sorted(needed))
+    _log(paths, qid, rev, who, "approve", "approved", note, acknowledged=sorted(needed), machine_verified=machine)
     # A newer approved revision supersedes older ones.
     for old in q["revisions"]:
         if old is not rev and old.get("status") == "approved":
             _log(paths, qid, old, who, "superseded", "retired", f"superseded by r{rev['revision']}")
     save_question(path, q)
     return {"approved": f"{qid} r{rev['revision']}", "dependencies_not_approved": unapproved}
+
+
+def human_verify(paths: Paths, qid: str, *, reviewer: str | None, note: str | None, checklist: str | None,
+                 interactive: bool | None = None) -> str:
+    """A person confirms the published (newest approved) revision that AI models approved.
+    The content stays as it is; the approval gets a `human_verified` record pinned to it."""
+    if _machine(None):
+        raise ToolError("human-verify is for a person; unset RADIOQUIZ_MACHINE_REVIEW")
+    who = _reviewer(reviewer)
+    path, q = get_question(paths, qid)
+    rev = publishable_revision(q)
+    if rev is None:
+        raise ToolError(f"{qid} has no approved revision; approve it first")
+    appr = rev["approval"]
+    if not appr.get("machine_verified"):
+        raise ToolError(f"{qid} r{rev['revision']} was approved by a person ({appr.get('by')})")
+    if appr.get("human_verified"):
+        h = appr["human_verified"]
+        raise ToolError(f"{qid} r{rev['revision']} was already verified by {h['by']} at {h['at']}")
+    if appr.get("content_sha256") != content_hash(rev):
+        raise ToolError(f"{qid} r{rev['revision']}: content changed after approval")
+    confirmed = _confirm_checklist(checklist, sys.stdin.isatty() if interactive is None else interactive)
+    appr["human_verified"] = {"by": who, "at": now_iso(), "content_sha256": content_hash(rev), "checklist": confirmed}
+    _log(paths, qid, rev, who, "human_verify", None, note)
+    save_question(path, q)
+    return f"{qid} r{rev['revision']} verified by {who}"
 
 
 def _dependencies_unapproved(ctx: Context, rev: dict[str, Any]) -> list[str]:
@@ -360,8 +402,10 @@ def resolve_flag(paths: Paths, qid: str, *, reviewer: str | None, note: str | No
 
 # --- glossary, templates and sections -----------------------------------------
 
-def approve_terms(paths: Paths, ids: list[str], *, reviewer: str | None, note: str | None) -> list[str]:
+def approve_terms(paths: Paths, ids: list[str], *, reviewer: str | None, note: str | None,
+                  machine: bool | None = None) -> list[str]:
     who = _reviewer(reviewer)
+    machine = _machine(machine)
     data = read_json(paths.glossary_file)
     by_id = {t["id"]: t for t in data["terms"]}
     missing = [i for i in ids if i not in by_id]
@@ -376,14 +420,16 @@ def approve_terms(paths: Paths, ids: list[str], *, reviewer: str | None, note: s
         t["status"] = "approved"
         t["approved_sha256"] = term_hash(t)
         t.setdefault("review_log", []).append({"at": now_iso(), "actor": who, "action": "approve",
-                                               "content_sha256": t["approved_sha256"], "note": note})
+                                               "content_sha256": t["approved_sha256"], "note": note,
+                                               "machine_verified": machine})
     write_json(paths.glossary_file, data)
     return ids
 
 
 def approve_template(paths: Paths, key: str, *, reviewer: str | None, note: str | None,
-                     checklist: str | None) -> str:
+                     checklist: str | None, machine: bool | None = None) -> str:
     who = _reviewer(reviewer)
+    machine = _machine(machine)
     if checklist != "all":
         raise ToolError("approving a visual template requires --checklist all, confirming that you have "
                         "checked the rendering in the preview (symbols, polarity, labels, units, computed "
@@ -392,7 +438,8 @@ def approve_template(paths: Paths, key: str, *, reviewer: str | None, note: str 
     for t in data["templates"]:
         if f"{t['id']}@{t['version']}" == key:
             t["status"] = "approved"
-            t.setdefault("review_log", []).append({"at": now_iso(), "actor": who, "action": "approve", "note": note})
+            t.setdefault("review_log", []).append({"at": now_iso(), "actor": who, "action": "approve", "note": note,
+                                                   "machine_verified": machine})
             write_json(paths.templates_file, data)
             return key
     raise ToolError(f"unknown visual template {key}")
