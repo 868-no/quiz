@@ -18,7 +18,7 @@ if (!JSDOM && process.env.RADIOQUIZ_REQUIRE_JSDOM) throw new Error('jsdom is req
 const skip = JSDOM ? false : 'jsdom not installed';
 
 function setupDom(url = 'http://localhost/') {
-  const dom = new JSDOM('<!doctype html><html lang="nb"><body><main id="app"></main><footer><p id="footer-jump" hidden></p></footer></body></html>', { url });
+  const dom = new JSDOM('<!doctype html><html lang="nb"><body><header><a class="site-home" href="./"><h1>Lisensøving</h1></a></header><main id="app"></main><footer><p id="footer-jump" hidden></p></footer></body></html>', { url });
   const w = dom.window;
   Object.assign(globalThis, {
     window: w, document: w.document, Element: w.Element, Node: w.Node, localStorage: w.localStorage,
@@ -442,6 +442,34 @@ function withVariants(bank) {
   }
   return bank;
 }
+
+test('the title in the header leads to the start page and keeps a round in progress', { skip }, async () => {
+  const { root, w } = await app(makeBank({ perChapter: { 2: 4 } }));
+  const home = $(w.document, '.site-home');
+  start(root, [2]);
+  answer(root, true);
+  assert.ok($(root, '#q-progress'));
+  // a click with a modifier key is left to the browser (new tab or window)
+  let leftToBrowser = null;
+  const record = (e) => { leftToBrowser = !e.defaultPrevented; e.preventDefault(); }; // jsdom would navigate
+  w.addEventListener('click', record, { once: true });
+  home.dispatchEvent(new w.MouseEvent('click', { bubbles: true, cancelable: true, ctrlKey: true }));
+  assert.equal(leftToBrowser, true);
+  assert.ok($(root, '#q-progress'), 'still on the question');
+  const plain = new w.MouseEvent('click', { bubbles: true, cancelable: true });
+  home.dispatchEvent(plain);
+  assert.ok(plain.defaultPrevented, 'no page reload');
+  assert.ok($(root, '#setup-form'));
+  assert.ok(root.textContent.includes('påbegynt runde'), 'the round can be resumed');
+  // from a question opened by a link, the link goes away
+  w.location.hash = '#q-2001';
+  await new Promise((r) => w.addEventListener('hashchange', r, { once: true }));
+  await new Promise((r) => setTimeout(r, 0));
+  assert.equal($(root, '#q-progress').textContent, 'Spørsmål q-2001');
+  home.click();
+  assert.ok($(root, '#setup-form'));
+  assert.equal(w.location.hash, '');
+});
 
 test('a link with a variant number opens that variant, and links name the variant shown', { skip }, async () => {
   const bank = withVariants(makeBank({ perChapter: { 2: 2, 6: 2 } }));

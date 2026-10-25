@@ -944,6 +944,21 @@ export function createApp(root, bank) {
     resizeTimer = setTimeout(() => fitFigures(root), 150);
   });
 
+  // The title in the page header leads to the start page. A round in progress is kept,
+  // so the start page offers to resume it (the link alone would reload the page, which
+  // works too, but slower).
+  const home = root.ownerDocument.querySelector('.site-home');
+  home?.addEventListener('click', (e) => {
+    if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return; // new tab or window
+    e.preventDefault();
+    if (isSingle()) clearHash();
+    state.session = null;
+    state.choice = null;
+    state.linkNotice = '';
+    state.resumable = restoreSession(loadSession(), bank);
+    renderSetup();
+  });
+
   // The link sits in the page footer, outside the app's own area, on every screen.
   const jumpSlot = root.ownerDocument.getElementById('footer-jump');
   if (jumpSlot && bank.chapters.some((c) => c.status === 'available')) {
