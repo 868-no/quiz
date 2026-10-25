@@ -179,9 +179,14 @@ export function createApp(root, bank) {
       resume ? h('p', { class: 'hint' }, 'Den påbegynte runden din blir forkastet.') : null);
   }
 
+  // A new round replaces a paused one, so ask first; true when it is fine to go on.
+  function discardPausedRound(what) {
+    const paused = state.resumable && !state.resumable.finished && !state.session;
+    return !paused || globalThis.confirm(`Du har en påbegynt runde. Vil du forkaste den og starte ${what}?`);
+  }
+
   function startExam() {
-    const resumable = state.resumable && !state.resumable.finished && !state.session;
-    if (resumable && !globalThis.confirm('Du har en påbegynt runde. Vil du forkaste den og starte en prøveeksamen?')) return;
+    if (!discardPausedRound('en prøveeksamen')) return;
     state.session = null;
     clearSession();
     start({ chapters: availableChapters(), count: examSize(), policy: 'exam', kind: 'exam' });
@@ -655,6 +660,7 @@ export function createApp(root, bank) {
   root.addEventListener('submit', (e) => {
     e.preventDefault();
     if (e.target.id === 'setup-form') {
+      if (!discardPausedRound('en ny runde')) return;
       start({
         chapters: [...state.selection.chapters].sort((a, b) => a - b),
         count: state.selection.count,
@@ -739,6 +745,7 @@ export function createApp(root, bank) {
         toSetup();
         break;
       case 'practice-missed':
+        if (!discardPausedRound('en runde med spørsmålene du bommet på')) break;
         if (state.session) {
           state.session = null;
           clearSession();

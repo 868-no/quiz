@@ -454,7 +454,7 @@ test('the start bar follows the selection and appears only while Start is out of
   }
 });
 
-test('with a round in progress the start bar shows too', { skip }, async () => {
+test('with a round in progress the bar shows too, and a new round asks before replacing it', { skip }, async () => {
   const observed = [];
   const env = setupDom();
   globalThis.IntersectionObserver = fakeObserver(observed);
@@ -479,9 +479,35 @@ test('with a round in progress the start bar shows too', { skip }, async () => {
     assert.deepEqual(io.els, [startBtn], 'only Start is watched, not the continue box');
     io.cb([{ target: startBtn, isIntersecting: false, boundingClientRect: { top: 900 } }]);
     assert.equal($(root, '.start-bar').hidden, false, 'shown although "Fortsett der du slapp" is on screen');
+    // declining keeps the paused round
+    const asked = [];
+    globalThis.confirm = (msg) => { asked.push(msg); return false; };
+    $(root, '[data-action=start-bar]').click();
+    assert.equal(asked.length, 1);
+    assert.match(asked[0], /påbegynt runde.*forkaste den og starte en ny runde/);
+    assert.equal($(root, '#answer-form'), null, 'no new round');
+    assert.ok($(root, '.continue-resume'), 'the paused round is still offered');
+    $(root, '[data-action=practice-missed]')?.click();
+    assert.equal($(root, '#answer-form'), null, 'not from the missed list either');
+    // accepting starts the new round and drops the old one
+    globalThis.confirm = (msg) => { asked.push(msg); return true; };
+    $(root, '#setup-form button[type=submit]').click();
+    assert.ok($(root, '#answer-form'), 'the new round starts');
+    assert.equal($(root, '#q-progress').textContent.includes('1'), true);
   } finally {
     delete globalThis.IntersectionObserver;
+    globalThis.confirm = () => true;
   }
+});
+
+test('without a paused round a new round starts without asking', { skip }, async () => {
+  const { root } = await app(makeBank({ perChapter: { 2: 3 } }));
+  let asked = 0;
+  globalThis.confirm = () => { asked += 1; return true; };
+  $(root, '#setup-form button[type=submit]').click();
+  assert.ok($(root, '#answer-form'));
+  assert.equal(asked, 0);
+  globalThis.confirm = () => true;
 });
 
 test('a list of missed questions alone does not hold back the start bar', { skip }, async () => {
