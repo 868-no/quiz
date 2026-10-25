@@ -165,7 +165,7 @@ def build_bank(paths: Paths, *, mode: str, skip_flagged: bool = False,
             "number": n,
             "title": c.get("title") if c else None,
             # a chapter marked "quiz": false in the registry (the exam syllabus) gets no questions and
-            # is left out of the chapter list; the dial still shows its place on the scale
+            # is left out of the chapter list and the dial
             "status": "available" if counts.get(n) else (
                 "not_in_quiz" if c and c.get("quiz") is False else "no_questions" if scanned else "upcoming"),
             "questions": counts.get(n, 0),

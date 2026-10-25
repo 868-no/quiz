@@ -22,6 +22,15 @@ test('chapter dial: stations for available chapters, lit when selected, blank sc
   assert.ok(textContent(svg).includes('kommer senere'));
 });
 
+test('chapter dial: a chapter not in the quiz is left out and the rest are spaced evenly', () => {
+  const chapters = [1, 2, 3, 4].map((n) => ({ number: n, status: n === 3 ? 'not_in_quiz' : 'available' }));
+  const svg = chapterDial(chapters, new Set());
+  assert.deepEqual(cls(svg, 'dial-num').map(textContent), ['1', '2', '4']);
+  const xs = cls(svg, 'dial-station').map((c) => Number(c.a.cx));
+  assert.equal(xs.length, 3);
+  assert.ok(Math.abs((xs[1] - xs[0]) - (xs[2] - xs[1])) < 0.01, 'even spacing, no gap where chapter 3 was');
+});
+
 test('round dial: marks differ by shape, needle at the current question', () => {
   const svg = roundDial(['correct', 'wrong', null, null], 2);
   assert.equal(cls(svg, 'dial-mark-ok')[0].t, 'circle');

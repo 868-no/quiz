@@ -35,17 +35,20 @@ function needle(x, top, bottom) {
 /**
  * Chapter scale for the setup screen. chapters: [{number, status}]; selected: Set of numbers.
  * Available chapters are stations (hollow, or lit when selected); chapters without
- * questions (also those not in the quiz at all) are faint; upcoming chapters are blank scale.
+ * questions are faint; upcoming chapters are blank scale. Chapters not in the quiz at
+ * all (the exam syllabus) are left out, and the others are spaced evenly.
  */
 export function chapterDial(chapters, selected) {
-  const n = chapters.length;
+  const shown = chapters.filter((c) => c.status !== 'not_in_quiz');
+  const n = shown.length;
   const H = 76;
   const base = 46;
   const svg = glass(H);
   const els = [h('line', { x1: PAD - 10, y1: base, x2: W - PAD + 10, y2: base, class: 'dial-base' })];
-  const blank = chapters.filter((c) => c.status === 'upcoming');
-  for (const c of chapters) {
-    const x = scaleX(c.number, n);
+  const pos = new Map(shown.map((c, i) => [c.number, scaleX(i + 1, n)]));
+  const blank = shown.filter((c) => c.status === 'upcoming');
+  for (const c of shown) {
+    const x = pos.get(c.number);
     if (c.status === 'upcoming') {
       els.push(h('line', { x1: x, y1: base, x2: x, y2: base + 5, class: 'dial-tick dial-tick-minor' }));
       continue;
@@ -58,8 +61,8 @@ export function chapterDial(chapters, selected) {
     }
   }
   if (blank.length) {
-    const x1 = scaleX(blank[0].number, n);
-    const x2 = scaleX(blank[blank.length - 1].number, n);
+    const x1 = pos.get(blank[0].number);
+    const x2 = pos.get(blank[blank.length - 1].number);
     els.push(h('text', { x: (x1 + x2) / 2, y: base - 12, class: 'dial-note', 'text-anchor': 'middle' }, 'kommer senere'));
   }
   svg.c.push(...els);
