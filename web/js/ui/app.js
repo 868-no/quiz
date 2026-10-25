@@ -660,6 +660,8 @@ export function createApp(root, bank) {
     state.linkNotice = '';
     clearHash();
     state.session = res.session;
+    // the new round takes the saved round's place, so the old one can no longer be continued
+    state.resumable = null;
     state.choice = null;
     state.onlyWrong = true;
     persist();

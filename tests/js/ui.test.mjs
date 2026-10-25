@@ -534,6 +534,29 @@ test('quitting asks first, and cancelling keeps the round and the focus', { skip
   assert.ok($(root, '#setup-form'), 'back to the start page');
 });
 
+test('after a new round replaces a paused one, the start page no longer offers the old one', { skip }, async () => {
+  const env = setupDom();
+  const { createApp } = await import('../../web/js/ui/app.js');
+  const bank = makeBank({ perChapter: { 2: 6 } });
+  createApp(env.root, bank);
+  start(env.root, [2]);
+  answer(env.root, true);
+  // a fresh page load with the round saved
+  const root = env.w.document.createElement('main');
+  env.root.replaceChildren();
+  env.w.document.body.appendChild(root);
+  createApp(root, bank);
+  assert.ok($(root, '.continue-resume'));
+  // a new round replaces it and is played to the end
+  $(root, '#setup-form button[type=submit]').click();
+  answerDialog(root, true);
+  finishRound(root, () => true);
+  assert.ok($(root, '.results'), 'the new round is finished');
+  $(root, '[data-action=new]').click();
+  assert.ok($(root, '#setup-form'));
+  assert.equal($(root, '.continue-resume'), null, 'the discarded round is not offered again');
+});
+
 test('without a paused round a new round starts without asking', { skip }, async () => {
   const { root } = await app(makeBank({ perChapter: { 2: 3 } }));
   $(root, '#setup-form button[type=submit]').click();
