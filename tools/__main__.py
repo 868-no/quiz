@@ -109,9 +109,11 @@ def cmd_review(paths, a) -> int:
 
 def cmd_glossary(paths, a) -> int:
     from . import review
-    from .context import load_glossary, validate_glossary
+    from .context import load_glossary, stale_terms, validate_glossary
     if a.action == "check":
-        errs = validate_glossary(load_glossary(paths))
+        glossary = load_glossary(paths)
+        errs = validate_glossary(glossary) + [f"glossary {t}: changed after it was approved; approve it again"
+                                              for t in stale_terms(glossary)]
         for e in errs:
             print(e)
         return 1 if errs else 0
@@ -131,7 +133,8 @@ def cmd_glossary(paths, a) -> int:
         return 0
     if a.action == "list":
         for t in load_glossary(paths).values():
-            print(f"{t['id']:<28} [{t['status']}] {t['nb']} = {t['en']}")
+            mark = ", changed since approval" if t.get("changed_since_approval") else ""
+            print(f"{t['id']:<28} [{t['status']}{mark}] {t['nb']} = {t['en']}")
         return 0
     print("approved:", ", ".join(review.approve_terms(paths, a.ids, reviewer=a.reviewer, note=a.note)))
     return 0

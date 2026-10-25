@@ -144,7 +144,8 @@ def show(paths: Paths, qid: str, revision: int | None = None, *, with_source: bo
                    | {t for o in rev.get("options", []) for t in richtext.term_refs([o.get("content")])})
     for t in terms:
         g = ctx.glossary.get(t)
-        out.append(f"TERM {t}: " + (f"{g['nb']} = {g['en']} — {g['definition']} [{g['status']}]" if g else "MISSING"))
+        out.append(f"TERM {t}: " + (f"{g['nb']} = {g['en']} — {g['definition']} [{g['status']}"
+                                       f"{', changed since approval' if g.get('changed_since_approval') else ''}]" if g else "MISSING"))
     out += ["", f"STUDY REFERENCE: {rev.get('study_reference')}"]
     c = rev.get("checks")
     if c:
@@ -351,14 +352,16 @@ def approve_terms(paths: Paths, ids: list[str], *, reviewer: str | None, note: s
     missing = [i for i in ids if i not in by_id]
     if missing:
         raise ToolError(f"unknown glossary term(s): {missing}")
-    from .context import validate_glossary
+    from .context import term_hash, validate_glossary
     errs = [e for e in validate_glossary(by_id) if any(f" {i}:" in e for i in ids)]
     if errs:
         raise ToolError("\n".join(errs))
     for i in ids:
         t = by_id[i]
         t["status"] = "approved"
-        t.setdefault("review_log", []).append({"at": now_iso(), "actor": who, "action": "approve", "note": note})
+        t["approved_sha256"] = term_hash(t)
+        t.setdefault("review_log", []).append({"at": now_iso(), "actor": who, "action": "approve",
+                                               "content_sha256": t["approved_sha256"], "note": note})
     write_json(paths.glossary_file, data)
     return ids
 

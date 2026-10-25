@@ -8,6 +8,7 @@ from unittest import mock
 
 from tools import publish, review
 from tools.common import ToolError, read_json
+from tools.context import load_glossary
 from tools.questions import load_question
 from tools.release_check import release_check
 
@@ -310,6 +311,23 @@ class PipelineTest(unittest.TestCase):
             publish.publish(self.paths)
         self.assertIn("glossary term 'resistans' is not approved", str(cm.exception))
         review.approve_terms(self.paths, ["resistans"], reviewer="T", note=None)
+        self.assertEqual(publish.publish(self.paths)["questions"], 1)
+
+    def test_glossary_term_edited_after_approval_must_be_approved_again(self):
+        self.repo.write_question("q-0001", sample_revision(self.iid))
+        review.verify(self.paths, None, quiet=True)
+        self.approve()
+        self.repo.approve_templates()
+        self.assertEqual(publish.publish(self.paths)["questions"], 1)
+        p = self.paths.glossary_file
+        d = json.loads(p.read_text())
+        d["terms"][0]["definition"] = "Elektrisk ladning som passerer et punkt per sekund."
+        p.write_text(json.dumps(d, ensure_ascii=False))
+        self.assertEqual(load_glossary(self.paths)["strom"]["status"], "needs_review")
+        with self.assertRaises(publish.PublishError) as cm:
+            publish.publish(self.paths)
+        self.assertIn("glossary term 'strom' was changed after it was approved", str(cm.exception))
+        review.approve_terms(self.paths, ["strom"], reviewer="T", note=None)
         self.assertEqual(publish.publish(self.paths)["questions"], 1)
 
 

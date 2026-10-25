@@ -12,6 +12,7 @@ import tempfile
 from pathlib import Path
 
 from tools.common import Paths
+from tools.context import term_hash
 
 REPO = Path(__file__).resolve().parents[2]
 
@@ -150,12 +151,14 @@ class TempRepo:
             {"id": "ohms-lov", "title": "Ohms lov", "chapter": 2},
             {"id": "motstandskoblinger", "title": "Motstander", "chapter": 2},
             {"id": "mellomfrekvens", "title": "Mellomfrekvens", "chapter": 6}]}))
-        (self.root / "content" / "glossary" / "terms.json").write_text(json.dumps({"terms": [
+        terms = [
             {"id": "strom", "nb": ["strøm", "strømmen"], "en": ["current"],
              "definition": "Elektrisk ladning som flyter per tidsenhet.", "related": [], "status": "approved"},
             {"id": "resistans", "nb": ["resistans"], "en": ["resistance"],
              "definition": "Hvor sterkt en leder hindrer strøm, målt i ohm.", "related": ["strom"], "status": "needs_review"},
-        ]}, ensure_ascii=False))
+        ]
+        terms[0]["approved_sha256"] = term_hash(terms[0])
+        (self.root / "content" / "glossary" / "terms.json").write_text(json.dumps({"terms": terms}, ensure_ascii=False))
         self.paths = Paths(self.root)
         self.export_dir = self.dir / "export"
         self.data = synthetic_export()
@@ -183,6 +186,7 @@ class TempRepo:
         d = json.loads(p.read_text())
         for t in d["terms"]:
             t["status"] = "approved"
+            t["approved_sha256"] = term_hash(t)
         p.write_text(json.dumps(d, ensure_ascii=False))
 
     def write_question(self, qid: str, rev: dict) -> Path:

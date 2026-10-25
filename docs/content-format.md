@@ -97,6 +97,10 @@ modulation index and Carson bandwidth, efficiency, harmonics). Add a formula the
 Definitions are original, 10–400 characters, and should not contain answers to
 questions that link the term before answering (the verifier warns when they do).
 Only `approved` terms can be published; `python3 -m tools glossary approve ID…`.
+An approval records `approved_sha256`, a hash of `nb`, `en`, `definition` and `related`.
+Editing any of them afterwards sends the term back to review: it is listed as
+«changed since approval», `glossary check` fails, and publish refuses it until it is
+approved again. Don't edit `approved_sha256` by hand.
 
 ## Chapters, sections, topics
 

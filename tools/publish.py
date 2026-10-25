@@ -128,7 +128,9 @@ def build_bank(paths: Paths, *, mode: str, skip_flagged: bool = False,
             if term is None:
                 problems.append(f"{q['id']}: glossary term {t!r} does not exist")
             elif mode == "production" and term.get("status") != "approved":
-                problems.append(f"{q['id']}: glossary term {t!r} is not approved")
+                problems.append(f"{q['id']}: glossary term {t!r} "
+                                + ("was changed after it was approved; approve it again"
+                                   if term.get("changed_since_approval") else "is not approved"))
         if rev.get("visual"):
             key = f"{rev['visual'].get('template')}@{rev['visual'].get('version')}"
             used_templates.add(key)

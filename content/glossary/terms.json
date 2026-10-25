@@ -16,6 +16,7 @@
         "strom"
       ],
       "status": "approved",
+      "approved_sha256": "7474f9be94882d8c06a3bd8aec84e1e34f66b104f2eb3a647ee88430eebbb122",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -40,6 +41,7 @@
         "ohms-lov"
       ],
       "status": "approved",
+      "approved_sha256": "82ee2e350aea0c363b108e18f45c43f891a8d4d13cfb0e3ea5b8098344b44689",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -66,6 +68,7 @@
         "resistans"
       ],
       "status": "approved",
+      "approved_sha256": "bf538e95f78a30158ab6801bc2dc44570cb40a5ea44f6aaa5f849e12e3df8256",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -94,6 +97,7 @@
         "strom"
       ],
       "status": "approved",
+      "approved_sha256": "3d761ee3dc9cc5ab0619a58f3296fef5b5bd96b5e110e489ae94b9bdced775ea",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -120,6 +124,7 @@
         "ladning"
       ],
       "status": "approved",
+      "approved_sha256": "9ee135246f856d9773e24a57dac5e887132719e0a63825d5795a5f41e5848988",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -143,6 +148,7 @@
         "strom"
       ],
       "status": "approved",
+      "approved_sha256": "eb649f0825e081c2ed53ba96f13160e0e9ebf16f25b02fd99218fdd9d69391da",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -167,6 +173,7 @@
         "strom"
       ],
       "status": "approved",
+      "approved_sha256": "ba235c6a54e9a4947e775f5b07c0817ca7c825289cb4dc56806434b1d30524e1",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -193,6 +200,7 @@
         "parallellkobling"
       ],
       "status": "approved",
+      "approved_sha256": "10f84775eb0f1470e941fdbc5c6c342d01b792596e21b4656b51d4bee42b2ebf",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -219,6 +227,7 @@
         "seriekobling"
       ],
       "status": "approved",
+      "approved_sha256": "462073bb48c90e54c44043fbf923a5a8fbadd65330c48f10b9e9d4862f85e03b",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -244,6 +253,7 @@
         "seriekobling"
       ],
       "status": "approved",
+      "approved_sha256": "94a4e6e91786b3768d4cd6f4db58c7e32660657246466e352efd47eb6118d6d7",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -270,6 +280,7 @@
         "kapasitans"
       ],
       "status": "approved",
+      "approved_sha256": "6e7332477077e6ac693a9f137c5444a30262748716b97768e7055392f198b2c9",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -293,6 +304,7 @@
         "kondensator"
       ],
       "status": "approved",
+      "approved_sha256": "736049bc2395fccafe0234a2bb5ac05031ebe0415c44bd72ce12e7e0b2360b61",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -320,6 +332,7 @@
         "induktans"
       ],
       "status": "approved",
+      "approved_sha256": "1119e5d6e898d7ec00bb6a35c793966ec029e41713061a63dd67006b9a861f7d",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -343,6 +356,7 @@
         "spole"
       ],
       "status": "approved",
+      "approved_sha256": "06e06dfcdc8e2b203004ad3bb7967e6bab1674fb430401cd46e21f6ba591dcbe",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -367,6 +381,7 @@
         "induktiv-reaktans"
       ],
       "status": "approved",
+      "approved_sha256": "3a6b92463e8875238d886ed8b79a7328deabfeb169e106dde5521d53d555c72c",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -391,6 +406,7 @@
         "kondensator"
       ],
       "status": "approved",
+      "approved_sha256": "619d33834f032e9c8c7a9eb0abfbd7528acbfc534db5717b6516798cbb258aa7",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -415,6 +431,7 @@
         "spole"
       ],
       "status": "approved",
+      "approved_sha256": "be9f87686117a9fd3b3c979ef3e98a059735f78d17362cf95e3ba2376a57b5cf",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -442,6 +459,7 @@
         "kapasitiv-reaktans"
       ],
       "status": "approved",
+      "approved_sha256": "c65228752aa3e19a3cfaa121b2eda3854b5c368189f8d2f826065f8759ccd537",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -467,6 +485,7 @@
         "effektivverdi"
       ],
       "status": "approved",
+      "approved_sha256": "30bf2ca77d4e68f01dfa8bfd8da0d78f12e6fcd6a0659177919bd311164711c2",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -493,6 +512,7 @@
         "toppverdi"
       ],
       "status": "approved",
+      "approved_sha256": "c13fc969f89c9c5c704fca0eb4bb6150724f53295ef5266b5f47cc9386aba927",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -518,6 +538,7 @@
         "periode"
       ],
       "status": "approved",
+      "approved_sha256": "c61f9af0ab9877a2569e64032002a325414cdb9324c2b33e745e6372ffe0e106",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -542,6 +563,7 @@
         "frekvens"
       ],
       "status": "approved",
+      "approved_sha256": "3e4d5f438355695bc0548c245cf4710edae29ea78cfc50f3a1d87d10907c6135",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -567,6 +589,7 @@
         "frekvens"
       ],
       "status": "approved",
+      "approved_sha256": "2fb5b4837a2fb42d77fd67ffad1307459356aa1c72df563b44d6f78b3cc7d3f4",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -595,6 +618,7 @@
         "sperreretning"
       ],
       "status": "approved",
+      "approved_sha256": "9dc62fef733a9d75c7a072cda3f8b991c4cabd70f61e5b9550ab2a0196c630b7",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -621,6 +645,7 @@
         "sperreretning"
       ],
       "status": "approved",
+      "approved_sha256": "560dd9fa57d145ca32099ef189497fce60cdd59720bbc64104f16b3ae8c39f5c",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -647,6 +672,7 @@
         "lederetning"
       ],
       "status": "approved",
+      "approved_sha256": "d072ab91815e7b680c90bc7bd2d1b3f56eb8785b905cb8bb5fdc9370a8a52812",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -673,6 +699,7 @@
         "diode"
       ],
       "status": "approved",
+      "approved_sha256": "2b4da0d44c3a4adee793945df28a169544baa900f9822940ada8b36c718ddd2e",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -697,6 +724,7 @@
         "sperreretning"
       ],
       "status": "approved",
+      "approved_sha256": "74fdd1e93a3476da39a43644cb4bbd6b029829ef007e70fb99207b7950d72636",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -723,6 +751,7 @@
         "kapasitans"
       ],
       "status": "approved",
+      "approved_sha256": "8e4daa6e121c70d7a74ed561b7f0ada09e96c7939fe40e8aa59576002c7d13eb",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -750,6 +779,7 @@
         "felles-emitter"
       ],
       "status": "approved",
+      "approved_sha256": "3abcb483bca41de07ceb64a2095230d48c4feaa169102be1cf9c26ad4d93afce",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -774,6 +804,7 @@
         "transistor"
       ],
       "status": "approved",
+      "approved_sha256": "c165c4f213e2004a60c0eb433b3fb53209ced0cfa8d8482d06916dd7a4172409",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -798,6 +829,7 @@
         "amplitudemodulasjon"
       ],
       "status": "approved",
+      "approved_sha256": "05aa5cd08b8426e11febf8f84f50c0d1a295d55d3c053201c2feb20b8afa0335",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -823,6 +855,7 @@
         "ssb"
       ],
       "status": "approved",
+      "approved_sha256": "79322e2bb9e7ae3d4e50a585e27b9951e76c5f03a2e8a5d4b96942e433765032",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -847,6 +880,7 @@
         "sidebaand"
       ],
       "status": "approved",
+      "approved_sha256": "4ec99c717732b18beeff9f32351a67dff1b336dd82120f17b66e3ca3326457f4",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -871,6 +905,7 @@
         "amplitudemodulasjon"
       ],
       "status": "approved",
+      "approved_sha256": "b4a446799d8b57c005f36e461e269d618f1ae5967b1b5b77f4d0ba11abc1d53b",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -895,6 +930,7 @@
         "modulasjonsindeks"
       ],
       "status": "approved",
+      "approved_sha256": "d7feffc8f630b369e1bf3223d481a7e43b10e683388c20389d7e02401b587e0f",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -920,6 +956,7 @@
         "frekvensmodulasjon"
       ],
       "status": "approved",
+      "approved_sha256": "4f859586b0884b46ba43f1476d84cc3167205e1dfc63561a2cfbff13d8d90acb",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -943,6 +980,7 @@
         "deviasjon"
       ],
       "status": "approved",
+      "approved_sha256": "0c37e1ecd33a2096921fe36f9cc275d85d99377036738bbd1b8e55d85e9222d0",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -965,6 +1003,7 @@
       "definition": "Bredden av frekvensområdet et signal eller et filter opptar.",
       "related": [],
       "status": "approved",
+      "approved_sha256": "c86a70c467aa6c7d7fb85bb64ad29311a7a6d9eee230c8bd915a95b85b0e111e",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -988,6 +1027,7 @@
         "harmoniske"
       ],
       "status": "approved",
+      "approved_sha256": "a89d65e82e3c6a843e92f25fb1f343fe1f08cb485a2c1cec22a042ec8369b5e5",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -1019,6 +1059,7 @@
         "frekvens"
       ],
       "status": "approved",
+      "approved_sha256": "c096add402a131a456a293439c9935444e10f1560da3b76d0e783183693a381e",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -1064,6 +1105,7 @@
       "definition": "Senderfeil i morsetelegrafi der tonen ikke er stabil når senderen nøkles.",
       "related": [],
       "status": "approved",
+      "approved_sha256": "440dbb3904ac4cebce1dafcecb5b53e3466c036810dad091034f6cdcbee01c76",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -1089,6 +1131,7 @@
         "ssb"
       ],
       "status": "approved",
+      "approved_sha256": "46e663df4bcc67bb833da47bfeb86d9739ad786a022a5ef7d48ab2c02c9fb224",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -1115,6 +1158,7 @@
         "lokaloscillator"
       ],
       "status": "approved",
+      "approved_sha256": "3a2127dc667685d69697f71394512f8a3ea3a666ddd7933828ce28292f18d66d",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -1143,6 +1187,7 @@
         "mellomfrekvens"
       ],
       "status": "approved",
+      "approved_sha256": "dd028277687e4eeb945a19aae162219d78983fc925d0aa19427c0f091b1e2a46",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -1167,6 +1212,7 @@
         "blander"
       ],
       "status": "approved",
+      "approved_sha256": "447dc96b7d0388f9e3b6f080d10dece31a8eafe3dbf4d368bbf037b1db05d2a6",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -1194,6 +1240,7 @@
         "superheterodyn"
       ],
       "status": "approved",
+      "approved_sha256": "fbf8a806c6850e9f6e9601241b84a87f52af6a238b72bc357ad7d3fcafa420b0",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -1218,6 +1265,7 @@
         "lokaloscillator"
       ],
       "status": "approved",
+      "approved_sha256": "4b9d55413def78ec3e2230c0f4c55ac6560f29bb6e8433dec164f68a8a357bd9",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -1241,6 +1289,7 @@
         "baandbredde"
       ],
       "status": "approved",
+      "approved_sha256": "1607bf01836ee0f56aca6a04c8b6713002aff8675232a89ffb02dfbaa73c3117",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -1265,6 +1314,7 @@
         "blander"
       ],
       "status": "approved",
+      "approved_sha256": "5081e9123f36dda1571f3a992934a421b09c0a4bcd82710a07f50f2d5b9acda5",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -1290,6 +1340,7 @@
         "spenning"
       ],
       "status": "approved",
+      "approved_sha256": "1f7f212846a075cd7e5da9b6c51f92d19a89a86ea4a2f056943be42154d05f61",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -1315,6 +1366,7 @@
         "kapasitans"
       ],
       "status": "approved",
+      "approved_sha256": "690c54dd54bc4f9e6f04f3afb229e38683ad6dbcac1dac74096d89ab62756003",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -1339,6 +1391,7 @@
         "motstand"
       ],
       "status": "approved",
+      "approved_sha256": "1fc2ad58ffe3937dbbc9cf2e2bfc628fbde8fdd02f9514c181b5681e063ddfc7",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -1363,6 +1416,7 @@
         "induktans"
       ],
       "status": "approved",
+      "approved_sha256": "d733c0359a0dc65437ee82dff98fc1d941297f73e400c34d2deabdaa9c41da07",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -1387,6 +1441,7 @@
         "reaktans"
       ],
       "status": "approved",
+      "approved_sha256": "ca86036caa99aa58f4f30d62e9b7f3b19155fceda63b98a0516911b5c1688d0c",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -1415,6 +1470,7 @@
         "reaktans"
       ],
       "status": "approved",
+      "approved_sha256": "dbb479954417a4cd9e873649637433ab6a5fb59ff63ab5e201021f5d263729a2",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -1442,6 +1498,7 @@
         "q-faktor"
       ],
       "status": "approved",
+      "approved_sha256": "2d5a55d407eb803215bb3ab0b83152b27f9f998c3e02d7fcd7356e3113d7b7c9",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -1468,6 +1525,7 @@
         "selektivitet"
       ],
       "status": "approved",
+      "approved_sha256": "c6412f4881ed87f28c631e74a759b24d7c6479271c85b14580b78419c8a7ab45",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -1500,6 +1558,7 @@
         "impedans"
       ],
       "status": "approved",
+      "approved_sha256": "79cf681132f7b034386304e830eb8e0fc1573e7d1a95c7511a4b2477480add76",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -1526,6 +1585,7 @@
         "q-faktor"
       ],
       "status": "approved",
+      "approved_sha256": "523393dbc970b939a8c7a463673330171ccdbfdd09f61c0107cc0cc63df8baa6",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -1556,6 +1616,7 @@
         "kvartskrystall"
       ],
       "status": "approved",
+      "approved_sha256": "83a8f36c760593352f65cca6387306d7f62ae70397a82f0819eda6bc34792a77",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -1581,6 +1642,7 @@
         "spole"
       ],
       "status": "approved",
+      "approved_sha256": "4e748a07e6edace5bb26b2ea1baf581fb580c38385ebf932e76165f2b99ca5ce",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -1606,6 +1668,7 @@
         "diode"
       ],
       "status": "approved",
+      "approved_sha256": "4555b8704c0145faffa8d5e5dcf5e8c7d8e44161ea4d2dac4e24c429f821a29c",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -1636,6 +1699,7 @@
         "lederetning"
       ],
       "status": "approved",
+      "approved_sha256": "e7a63659b0028ebbddf7277d83306d6d41044536e9b0335d8189de76e50add69",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -1661,6 +1725,7 @@
         "transistor"
       ],
       "status": "approved",
+      "approved_sha256": "93b1e1c5c613c208086a2c331934f3be5ed787a0358518b20c69577fdc464bac",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -1687,6 +1752,7 @@
         "felles-emitter"
       ],
       "status": "approved",
+      "approved_sha256": "71d73b4575058ef1fa2173ee5970f1043a416b3cf88e37858c7155b7bd8351c7",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -1711,6 +1777,7 @@
         "felles-emitter"
       ],
       "status": "approved",
+      "approved_sha256": "372c414e5475efc7d917a96e604808219c303665b5f61b43fc8da8e2a4d16322",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -1738,6 +1805,7 @@
         "felles-emitter"
       ],
       "status": "approved",
+      "approved_sha256": "9babf2e1ba8a18ecb4b5c34751deb81ea1b4f859b0cb18aeff339f43bff0696b",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -1768,6 +1836,7 @@
         "transistor"
       ],
       "status": "approved",
+      "approved_sha256": "2057811020cbcb0a3f5dfe58800eb9d9b868cfcfeabc9d07e0074dd3d696e723",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -1799,6 +1868,7 @@
         "transistor"
       ],
       "status": "approved",
+      "approved_sha256": "bd60de14cade02fc284877d99e9ab5e1f65810950438feda52dae4949e251dbf",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -1821,6 +1891,7 @@
       "definition": "Radiorør med tre elektroder: katode, gitter og anode. Den oppvarmede katoden sender ut elektroner som går til anoden.",
       "related": [],
       "status": "approved",
+      "approved_sha256": "e7560d7225983721962e8e72a00fb170bd4b151187a0a9d5b14beac37f05c9be",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -1847,6 +1918,7 @@
         "dds"
       ],
       "status": "approved",
+      "approved_sha256": "84b7cbea42f111a2b5b7c1f9b93ebc5e18f8dbcd7a967fdc8ef7ce128764e4b5",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -1873,6 +1945,7 @@
         "varicap"
       ],
       "status": "approved",
+      "approved_sha256": "00fda767b2c4259f57b6e5a09d2b7052dd582787f6b880ca646787c9e5a191f1",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -1898,6 +1971,7 @@
         "faselaast-sloyfe"
       ],
       "status": "approved",
+      "approved_sha256": "121675e825f72c7ce21b40260c367f76c34c4b39d93ccbe939dd4f8ac90e8d28",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -1924,6 +1998,7 @@
         "baerebolge"
       ],
       "status": "approved",
+      "approved_sha256": "2714c583a231f957d1fceccb92359f5687dbc9379fae6a0488eb8db1de0bca8e",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -1953,6 +2028,7 @@
         "lineaer-forsterker"
       ],
       "status": "approved",
+      "approved_sha256": "e75abbb8aae54da5562207bf8a09207579c56a39d5259dfb2edaffd4efcdbb4b",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -1990,6 +2066,7 @@
         "sluttforsterker"
       ],
       "status": "approved",
+      "approved_sha256": "8f951579419b4083c16f911cf5572edd43f1df75f119bc6c062cfeee4a784056",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -2016,6 +2093,7 @@
         "ssb"
       ],
       "status": "approved",
+      "approved_sha256": "7ef4ad2ef7b7157eb9a92f88e4d6eb2866a0fd01cc24506b0f497dbb9d0208c1",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -2040,6 +2118,7 @@
         "ssb"
       ],
       "status": "approved",
+      "approved_sha256": "de362858bbcf8caf382c1ef6af075985d9733dcaea09be8af6c428d1b4e3c7e9",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -2065,6 +2144,7 @@
         "sluttforsterker"
       ],
       "status": "approved",
+      "approved_sha256": "c4d760c7457e9681c8b8f6c48a77002afa0da8b715e1914f2a35bc30508e0758",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -2089,6 +2169,7 @@
         "frekvensmodulasjon"
       ],
       "status": "approved",
+      "approved_sha256": "4ea1a36ba8ec9df9270082e89fdd7ac082eae511bcffabf65397e07eb4478868",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -2113,6 +2194,7 @@
         "sluttforsterker"
       ],
       "status": "approved",
+      "approved_sha256": "a14fe11c8b56062604fc2b37788ead0b85df0b224b8cd7e5bd50c3122db661f1",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -2136,6 +2218,7 @@
         "frekvens"
       ],
       "status": "approved",
+      "approved_sha256": "505f01dcc7b09d6f9b9a14f4cd8486120c88c94c6e59575dd4fe8706595efeb5",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -2166,6 +2249,7 @@
         "harmoniske"
       ],
       "status": "approved",
+      "approved_sha256": "556180ee79e0b44a28df05a57f7f0c948b73ee0864e814eb695a002a8887ef35",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -2190,6 +2274,7 @@
         "harmoniske"
       ],
       "status": "approved",
+      "approved_sha256": "0a7914e943c10fbce3fef93ebf1c104b3644482967bf32267aa23cda3273593b",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -2215,6 +2300,7 @@
         "resonans"
       ],
       "status": "approved",
+      "approved_sha256": "fc19121453928044b24cc8102373707af345f9255f85451e8d2fc23758e20418",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -2239,6 +2325,7 @@
         "sidebaand"
       ],
       "status": "approved",
+      "approved_sha256": "73698c576fd0640e10b90e6ee582efc2312315e4fb00d89831126562d19bb35a",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -2264,6 +2351,7 @@
         "mellomfrekvens"
       ],
       "status": "approved",
+      "approved_sha256": "cb797ede99685d0100fd79203047e28b2722332b43364634ba925c69fde679b7",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -2290,6 +2378,7 @@
         "agc"
       ],
       "status": "approved",
+      "approved_sha256": "f9d7f06195db7183b23bf3e00e83717222fecff60ce7871d014a2f84461e0920",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -2314,6 +2403,7 @@
         "selektivitet"
       ],
       "status": "approved",
+      "approved_sha256": "8e9dd3f92685aceb5a59c31d2d4895f46b7cc5311ec60b9f92fd034f1df5fa06",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -2335,6 +2425,7 @@
       "definition": "Forholdet i dB mellom signal med støy og forvrengning og bare støy og forvrengning i lydutgangen. Brukes når følsomhet måles.",
       "related": [],
       "status": "approved",
+      "approved_sha256": "1511949b7f5ca84daffe40613e37b52c782d640ab803911f5106503468f8f7f9",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -2358,6 +2449,7 @@
         "lokaloscillator"
       ],
       "status": "approved",
+      "approved_sha256": "3831b3d5fe99296ce2e11dc86bbbbf94908eb8729347965f4b65f0207facfd5b",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -2384,6 +2476,7 @@
         "resonans"
       ],
       "status": "approved",
+      "approved_sha256": "cc447e7119269792fb2e4c03a1aae619d13dc64f32d129cd9fdffb1aeb47d766",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -2407,6 +2500,7 @@
         "frekvensmodulasjon"
       ],
       "status": "approved",
+      "approved_sha256": "0f0119585700123f0b4f4f8dc45361e739138a029bfb5fba88b0fc3a6cf106ae",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -2434,6 +2528,7 @@
         "produktdetektor"
       ],
       "status": "approved",
+      "approved_sha256": "4ed4ed1c3523670f3497b2a2da5a080ef44bf7c4188808809224e5d6c52a072d",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -2456,6 +2551,7 @@
       "definition": "Krets som demper lydutgangen når mottakeren ikke tar imot noe signal over en innstilt terskel.",
       "related": [],
       "status": "approved",
+      "approved_sha256": "bb4dcdf8d8c0909da67f48b894db5b33e50c68e9342236b6d424aa4551a6b9d2",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -2481,6 +2577,7 @@
         "stoytall"
       ],
       "status": "approved",
+      "approved_sha256": "11bbb70f46ede96f50bae840f493ab87e8f3e6fdde775e4da7c3329007805d67",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -2502,6 +2599,7 @@
       "definition": "Mål i dB på hvor mye støy et trinn eller en mottaker legger til signalet. Lavere støytall betyr mindre egenstøy.",
       "related": [],
       "status": "approved",
+      "approved_sha256": "de995493c9edd427967ee0a5406df3e47e2ffed86c8b032de44cc20846dc74c6",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -2526,6 +2624,7 @@
         "lokaloscillator"
       ],
       "status": "approved",
+      "approved_sha256": "1234a51effcd358b7b8bb186db584e18caf6306838a0bf303de77cde64d2d3f0",
       "review_log": [
         {
           "at": "2026-10-23T19:12:55+00:00",
@@ -2549,6 +2648,7 @@
       "definition": "Krets som lager et vekselspenningssignal selv, på en frekvens som bestemmes av for eksempel en avstemt krets eller et krystall.",
       "related": [],
       "status": "approved",
+      "approved_sha256": "5a1c601e5555e2647419108bc1921045f3ec55364b86ae59bb502633cf0c0950",
       "review_log": [
         {
           "at": "2026-10-23T20:43:52+00:00",
@@ -2574,6 +2674,7 @@
         "superheterodyn"
       ],
       "status": "approved",
+      "approved_sha256": "311bc6178fb4961f254ac47f9e91b48696e0a60e8f5fac3a8648786b9bd74e75",
       "review_log": [
         {
           "at": "2026-10-23T20:43:52+00:00",
@@ -2599,6 +2700,7 @@
         "sluttforsterker"
       ],
       "status": "approved",
+      "approved_sha256": "30117b93ed9c4ee43527a7d9e393097fe5089d0f13ac4ad079fd272592d2228f",
       "review_log": [
         {
           "at": "2026-10-23T20:43:52+00:00",
@@ -2629,6 +2731,7 @@
         "transistor"
       ],
       "status": "approved",
+      "approved_sha256": "0a89089caee881fb85045af80e9b6ac6420b3361aab124755394ef7e378db4ca",
       "review_log": [
         {
           "at": "2026-10-23T20:43:52+00:00",
@@ -2653,6 +2756,7 @@
       "definition": "Leder eller struktur som gjør elektriske signaler om til radiobølger, og radiobølger om til elektriske signaler.",
       "related": [],
       "status": "approved",
+      "approved_sha256": "772c80c4df0af48a14a96747f1b264528f5411b1d8cc1b7c7d5792fca48fd13b",
       "review_log": [
         {
           "at": "2026-10-23T20:43:52+00:00",
@@ -2679,6 +2783,7 @@
         "frekvens"
       ],
       "status": "approved",
+      "approved_sha256": "fafc74f0910c06624ee1ffb86519bd73b0375ffe759a34e8f963ce319bcbc0f8",
       "review_log": [
         {
           "at": "2026-10-23T20:43:52+00:00",
@@ -2703,6 +2808,7 @@
         "vekselspenning"
       ],
       "status": "approved",
+      "approved_sha256": "7fb05622db5e977d4a73f177f223328152b66ec35ba4ab0a62bf4264e6a08c5e",
       "review_log": [
         {
           "at": "2026-10-23T20:43:52+00:00",
@@ -2727,6 +2833,7 @@
         "vekselspenning"
       ],
       "status": "approved",
+      "approved_sha256": "9c10a6252c89c2c115b4ad776fa0d9ac39d1553f8b0a81cdb954a12ede5dbd61",
       "review_log": [
         {
           "at": "2026-10-23T20:43:52+00:00",
@@ -2754,6 +2861,7 @@
         "baandpassfilter"
       ],
       "status": "approved",
+      "approved_sha256": "9e8b47606593b984525b19217d7bd69018c57da650ebcedd9ab49c8ac0ab6129",
       "review_log": [
         {
           "at": "2026-10-23T20:43:52+00:00",
@@ -2778,6 +2886,7 @@
         "filter"
       ],
       "status": "approved",
+      "approved_sha256": "7e1cfc177135b80cc70251d7d7717ec5d8dc6eb9bc7b4290f40388aadbf81d0c",
       "review_log": [
         {
           "at": "2026-10-23T20:43:52+00:00",
@@ -2806,6 +2915,7 @@
         "kondensator"
       ],
       "status": "approved",
+      "approved_sha256": "00a5ae512a425d56e40d41755368eca56fe1c82881e374a6dac2d0726217545b",
       "review_log": [
         {
           "at": "2026-10-23T20:43:52+00:00",
@@ -2836,6 +2946,7 @@
         "transistor"
       ],
       "status": "approved",
+      "approved_sha256": "aee97b7ad88148affc7702d75a244d52f2ec751b1f41a895e779c30b74daf44e",
       "review_log": [
         {
           "at": "2026-10-23T20:43:52+00:00",
@@ -2862,6 +2973,7 @@
         "mottaker"
       ],
       "status": "approved",
+      "approved_sha256": "cf780f141b59d9572bbf44610457718a85ce41705bd100e40965b03eb3ec9317",
       "review_log": [
         {
           "at": "2026-10-23T20:43:52+00:00",
@@ -2885,6 +2997,7 @@
         "antenne"
       ],
       "status": "approved",
+      "approved_sha256": "64663d9d21e1567665f93069dd0d95f537ae2a8f2393401c7e29371f19c18db3",
       "review_log": [
         {
           "at": "2026-10-23T20:43:52+00:00",
@@ -2914,6 +3027,7 @@
         "effekt"
       ],
       "status": "approved",
+      "approved_sha256": "0b73597721ac5851c2d26556b370e9fb174475bb6983473f7e3a8e40737519c7",
       "review_log": [
         {
           "at": "2026-10-24T09:29:59+00:00",
@@ -2943,6 +3057,7 @@
         "elektromotorisk-spenning"
       ],
       "status": "approved",
+      "approved_sha256": "4be91e93eb336979b76f7d988b06d81e12f99e51d79c0e8525b1100ce966db47",
       "review_log": [
         {
           "at": "2026-10-24T09:29:59+00:00",
@@ -2969,6 +3084,7 @@
         "indre-resistans"
       ],
       "status": "approved",
+      "approved_sha256": "3bd317aec13830d372bd5859cef1c92ddb62721aaf7dee0bac9b9bc5bd399397",
       "review_log": [
         {
           "at": "2026-10-24T09:29:59+00:00",
@@ -3000,6 +3116,7 @@
         "swr"
       ],
       "status": "approved",
+      "approved_sha256": "f3eb81eb9f24594fc3e905a71952960223498f845c4d631e1696d5bb31c37864",
       "review_log": [
         {
           "at": "2026-10-24T09:29:59+00:00",
@@ -3025,6 +3142,7 @@
         "dielektrisitetskonstant"
       ],
       "status": "approved",
+      "approved_sha256": "1b8421cd7f3ccf2ea3445b092db5a395d5dbb3ce8487254648844ba56a7290e5",
       "review_log": [
         {
           "at": "2026-10-24T09:29:59+00:00",
@@ -3052,6 +3170,7 @@
         "kapasitans"
       ],
       "status": "approved",
+      "approved_sha256": "9a8d2e5e2da8a5fed271a0bb29c491541c43e7166c233c8ba880ba96824d05b1",
       "review_log": [
         {
           "at": "2026-10-24T09:29:59+00:00",
@@ -3079,6 +3198,7 @@
         "avstemt-krets"
       ],
       "status": "approved",
+      "approved_sha256": "7b423347aeb6a1b85629fd2b2976b644f814d642702b255ea991142a668ad98f",
       "review_log": [
         {
           "at": "2026-10-24T09:29:59+00:00",
@@ -3111,6 +3231,7 @@
         "glattekondensator"
       ],
       "status": "approved",
+      "approved_sha256": "1884d7f8804f3d094ce7232d8749c1ee912264f617dc23ed892d20fdd87fc4cd",
       "review_log": [
         {
           "at": "2026-10-24T09:29:59+00:00",
@@ -3137,6 +3258,7 @@
         "spole"
       ],
       "status": "approved",
+      "approved_sha256": "df6ac1356c1d61a5efecb6de51c39cd280a2e10d0a9c9c40ba558a15845200ff",
       "review_log": [
         {
           "at": "2026-10-24T09:29:59+00:00",
@@ -3166,6 +3288,7 @@
         "transistor"
       ],
       "status": "approved",
+      "approved_sha256": "81c8103962a46ff75cf9f9c81dfddb64e1a635fbdb32ff3174b2d266f445c759",
       "review_log": [
         {
           "at": "2026-10-24T09:29:59+00:00",
@@ -3191,6 +3314,7 @@
         "p-type"
       ],
       "status": "approved",
+      "approved_sha256": "5b0c84fb481daf118c055a94e54e0fbd6334332660a288c2d304cc50a2cc94d7",
       "review_log": [
         {
           "at": "2026-10-24T09:29:59+00:00",
@@ -3228,6 +3352,7 @@
         "n-type"
       ],
       "status": "approved",
+      "approved_sha256": "14934e554d103da6d759f9d73fc3c995e064dff4439ed5c546e634c6771c76a2",
       "review_log": [
         {
           "at": "2026-10-24T09:29:59+00:00",
@@ -3259,6 +3384,7 @@
         "p-type"
       ],
       "status": "approved",
+      "approved_sha256": "2664fb9e1d9bc5c3e3a04042edea644808e091778ab65bb170f9b13dfe0be816",
       "review_log": [
         {
           "at": "2026-10-24T09:29:59+00:00",
@@ -3288,6 +3414,7 @@
         "kondensator"
       ],
       "status": "approved",
+      "approved_sha256": "e23ee0098e8dc128b7c4079ecf146d07ba9e3fe41be39339af36e91c07731dfb",
       "review_log": [
         {
           "at": "2026-10-24T09:29:59+00:00",
@@ -3315,6 +3442,7 @@
         "likespenning"
       ],
       "status": "approved",
+      "approved_sha256": "96992785355592c3a8314932403b68866db2edefcd9eff27e8ce568291f1b165",
       "review_log": [
         {
           "at": "2026-10-24T09:29:59+00:00",
@@ -3340,6 +3468,7 @@
         "forsterkerklasse"
       ],
       "status": "approved",
+      "approved_sha256": "b42a904f4ad247cf7384ad41b5d674f4e4f5237295fc988b9689ba69c5502af0",
       "review_log": [
         {
           "at": "2026-10-24T09:29:59+00:00",
@@ -3371,6 +3500,7 @@
         "virkningsgrad"
       ],
       "status": "approved",
+      "approved_sha256": "2e4cc66a2edda74abb5f08c222ffbc13ec052eeb47b4a3a56ce7bbfc5086d3e3",
       "review_log": [
         {
           "at": "2026-10-24T09:29:59+00:00",
@@ -3401,6 +3531,7 @@
         "harmoniske"
       ],
       "status": "approved",
+      "approved_sha256": "1d53aff39fd685e5e926c8529d81f262dc1aaeff829dd07389f51af9ffad009a",
       "review_log": [
         {
           "at": "2026-10-24T09:29:59+00:00",
@@ -3445,6 +3576,7 @@
         "felteffekttransistor"
       ],
       "status": "approved",
+      "approved_sha256": "9969c766a8a02dbda6e5f64b88a7afb7c800172b92480594a85ee13323129b04",
       "review_log": [
         {
           "at": "2026-10-24T09:29:59+00:00",
@@ -3470,6 +3602,7 @@
         "forsterkningsmodus"
       ],
       "status": "approved",
+      "approved_sha256": "d59c734a8481379595a44679abf7772635acffb965481e69beb5ffe90c32226f",
       "review_log": [
         {
           "at": "2026-10-24T09:29:59+00:00",
@@ -3495,6 +3628,7 @@
         "tommingsmodus"
       ],
       "status": "approved",
+      "approved_sha256": "a0182f77b85926fd44cd10914f22f0643c3ca0a4aa88e7dc438150014a99cc5e",
       "review_log": [
         {
           "at": "2026-10-24T09:29:59+00:00",
@@ -3522,6 +3656,7 @@
         "forspenning"
       ],
       "status": "approved",
+      "approved_sha256": "a5ab9f15488d6ad4295cbed68db5fd906d62859bbd1ddfa63067e47e00e37e4b",
       "review_log": [
         {
           "at": "2026-10-24T09:29:59+00:00",
@@ -3548,6 +3683,7 @@
         "fsk"
       ],
       "status": "approved",
+      "approved_sha256": "d6ada4556fc5e4e704a8dab121e2a29a25c72bf9685c4e25e74157ddfc68688e",
       "review_log": [
         {
           "at": "2026-10-24T09:29:59+00:00",
@@ -3571,6 +3707,7 @@
         "fsk"
       ],
       "status": "approved",
+      "approved_sha256": "feed7ce2f82116b34ffdd5210b0ec2c03b73171d7423c394636d2c5a2802bd69",
       "review_log": [
         {
           "at": "2026-10-24T09:29:59+00:00",
@@ -3601,6 +3738,7 @@
         "sluttforsterker"
       ],
       "status": "approved",
+      "approved_sha256": "10b037234e0e021a76001b773d29be2b3fc8d94b73a729c9da33eb878f06c18c",
       "review_log": [
         {
           "at": "2026-10-24T09:29:59+00:00",
@@ -3646,6 +3784,7 @@
         "deviasjon"
       ],
       "status": "approved",
+      "approved_sha256": "360d415b8ae29734bca01c7e448939c05f1919c721c0fa60348ef0b42b0f82d4",
       "review_log": [
         {
           "at": "2026-10-24T09:29:59+00:00",
@@ -3677,6 +3816,7 @@
         "fasestoy"
       ],
       "status": "approved",
+      "approved_sha256": "e0254a04f11641891d580a51a6d8a93fa0482ad713ca1ee362d916cba3e828be",
       "review_log": [
         {
           "at": "2026-10-24T09:29:59+00:00",
@@ -3703,6 +3843,7 @@
         "frekvensdrift"
       ],
       "status": "approved",
+      "approved_sha256": "a34377ac9b2e7a0d6a8d6c6e85eb1f3293b5e6a9840dc3e48fe008bc3558cfeb",
       "review_log": [
         {
           "at": "2026-10-24T09:29:59+00:00",
@@ -3731,6 +3872,7 @@
         "forsterker"
       ],
       "status": "approved",
+      "approved_sha256": "e8b505033795f4e78fe4a358fefe04856555408097a13e32ca817cbd5c583a27",
       "review_log": [
         {
           "at": "2026-10-24T09:29:59+00:00",
@@ -3771,6 +3913,7 @@
         "frekvensstabilitet"
       ],
       "status": "approved",
+      "approved_sha256": "a8ccb6d36165303cac3a02e24110de0023126d8fdb68522e5872a24bbe229487",
       "review_log": [
         {
           "at": "2026-10-24T09:29:59+00:00",
@@ -3798,6 +3941,7 @@
         "overmodulering"
       ],
       "status": "approved",
+      "approved_sha256": "7d5170e3fc4de1e611f327123511345c172a3148e339c647b1ad2494fb5e0fca",
       "review_log": [
         {
           "at": "2026-10-24T09:29:59+00:00",
@@ -3838,6 +3982,7 @@
         "induktiv-reaktans"
       ],
       "status": "approved",
+      "approved_sha256": "6cebca0e0f30c8a92ace744e73fffc07e2e2128713013047ce3c8bf0e6a58bc9",
       "review_log": [
         {
           "at": "2026-10-24T09:29:59+00:00",
@@ -3865,6 +4010,7 @@
         "frekvenssyntetisator"
       ],
       "status": "approved",
+      "approved_sha256": "f14cbbe050bff6f16fb6e001290cca92e4093b2331f70063109c479c35f85fb8",
       "review_log": [
         {
           "at": "2026-10-24T09:29:59+00:00",
@@ -3890,6 +4036,7 @@
         "avstemt-krets"
       ],
       "status": "approved",
+      "approved_sha256": "e3232f55ccf6a6fa8b124e2a5eba23ddccf7e2664be57562a7b956c49cb8aba8",
       "review_log": [
         {
           "at": "2026-10-24T09:29:59+00:00",
@@ -3915,6 +4062,7 @@
         "frekvensstabilitet"
       ],
       "status": "approved",
+      "approved_sha256": "680f558575116b4762d7d8a2fb89c329446caf75f6146dd89cf61c814be364e4",
       "review_log": [
         {
           "at": "2026-10-24T09:29:59+00:00",
@@ -3942,6 +4090,7 @@
         "frekvensstabilitet"
       ],
       "status": "approved",
+      "approved_sha256": "9b19027d6de1edfa90ca6bcc916b8b9722895d7586b3ce5d40c8c138fc5d5447",
       "review_log": [
         {
           "at": "2026-10-24T09:29:59+00:00",
@@ -3967,6 +4116,7 @@
         "alc"
       ],
       "status": "approved",
+      "approved_sha256": "d5040543d9ae721a6f8bd0fe31a0820f5478e631500338899a8a875892dc7fa9",
       "review_log": [
         {
           "at": "2026-10-24T09:29:59+00:00",
@@ -3992,6 +4142,7 @@
         "skjerming"
       ],
       "status": "approved",
+      "approved_sha256": "287db96d4d70e87a17dff9cb31289f8f73549534599a08a1505ca6432ceb1618",
       "review_log": [
         {
           "at": "2026-10-24T09:29:59+00:00",
@@ -4021,6 +4172,7 @@
         "rf-innslag"
       ],
       "status": "approved",
+      "approved_sha256": "4a1b5510d547778428cf79e858bd38a6120f6fdeafaa84d73f1c6c71f0875bb3",
       "review_log": [
         {
           "at": "2026-10-24T09:29:59+00:00",
@@ -4051,6 +4203,7 @@
         "rf-innslag"
       ],
       "status": "approved",
+      "approved_sha256": "3b8901243ea3a4cb3c599dbc78a665c986f0ce0dc0bca55e7dd9532f0ff3c17f",
       "review_log": [
         {
           "at": "2026-10-24T09:29:59+00:00",
@@ -4081,6 +4234,7 @@
         "frekvensmultiplikator"
       ],
       "status": "approved",
+      "approved_sha256": "4cad2226b663fb8b4ccab55cda7f4f1692f50d37116af0d76b5066756ba06d36",
       "review_log": [
         {
           "at": "2026-10-24T09:29:59+00:00",
@@ -4106,6 +4260,7 @@
         "baandbredde"
       ],
       "status": "approved",
+      "approved_sha256": "c875b1d600b5076e8b9cd3087abdab938b2bf253f7510d2d7fe1f4ddca24eb3c",
       "review_log": [
         {
           "at": "2026-10-24T09:29:59+00:00",
@@ -4133,6 +4288,7 @@
         "blander"
       ],
       "status": "approved",
+      "approved_sha256": "074193ab19efbf9fc101b9e98e727d9a4399654eb7aa41739ef6a710b47e0251",
       "review_log": [
         {
           "at": "2026-10-24T09:29:59+00:00",
@@ -4159,6 +4315,7 @@
         "avstemt-krets"
       ],
       "status": "approved",
+      "approved_sha256": "a02432cc8d23234c4da3776bc251dd194a4594a23ff86ebc50dd9872a5e6f758",
       "review_log": [
         {
           "at": "2026-10-24T09:29:59+00:00",
@@ -4186,6 +4343,7 @@
         "demodulator"
       ],
       "status": "approved",
+      "approved_sha256": "9309142a0a47d492a244338c06063a409f4dae7db30b4904446c4cc0805f5dd7",
       "review_log": [
         {
           "at": "2026-10-24T09:29:59+00:00",
@@ -4212,6 +4370,7 @@
         "forholdsdetektor"
       ],
       "status": "approved",
+      "approved_sha256": "218a13a991735538e30cf058459fee95516cf2eb95ef10d41bb7aa51edfb3af1",
       "review_log": [
         {
           "at": "2026-10-24T09:29:59+00:00",
@@ -4239,6 +4398,7 @@
         "selektivitet"
       ],
       "status": "approved",
+      "approved_sha256": "d3deb7615b056d6d281c92e370a2d3e46d37554783936d36595d5f2b89f8cc8b",
       "review_log": [
         {
           "at": "2026-10-24T09:29:59+00:00",
@@ -4263,6 +4423,7 @@
         "baandbredde"
       ],
       "status": "approved",
+      "approved_sha256": "122bce6c3dd0f1ce3ab84d9f04a38591024372cde2b2cf9536031d1cc19a1f4a",
       "review_log": [
         {
           "at": "2026-10-24T09:29:59+00:00",
@@ -4291,6 +4452,7 @@
         "sinad"
       ],
       "status": "approved",
+      "approved_sha256": "f0bf38f4350a5947f6352fa500a28be8af0c76ed87b1797269d01e1555406dda",
       "review_log": [
         {
           "at": "2026-10-24T09:29:59+00:00",
@@ -4316,6 +4478,7 @@
         "frekvensmodulasjon"
       ],
       "status": "approved",
+      "approved_sha256": "f26ec88b703dc103ba766d9abad93e0318e8398b9681c26f4413f76e8a9c31e6",
       "review_log": [
         {
           "at": "2026-10-24T09:29:59+00:00",
@@ -4341,6 +4504,7 @@
         "antenne"
       ],
       "status": "approved",
+      "approved_sha256": "8893be95495338251b52b9c1c6c91240b394e53a407fe05ce664f18b3e87f18a",
       "review_log": [
         {
           "at": "2026-10-24T22:47:41+00:00",
@@ -4367,6 +4531,7 @@
         "luf"
       ],
       "status": "approved",
+      "approved_sha256": "24a0103158be642ba08cb6a8abb84c1e5a20dcfa17b8d55348168969eb97f570",
       "review_log": [
         {
           "at": "2026-10-24T22:47:41+00:00",
@@ -4393,6 +4558,7 @@
         "ionosfaere"
       ],
       "status": "approved",
+      "approved_sha256": "3f8558858128a7379a835ae6a54236402f342b2cb30c19d35f58fabd01d40819",
       "review_log": [
         {
           "at": "2026-10-24T22:47:41+00:00",
@@ -4418,6 +4584,7 @@
         "ionosfaere"
       ],
       "status": "approved",
+      "approved_sha256": "fb9b2ac76b2823bd2f778ac971ed371dcc1a2079b311167be0b024e7a7c80f5b",
       "review_log": [
         {
           "at": "2026-10-24T22:47:41+00:00",
@@ -4443,6 +4610,7 @@
         "kritisk-frekvens"
       ],
       "status": "approved",
+      "approved_sha256": "0ce2e8e9adc5c799f19b944106c8618cf94d1817e5c965be5bc4bcaccb155b48",
       "review_log": [
         {
           "at": "2026-10-24T22:47:41+00:00",
@@ -4467,6 +4635,7 @@
         "muf"
       ],
       "status": "approved",
+      "approved_sha256": "f13cef1bda9194e223de96c57edcc7dbb7a9b3256bf4f99f022699eb14473f0a",
       "review_log": [
         {
           "at": "2026-10-24T22:47:41+00:00",
@@ -4490,6 +4659,7 @@
         "ionosfaere"
       ],
       "status": "approved",
+      "approved_sha256": "188a41daed8fbc65c4a41bec9a07356fab8a07ab99264398e51eff5990398435",
       "review_log": [
         {
           "at": "2026-10-24T22:47:41+00:00",
@@ -4517,6 +4687,7 @@
         "ionosfaerebolge"
       ],
       "status": "approved",
+      "approved_sha256": "41ca7d159c806a74c185d59441cc8ae1e7dee981f58ae6438e04fabe04dcb0a0",
       "review_log": [
         {
           "at": "2026-10-24T22:47:41+00:00",
@@ -4542,6 +4713,7 @@
         "direktebolge"
       ],
       "status": "approved",
+      "approved_sha256": "9fca009b281b48d9eaa546ac2452f0f2788d772eeaae51cc495affceeacbb9b3",
       "review_log": [
         {
           "at": "2026-10-24T22:47:41+00:00",
@@ -4567,6 +4739,7 @@
         "jordbolge"
       ],
       "status": "approved",
+      "approved_sha256": "f644238da4b523c9e5c4e3d486c8bf83db01238190301ad03b50d6a343290c21",
       "review_log": [
         {
           "at": "2026-10-24T22:47:41+00:00",
@@ -4593,6 +4766,7 @@
         "jordbolge"
       ],
       "status": "approved",
+      "approved_sha256": "f605d3975b4f8fc5b9c05302305fc3de74f9d4b9b8b9d853a5d436e2051e662b",
       "review_log": [
         {
           "at": "2026-10-24T22:47:41+00:00",
@@ -4616,6 +4790,7 @@
         "ionosfaere"
       ],
       "status": "approved",
+      "approved_sha256": "29c80c31df2ce6aca85d6aa316509262e57aee299b0169c9fb4bdcc583c232be",
       "review_log": [
         {
           "at": "2026-10-24T22:47:41+00:00",
@@ -4641,6 +4816,7 @@
         "direktebolge"
       ],
       "status": "approved",
+      "approved_sha256": "404102a886635e63ada44454b758577c927b43a73ecd2ecb3a25440334f0adff",
       "review_log": [
         {
           "at": "2026-10-24T22:47:41+00:00",
@@ -4671,6 +4847,7 @@
         "ionosfaere"
       ],
       "status": "approved",
+      "approved_sha256": "65978428b5d5d02caa46547c918da5d70602b385fb49113479710b0e65210e13",
       "review_log": [
         {
           "at": "2026-10-24T22:47:41+00:00",
@@ -4694,6 +4871,7 @@
       "definition": "Oversikt over hvordan et amatørbånd deles inn, med egne deler for for eksempel CW, smalbåndsmoduser og tale. IARU lager båndplanene for hver region.",
       "related": [],
       "status": "approved",
+      "approved_sha256": "073f076f44518f0be350ad4ac2a99d43bb82939eac5d236f67be3d284ea8cfc0",
       "review_log": [
         {
           "at": "2026-10-24T22:47:41+00:00",
@@ -4717,6 +4895,7 @@
       "definition": "Kode på tre bokstaver som begynner med Q og står for et fast spørsmål eller svar i radiotrafikk, for eksempel om frekvens, styrke eller forstyrrelser.",
       "related": [],
       "status": "approved",
+      "approved_sha256": "a2369b8b557bb218b9aab9d660105523de93a8e1f1fa899554ddaca24a59d296",
       "review_log": [
         {
           "at": "2026-10-24T22:47:41+00:00",
@@ -4742,6 +4921,7 @@
         "s-meter"
       ],
       "status": "approved",
+      "approved_sha256": "d4d73200924e27d2ed700e09e0700d71565eb3a57d235bcd3308639a83e0991c",
       "review_log": [
         {
           "at": "2026-10-24T22:47:41+00:00",
@@ -4769,6 +4949,7 @@
         "sampling"
       ],
       "status": "approved",
+      "approved_sha256": "405fa08379afdc4af226b70c45075a99b0391ffb0b1495b29906022ccd1dc606",
       "review_log": [
         {
           "at": "2026-10-24T22:47:41+00:00",
@@ -4794,6 +4975,7 @@
         "ad-omformer"
       ],
       "status": "approved",
+      "approved_sha256": "47ac6637e7bd2722c79438e192371e9b32a90b97264cfd01d71544d364b59b2d",
       "review_log": [
         {
           "at": "2026-10-24T22:47:41+00:00",
@@ -4823,6 +5005,7 @@
         "nyquist-frekvens"
       ],
       "status": "approved",
+      "approved_sha256": "3a49316d641bcc1cdeb44a546e3093c412a75314e9255cf728dbe0afd2ca6aa2",
       "review_log": [
         {
           "at": "2026-10-24T22:47:41+00:00",
@@ -4849,6 +5032,7 @@
         "aliasing"
       ],
       "status": "approved",
+      "approved_sha256": "5a594444e610f09608c7333be4833093dba9e398ad8c84de5770212bfe6c28fa",
       "review_log": [
         {
           "at": "2026-10-24T22:47:41+00:00",
@@ -4873,6 +5057,7 @@
         "sampling"
       ],
       "status": "approved",
+      "approved_sha256": "3756a9bf1ab6f0b4e3f870871beac66123865db56555bbc072406951937dc6be",
       "review_log": [
         {
           "at": "2026-10-24T22:47:41+00:00",
@@ -4899,6 +5084,7 @@
         "sampling"
       ],
       "status": "approved",
+      "approved_sha256": "8bf080d8b9dd7225c35f27eb03adfe5fab71a80805db8a41765adafddcf77fa6",
       "review_log": [
         {
           "at": "2026-10-24T22:47:41+00:00",
@@ -4925,6 +5111,7 @@
         "sdr"
       ],
       "status": "approved",
+      "approved_sha256": "65e36b3867a98cb3f945bcd58002d8bb0af2de2cd18beaf19ae2b46d46a80077",
       "review_log": [
         {
           "at": "2026-10-24T22:47:41+00:00",
@@ -4951,6 +5138,7 @@
         "ad-omformer"
       ],
       "status": "approved",
+      "approved_sha256": "7334fdb5920e8b3607c10eb36d132632828d2ec1e8b65866b1a62e6564ac6726",
       "review_log": [
         {
           "at": "2026-10-24T22:47:41+00:00",
@@ -4977,6 +5165,7 @@
         "dsp"
       ],
       "status": "approved",
+      "approved_sha256": "ce8fb1b371c505217be3acdfb8cb57b0ed2513480676229e4a9e88b3a9c3f1f1",
       "review_log": [
         {
           "at": "2026-10-24T22:47:41+00:00",
@@ -5003,6 +5192,7 @@
         "dsp"
       ],
       "status": "approved",
+      "approved_sha256": "23bf3179c2fc95b9d17b55f50d0dbb7a375b7aed82cc0732d01fc259be3d86ac",
       "review_log": [
         {
           "at": "2026-10-24T22:47:41+00:00",
@@ -5028,6 +5218,7 @@
         "sikkerhetsjording"
       ],
       "status": "approved",
+      "approved_sha256": "619cb274b969d7d86c8ccbc7c56e217cdb3827750c474e4d031d13bff5c0b75b",
       "review_log": [
         {
           "at": "2026-10-24T22:47:41+00:00",
@@ -5052,6 +5243,7 @@
         "utjevningsjording"
       ],
       "status": "approved",
+      "approved_sha256": "bf8cb4632e4c99326d870434b25f4b09285e3a8cceb1b88c3f4263f14dcb3236",
       "review_log": [
         {
           "at": "2026-10-24T22:47:41+00:00",
@@ -5075,6 +5267,7 @@
         "sikkerhetsjording"
       ],
       "status": "approved",
+      "approved_sha256": "fc345ace89d5df1f214f5c7f56710e8e5602ffcb286514ffae3ed0ed944a484a",
       "review_log": [
         {
           "at": "2026-10-24T22:47:41+00:00",
@@ -5100,6 +5293,7 @@
         "torrlodding"
       ],
       "status": "approved",
+      "approved_sha256": "b43f84d41b9590956510f7f665b34a36b5edd8e5398358cb2bf0c54d23c46b8e",
       "review_log": [
         {
           "at": "2026-10-24T22:47:41+00:00",
@@ -5125,6 +5319,7 @@
         "flussmiddel"
       ],
       "status": "approved",
+      "approved_sha256": "846008cd025e570b59849b0a71634dc93956d05c8450106f9f4a9075462b9623",
       "review_log": [
         {
           "at": "2026-10-24T22:47:41+00:00",
@@ -5149,6 +5344,7 @@
         "multimeter"
       ],
       "status": "approved",
+      "approved_sha256": "56bc569737be14db0c1830a86b67ac274cbbd80b7d7e42590743dfc3bedffeb9",
       "review_log": [
         {
           "at": "2026-10-24T22:47:41+00:00",
@@ -5174,6 +5370,7 @@
         "dreiespoleinstrument"
       ],
       "status": "approved",
+      "approved_sha256": "9f81affeb649529d2755552a5e63551603aee80da0750a4c8874968727819549",
       "review_log": [
         {
           "at": "2026-10-24T22:47:41+00:00",
@@ -5199,6 +5396,7 @@
         "dreiespoleinstrument"
       ],
       "status": "approved",
+      "approved_sha256": "3b7b43053299b760ab9e178861531a99c6495aa0561d7ef8e05a34e41b84c481",
       "review_log": [
         {
           "at": "2026-10-24T22:47:41+00:00",
@@ -5225,6 +5423,7 @@
         "toppverdi"
       ],
       "status": "approved",
+      "approved_sha256": "7c92778ee3696c1a19c7bbb9b4e434d107dd79b089a9e39fe0f1648a7ff33197",
       "review_log": [
         {
           "at": "2026-10-24T22:47:41+00:00",
@@ -5249,6 +5448,7 @@
         "swr"
       ],
       "status": "approved",
+      "approved_sha256": "f89c3ffff581bb30dcc4ec9b5a9f715720bd9e65b99b0c073a4beef1b2544846",
       "review_log": [
         {
           "at": "2026-10-24T22:47:41+00:00",
@@ -5274,6 +5474,7 @@
         "avstemt-krets"
       ],
       "status": "approved",
+      "approved_sha256": "12e08055c4da8a35c5bec0163a2ce88588a4f80107b4bcdbd213017b7f669525",
       "review_log": [
         {
           "at": "2026-10-24T22:47:41+00:00",
@@ -5298,6 +5499,7 @@
         "frekvensteller"
       ],
       "status": "approved",
+      "approved_sha256": "8d0f60bb31739a2a0c2b8fd3a5b5aaf470c89d59635515a8e9eb9d923249b569",
       "review_log": [
         {
           "at": "2026-10-24T22:47:41+00:00",
@@ -5322,6 +5524,7 @@
         "ppm"
       ],
       "status": "approved",
+      "approved_sha256": "f52fa7a239d873b65f1ff379d9167d0d756187b01edc57d47fd0a11a652776fe",
       "review_log": [
         {
           "at": "2026-10-24T22:47:41+00:00",
@@ -5346,6 +5549,7 @@
         "periode"
       ],
       "status": "approved",
+      "approved_sha256": "ea659ba6631987e755f604cf29a50833944a3deefd1ea285c1001c00d82046f7",
       "review_log": [
         {
           "at": "2026-10-24T22:47:41+00:00",
@@ -5370,6 +5574,7 @@
         "dbw"
       ],
       "status": "approved",
+      "approved_sha256": "3d3a852a6f8258cc65ac9c426ab4f7aa1de6695d0fa5697edc026287b147a7cb",
       "review_log": [
         {
           "at": "2026-10-24T22:47:41+00:00",
@@ -5392,6 +5597,7 @@
         "desibel"
       ],
       "status": "approved",
+      "approved_sha256": "dabe114018dcc0f712817b41003089087fde1c675600edb3069bc4e76cac6afa",
       "review_log": [
         {
           "at": "2026-10-24T22:47:41+00:00",
@@ -5416,6 +5622,7 @@
         "desibel"
       ],
       "status": "approved",
+      "approved_sha256": "8155090ff28cbb24591c1f81b17447def0020fdbab079d37f54c8c6ea217e0f0",
       "review_log": [
         {
           "at": "2026-10-24T22:47:41+00:00",
@@ -5440,6 +5647,7 @@
         "immunitet"
       ],
       "status": "approved",
+      "approved_sha256": "c885754dc1b47f90dea8c93cbcd09b1823f5a729dc53fbdddfbf2f99901351e3",
       "review_log": [
         {
           "at": "2026-10-24T22:47:41+00:00",
@@ -5464,6 +5672,7 @@
         "emc"
       ],
       "status": "approved",
+      "approved_sha256": "2c94a7612b204a05439013e15a4462f0067ff22324a7552a8b0261309d2b2437",
       "review_log": [
         {
           "at": "2026-10-24T22:47:41+00:00",
@@ -5488,6 +5697,7 @@
         "feltstyrke"
       ],
       "status": "approved",
+      "approved_sha256": "479457b0bbbab6dc405ffd75d3425410d64d9ceada2b2aa1eef80df34fdffc30",
       "review_log": [
         {
           "at": "2026-10-24T22:47:41+00:00",
@@ -5512,6 +5722,7 @@
         "erp"
       ],
       "status": "approved",
+      "approved_sha256": "8106bd9a2d4df8bf40e8fb311ba2ff29e32229072c334910c1a5fa32450fdaf0",
       "review_log": [
         {
           "at": "2026-10-24T22:47:41+00:00",
@@ -5537,6 +5748,7 @@
         "ferrittring"
       ],
       "status": "approved",
+      "approved_sha256": "abf77cc4f4ab2ec61813cc8ea0bd33c9797d5d6fbdc11e3f53f8f1f205861f5d",
       "review_log": [
         {
           "at": "2026-10-24T22:47:41+00:00",
@@ -5561,6 +5773,7 @@
         "blokkering"
       ],
       "status": "approved",
+      "approved_sha256": "343d2280ee8908a83e6f1038dbcfee07453fa8e6e2eda2972387315c9814c6a0",
       "review_log": [
         {
           "at": "2026-10-24T22:47:41+00:00",
@@ -5587,6 +5800,7 @@
         "kryssmodulasjon"
       ],
       "status": "approved",
+      "approved_sha256": "b520e14a84e24f2a4f6b4df99ecd822db3b6c59ad1cbc3df8c14b06acdbf7890",
       "review_log": [
         {
           "at": "2026-10-24T22:47:41+00:00",
@@ -5612,6 +5826,7 @@
         "ferrittring"
       ],
       "status": "approved",
+      "approved_sha256": "6b3b84bf652335173e81264c85d53ffcdc1a1cc50cf73ce2ba32b999096f8014",
       "review_log": [
         {
           "at": "2026-10-24T22:47:41+00:00",
@@ -5634,6 +5849,7 @@
         "fellesmodus"
       ],
       "status": "approved",
+      "approved_sha256": "78d0436f0eb09e204049b5fbc9fb46d9d8ec2f9b7a9e49fec7fb9ff0d0d15646",
       "review_log": [
         {
           "at": "2026-10-24T22:47:41+00:00",
@@ -5662,6 +5878,7 @@
         "baandpassfilter"
       ],
       "status": "approved",
+      "approved_sha256": "a48378e37aa9e2a6e33241e59f2f5d942fba673451b32188070c5bcacb65eb5a",
       "review_log": [
         {
           "at": "2026-10-24T22:47:41+00:00",
@@ -5687,6 +5904,7 @@
         "baandstoppfilter"
       ],
       "status": "approved",
+      "approved_sha256": "af898e96791fbe9322ca17e5c669640f530c4f2b2a640b92df8d0668bc45ab73",
       "review_log": [
         {
           "at": "2026-10-24T22:47:41+00:00",
@@ -5715,6 +5933,7 @@
         "karakteristisk-impedans"
       ],
       "status": "approved",
+      "approved_sha256": "e963d5791b3f5e7f04da2c402d7c3506b5b0c741ab88dac67d7bf9e9e13be4da",
       "review_log": [
         {
           "at": "2026-10-24T22:47:41+00:00",
@@ -5742,6 +5961,7 @@
         "balun"
       ],
       "status": "approved",
+      "approved_sha256": "e9c173f79a425e5ba942cd96d29cda92c15650e84c8658814b1b1362c85fd594",
       "review_log": [
         {
           "at": "2026-10-24T22:47:41+00:00",
@@ -5767,6 +5987,7 @@
         "impedans"
       ],
       "status": "approved",
+      "approved_sha256": "4ecb5572dc4b77567693e4302aea03e327879e44469adb33ab9d4a0f26b95a80",
       "review_log": [
         {
           "at": "2026-10-24T22:47:41+00:00",
@@ -5792,6 +6013,7 @@
         "dipol"
       ],
       "status": "approved",
+      "approved_sha256": "3c13510bb06736a960d4a98ddc1957d1cea04927002fa33c7bd680c567bca1ba",
       "review_log": [
         {
           "at": "2026-10-24T22:47:41+00:00",
@@ -5817,6 +6039,7 @@
         "returtap"
       ],
       "status": "approved",
+      "approved_sha256": "98760e46a607cc97983f614d2e84fb51f0daf818a839de8d329cec03599e761e",
       "review_log": [
         {
           "at": "2026-10-24T22:47:41+00:00",
@@ -5841,6 +6064,7 @@
         "staende-bolger"
       ],
       "status": "approved",
+      "approved_sha256": "1c799770cbb28b13574d2855dbeda2e2752e9f04017d14676edca8a3f9c9c476",
       "review_log": [
         {
           "at": "2026-10-24T22:47:41+00:00",
@@ -5866,6 +6090,7 @@
         "fodekabel"
       ],
       "status": "approved",
+      "approved_sha256": "daa076aeb25f6daeb81cb5c40bef889f87932a71ba751ba12219dc2ac31440bc",
       "review_log": [
         {
           "at": "2026-10-24T22:47:41+00:00",
@@ -5890,6 +6115,7 @@
         "fodekabel"
       ],
       "status": "approved",
+      "approved_sha256": "61457ff4434190026ea60105198e0a14851272964a2c37a14355163d973e0ae4",
       "review_log": [
         {
           "at": "2026-10-24T22:47:41+00:00",
@@ -5920,6 +6146,7 @@
         "balun"
       ],
       "status": "approved",
+      "approved_sha256": "f8882ea6ca26b066ccdd9c78e07e9feca35c8962e642ecf6964cc0c18c342038",
       "review_log": [
         {
           "at": "2026-10-24T22:47:41+00:00",
@@ -5945,6 +6172,7 @@
         "dipol"
       ],
       "status": "approved",
+      "approved_sha256": "1e17a7dc22c205ea576d101384b01314d17725344ea780208fcfb1d2d27a165d",
       "review_log": [
         {
           "at": "2026-10-24T22:47:41+00:00",
@@ -5970,6 +6198,7 @@
         "antenne"
       ],
       "status": "approved",
+      "approved_sha256": "347e9675c4980a543277b2a704df0b2caaf247c6be295286f985027aac87c436",
       "review_log": [
         {
           "at": "2026-10-24T22:47:41+00:00",
@@ -5998,6 +6227,7 @@
         "stralingsdiagram"
       ],
       "status": "approved",
+      "approved_sha256": "52ef0daf0e23194245042183e3395a696bc3328e0bc8123f1ae2eef14e5392c1",
       "review_log": [
         {
           "at": "2026-10-24T22:47:41+00:00",
@@ -6024,6 +6254,7 @@
         "avstemt-krets"
       ],
       "status": "approved",
+      "approved_sha256": "1107087e3124b566d969116b2676f67e189c2804a1b23a1f56f12619c25832d2",
       "review_log": [
         {
           "at": "2026-10-24T22:47:41+00:00",
@@ -6049,6 +6280,7 @@
         "spole"
       ],
       "status": "approved",
+      "approved_sha256": "2cae0a76a904ed42bfcd21c15c83e27b7fbf73f4c74dc986f24ef709576d915e",
       "review_log": [
         {
           "at": "2026-10-24T22:47:41+00:00",
@@ -6078,6 +6310,7 @@
         "swr"
       ],
       "status": "approved",
+      "approved_sha256": "5e24dab227ec3a25cab387916c82744faf29a8e49e23c59f19a40474ce8bdc07",
       "review_log": [
         {
           "at": "2026-10-24T22:47:41+00:00",
@@ -6103,6 +6336,7 @@
         "prefiks"
       ],
       "status": "approved",
+      "approved_sha256": "a3d5cdd60cc093f5d191708f1bb49bbf0777857a05939e69eb45288e0eea471c",
       "review_log": [
         {
           "at": "2026-10-24T22:47:41+00:00",
@@ -6128,6 +6362,7 @@
         "kallesignal"
       ],
       "status": "approved",
+      "approved_sha256": "16cf3d892f5e129e95a97689437f5805546bc8531e5af7f33800232629098478",
       "review_log": [
         {
           "at": "2026-10-24T22:47:41+00:00",
@@ -6152,6 +6387,7 @@
       "definition": "En fast, automatisk stasjon som tar imot signaler på én frekvens og sender dem ut igjen på en annen, slik at håndholdte og mobile stasjoner når lenger.",
       "related": [],
       "status": "approved",
+      "approved_sha256": "c7de39c9f843c85dcbca50167ffe7ef0baa6860151997da23d4cbc902e4708a1",
       "review_log": [
         {
           "at": "2026-10-24T22:47:41+00:00",
@@ -6176,6 +6412,7 @@
         "q-kode"
       ],
       "status": "approved",
+      "approved_sha256": "80624860968bdafb8a490d2bb9948cac83acad70109715a5d7adab5de1c8653b",
       "review_log": [
         {
           "at": "2026-10-24T22:47:41+00:00",
@@ -6200,6 +6437,7 @@
         "iaru"
       ],
       "status": "approved",
+      "approved_sha256": "88a285e6caea29733ce12fba3a4129003385cce225749345e99875b094624cd8",
       "review_log": [
         {
           "at": "2026-10-24T22:47:41+00:00",
@@ -6224,6 +6462,7 @@
         "itu"
       ],
       "status": "approved",
+      "approved_sha256": "7314b06659c0ba61ed8c51f4540c1c4c21bde99d0c6e7cbc91c3a8a3427ce6a9",
       "review_log": [
         {
           "at": "2026-10-24T22:47:41+00:00",
@@ -6247,6 +6486,7 @@
         "kallesignal"
       ],
       "status": "approved",
+      "approved_sha256": "55b42a62bf831cae659a2a5ed5c66bc24f4dc74193885cfe99799485cc8009cb",
       "review_log": [
         {
           "at": "2026-10-24T22:47:41+00:00",

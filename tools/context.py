@@ -6,9 +6,11 @@ from pathlib import Path
 from typing import Any
 
 from . import importer, questions, structure, visuals
-from .common import Paths, ToolError, read_json
+from .common import Paths, ToolError, canonical_hash, read_json
 
 GLOSSARY_STATUSES = ("needs_review", "approved", "retired")
+# what an approval covers: changing any of these sends the term back to review
+TERM_CONTENT_KEYS = ("nb", "en", "definition", "related")
 
 
 @dataclass
@@ -25,7 +27,13 @@ class Context:
     cache: dict[str, Any] = field(default_factory=dict)
 
 
+def term_hash(term: dict[str, Any]) -> str:
+    return canonical_hash({k: term.get(k) for k in TERM_CONTENT_KEYS})
+
+
 def load_glossary(paths: Paths) -> dict[str, dict[str, Any]]:
+    """The terms by id. An approval is pinned to the content it covered: a term edited
+    after it was approved is loaded as needs_review (marked `changed_since_approval`)."""
     if not paths.glossary_file.exists():
         return {}
     data = read_json(paths.glossary_file)
@@ -33,8 +41,15 @@ def load_glossary(paths: Paths) -> dict[str, dict[str, Any]]:
     for t in data.get("terms", []):
         if t["id"] in out:
             raise ToolError(f"glossary: duplicate id {t['id']}")
+        if t.get("status") == "approved" and t.get("approved_sha256") != term_hash(t):
+            t["status"] = "needs_review"
+            t["changed_since_approval"] = True
         out[t["id"]] = t
     return out
+
+
+def stale_terms(glossary: dict[str, dict[str, Any]]) -> list[str]:
+    return [tid for tid, t in glossary.items() if t.get("changed_since_approval")]
 
 
 def validate_glossary(glossary: dict[str, dict[str, Any]]) -> list[str]:
