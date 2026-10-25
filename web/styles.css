@@ -105,6 +105,9 @@ a { color: var(--action); text-underline-offset: 3px; }
 .site-footer p { max-width: 38rem; }
 .site-footer a { color: var(--frame-link); }
 .site-footer .footer-report { color: var(--frame-ink); }
+.site-footer .footer-jump { margin-top: 0; }
+.site-footer .btn-link { color: var(--frame-link); padding: 0; }
+.site-footer .btn-link:hover { color: var(--frame-ink); }
 .preview-banner { background: var(--bad); color: #fff; text-align: center; padding: 8px 16px; font-weight: 700; }
 
 /* main is also .wrap, whose padding shorthand would otherwise win */
@@ -241,6 +244,24 @@ select {
 .confirm-actions { display: flex; flex-wrap: wrap-reverse; justify-content: flex-end; gap: 10px; }
 /* side by side when they fit, stacked (action on top) when they do not; labels never wrap */
 .confirm-actions .btn { flex: 1 1 auto; white-space: nowrap; padding-left: 16px; padding-right: 16px; }
+
+.prompt-field { margin: 0 0 16px; }
+.prompt-field label { display: block; font-weight: 700; margin-bottom: 6px; }
+/* the field and its fixed prefix ("q-") look like one box */
+.prompt-input {
+  display: flex; align-items: stretch; min-height: 44px; border-radius: var(--radius);
+  border: 2px solid var(--line); background: var(--surface); color: var(--ink);
+}
+.prompt-input:focus-within { outline: 3px solid var(--focus); outline-offset: 2px; }
+.prompt-input:has(input[aria-invalid=true]) { border-color: var(--bad); }
+.prompt-prefix { display: flex; align-items: center; padding: 0 2px 0 10px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.prompt-input input {
+  font: inherit; font-variant-numeric: tabular-nums; flex: 1; min-width: 0; padding: 8px 10px; border: 0;
+  background: transparent; color: inherit; outline: none;
+}
+.prompt-prefix + input { padding-left: 0; }
+.prompt-error { margin: 6px 0 0; }
+.prompt-error:empty { display: none; }
 
 /* ---- question ---- */
 .q-head { display: grid; grid-template-columns: 1fr auto; gap: 0 12px; align-items: center; }

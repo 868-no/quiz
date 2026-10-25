@@ -18,7 +18,7 @@ if (!JSDOM && process.env.RADIOQUIZ_REQUIRE_JSDOM) throw new Error('jsdom is req
 const skip = JSDOM ? false : 'jsdom not installed';
 
 function setupDom(url = 'http://localhost/') {
-  const dom = new JSDOM('<!doctype html><html lang="nb"><body><main id="app"></main></body></html>', { url });
+  const dom = new JSDOM('<!doctype html><html lang="nb"><body><main id="app"></main><footer><p id="footer-jump" hidden></p></footer></body></html>', { url });
   const w = dom.window;
   Object.assign(globalThis, {
     window: w, document: w.document, Element: w.Element, Node: w.Node, localStorage: w.localStorage,
@@ -413,6 +413,63 @@ test('pasting a question link into an open tab opens that question', { skip }, a
   await new Promise((r) => w.addEventListener('hashchange', r, { once: true }));
   await new Promise((r) => setTimeout(r, 0));
   assert.equal($(root, '#q-progress').textContent, 'Spørsmål q-2001');
+});
+
+test('question ids are read from what people type or paste', async () => {
+  const { parseQuestionId } = await import('../../web/js/ui/app.js');
+  for (const [text, id] of [['q-0045', 'q-0045'], ['Q45', 'q-0045'], ['45', 'q-0045'], [' #q-0045 ', 'q-0045'],
+    ['https://quiz.868.no/#q-0045', 'q-0045'], ['q 7', 'q-0007'], ['q-12345', 'q-12345']]) assert.equal(parseQuestionId(text), id, text);
+  for (const text of ['', 'abc', 'q-', '4,5', 'kapittel 4']) assert.equal(parseQuestionId(text), null, text);
+});
+
+test('"Gå til et bestemt spørsmål" in the footer asks for the number and opens that question', { skip }, async () => {
+  const { root, w } = await app(makeBank({ perChapter: { 2: 3 } }));
+  const doc = root.ownerDocument;
+  assert.equal($(doc, '#footer-jump').hidden, false, 'the link is shown in the footer');
+  const opener = $(doc, '#footer-jump button');
+  opener.click();
+  const d = $(doc, 'dialog.confirm-dialog');
+  assert.ok(d, 'the dialog opens');
+  assert.equal(d.getAttribute('aria-labelledby'), 'prompt-title');
+  const input = $(d, '#prompt-input');
+  assert.equal(doc.activeElement, input, 'the field has focus');
+  assert.equal($(d, `label[for=prompt-input]`).textContent, 'Spørsmålsnummer');
+  assert.equal($(d, '.prompt-prefix').textContent, 'q-', '"q-" stands in front of the field');
+  assert.equal(input.getAttribute('aria-labelledby'), 'prompt-label prompt-prefix');
+  // a typed or pasted "q-", or a whole link, is taken off: the prefix is already there
+  for (const [typed, kept] of [['q-0045', '0045'], ['Q45', '45'], ['https://quiz.868.no/#q-0012', '0012'], ['q', ''], ['-', ''], ['-45', '45']]) {
+    input.value = typed;
+    input.dispatchEvent(new w.Event('input', { bubbles: true }));
+    assert.equal(input.value, kept, typed);
+  }
+  input.value = '';
+  const submit = () => $(d, '[data-dialog=confirm]').click();
+  // empty, nonsense and unknown numbers are explained in the dialog, which stays open
+  submit();
+  assert.equal($(d, '#prompt-error').textContent, 'Skriv nummeret på spørsmålet.');
+  assert.equal(input.getAttribute('aria-invalid'), 'true');
+  input.value = 'abc';
+  input.dispatchEvent(new w.Event('input', { bubbles: true }));
+  assert.equal($(d, '#prompt-error').textContent, '', 'typing clears the error');
+  assert.equal(input.getAttribute('aria-invalid'), null);
+  submit();
+  assert.match($(d, '#prompt-error').textContent, /^Skriv bare sifrene/);
+  input.value = '9999';
+  submit();
+  assert.match($(d, '#prompt-error').textContent, /^Fant ikke spørsmål q-9999\./);
+  assert.ok(d.isConnected);
+  // cancelling returns focus to the link
+  $(d, '[data-dialog=cancel]').click();
+  assert.equal($(doc, 'dialog.confirm-dialog'), null);
+  assert.equal(doc.activeElement, opener);
+  // a known number opens the question, with its link in the address
+  opener.click();
+  $(doc, '#prompt-input').value = 'Q2002'; // not typed, so not stripped yet: submitting reads it the same way
+  $(doc, 'dialog.confirm-dialog [data-dialog=confirm]').click();
+  assert.equal($(doc, 'dialog.confirm-dialog'), null);
+  assert.equal($(root, '#q-progress').textContent, 'Spørsmål q-2002');
+  assert.equal(doc.activeElement, $(root, '#q-progress'));
+  assert.equal(w.location.hash, '#q-2002');
 });
 
 function fakeObserver(observed) {

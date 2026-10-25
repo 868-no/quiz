@@ -15,7 +15,7 @@ const SVG_TAGS = new Set([
   'svg', 'g', 'path', 'line', 'polyline', 'polygon', 'rect', 'circle', 'ellipse', 'text', 'tspan',
   'title', 'desc', 'defs', 'marker', 'pattern',
 ]);
-const ATTR_OK = /^(class|id|role|tabindex|type|lang|title|hidden|href|rel|target|name|value|checked|disabled|for|selected|max|min|scope|open|autocomplete|novalidate|viewBox|width|height|x|y|dx|dy|x1|y1|x2|y2|cx|cy|r|rx|ry|d|points|fill|stroke|stroke-width|stroke-dasharray|stroke-linecap|stroke-linejoin|font-size|font-weight|font-style|text-anchor|dominant-baseline|transform|marker-end|marker-start|markerWidth|markerHeight|refX|refY|orient|preserveAspectRatio|pathLength|focusable|patternUnits|opacity|baseline-shift|aria-[a-z]+|data-[a-z-]+)$/;
+const ATTR_OK = /^(class|id|role|tabindex|type|lang|title|hidden|href|rel|target|name|value|checked|disabled|for|selected|max|min|scope|open|autocomplete|autocapitalize|spellcheck|inputmode|placeholder|novalidate|viewBox|width|height|x|y|dx|dy|x1|y1|x2|y2|cx|cy|r|rx|ry|d|points|fill|stroke|stroke-width|stroke-dasharray|stroke-linecap|stroke-linejoin|font-size|font-weight|font-style|text-anchor|dominant-baseline|transform|marker-end|marker-start|markerWidth|markerHeight|refX|refY|orient|preserveAspectRatio|pathLength|focusable|patternUnits|opacity|baseline-shift|aria-[a-z]+|data-[a-z-]+)$/;
 
 /** Create a vnode. Children may be strings, numbers, vnodes, arrays, null/false (skipped). */
 export function h(t, a = {}, ...children) {

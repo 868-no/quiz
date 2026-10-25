@@ -17,7 +17,7 @@ import { missedIds, parseMissed, recordAnswer, recordSolved, solvedByChapter } f
 import { createGlossary } from './glossary.js';
 import { chapterDial, roundDial, setDialWidth } from './dial.js';
 import { fitFigures } from './figures.js';
-import { askConfirm } from './dialog.js';
+import { askConfirm, askText } from './dialog.js';
 
 const LETTERS = ['A', 'B', 'C', 'D', 'E', 'F'];
 const DIFFICULTY_LABEL = { easy: 'Lett', medium: 'Middels', hard: 'Vanskelig' };
@@ -29,6 +29,15 @@ const EXAM_QUESTIONS = 100;
 const EXAM_PASS_SHARE = 0.75;
 const examPassMark = (total) => Math.ceil(total * EXAM_PASS_SHARE);
 const LINK_RE = /^#(q-\d+)$/;
+
+/**
+ * The question id in what someone typed or pasted: "q-0045", "Q45", "45", "#q-0045" or a
+ * whole link ending in #q-0045. Returns the id ("q-0045") or null.
+ */
+export function parseQuestionId(text) {
+  const m = /^(?:.*#)?\s*q?\s*-?\s*(\d{1,6})\s*$/i.exec(String(text).trim());
+  return m ? `q-${m[1].padStart(4, '0')}` : null;
+}
 
 const reducedMotion = () => Boolean(globalThis.matchMedia && globalThis.matchMedia('(prefers-reduced-motion: reduce)').matches);
 
@@ -133,6 +142,34 @@ export function createApp(root, bank) {
     state.session = res.session;
     state.choice = null;
     renderQuestion(focus);
+  }
+
+  /** Ask for a question number and open that question (the link at the top of the footer). */
+  function askJump(opener) {
+    askText({
+      title: 'Gå til spørsmål',
+      message: 'Nummeret står under forklaringen når du har svart, for eksempel «Spørsmål q-0045». Du kan også lime inn en lenke til et spørsmål.',
+      label: 'Spørsmålsnummer',
+      prefix: 'q-',
+      placeholder: '0045',
+      inputmode: 'numeric',
+      // "q-" stands in front of the field, so a typed or pasted "q-" (or a whole link) is taken off
+      // (also while it is typed one key at a time: "q", then "-")
+      normalize: (v) => v.replace(/^.*#/, '').replace(/^[\sq-]+/i, ''),
+      submit: 'Gå til spørsmålet',
+      returnTo: opener,
+      validate: (v) => {
+        if (!v) return 'Skriv nummeret på spørsmålet.';
+        const id = parseQuestionId(v);
+        if (!id) return 'Skriv bare sifrene, for eksempel 0045 eller 45.';
+        return byId.has(id) ? '' : `Fant ikke spørsmål ${id}. Det kan ha blitt fjernet, eller nummeret er skrevet feil.`;
+      },
+    }, (v) => {
+      const id = parseQuestionId(v);
+      // the address becomes the question's link, as when it is opened from one
+      if (globalThis.history && globalThis.location) globalThis.history.pushState(null, '', `#${id}`);
+      openLinked(id, '#q-progress');
+    });
   }
 
   /** Leave a round and go back to the setup screen (a saved round stays resumable). */
@@ -870,6 +907,14 @@ export function createApp(root, bank) {
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(() => fitFigures(root), 150);
   });
+
+  // The link sits in the page footer, outside the app's own area, on every screen.
+  const jumpSlot = root.ownerDocument.getElementById('footer-jump');
+  if (jumpSlot && bank.chapters.some((c) => c.status === 'available')) {
+    jumpSlot.replaceChildren(toDOM(h('button', { type: 'button', class: 'btn-link' }, 'Gå til et bestemt spørsmål')));
+    jumpSlot.firstChild.addEventListener('click', (e) => askJump(e.currentTarget));
+    jumpSlot.hidden = false;
+  }
 
   const first = linkedId();
   if (first) openLinked(first, null); // no focus move on first load

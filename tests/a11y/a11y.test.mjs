@@ -63,6 +63,18 @@ async function screens(page, url, check) {
   await page.goto(`${url}#q-9999`);
   await page.waitForSelector('.link-notice');
   await check('link to a missing question');
+  // jumping to a question by its number, in the app's own dialog
+  await page.goto(url);
+  await page.click('#footer-jump button');
+  await page.waitForSelector('dialog.confirm-dialog[open] #prompt-input');
+  await check('jump-to-question dialog');
+  await page.fill('#prompt-input', '9999');
+  await page.keyboard.press('Enter');
+  await page.waitForSelector('#prompt-error:not(:empty)');
+  await check('jump-to-question dialog with an error');
+  await page.fill('#prompt-input', '1');
+  await page.keyboard.press('Enter');
+  await page.waitForSelector('#answer-form');
   // the practice exam: a question, then skip to the result
   await page.goto(url);
   await page.waitForSelector('.mode-switch');
