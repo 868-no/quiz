@@ -242,19 +242,27 @@ export function createApp(root, bank) {
           h('label', { for: `${key}-${v}` }, labels[v])))));
   }
 
-  // One row per chapter; runs of upcoming chapters (no content yet) collapse into one line.
+  // One row per chapter: the number in its own column (it matches the dial), the title
+  // beside it and the status on a short line underneath, so a long title only wraps
+  // inside its own column. Runs of upcoming chapters (no content yet) collapse into one row.
   function chapterRows() {
     const rows = [];
     const solved = solvedByChapter(state.solved, bank);
     const cs = bank.chapters;
+    const name = (c) => [
+      h('span', { class: 'ch-num' }, h('span', { class: 'visually-hidden' }, 'Kapittel '), String(c.number)),
+      h('span', { class: 'ch-title' }, c.title || `Kapittel ${c.number}`)];
     for (let i = 0; i < cs.length; i++) {
       const c = cs[i];
       if (c.status === 'upcoming') {
         let j = i;
         while (j + 1 < cs.length && cs[j + 1].status === 'upcoming') j += 1;
-        const label = j > i ? `Kapittel ${c.number}–${cs[j].number}` : `Kapittel ${c.number}`;
-        rows.push(h('li', { class: 'is-unavailable is-upcoming' },
-          h('span', { class: 'ch-blank' }, label), h('span', { class: 'ch-status' }, ' (ingen spørsmål ennå)')));
+        const label = j > i ? `${c.number}–${cs[j].number}` : String(c.number);
+        rows.push(h('li', { class: 'ch-row is-unavailable is-upcoming' },
+          h('span', { class: 'ch-name' },
+            h('span', { class: 'ch-num' }, h('span', { class: 'visually-hidden' }, j > i ? 'Kapitlene ' : 'Kapittel '), label),
+            h('span', { class: 'ch-title' }, 'Kommer senere')),
+          h('span', { class: 'ch-status' }, 'ingen spørsmål ennå')));
         i = j;
         continue;
       }
@@ -263,10 +271,14 @@ export function createApp(root, bank) {
       const status = !ok ? 'ingen godkjente spørsmål ennå'
         : done === 0 ? `${c.questions} spørsmål`
           : done >= c.questions ? `alle ${c.questions} riktig besvart` : `${done} av ${c.questions} riktig besvart`;
-      rows.push(h('li', { class: ok ? '' : 'is-unavailable' },
-        h('input', { type: 'checkbox', id: `ch-${c.number}`, name: 'chapter', value: String(c.number), checked: ok && state.selection.chapters.has(c.number), disabled: !ok, 'aria-describedby': `ch-${c.number}-st` }),
-        h('label', { for: `ch-${c.number}` }, chapterName(c.number)),
-        h('span', { class: 'ch-status', id: `ch-${c.number}-st` }, ` (${status})`)));
+      rows.push(ok
+        ? h('li', { class: 'ch-row' },
+          h('input', { type: 'checkbox', id: `ch-${c.number}`, name: 'chapter', value: String(c.number), checked: state.selection.chapters.has(c.number), 'aria-describedby': `ch-${c.number}-st` }),
+          h('label', { for: `ch-${c.number}`, class: 'ch-name' }, name(c)),
+          h('span', { class: 'ch-status', id: `ch-${c.number}-st` }, status))
+        : h('li', { class: 'ch-row is-unavailable' },
+          h('span', { class: 'ch-name' }, name(c)),
+          h('span', { class: 'ch-status', id: `ch-${c.number}-st` }, status)));
     }
     return rows;
   }
