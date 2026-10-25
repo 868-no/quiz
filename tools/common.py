@@ -73,6 +73,11 @@ class Paths:
         return self.private / "reviews"
 
     @property
+    def flashcard_images(self) -> Path:
+        """Private cache directory for Inkscape-rendered flashcard figure snapshots."""
+        return self.private / "flashcard-images"
+
+    @property
     def preview(self) -> Path:
         return self.private / "preview"
 

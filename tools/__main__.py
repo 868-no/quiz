@@ -14,6 +14,8 @@ Pipeline (all offline):
   publish     Stage D  build dist/ from approved content only (fail closed; CI deploys it)
   release-check        scan a build directory for private material
   serve                serve dist/ (or the preview) on localhost
+    flashcard-images     render private flashcard figures with Inkscape
+    flashcard            fast ReportLab cut-and-fold flashcard PDF
   status               overview of the bank
 """
 from __future__ import annotations
@@ -230,6 +232,24 @@ def cmd_serve(paths, a) -> int:
     return 0
 
 
+def cmd_flashcard(paths, a) -> int:
+    """Run the ReportLab flashcard PDF command."""
+    from .flashcard import cmd_flashcard as run
+    return run(paths, a)
+
+
+def cmd_flashcard_images(paths, a) -> int:
+    """Render private Inkscape snapshots for the selected question revisions."""
+    from .flashcard_images import render_to_cache
+    from .flashcard_core import select_revisions
+    cards = select_revisions(paths, a.chapter, a.approved_only, a.include_variants)
+    if not cards:
+        raise ToolError("no questions selected")
+    count = render_to_cache(paths, cards)
+    print(f"{count} flashcard figure snapshot(s) rendered: {paths.flashcard_images}")
+    return 0
+
+
 def cmd_status(paths, a) -> int:
     from .context import load_context
     from .questions import human_verified, latest, open_flags, publishable_revision
@@ -256,7 +276,7 @@ def cmd_status(paths, a) -> int:
     print("questions by status of latest revision:", counts or "none")
     print(f"published questions verified by a person: {by_person} of {published} "
           f"(the rest are approved by AI models only)")
-    g = {}
+    g: dict[str, int] = {}
     for t in ctx.glossary.values():
         g[t["status"]] = g.get(t["status"], 0) + 1
     print("glossary:", g)
@@ -361,6 +381,21 @@ def main(argv: list[str] | None = None) -> int:
     s.add_argument("--port", type=int, default=8000)
     s.add_argument("--preview", action="store_true")
     s.set_defaults(fn=cmd_serve)
+
+    s = sub.add_parser("flashcard-images", help="render private figure snapshots for flashcards with Inkscape")
+    s.add_argument("--chapter", type=int, help="only this chapter")
+    s.add_argument("--approved-only", action="store_true", help="only approved revisions")
+    s.add_argument("--variants", dest="include_variants", action=argparse.BooleanOptionalAction,
+                   default=True, help="include all question variants (default: enabled)")
+    s.set_defaults(fn=cmd_flashcard_images)
+
+    s = sub.add_parser("flashcard", help="fast ReportLab PDF with cut-and-fold flashcards (8 per A4)")
+    s.add_argument("--out", help="output file (default: private/flashcard.pdf)")
+    s.add_argument("--chapter", type=int, help="only this chapter")
+    s.add_argument("--approved-only", action="store_true", help="only approved revisions")
+    s.add_argument("--variants", dest="include_variants", action=argparse.BooleanOptionalAction,
+                   default=True, help="include all question variants (default: enabled)")
+    s.set_defaults(fn=cmd_flashcard)
 
     s = sub.add_parser("status", help="overview")
     s.add_argument("-v", "--verbose", action="store_true")
