@@ -542,9 +542,7 @@
             }
           ]
         }
-      },
-      "quantities": {},
-      "shown": {}
+      }
     },
     {
       "name": "block side block into missing chain block",
@@ -1892,9 +1890,7 @@
             ]
           }
         }
-      },
-      "quantities": {},
-      "shown": {}
+      }
     },
     {
       "name": "coupled needs its couplings",
@@ -1919,9 +1915,7 @@
           "coil_tap": true,
           "mark": "c1"
         }
-      },
-      "quantities": {},
-      "shown": {}
+      }
     },
     {
       "name": "pi-filter marks only its own parts",
@@ -1942,9 +1936,7 @@
         "template": "ratio-detector",
         "version": 1,
         "params": {}
-      },
-      "quantities": {},
-      "shown": {}
+      }
     },
     {
       "name": "ratio detector with its S-curve",
@@ -1955,9 +1947,7 @@
         "params": {
           "show_curve": true
         }
-      },
-      "quantities": {},
-      "shown": {}
+      }
     },
     {
       "name": "ratio detector rejects unknown parameters",
@@ -1986,9 +1976,7 @@
             "C"
           ]
         }
-      },
-      "quantities": {},
-      "shown": {}
+      }
     },
     {
       "name": "time signal: speech envelope with peak and average",
@@ -2008,9 +1996,7 @@
             "average"
           ]
         }
-      },
-      "quantities": {},
-      "shown": {}
+      }
     },
     {
       "name": "time signal: FSK",
@@ -2025,9 +2011,7 @@
           ],
           "bits": "1011001"
         }
-      },
-      "quantities": {},
-      "shown": {}
+      }
     },
     {
       "name": "time signal: keying, AM and chirp",
@@ -2042,9 +2026,7 @@
             "soft"
           ]
         }
-      },
-      "quantities": {},
-      "shown": {}
+      }
     },
     {
       "name": "time signal: a trace from another kind is refused",
@@ -2123,9 +2105,7 @@
             }
           ]
         }
-      },
-      "quantities": {},
-      "shown": {}
+      }
     },
     {
       "name": "spectrum: AM and SSB with bands, skirt and filter",
@@ -2166,9 +2146,7 @@
             }
           ]
         }
-      },
-      "quantities": {},
-      "shown": {}
+      }
     },
     {
       "name": "spectrum: a line off the axis is refused",
@@ -2219,9 +2197,7 @@
           "kind": "lattice",
           "dopant": "P"
         }
-      },
-      "quantities": {},
-      "shown": {}
+      }
     },
     {
       "name": "semiconductor: lattice with boron",
@@ -2233,9 +2209,7 @@
           "kind": "lattice",
           "dopant": "B"
         }
-      },
-      "quantities": {},
-      "shown": {}
+      }
     },
     {
       "name": "semiconductor: forward-biased junction",
@@ -2249,9 +2223,7 @@
           "bias": "forward",
           "depletion": "narrow"
         }
-      },
-      "quantities": {},
-      "shown": {}
+      }
     },
     {
       "name": "semiconductor: varicap comparison and JFET",
@@ -2263,9 +2235,7 @@
           "kind": "jfet",
           "compare": true
         }
-      },
-      "quantities": {},
-      "shown": {}
+      }
     },
     {
       "name": "semiconductor: dopant only in a lattice",
@@ -2304,9 +2274,7 @@
           "kind": "class_c",
           "reveal": true
         }
-      },
-      "quantities": {},
-      "shown": {}
+      }
     },
     {
       "name": "stage: push_pull, revealed",
@@ -2318,9 +2286,7 @@
           "kind": "push_pull",
           "reveal": true
         }
-      },
-      "quantities": {},
-      "shown": {}
+      }
     },
     {
       "name": "stage: regulator_ic, revealed",
@@ -2332,9 +2298,7 @@
           "kind": "regulator_ic",
           "reveal": true
         }
-      },
-      "quantities": {},
-      "shown": {}
+      }
     },
     {
       "name": "stage: transistor_mixer, revealed",
@@ -2346,9 +2310,7 @@
           "kind": "transistor_mixer",
           "reveal": true
         }
-      },
-      "quantities": {},
-      "shown": {}
+      }
     },
     {
       "name": "stage: dual_gate, revealed",
@@ -2360,9 +2322,7 @@
           "kind": "dual_gate",
           "reveal": true
         }
-      },
-      "quantities": {},
-      "shown": {}
+      }
     },
     {
       "name": "stage: triode, revealed",
@@ -2374,9 +2334,7 @@
           "kind": "triode",
           "reveal": true
         }
-      },
-      "quantities": {},
-      "shown": {}
+      }
     },
     {
       "name": "stage: pnp, revealed",
@@ -2388,9 +2346,7 @@
           "kind": "pnp",
           "reveal": true
         }
-      },
-      "quantities": {},
-      "shown": {}
+      }
     },
     {
       "name": "stage: crystal, revealed",
@@ -2402,9 +2358,7 @@
           "kind": "crystal",
           "reveal": true
         }
-      },
-      "quantities": {},
-      "shown": {}
+      }
     },
     {
       "name": "stage: unknown kind",
@@ -2429,9 +2383,7 @@
           "from": "p",
           "to": "n"
         }
-      },
-      "quantities": {},
-      "shown": {}
+      }
     },
     {
       "name": "illustration: tolerance",
@@ -2444,9 +2396,7 @@
           "nominal": 1000,
           "percent": 10
         }
-      },
-      "quantities": {},
-      "shown": {}
+      }
     },
     {
       "name": "illustration: s_meter",
@@ -2460,9 +2410,7 @@
           "to_s": 8,
           "reveal": true
         }
-      },
-      "quantities": {},
-      "shown": {}
+      }
     },
     {
       "name": "illustration: plates",
@@ -2474,9 +2422,7 @@
           "kind": "plates",
           "reveal": true
         }
-      },
-      "quantities": {},
-      "shown": {}
+      }
     },
     {
       "name": "illustration: variable_capacitor",
@@ -2487,9 +2433,7 @@
         "params": {
           "kind": "variable_capacitor"
         }
-      },
-      "quantities": {},
-      "shown": {}
+      }
     },
     {
       "name": "illustration: coils",
@@ -2501,9 +2445,7 @@
           "kind": "coils",
           "reveal": true
         }
-      },
-      "quantities": {},
-      "shown": {}
+      }
     },
     {
       "name": "illustration: supply",
@@ -2515,9 +2457,7 @@
           "kind": "supply",
           "reveal": true
         }
-      },
-      "quantities": {},
-      "shown": {}
+      }
     },
     {
       "name": "illustration: S-meter readings must go upwards",
@@ -2567,9 +2507,7 @@
           "to": 5,
           "text": "Sidebåndene endrer seg når indeksen øker."
         }
-      },
-      "quantities": {},
-      "shown": {}
+      }
     },
     {
       "name": "animation: a path the figure does not have",
@@ -2654,9 +2592,7 @@
         "params": {
           "kind": "configurations"
         }
-      },
-      "quantities": {},
-      "shown": {}
+      }
     },
     {
       "name": "stage: currents",
@@ -2667,9 +2603,7 @@
         "params": {
           "kind": "currents"
         }
-      },
-      "quantities": {},
-      "shown": {}
+      }
     },
     {
       "name": "stage: tank_loss",
@@ -2680,9 +2614,7 @@
         "params": {
           "kind": "tank_loss"
         }
-      },
-      "quantities": {},
-      "shown": {}
+      }
     },
     {
       "name": "illustration: fet_transfer",
@@ -2693,9 +2625,7 @@
         "params": {
           "kind": "fet_transfer"
         }
-      },
-      "quantities": {},
-      "shown": {}
+      }
     },
     {
       "name": "illustration: phasing",
@@ -2706,9 +2636,7 @@
         "params": {
           "kind": "phasing"
         }
-      },
-      "quantities": {},
-      "shown": {}
+      }
     },
     {
       "name": "illustration: transfer",
@@ -2719,9 +2647,7 @@
         "params": {
           "kind": "transfer"
         }
-      },
-      "quantities": {},
-      "shown": {}
+      }
     },
     {
       "name": "illustration: air_coil",
@@ -2732,9 +2658,7 @@
         "params": {
           "kind": "air_coil"
         }
-      },
-      "quantities": {},
-      "shown": {}
+      }
     },
     {
       "name": "illustration: range",
@@ -2745,9 +2669,7 @@
         "params": {
           "kind": "range"
         }
-      },
-      "quantities": {},
-      "shown": {}
+      }
     },
     {
       "name": "time signal: warm-up drift",
@@ -2761,9 +2683,7 @@
             "warmup"
           ]
         }
-      },
-      "quantities": {},
-      "shown": {}
+      }
     },
     {
       "name": "a figure shown only after answering",
@@ -2851,9 +2771,7 @@
             }
           ]
         }
-      },
-      "quantities": {},
-      "shown": {}
+      }
     },
     {
       "name": "code-breakdown: hidden part revealed after answering",
@@ -2886,9 +2804,7 @@
             }
           ]
         }
-      },
-      "quantities": {},
-      "shown": {}
+      }
     },
     {
       "name": "code-breakdown: a hidden part needs a label",
@@ -3373,9 +3289,7 @@
           "fs_hz": 48000,
           "show_reconstruction": true
         }
-      },
-      "quantities": {},
-      "shown": {}
+      }
     },
     {
       "name": "sampling: 4-bit quantizer with step and error",
@@ -3390,9 +3304,7 @@
           "levels_label": true,
           "show_error": true
         }
-      },
-      "quantities": {},
-      "shown": {}
+      }
     },
     {
       "name": "sampling: clipped quantizer",
@@ -3406,9 +3318,7 @@
           "amplitude": 1.3,
           "show_values": false
         }
-      },
-      "quantities": {},
-      "shown": {}
+      }
     },
     {
       "name": "sampling: moving average, fractional taps from an animation",
@@ -3420,9 +3330,7 @@
           "kind": "moving_average",
           "taps": 7.4
         }
-      },
-      "quantities": {},
-      "shown": {}
+      }
     },
     {
       "name": "sampling: FIR and IIR structures, after answering only",
@@ -3434,9 +3342,7 @@
           "kind": "fir_iir"
         },
         "after_only": true
-      },
-      "quantities": {},
-      "shown": {}
+      }
     },
     {
       "name": "sampling: bits animated",
@@ -3455,9 +3361,7 @@
           "to": 5,
           "text": "Antall bit øker fra 1 til 5."
         }
-      },
-      "quantities": {},
-      "shown": {}
+      }
     },
     {
       "name": "sampling: signal far above the sampling rate",
@@ -3631,9 +3535,7 @@
           "currents": true,
           "dimensions": true
         }
-      },
-      "quantities": {},
-      "shown": {}
+      }
     },
     {
       "name": "feedline: shorted line with voltage and current, animated phase",
@@ -3783,9 +3685,7 @@
           "fc_mhz": 7,
           "show_skip": true
         }
-      },
-      "quantities": {},
-      "shown": {}
+      }
     },
     {
       "name": "propagation: day and night layers",
@@ -3797,9 +3697,7 @@
           "kind": "layers",
           "compare": true
         }
-      },
-      "quantities": {},
-      "shown": {}
+      }
     },
     {
       "name": "propagation: radio horizon",
@@ -3813,9 +3711,7 @@
           "h2_m": 25,
           "show_distance": true
         }
-      },
-      "quantities": {},
-      "shown": {}
+      }
     },
     {
       "name": "propagation: frequency animation",
@@ -3833,9 +3729,7 @@
           "to": 25,
           "text": "Frekvensen øker fra 5 til 25 MHz og tilbake."
         }
-      },
-      "quantities": {},
-      "shown": {}
+      }
     },
     {
       "name": "propagation: each angle once",
@@ -3918,9 +3812,7 @@
           "show_current": true,
           "show_voltage": true
         }
-      },
-      "quantities": {},
-      "shown": {}
+      }
     },
     {
       "name": "antenna: dipole current at an instant",
@@ -3933,9 +3825,7 @@
           "show_current": true,
           "phase_deg": 90
         }
-      },
-      "quantities": {},
-      "shown": {}
+      }
     },
     {
       "name": "antenna: ground plane compared, with impedances",
@@ -3949,9 +3839,7 @@
           "compare": true,
           "show_impedance": true
         }
-      },
-      "quantities": {},
-      "shown": {}
+      }
     },
     {
       "name": "antenna: yagi with six directors",
@@ -3964,9 +3852,7 @@
           "directors": 6,
           "highlight": "directors"
         }
-      },
-      "quantities": {},
-      "shown": {}
+      }
     },
     {
       "name": "antenna: trap dipole, inner part active",
@@ -3979,9 +3865,7 @@
           "trap_label": "14 MHz",
           "active": "inner"
         }
-      },
-      "quantities": {},
-      "shown": {}
+      }
     },
     {
       "name": "antenna: loaded vertical with current",
@@ -3994,9 +3878,7 @@
           "coil_position": 0.6,
           "show_current": true
         }
-      },
-      "quantities": {},
-      "shown": {}
+      }
     },
     {
       "name": "antenna: dipole pattern with compass and beamwidth",
@@ -4010,9 +3892,7 @@
           "compass": true,
           "beamwidth": true
         }
-      },
-      "quantities": {},
-      "shown": {}
+      }
     },
     {
       "name": "antenna: directional pattern",
@@ -4027,9 +3907,7 @@
           "beamwidth_deg": 50,
           "front_back_db": 25
         }
-      },
-      "quantities": {},
-      "shown": {}
+      }
     },
     {
       "name": "antenna: current only on a dipole or loaded vertical",
@@ -4155,8 +4033,6 @@
     {
       "name": "safety: body paths with the hand-to-hand path picked out",
       "valid": true,
-      "quantities": {},
-      "shown": {},
       "visual": {
         "template": "safety",
         "version": 1,
@@ -4170,8 +4046,6 @@
     {
       "name": "safety: current scale",
       "valid": true,
-      "quantities": {},
-      "shown": {},
       "visual": {
         "template": "safety",
         "version": 1,
@@ -4183,8 +4057,6 @@
     {
       "name": "safety: earth fault with RCD and a 50 mA leak",
       "valid": true,
-      "quantities": {},
-      "shown": {},
       "visual": {
         "template": "safety",
         "version": 1,
@@ -4200,8 +4072,6 @@
     {
       "name": "safety: falling mast",
       "valid": true,
-      "quantities": {},
-      "shown": {},
       "visual": {
         "template": "safety",
         "version": 1,
@@ -4216,8 +4086,6 @@
     {
       "name": "safety: car supply with a broken earth cable",
       "valid": true,
-      "quantities": {},
-      "shown": {},
       "visual": {
         "template": "safety",
         "version": 1,
@@ -4230,8 +4098,6 @@
     {
       "name": "safety: solder joints",
       "valid": true,
-      "quantities": {},
-      "shown": {},
       "visual": {
         "template": "safety",
         "version": 1,
@@ -4309,8 +4175,6 @@
     {
       "name": "illustration: band edge with LSB tuned on the edge and above it",
       "valid": true,
-      "quantities": {},
-      "shown": {},
       "visual": {
         "template": "illustration",
         "version": 1,

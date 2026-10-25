@@ -83,10 +83,10 @@ test('shared visual cases: same validity and physics as the Python verifier', ()
     if (c.valid) {
       assert.deepEqual(errors, [], c.name);
       const q = impl.quantities(params);
-      for (const [k, v] of Object.entries(c.quantities)) {
+      for (const [k, v] of Object.entries(c.quantities || {})) { // none: nothing more to check
         assert.ok(Math.abs(q[k].value - v) <= 1e-9 * Math.max(1, Math.abs(v)), `${c.name}: ${k} ${q[k].value} != ${v}`);
       }
-      for (const [k, v] of Object.entries(c.shown)) assert.equal(q[k].shown, v, `${c.name}: shown ${k}`);
+      for (const [k, v] of Object.entries(c.shown || {})) assert.equal(q[k].shown, v, `${c.name}: shown ${k}`);
     } else {
       assert.ok(errors.length, c.name);
       assert.ok(errors.some((e) => e.includes(c.error)), `${c.name}: ${errors}`);

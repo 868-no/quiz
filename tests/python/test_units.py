@@ -82,9 +82,10 @@ class VisualSharedCasesTest(unittest.TestCase):
                 if case["valid"]:
                     self.assertEqual(errs, [])
                     q = visuals.quantities(case["visual"]["template"], params)
-                    for k, v in case["quantities"].items():
+                    # a case without quantities or shown values has nothing more to check
+                    for k, v in case.get("quantities", {}).items():
                         self.assertTrue(math.isclose(q[k]["value"], v, rel_tol=1e-9), (k, q[k], v))
-                    for k, v in case["shown"].items():
+                    for k, v in case.get("shown", {}).items():
                         self.assertEqual(q[k]["shown"], v, k)
                 else:
                     self.assertTrue(errs)
