@@ -1,0 +1,134 @@
+{
+  "id": "q-0663",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "recall",
+      "difficulty": "easy",
+      "chapter": 15,
+      "section_ids": [
+        "s15-08"
+      ],
+      "topic_ids": [
+        "organisasjoner-tjenester"
+      ],
+      "learning_objective": "Vite hva et DX-cluster er.",
+      "priority": "normal",
+      "context": [],
+      "stem": [
+        "Hva er et DX-cluster?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "En stadig oppdatert liste over aktive DX-stasjoner som andre radioamatører har meldt inn."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "En gruppe radioamatører som sender sammen fra én stasjon."
+          ],
+          "feedback": [
+            "Det kalles gjerne en klubbstasjon eller en stasjon med flere operatører. Et DX-cluster er en tjeneste med meldinger om hvem som er aktive."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "En retningsantenne med mange elementer for langdistanse."
+          ],
+          "feedback": [
+            "Det er ikke en antenne, men en tjeneste på nettet der radioamatører melder inn stasjoner de hører."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Et filter i mottakeren som skiller ut svake signaler fra fjerne stasjoner."
+          ],
+          "feedback": [
+            "Det er ikke en del av radioen, men en tjeneste der radioamatører deler hvem som er aktive, og på hvilken frekvens."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "I et DX-cluster melder radioamatører inn stasjoner de hører eller har hatt kontakt med, med frekvens og tidspunkt. Lista oppdateres hele tiden og kan søkes i og filtreres, for eksempel på bånd eller område.",
+        "Slik ser DX-jegere raskt hvor sjeldne stasjoner langt borte er aktive akkurat nå."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 15,
+        "section_id": "s15-08",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "ed578a9351dfd875"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-25T01:52:40+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "2525eb9b565e0252e30274520544e0b565eaec153a5a046a7ba86c2461df8742",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-25T01:53:31+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "2525eb9b565e0252e30274520544e0b565eaec153a5a046a7ba86c2461df8742",
+          "note": "Kapittel 15: organisasjoner og tjenester",
+          "acknowledged": []
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-25T01:52:39+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "2525eb9b565e0252e30274520544e0b565eaec153a5a046a7ba86c2461df8742",
+        "errors": [],
+        "warnings": [],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-25T01:53:31+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-25T01:53:31+00:00",
+        "content_sha256": "2525eb9b565e0252e30274520544e0b565eaec153a5a046a7ba86c2461df8742",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

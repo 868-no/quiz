@@ -1,0 +1,134 @@
+{
+  "id": "q-0666",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "medium",
+      "chapter": 15,
+      "section_ids": [
+        "s15-07"
+      ],
+      "topic_ids": [
+        "organisasjoner-tjenester"
+      ],
+      "learning_objective": "Forstå at lisensprøvene i CEPT-landene bygger på et felles pensum, så eksempelprøver fra andre land er nyttig trening.",
+      "priority": "normal",
+      "context": [],
+      "stem": [
+        "Hvorfor kan eksempelspørsmål fra lisensprøvene i andre europeiske land være nyttig trening til den norske prøven?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Lisensprøvene i CEPT-landene bygger på det samme felles pensumet."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Fordi den norske prøven bruker de samme spørsmålene, ord for ord."
+          ],
+          "feedback": [
+            "Hvert land lager sine egne spørsmål. Det er pensumet som er felles, ikke selve spørsmålene."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Fordi reglene for radioamatører er like i alle land."
+          ],
+          "feedback": [
+            "Nasjonale regler, som frekvenser og effekt, kan være ulike. Det er det tekniske pensumet og hovedtrekkene i reglene som er felles."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Fordi en bestått prøve i et annet land automatisk gir norsk lisens."
+          ],
+          "feedback": [
+            "Et bestått sertifikat kan gjøre det enklere å få lisens i et annet land, men det skjer ikke automatisk. Grunnen her er at pensumet er felles."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Kravene til kunnskap for radioamatørlisens er harmonisert i CEPT, slik at en bestått prøve gir et sertifikat (HAREC) som andre land godtar. Derfor dekker prøvene i de ulike landene stort sett de samme emnene.",
+        "Mange nasjonale foreninger legger ut eksempelprøver på nettet. Husk at nasjonale regler, som frekvenser og effektgrenser, kan være annerledes enn i Norge."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 15,
+        "section_id": "s15-07",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "87baf9b9d803c6a9"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-25T01:52:40+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "ef0f27532baa24fcf3eb09a5aad79414c6afd47c12394354507eaf5e7fc82412",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-25T01:53:34+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "ef0f27532baa24fcf3eb09a5aad79414c6afd47c12394354507eaf5e7fc82412",
+          "note": "Kapittel 15: organisasjoner og tjenester",
+          "acknowledged": []
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-25T01:52:39+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "ef0f27532baa24fcf3eb09a5aad79414c6afd47c12394354507eaf5e7fc82412",
+        "errors": [],
+        "warnings": [],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-25T01:53:34+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-25T01:53:34+00:00",
+        "content_sha256": "ef0f27532baa24fcf3eb09a5aad79414c6afd47c12394354507eaf5e7fc82412",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

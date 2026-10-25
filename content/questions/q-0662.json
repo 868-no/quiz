@@ -1,0 +1,145 @@
+{
+  "id": "q-0662",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "medium",
+      "chapter": 15,
+      "section_ids": [
+        "s15-04",
+        "s15-03"
+      ],
+      "topic_ids": [
+        "organisasjoner-tjenester"
+      ],
+      "learning_objective": "Vite hva diplomene DXCC og IOTA går ut på.",
+      "priority": "normal",
+      "context": [
+        "To radioamatører forteller om diplomene de jakter på. Den ene samler til DXCC, den andre til IOTA."
+      ],
+      "stem": [
+        "Hva samler de på?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "DXCC: kontakter med ulike land og områder i verden. IOTA: kontakter med stasjoner på øyer."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "DXCC: kontakter på flest mulig bånd. IOTA: flest mulig kontakter i én konkurranse."
+          ],
+          "feedback": [
+            "Ingen av diplomene handler om antall bånd eller én konkurranse. DXCC gjelder land og områder, IOTA gjelder øyer."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "DXCC: QSL-kort fra stasjoner i USA. IOTA: QSL-kort fra stasjoner i Storbritannia."
+          ],
+          "feedback": [
+            "Diplomene administreres av ARRL og RSGB, men de gjelder kontakter over hele verden."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Begge går ut på å høre flest mulig stasjoner, uten å ha kontakt med dem."
+          ],
+          "feedback": [
+            "Begge krever bekreftede kontakter, for eksempel med QSL-kort eller i LoTW."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "DXCC (DX Century Club) administreres av ARRL og gis for bekreftede kontakter med minst 100 ulike land og områder. IOTA (Islands on the Air) administreres av RSGB og handler om kontakter med stasjoner på øyer rundt om i verden.",
+        [
+          "Begge krever at kontaktene er bekreftet, for eksempel med ",
+          {
+            "term": "qsl-kort",
+            "text": "QSL-kort"
+          },
+          " eller i LoTW."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 15,
+        "section_id": "s15-04",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "a32a2cb623201ccd",
+          "641bf849aa79fc77"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-25T01:52:40+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "7b7546b368665b40cfca717758e48e043e2b89246c9b6a7c1aaa7e05b97449c9",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-25T01:53:30+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "7b7546b368665b40cfca717758e48e043e2b89246c9b6a7c1aaa7e05b97449c9",
+          "note": "Kapittel 15: organisasjoner og tjenester",
+          "acknowledged": []
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-25T01:52:39+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "7b7546b368665b40cfca717758e48e043e2b89246c9b6a7c1aaa7e05b97449c9",
+        "errors": [],
+        "warnings": [],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-25T01:53:30+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-25T01:53:30+00:00",
+        "content_sha256": "7b7546b368665b40cfca717758e48e043e2b89246c9b6a7c1aaa7e05b97449c9",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

@@ -1,0 +1,134 @@
+{
+  "id": "q-0665",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "recall",
+      "difficulty": "medium",
+      "chapter": 15,
+      "section_ids": [
+        "s15-06"
+      ],
+      "topic_ids": [
+        "organisasjoner-tjenester"
+      ],
+      "learning_objective": "Vite at ECO, CEPTs kontor, har en samlet oversikt over frekvensfordelingen i CEPT-landene.",
+      "priority": "normal",
+      "context": [],
+      "stem": [
+        "Hvor finner du en samlet oversikt over hvordan frekvensene er fordelt i de europeiske CEPT-landene?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Hos ECO, kontoret som er sekretariat for CEPT."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Hos IARU, som bestemmer frekvensfordelingen i Europa."
+          ],
+          "feedback": [
+            "IARU representerer radioamatørene og lager båndplaner for amatørbåndene, men bestemmer ikke hvordan frekvensene fordeles mellom tjenestene."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Hos ARRL, som har sekretariatet for IARU."
+          ],
+          "feedback": [
+            "ARRL er foreningen for radioamatører i USA og har ikke oversikt over frekvensfordelingen i Europa."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Bare hos myndighetene i hvert enkelt land."
+          ],
+          "feedback": [
+            "Hvert land har sine egne regler, men ECO samler opplysningene fra mange CEPT-land på ett sted."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "ECO (European Communications Office) i København er sekretariat for CEPT, samarbeidet mellom de europeiske post- og telemyndighetene.",
+        "ECO har en oversikt over frekvensfordelingen i mange av medlemslandene. Den er mye brukt når man vil vite hva et frekvensområde brukes til i ulike land."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 15,
+        "section_id": "s15-06",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "be0cc8c4e84a025e"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-25T01:52:40+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "74184bb4ba5f720190dbd746190a59e10ed58defe92a340c8f281fa6966653af",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-25T01:53:33+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "74184bb4ba5f720190dbd746190a59e10ed58defe92a340c8f281fa6966653af",
+          "note": "Kapittel 15: organisasjoner og tjenester",
+          "acknowledged": []
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-25T01:52:39+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "74184bb4ba5f720190dbd746190a59e10ed58defe92a340c8f281fa6966653af",
+        "errors": [],
+        "warnings": [],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-25T01:53:33+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-25T01:53:33+00:00",
+        "content_sha256": "74184bb4ba5f720190dbd746190a59e10ed58defe92a340c8f281fa6966653af",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

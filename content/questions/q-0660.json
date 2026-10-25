@@ -1,0 +1,134 @@
+{
+  "id": "q-0660",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "recall",
+      "difficulty": "easy",
+      "chapter": 15,
+      "section_ids": [
+        "s15-02"
+      ],
+      "topic_ids": [
+        "organisasjoner-tjenester"
+      ],
+      "learning_objective": "Kjenne NRRLs oppgaver og skille dem fra myndighetenes.",
+      "priority": "normal",
+      "context": [],
+      "stem": [
+        "Hvilken av disse oppgavene har Norsk Radio Relæ Liga (NRRL)?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Den driver QSL-tjenesten for norske radioamatører."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Den tildeler lisenser og kallesignaler."
+          ],
+          "feedback": [
+            "Det gjør Nasjonal kommunikasjonsmyndighet (Nkom). NRRL samarbeider med Nkom om lisensprøvene, men tildeler ikke lisenser."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Den fører tilsyn med at radioamatører følger forskriften."
+          ],
+          "feedback": [
+            "Tilsynet er myndighetenes oppgave, altså Nkom sin. NRRL er en forening for radioamatørene."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Den fastsetter hvilke frekvenser radioamatører kan bruke i Norge."
+          ],
+          "feedback": [
+            "Frekvensene står i forskriften, som Nkom fastsetter. NRRL kan gi innspill, men bestemmer ikke."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "NRRL er den nasjonale foreningen for radioamatører i Norge og ble stiftet i 1928. Den taler radioamatørenes sak overfor myndighetene og internasjonalt, driver QSL-tjenesten, gir ut medlemsbladet Amatørradio og hjelper Nkom med å gjennomføre lisensprøvene.",
+        "Lisenser, kallesignaler, frekvenser og tilsyn er Nkoms ansvar."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 15,
+        "section_id": "s15-02",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "256512c81ed41f9e"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-25T01:52:40+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "0d3ac6ccf2d4a651fd0a687367260e4932c7cd7fbd8ea1eeda671f4cd338c994",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-25T01:53:28+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "0d3ac6ccf2d4a651fd0a687367260e4932c7cd7fbd8ea1eeda671f4cd338c994",
+          "note": "Kapittel 15: organisasjoner og tjenester",
+          "acknowledged": []
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-25T01:52:39+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "0d3ac6ccf2d4a651fd0a687367260e4932c7cd7fbd8ea1eeda671f4cd338c994",
+        "errors": [],
+        "warnings": [],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-25T01:53:28+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-25T01:53:28+00:00",
+        "content_sha256": "0d3ac6ccf2d4a651fd0a687367260e4932c7cd7fbd8ea1eeda671f4cd338c994",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

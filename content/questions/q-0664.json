@@ -1,0 +1,136 @@
+{
+  "id": "q-0664",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "scenario",
+      "difficulty": "easy",
+      "chapter": 15,
+      "section_ids": [
+        "s15-08"
+      ],
+      "topic_ids": [
+        "organisasjoner-tjenester"
+      ],
+      "learning_objective": "Vite at kallesignaldatabaser på nettet gir navn, adresse og QSL-opplysninger.",
+      "priority": "normal",
+      "context": [
+        "Du har hatt kontakt med en utenlandsk stasjon og vil sende et QSL-kort."
+      ],
+      "stem": [
+        "Hvor finner du enklest navn, adresse og QSL-opplysninger for kallesignalet?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "I en kallesignaldatabase på nettet, der radioamatørene selv legger inn opplysninger."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Hos Nkom, som har adressene til radioamatører i hele verden."
+          ],
+          "feedback": [
+            "Nkom har bare oversikt over norske radioamatører. For stasjoner i andre land er en kallesignaldatabase på nettet den enkleste veien."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Ved å spørre stasjonen om adressen neste gang du hører den."
+          ],
+          "feedback": [
+            "Det går an, men det tar tid og opptar frekvensen. Opplysningene ligger som regel allerede i en kallesignaldatabase."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "I IARUs båndplan."
+          ],
+          "feedback": [
+            "Båndplanen viser hvordan båndene er delt inn, ikke hvem som har hvilket kallesignal."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        "Det finnes nettsteder med oppslag på svært mange kallesignaler, der radioamatørene selv legger inn navn, adresse, QSL-opplysninger og ofte litt om seg selv og stasjonen.",
+        "Der står det gjerne også om stasjonen vil ha kortet via bureau, direkte i posten, eller bare bekrefter kontakter i LoTW."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 15,
+        "section_id": "s15-08",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "ee1e65ef4d03084b"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-25T01:52:40+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "c5f59409cb7aaf3671cf773bf7cbebdeb68b5d25aa69bd7045552c98d9106599",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-25T01:53:32+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "c5f59409cb7aaf3671cf773bf7cbebdeb68b5d25aa69bd7045552c98d9106599",
+          "note": "Kapittel 15: organisasjoner og tjenester",
+          "acknowledged": []
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-25T01:52:39+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "c5f59409cb7aaf3671cf773bf7cbebdeb68b5d25aa69bd7045552c98d9106599",
+        "errors": [],
+        "warnings": [],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-25T01:53:32+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-25T01:53:32+00:00",
+        "content_sha256": "c5f59409cb7aaf3671cf773bf7cbebdeb68b5d25aa69bd7045552c98d9106599",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}

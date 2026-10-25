@@ -1,0 +1,141 @@
+{
+  "id": "q-0661",
+  "revisions": [
+    {
+      "revision": 1,
+      "status": "approved",
+      "language": "nb-NO",
+      "type": "single_choice",
+      "style": "recall",
+      "difficulty": "easy",
+      "chapter": 15,
+      "section_ids": [
+        "s15-05"
+      ],
+      "topic_ids": [
+        "organisasjoner-tjenester"
+      ],
+      "learning_objective": "Vite at IARU representerer radioamatørene internasjonalt, blant annet overfor ITU.",
+      "priority": "normal",
+      "context": [],
+      "stem": [
+        "Hvem taler radioamatørenes sak internasjonalt, for eksempel når ITU fordeler frekvenser mellom tjenestene?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "IARU, unionen av de nasjonale radioamatørforeningene."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "ARRL alene, fordi den er den største foreningen."
+          ],
+          "feedback": [
+            "ARRL er foreningen for radioamatører i USA. Den har IARUs sekretariat, men det er IARU som representerer radioamatørene samlet."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "ECO, CEPTs kontor i København."
+          ],
+          "feedback": [
+            "ECO arbeider for CEPT, altså for myndighetene. Det representerer ikke radioamatørene."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Hver radioamatør for seg, direkte overfor ITU."
+          ],
+          "feedback": [
+            "Enkeltpersoner deltar ikke i disse forhandlingene. Radioamatørene er representert gjennom foreningene sine og IARU."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "IARU (International Amateur Radio Union) ble stiftet i Paris i 1928 og samler de nasjonale radioamatørforeningene, blant dem NRRL. IARU er radioamatørenes talsmann overfor blant annet ",
+          {
+            "term": "itu",
+            "text": "ITU"
+          },
+          ", der frekvensene fordeles mellom radiotjenestene."
+        ],
+        "Sekretariatet ligger hos ARRL i USA."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 15,
+        "section_id": "s15-05",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "4fdb5d23d5717d90"
+        ]
+      },
+      "tags": [],
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-25T01:52:40+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "d9f6289f218f749aeeadb6b817c3fe91ea29c8193b86ea5eef555d0e4035bef5",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-25T01:53:29+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "d9f6289f218f749aeeadb6b817c3fe91ea29c8193b86ea5eef555d0e4035bef5",
+          "note": "Kapittel 15: organisasjoner og tjenester",
+          "acknowledged": []
+        }
+      ],
+      "provenance": {
+        "method": "assistant",
+        "author": "AI-assistent (Claude), utkast – ikke faglig kontrollert",
+        "note": "Skrevet med egne ord ut fra kapittel-PDF-ene; prioritet satt etter skjønn (ingen «!»-markører uten skanning). Må kontrolleres mot boka.",
+        "at": "2026-10-25T01:52:39+00:00"
+      },
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "d9f6289f218f749aeeadb6b817c3fe91ea29c8193b86ea5eef555d0e4035bef5",
+        "errors": [],
+        "warnings": [],
+        "hazards": [],
+        "passed": true,
+        "at": "2026-10-25T01:53:29+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-25T01:53:29+00:00",
+        "content_sha256": "d9f6289f218f749aeeadb6b817c3fe91ea29c8193b86ea5eef555d0e4035bef5",
+        "acknowledged_hazards": [],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    }
+  ]
+}
