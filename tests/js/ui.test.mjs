@@ -557,6 +557,15 @@ test('after a new round replaces a paused one, the start page no longer offers t
   assert.equal($(root, '.continue-resume'), null, 'the discarded round is not offered again');
 });
 
+test('a chapter outside the quiz is left out of the chapter list', { skip }, async () => {
+  const bank = makeBank({ perChapter: { 2: 3 } });
+  bank.chapters.find((c) => c.number === 3).status = 'not_in_quiz';
+  const { root } = await app(bank);
+  assert.equal($(root, '#ch-3'), null);
+  assert.ok(!$$(root, '.check-list li').some((li) => li.querySelector('.ch-num')?.textContent.endsWith('3')), 'no row for it');
+  assert.ok($(root, '#ch-2'), 'the others are listed');
+});
+
 test('without a paused round a new round starts without asking', { skip }, async () => {
   const { root } = await app(makeBank({ perChapter: { 2: 3 } }));
   $(root, '#setup-form button[type=submit]').click();

@@ -5297,7 +5297,9 @@
       ],
       "title_key": "80405e9987647a9d",
       "source": "book",
-      "printed_pages_known": false
+      "printed_pages_known": false,
+      "quiz": false,
+      "quiz_note": "The exam syllabus itself (CEPT T/R 61-02, annex 6): a list of headings with nothing to practise; HAREC is covered in chapter 12."
     },
     {
       "number": 15,

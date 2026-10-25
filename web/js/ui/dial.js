@@ -35,7 +35,7 @@ function needle(x, top, bottom) {
 /**
  * Chapter scale for the setup screen. chapters: [{number, status}]; selected: Set of numbers.
  * Available chapters are stations (hollow, or lit when selected); chapters without
- * questions are faint; upcoming chapters are blank scale.
+ * questions (also those not in the quiz at all) are faint; upcoming chapters are blank scale.
  */
 export function chapterDial(chapters, selected) {
   const n = chapters.length;

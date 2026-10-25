@@ -104,4 +104,6 @@ Only `approved` terms can be published; `python3 -m tools glossary approve ID…
 importer, curated by people) and `content/chapters/topics.json` (`{id, title, chapter}`).
 `book.total_chapters` makes chapters not yet imported visible as unavailable. A chapter's
 `scanned` means its source is imported; `printed_pages_known: false` marks a chapter cited
-from the chapter PDF, without printed pages yet.
+from the chapter PDF, without printed pages yet. A chapter marked `"quiz": false` (with a `quiz_note`; chapter 14,
+the exam syllabus) gets no questions – `verify` refuses them – and is left out of the
+chapter list; the dial still shows its place.

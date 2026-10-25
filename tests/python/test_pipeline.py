@@ -118,6 +118,16 @@ class PipelineTest(unittest.TestCase):
         self.assertEqual(list(bank["glossary"]), ["strom"])
         self.assertEqual(list(bank["templates"]), ["dc-circuit@1"])
 
+    def test_a_chapter_marked_out_of_the_quiz_gets_its_own_status(self):
+        review.verify(self.paths, None, quiet=True)
+        self.approve()
+        self.repo.approve_templates()
+        reg = json.loads(self.paths.chapters_file.read_text())
+        reg["chapters"].append({"number": 3, "title": None, "scanned": True, "quiz": False, "sections": []})
+        self.paths.chapters_file.write_text(json.dumps(reg, ensure_ascii=False))
+        publish.publish(self.paths)
+        self.assertEqual([c["status"] for c in self.bank()["chapters"]][:3], ["upcoming", "available", "not_in_quiz"])
+
     def test_verified_section_title_is_published(self):
         review.verify(self.paths, None, quiet=True)
         self.approve()

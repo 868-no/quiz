@@ -268,6 +268,7 @@ export function createApp(root, bank) {
       h('span', { class: 'ch-title' }, c.title || `Kapittel ${c.number}`)];
     for (let i = 0; i < cs.length; i++) {
       const c = cs[i];
+      if (c.status === 'not_in_quiz') continue; // e.g. the exam syllabus: nothing to practise
       if (c.status === 'upcoming') {
         let j = i;
         while (j + 1 < cs.length && cs[j + 1].status === 'upcoming') j += 1;

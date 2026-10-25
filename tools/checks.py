@@ -311,6 +311,8 @@ def check_revision(ctx: Context, qid: str, rev: dict[str, Any]) -> dict[str, Any
     ch_entry = next((c for c in ctx.registry["chapters"] if c["number"] == chapter), None)
     if ch_entry is None:
         errors.append(f"chapter: {chapter!r} is not in content/chapters/chapters.json")
+    elif ch_entry.get("quiz") is False:
+        errors.append(f"chapter: {chapter} is marked \"quiz\": false in chapters.json (nothing to practise)")
     for sid in rev.get("section_ids") or []:
         sec = ctx.sections.get(sid)
         if sec is None:

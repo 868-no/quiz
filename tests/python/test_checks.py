@@ -161,6 +161,14 @@ class ChecksTest(unittest.TestCase):
         self.assertError(self.run_checks(study_reference={"chapter": 2, "section_id": "s2-01",
                                                           "printed_pages": ["2-7"]}), "printed page 2-7")
 
+    def test_no_questions_in_a_chapter_marked_out_of_the_quiz(self):
+        import copy as _copy
+        ctx = _copy.copy(self.ctx)
+        ctx.registry = _copy.deepcopy(self.ctx.registry)
+        next(c for c in ctx.registry["chapters"] if c["number"] == 2)["quiz"] = False
+        r = checks.check_revision(ctx, "q-0001", sample_revision(self.iid))
+        self.assertError(r, '"quiz": false')
+
     def test_missing_chunk_and_chapter_mismatch(self):
         def missing(r):
             r["sources"]["chunk_uids"] = ["nope"]
