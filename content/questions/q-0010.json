@@ -295,7 +295,7 @@
     },
     {
       "revision": 2,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "calculation",
@@ -567,6 +567,15 @@
             "figures",
             "ocr"
           ]
+        },
+        {
+          "at": "2026-10-25T12:35:02+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "f3ca2de7f58e55f4af42b3b6f95fc0570d68206ab923aab727b54f67ef366f34",
+          "note": "superseded by r3"
         }
       ],
       "checks": {
@@ -591,6 +600,701 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-23T20:43:45+00:00",
         "content_sha256": "f3ca2de7f58e55f4af42b3b6f95fc0570d68206ab923aab727b54f67ef366f34",
+        "acknowledged_hazards": [
+          "figures",
+          "ocr"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 3,
+      "status": "approved",
+      "type": "single_choice",
+      "style": "calculation",
+      "difficulty": "medium",
+      "chapter": 2,
+      "section_ids": [
+        "s2-34"
+      ],
+      "topic_ids": [
+        "reaktans"
+      ],
+      "learning_objective": "Regne ut kapasitiv reaktans fra frekvens og kapasitans.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En kondensator på ",
+          {
+            "q": 100,
+            "u": "nF"
+          },
+          " er koblet til en sinusformet ",
+          {
+            "term": "vekselspenning",
+            "text": "vekselspenning"
+          },
+          " med ",
+          {
+            "term": "frekvens",
+            "text": "frekvens"
+          },
+          " ",
+          {
+            "q": 10,
+            "u": "kHz"
+          },
+          "."
+        ]
+      ],
+      "stem": [
+        [
+          "Hva er den ",
+          {
+            "term": "kapasitiv-reaktans",
+            "text": "kapasitive reaktansen"
+          },
+          " til ",
+          {
+            "term": "kondensator",
+            "text": "kondensatoren"
+          },
+          "?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 159,
+              "u": "Ω"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 1.59,
+              "u": "kΩ"
+            }
+          ],
+          "feedback": [
+            "Ti ganger for høyt. Sjekk omregningen: 100 nF er 100 · 10⁻⁹ F = 10⁻⁷ F."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 15.9,
+              "u": "Ω"
+            }
+          ],
+          "feedback": [
+            "Ti ganger for lavt. Sjekk prefiksene for kHz og nF."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 6.28,
+              "u": "mΩ"
+            }
+          ],
+          "feedback": [
+            "Tallet 0,00628 får du ved å regne ut 2πfC, men det er ikke reaktansen (og enheten er da siemens, ikke ohm). Reaktansen er den inverse verdien: 1 delt på 2πfC ≈ 159 Ω."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        {
+          "steps": [
+            [
+              {
+                "math": [
+                  "X_C",
+                  "=",
+                  {
+                    "frac": [
+                      [
+                        "1"
+                      ],
+                      [
+                        "2",
+                        "π",
+                        "f",
+                        "C"
+                      ]
+                    ]
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "math": [
+                  "X_C",
+                  "=",
+                  {
+                    "frac": [
+                      [
+                        "1"
+                      ],
+                      [
+                        "2",
+                        "π",
+                        "·",
+                        "10000",
+                        "·",
+                        "10^−7"
+                      ]
+                    ]
+                  },
+                  "=",
+                  {
+                    "frac": [
+                      [
+                        "1"
+                      ],
+                      [
+                        "0,006283"
+                      ]
+                    ]
+                  },
+                  "≈",
+                  {
+                    "q": 159,
+                    "u": "Ω"
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        [
+          {
+            "term": "reaktans",
+            "text": "Reaktansen"
+          },
+          " til en kondensator synker når frekvensen øker, og når ",
+          {
+            "term": "kapasitans",
+            "text": "kapasitansen"
+          },
+          " øker."
+        ]
+      ],
+      "visual": {
+        "template": "ac-circuit",
+        "version": 1,
+        "params": {
+          "source": {
+            "frequency_hz": 10000
+          },
+          "component": {
+            "kind": "C",
+            "value": 1e-07
+          },
+          "reactance_label": "unknown"
+        },
+        "params_after": {
+          "reactance_label": "value"
+        }
+      },
+      "glossary_after_answer": [],
+      "calculation": {
+        "formula": "capacitive_reactance",
+        "inputs": {
+          "f": [
+            10,
+            "kHz"
+          ],
+          "C": [
+            100,
+            "nF"
+          ]
+        },
+        "answer": [
+          159,
+          "Ω"
+        ],
+        "answer_symbol": "X_C",
+        "sig_figs": 3
+      },
+      "study_reference": {
+        "chapter": 2,
+        "section_id": "s2-34",
+        "printed_pages": [
+          "2-13"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "d7ed6bb58f925e09"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "Jim C K Flaten",
+        "based_on": 2,
+        "at": "2026-10-25T12:33:25+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-25T12:33:25+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "f3ca2de7f58e55f4af42b3b6f95fc0570d68206ab923aab727b54f67ef366f34",
+          "note": "Varianter med andre verdier"
+        },
+        {
+          "at": "2026-10-25T12:33:26+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "f834d1cf0a5d32a89c8d72880d1945bec7bb7a6349a8537739bfef8164013731",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-25T12:35:02+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "f834d1cf0a5d32a89c8d72880d1945bec7bb7a6349a8537739bfef8164013731",
+          "note": "To varianter med andre verdier (v2, v3); hver variant er kontrollert som eget spørsmål.",
+          "acknowledged": [
+            "figures",
+            "ocr"
+          ]
+        }
+      ],
+      "variants": [
+        {
+          "id": "v2",
+          "context": [
+            [
+              "En kondensator på ",
+              {
+                "q": 10,
+                "u": "nF"
+              },
+              " er koblet til en sinusformet ",
+              {
+                "term": "vekselspenning",
+                "text": "vekselspenning"
+              },
+              " med ",
+              {
+                "term": "frekvens",
+                "text": "frekvens"
+              },
+              " ",
+              {
+                "q": 50,
+                "u": "kHz"
+              },
+              "."
+            ]
+          ],
+          "options": [
+            {
+              "id": "o1",
+              "content": [
+                {
+                  "q": 318,
+                  "u": "Ω"
+                }
+              ],
+              "feedback": []
+            },
+            {
+              "id": "o2",
+              "content": [
+                {
+                  "q": 3.18,
+                  "u": "kΩ"
+                }
+              ],
+              "feedback": [
+                "Ti ganger for høyt. Sjekk omregningen: 10 nF er 10 · 10⁻⁹ F = 10⁻⁸ F."
+              ]
+            },
+            {
+              "id": "o3",
+              "content": [
+                {
+                  "q": 31.8,
+                  "u": "Ω"
+                }
+              ],
+              "feedback": [
+                "Ti ganger for lavt. Sjekk prefiksene for kHz og nF."
+              ]
+            },
+            {
+              "id": "o4",
+              "content": [
+                {
+                  "q": 3.14,
+                  "u": "mΩ"
+                }
+              ],
+              "feedback": [
+                "Tallet 0,00314 får du ved å regne ut 2πfC, men det er ikke reaktansen (og enheten er da siemens, ikke ohm). Reaktansen er den inverse verdien: 1 delt på 2πfC ≈ 318 Ω."
+              ]
+            }
+          ],
+          "explanation": [
+            {
+              "steps": [
+                [
+                  {
+                    "math": [
+                      "X_C",
+                      "=",
+                      {
+                        "frac": [
+                          [
+                            "1"
+                          ],
+                          [
+                            "2",
+                            "π",
+                            "f",
+                            "C"
+                          ]
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                [
+                  {
+                    "math": [
+                      "X_C",
+                      "=",
+                      {
+                        "frac": [
+                          [
+                            "1"
+                          ],
+                          [
+                            "2",
+                            "π",
+                            "·",
+                            "50000",
+                            "·",
+                            "10^−8"
+                          ]
+                        ]
+                      },
+                      "=",
+                      {
+                        "frac": [
+                          [
+                            "1"
+                          ],
+                          [
+                            "0,003142"
+                          ]
+                        ]
+                      },
+                      "≈",
+                      {
+                        "q": 318,
+                        "u": "Ω"
+                      }
+                    ]
+                  }
+                ]
+              ]
+            },
+            [
+              {
+                "term": "reaktans",
+                "text": "Reaktansen"
+              },
+              " til en kondensator synker når frekvensen øker, og når ",
+              {
+                "term": "kapasitans",
+                "text": "kapasitansen"
+              },
+              " øker."
+            ]
+          ],
+          "visual": {
+            "template": "ac-circuit",
+            "version": 1,
+            "params": {
+              "source": {
+                "frequency_hz": 50000
+              },
+              "component": {
+                "kind": "C",
+                "value": 1e-08
+              },
+              "reactance_label": "unknown"
+            },
+            "params_after": {
+              "reactance_label": "value"
+            }
+          },
+          "calculation": {
+            "formula": "capacitive_reactance",
+            "inputs": {
+              "f": [
+                50,
+                "kHz"
+              ],
+              "C": [
+                10,
+                "nF"
+              ]
+            },
+            "answer": [
+              318,
+              "Ω"
+            ],
+            "answer_symbol": "X_C",
+            "sig_figs": 3
+          }
+        },
+        {
+          "id": "v3",
+          "context": [
+            [
+              "En kondensator på ",
+              {
+                "q": 1,
+                "u": "nF"
+              },
+              " er koblet til en sinusformet ",
+              {
+                "term": "vekselspenning",
+                "text": "vekselspenning"
+              },
+              " med ",
+              {
+                "term": "frekvens",
+                "text": "frekvens"
+              },
+              " ",
+              {
+                "q": 3.5,
+                "u": "MHz"
+              },
+              "."
+            ]
+          ],
+          "options": [
+            {
+              "id": "o1",
+              "content": [
+                {
+                  "q": 45.5,
+                  "u": "Ω"
+                }
+              ],
+              "feedback": []
+            },
+            {
+              "id": "o2",
+              "content": [
+                {
+                  "q": 455,
+                  "u": "Ω"
+                }
+              ],
+              "feedback": [
+                "Ti ganger for høyt. Sjekk omregningen: 1 nF er 10⁻⁹ F."
+              ]
+            },
+            {
+              "id": "o3",
+              "content": [
+                {
+                  "q": 4.55,
+                  "u": "Ω"
+                }
+              ],
+              "feedback": [
+                "Ti ganger for lavt. Sjekk prefiksene for MHz og nF."
+              ]
+            },
+            {
+              "id": "o4",
+              "content": [
+                {
+                  "q": 22,
+                  "u": "mΩ"
+                }
+              ],
+              "feedback": [
+                "Tallet 0,0220 får du ved å regne ut 2πfC, men det er ikke reaktansen (og enheten er da siemens, ikke ohm). Reaktansen er den inverse verdien: 1 delt på 2πfC ≈ 45,5 Ω."
+              ]
+            }
+          ],
+          "explanation": [
+            {
+              "steps": [
+                [
+                  {
+                    "math": [
+                      "X_C",
+                      "=",
+                      {
+                        "frac": [
+                          [
+                            "1"
+                          ],
+                          [
+                            "2",
+                            "π",
+                            "f",
+                            "C"
+                          ]
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                [
+                  {
+                    "math": [
+                      "X_C",
+                      "=",
+                      {
+                        "frac": [
+                          [
+                            "1"
+                          ],
+                          [
+                            "2",
+                            "π",
+                            "·",
+                            "3500000",
+                            "·",
+                            "10^−9"
+                          ]
+                        ]
+                      },
+                      "=",
+                      {
+                        "frac": [
+                          [
+                            "1"
+                          ],
+                          [
+                            "0,02199"
+                          ]
+                        ]
+                      },
+                      "≈",
+                      {
+                        "q": 45.5,
+                        "u": "Ω"
+                      }
+                    ]
+                  }
+                ]
+              ]
+            },
+            [
+              {
+                "term": "reaktans",
+                "text": "Reaktansen"
+              },
+              " til en kondensator synker når frekvensen øker, og når ",
+              {
+                "term": "kapasitans",
+                "text": "kapasitansen"
+              },
+              " øker."
+            ]
+          ],
+          "visual": {
+            "template": "ac-circuit",
+            "version": 1,
+            "params": {
+              "source": {
+                "frequency_hz": 3500000
+              },
+              "component": {
+                "kind": "C",
+                "value": 1e-09
+              },
+              "reactance_label": "unknown"
+            },
+            "params_after": {
+              "reactance_label": "value"
+            }
+          },
+          "calculation": {
+            "formula": "capacitive_reactance",
+            "inputs": {
+              "f": [
+                3.5,
+                "MHz"
+              ],
+              "C": [
+                1,
+                "nF"
+              ]
+            },
+            "answer": [
+              45.5,
+              "Ω"
+            ],
+            "answer_symbol": "X_C",
+            "sig_figs": 3
+          }
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "f834d1cf0a5d32a89c8d72880d1945bec7bb7a6349a8537739bfef8164013731",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: equation, numeric_low_conf. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-25T12:35:02+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-25T12:35:02+00:00",
+        "content_sha256": "f834d1cf0a5d32a89c8d72880d1945bec7bb7a6349a8537739bfef8164013731",
         "acknowledged_hazards": [
           "figures",
           "ocr"

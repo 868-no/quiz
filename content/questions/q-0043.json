@@ -270,7 +270,7 @@
     },
     {
       "revision": 2,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "calculation",
@@ -518,6 +518,15 @@
             "figures",
             "ocr"
           ]
+        },
+        {
+          "at": "2026-10-25T12:35:08+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "7a35871e7e1964ff90b4d6205c33256a025d20f9420dde145712b6558cb31181",
+          "note": "superseded by r3"
         }
       ],
       "checks": {
@@ -542,6 +551,631 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-23T20:43:47+00:00",
         "content_sha256": "7a35871e7e1964ff90b4d6205c33256a025d20f9420dde145712b6558cb31181",
+        "acknowledged_hazards": [
+          "figures",
+          "ocr"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 3,
+      "status": "approved",
+      "type": "single_choice",
+      "style": "calculation",
+      "difficulty": "easy",
+      "chapter": 2,
+      "section_ids": [
+        "s2-28"
+      ],
+      "topic_ids": [
+        "vekselstromsverdier"
+      ],
+      "learning_objective": "Regne om fra effektivverdi til toppverdi for en sinusspenning.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "Grafen viser nettspenningen, som er sinusformet med ",
+          {
+            "term": "effektivverdi",
+            "text": "effektivverdi"
+          },
+          " ",
+          {
+            "q": 230,
+            "u": "V"
+          },
+          "."
+        ]
+      ],
+      "stem": [
+        [
+          "Hva er ",
+          {
+            "term": "toppverdi",
+            "text": "toppverdien"
+          },
+          " til ",
+          {
+            "term": "spenning",
+            "text": "spenningen"
+          },
+          "?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 325,
+              "u": "V"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 163,
+              "u": "V"
+            }
+          ],
+          "feedback": [
+            "Her er det delt på √2. Toppverdien er større enn effektivverdien, så du skal gange."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 460,
+              "u": "V"
+            }
+          ],
+          "feedback": [
+            "Her er det ganget med 2 i stedet for √2."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 651,
+              "u": "V"
+            }
+          ],
+          "feedback": [
+            "Dette er topp-til-topp-verdien, altså avstanden fra positiv til negativ topp."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "For en sinusformet spenning er toppverdien √2 ganger effektivverdien:"
+        ],
+        {
+          "steps": [
+            [
+              {
+                "math": [
+                  "U_p",
+                  "=",
+                  "U_eff",
+                  "·",
+                  {
+                    "sqrt": [
+                      "2"
+                    ]
+                  },
+                  "=",
+                  {
+                    "q": 230,
+                    "u": "V"
+                  },
+                  "·",
+                  "1,414",
+                  "≈",
+                  {
+                    "q": 325,
+                    "u": "V"
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        [
+          "Det er effektivverdien som vanligvis oppgis for ",
+          {
+            "term": "vekselspenning",
+            "text": "vekselspenning"
+          },
+          ", fordi den gir samme varmeeffekt i en ",
+          {
+            "term": "motstand",
+            "text": "motstand"
+          },
+          " som en like stor ",
+          {
+            "term": "likespenning",
+            "text": "likespenning"
+          },
+          "."
+        ]
+      ],
+      "visual": {
+        "template": "waveform",
+        "version": 1,
+        "params": {
+          "traces": [
+            {
+              "label": "U",
+              "shape": "sine",
+              "amplitude": 325.26911934581,
+              "unit": "V",
+              "frequency_hz": 50,
+              "phase_deg": 0,
+              "offset": 0
+            }
+          ],
+          "cycles": 2,
+          "markers": [
+            "rms"
+          ],
+          "show_values": true
+        },
+        "params_after": {
+          "markers": [
+            "rms",
+            "peak"
+          ]
+        }
+      },
+      "glossary_after_answer": [],
+      "calculation": {
+        "formula": "peak_from_rms",
+        "inputs": {
+          "U_eff": [
+            230,
+            "V"
+          ]
+        },
+        "answer": [
+          325,
+          "V"
+        ],
+        "answer_symbol": "U_p",
+        "sig_figs": 3,
+        "visual_bindings": {
+          "U_eff": "U_rms"
+        }
+      },
+      "study_reference": {
+        "chapter": 2,
+        "section_id": "s2-28",
+        "printed_pages": [
+          "2-11"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "ed08ac76c205165b"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "Jim C K Flaten",
+        "based_on": 2,
+        "at": "2026-10-25T12:32:53+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-25T12:32:53+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "7a35871e7e1964ff90b4d6205c33256a025d20f9420dde145712b6558cb31181",
+          "note": "Varianter med andre verdier"
+        },
+        {
+          "at": "2026-10-25T12:32:54+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "6f89151d0347465759466f25cadffb8ef060d39531fd272d2146131b6e592e69",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-25T12:35:08+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "f13314c416b3e6b1b74507d3c65be7e6311a28968b7508a57dc25b93e74a825b",
+          "note": "To varianter med andre verdier (v2, v3); hver variant er kontrollert som eget spørsmål.",
+          "acknowledged": [
+            "figures",
+            "ocr"
+          ]
+        }
+      ],
+      "variants": [
+        {
+          "id": "v2",
+          "context": [
+            [
+              "Grafen viser spenningen fra sekundærviklingen på en transformator. Den er sinusformet med ",
+              {
+                "term": "effektivverdi",
+                "text": "effektivverdi"
+              },
+              " ",
+              {
+                "q": 12,
+                "u": "V"
+              },
+              "."
+            ]
+          ],
+          "options": [
+            {
+              "id": "o1",
+              "content": [
+                {
+                  "q": 17.0,
+                  "u": "V",
+                  "digits": 1
+                }
+              ],
+              "feedback": []
+            },
+            {
+              "id": "o2",
+              "content": [
+                {
+                  "q": 8.49,
+                  "u": "V"
+                }
+              ],
+              "feedback": [
+                "Her er det delt på √2. Toppverdien er større enn effektivverdien, så du skal gange."
+              ]
+            },
+            {
+              "id": "o3",
+              "content": [
+                {
+                  "q": 24,
+                  "u": "V"
+                }
+              ],
+              "feedback": [
+                "Her er det ganget med 2 i stedet for √2."
+              ]
+            },
+            {
+              "id": "o4",
+              "content": [
+                {
+                  "q": 33.9,
+                  "u": "V"
+                }
+              ],
+              "feedback": [
+                "Dette er topp-til-topp-verdien, altså avstanden fra positiv til negativ topp."
+              ]
+            }
+          ],
+          "explanation": [
+            [
+              "For en sinusformet spenning er toppverdien √2 ganger effektivverdien:"
+            ],
+            {
+              "steps": [
+                [
+                  {
+                    "math": [
+                      "U_p",
+                      "=",
+                      "U_eff",
+                      "·",
+                      {
+                        "sqrt": [
+                          "2"
+                        ]
+                      },
+                      "=",
+                      {
+                        "q": 12,
+                        "u": "V"
+                      },
+                      "·",
+                      "1,414",
+                      "≈",
+                      {
+                        "q": 17.0,
+                        "u": "V",
+                        "digits": 1
+                      }
+                    ]
+                  }
+                ]
+              ]
+            },
+            [
+              "Det er effektivverdien som vanligvis oppgis for ",
+              {
+                "term": "vekselspenning",
+                "text": "vekselspenning"
+              },
+              ", fordi den gir samme varmeeffekt i en ",
+              {
+                "term": "motstand",
+                "text": "motstand"
+              },
+              " som en like stor ",
+              {
+                "term": "likespenning",
+                "text": "likespenning"
+              },
+              "."
+            ]
+          ],
+          "visual": {
+            "template": "waveform",
+            "version": 1,
+            "params": {
+              "traces": [
+                {
+                  "label": "U",
+                  "shape": "sine",
+                  "amplitude": 16.970562748477143,
+                  "unit": "V",
+                  "frequency_hz": 50,
+                  "phase_deg": 0,
+                  "offset": 0
+                }
+              ],
+              "cycles": 2,
+              "markers": [
+                "rms"
+              ],
+              "show_values": true
+            },
+            "params_after": {
+              "markers": [
+                "rms",
+                "peak"
+              ]
+            }
+          },
+          "calculation": {
+            "formula": "peak_from_rms",
+            "inputs": {
+              "U_eff": [
+                12,
+                "V"
+              ]
+            },
+            "answer": [
+              17.0,
+              "V"
+            ],
+            "answer_symbol": "U_p",
+            "sig_figs": 3,
+            "visual_bindings": {
+              "U_eff": "U_rms"
+            }
+          }
+        },
+        {
+          "id": "v3",
+          "context": [
+            [
+              "Grafen viser spenningen fra sekundærviklingen på en transformator. Den er sinusformet med ",
+              {
+                "term": "effektivverdi",
+                "text": "effektivverdi"
+              },
+              " ",
+              {
+                "q": 18,
+                "u": "V"
+              },
+              "."
+            ]
+          ],
+          "options": [
+            {
+              "id": "o1",
+              "content": [
+                {
+                  "q": 25.5,
+                  "u": "V"
+                }
+              ],
+              "feedback": []
+            },
+            {
+              "id": "o2",
+              "content": [
+                {
+                  "q": 12.7,
+                  "u": "V"
+                }
+              ],
+              "feedback": [
+                "Her er det delt på √2. Toppverdien er større enn effektivverdien, så du skal gange."
+              ]
+            },
+            {
+              "id": "o3",
+              "content": [
+                {
+                  "q": 36,
+                  "u": "V"
+                }
+              ],
+              "feedback": [
+                "Her er det ganget med 2 i stedet for √2."
+              ]
+            },
+            {
+              "id": "o4",
+              "content": [
+                {
+                  "q": 50.9,
+                  "u": "V"
+                }
+              ],
+              "feedback": [
+                "Dette er topp-til-topp-verdien, altså avstanden fra positiv til negativ topp."
+              ]
+            }
+          ],
+          "explanation": [
+            [
+              "For en sinusformet spenning er toppverdien √2 ganger effektivverdien:"
+            ],
+            {
+              "steps": [
+                [
+                  {
+                    "math": [
+                      "U_p",
+                      "=",
+                      "U_eff",
+                      "·",
+                      {
+                        "sqrt": [
+                          "2"
+                        ]
+                      },
+                      "=",
+                      {
+                        "q": 18,
+                        "u": "V"
+                      },
+                      "·",
+                      "1,414",
+                      "≈",
+                      {
+                        "q": 25.5,
+                        "u": "V"
+                      }
+                    ]
+                  }
+                ]
+              ]
+            },
+            [
+              "Det er effektivverdien som vanligvis oppgis for ",
+              {
+                "term": "vekselspenning",
+                "text": "vekselspenning"
+              },
+              ", fordi den gir samme varmeeffekt i en ",
+              {
+                "term": "motstand",
+                "text": "motstand"
+              },
+              " som en like stor ",
+              {
+                "term": "likespenning",
+                "text": "likespenning"
+              },
+              "."
+            ]
+          ],
+          "visual": {
+            "template": "waveform",
+            "version": 1,
+            "params": {
+              "traces": [
+                {
+                  "label": "U",
+                  "shape": "sine",
+                  "amplitude": 25.455844122715714,
+                  "unit": "V",
+                  "frequency_hz": 50,
+                  "phase_deg": 0,
+                  "offset": 0
+                }
+              ],
+              "cycles": 2,
+              "markers": [
+                "rms"
+              ],
+              "show_values": true
+            },
+            "params_after": {
+              "markers": [
+                "rms",
+                "peak"
+              ]
+            }
+          },
+          "calculation": {
+            "formula": "peak_from_rms",
+            "inputs": {
+              "U_eff": [
+                18,
+                "V"
+              ]
+            },
+            "answer": [
+              25.5,
+              "V"
+            ],
+            "answer_symbol": "U_p",
+            "sig_figs": 3,
+            "visual_bindings": {
+              "U_eff": "U_rms"
+            }
+          }
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "f13314c416b3e6b1b74507d3c65be7e6311a28968b7508a57dc25b93e74a825b",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: equation, subscript_garbled. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-25T12:35:08+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-25T12:35:08+00:00",
+        "content_sha256": "f13314c416b3e6b1b74507d3c65be7e6311a28968b7508a57dc25b93e74a825b",
         "acknowledged_hazards": [
           "figures",
           "ocr"

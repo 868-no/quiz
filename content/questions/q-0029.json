@@ -286,7 +286,7 @@
     },
     {
       "revision": 2,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "calculation",
@@ -555,6 +555,15 @@
           "acknowledged": [
             "figures"
           ]
+        },
+        {
+          "at": "2026-10-25T12:35:05+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "5500109c20497cb746b55feabc93da803d9bab28327fcd45cbb73120ff9a5c3c",
+          "note": "superseded by r3"
         }
       ],
       "checks": {
@@ -575,6 +584,695 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-23T20:43:46+00:00",
         "content_sha256": "5500109c20497cb746b55feabc93da803d9bab28327fcd45cbb73120ff9a5c3c",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 3,
+      "status": "approved",
+      "type": "single_choice",
+      "style": "calculation",
+      "difficulty": "easy",
+      "chapter": 6,
+      "section_ids": [
+        "s6-09",
+        "s6-10"
+      ],
+      "topic_ids": [
+        "mellomfrekvens"
+      ],
+      "learning_objective": "Finne mellomfrekvensen som differansen mellom lokaloscillator og signal.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En mottaker er innstilt på et signal på ",
+          {
+            "q": 14.2,
+            "u": "MHz"
+          },
+          ". ",
+          {
+            "term": "lokaloscillator",
+            "text": "Lokaloscillatoren"
+          },
+          " går på ",
+          {
+            "q": 23.2,
+            "u": "MHz"
+          },
+          ", og ",
+          {
+            "term": "mottaker",
+            "text": "mottakeren"
+          },
+          " bruker differansefrekvensen fra ",
+          {
+            "term": "blander",
+            "text": "blanderen"
+          },
+          "."
+        ]
+      ],
+      "stem": [
+        [
+          "Hva er ",
+          {
+            "term": "mellomfrekvens",
+            "text": "mellomfrekvensen"
+          },
+          "?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 9,
+              "u": "MHz"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 37.4,
+              "u": "MHz"
+            }
+          ],
+          "feedback": [
+            "Det er sumfrekvensen. Her bruker mottakeren differansen."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 14.2,
+              "u": "MHz"
+            }
+          ],
+          "feedback": [
+            [
+              "Det er signalfrekvensen som går inn i blanderen. Mellomfrekvensen er en ny ",
+              {
+                "term": "frekvens",
+                "text": "frekvens"
+              },
+              " som dannes der."
+            ]
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 23.2,
+              "u": "MHz"
+            }
+          ],
+          "feedback": [
+            "Det er lokaloscillatorens frekvens, som også går inn i blanderen."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          {
+            "math": [
+              "f_MF",
+              "=",
+              "f_LO",
+              "−",
+              "f_RF",
+              "=",
+              {
+                "q": 23.2,
+                "u": "MHz"
+              },
+              "−",
+              {
+                "q": 14.2,
+                "u": "MHz"
+              },
+              "=",
+              {
+                "q": 9,
+                "u": "MHz"
+              }
+            ]
+          }
+        ],
+        "Blanderen lager også sumfrekvensen (37,4 MHz), men den slipper ikke gjennom mellomfrekvensfilteret."
+      ],
+      "visual": {
+        "template": "block-diagram",
+        "version": 1,
+        "params": {
+          "chain": [
+            {
+              "kind": "antenna"
+            },
+            {
+              "kind": "rf_amp"
+            },
+            {
+              "kind": "mixer"
+            },
+            {
+              "kind": "if_filter"
+            },
+            {
+              "kind": "if_amp"
+            },
+            {
+              "kind": "demodulator"
+            }
+          ],
+          "side": [
+            {
+              "kind": "local_osc",
+              "label": "LO 23,2 MHz",
+              "into": 2
+            }
+          ],
+          "edge_labels": [
+            {
+              "after": 1,
+              "text": "14,2 MHz"
+            },
+            {
+              "after": 2,
+              "text": "? MHz"
+            }
+          ]
+        },
+        "params_after": {
+          "edge_labels": [
+            {
+              "after": 1,
+              "text": "14,2 MHz"
+            },
+            {
+              "after": 2,
+              "text": "9 MHz"
+            }
+          ]
+        }
+      },
+      "glossary_after_answer": [],
+      "calculation": {
+        "formula": "if_difference",
+        "inputs": {
+          "f_RF": [
+            14.2,
+            "MHz"
+          ],
+          "f_LO": [
+            23.2,
+            "MHz"
+          ]
+        },
+        "answer": [
+          9,
+          "MHz"
+        ],
+        "answer_symbol": "f_IF",
+        "sig_figs": 2
+      },
+      "study_reference": {
+        "chapter": 6,
+        "section_id": "s6-09",
+        "printed_pages": [
+          "6-4"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "1eeb2a5ab810c263",
+          "f0e5fcf6f528bf33"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "Jim C K Flaten",
+        "based_on": 2,
+        "at": "2026-10-25T12:32:54+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-25T12:32:54+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "5500109c20497cb746b55feabc93da803d9bab28327fcd45cbb73120ff9a5c3c",
+          "note": "Varianter med andre verdier"
+        },
+        {
+          "at": "2026-10-25T12:32:55+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "f910118e7f2481ec2b8633b5ea9b02b984295afbe3be9d8c6d1d8737c9cca2ae",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-25T12:35:05+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "f910118e7f2481ec2b8633b5ea9b02b984295afbe3be9d8c6d1d8737c9cca2ae",
+          "note": "To varianter med andre verdier (v2, v3); hver variant er kontrollert som eget spørsmål.",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "variants": [
+        {
+          "id": "v2",
+          "context": [
+            [
+              "En mottaker er innstilt på et signal på ",
+              {
+                "q": 21.2,
+                "u": "MHz"
+              },
+              ". ",
+              {
+                "term": "lokaloscillator",
+                "text": "Lokaloscillatoren"
+              },
+              " går på ",
+              {
+                "q": 31.9,
+                "u": "MHz"
+              },
+              ", og ",
+              {
+                "term": "mottaker",
+                "text": "mottakeren"
+              },
+              " bruker differansefrekvensen fra ",
+              {
+                "term": "blander",
+                "text": "blanderen"
+              },
+              "."
+            ]
+          ],
+          "options": [
+            {
+              "id": "o1",
+              "content": [
+                {
+                  "q": 10.7,
+                  "u": "MHz"
+                }
+              ],
+              "feedback": []
+            },
+            {
+              "id": "o2",
+              "content": [
+                {
+                  "q": 53.1,
+                  "u": "MHz"
+                }
+              ],
+              "feedback": [
+                "Det er sumfrekvensen. Her bruker mottakeren differansen."
+              ]
+            },
+            {
+              "id": "o3",
+              "content": [
+                {
+                  "q": 21.2,
+                  "u": "MHz"
+                }
+              ],
+              "feedback": [
+                [
+                  "Det er signalfrekvensen som går inn i blanderen. Mellomfrekvensen er en ny ",
+                  {
+                    "term": "frekvens",
+                    "text": "frekvens"
+                  },
+                  " som dannes der."
+                ]
+              ]
+            },
+            {
+              "id": "o4",
+              "content": [
+                {
+                  "q": 31.9,
+                  "u": "MHz"
+                }
+              ],
+              "feedback": [
+                "Det er lokaloscillatorens frekvens, som også går inn i blanderen."
+              ]
+            }
+          ],
+          "explanation": [
+            [
+              {
+                "math": [
+                  "f_MF",
+                  "=",
+                  "f_LO",
+                  "−",
+                  "f_RF",
+                  "=",
+                  {
+                    "q": 31.9,
+                    "u": "MHz"
+                  },
+                  "−",
+                  {
+                    "q": 21.2,
+                    "u": "MHz"
+                  },
+                  "=",
+                  {
+                    "q": 10.7,
+                    "u": "MHz"
+                  }
+                ]
+              }
+            ],
+            "Blanderen lager også sumfrekvensen (53,1 MHz), men den slipper ikke gjennom mellomfrekvensfilteret."
+          ],
+          "visual": {
+            "template": "block-diagram",
+            "version": 1,
+            "params": {
+              "chain": [
+                {
+                  "kind": "antenna"
+                },
+                {
+                  "kind": "rf_amp"
+                },
+                {
+                  "kind": "mixer"
+                },
+                {
+                  "kind": "if_filter"
+                },
+                {
+                  "kind": "if_amp"
+                },
+                {
+                  "kind": "demodulator"
+                }
+              ],
+              "side": [
+                {
+                  "kind": "local_osc",
+                  "label": "LO 31,9 MHz",
+                  "into": 2
+                }
+              ],
+              "edge_labels": [
+                {
+                  "after": 1,
+                  "text": "21,2 MHz"
+                },
+                {
+                  "after": 2,
+                  "text": "? MHz"
+                }
+              ]
+            },
+            "params_after": {
+              "edge_labels": [
+                {
+                  "after": 1,
+                  "text": "21,2 MHz"
+                },
+                {
+                  "after": 2,
+                  "text": "10,7 MHz"
+                }
+              ]
+            }
+          },
+          "calculation": {
+            "formula": "if_difference",
+            "inputs": {
+              "f_RF": [
+                21.2,
+                "MHz"
+              ],
+              "f_LO": [
+                31.9,
+                "MHz"
+              ]
+            },
+            "answer": [
+              10.7,
+              "MHz"
+            ],
+            "answer_symbol": "f_IF",
+            "sig_figs": 3
+          }
+        },
+        {
+          "id": "v3",
+          "context": [
+            [
+              "En mottaker er innstilt på et signal på ",
+              {
+                "q": 7.05,
+                "u": "MHz"
+              },
+              ". ",
+              {
+                "term": "lokaloscillator",
+                "text": "Lokaloscillatoren"
+              },
+              " går på ",
+              {
+                "q": 7.505,
+                "u": "MHz"
+              },
+              ", og ",
+              {
+                "term": "mottaker",
+                "text": "mottakeren"
+              },
+              " bruker differansefrekvensen fra ",
+              {
+                "term": "blander",
+                "text": "blanderen"
+              },
+              "."
+            ]
+          ],
+          "options": [
+            {
+              "id": "o1",
+              "content": [
+                {
+                  "q": 455,
+                  "u": "kHz"
+                }
+              ],
+              "feedback": []
+            },
+            {
+              "id": "o2",
+              "content": [
+                {
+                  "q": 14.555,
+                  "u": "MHz"
+                }
+              ],
+              "feedback": [
+                "Det er sumfrekvensen. Her bruker mottakeren differansen."
+              ]
+            },
+            {
+              "id": "o3",
+              "content": [
+                {
+                  "q": 7.05,
+                  "u": "MHz"
+                }
+              ],
+              "feedback": [
+                [
+                  "Det er signalfrekvensen som går inn i blanderen. Mellomfrekvensen er en ny ",
+                  {
+                    "term": "frekvens",
+                    "text": "frekvens"
+                  },
+                  " som dannes der."
+                ]
+              ]
+            },
+            {
+              "id": "o4",
+              "content": [
+                {
+                  "q": 7.505,
+                  "u": "MHz"
+                }
+              ],
+              "feedback": [
+                "Det er lokaloscillatorens frekvens, som også går inn i blanderen."
+              ]
+            }
+          ],
+          "explanation": [
+            [
+              {
+                "math": [
+                  "f_MF",
+                  "=",
+                  "f_LO",
+                  "−",
+                  "f_RF",
+                  "=",
+                  {
+                    "q": 7.505,
+                    "u": "MHz"
+                  },
+                  "−",
+                  {
+                    "q": 7.05,
+                    "u": "MHz"
+                  },
+                  "=",
+                  {
+                    "q": 455,
+                    "u": "kHz"
+                  }
+                ]
+              }
+            ],
+            "Blanderen lager også sumfrekvensen (14,555 MHz), men den slipper ikke gjennom mellomfrekvensfilteret."
+          ],
+          "visual": {
+            "template": "block-diagram",
+            "version": 1,
+            "params": {
+              "chain": [
+                {
+                  "kind": "antenna"
+                },
+                {
+                  "kind": "rf_amp"
+                },
+                {
+                  "kind": "mixer"
+                },
+                {
+                  "kind": "if_filter"
+                },
+                {
+                  "kind": "if_amp"
+                },
+                {
+                  "kind": "demodulator"
+                }
+              ],
+              "side": [
+                {
+                  "kind": "local_osc",
+                  "label": "LO 7,505 MHz",
+                  "into": 2
+                }
+              ],
+              "edge_labels": [
+                {
+                  "after": 1,
+                  "text": "7,05 MHz"
+                },
+                {
+                  "after": 2,
+                  "text": "? kHz"
+                }
+              ]
+            },
+            "params_after": {
+              "edge_labels": [
+                {
+                  "after": 1,
+                  "text": "7,05 MHz"
+                },
+                {
+                  "after": 2,
+                  "text": "455 kHz"
+                }
+              ]
+            }
+          },
+          "calculation": {
+            "formula": "if_difference",
+            "inputs": {
+              "f_RF": [
+                7.05,
+                "MHz"
+              ],
+              "f_LO": [
+                7.505,
+                "MHz"
+              ]
+            },
+            "answer": [
+              455,
+              "kHz"
+            ],
+            "answer_symbol": "f_IF",
+            "sig_figs": 3
+          }
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "f910118e7f2481ec2b8633b5ea9b02b984295afbe3be9d8c6d1d8737c9cca2ae",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-25T12:35:05+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-25T12:35:05+00:00",
+        "content_sha256": "f910118e7f2481ec2b8633b5ea9b02b984295afbe3be9d8c6d1d8737c9cca2ae",
         "acknowledged_hazards": [
           "figures"
         ],

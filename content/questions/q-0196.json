@@ -302,7 +302,7 @@
     },
     {
       "revision": 2,
-      "status": "approved",
+      "status": "retired",
       "type": "single_choice",
       "style": "calculation",
       "difficulty": "medium",
@@ -575,6 +575,15 @@
           "acknowledged": [
             "figures"
           ]
+        },
+        {
+          "at": "2026-10-25T12:35:10+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "8d84a6e60c53c02e75d510603f0e83ee52dd7d4a89192b6e98a0eaa4f0d3d4cb",
+          "note": "superseded by r3"
         }
       ],
       "visual": {
@@ -618,6 +627,736 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-24T17:02:58+00:00",
         "content_sha256": "8d84a6e60c53c02e75d510603f0e83ee52dd7d4a89192b6e98a0eaa4f0d3d4cb",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 3,
+      "status": "approved",
+      "type": "single_choice",
+      "style": "calculation",
+      "difficulty": "medium",
+      "chapter": 5,
+      "section_ids": [
+        "s5-20"
+      ],
+      "topic_ids": [
+        "senderfeil"
+      ],
+      "learning_objective": "Bruke Carsons regel til å se at for stor deviasjon gjør et FM-signal bredere enn kanalen.",
+      "priority": "normal",
+      "context": [
+        [
+          "En ",
+          {
+            "term": "frekvensmodulasjon",
+            "text": "FM"
+          },
+          "-sender skal brukes på 2 m-kanaler med ",
+          {
+            "q": 12.5,
+            "u": "kHz"
+          },
+          " kanalavstand, der en ",
+          {
+            "term": "deviasjon",
+            "text": "spissdeviasjon"
+          },
+          " rundt ",
+          {
+            "q": 2.5,
+            "u": "kHz"
+          },
+          " er vanlig. Mikrofonforsterkeren er imidlertid skrudd så høyt at spissdeviasjonen blir ",
+          {
+            "q": 5,
+            "u": "kHz"
+          },
+          ". Den høyeste lydfrekvensen som slipper gjennom, er ",
+          {
+            "q": 3,
+            "u": "kHz"
+          },
+          ". Bruk ",
+          {
+            "term": "carsons-regel",
+            "text": "Carsons regel"
+          },
+          " for ",
+          {
+            "term": "baandbredde",
+            "text": "båndbredden"
+          },
+          "."
+        ]
+      ],
+      "stem": [
+        "Hvor bred blir det utsendte signalet omtrent?"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 8,
+              "u": "kHz"
+            }
+          ],
+          "feedback": [
+            [
+              "Det er bare summen av deviasjon og lydfrekvens. Signalet brer seg like mye til begge sider av ",
+              {
+                "term": "baerebolge",
+                "text": "bærebølgen"
+              },
+              ", så summen må ganges med 2."
+            ]
+          ]
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 11,
+              "u": "kHz"
+            }
+          ],
+          "feedback": [
+            "Det er båndbredden med den vanlige deviasjonen på 2,5 kHz. Her er deviasjonen 5 kHz."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 16,
+              "u": "kHz"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 10,
+              "u": "kHz"
+            }
+          ],
+          "feedback": [
+            [
+              "Det er bare to ganger deviasjonen. Carsons regel tar også med lydfrekvensen, fordi ",
+              {
+                "term": "sidebaand",
+                "text": "sidebåndene"
+              },
+              " ligger i avstander lik lydfrekvensen."
+            ]
+          ]
+        }
+      ],
+      "correct": [
+        "o3"
+      ],
+      "explanation": [
+        "Carsons regel gir omtrentlig båndbredde for et FM-signal:",
+        [
+          {
+            "math": [
+              "B",
+              "≈",
+              "2",
+              "·",
+              {
+                "paren": [
+                  "Δf",
+                  "+",
+                  "f_mod"
+                ]
+              },
+              "=",
+              "2",
+              "·",
+              {
+                "paren": [
+                  {
+                    "q": 5,
+                    "u": "kHz"
+                  },
+                  "+",
+                  {
+                    "q": 3,
+                    "u": "kHz"
+                  }
+                ]
+              },
+              "=",
+              {
+                "q": 16,
+                "u": "kHz"
+              }
+            ]
+          }
+        ],
+        [
+          "Det er mer enn kanalavstanden på 12,5 kHz, så signalet sprer seg inn på nabokanalene. ",
+          {
+            "term": "mottaker",
+            "text": "Mottakere"
+          },
+          " som er laget for smal deviasjon, vil i tillegg gjengi signalet forvrengt, fordi det er bredere enn ",
+          {
+            "term": "demodulator",
+            "text": "demodulatoren"
+          },
+          " er laget for."
+        ],
+        "Med den vanlige deviasjonen på 2,5 kHz blir båndbredden 2 · (2,5 kHz + 3 kHz) = 11 kHz, som får plass i kanalen. Løsningen er å skru ned mikrofonforsterkningen eller deviasjonsinnstillingen."
+      ],
+      "visual": {
+        "template": "frequency-response",
+        "version": 1,
+        "params": {
+          "kind": "spectrum",
+          "center_hz": 145500000.0,
+          "spectrum": {
+            "mode": "fm",
+            "mod_hz": 3000,
+            "index": 1.6666666666666667,
+            "freq_labels": "none",
+            "spacing_label": true
+          }
+        },
+        "caption": "Spekteret til signalet, regnet ut fra tonen og deviasjonen i oppgaven.",
+        "animation": {
+          "param": "spectrum.index",
+          "from": 0.3,
+          "to": 5,
+          "phase": "both",
+          "text": "Animasjonen viser spekteret når deviasjonen (modulasjonsindeksen) øker og minker: flere sidebånd kommer til, og høydene endrer seg. Avstanden mellom linjene er den samme hele tiden."
+        }
+      },
+      "glossary_after_answer": [
+        "carsons-regel"
+      ],
+      "calculation": {
+        "formula": "fm_carson_bandwidth",
+        "inputs": {
+          "deviation": [
+            5,
+            "kHz"
+          ],
+          "f_mod": [
+            3,
+            "kHz"
+          ]
+        },
+        "answer": [
+          16,
+          "kHz"
+        ],
+        "answer_symbol": "B",
+        "sig_figs": 2
+      },
+      "study_reference": {
+        "chapter": 5,
+        "section_id": "s5-20",
+        "printed_pages": [
+          "5-9"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "a8878d1c89eb855e"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "Jim C K Flaten",
+        "based_on": 2,
+        "at": "2026-10-25T12:32:45+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-25T12:32:45+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "8d84a6e60c53c02e75d510603f0e83ee52dd7d4a89192b6e98a0eaa4f0d3d4cb",
+          "note": "Varianter med andre verdier"
+        },
+        {
+          "at": "2026-10-25T12:32:46+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "142494068217933b0b1b7d1dcc8dafb4d1a0d940e773d879a356293e5cf6b6b1",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-25T12:35:10+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "142494068217933b0b1b7d1dcc8dafb4d1a0d940e773d879a356293e5cf6b6b1",
+          "note": "To varianter med andre verdier (v2, v3); hver variant er kontrollert som eget spørsmål.",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "variants": [
+        {
+          "id": "v2",
+          "context": [
+            [
+              "En ",
+              {
+                "term": "frekvensmodulasjon",
+                "text": "FM"
+              },
+              "-sender skal brukes på 2 m-kanaler med ",
+              {
+                "q": 12.5,
+                "u": "kHz"
+              },
+              " kanalavstand, der en ",
+              {
+                "term": "deviasjon",
+                "text": "spissdeviasjon"
+              },
+              " rundt ",
+              {
+                "q": 2.5,
+                "u": "kHz"
+              },
+              " er vanlig. Mikrofonforsterkeren er imidlertid skrudd så høyt at spissdeviasjonen blir ",
+              {
+                "q": 4,
+                "u": "kHz"
+              },
+              ". Den høyeste lydfrekvensen som slipper gjennom, er ",
+              {
+                "q": 3,
+                "u": "kHz"
+              },
+              ". Bruk ",
+              {
+                "term": "carsons-regel",
+                "text": "Carsons regel"
+              },
+              " for ",
+              {
+                "term": "baandbredde",
+                "text": "båndbredden"
+              },
+              "."
+            ]
+          ],
+          "options": [
+            {
+              "id": "o1",
+              "content": [
+                {
+                  "q": 7,
+                  "u": "kHz"
+                }
+              ],
+              "feedback": [
+                [
+                  "Det er bare summen av deviasjon og lydfrekvens. Signalet brer seg like mye til begge sider av ",
+                  {
+                    "term": "baerebolge",
+                    "text": "bærebølgen"
+                  },
+                  ", så summen må ganges med 2."
+                ]
+              ]
+            },
+            {
+              "id": "o2",
+              "content": [
+                {
+                  "q": 11,
+                  "u": "kHz"
+                }
+              ],
+              "feedback": [
+                "Det er båndbredden med den vanlige deviasjonen på 2,5 kHz. Her er deviasjonen 4 kHz."
+              ]
+            },
+            {
+              "id": "o3",
+              "content": [
+                {
+                  "q": 14,
+                  "u": "kHz"
+                }
+              ],
+              "feedback": []
+            },
+            {
+              "id": "o4",
+              "content": [
+                {
+                  "q": 8,
+                  "u": "kHz"
+                }
+              ],
+              "feedback": [
+                [
+                  "Det er bare to ganger deviasjonen. Carsons regel tar også med lydfrekvensen, fordi ",
+                  {
+                    "term": "sidebaand",
+                    "text": "sidebåndene"
+                  },
+                  " ligger i avstander lik lydfrekvensen."
+                ]
+              ]
+            }
+          ],
+          "explanation": [
+            "Carsons regel gir omtrentlig båndbredde for et FM-signal:",
+            [
+              {
+                "math": [
+                  "B",
+                  "≈",
+                  "2",
+                  "·",
+                  {
+                    "paren": [
+                      "Δf",
+                      "+",
+                      "f_mod"
+                    ]
+                  },
+                  "=",
+                  "2",
+                  "·",
+                  {
+                    "paren": [
+                      {
+                        "q": 4,
+                        "u": "kHz"
+                      },
+                      "+",
+                      {
+                        "q": 3,
+                        "u": "kHz"
+                      }
+                    ]
+                  },
+                  "=",
+                  {
+                    "q": 14,
+                    "u": "kHz"
+                  }
+                ]
+              }
+            ],
+            [
+              "Det er mer enn kanalavstanden på 12,5 kHz, så signalet sprer seg inn på nabokanalene. ",
+              {
+                "term": "mottaker",
+                "text": "Mottakere"
+              },
+              " som er laget for smal deviasjon, vil i tillegg gjengi signalet forvrengt, fordi det er bredere enn ",
+              {
+                "term": "demodulator",
+                "text": "demodulatoren"
+              },
+              " er laget for."
+            ],
+            "Med den vanlige deviasjonen på 2,5 kHz blir båndbredden 2 · (2,5 kHz + 3 kHz) = 11 kHz, som får plass i kanalen. Løsningen er å skru ned mikrofonforsterkningen eller deviasjonsinnstillingen."
+          ],
+          "visual": {
+            "template": "frequency-response",
+            "version": 1,
+            "params": {
+              "kind": "spectrum",
+              "center_hz": 145500000.0,
+              "spectrum": {
+                "mode": "fm",
+                "mod_hz": 3000,
+                "index": 1.3333333333333333,
+                "freq_labels": "none",
+                "spacing_label": true
+              }
+            },
+            "caption": "Spekteret til signalet, regnet ut fra tonen og deviasjonen i oppgaven.",
+            "animation": {
+              "param": "spectrum.index",
+              "from": 0.3,
+              "to": 5,
+              "phase": "both",
+              "text": "Animasjonen viser spekteret når deviasjonen (modulasjonsindeksen) øker og minker: flere sidebånd kommer til, og høydene endrer seg. Avstanden mellom linjene er den samme hele tiden."
+            }
+          },
+          "calculation": {
+            "formula": "fm_carson_bandwidth",
+            "inputs": {
+              "deviation": [
+                4,
+                "kHz"
+              ],
+              "f_mod": [
+                3,
+                "kHz"
+              ]
+            },
+            "answer": [
+              14,
+              "kHz"
+            ],
+            "answer_symbol": "B",
+            "sig_figs": 2
+          }
+        },
+        {
+          "id": "v3",
+          "context": [
+            [
+              "En ",
+              {
+                "term": "frekvensmodulasjon",
+                "text": "FM"
+              },
+              "-sender skal brukes på 2 m-kanaler med ",
+              {
+                "q": 12.5,
+                "u": "kHz"
+              },
+              " kanalavstand, der en ",
+              {
+                "term": "deviasjon",
+                "text": "spissdeviasjon"
+              },
+              " rundt ",
+              {
+                "q": 2.5,
+                "u": "kHz"
+              },
+              " er vanlig. Mikrofonforsterkeren er imidlertid skrudd så høyt at spissdeviasjonen blir ",
+              {
+                "q": 6,
+                "u": "kHz"
+              },
+              ". Den høyeste lydfrekvensen som slipper gjennom, er ",
+              {
+                "q": 2.5,
+                "u": "kHz"
+              },
+              ". Bruk ",
+              {
+                "term": "carsons-regel",
+                "text": "Carsons regel"
+              },
+              " for ",
+              {
+                "term": "baandbredde",
+                "text": "båndbredden"
+              },
+              "."
+            ]
+          ],
+          "options": [
+            {
+              "id": "o1",
+              "content": [
+                {
+                  "q": 8.5,
+                  "u": "kHz"
+                }
+              ],
+              "feedback": [
+                [
+                  "Det er bare summen av deviasjon og lydfrekvens. Signalet brer seg like mye til begge sider av ",
+                  {
+                    "term": "baerebolge",
+                    "text": "bærebølgen"
+                  },
+                  ", så summen må ganges med 2."
+                ]
+              ]
+            },
+            {
+              "id": "o2",
+              "content": [
+                {
+                  "q": 10,
+                  "u": "kHz"
+                }
+              ],
+              "feedback": [
+                "Det er båndbredden med den vanlige deviasjonen på 2,5 kHz. Her er deviasjonen 6 kHz."
+              ]
+            },
+            {
+              "id": "o3",
+              "content": [
+                {
+                  "q": 17,
+                  "u": "kHz"
+                }
+              ],
+              "feedback": []
+            },
+            {
+              "id": "o4",
+              "content": [
+                {
+                  "q": 12,
+                  "u": "kHz"
+                }
+              ],
+              "feedback": [
+                [
+                  "Det er bare to ganger deviasjonen. Carsons regel tar også med lydfrekvensen, fordi ",
+                  {
+                    "term": "sidebaand",
+                    "text": "sidebåndene"
+                  },
+                  " ligger i avstander lik lydfrekvensen."
+                ]
+              ]
+            }
+          ],
+          "explanation": [
+            "Carsons regel gir omtrentlig båndbredde for et FM-signal:",
+            [
+              {
+                "math": [
+                  "B",
+                  "≈",
+                  "2",
+                  "·",
+                  {
+                    "paren": [
+                      "Δf",
+                      "+",
+                      "f_mod"
+                    ]
+                  },
+                  "=",
+                  "2",
+                  "·",
+                  {
+                    "paren": [
+                      {
+                        "q": 6,
+                        "u": "kHz"
+                      },
+                      "+",
+                      {
+                        "q": 2.5,
+                        "u": "kHz"
+                      }
+                    ]
+                  },
+                  "=",
+                  {
+                    "q": 17,
+                    "u": "kHz"
+                  }
+                ]
+              }
+            ],
+            [
+              "Det er mer enn kanalavstanden på 12,5 kHz, så signalet sprer seg inn på nabokanalene. ",
+              {
+                "term": "mottaker",
+                "text": "Mottakere"
+              },
+              " som er laget for smal deviasjon, vil i tillegg gjengi signalet forvrengt, fordi det er bredere enn ",
+              {
+                "term": "demodulator",
+                "text": "demodulatoren"
+              },
+              " er laget for."
+            ],
+            "Med den vanlige deviasjonen på 2,5 kHz blir båndbredden 2 · (2,5 kHz + 2,5 kHz) = 10 kHz, som får plass i kanalen. Løsningen er å skru ned mikrofonforsterkningen eller deviasjonsinnstillingen."
+          ],
+          "visual": {
+            "template": "frequency-response",
+            "version": 1,
+            "params": {
+              "kind": "spectrum",
+              "center_hz": 145500000.0,
+              "spectrum": {
+                "mode": "fm",
+                "mod_hz": 2500,
+                "index": 2.4,
+                "freq_labels": "none",
+                "spacing_label": true
+              }
+            },
+            "caption": "Spekteret til signalet, regnet ut fra tonen og deviasjonen i oppgaven.",
+            "animation": {
+              "param": "spectrum.index",
+              "from": 0.3,
+              "to": 5,
+              "phase": "both",
+              "text": "Animasjonen viser spekteret når deviasjonen (modulasjonsindeksen) øker og minker: flere sidebånd kommer til, og høydene endrer seg. Avstanden mellom linjene er den samme hele tiden."
+            }
+          },
+          "calculation": {
+            "formula": "fm_carson_bandwidth",
+            "inputs": {
+              "deviation": [
+                6,
+                "kHz"
+              ],
+              "f_mod": [
+                2.5,
+                "kHz"
+              ]
+            },
+            "answer": [
+              17,
+              "kHz"
+            ],
+            "answer_symbol": "B",
+            "sig_figs": 2
+          }
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "142494068217933b0b1b7d1dcc8dafb4d1a0d940e773d879a356293e5cf6b6b1",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-25T12:35:10+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-25T12:35:10+00:00",
+        "content_sha256": "142494068217933b0b1b7d1dcc8dafb4d1a0d940e773d879a356293e5cf6b6b1",
         "acknowledged_hazards": [
           "figures"
         ],

@@ -3,7 +3,7 @@
   "revisions": [
     {
       "revision": 1,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "calculation",
@@ -143,6 +143,15 @@
           "acknowledged": [
             "figures"
           ]
+        },
+        {
+          "at": "2026-10-25T12:35:11+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "39935b41cd2457b0c1855a69a2b9d2cb6b5ce71f72c289b62cd49f8d4bec5752",
+          "note": "superseded by r2"
         }
       ],
       "provenance": {
@@ -201,6 +210,457 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-24T22:48:31+00:00",
         "content_sha256": "39935b41cd2457b0c1855a69a2b9d2cb6b5ce71f72c289b62cd49f8d4bec5752",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 2,
+      "status": "approved",
+      "type": "single_choice",
+      "style": "calculation",
+      "difficulty": "medium",
+      "chapter": 8,
+      "section_ids": [
+        "s8-06"
+      ],
+      "topic_ids": [
+        "staende-bolger"
+      ],
+      "learning_objective": "Beregne returtap i dB fra utsendt og reflektert effekt.",
+      "priority": "normal",
+      "context": [
+        [
+          "En sender gir ",
+          {
+            "q": 80,
+            "u": "W"
+          },
+          " ut i fødekabelen, og ",
+          {
+            "q": 5,
+            "u": "W"
+          },
+          " kommer tilbake fra antennen."
+        ]
+      ],
+      "stem": [
+        [
+          "Hva er ",
+          {
+            "term": "returtap",
+            "text": "returtapet"
+          },
+          "?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 12,
+              "u": "dB"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 16,
+              "u": "dB"
+            }
+          ],
+          "feedback": [
+            "16 er forholdet mellom effektene, ikke dB. I dB blir det 10 · log 16."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 24,
+              "u": "dB"
+            }
+          ],
+          "feedback": [
+            "Her er 20 · log brukt, slik man gjør for spenninger. For effekter er det 10 · log."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 1.2,
+              "u": "dB"
+            }
+          ],
+          "feedback": [
+            "Her er logaritmen ikke ganget med 10. Returtapet er 10 · log(80 / 5)."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        {
+          "steps": [
+            "Forhold: 80 / 5 = 16",
+            [
+              "Returtap = 10 · log 16 ≈ ",
+              {
+                "q": 12,
+                "u": "dB"
+              }
+            ]
+          ]
+        },
+        "Returtap oppgis som et positivt tall. Jo høyere tall, desto mindre av effekten kommer tilbake – høyt returtap betyr lavt SWR."
+      ],
+      "visual": {
+        "template": "feedline",
+        "version": 1,
+        "params": {
+          "kind": "directional",
+          "forward": 80,
+          "reflected": 5,
+          "return_loss_label": "unknown"
+        },
+        "params_after": {
+          "return_loss_label": "value"
+        }
+      },
+      "glossary_after_answer": [],
+      "calculation": {
+        "formula": "db_power_ratio",
+        "inputs": {
+          "P1": [
+            5,
+            "W"
+          ],
+          "P2": [
+            80,
+            "W"
+          ]
+        },
+        "answer": [
+          12,
+          "dB"
+        ],
+        "answer_symbol": "RL",
+        "sig_figs": 2
+      },
+      "study_reference": {
+        "chapter": 8,
+        "section_id": "s8-06",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "54a723ccd1c464f4"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "Jim C K Flaten",
+        "based_on": 1,
+        "at": "2026-10-25T12:33:00+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-25T12:33:00+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "39935b41cd2457b0c1855a69a2b9d2cb6b5ce71f72c289b62cd49f8d4bec5752",
+          "note": "Varianter med andre verdier"
+        },
+        {
+          "at": "2026-10-25T12:33:01+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "3114b2412da0462bd954fcef42c70cdd48706f2dd4159b727bae5cc8c40a4fc8",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-25T12:35:11+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "4579750797fdd72bfbb22e97aff1bce8f6023797a399ecc25786c58254a0399d",
+          "note": "To varianter med andre verdier (v2, v3); hver variant er kontrollert som eget spørsmål.",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "variants": [
+        {
+          "id": "v2",
+          "context": [
+            [
+              "En sender gir ",
+              {
+                "q": 60,
+                "u": "W"
+              },
+              " ut i fødekabelen, og ",
+              {
+                "q": 3,
+                "u": "W"
+              },
+              " kommer tilbake fra antennen."
+            ]
+          ],
+          "options": [
+            {
+              "id": "o1",
+              "content": [
+                {
+                  "q": 13,
+                  "u": "dB"
+                }
+              ],
+              "feedback": []
+            },
+            {
+              "id": "o2",
+              "content": [
+                {
+                  "q": 20,
+                  "u": "dB"
+                }
+              ],
+              "feedback": [
+                "20 er forholdet mellom effektene, ikke dB. I dB blir det 10 · log 20."
+              ]
+            },
+            {
+              "id": "o3",
+              "content": [
+                {
+                  "q": 26,
+                  "u": "dB"
+                }
+              ],
+              "feedback": [
+                "Her er 20 · log brukt, slik man gjør for spenninger. For effekter er det 10 · log."
+              ]
+            },
+            {
+              "id": "o4",
+              "content": [
+                {
+                  "q": 1.3,
+                  "u": "dB"
+                }
+              ],
+              "feedback": [
+                "Her er logaritmen ikke ganget med 10. Returtapet er 10 · log(60 / 3)."
+              ]
+            }
+          ],
+          "explanation": [
+            {
+              "steps": [
+                "Forhold: 60 / 3 = 20",
+                [
+                  "Returtap = 10 · log 20 ≈ ",
+                  {
+                    "q": 13,
+                    "u": "dB"
+                  }
+                ]
+              ]
+            },
+            "Returtap oppgis som et positivt tall. Jo høyere tall, desto mindre av effekten kommer tilbake – høyt returtap betyr lavt SWR."
+          ],
+          "visual": {
+            "template": "feedline",
+            "version": 1,
+            "params": {
+              "kind": "directional",
+              "forward": 60,
+              "reflected": 3,
+              "return_loss_label": "unknown"
+            },
+            "params_after": {
+              "return_loss_label": "value"
+            }
+          },
+          "calculation": {
+            "formula": "db_power_ratio",
+            "inputs": {
+              "P1": [
+                3,
+                "W"
+              ],
+              "P2": [
+                60,
+                "W"
+              ]
+            },
+            "answer": [
+              13,
+              "dB"
+            ],
+            "answer_symbol": "RL",
+            "sig_figs": 2
+          }
+        },
+        {
+          "id": "v3",
+          "context": [
+            [
+              "En sender gir ",
+              {
+                "q": 50,
+                "u": "W"
+              },
+              " ut i fødekabelen, og ",
+              {
+                "q": 2,
+                "u": "W"
+              },
+              " kommer tilbake fra antennen."
+            ]
+          ],
+          "options": [
+            {
+              "id": "o1",
+              "content": [
+                {
+                  "q": 14,
+                  "u": "dB"
+                }
+              ],
+              "feedback": []
+            },
+            {
+              "id": "o2",
+              "content": [
+                {
+                  "q": 25,
+                  "u": "dB"
+                }
+              ],
+              "feedback": [
+                "25 er forholdet mellom effektene, ikke dB. I dB blir det 10 · log 25."
+              ]
+            },
+            {
+              "id": "o3",
+              "content": [
+                {
+                  "q": 28,
+                  "u": "dB"
+                }
+              ],
+              "feedback": [
+                "Her er 20 · log brukt, slik man gjør for spenninger. For effekter er det 10 · log."
+              ]
+            },
+            {
+              "id": "o4",
+              "content": [
+                {
+                  "q": 1.4,
+                  "u": "dB"
+                }
+              ],
+              "feedback": [
+                "Her er logaritmen ikke ganget med 10. Returtapet er 10 · log(50 / 2)."
+              ]
+            }
+          ],
+          "explanation": [
+            {
+              "steps": [
+                "Forhold: 50 / 2 = 25",
+                [
+                  "Returtap = 10 · log 25 ≈ ",
+                  {
+                    "q": 14,
+                    "u": "dB"
+                  }
+                ]
+              ]
+            },
+            "Returtap oppgis som et positivt tall. Jo høyere tall, desto mindre av effekten kommer tilbake – høyt returtap betyr lavt SWR."
+          ],
+          "visual": {
+            "template": "feedline",
+            "version": 1,
+            "params": {
+              "kind": "directional",
+              "forward": 50,
+              "reflected": 2,
+              "return_loss_label": "unknown"
+            },
+            "params_after": {
+              "return_loss_label": "value"
+            }
+          },
+          "calculation": {
+            "formula": "db_power_ratio",
+            "inputs": {
+              "P1": [
+                2,
+                "W"
+              ],
+              "P2": [
+                50,
+                "W"
+              ]
+            },
+            "answer": [
+              14,
+              "dB"
+            ],
+            "answer_symbol": "RL",
+            "sig_figs": 2
+          }
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "4579750797fdd72bfbb22e97aff1bce8f6023797a399ecc25786c58254a0399d",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-25T12:35:11+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-25T12:35:11+00:00",
+        "content_sha256": "4579750797fdd72bfbb22e97aff1bce8f6023797a399ecc25786c58254a0399d",
         "acknowledged_hazards": [
           "figures"
         ],

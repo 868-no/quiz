@@ -633,7 +633,7 @@
     },
     {
       "revision": 3,
-      "status": "approved",
+      "status": "retired",
       "type": "single_choice",
       "style": "calculation",
       "difficulty": "hard",
@@ -921,6 +921,15 @@
             "figures",
             "ocr"
           ]
+        },
+        {
+          "at": "2026-10-25T12:35:04+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "86b394c48cd295f1dc6340a26405797d42c6ea451b94963cccf0fd4e227d8c14",
+          "note": "superseded by r4"
         }
       ],
       "visual": {
@@ -962,6 +971,814 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-24T14:18:29+00:00",
         "content_sha256": "86b394c48cd295f1dc6340a26405797d42c6ea451b94963cccf0fd4e227d8c14",
+        "acknowledged_hazards": [
+          "figures",
+          "ocr"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 4,
+      "status": "approved",
+      "type": "single_choice",
+      "style": "calculation",
+      "difficulty": "hard",
+      "chapter": 2,
+      "section_ids": [
+        "s2-43"
+      ],
+      "topic_ids": [
+        "resonans"
+      ],
+      "learning_objective": "Regne ut resonansfrekvensen for en LC-krets med riktige prefikser.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En ",
+          {
+            "term": "avstemt-krets",
+            "text": "avstemt krets"
+          },
+          " består av en ",
+          {
+            "term": "spole",
+            "text": "spole"
+          },
+          " på ",
+          {
+            "q": 10,
+            "u": "µH"
+          },
+          " og en ",
+          {
+            "term": "kondensator",
+            "text": "kondensator"
+          },
+          " på ",
+          {
+            "q": 100,
+            "u": "pF"
+          },
+          ". Se bort fra tap i komponentene."
+        ]
+      ],
+      "stem": [
+        [
+          "Hva er ",
+          {
+            "term": "resonans",
+            "text": "resonansfrekvensen"
+          },
+          "?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 5.03,
+              "u": "MHz"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 50.3,
+              "u": "MHz"
+            }
+          ],
+          "feedback": [
+            "Ti ganger for høyt. Sjekk prefiksene: 10 µH · 100 pF = 10⁻¹⁵."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 503,
+              "u": "kHz"
+            }
+          ],
+          "feedback": [
+            "Ti ganger for lavt. Sjekk prefiksene: 10 µH · 100 pF = 10⁻¹⁵."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 31.6,
+              "u": "MHz"
+            }
+          ],
+          "feedback": [
+            [
+              "Her mangler divisjonen med 2π. 1/√(LC) alene gir ikke ",
+              {
+                "term": "frekvens",
+                "text": "frekvensen"
+              },
+              " i hertz."
+            ]
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        {
+          "steps": [
+            [
+              {
+                "math": [
+                  "f",
+                  "=",
+                  {
+                    "frac": [
+                      [
+                        "1"
+                      ],
+                      [
+                        "2",
+                        "π",
+                        {
+                          "sqrt": [
+                            "L",
+                            "C"
+                          ]
+                        }
+                      ]
+                    ]
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "math": [
+                  "L",
+                  "C",
+                  "=",
+                  "10",
+                  "·",
+                  "10^−6",
+                  "·",
+                  "100",
+                  "·",
+                  "10^−12",
+                  "=",
+                  "10^−15"
+                ]
+              }
+            ],
+            [
+              {
+                "math": [
+                  {
+                    "sqrt": [
+                      "10^−15"
+                    ]
+                  },
+                  "≈",
+                  "3,162",
+                  "·",
+                  "10^−8"
+                ]
+              }
+            ],
+            [
+              {
+                "math": [
+                  "f",
+                  "=",
+                  {
+                    "frac": [
+                      [
+                        "1"
+                      ],
+                      [
+                        "2",
+                        "π",
+                        "·",
+                        "3,162",
+                        "·",
+                        "10^−8"
+                      ]
+                    ]
+                  },
+                  "≈",
+                  "5,03",
+                  "·",
+                  "10^6",
+                  {
+                    "unit": "Hz"
+                  },
+                  "=",
+                  {
+                    "q": 5.03,
+                    "u": "MHz"
+                  }
+                ]
+              }
+            ]
+          ]
+        }
+      ],
+      "visual": {
+        "template": "rlc-circuit",
+        "version": 1,
+        "params": {
+          "topology": "parallel",
+          "components": [
+            {
+              "kind": "L",
+              "value": 1e-05
+            },
+            {
+              "kind": "C",
+              "value": 1e-10
+            }
+          ]
+        }
+      },
+      "glossary_after_answer": [],
+      "calculation": {
+        "formula": "resonance_frequency",
+        "inputs": {
+          "L": [
+            10,
+            "µH"
+          ],
+          "C": [
+            100,
+            "pF"
+          ]
+        },
+        "answer": [
+          5.03,
+          "MHz"
+        ],
+        "answer_symbol": "f",
+        "sig_figs": 3,
+        "visual_bindings": {
+          "L": "L",
+          "C": "C"
+        }
+      },
+      "study_reference": {
+        "chapter": 2,
+        "section_id": "s2-43",
+        "printed_pages": [
+          "2-16",
+          "2-17"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "e154dadc8f58df55"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "Jim C K Flaten",
+        "based_on": 3,
+        "at": "2026-10-25T12:32:50+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-25T12:32:50+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "86b394c48cd295f1dc6340a26405797d42c6ea451b94963cccf0fd4e227d8c14",
+          "note": "Varianter med andre verdier"
+        },
+        {
+          "at": "2026-10-25T12:32:51+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "58f229f890d216b1b64e7624b00f52dba4cc678afb7ba8a6e611cde8b7a9fc0a",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-25T12:35:04+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "58f229f890d216b1b64e7624b00f52dba4cc678afb7ba8a6e611cde8b7a9fc0a",
+          "note": "To varianter med andre verdier (v2, v3); hver variant er kontrollert som eget spørsmål.",
+          "acknowledged": [
+            "figures",
+            "ocr"
+          ]
+        }
+      ],
+      "variants": [
+        {
+          "id": "v2",
+          "context": [
+            [
+              "En ",
+              {
+                "term": "avstemt-krets",
+                "text": "avstemt krets"
+              },
+              " består av en ",
+              {
+                "term": "spole",
+                "text": "spole"
+              },
+              " på ",
+              {
+                "q": 4.7,
+                "u": "µH"
+              },
+              " og en ",
+              {
+                "term": "kondensator",
+                "text": "kondensator"
+              },
+              " på ",
+              {
+                "q": 47,
+                "u": "pF"
+              },
+              ". Se bort fra tap i komponentene."
+            ]
+          ],
+          "options": [
+            {
+              "id": "o1",
+              "content": [
+                {
+                  "q": 10.7,
+                  "u": "MHz"
+                }
+              ],
+              "feedback": []
+            },
+            {
+              "id": "o2",
+              "content": [
+                {
+                  "q": 107,
+                  "u": "MHz"
+                }
+              ],
+              "feedback": [
+                "Ti ganger for høyt. Sjekk prefiksene: 4,7 µH · 47 pF ≈ 2,21 · 10⁻¹⁶."
+              ]
+            },
+            {
+              "id": "o3",
+              "content": [
+                {
+                  "q": 1.07,
+                  "u": "MHz"
+                }
+              ],
+              "feedback": [
+                "Ti ganger for lavt. Sjekk prefiksene: 4,7 µH · 47 pF ≈ 2,21 · 10⁻¹⁶."
+              ]
+            },
+            {
+              "id": "o4",
+              "content": [
+                {
+                  "q": 67.3,
+                  "u": "MHz"
+                }
+              ],
+              "feedback": [
+                [
+                  "Her mangler divisjonen med 2π. 1/√(LC) alene gir ikke ",
+                  {
+                    "term": "frekvens",
+                    "text": "frekvensen"
+                  },
+                  " i hertz."
+                ]
+              ]
+            }
+          ],
+          "explanation": [
+            {
+              "steps": [
+                [
+                  {
+                    "math": [
+                      "f",
+                      "=",
+                      {
+                        "frac": [
+                          [
+                            "1"
+                          ],
+                          [
+                            "2",
+                            "π",
+                            {
+                              "sqrt": [
+                                "L",
+                                "C"
+                              ]
+                            }
+                          ]
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                [
+                  {
+                    "math": [
+                      "L",
+                      "C",
+                      "=",
+                      "4,7",
+                      "·",
+                      "10^−6",
+                      "·",
+                      "47",
+                      "·",
+                      "10^−12",
+                      "≈",
+                      "2,209",
+                      "·",
+                      "10^−16"
+                    ]
+                  }
+                ],
+                [
+                  {
+                    "math": [
+                      {
+                        "sqrt": [
+                          "L",
+                          "C"
+                        ]
+                      },
+                      "≈",
+                      "1,486",
+                      "·",
+                      "10^−8"
+                    ]
+                  }
+                ],
+                [
+                  {
+                    "math": [
+                      "f",
+                      "=",
+                      {
+                        "frac": [
+                          [
+                            "1"
+                          ],
+                          [
+                            "2",
+                            "π",
+                            "·",
+                            "1,486",
+                            "·",
+                            "10^−8"
+                          ]
+                        ]
+                      },
+                      "≈",
+                      "10,7",
+                      "·",
+                      "10^6",
+                      {
+                        "unit": "Hz"
+                      },
+                      "=",
+                      {
+                        "q": 10.7,
+                        "u": "MHz"
+                      }
+                    ]
+                  }
+                ]
+              ]
+            }
+          ],
+          "visual": {
+            "template": "rlc-circuit",
+            "version": 1,
+            "params": {
+              "topology": "parallel",
+              "components": [
+                {
+                  "kind": "L",
+                  "value": 4.7e-06
+                },
+                {
+                  "kind": "C",
+                  "value": 4.7e-11
+                }
+              ]
+            }
+          },
+          "calculation": {
+            "formula": "resonance_frequency",
+            "inputs": {
+              "L": [
+                4.7,
+                "µH"
+              ],
+              "C": [
+                47,
+                "pF"
+              ]
+            },
+            "answer": [
+              10.7,
+              "MHz"
+            ],
+            "answer_symbol": "f",
+            "sig_figs": 3,
+            "visual_bindings": {
+              "L": "L",
+              "C": "C"
+            }
+          }
+        },
+        {
+          "id": "v3",
+          "context": [
+            [
+              "En ",
+              {
+                "term": "avstemt-krets",
+                "text": "avstemt krets"
+              },
+              " består av en ",
+              {
+                "term": "spole",
+                "text": "spole"
+              },
+              " på ",
+              {
+                "q": 22,
+                "u": "µH"
+              },
+              " og en ",
+              {
+                "term": "kondensator",
+                "text": "kondensator"
+              },
+              " på ",
+              {
+                "q": 220,
+                "u": "pF"
+              },
+              ". Se bort fra tap i komponentene."
+            ]
+          ],
+          "options": [
+            {
+              "id": "o1",
+              "content": [
+                {
+                  "q": 2.29,
+                  "u": "MHz"
+                }
+              ],
+              "feedback": []
+            },
+            {
+              "id": "o2",
+              "content": [
+                {
+                  "q": 22.9,
+                  "u": "MHz"
+                }
+              ],
+              "feedback": [
+                "Ti ganger for høyt. Sjekk prefiksene: 22 µH · 220 pF ≈ 4,84 · 10⁻¹⁵."
+              ]
+            },
+            {
+              "id": "o3",
+              "content": [
+                {
+                  "q": 229,
+                  "u": "kHz"
+                }
+              ],
+              "feedback": [
+                "Ti ganger for lavt. Sjekk prefiksene: 22 µH · 220 pF ≈ 4,84 · 10⁻¹⁵."
+              ]
+            },
+            {
+              "id": "o4",
+              "content": [
+                {
+                  "q": 14.4,
+                  "u": "MHz"
+                }
+              ],
+              "feedback": [
+                [
+                  "Her mangler divisjonen med 2π. 1/√(LC) alene gir ikke ",
+                  {
+                    "term": "frekvens",
+                    "text": "frekvensen"
+                  },
+                  " i hertz."
+                ]
+              ]
+            }
+          ],
+          "explanation": [
+            {
+              "steps": [
+                [
+                  {
+                    "math": [
+                      "f",
+                      "=",
+                      {
+                        "frac": [
+                          [
+                            "1"
+                          ],
+                          [
+                            "2",
+                            "π",
+                            {
+                              "sqrt": [
+                                "L",
+                                "C"
+                              ]
+                            }
+                          ]
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                [
+                  {
+                    "math": [
+                      "L",
+                      "C",
+                      "=",
+                      "22",
+                      "·",
+                      "10^−6",
+                      "·",
+                      "220",
+                      "·",
+                      "10^−12",
+                      "≈",
+                      "4,84",
+                      "·",
+                      "10^−15"
+                    ]
+                  }
+                ],
+                [
+                  {
+                    "math": [
+                      {
+                        "sqrt": [
+                          "L",
+                          "C"
+                        ]
+                      },
+                      "≈",
+                      "6,957",
+                      "·",
+                      "10^−8"
+                    ]
+                  }
+                ],
+                [
+                  {
+                    "math": [
+                      "f",
+                      "=",
+                      {
+                        "frac": [
+                          [
+                            "1"
+                          ],
+                          [
+                            "2",
+                            "π",
+                            "·",
+                            "6,957",
+                            "·",
+                            "10^−8"
+                          ]
+                        ]
+                      },
+                      "≈",
+                      "2,29",
+                      "·",
+                      "10^6",
+                      {
+                        "unit": "Hz"
+                      },
+                      "=",
+                      {
+                        "q": 2.29,
+                        "u": "MHz"
+                      }
+                    ]
+                  }
+                ]
+              ]
+            }
+          ],
+          "visual": {
+            "template": "rlc-circuit",
+            "version": 1,
+            "params": {
+              "topology": "parallel",
+              "components": [
+                {
+                  "kind": "L",
+                  "value": 2.2e-05
+                },
+                {
+                  "kind": "C",
+                  "value": 2.2e-10
+                }
+              ]
+            }
+          },
+          "calculation": {
+            "formula": "resonance_frequency",
+            "inputs": {
+              "L": [
+                22,
+                "µH"
+              ],
+              "C": [
+                220,
+                "pF"
+              ]
+            },
+            "answer": [
+              2.29,
+              "MHz"
+            ],
+            "answer_symbol": "f",
+            "sig_figs": 3,
+            "visual_bindings": {
+              "L": "L",
+              "C": "C"
+            }
+          }
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "58f229f890d216b1b64e7624b00f52dba4cc678afb7ba8a6e611cde8b7a9fc0a",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: equation, numeric_low_conf. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-25T12:35:04+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-25T12:35:04+00:00",
+        "content_sha256": "58f229f890d216b1b64e7624b00f52dba4cc678afb7ba8a6e611cde8b7a9fc0a",
         "acknowledged_hazards": [
           "figures",
           "ocr"

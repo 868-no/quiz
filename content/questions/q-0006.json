@@ -920,7 +920,7 @@
     },
     {
       "revision": 4,
-      "status": "approved",
+      "status": "retired",
       "type": "single_choice",
       "style": "calculation",
       "difficulty": "medium",
@@ -1213,6 +1213,15 @@
             "figures",
             "ocr"
           ]
+        },
+        {
+          "at": "2026-10-25T12:35:01+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "9226ec945d6d065543346a324812bebfaf5b74fca367e653ec68e7f314cc2373",
+          "note": "superseded by r5"
         }
       ],
       "visual": {
@@ -1257,6 +1266,776 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-24T17:02:39+00:00",
         "content_sha256": "9226ec945d6d065543346a324812bebfaf5b74fca367e653ec68e7f314cc2373",
+        "acknowledged_hazards": [
+          "figures",
+          "ocr"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 5,
+      "status": "approved",
+      "type": "single_choice",
+      "style": "calculation",
+      "difficulty": "medium",
+      "chapter": 2,
+      "section_ids": [
+        "s2-09"
+      ],
+      "topic_ids": [
+        "effekt",
+        "ohms-lov"
+      ],
+      "learning_objective": "Kombinere effektloven og Ohms lov til P = U²/R.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "En ",
+          {
+            "term": "kunstlast",
+            "text": "kunstlast"
+          },
+          " er i praksis en ",
+          {
+            "term": "motstand",
+            "text": "motstand"
+          },
+          " på ",
+          {
+            "q": 50,
+            "u": "Ω"
+          },
+          " som tåler høy ",
+          {
+            "term": "effekt",
+            "text": "effekt"
+          },
+          ". Under en test måles ",
+          {
+            "q": 100,
+            "u": "V"
+          },
+          " ",
+          {
+            "term": "effektivverdi",
+            "text": "effektivverdi"
+          },
+          " over den."
+        ]
+      ],
+      "stem": [
+        [
+          "Hvor stor effekt blir omsatt til varme i ",
+          {
+            "term": "kunstlast",
+            "text": "kunstlasten"
+          },
+          "?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 200,
+              "u": "W"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 2,
+              "u": "W"
+            }
+          ],
+          "feedback": [
+            [
+              "100 V delt på 50 Ω gir ",
+              {
+                "term": "strom",
+                "text": "strømmen"
+              },
+              " (2 A), ikke effekten. Effekten er spenning ganger strøm: 100 V · 2 A."
+            ]
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 5,
+              "u": "kW"
+            }
+          ],
+          "feedback": [
+            "Spenning ganget med resistans gir ingen effekt. Bruk P = U² / R."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 400,
+              "u": "W"
+            }
+          ],
+          "feedback": [
+            "Effektivverdien skal brukes direkte i formelen. Den skal ikke ganges med √2 først."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Setter man I = U / R inn i P = U · I, får man et uttrykk med bare spenning og ",
+          {
+            "term": "resistans",
+            "text": "resistans"
+          },
+          ":"
+        ],
+        {
+          "steps": [
+            [
+              {
+                "math": [
+                  "P",
+                  "=",
+                  {
+                    "frac": [
+                      [
+                        "U^2"
+                      ],
+                      [
+                        "R"
+                      ]
+                    ]
+                  },
+                  "=",
+                  {
+                    "frac": [
+                      [
+                        {
+                          "paren": [
+                            {
+                              "q": 100,
+                              "u": "V"
+                            }
+                          ]
+                        },
+                        "²"
+                      ],
+                      [
+                        {
+                          "q": 50,
+                          "u": "Ω"
+                        }
+                      ]
+                    ]
+                  },
+                  "=",
+                  {
+                    "frac": [
+                      [
+                        "10000"
+                      ],
+                      [
+                        "50"
+                      ]
+                    ]
+                  },
+                  "=",
+                  {
+                    "q": 200,
+                    "u": "W"
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        {
+          "note": [
+            "Når ",
+            {
+              "term": "spenning",
+              "text": "spenningen"
+            },
+            " oppgis som effektivverdi, gir formelen direkte middeleffekten."
+          ]
+        }
+      ],
+      "visual": {
+        "template": "rlc-circuit",
+        "version": 1,
+        "params": {
+          "source": {
+            "kind": "ac",
+            "voltage_v": 100,
+            "frequency_hz": 14000000.0,
+            "show_frequency": false
+          },
+          "topology": "series",
+          "components": [
+            {
+              "kind": "R",
+              "value": 50
+            }
+          ]
+        },
+        "caption": "Kunstlasten er tegnet som en motstand."
+      },
+      "glossary_after_answer": [],
+      "calculation": {
+        "formula": "power_u2r",
+        "inputs": {
+          "U": [
+            100,
+            "V"
+          ],
+          "R": [
+            50,
+            "Ω"
+          ]
+        },
+        "answer": [
+          200,
+          "W"
+        ],
+        "answer_symbol": "P",
+        "sig_figs": 2,
+        "visual_bindings": {
+          "U": "U",
+          "R": "R"
+        }
+      },
+      "study_reference": {
+        "chapter": 2,
+        "section_id": "s2-09",
+        "printed_pages": [
+          "2-3"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "de95a442eb1e7dc2",
+          "f624dcaabd631f06"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "Jim C K Flaten",
+        "based_on": 4,
+        "at": "2026-10-25T12:33:25+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-25T12:33:25+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "9226ec945d6d065543346a324812bebfaf5b74fca367e653ec68e7f314cc2373",
+          "note": "Varianter med andre verdier"
+        },
+        {
+          "at": "2026-10-25T12:33:36+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "67718596bae766f2afeb142350130fe16eb1f4c2563aa3af4048febc1a372815",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-25T12:35:01+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "2ab7897e8b4ae632bf485761fbf897d735bda1be05f361e95fc7bc12e7697ea9",
+          "note": "To varianter med andre verdier (v2, v3); hver variant er kontrollert som eget spørsmål.",
+          "acknowledged": [
+            "figures",
+            "ocr"
+          ]
+        }
+      ],
+      "variants": [
+        {
+          "id": "v2",
+          "context": [
+            [
+              "En ",
+              {
+                "term": "kunstlast",
+                "text": "kunstlast"
+              },
+              " er i praksis en ",
+              {
+                "term": "motstand",
+                "text": "motstand"
+              },
+              " på ",
+              {
+                "q": 50,
+                "u": "Ω"
+              },
+              " som tåler høy ",
+              {
+                "term": "effekt",
+                "text": "effekt"
+              },
+              ". Under en test måles ",
+              {
+                "q": 70,
+                "u": "V"
+              },
+              " ",
+              {
+                "term": "effektivverdi",
+                "text": "effektivverdi"
+              },
+              " over den."
+            ]
+          ],
+          "options": [
+            {
+              "id": "o1",
+              "content": [
+                {
+                  "q": 98,
+                  "u": "W"
+                }
+              ],
+              "feedback": []
+            },
+            {
+              "id": "o2",
+              "content": [
+                {
+                  "q": 1.4,
+                  "u": "W"
+                }
+              ],
+              "feedback": [
+                [
+                  "70 V delt på 50 Ω gir ",
+                  {
+                    "term": "strom",
+                    "text": "strømmen"
+                  },
+                  " (1,4 A), ikke effekten. Effekten er spenning ganger strøm: 70 V · 1,4 A."
+                ]
+              ]
+            },
+            {
+              "id": "o3",
+              "content": [
+                {
+                  "q": 3.5,
+                  "u": "kW"
+                }
+              ],
+              "feedback": [
+                "Spenning ganget med resistans gir ingen effekt. Bruk P = U² / R."
+              ]
+            },
+            {
+              "id": "o4",
+              "content": [
+                {
+                  "q": 196,
+                  "u": "W"
+                }
+              ],
+              "feedback": [
+                "Effektivverdien skal brukes direkte i formelen. Den skal ikke ganges med √2 først."
+              ]
+            }
+          ],
+          "explanation": [
+            [
+              "Setter man I = U / R inn i P = U · I, får man et uttrykk med bare spenning og ",
+              {
+                "term": "resistans",
+                "text": "resistans"
+              },
+              ":"
+            ],
+            {
+              "steps": [
+                [
+                  {
+                    "math": [
+                      "P",
+                      "=",
+                      {
+                        "frac": [
+                          [
+                            "U^2"
+                          ],
+                          [
+                            "R"
+                          ]
+                        ]
+                      },
+                      "=",
+                      {
+                        "frac": [
+                          [
+                            {
+                              "paren": [
+                                {
+                                  "q": 70,
+                                  "u": "V"
+                                }
+                              ]
+                            },
+                            "²"
+                          ],
+                          [
+                            {
+                              "q": 50,
+                              "u": "Ω"
+                            }
+                          ]
+                        ]
+                      },
+                      "=",
+                      {
+                        "frac": [
+                          [
+                            "4900"
+                          ],
+                          [
+                            "50"
+                          ]
+                        ]
+                      },
+                      "=",
+                      {
+                        "q": 98,
+                        "u": "W"
+                      }
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "note": [
+                "Når ",
+                {
+                  "term": "spenning",
+                  "text": "spenningen"
+                },
+                " oppgis som effektivverdi, gir formelen direkte middeleffekten."
+              ]
+            }
+          ],
+          "visual": {
+            "template": "rlc-circuit",
+            "version": 1,
+            "params": {
+              "source": {
+                "kind": "ac",
+                "voltage_v": 70,
+                "frequency_hz": 14000000.0,
+                "show_frequency": false
+              },
+              "topology": "series",
+              "components": [
+                {
+                  "kind": "R",
+                  "value": 50
+                }
+              ]
+            },
+            "caption": "Kunstlasten er tegnet som en motstand."
+          },
+          "calculation": {
+            "formula": "power_u2r",
+            "inputs": {
+              "U": [
+                70,
+                "V"
+              ],
+              "R": [
+                50,
+                "Ω"
+              ]
+            },
+            "answer": [
+              98,
+              "W"
+            ],
+            "answer_symbol": "P",
+            "sig_figs": 2,
+            "visual_bindings": {
+              "U": "U",
+              "R": "R"
+            }
+          }
+        },
+        {
+          "id": "v3",
+          "context": [
+            [
+              "En ",
+              {
+                "term": "kunstlast",
+                "text": "kunstlast"
+              },
+              " er i praksis en ",
+              {
+                "term": "motstand",
+                "text": "motstand"
+              },
+              " på ",
+              {
+                "q": 50,
+                "u": "Ω"
+              },
+              " som tåler høy ",
+              {
+                "term": "effekt",
+                "text": "effekt"
+              },
+              ". Under en test måles ",
+              {
+                "q": 150,
+                "u": "V"
+              },
+              " ",
+              {
+                "term": "effektivverdi",
+                "text": "effektivverdi"
+              },
+              " over den."
+            ]
+          ],
+          "options": [
+            {
+              "id": "o1",
+              "content": [
+                {
+                  "q": 450,
+                  "u": "W"
+                }
+              ],
+              "feedback": []
+            },
+            {
+              "id": "o2",
+              "content": [
+                {
+                  "q": 3,
+                  "u": "W"
+                }
+              ],
+              "feedback": [
+                [
+                  "150 V delt på 50 Ω gir ",
+                  {
+                    "term": "strom",
+                    "text": "strømmen"
+                  },
+                  " (3 A), ikke effekten. Effekten er spenning ganger strøm: 150 V · 3 A."
+                ]
+              ]
+            },
+            {
+              "id": "o3",
+              "content": [
+                {
+                  "q": 7.5,
+                  "u": "kW"
+                }
+              ],
+              "feedback": [
+                "Spenning ganget med resistans gir ingen effekt. Bruk P = U² / R."
+              ]
+            },
+            {
+              "id": "o4",
+              "content": [
+                {
+                  "q": 900,
+                  "u": "W"
+                }
+              ],
+              "feedback": [
+                "Effektivverdien skal brukes direkte i formelen. Den skal ikke ganges med √2 først."
+              ]
+            }
+          ],
+          "explanation": [
+            [
+              "Setter man I = U / R inn i P = U · I, får man et uttrykk med bare spenning og ",
+              {
+                "term": "resistans",
+                "text": "resistans"
+              },
+              ":"
+            ],
+            {
+              "steps": [
+                [
+                  {
+                    "math": [
+                      "P",
+                      "=",
+                      {
+                        "frac": [
+                          [
+                            "U^2"
+                          ],
+                          [
+                            "R"
+                          ]
+                        ]
+                      },
+                      "=",
+                      {
+                        "frac": [
+                          [
+                            {
+                              "paren": [
+                                {
+                                  "q": 150,
+                                  "u": "V"
+                                }
+                              ]
+                            },
+                            "²"
+                          ],
+                          [
+                            {
+                              "q": 50,
+                              "u": "Ω"
+                            }
+                          ]
+                        ]
+                      },
+                      "=",
+                      {
+                        "frac": [
+                          [
+                            "22500"
+                          ],
+                          [
+                            "50"
+                          ]
+                        ]
+                      },
+                      "=",
+                      {
+                        "q": 450,
+                        "u": "W"
+                      }
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "note": [
+                "Når ",
+                {
+                  "term": "spenning",
+                  "text": "spenningen"
+                },
+                " oppgis som effektivverdi, gir formelen direkte middeleffekten."
+              ]
+            }
+          ],
+          "visual": {
+            "template": "rlc-circuit",
+            "version": 1,
+            "params": {
+              "source": {
+                "kind": "ac",
+                "voltage_v": 150,
+                "frequency_hz": 14000000.0,
+                "show_frequency": false
+              },
+              "topology": "series",
+              "components": [
+                {
+                  "kind": "R",
+                  "value": 50
+                }
+              ]
+            },
+            "caption": "Kunstlasten er tegnet som en motstand."
+          },
+          "calculation": {
+            "formula": "power_u2r",
+            "inputs": {
+              "U": [
+                150,
+                "V"
+              ],
+              "R": [
+                50,
+                "Ω"
+              ]
+            },
+            "answer": [
+              450,
+              "W"
+            ],
+            "answer_symbol": "P",
+            "sig_figs": 2,
+            "visual_bindings": {
+              "U": "U",
+              "R": "R"
+            }
+          }
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "2ab7897e8b4ae632bf485761fbf897d735bda1be05f361e95fc7bc12e7697ea9",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: equation, low_ocr_confidence, numeric_low_conf, table. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-25T12:35:01+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-25T12:35:01+00:00",
+        "content_sha256": "2ab7897e8b4ae632bf485761fbf897d735bda1be05f361e95fc7bc12e7697ea9",
         "acknowledged_hazards": [
           "figures",
           "ocr"

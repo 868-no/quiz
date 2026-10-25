@@ -267,7 +267,7 @@
     },
     {
       "revision": 2,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "calculation",
@@ -512,6 +512,15 @@
             "figures",
             "ocr"
           ]
+        },
+        {
+          "at": "2026-10-25T12:35:03+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "9271ca74978498d943845633103cb533dc0fbfe2eb4d7bec4e0129297137f8b4",
+          "note": "superseded by r3"
         }
       ],
       "checks": {
@@ -536,6 +545,588 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-23T20:43:45+00:00",
         "content_sha256": "9271ca74978498d943845633103cb533dc0fbfe2eb4d7bec4e0129297137f8b4",
+        "acknowledged_hazards": [
+          "figures",
+          "ocr"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 3,
+      "status": "approved",
+      "type": "single_choice",
+      "style": "calculation",
+      "difficulty": "easy",
+      "chapter": 2,
+      "section_ids": [
+        "s2-29"
+      ],
+      "topic_ids": [
+        "vekselstromsverdier"
+      ],
+      "learning_objective": "Regne om fra toppverdi til effektivverdi for en sinusformet spenning.",
+      "priority": "exam_important",
+      "context": [
+        [
+          "Grafen viser en sinusformet ",
+          {
+            "term": "vekselspenning",
+            "text": "vekselspenning"
+          },
+          ". ",
+          {
+            "term": "toppverdi",
+            "text": "Toppverdien"
+          },
+          " er markert."
+        ]
+      ],
+      "stem": [
+        [
+          "Hva er ",
+          {
+            "term": "effektivverdi",
+            "text": "effektivverdien"
+          },
+          " til ",
+          {
+            "term": "spenning",
+            "text": "spenningen"
+          },
+          "?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            {
+              "q": 14.1,
+              "u": "V"
+            }
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            {
+              "q": 28.3,
+              "u": "V"
+            }
+          ],
+          "feedback": [
+            "Her er toppverdien ganget med √2. Effektivverdien er mindre enn toppverdien, så man skal dele på √2."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            {
+              "q": 10,
+              "u": "V"
+            }
+          ],
+          "feedback": [
+            "Halvparten av toppverdien er ikke effektivverdien. For en sinus er faktoren 1/√2 ≈ 0,707."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            {
+              "q": 40,
+              "u": "V"
+            }
+          ],
+          "feedback": [
+            "40 V er topp-til-topp-verdien, fra bunnen til toppen av kurven."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          {
+            "math": [
+              "U_eff",
+              "=",
+              {
+                "frac": [
+                  [
+                    "Û"
+                  ],
+                  [
+                    {
+                      "sqrt": [
+                        "2"
+                      ]
+                    }
+                  ]
+                ]
+              },
+              "=",
+              {
+                "frac": [
+                  [
+                    {
+                      "q": 20,
+                      "u": "V"
+                    }
+                  ],
+                  [
+                    "1,414"
+                  ]
+                ]
+              },
+              "≈",
+              {
+                "q": 14.1,
+                "u": "V"
+              }
+            ]
+          }
+        ],
+        [
+          "Effektivverdien er den ",
+          {
+            "term": "likespenning",
+            "text": "likespenningen"
+          },
+          " som ville gitt like mye varme i en ",
+          {
+            "term": "motstand",
+            "text": "motstand"
+          },
+          ". Faktoren 1/√2 ≈ 0,707 gjelder bare for sinusformede kurver."
+        ]
+      ],
+      "visual": {
+        "template": "waveform",
+        "version": 1,
+        "params": {
+          "traces": [
+            {
+              "amplitude": 20,
+              "unit": "V",
+              "frequency_hz": 50
+            }
+          ],
+          "cycles": 2,
+          "markers": [
+            "peak"
+          ],
+          "show_values": true,
+          "animate": true
+        },
+        "params_after": {
+          "markers": [
+            "peak",
+            "rms"
+          ]
+        }
+      },
+      "glossary_after_answer": [],
+      "calculation": {
+        "formula": "rms_from_peak",
+        "inputs": {
+          "U_p": [
+            20,
+            "V"
+          ]
+        },
+        "answer": [
+          14.1,
+          "V"
+        ],
+        "answer_symbol": "U_rms",
+        "sig_figs": 3
+      },
+      "study_reference": {
+        "chapter": 2,
+        "section_id": "s2-29",
+        "printed_pages": [
+          "2-11",
+          "2-12"
+        ]
+      },
+      "sources": {
+        "import_id": "imp-a97cc853ba42",
+        "chunk_uids": [
+          "32965b71d6f17903"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "Jim C K Flaten",
+        "based_on": 2,
+        "at": "2026-10-25T12:32:49+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-25T12:32:49+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "9271ca74978498d943845633103cb533dc0fbfe2eb4d7bec4e0129297137f8b4",
+          "note": "Varianter med andre verdier"
+        },
+        {
+          "at": "2026-10-25T12:32:50+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "2fb155b201b40bc8788985f5679c97af6d1b86e3029a21be29494cb1329ababa",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-25T12:35:03+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "2fb155b201b40bc8788985f5679c97af6d1b86e3029a21be29494cb1329ababa",
+          "note": "To varianter med andre verdier (v2, v3); hver variant er kontrollert som eget spørsmål.",
+          "acknowledged": [
+            "figures",
+            "ocr"
+          ]
+        }
+      ],
+      "variants": [
+        {
+          "id": "v2",
+          "options": [
+            {
+              "id": "o1",
+              "content": [
+                {
+                  "q": 35.4,
+                  "u": "V"
+                }
+              ],
+              "feedback": []
+            },
+            {
+              "id": "o2",
+              "content": [
+                {
+                  "q": 70.7,
+                  "u": "V"
+                }
+              ],
+              "feedback": [
+                "Her er toppverdien ganget med √2. Effektivverdien er mindre enn toppverdien, så man skal dele på √2."
+              ]
+            },
+            {
+              "id": "o3",
+              "content": [
+                {
+                  "q": 25,
+                  "u": "V"
+                }
+              ],
+              "feedback": [
+                "Halvparten av toppverdien er ikke effektivverdien. For en sinus er faktoren 1/√2 ≈ 0,707."
+              ]
+            },
+            {
+              "id": "o4",
+              "content": [
+                {
+                  "q": 100,
+                  "u": "V"
+                }
+              ],
+              "feedback": [
+                "100 V er topp-til-topp-verdien, fra bunnen til toppen av kurven."
+              ]
+            }
+          ],
+          "explanation": [
+            [
+              {
+                "math": [
+                  "U_eff",
+                  "=",
+                  {
+                    "frac": [
+                      [
+                        "Û"
+                      ],
+                      [
+                        {
+                          "sqrt": [
+                            "2"
+                          ]
+                        }
+                      ]
+                    ]
+                  },
+                  "=",
+                  {
+                    "frac": [
+                      [
+                        {
+                          "q": 50,
+                          "u": "V"
+                        }
+                      ],
+                      [
+                        "1,414"
+                      ]
+                    ]
+                  },
+                  "≈",
+                  {
+                    "q": 35.4,
+                    "u": "V"
+                  }
+                ]
+              }
+            ],
+            [
+              "Effektivverdien er den ",
+              {
+                "term": "likespenning",
+                "text": "likespenningen"
+              },
+              " som ville gitt like mye varme i en ",
+              {
+                "term": "motstand",
+                "text": "motstand"
+              },
+              ". Faktoren 1/√2 ≈ 0,707 gjelder bare for sinusformede kurver."
+            ]
+          ],
+          "visual": {
+            "template": "waveform",
+            "version": 1,
+            "params": {
+              "traces": [
+                {
+                  "amplitude": 50,
+                  "unit": "V",
+                  "frequency_hz": 50
+                }
+              ],
+              "cycles": 2,
+              "markers": [
+                "peak"
+              ],
+              "show_values": true,
+              "animate": true
+            },
+            "params_after": {
+              "markers": [
+                "peak",
+                "rms"
+              ]
+            }
+          },
+          "calculation": {
+            "formula": "rms_from_peak",
+            "inputs": {
+              "U_p": [
+                50,
+                "V"
+              ]
+            },
+            "answer": [
+              35.4,
+              "V"
+            ],
+            "answer_symbol": "U_rms",
+            "sig_figs": 3
+          }
+        },
+        {
+          "id": "v3",
+          "options": [
+            {
+              "id": "o1",
+              "content": [
+                {
+                  "q": 8.49,
+                  "u": "V"
+                }
+              ],
+              "feedback": []
+            },
+            {
+              "id": "o2",
+              "content": [
+                {
+                  "q": 17.0,
+                  "u": "V"
+                }
+              ],
+              "feedback": [
+                "Her er toppverdien ganget med √2. Effektivverdien er mindre enn toppverdien, så man skal dele på √2."
+              ]
+            },
+            {
+              "id": "o3",
+              "content": [
+                {
+                  "q": 6,
+                  "u": "V"
+                }
+              ],
+              "feedback": [
+                "Halvparten av toppverdien er ikke effektivverdien. For en sinus er faktoren 1/√2 ≈ 0,707."
+              ]
+            },
+            {
+              "id": "o4",
+              "content": [
+                {
+                  "q": 24,
+                  "u": "V"
+                }
+              ],
+              "feedback": [
+                "24 V er topp-til-topp-verdien, fra bunnen til toppen av kurven."
+              ]
+            }
+          ],
+          "explanation": [
+            [
+              {
+                "math": [
+                  "U_eff",
+                  "=",
+                  {
+                    "frac": [
+                      [
+                        "Û"
+                      ],
+                      [
+                        {
+                          "sqrt": [
+                            "2"
+                          ]
+                        }
+                      ]
+                    ]
+                  },
+                  "=",
+                  {
+                    "frac": [
+                      [
+                        {
+                          "q": 12,
+                          "u": "V"
+                        }
+                      ],
+                      [
+                        "1,414"
+                      ]
+                    ]
+                  },
+                  "≈",
+                  {
+                    "q": 8.49,
+                    "u": "V"
+                  }
+                ]
+              }
+            ],
+            [
+              "Effektivverdien er den ",
+              {
+                "term": "likespenning",
+                "text": "likespenningen"
+              },
+              " som ville gitt like mye varme i en ",
+              {
+                "term": "motstand",
+                "text": "motstand"
+              },
+              ". Faktoren 1/√2 ≈ 0,707 gjelder bare for sinusformede kurver."
+            ]
+          ],
+          "visual": {
+            "template": "waveform",
+            "version": 1,
+            "params": {
+              "traces": [
+                {
+                  "amplitude": 12,
+                  "unit": "V",
+                  "frequency_hz": 50
+                }
+              ],
+              "cycles": 2,
+              "markers": [
+                "peak"
+              ],
+              "show_values": true,
+              "animate": true
+            },
+            "params_after": {
+              "markers": [
+                "peak",
+                "rms"
+              ]
+            }
+          },
+          "calculation": {
+            "formula": "rms_from_peak",
+            "inputs": {
+              "U_p": [
+                12,
+                "V"
+              ]
+            },
+            "answer": [
+              8.49,
+              "V"
+            ],
+            "answer_symbol": "U_rms",
+            "sig_figs": 3
+          }
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "2fb155b201b40bc8788985f5679c97af6d1b86e3029a21be29494cb1329ababa",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "ocr",
+            "detail": "source chunk(s) contain OCR-uncertain content: equation, subscript_garbled. Check every number, unit and formula against the printed book."
+          },
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-25T12:35:03+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-25T12:35:03+00:00",
+        "content_sha256": "2fb155b201b40bc8788985f5679c97af6d1b86e3029a21be29494cb1329ababa",
         "acknowledged_hazards": [
           "figures",
           "ocr"
