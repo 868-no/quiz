@@ -193,8 +193,8 @@ def format_number(x: float, digits: int | None = None) -> str:
         s = f"{x:.{digits}f}"
     else:
         s = f"{x:.6g}"
-        if "e" in s:
-            s = f"{x:f}".rstrip("0").rstrip(".")
+        if "e" in s:  # written out in full, like the site does (12 decimals)
+            s = f"{float(s):.12f}".rstrip("0").rstrip(".")
     s = s.replace("-", "−").replace(".", ",")
     return s
 

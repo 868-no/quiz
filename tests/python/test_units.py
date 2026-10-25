@@ -53,6 +53,12 @@ class RichTextTest(unittest.TestCase):
         richtext.check_rich(value, "x", e, {"strom"})
         return e
 
+    def test_small_numbers_keep_their_digits(self):
+        # written out in full like the site does, not cut at six decimals
+        self.assertEqual(richtext.format_number(4.7e-6), "0,0000047")
+        self.assertEqual(richtext.format_number(25.5), "25,5")
+        self.assertEqual(richtext.format_number(-0.5), "−0,5")
+
     def test_valid_structures(self):
         self.assertEqual(self.errors(["Tekst.", ["Med ", {"term": "strom", "text": "strøm"}, " og ",
                                                  {"math": ["X_C", "=", {"frac": [["1"], ["2", "π", "f", "C"]]}]},
