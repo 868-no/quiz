@@ -3,7 +3,7 @@
   "revisions": [
     {
       "revision": 1,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "concept",
@@ -136,6 +136,15 @@
           "acknowledged": [
             "figures"
           ]
+        },
+        {
+          "at": "2026-10-25T02:50:19+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "082888f7492f5602195c0043756f6843c173def29210059e7bbbdb5f00a9b6cc",
+          "note": "superseded by r2"
         }
       ],
       "provenance": {
@@ -162,6 +171,214 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-24T22:49:04+00:00",
         "content_sha256": "082888f7492f5602195c0043756f6843c173def29210059e7bbbdb5f00a9b6cc",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 2,
+      "status": "approved",
+      "type": "single_choice",
+      "style": "concept",
+      "difficulty": "hard",
+      "chapter": 10,
+      "section_ids": [
+        "s10-12"
+      ],
+      "topic_ids": [
+        "emc-stasjon"
+      ],
+      "learning_objective": "Bruke formelen for feltstyrke, E = 7 · √ERP / d, og sammenligne med immunitetskravet.",
+      "priority": "normal",
+      "context": [
+        [
+          "En stasjon har en ERP på ",
+          {
+            "q": 100,
+            "u": "W"
+          },
+          ". Feltstyrken i volt per meter kan anslås som 7 ganger kvadratroten av ERP i watt, delt på avstanden i meter. Anta at målepunktet ligger i antennens fjernfelt."
+        ]
+      ],
+      "stem": [
+        [
+          "Omtrent hvor stor er ",
+          {
+            "term": "feltstyrke",
+            "text": "feltstyrken"
+          },
+          " ",
+          {
+            "q": 20,
+            "u": "m"
+          },
+          " fra antennen?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "Omtrent ",
+            {
+              "q": 3.5,
+              "u": "V/m"
+            },
+            "."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "Omtrent ",
+            {
+              "q": 35,
+              "u": "V/m"
+            },
+            "."
+          ],
+          "feedback": [
+            "Her er kvadratroten glemt: 7 · 100 / 20 = 35. Ta først kvadratroten av ERP: √100 = 10."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "Omtrent ",
+            {
+              "q": 70,
+              "u": "V/m"
+            },
+            "."
+          ],
+          "feedback": [
+            "Her er det ikke delt på avstanden. Feltstyrken faller med avstanden, så 7 · 10 må deles på 20."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "Omtrent ",
+            {
+              "q": 0.18,
+              "u": "V/m"
+            },
+            "."
+          ],
+          "feedback": [
+            "Her er det delt på kvadratet av avstanden. Det er effekttettheten som faller med kvadratet; feltstyrken i V/m faller med avstanden selv."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        {
+          "steps": [
+            "√100 = 10",
+            "7 · 10 = 70",
+            [
+              "70 / 20 = ",
+              {
+                "q": 3.5,
+                "u": "V/m"
+              }
+            ]
+          ]
+        },
+        [
+          "Det er litt over ",
+          {
+            "q": 3,
+            "u": "V/m"
+          },
+          ", som er nivået mange EMC-standarder tester immuniteten mot. Selv en moderat stasjon kan altså gi problemer for utstyr i nærheten. Formelen er en tilnærming som gjelder et stykke unna antennen; helt nær antennen er feltet mer sammensatt."
+        ]
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 10,
+        "section_id": "s10-12",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "25d0567f4e716da9",
+          "8c8de8fb582a2e5e"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "Jim C K Flaten",
+        "based_on": 1,
+        "at": "2026-10-25T02:48:41+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-25T02:48:41+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "082888f7492f5602195c0043756f6843c173def29210059e7bbbdb5f00a9b6cc",
+          "note": "V/m som enhet"
+        },
+        {
+          "at": "2026-10-25T02:48:42+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "a4120291bf8547b626f1ec82cd7026651ceb6ed11d665c778e21fb577875a05f",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-25T02:50:19+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "a4120291bf8547b626f1ec82cd7026651ceb6ed11d665c778e21fb577875a05f",
+          "note": "V/m skrevet som enhet (teknisk gjeld)",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "a4120291bf8547b626f1ec82cd7026651ceb6ed11d665c778e21fb577875a05f",
+        "errors": [],
+        "warnings": [],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-25T02:50:19+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-25T02:50:19+00:00",
+        "content_sha256": "a4120291bf8547b626f1ec82cd7026651ceb6ed11d665c778e21fb577875a05f",
         "acknowledged_hazards": [
           "figures"
         ],

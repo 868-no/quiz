@@ -25,6 +25,7 @@ UNITS = {
     "V", "mV", "µV", "kV", "A", "mA", "µA", "mΩ", "Ω", "kΩ", "MΩ", "W", "mW", "kW", "Hz", "kHz", "MHz", "GHz",
     "F", "mF", "µF", "nF", "pF", "H", "mH", "µH", "nH", "s", "ms", "µs", "ns", "m", "cm", "mm", "km",
     "dB", "dBm", "dBW", "%", "°", "°C", "C", "J", "Wh", "kWh", "Ah", "mAh", "h", "min", "S", "mS",
+    "V/m", "mV/m", "µV/m",
 }
 OPERATORS = {"=", "≈", "+", "−", "-", "·", "×", "/", "(", ")", "≠", "<", ">", "≤", "≥", "→", ",", "…", "%", "²", "³", "±"}
 # identifier or number, optional _subscript, optional ^superscript

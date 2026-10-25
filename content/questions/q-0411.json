@@ -3,7 +3,7 @@
   "revisions": [
     {
       "revision": 1,
-      "status": "approved",
+      "status": "retired",
       "language": "nb-NO",
       "type": "single_choice",
       "style": "recall",
@@ -126,6 +126,15 @@
           "acknowledged": [
             "figures"
           ]
+        },
+        {
+          "at": "2026-10-25T02:50:20+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "superseded",
+          "from_status": "approved",
+          "to_status": "retired",
+          "content_sha256": "680b76bc51a6c615193dc9271d6bb6ed63ab63f698ce47c6ae12444de2a995c6",
+          "note": "superseded by r2"
         }
       ],
       "provenance": {
@@ -154,6 +163,186 @@
         "by": "Jim C K Flaten",
         "at": "2026-10-24T22:49:05+00:00",
         "content_sha256": "680b76bc51a6c615193dc9271d6bb6ed63ab63f698ce47c6ae12444de2a995c6",
+        "acknowledged_hazards": [
+          "figures"
+        ],
+        "checklist": {
+          "one_correct": true,
+          "technical": true,
+          "no_leak": true,
+          "original": true,
+          "reference": true,
+          "language": true
+        },
+        "verifier": "deterministic-v1"
+      }
+    },
+    {
+      "revision": 2,
+      "status": "approved",
+      "type": "single_choice",
+      "style": "recall",
+      "difficulty": "medium",
+      "chapter": 10,
+      "section_ids": [
+        "s10-20",
+        "s10-12"
+      ],
+      "topic_ids": [
+        "emc-regler"
+      ],
+      "learning_objective": "Forstå hva det betyr at utstyr er testet for å tåle en gitt feltstyrke (immunitet).",
+      "priority": "exam_important",
+      "context": [],
+      "stem": [
+        [
+          "Hva betyr det at et apparat er testet for å tåle et radiofelt på ",
+          {
+            "q": 3,
+            "u": "V/m"
+          },
+          "?"
+        ]
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "content": [
+            "At det skal virke som normalt i et radiofelt opp til ",
+            {
+              "q": 3,
+              "u": "V/m"
+            },
+            "."
+          ],
+          "feedback": []
+        },
+        {
+          "id": "o2",
+          "content": [
+            "At det ikke selv sender ut mer enn ",
+            {
+              "q": 3,
+              "u": "V/m"
+            },
+            "."
+          ],
+          "feedback": [
+            "Det gjelder utstråling fra apparatet. Testen her gjelder det motsatte: hvor sterke felt utenfra apparatet tåler."
+          ]
+        },
+        {
+          "id": "o3",
+          "content": [
+            "At det tåler 3 volt på strøminngangen."
+          ],
+          "feedback": [
+            "Volt per meter er feltstyrke i lufta rundt apparatet, ikke spenning på en inngang."
+          ]
+        },
+        {
+          "id": "o4",
+          "content": [
+            "At det ikke kan forstyrres av radiosendinger i det hele tatt."
+          ],
+          "feedback": [
+            "Sterkere felt enn testnivået kan fortsatt gi forstyrrelser. Testen sier bare hva apparatet skal tåle."
+          ]
+        }
+      ],
+      "correct": [
+        "o1"
+      ],
+      "explanation": [
+        [
+          "Evnen til å virke normalt i et elektromagnetisk felt kalles ",
+          {
+            "term": "immunitet",
+            "text": "immunitet"
+          },
+          ". Mange EMC-standarder for vanlig hjemme- og kontorutstyr tester ved ",
+          {
+            "q": 3,
+            "u": "V/m"
+          },
+          ", men andre produktstandarder har andre nivåer."
+        ],
+        "Ved en forstyrrelse er immuniteten i det forstyrrede apparatet bare én av flere ting som må vurderes. Senderanlegget og signalets kvalitet må også være i orden."
+      ],
+      "glossary_after_answer": [],
+      "study_reference": {
+        "chapter": 10,
+        "section_id": "s10-20",
+        "printed_pages": []
+      },
+      "sources": {
+        "import_id": "imp-e792c29edb56",
+        "chunk_uids": [
+          "4ffd8126b8485150",
+          "8c8de8fb582a2e5e"
+        ]
+      },
+      "tags": [],
+      "language": "nb-NO",
+      "provenance": {
+        "method": "edit",
+        "author": "Jim C K Flaten",
+        "based_on": 1,
+        "at": "2026-10-25T02:48:42+00:00"
+      },
+      "flags": [],
+      "review_log": [
+        {
+          "at": "2026-10-25T02:48:42+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "new_revision",
+          "from_status": "draft",
+          "to_status": "draft",
+          "content_sha256": "680b76bc51a6c615193dc9271d6bb6ed63ab63f698ce47c6ae12444de2a995c6",
+          "note": "V/m som enhet"
+        },
+        {
+          "at": "2026-10-25T02:48:42+00:00",
+          "actor": "deterministic-v1",
+          "action": "verify",
+          "from_status": "draft",
+          "to_status": "needs_review",
+          "content_sha256": "12c322156750b3e8d32f70c80a99fc9142293d7e45f1a792974658714433baf7",
+          "note": "automated checks passed"
+        },
+        {
+          "at": "2026-10-25T02:50:20+00:00",
+          "actor": "Jim C K Flaten",
+          "action": "approve",
+          "from_status": "needs_review",
+          "to_status": "approved",
+          "content_sha256": "12c322156750b3e8d32f70c80a99fc9142293d7e45f1a792974658714433baf7",
+          "note": "V/m skrevet som enhet (teknisk gjeld)",
+          "acknowledged": [
+            "figures"
+          ]
+        }
+      ],
+      "checks": {
+        "verifier": "deterministic-v1",
+        "content_sha256": "12c322156750b3e8d32f70c80a99fc9142293d7e45f1a792974658714433baf7",
+        "errors": [],
+        "warnings": [
+          "priority: 'exam_important' set by judgement; the book's '!' markers are not known for this chapter yet (no scan)"
+        ],
+        "hazards": [
+          {
+            "id": "figures",
+            "detail": "source text depends on figures; compare with the figure crops (private) and confirm the question does not reproduce a book figure."
+          }
+        ],
+        "passed": true,
+        "at": "2026-10-25T02:50:20+00:00"
+      },
+      "approval": {
+        "by": "Jim C K Flaten",
+        "at": "2026-10-25T02:50:20+00:00",
+        "content_sha256": "12c322156750b3e8d32f70c80a99fc9142293d7e45f1a792974658714433baf7",
         "acknowledged_hazards": [
           "figures"
         ],
