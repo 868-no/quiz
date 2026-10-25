@@ -28,15 +28,38 @@ const MISSED_ROUND = 20; // most questions in one round of practising earlier mi
 const EXAM_QUESTIONS = 100;
 const EXAM_PASS_SHARE = 0.75;
 const examPassMark = (total) => Math.ceil(total * EXAM_PASS_SHARE);
-const LINK_RE = /^#(q-\d+)$/;
+// #q-0045 opens a question (a calculation question with variants gets one of them at
+// random); #q-0045-2 opens variant 2 of it (variant 1 is the question itself).
+const LINK_RE = /^#(q-\d+)(?:-(\d{1,2}))?$/;
 
 /**
- * The question id in what someone typed or pasted: "q-0045", "Q45", "45", "#q-0045" or a
- * whole link ending in #q-0045. Returns the id ("q-0045") or null.
+ * The question in what someone typed or pasted: "q-0045", "Q45", "45", "#q-0045" or a
+ * whole link ending in #q-0045, each optionally followed by a variant number ("45-2",
+ * "#q-0045-2"). Returns {id: "q-0045", variant: 2 or null}, or null.
  */
+export function parseQuestionRef(text) {
+  const m = /^(?:.*#)?\s*q?\s*-?\s*(\d{1,6})\s*(?:-\s*(\d{1,2}))?\s*$/i.exec(String(text).trim());
+  return m ? { id: `q-${m[1].padStart(4, '0')}`, variant: m[2] ? Number(m[2]) : null } : null;
+}
+
+/** The question id alone (see parseQuestionRef). */
 export function parseQuestionId(text) {
-  const m = /^(?:.*#)?\s*q?\s*-?\s*(\d{1,6})\s*$/i.exec(String(text).trim());
-  return m ? `q-${m[1].padStart(4, '0')}` : null;
+  const ref = parseQuestionRef(text);
+  return ref ? ref.id : null;
+}
+
+/** How many versions with different values a question comes in: 1 + its variants. */
+const variantCount = (q) => 1 + ((q && q.variants) || []).length;
+
+/**
+ * Why `variant` (a number from a link, 1 = the question itself) does not exist for the
+ * question, or '' when it does (or when no variant was asked for).
+ */
+function variantProblem(q, id, variant) {
+  if (variant === null || (variant >= 1 && variant <= variantCount(q))) return '';
+  return variantCount(q) === 1
+    ? `Spørsmål ${id} har ingen varianter, så det finnes ingen variant ${variant}.`
+    : `Spørsmål ${id} har ${variantCount(q)} varianter, så det finnes ingen variant ${variant}.`;
 }
 
 const reducedMotion = () => Boolean(globalThis.matchMedia && globalThis.matchMedia('(prefers-reduced-motion: reduce)').matches);
@@ -112,14 +135,19 @@ export function createApp(root, bank) {
   const isSingle = () => Boolean(state.session && state.session.kind === 'single');
 
   // ---------------------------------------------------------------- links
-  function questionUrl(id) {
+  function questionUrl(ref) {
     const loc = globalThis.location;
-    return loc ? `${loc.origin}${loc.pathname}#${id}` : `#${id}`;
+    return loc ? `${loc.origin}${loc.pathname}#${ref}` : `#${ref}`;
   }
 
-  function linkedId() {
+  /** "q-0045", or "q-0045-2" for a round item showing variant 2 of a question with variants. */
+  function questionRef(id, variant) {
+    return variantCount(byId.get(id)) > 1 ? `${id}-${(variant || 0) + 1}` : id;
+  }
+
+  function linkedRef() {
     const m = LINK_RE.exec((globalThis.location && globalThis.location.hash) || '');
-    return m ? m[1] : null;
+    return m ? { id: m[1], variant: m[2] ? Number(m[2]) : null } : null;
   }
 
   function clearHash() {
@@ -127,17 +155,22 @@ export function createApp(root, bank) {
     if (loc && loc.hash && globalThis.history) globalThis.history.replaceState(null, '', loc.pathname + loc.search);
   }
 
-  /** Open one question from a link (#q-0045) as a round of its own. */
-  function openLinked(id, focus) {
+  /**
+   * Open one question from a link (#q-0045, or #q-0045-2 for variant 2) as a round of its
+   * own. Without a variant number, a question with variants gets one of them at random.
+   */
+  function openLinked(id, focus, variant = null) {
     const q = byId.get(id);
     const res = q ? createSession(bank, { chapters: [q.chapter], ids: [id], count: 1, kind: 'single', seed: randomSeed() }) : { ok: false };
-    if (!res.ok) {
+    const problem = !q || !res.ok ? `Fant ikke spørsmål ${id}. Det kan ha blitt fjernet.` : variantProblem(q, id, variant);
+    if (problem) {
       clearHash();
       state.session = null;
-      state.linkNotice = `Fant ikke spørsmål ${id}. Det kan ha blitt fjernet.`;
+      state.linkNotice = problem;
       renderSetup(focus === null ? null : '.link-notice');
       return;
     }
+    if (variant !== null && variantCount(q) > 1) res.session.items[0].variant = variant - 1;
     state.linkNotice = '';
     state.session = res.session;
     state.choice = null;
@@ -148,7 +181,7 @@ export function createApp(root, bank) {
   function askJump(opener) {
     askText({
       title: 'Gå til spørsmål',
-      message: 'Nummeret står under forklaringen når du har svart, for eksempel «Spørsmål q-0045». Du kan også lime inn en lenke til et spørsmål.',
+      message: 'Nummeret står under forklaringen når du har svart, for eksempel «Spørsmål q-0045». Skriv 45-2 for variant 2 av et regnespørsmål som finnes i flere varianter. Du kan også lime inn en lenke til et spørsmål.',
       label: 'Spørsmålsnummer',
       prefix: 'q-',
       placeholder: '0045',
@@ -160,15 +193,16 @@ export function createApp(root, bank) {
       returnTo: opener,
       validate: (v) => {
         if (!v) return 'Skriv nummeret på spørsmålet.';
-        const id = parseQuestionId(v);
-        if (!id) return 'Skriv bare sifrene, for eksempel 0045 eller 45.';
-        return byId.has(id) ? '' : `Fant ikke spørsmål ${id}. Det kan ha blitt fjernet, eller nummeret er skrevet feil.`;
+        const ref = parseQuestionRef(v);
+        if (!ref) return 'Skriv bare sifrene, for eksempel 0045 eller 45 (eller 45-2 for variant 2).';
+        if (!byId.has(ref.id)) return `Fant ikke spørsmål ${ref.id}. Det kan ha blitt fjernet, eller nummeret er skrevet feil.`;
+        return variantProblem(byId.get(ref.id), ref.id, ref.variant);
       },
     }, (v) => {
-      const id = parseQuestionId(v);
+      const { id, variant } = parseQuestionRef(v);
       // the address becomes the question's link, as when it is opened from one
-      if (globalThis.history && globalThis.location) globalThis.history.pushState(null, '', `#${id}`);
-      openLinked(id, '#q-progress');
+      if (globalThis.history && globalThis.location) globalThis.history.pushState(null, '', `#${variant === null ? id : `${id}-${variant}`}`);
+      openLinked(id, '#q-progress', variant);
     });
   }
 
@@ -455,18 +489,20 @@ export function createApp(root, bank) {
   }
 
   // Question id with a link that opens it, and (if configured) a pre-filled GitHub
-  // issue; id + revision identify the question exactly.
-  function questionLinks(q) {
+  // issue; id + revision (+ variant) identify the question exactly.
+  function questionLinks(q, variant) {
+    const ref = questionRef(q.id, variant);
+    const named = variantCount(q) > 1 ? `${q.id}, variant ${(variant || 0) + 1}` : q.id;
     const issues = bank.site && bank.site.issues_url;
     let report = null;
     if (issues) {
       // the "Feil i et spørsmål" issue form (.github/ISSUE_TEMPLATE/sporsmal.yml), pre-filled
       const fields = {
         template: 'sporsmal.yml',
-        title: `[${q.id} v${q.rev}] `,
-        sporsmal: `${q.id} (versjon ${q.rev})`,
+        title: `[${q.id} v${q.rev}${ref === q.id ? '' : ` variant ${(variant || 0) + 1}`}] `,
+        sporsmal: `${named} (versjon ${q.rev})`,
         kapittel: String(q.chapter),
-        lenke: questionUrl(q.id),
+        lenke: questionUrl(ref),
         tekst: plainText(q.stem),
       };
       const href = `${issues}/new?${Object.entries(fields).map(([k, v]) => `${k}=${encodeURIComponent(v)}`).join('&')}`;
@@ -476,9 +512,9 @@ export function createApp(root, bank) {
     }
     return h('div', { class: 'report' },
       h('p', {},
-        h('span', { class: 'qid' }, `Spørsmål ${q.id}, versjon ${q.rev}. `),
-        h('button', { type: 'button', class: 'btn-link', 'data-action': 'copy-link', 'data-qid': q.id },
-          'Kopier lenke', h('span', { class: 'visually-hidden' }, ` til spørsmål ${q.id}`)),
+        h('span', { class: 'qid' }, `Spørsmål ${named}, versjon ${q.rev}. `),
+        h('button', { type: 'button', class: 'btn-link', 'data-action': 'copy-link', 'data-qid': ref },
+          'Kopier lenke', h('span', { class: 'visually-hidden' }, ` til spørsmål ${named}`)),
         h('span', { class: 'copy-status', role: 'status' })),
       report);
   }
@@ -546,7 +582,7 @@ export function createApp(root, bank) {
           h('strong', {}, `${letterOf(id)}: `), optText(id),
           renderRich(q.options.find((o) => o.id === id).feedback, opts))))) : null,
       h('p', { class: 'ref' }, h('span', { 'aria-hidden': 'true' }, '📖 '), h('strong', {}, 'Les mer: '), refText(q)),
-      questionLinks(q),
+      questionLinks(q, it.variant),
       h('div', { class: 'actions' },
         isSingle()
           ? h('button', { type: 'button', class: 'btn btn-primary', 'data-action': 'leave' }, 'Øv på flere spørsmål')
@@ -567,7 +603,7 @@ export function createApp(root, bank) {
     const view = h('section', { class: 'question', 'aria-labelledby': 'q-progress' },
       h('div', { class: 'q-head' },
         h('h2', { id: 'q-progress', class: 'q-progress', tabindex: '-1' },
-          isSingle() ? `Spørsmål ${q.id}` : `Spørsmål ${s.index + 1} av ${total}`),
+          isSingle() ? `Spørsmål ${q.id}${variantCount(q) > 1 ? `, variant ${(it.variant || 0) + 1}` : ''}` : `Spørsmål ${s.index + 1} av ${total}`),
         isSingle() ? null : h('div', { class: 'dial-wrap' }, roundDial(marksOf(s), s.index, { compact: narrow() })),
         h('p', { class: 'q-meta' },
           s.kind === 'missed' ? h('span', { class: 'tag' }, 'Feil fra før') : null,
@@ -666,7 +702,7 @@ export function createApp(root, bank) {
               chosen && !x.correct ? h('div', { class: 'fb-block' }, h('h4', {}, 'Hvorfor svaret ditt er feil'), renderRich(chosen.feedback, opts)) : null,
               h('div', { class: 'fb-block' }, h('h4', {}, 'Forklaring'), renderRich(q.explanation, opts)),
               h('p', { class: 'ref' }, h('strong', {}, 'Les mer: '), refText(q)),
-              questionLinks(q))));
+              questionLinks(q, it.variant))));
       })));
     mount(view, '#res-title');
   }
@@ -896,8 +932,8 @@ export function createApp(root, bank) {
 
   // A link to one question (#q-0045) opens it, also when pasted into an open tab.
   globalThis.addEventListener?.('hashchange', () => {
-    const id = linkedId();
-    if (id) openLinked(id, '#q-progress');
+    const ref = linkedRef();
+    if (ref) openLinked(ref.id, '#q-progress', ref.variant);
     else if (isSingle()) toSetup();
   });
 
@@ -916,8 +952,8 @@ export function createApp(root, bank) {
     jumpSlot.hidden = false;
   }
 
-  const first = linkedId();
-  if (first) openLinked(first, null); // no focus move on first load
+  const first = linkedRef();
+  if (first) openLinked(first.id, null, first.variant); // no focus move on first load
   else render(null);
   return { state };
 }

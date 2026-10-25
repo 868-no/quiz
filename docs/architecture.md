@@ -52,8 +52,11 @@ dist/                     build output = the deployable site (not committed; CI 
   `localStorage` and removed the next time it is answered right; the start screen
   offers a round of up to 20 of them. Questions answered right at least once are
   kept too; the chapter list shows them as "12 av 41 riktig besvart" (resettable).
-* **Links**: `#q-0045` opens that question on its own (also on `hashchange`); the
-  feedback offers a button that copies the link.
+* **Links**: `#q-0045` opens that question on its own (also on `hashchange`); a
+  calculation question with variants then gets one of them at random. `#q-0045-2` opens
+  variant 2 (variant 1 is the question itself); a variant that does not exist gives a
+  notice on the start screen. The feedback names the variant shown and offers a button
+  that copies its link, and the issue link includes it.
 * **Policies** (`policies.js`): `learning` (immediate feedback, cannot advance before
   feedback) and `exam`, the practice exam ("Prøveeksamen"): 100 questions from all
   available chapters (fewer if the bank is smaller), shared between the chapters in

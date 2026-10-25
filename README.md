@@ -7,7 +7,7 @@ wrong, and where to read more in the textbook (chapter, section, printed page).
 A practice exam (100 questions, 75 right to pass, feedback at the end) mirrors the
 licence exam. Questions answered wrong can be practised again, the chapter list shows how many
 questions you have answered right, each question has its own link
-(`#q-0045`), and after the first visit the site works offline and can be installed
+(`#q-0045`, or `#q-0045-2` for variant 2 of a calculation question with variants), and after the first visit the site works offline and can be installed
 on a phone's home screen.
 
 The repository also contains the **offline editorial pipeline** that turns the

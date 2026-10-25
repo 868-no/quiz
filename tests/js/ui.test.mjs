@@ -422,6 +422,77 @@ test('question ids are read from what people type or paste', async () => {
   for (const text of ['', 'abc', 'q-', '4,5', 'kapittel 4']) assert.equal(parseQuestionId(text), null, text);
 });
 
+test('a question reference may name a variant', async () => {
+  const { parseQuestionRef } = await import('../../web/js/ui/app.js');
+  for (const [text, id, variant] of [['45', 'q-0045', null], ['45-2', 'q-0045', 2], ['q-0045-3', 'q-0045', 3],
+    [' 45 - 2 ', 'q-0045', 2], ['https://quiz.868.no/#q-0045-2', 'q-0045', 2]]) {
+    assert.deepEqual(parseQuestionRef(text), { id, variant }, text);
+  }
+  for (const text of ['45-', '45-2-1', '45-abc', '45 v2']) assert.equal(parseQuestionRef(text), null, text);
+});
+
+/** Chapter 6 questions (q-6000, q-6001) get two variants each, as in engine.test.mjs. */
+function withVariants(bank) {
+  for (const q of bank.questions.filter((x) => x.chapter === 6)) {
+    q.variants = [2, 3].map((n) => ({
+      context: [], stem: [`SYNTETISK variant ${n} av ${q.id}?`],
+      options: q.options.map((o) => ({ ...o, content: [`${o.content[0]} (${n})`] })),
+      explanation: [`Forklaring ${n}.`], visual: null,
+    }));
+  }
+  return bank;
+}
+
+test('a link with a variant number opens that variant, and links name the variant shown', { skip }, async () => {
+  const bank = withVariants(makeBank({ perChapter: { 2: 2, 6: 2 } }));
+  bank.site = { issues_url: 'https://github.com/868-no/quiz/issues' };
+  const { root, w } = await app(bank, 'http://localhost/#q-6001-3');
+  assert.equal($(root, '#q-progress').textContent, 'Spørsmål q-6001, variant 3');
+  assert.ok($(root, '.q-stem').textContent.includes('variant 3 av q-6001'));
+  answer(root, true);
+  assert.match($(root, '.qid').textContent, /^Spørsmål q-6001, variant 3, versjon \d+\. $/);
+  const url = new URL($(root, '.report a').getAttribute('href'));
+  assert.equal(url.searchParams.get('lenke'), 'http://localhost/#q-6001-3');
+  assert.match(url.searchParams.get('sporsmal'), /^q-6001, variant 3 \(versjon \d+\)$/);
+  assert.match(url.searchParams.get('title'), /^\[q-6001 v\d+ variant 3\] $/);
+  $(root, '[data-action=copy-link]').click();
+  await new Promise((r) => setTimeout(r, 0));
+  assert.equal($(root, '.copy-status a').getAttribute('href'), '#q-6001-3');
+  // variant 1 is the question itself
+  w.location.hash = '#q-6001-1';
+  await new Promise((r) => w.addEventListener('hashchange', r, { once: true }));
+  await new Promise((r) => setTimeout(r, 0));
+  assert.equal($(root, '#q-progress').textContent, 'Spørsmål q-6001, variant 1');
+  assert.ok(!$(root, '.q-stem').textContent.includes('variant'));
+  // a question without variants keeps its plain link, and accepts variant 1 only
+  w.location.hash = '#q-2001-1';
+  await new Promise((r) => w.addEventListener('hashchange', r, { once: true }));
+  await new Promise((r) => setTimeout(r, 0));
+  assert.equal($(root, '#q-progress').textContent, 'Spørsmål q-2001');
+  answer(root, true);
+  assert.match($(root, '.qid').textContent, /^Spørsmål q-2001, versjon/);
+  assert.equal(new URL($(root, '.report a').getAttribute('href')).searchParams.get('lenke'), 'http://localhost/#q-2001');
+});
+
+test('a link to a variant that does not exist explains itself', { skip }, async () => {
+  const bank = withVariants(makeBank({ perChapter: { 2: 2, 6: 2 } }));
+  for (const [hash, text] of [['#q-6001-4', 'Spørsmål q-6001 har 3 varianter, så det finnes ingen variant 4.'],
+    ['#q-2001-2', 'Spørsmål q-2001 har ingen varianter, så det finnes ingen variant 2.']]) {
+    const { root, w } = await app(bank, `http://localhost/${hash}`);
+    assert.equal($(root, '.link-notice').textContent, text);
+    assert.equal(w.location.hash, '');
+  }
+});
+
+test('in a round, the question number after answering names the variant shown', { skip }, async () => {
+  const bank = withVariants(makeBank({ perChapter: { 6: 2 } }));
+  const { root } = await app(bank);
+  start(root, [6]);
+  answer(root, true);
+  assert.match($(root, '.qid').textContent, /^Spørsmål q-600\d, variant [123], versjon/);
+  assert.match($(root, '[data-action=copy-link]').dataset.qid, /^q-600\d-[123]$/);
+});
+
 test('"Gå til et bestemt spørsmål" in the footer asks for the number and opens that question', { skip }, async () => {
   const { root, w } = await app(makeBank({ perChapter: { 2: 3 } }));
   const doc = root.ownerDocument;
@@ -470,6 +541,24 @@ test('"Gå til et bestemt spørsmål" in the footer asks for the number and open
   assert.equal($(root, '#q-progress').textContent, 'Spørsmål q-2002');
   assert.equal(doc.activeElement, $(root, '#q-progress'));
   assert.equal(w.location.hash, '#q-2002');
+});
+
+test('the jump dialog takes a variant number too', { skip }, async () => {
+  const bank = withVariants(makeBank({ perChapter: { 2: 2, 6: 2 } }));
+  const { root, w } = await app(bank);
+  const doc = w.document;
+  const opener = $(doc, '#footer-jump button');
+  opener.click();
+  const input = $(doc, '#prompt-input');
+  const submit = () => $(doc, 'dialog.confirm-dialog [data-dialog=confirm]').click();
+  input.value = '6001-4';
+  submit();
+  assert.equal($(doc, '#prompt-error').textContent, 'Spørsmål q-6001 har 3 varianter, så det finnes ingen variant 4.');
+  input.value = '6001-2';
+  submit();
+  assert.equal($(doc, 'dialog.confirm-dialog'), null);
+  assert.equal($(root, '#q-progress').textContent, 'Spørsmål q-6001, variant 2');
+  assert.equal(w.location.hash, '#q-6001-2');
 });
 
 function fakeObserver(observed) {

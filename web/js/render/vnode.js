@@ -34,8 +34,8 @@ function flatten(children) {
 }
 
 // Links may only point to the project's GitHub pages (issue reporting), the
-// community's home page (https://868.no) or a question on this page (#q-0045).
-const HREF_OK = /^(https:\/\/github\.com\/[^\s"<>]*|https:\/\/868\.no\/?|#q-\d+)$/;
+// community's home page (https://868.no) or a question on this page (#q-0045, #q-0045-2 for a variant).
+const HREF_OK = /^(https:\/\/github\.com\/[^\s"<>]*|https:\/\/868\.no\/?|#q-\d+(?:-\d+)?)$/;
 
 function checkNode(node) {
   if (!HTML_TAGS.has(node.t) && !SVG_TAGS.has(node.t)) throw new Error(`tag not allowed: ${node.t}`);
