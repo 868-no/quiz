@@ -4,7 +4,7 @@ import unittest
 from tools import checks
 from tools.context import load_context
 
-from .helpers import SYNTH_TEXT, TempRepo, doc_collections, sample_revision, write_collections_export
+from .helpers import SYNTH_TEXT, TempRepo, doc_collections, sample_revision, sample_variant, write_collections_export
 
 
 class ChecksTest(unittest.TestCase):
@@ -32,6 +32,37 @@ class ChecksTest(unittest.TestCase):
 
     def assertWarning(self, result, text):
         self.assertTrue(any(text in w for w in result["warnings"]), f"expected warning containing {text!r}: {result['warnings']}")
+
+    def test_variants_are_checked_as_whole_questions(self):
+        r = self.run_checks(variants=[sample_variant()])
+        self.assertTrue(r["passed"], r["errors"])
+        self.assertEqual(r["warnings"], [])
+        wrong = sample_variant()
+        wrong["calculation"]["answer"] = [41.9, "mA"]
+        self.assertError(self.run_checks(variants=[wrong]), "variant v2: calculation: recomputed")
+        # the figure must follow the variant's values
+        self.assertError(self.run_checks(variants=[sample_variant(visual=sample_revision(self.iid)["visual"])]),
+                         "variant v2: visual: R1 in the figure")
+
+    def test_variant_structure(self):
+        v = sample_variant()
+        v["options"] = v["options"][1:] + v["options"][:1]
+        self.assertError(self.run_checks(variants=[v]), "same ids in the same order")
+        self.assertError(self.run_checks(variants=[sample_variant(), sample_variant()]), "must be unique")
+        self.assertError(self.run_checks(variants=[sample_variant(correct=["o2"])]), "only ['context'")
+        same = sample_variant(calculation=sample_revision(self.iid)["calculation"])
+        self.assertError(self.run_checks(variants=[same]), "same input values")
+        self.assertError(self.run_checks(variants=[sample_variant()], calculation=None, style="concept"),
+                         "only calculation questions")
+        self.assertError(self.run_checks(variants=[]), "non-empty list")
+
+    def test_content_hash_without_variants_is_unchanged(self):
+        from tools.common import canonical_hash
+        from tools.questions import CONTENT_FIELDS, content_hash
+        rev = sample_revision(self.iid)
+        old = canonical_hash({k: rev.get(k) for k in CONTENT_FIELDS if k != "variants"})
+        self.assertEqual(content_hash(rev), old)
+        self.assertNotEqual(content_hash(dict(rev, variants=[sample_variant()])), old)
 
     def test_valid_question_passes(self):
         r = self.run_checks()

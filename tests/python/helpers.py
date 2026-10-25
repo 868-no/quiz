@@ -228,3 +228,26 @@ def sample_revision(import_id: str, **over) -> dict:
     for k, v in over.items():
         rev[k] = v
     return copy.deepcopy(rev)
+
+
+def sample_variant(**over) -> dict:
+    """A variant of sample_revision with other values: 9 V across 220 Ω gives 40,9 mA."""
+    v = {
+        "id": "v2",
+        "context": [["En motstand på ", {"q": 220, "u": "Ω"}, " er koblet til en kilde på ", {"q": 9, "u": "V"}, "."]],
+        "options": [
+            {"id": "o1", "content": [{"q": 40.9, "u": "mA"}], "feedback": []},
+            {"id": "o2", "content": [{"q": 4.09, "u": "mA"}], "feedback": ["Kommaet er flyttet ett sted."]},
+            {"id": "o3", "content": [{"q": 24.4, "u": "mA"}], "feedback": ["Her er brøken snudd."]},
+            {"id": "o4", "content": [{"q": 409, "u": "mA"}], "feedback": ["Dette er ti ganger for mye."]},
+        ],
+        "explanation": [["Strømmen er spenningen delt på resistansen, som gir ", {"q": 40.9, "u": "mA"}, "."]],
+        "visual": {"template": "dc-circuit", "version": 1,
+                   "params": {"topology": "series", "source": {"voltage_v": 9}, "resistors": [{"ohms": 220}],
+                              "ammeter": {"branch": "main"}},
+                   "params_after": {"ammeter": {"show_reading": True}}},
+        "calculation": {"formula": "ohms_law_current", "inputs": {"U": [9, "V"], "R": [220, "Ω"]},
+                        "answer": [40.9, "mA"], "answer_symbol": "I", "sig_figs": 3, "visual_bindings": {"R": "R1"}},
+    }
+    v.update(over)
+    return copy.deepcopy(v)

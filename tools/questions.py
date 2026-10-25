@@ -30,7 +30,7 @@ QUESTION_ID = re.compile(r"^q-\d{4,6}$")
 CONTENT_FIELDS = (
     "type", "style", "difficulty", "chapter", "section_ids", "topic_ids", "learning_objective",
     "priority", "context", "stem", "options", "correct", "explanation", "visual",
-    "glossary_after_answer", "calculation", "study_reference", "sources", "tags",
+    "glossary_after_answer", "calculation", "study_reference", "sources", "tags", "variants",
 )
 
 # Allowed status transitions and the command that performs them.
@@ -45,8 +45,27 @@ TRANSITIONS = {
 }
 
 
+# A calculation question can come in variants: other values for the same calculation.
+# A variant replaces these fields of the question (the option ids and the correct
+# option stay the same); the question itself is the first variant.
+VARIANT_KEYS = ("context", "stem", "options", "explanation", "visual", "calculation")
+VARIANT_ID = re.compile(r"^v([2-9]|1\d)$")
+
+
 def content_hash(rev: dict[str, Any]) -> str:
-    return canonical_hash({k: rev.get(k) for k in CONTENT_FIELDS})
+    # "variants" is left out when absent, so questions without variants keep their hash
+    return canonical_hash({k: rev.get(k) for k in CONTENT_FIELDS if k != "variants" or rev.get("variants")})
+
+
+def variant_revisions(rev: dict[str, Any]) -> list[tuple[str, dict[str, Any]]]:
+    """Each variant as a whole revision: the question with the variant's fields replaced."""
+    out = []
+    for v in rev.get("variants") or []:
+        if isinstance(v, dict):
+            merged = {k: val for k, val in rev.items() if k != "variants"}
+            merged.update({k: v[k] for k in VARIANT_KEYS if k in v})
+            out.append((str(v.get("id")), merged))
+    return out
 
 
 def iter_question_files(paths: Paths) -> Iterator[Path]:

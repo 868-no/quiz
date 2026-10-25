@@ -18,13 +18,15 @@ from typing import Any
 from . import checks, richtext, visuals
 from .common import Paths, ToolError, canonical_hash, now_iso, read_json, write_json
 from .context import Context, load_context, validate_glossary
-from .questions import content_hash, latest, open_flags, publishable_revision
+from .questions import VARIANT_KEYS, content_hash, latest, open_flags, publishable_revision, variant_revisions
 from .release_check import SW_FILE, SW_PLACEHOLDER, precache, release_check
 
 BANK_SCHEMA = 1
 PUBLIC_QUESTION_KEYS = ("id", "rev", "chapter", "sections", "topics", "difficulty", "style", "priority",
                         "context", "stem", "options", "correct", "explanation", "visual",
                         "glossary_after_answer", "ref")
+# a question with variants also has "variants": [{these keys}, …] (the calculation stays private)
+PUBLIC_VARIANT_KEYS = tuple(k for k in VARIANT_KEYS if k != "calculation")
 PUBLIC_TERM_KEYS = ("id", "nb", "en", "definition", "related")
 PUBLIC_TEMPLATE_KEYS = ("id", "version", "title", "idealised", "params", "kind_labels")
 
@@ -42,6 +44,18 @@ def _terms_used(rev: dict[str, Any]) -> set[str]:
     return out
 
 
+def _project_content(rev: dict[str, Any]) -> dict[str, Any]:
+    return {
+        "context": rev.get("context") or [],
+        "stem": rev["stem"],
+        "options": [{"id": o["id"], "content": o["content"], "feedback": o.get("feedback") or []}
+                    for o in rev["options"]],
+        "explanation": rev["explanation"],
+        "visual": ({k: rev["visual"][k] for k in ("template", "version", "params", "params_after", "caption", "animation", "after_only")
+                    if k in rev["visual"]} if rev.get("visual") else None),
+    }
+
+
 def project_question(q: dict[str, Any], rev: dict[str, Any], ctx: Context) -> dict[str, Any]:
     ref = rev.get("study_reference") or {}
     sec = ctx.sections.get(ref.get("section_id") or "")
@@ -54,14 +68,8 @@ def project_question(q: dict[str, Any], rev: dict[str, Any], ctx: Context) -> di
         "difficulty": rev["difficulty"],
         "style": rev["style"],
         "priority": rev["priority"],
-        "context": rev.get("context") or [],
-        "stem": rev["stem"],
-        "options": [{"id": o["id"], "content": o["content"], "feedback": o.get("feedback") or []}
-                    for o in rev["options"]],
+        **_project_content(rev),
         "correct": list(rev["correct"]),
-        "explanation": rev["explanation"],
-        "visual": ({k: rev["visual"][k] for k in ("template", "version", "params", "params_after", "caption", "animation", "after_only")
-                    if k in rev["visual"]} if rev.get("visual") else None),
         "glossary_after_answer": list(rev.get("glossary_after_answer") or []),
         "ref": {
             "chapter": rev["chapter"],
@@ -71,6 +79,9 @@ def project_question(q: dict[str, Any], rev: dict[str, Any], ctx: Context) -> di
         },
     }
     assert set(out) == set(PUBLIC_QUESTION_KEYS)
+    if rev.get("variants"):
+        out["variants"] = [_project_content(merged) for _, merged in variant_revisions(rev)]
+        assert all(set(v) == set(PUBLIC_VARIANT_KEYS) for v in out["variants"])
     return out
 
 
@@ -122,7 +133,8 @@ def build_bank(paths: Paths, *, mode: str, skip_flagged: bool = False,
         if mode != "production":
             pq["preview_status"] = rev.get("status")
         public_qs.append(pq)
-        for t in _terms_used(rev) | set(rev.get("glossary_after_answer") or []):
+        versions = [rev] + [m for _, m in variant_revisions(rev)]
+        for t in set().union(*map(_terms_used, versions)) | set(rev.get("glossary_after_answer") or []):
             used_terms.add(t)
             term = ctx.glossary.get(t)
             if term is None:

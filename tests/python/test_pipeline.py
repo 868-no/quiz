@@ -12,7 +12,7 @@ from tools.context import load_glossary
 from tools.questions import load_question
 from tools.release_check import release_check
 
-from .helpers import SYNTH_TEXT, TempRepo, sample_revision
+from .helpers import SYNTH_TEXT, TempRepo, sample_revision, sample_variant
 
 ACK = ["figures", "ocr", "pages"]
 
@@ -312,6 +312,19 @@ class PipelineTest(unittest.TestCase):
         self.assertIn("glossary term 'resistans' is not approved", str(cm.exception))
         review.approve_terms(self.paths, ["resistans"], reviewer="T", note=None)
         self.assertEqual(publish.publish(self.paths)["questions"], 1)
+
+    def test_variants_are_published_without_their_calculation(self):
+        self.repo.write_question("q-0001", sample_revision(self.iid, variants=[sample_variant()]))
+        review.verify(self.paths, None, quiet=True)
+        self.approve()
+        self.repo.approve_templates()
+        publish.publish(self.paths)
+        bank = read_json(self.paths.dist / "data" / "bank.json")
+        q = bank["questions"][0]
+        self.assertEqual(len(q["variants"]), 1)
+        self.assertEqual(set(q["variants"][0]), {"context", "stem", "options", "explanation", "visual"})
+        self.assertEqual(q["variants"][0]["options"][0]["content"], [{"q": 40.9, "u": "mA"}])
+        self.assertEqual(release_check(self.paths.dist, self.paths)["errors"], [])
 
     def test_glossary_term_edited_after_approval_must_be_approved_again(self):
         self.repo.write_question("q-0001", sample_revision(self.iid))

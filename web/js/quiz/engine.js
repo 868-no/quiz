@@ -106,6 +106,8 @@ export function createSession(bank, { chapters, count, difficulties = null, styl
   const items = chosen.map((q) => ({
     qid: q.id,
     rev: q.rev,
+    // a calculation question with variants gets one of its sets of values (0: the question itself)
+    ...(q.variants && q.variants.length ? { variant: Math.floor(rng() * (q.variants.length + 1)) } : {}),
     order: shuffle(q.options.map((o) => o.id), rng),
     answer: null,
   }));
@@ -121,6 +123,16 @@ export function createSession(bank, { chapters, count, difficulties = null, styl
 
 export function indexBank(bank) {
   return new Map(bank.questions.map((q) => [q.id, q]));
+}
+
+/**
+ * The question as shown for a round item: a variant replaces the question's context,
+ * stem, options, explanation and figure with its own values (the option ids and the
+ * correct option are the same in every variant).
+ */
+export function questionFor(q, variant) {
+  if (!q || !variant || !q.variants || !q.variants[variant - 1]) return q;
+  return { ...q, ...q.variants[variant - 1] };
 }
 
 export function currentItem(session) {
@@ -176,7 +188,7 @@ export function summary(session, byId) {
     const row = byChapter.get(ch);
     row.total += 1;
     if (ok) row.correct += 1;
-    return { index: i, item: it, question: q, correct: ok };
+    return { index: i, item: it, question: questionFor(q, it.variant), correct: ok };
   });
   return {
     total: session.items.length,
@@ -204,6 +216,7 @@ export function restoreSession(raw, bank) {
     for (const it of s.items) {
       const q = byId.get(it.qid);
       if (!q || q.rev !== it.rev) return null;
+      if (it.variant !== undefined && !(Number.isInteger(it.variant) && it.variant >= 0 && it.variant <= (q.variants || []).length)) return null;
       const ids = q.options.map((o) => o.id).sort().join('|');
       if (!Array.isArray(it.order) || [...it.order].sort().join('|') !== ids) return null;
       if (it.answer) {

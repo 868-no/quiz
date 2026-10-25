@@ -6,7 +6,7 @@ import { h, toDOM } from '../render/vnode.js';
 import { plainText, renderInlines, renderRich } from '../render/richtext.js';
 import { renderVisual } from '../visuals/registry.js';
 import {
-  advance, createSession, currentItem, feedbackVisible, indexBank, pool, restoreSession, submitAnswer, summary,
+  advance, createSession, currentItem, feedbackVisible, indexBank, pool, questionFor, restoreSession, submitAnswer, summary,
 } from '../quiz/engine.js';
 import { randomSeed } from '../quiz/rng.js';
 import {
@@ -520,7 +520,7 @@ export function createApp(root, bank) {
     fitDial();
     const s = state.session;
     const it = currentItem(s);
-    const q = byId.get(it.qid);
+    const q = questionFor(byId.get(it.qid), it.variant);
     const exam = isExam();
     const answered = Boolean(it.answer) && !exam; // an exam never shows feedback before the end
     const total = s.items.length;

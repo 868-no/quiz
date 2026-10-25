@@ -498,11 +498,12 @@ and `leak_ma` only with `fuse_rcd`. The note under each figure is worded per kin
   desktop and on a phone, and fails if a label overlaps another or crosses a line. It
   runs on the published build (`dist/`) in CI; locally, with the private import present,
   `run-tests.sh` also runs it on the preview build (`RADIOQUIZ_SITE=private/preview`), so
-  figures on questions that are not approved yet are checked before approval.
+  figures on questions that are not approved yet are checked before approval. Each
+  variant of a calculation question (see content-format.md) is drawn as well.
 * `node tests/a11y/sheet.mjs [q-0001 … | template-id …]` saves a picture of each figure,
   before and after answering, at both widths in `private/figure-sheets/`, and prints the
   text descriptions and any overlapping labels, for looking the drawings over by eye.
-  `RADIOQUIZ_SITE=private/preview` includes unapproved questions.
+  A question id includes its variants (saved as `q-0001-v2-…`). `RADIOQUIZ_SITE=private/preview` includes unapproved questions.
 
 ## Adding or changing a template
 

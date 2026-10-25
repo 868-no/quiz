@@ -5,9 +5,9 @@
 //
 //   node tests/a11y/sheet.mjs [--out DIR (default private/figure-sheets)] [q-0001 … | template-id …]
 //
-// With no ids every figure is drawn. A template id (e.g. antenna) picks the questions that
-// use it. The site comes from dist/, or from RADIOQUIZ_SITE (private/preview shows figures
-// on questions that are not approved yet). Needs Playwright with Chromium, like the checks.
+// With no ids every figure is drawn, including each variant's (q-0001-v2 …). A template id
+// (e.g. antenna) picks the questions that use it. The site comes from dist/, or from
+// RADIOQUIZ_SITE (private/preview shows figures on questions that are not approved yet). Needs Playwright with Chromium, like the checks.
 import { mkdirSync } from 'node:fs';
 import { join } from 'node:path';
 import { chromium, launchOptions, serve } from './browser.mjs';
@@ -23,12 +23,13 @@ async function draw(wanted) {
   const { renderVisual } = await import('/js/visuals/registry.js');
   const { toDOM } = await import('/js/render/vnode.js');
   const bank = await (await fetch('/data/bank.json')).json();
-  const pick = (q) => !wanted.length || wanted.includes(q.id) || wanted.includes(q.visual.template);
+  const pick = (q) => !wanted.length || wanted.includes(q.id) || wanted.includes(q.base) || wanted.includes(q.visual.template);
   const wrap = document.createElement('main');
   wrap.className = 'wrap';
   document.body.replaceChildren(wrap);
   const report = [];
-  for (const q of bank.questions.filter((x) => x.visual && pick(x))) {
+  const all = bank.questions.flatMap((x) => [x, ...(x.variants || []).map((v, i) => ({ ...x, ...v, id: `${x.id}-v${i + 2}`, base: x.id }))]);
+  for (const q of all.filter((x) => x.visual && pick(x))) {
     for (const phase of ['before', 'after']) {
       const res = renderVisual(q.visual, bank.templates, { phase, idPrefix: `s-${q.id}-${phase}` });
       const card = document.createElement('section');

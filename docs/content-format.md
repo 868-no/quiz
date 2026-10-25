@@ -35,6 +35,7 @@ One file per question **identity**, holding a list of **revisions**:
 | `visual` | optional `{template, version, params, params_after?, caption?}` – see visual-templates.md |
 | `glossary_after_answer` | term ids shown as plain text until answered (their definition would reveal the answer) |
 | `calculation` | required for `style: calculation`, see below |
+| `variants` | optional, calculation questions only: other values for the same calculation, see below |
 | `study_reference` | `{chapter, section_id, printed_pages}` – printed pages must belong to the cited chunks; empty for chapters without printed pages yet |
 | `sources` | private: `{import_id, chunk_uids}` |
 | `provenance`, `checks`, `flags`, `review_log`, `approval` | private metadata |
@@ -85,6 +86,37 @@ parallel R, C, L, voltage divider, charge, energy, reactances, resonance, time
 constants, period/frequency, wavelength, RMS/peak, dB, IF/image frequency, FM
 modulation index and Carson bandwidth, efficiency, harmonics). Add a formula there
 (with a test in `tests/python/test_units.py`) when a question needs one.
+
+### Variants
+
+A calculation question can carry other sets of values, so a learner who practises a
+few chapters cannot answer from memory. Each variant replaces the fields that hold the
+numbers; the question itself is the first variant (v1):
+
+```json
+"variants": [
+  {"id": "v2", "context": […], "options": […], "explanation": […], "visual": {…},
+   "calculation": {"formula": "ohms_law_current", "inputs": {"U": [9, "V"], "R": [220, "Ω"]},
+                   "answer": [40.9, "mA"], "answer_symbol": "I", "sig_figs": 3, "visual_bindings": {"R": "R1"}}}
+]
+```
+
+- Only `context`, `stem`, `options`, `explanation`, `visual` and `calculation` can differ,
+  and a field left out is the question's own. The options keep their ids and order, so
+  the correct option is the same in every variant; their values and feedback change.
+- Every variant needs its own `calculation` with the same formula and other inputs, and
+  the same figure template. A different formula is a different question.
+- `verify` checks each variant as a whole question (errors and warnings are prefixed
+  `variant v2:`), so the answer, distractors, explanation and figure are all checked
+  against the variant's own values. `review show` lists every variant.
+- The variants are part of the approved content: adding or changing one needs a new
+  revision and a new approval.
+- The site picks one variant at random each time the question comes up in a round
+  (practising missed questions included, so a retry tests the method, not the number).
+  The public bank gets the variants without their `calculation`.
+
+Use them where the numbers are incidental. Where the number is the fact to learn (band
+edges, power limits, the frequency in a regulation), write a separate question instead.
 
 ## Glossary: `content/glossary/terms.json`
 

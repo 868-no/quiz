@@ -46,6 +46,7 @@ BANK_TOP = {"schema", "mode", "built_at", "bank_id", "book", "site", "chapters",
             "templates", "questions"}
 QUESTION_KEYS = {"id", "rev", "chapter", "sections", "topics", "difficulty", "style", "priority", "context",
                  "stem", "options", "correct", "explanation", "visual", "glossary_after_answer", "ref"}
+VARIANT_KEYS = {"context", "stem", "options", "explanation", "visual"}
 SHINGLE = 8
 SW_FILE = "sw.js"
 SW_PLACEHOLDER = "const PRECACHE = null; // filled in by `python3 -m tools publish`"
@@ -193,7 +194,7 @@ def release_check(root: Path, paths: Paths, *, expect_mode: str = "production") 
                 errors.append(f"data/bank.json: unexpected top-level keys {sorted(set(bank) ^ BANK_TOP)}")
             if bank.get("mode") != expect_mode:
                 errors.append(f"data/bank.json: mode is {bank.get('mode')!r}, expected {expect_mode!r}")
-            allowed = QUESTION_KEYS | ({"preview_status"} if expect_mode == "preview" else set())
+            allowed = QUESTION_KEYS | {"variants"} | ({"preview_status"} if expect_mode == "preview" else set())
             for q in bank.get("questions", []):
                 if not QUESTION_KEYS <= set(q) <= allowed:
                     errors.append(f"data/bank.json: question {q.get('id')} has non-public keys "
@@ -201,6 +202,11 @@ def release_check(root: Path, paths: Paths, *, expect_mode: str = "production") 
                 ids = [o.get("id") for o in q.get("options", [])]
                 if len(q.get("correct", [])) != 1 or q["correct"][0] not in ids:
                     errors.append(f"data/bank.json: question {q.get('id')} has an invalid correct key")
+                for v in q.get("variants") or []:
+                    if not isinstance(v, dict) or set(v) != VARIANT_KEYS:
+                        errors.append(f"data/bank.json: question {q.get('id')} has a variant with non-public keys")
+                    elif [o.get("id") for o in v.get("options", [])] != ids:
+                        errors.append(f"data/bank.json: question {q.get('id')} has a variant with other option ids")
     errors += _check_sw(root, expect_mode)
     errors += _check_site_urls(root, paths)
     notes.append(f"{files} file(s) scanned")

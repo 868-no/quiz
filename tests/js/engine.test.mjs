@@ -1,7 +1,8 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import {
-  advance, canAdvance, chapterQuotas, createSession, currentItem, feedbackVisible, indexBank, pool, restoreSession, selectQuestions,
+  advance, canAdvance, chapterQuotas, createSession, currentItem, feedbackVisible, indexBank, pool, questionFor, restoreSession,
+  selectQuestions,
   submitAnswer, summary,
 } from '../../web/js/quiz/engine.js';
 import { makeRng, shuffle } from '../../web/js/quiz/rng.js';
@@ -228,4 +229,57 @@ test('a saved session from before keeps meaning "all" for empty filters', () => 
   assert.equal(s.difficulties, null);
   assert.equal(s.styles, null);
   assert.ok(pool(bank, s).length > 0);
+});
+
+/** A bank whose chapter 6 questions have two variants each (other values, same options). */
+function variantBank() {
+  const b = makeBank({ perChapter: { 2: 2, 6: 2 } });
+  for (const q of b.questions.filter((x) => x.chapter === 6)) {
+    q.variants = [2, 3].map((n) => ({
+      context: [], stem: [`SYNTETISK variant ${n} av ${q.id}?`],
+      options: q.options.map((o) => ({ ...o, content: [`${o.content[0]} (${n})`] })),
+      explanation: [`Forklaring ${n}.`], visual: null,
+    }));
+  }
+  return b;
+}
+
+test('a round gets one variant of each question with variants, and shows its text', () => {
+  const b = variantBank();
+  const ids = indexBank(b);
+  const seen = new Set();
+  for (let seed = 1; seed < 60; seed++) {
+    const { session } = createSession(b, { chapters: [2, 6], count: 4, seed });
+    for (const it of session.items) {
+      if (ids.get(it.qid).chapter === 2) { assert.equal(it.variant, undefined); continue; }
+      assert.ok([0, 1, 2].includes(it.variant));
+      seen.add(it.variant);
+      const q = questionFor(ids.get(it.qid), it.variant);
+      assert.equal(q.stem[0], it.variant ? `SYNTETISK variant ${it.variant + 1} av ${it.qid}?` : `SYNTETISK spørsmål ${it.qid}?`);
+      assert.deepEqual(q.correct, ['o1']);
+    }
+    const done = answerAll(session, () => 'o1');
+    const sum = summary(done, ids);
+    assert.equal(sum.correct, 4);
+    for (const x of sum.items) assert.equal(x.question.stem, questionFor(ids.get(x.item.qid), x.item.variant).stem);
+  }
+  assert.deepEqual([...seen].sort(), [0, 1, 2]);
+});
+
+test('a stored round with a variant the question no longer has is discarded', () => {
+  const b = variantBank();
+  const { session } = createSession(b, { chapters: [6], count: 2, seed: 3 });
+  assert.ok(restoreSession(JSON.stringify(session), b));
+  const bad = { ...session, items: session.items.map((it) => ({ ...it, variant: 3 })) };
+  assert.equal(restoreSession(JSON.stringify(bad), b), null);
+});
+
+test('bank validation checks every variant', () => {
+  const b = variantBank();
+  assert.equal(validateBank(b).bank.questions.length, 4);
+  const q = b.questions.find((x) => x.chapter === 6);
+  q.variants[1].options = q.variants[1].options.slice().reverse();
+  const res = validateBank(b);
+  assert.equal(res.bank.questions.length, 3);
+  assert.match(res.dropped[0].errs.join(), /variant 3 option ids/);
 });

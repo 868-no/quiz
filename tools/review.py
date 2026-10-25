@@ -20,7 +20,7 @@ from . import checks, richtext, visuals
 from .common import Paths, ToolError, append_jsonl, now_iso, read_json, write_json
 from .context import Context, load_context
 from .questions import (
-    CONTENT_FIELDS, content_hash, get_question, get_revision, latest, open_flags, save_question,
+    CONTENT_FIELDS, content_hash, get_question, get_revision, latest, open_flags, save_question, variant_revisions,
 )
 
 CHECKLIST = {
@@ -129,6 +129,21 @@ def show(paths: Paths, qid: str, revision: int | None = None, *, with_source: bo
     out += ["", "EXPLANATION:", _fmt_rich(rev.get("explanation")), ""]
     if rev.get("calculation"):
         out.append(f"CALCULATION: {rev['calculation']}")
+    for vid, merged in variant_revisions(rev):
+        out += ["", f"VARIANT {vid}: {merged['calculation']}"]
+        if merged.get("context"):
+            out += [_fmt_rich(merged["context"])]
+        out += [_fmt_rich(merged.get("stem"))]
+        for o in merged.get("options", []):
+            mark = "✓" if o["id"] in rev.get("correct", []) else " "
+            out.append(f"  [{mark}] {o['id']}: {richtext.plain_text([o['content']])}")
+            if o.get("feedback"):
+                out.append(_fmt_rich(o["feedback"], "        → "))
+        out += ["  explanation:", _fmt_rich(merged.get("explanation"))]
+        if merged.get("visual") and merged["visual"] != rev.get("visual"):
+            out.append(f"  visual params={merged['visual'].get('params')}")
+    if rev.get("variants"):
+        out.append("")
     if rev.get("visual"):
         v = rev["visual"]
         errs, params, after = visuals.validate_visual(ctx.templates, v)

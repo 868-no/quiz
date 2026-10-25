@@ -16,6 +16,20 @@ function termRefs(value, out = []) {
 }
 
 function validateQuestion(q, bank) {
+  const errors = validateContent(q, bank);
+  if (q.variants !== undefined) {
+    if (!Array.isArray(q.variants)) return [...errors, 'variants'];
+    const ids = (q.options || []).map((o) => o.id).join('|');
+    q.variants.forEach((v, i) => {
+      const merged = { ...q, ...v };
+      if ((merged.options || []).map((o) => o.id).join('|') !== ids) errors.push(`variant ${i + 2} option ids`);
+      errors.push(...validateContent(merged, bank).map((e) => `variant ${i + 2}: ${e}`));
+    });
+  }
+  return errors;
+}
+
+function validateContent(q, bank) {
   const errors = [];
   if (typeof q.id !== 'string' || !Number.isInteger(q.rev)) errors.push('id/rev');
   if (!Array.isArray(q.options) || q.options.length !== 4) errors.push('options');

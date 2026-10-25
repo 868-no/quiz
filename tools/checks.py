@@ -22,7 +22,8 @@ from . import formulas, richtext, visuals
 from .release_check import FORBIDDEN_PATTERNS
 from .common import words
 from .context import Context
-from .questions import DIFFICULTIES, PRIORITIES, STATUSES, STYLES, TYPES, content_hash, open_flags
+from .questions import (DIFFICULTIES, PRIORITIES, STATUSES, STYLES, TYPES, VARIANT_ID, VARIANT_KEYS,
+                        content_hash, open_flags, variant_revisions)
 
 VERIFIER = "deterministic-v1"
 OPTION_ID = re.compile(r"^[a-z0-9][a-z0-9-]{0,11}$")
@@ -90,6 +91,61 @@ def _option_quantities(opt: dict[str, Any]) -> list[dict[str, Any]]:
 
 
 def check_revision(ctx: Context, qid: str, rev: dict[str, Any]) -> dict[str, Any]:
+    """Check a revision and each of its variants (as whole questions)."""
+    result = _check_one(ctx, qid, {k: v for k, v in rev.items() if k != "variants"})
+    result["content_sha256"] = content_hash(rev)
+    if "variants" not in rev:
+        return result
+    errors, warnings = result["errors"], result["warnings"]
+    errors += _variant_structure(rev)
+    for vid, merged in variant_revisions(rev):
+        sub = _check_one(ctx, qid, merged)
+        errors += [f"variant {vid}: {e}" for e in sub["errors"] if e not in result["errors"]]
+        warnings += [f"variant {vid}: {w}" for w in sub["warnings"] if w not in result["warnings"]]
+    result["warnings"] = sorted(set(warnings), key=warnings.index)
+    result["passed"] = not errors
+    return result
+
+
+def _variant_structure(rev: dict[str, Any]) -> list[str]:
+    errors = []
+    variants = rev["variants"]
+    if not isinstance(variants, list) or not variants:
+        return ["variants: must be a non-empty list (leave the key out for a question without variants)"]
+    if not rev.get("calculation"):
+        errors.append("variants: only calculation questions can have variants (other values for the same calculation)")
+    base_ids = [o.get("id") for o in rev.get("options") or [] if isinstance(o, dict)]
+    seen_ids, seen_inputs = set(), [json.dumps((rev.get("calculation") or {}).get("inputs"), sort_keys=True)]
+    for v in variants:
+        if not isinstance(v, dict):
+            errors.append("variants: each variant must be an object")
+            continue
+        vid = v.get("id")
+        if not isinstance(vid, str) or not VARIANT_ID.match(vid) or vid in seen_ids:
+            errors.append(f"variants: id {vid!r} must be unique and v2…v19 (the question itself is v1)")
+        seen_ids.add(vid)
+        extra = set(v) - set(VARIANT_KEYS) - {"id"}
+        if extra:
+            errors.append(f"variant {vid}: only {list(VARIANT_KEYS)} can differ (not {sorted(extra)})")
+        if "options" in v and [o.get("id") for o in v["options"] if isinstance(o, dict)] != base_ids:
+            errors.append(f"variant {vid}: options must have the same ids in the same order as the question")
+        calc = v.get("calculation")
+        if not isinstance(calc, dict):
+            errors.append(f"variant {vid}: needs its own calculation block with other input values")
+            continue
+        if calc.get("formula") != (rev.get("calculation") or {}).get("formula"):
+            errors.append(f"variant {vid}: uses another formula than the question; write a separate question instead")
+        key = json.dumps(calc.get("inputs"), sort_keys=True)
+        if key in seen_inputs:
+            errors.append(f"variant {vid}: has the same input values as another variant")
+        seen_inputs.append(key)
+        bv, vv = rev.get("visual"), v.get("visual", rev.get("visual"))
+        if bool(bv) != bool(vv) or (bv and (bv.get("template"), bv.get("version")) != (vv.get("template"), vv.get("version"))):
+            errors.append(f"variant {vid}: must use the same figure template as the question")
+    return errors
+
+
+def _check_one(ctx: Context, qid: str, rev: dict[str, Any]) -> dict[str, Any]:
     errors: list[str] = []
     warnings: list[str] = []
     hazards: list[dict[str, Any]] = []

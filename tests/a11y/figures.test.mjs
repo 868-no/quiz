@@ -25,7 +25,9 @@ async function findOverlaps() {
   box.className = 'wrap';
   document.body.replaceChildren(box);
   const found = [];
-  for (const q of bank.questions.filter((x) => x.visual)) {
+  // every variant of a calculation question has its own values in the figure
+  const all = bank.questions.flatMap((x) => [x, ...(x.variants || []).map((v, i) => ({ ...x, ...v, id: `${x.id}/v${i + 2}` }))]);
+  for (const q of all.filter((x) => x.visual)) {
     for (const phase of ['before', 'after']) {
       const res = renderVisual(q.visual, bank.templates, { phase, idPrefix: `t-${q.id}-${phase}` });
       if (!res.ok) { found.push(`${q.id} ${phase}: the figure cannot be drawn`); continue; }
