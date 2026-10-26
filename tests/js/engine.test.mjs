@@ -78,6 +78,33 @@ test('selection spreads across sections and is roughly uniform', () => {
   for (const n of counts.values()) assert.ok(n > 800 && n < 1200, `uneven selection: ${[...counts.values()]}`);
 });
 
+test('questions answered right are picked only when the others run out', () => {
+  const qs = bank.questions.filter((q) => q.chapter === 2); // q-2000 … q-2005
+  const known = new Set(['q-2000', 'q-2001', 'q-2002', 'q-2003']);
+  for (let seed = 1; seed < 300; seed++) {
+    const two = selectQuestions(qs, 2, makeRng(seed), known).map((q) => q.id).sort();
+    assert.deepEqual(two, ['q-2004', 'q-2005']);
+    const four = selectQuestions(qs, 4, makeRng(seed), known).map((q) => q.id);
+    assert.equal(new Set(four).size, 4);
+    assert.ok(four.includes('q-2004') && four.includes('q-2005'), 'the unanswered ones first, then known ones fill up');
+  }
+  // without anything known, the selection is the same as before
+  assert.deepEqual(selectQuestions(qs, 3, makeRng(9), new Set()), selectQuestions(qs, 3, makeRng(9)));
+});
+
+test('a session takes known questions last, except a practice exam', () => {
+  const known = ['q-2000', 'q-2001', 'q-2002', 'q-2003', 'q-3000'];
+  for (let seed = 1; seed < 100; seed++) {
+    const { session } = createSession(bank, { chapters: [2, 3], count: 4, known, seed });
+    assert.deepEqual(session.items.map((it) => it.qid).sort(), ['q-2004', 'q-2005', 'q-3001', 'q-3002']);
+  }
+  const exam = (seed) => createSession(bank, { chapters: [2, 3], count: 4, policy: 'exam', kind: 'exam', seed }).session.items.map((it) => it.qid);
+  for (let seed = 1; seed < 20; seed++) {
+    const withKnown = createSession(bank, { chapters: [2, 3], count: 4, policy: 'exam', kind: 'exam', known, seed }).session.items.map((it) => it.qid);
+    assert.deepEqual(withKnown, exam(seed));
+  }
+});
+
 test('fisher-yates shuffle is unbiased', () => {
   const pos = [0, 0, 0, 0];
   const rng = makeRng(42);

@@ -25,8 +25,20 @@ export function pool(bank, { chapters, difficulties = null, styles = null, ids =
  * Pick `count` distinct questions. Each section is shuffled, then sections are
  * visited round-robin in random order, so topics are spread out while every
  * question within a section has the same chance. The final order is shuffled.
+ * Questions in `known` (ids the visitor has answered right, and not wrong since)
+ * are only picked when there are not enough others: unanswered questions and
+ * earlier mistakes come first.
  */
-export function selectQuestions(candidates, count, rng) {
+export function selectQuestions(candidates, count, rng, known = null) {
+  const isKnown = (q) => Boolean(known && known.has(q.id));
+  const picked = spread(candidates.filter((q) => !isKnown(q)), count, rng);
+  if (picked.length < count) picked.push(...spread(candidates.filter(isKnown), count - picked.length, rng));
+  return shuffle(picked, rng);
+}
+
+// Up to `count` questions, taken round-robin from the shuffled sections.
+function spread(candidates, count, rng) {
+  if (!candidates.length || count < 1) return [];
   const groups = new Map();
   for (const q of shuffle(candidates, rng)) {
     const key = `${q.chapter}/${(q.sections && q.sections[0]) || ''}`;
@@ -41,7 +53,7 @@ export function selectQuestions(candidates, count, rng) {
       if (g.length) picked.push(g.shift());
     }
   }
-  return shuffle(picked, rng);
+  return picked;
 }
 
 /**
@@ -87,8 +99,10 @@ export function chapterQuotas(candidates, count, minimum = 2) {
  * `ids` limits the round to those questions; `kind` marks special rounds
  * ('missed': practising earlier mistakes, 'single': one question opened from a link,
  * 'exam': a practice exam, which takes a fixed number of questions from each chapter).
+ * `known` lists questions the visitor has already answered right; they are picked
+ * last (see selectQuestions). A practice exam ignores it, so it stays representative.
  */
-export function createSession(bank, { chapters, count, difficulties = null, styles = null, ids = null, kind = null, policy = 'learning', seed }) {
+export function createSession(bank, { chapters, count, difficulties = null, styles = null, ids = null, kind = null, known = null, policy = 'learning', seed }) {
   const pol = getPolicy(policy);
   if (!pol.enabled) return { ok: false, error: 'policy_unavailable', available: 0 };
   if (!Array.isArray(chapters) || chapters.length === 0) return { ok: false, error: 'no_chapters', available: 0 };
@@ -102,7 +116,7 @@ export function createSession(bank, { chapters, count, difficulties = null, styl
   const chosen = kind === 'exam'
     ? shuffle([...chapterQuotas(candidates, count)].flatMap(([c, n]) =>
       selectQuestions(candidates.filter((q) => q.chapter === c), n, rng)), rng)
-    : selectQuestions(candidates, count, rng);
+    : selectQuestions(candidates, count, rng, known ? new Set(known) : null);
   const items = chosen.map((q) => ({
     qid: q.id,
     rev: q.rev,

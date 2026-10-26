@@ -217,6 +217,8 @@ export function createApp(root, bank) {
 
   // --------------------------------------------------------------- missed
   const missedNow = () => missedIds(state.missed, bank);
+  // answered right and not wrong since: a new round takes these last
+  const knownIds = () => Object.keys(state.solved).filter((id) => !(id in state.missed));
 
   function startMissed() {
     const ids = missedNow();
@@ -750,6 +752,7 @@ export function createApp(root, bank) {
         count: state.selection.count,
         difficulties: [...state.selection.difficulties],
         styles: [...state.selection.styles],
+        known: knownIds(),
       }));
     } else if (e.target.id === 'answer-form' && state.choice) {
       try {

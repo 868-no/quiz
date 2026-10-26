@@ -776,6 +776,24 @@ test('a list of missed questions alone does not hold back the start bar', { skip
   }
 });
 
+test('a new round takes questions not yet answered right first', { skip }, async () => {
+  const bank = makeBank({ perChapter: { 2: 8 } });
+  const env = setupDom();
+  // q-2000 … q-2004 answered right; q-2001 answered wrong since
+  env.w.localStorage.setItem('radioquiz.solved.v1', JSON.stringify({ 'q-2000': 1, 'q-2001': 1, 'q-2002': 1, 'q-2003': 1, 'q-2004': 1 }));
+  env.w.localStorage.setItem('radioquiz.missed.v1', JSON.stringify({ 'q-2001': 2 }));
+  const { createApp } = await import('../../web/js/ui/app.js');
+  createApp(env.root, bank);
+  const { root, w } = env;
+  $(root, '#count').value = '5';
+  $(root, '#count').dispatchEvent(new w.Event('change', { bubbles: true }));
+  start(root, [2]);
+  const ids = JSON.parse(w.localStorage.getItem('radioquiz.session.v1')).items.map((it) => it.qid);
+  assert.equal(ids.length, 5);
+  for (const id of ['q-2001', 'q-2005', 'q-2006', 'q-2007']) assert.ok(ids.includes(id), `${id} is in the round`);
+  assert.equal(ids.filter((id) => ['q-2000', 'q-2002', 'q-2003', 'q-2004'].includes(id)).length, 1, 'one known question fills the round');
+});
+
 test('the chapter list shows progress, explains it, and can be reset', { skip }, async () => {
   const bank = makeBank({ perChapter: { 2: 3, 3: 2 } });
   const { root, w } = await app(bank);

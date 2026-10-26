@@ -37,6 +37,9 @@ dist/                     build output = the deployable site (not committed; CI 
 * `selectQuestions` – shuffle within each section, visit sections round-robin in random
   order, shuffle the result: no duplicates, topics spread out, every question in a
   section equally likely. Insufficient stock returns an error; nothing is padded.
+  Questions the visitor has answered right (and not wrong since) are picked only when
+  the unanswered ones and earlier mistakes run out, so a round brings new questions
+  first. The practice exam ignores this and stays a representative sample.
 * `createSession` – stores `{qid, rev, order, answer}` per item plus the seed, so a
   session can be persisted and restored exactly. Option order is shuffled; option ids
   and the correct key never change. `kind` marks special rounds: `missed` (practising
